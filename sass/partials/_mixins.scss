@@ -73,22 +73,24 @@
 	transition: $transition-property $transition-time $method;
 }
 
-// Media Queries
-@mixin wider-than($point) {
-	@if $point == large-desktop {
-		@media screen and (min-width: 71.25em) { @content; } // 1140px
-	}
+//	Media Queries using Sass List Maps 
+//	Define our breakpoints in $breakpoints variable and assign key value pairs in ems. 
+//	Em to px calculation varies based on the default font-size.
 
-	@else if $point == desktop {
-		@media screen and (min-width: 48em) { @content; } // 768px
-	}
+$breakpoints: (
+	large: 71.25em, 
+	medium: 48em,
+	small: 30em
+);
 
-	@else if $point == tablet {
-		@media screen and (min-width: 30em) { @content; } // 480px
-	}
-
-	@else {
-		@media screen and (min-width: $point) { @content; }
+@mixin wider-than($screen-size) {
+	@if map-has-key($breakpoints, $screen-size) {
+		@media (min-width: map-get($breakpoints, $screen-size)) {
+			@content;
+		}
+	} @else {
+		// Debugging - can be used thanks to map-has-key() instead of loop
+		@warn "Breakpoint '#{$screen-size}' does not exist!"
 	}
 }
 
