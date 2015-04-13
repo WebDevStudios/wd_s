@@ -43,8 +43,9 @@ a {
 
 	// Menu area
 	ul {
+		@include margin(0);
+
 		list-style: none;
-		margin: 0;
 		padding-left: 0;
 
 		// Sub-menu

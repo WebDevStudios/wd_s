@@ -15,16 +15,16 @@ This theme, like WordPress, is licensed under the GPL.
 Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+Bo-Yi Wu (https://github.com/appleboy/), Nicolas Gallagher (https://github.com/necolas), and Jonathan Neal (https://github.com/jonathantneal).
 */
 
-/* line 4, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
+/* line 4, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
 
 html {
 	box-sizing: border-box;
 }
 
-/* line 9, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
+/* line 9, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
 
 *,
 *::after,
@@ -529,7 +529,7 @@ big {
 	margin-right: auto;
 }
 
-/* line 20, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+/* line 20, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 
 .clear::after,
 .entry-content::after,
@@ -645,29 +645,29 @@ img {
 /* line 30, sass/base/_media.scss */
 
 .wp-caption img[class*="wp-image-"] {
-	display: block;
 	margin: 0 auto;
+	display: block;
 }
 
-/* line 35, sass/base/_media.scss */
+/* line 36, sass/base/_media.scss */
 
 .wp-caption .wp-caption-text {
 	margin: 12px 0;
 }
 
-/* line 40, sass/base/_media.scss */
+/* line 41, sass/base/_media.scss */
 
 .wp-caption-text {
 	text-align: center;
 }
 
-/* line 46, sass/base/_media.scss */
+/* line 47, sass/base/_media.scss */
 
 .gallery {
 	margin: 0 0 24px;
 }
 
-/* line 50, sass/base/_media.scss */
+/* line 51, sass/base/_media.scss */
 
 .gallery-item {
 	height: auto;
@@ -677,55 +677,55 @@ img {
 	vertical-align: top;
 }
 
-/* line 57, sass/base/_media.scss */
+/* line 58, sass/base/_media.scss */
 
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
 
-/* line 61, sass/base/_media.scss */
+/* line 62, sass/base/_media.scss */
 
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
 }
 
-/* line 65, sass/base/_media.scss */
+/* line 66, sass/base/_media.scss */
 
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
 }
 
-/* line 69, sass/base/_media.scss */
+/* line 70, sass/base/_media.scss */
 
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
 }
 
-/* line 73, sass/base/_media.scss */
+/* line 74, sass/base/_media.scss */
 
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
 }
 
-/* line 77, sass/base/_media.scss */
+/* line 78, sass/base/_media.scss */
 
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
 }
 
-/* line 81, sass/base/_media.scss */
+/* line 82, sass/base/_media.scss */
 
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
 }
 
-/* line 85, sass/base/_media.scss */
+/* line 86, sass/base/_media.scss */
 
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
 
-/* line 90, sass/base/_media.scss */
+/* line 91, sass/base/_media.scss */
 
 .gallery-caption {
 	display: block;
@@ -783,12 +783,12 @@ a:active {
 /* line 45, sass/modules/_navigation.scss */
 
 .main-navigation ul {
-	list-style: none;
 	margin: 0;
+	list-style: none;
 	padding-left: 0;
 }
 
-/* line 51, sass/modules/_navigation.scss */
+/* line 52, sass/modules/_navigation.scss */
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -799,53 +799,53 @@ a:active {
 	z-index: 99999;
 }
 
-/* line 60, sass/modules/_navigation.scss */
+/* line 61, sass/modules/_navigation.scss */
 
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
 
-/* line 68, sass/modules/_navigation.scss */
+/* line 69, sass/modules/_navigation.scss */
 
 .main-navigation ul ul li:hover > ul {
 	left: 100%;
 }
 
-/* line 81, sass/modules/_navigation.scss */
+/* line 82, sass/modules/_navigation.scss */
 
 .main-navigation ul a {
 	height: auto;
 	width: 200px;
 }
 
-/* line 86, sass/modules/_navigation.scss */
+/* line 87, sass/modules/_navigation.scss */
 
 .main-navigation ul li:hover > ul {
 	left: auto;
 }
 
-/* line 92, sass/modules/_navigation.scss */
+/* line 93, sass/modules/_navigation.scss */
 
 .main-navigation li {
 	float: left;
 	position: relative;
 }
 
-/* line 101, sass/modules/_navigation.scss */
+/* line 102, sass/modules/_navigation.scss */
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
 
-/* line 114, sass/modules/_navigation.scss */
+/* line 115, sass/modules/_navigation.scss */
 
 .menu-toggle {
 	display: none;
 }
 
-/* line 133, sass/modules/_navigation.scss */
+/* line 134, sass/modules/_navigation.scss */
 
 .site-main .comment-navigation,
 .site-main
@@ -856,7 +856,7 @@ a:active {
 	overflow: hidden;
 }
 
-/* line 138, sass/modules/_navigation.scss */
+/* line 139, sass/modules/_navigation.scss */
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -866,7 +866,7 @@ a:active {
 	float: left;
 }
 
-/* line 144, sass/modules/_navigation.scss */
+/* line 145, sass/modules/_navigation.scss */
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
@@ -944,12 +944,12 @@ button,
 input,
 select,
 textarea {
-	font-size: 100%;
 	margin: 0;
+	font-size: 100%;
 	vertical-align: baseline;
 }
 
-/* line 14, sass/modules/_forms.scss */
+/* line 15, sass/modules/_forms.scss */
 
 button,
 input[type="button"],
@@ -967,7 +967,7 @@ input[type="submit"] {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* line 30, sass/modules/_forms.scss */
+/* line 31, sass/modules/_forms.scss */
 
 button:hover,
 input[type="button"]:hover,
@@ -977,7 +977,7 @@ input[type="submit"]:hover {
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
-/* line 35, sass/modules/_forms.scss */
+/* line 36, sass/modules/_forms.scss */
 
 button:active,
 button:focus,
@@ -991,34 +991,34 @@ input[type="submit"]:focus {
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* line 42, sass/modules/_forms.scss */
+/* line 43, sass/modules/_forms.scss */
 
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0;
 }
 
-/* line 48, sass/modules/_forms.scss */
+/* line 49, sass/modules/_forms.scss */
 
 input[type="text"]::-ms-clear,
 input[type="search"]::-ms-clear {
 	display: none;
 }
 
-/* line 53, sass/modules/_forms.scss */
+/* line 54, sass/modules/_forms.scss */
 
 input[type="search"] {
 	-webkit-appearance: textfield;
 	box-sizing: content-box;
 }
 
-/* line 57, sass/modules/_forms.scss */
+/* line 58, sass/modules/_forms.scss */
 
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
-/* line 62, sass/modules/_forms.scss */
+/* line 63, sass/modules/_forms.scss */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -1026,7 +1026,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-/* line 68, sass/modules/_forms.scss */
+/* line 69, sass/modules/_forms.scss */
 
 input[type="text"],
 input[type="email"],
@@ -1039,7 +1039,7 @@ textarea {
 	border-radius: 3px;
 }
 
-/* line 78, sass/modules/_forms.scss */
+/* line 79, sass/modules/_forms.scss */
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -1050,7 +1050,7 @@ textarea:focus {
 	color: #111111;
 }
 
-/* line 83, sass/modules/_forms.scss */
+/* line 84, sass/modules/_forms.scss */
 
 input[type="text"],
 input[type="email"],
@@ -1060,7 +1060,7 @@ input[type="search"] {
 	padding: 3px;
 }
 
-/* line 91, sass/modules/_forms.scss */
+/* line 92, sass/modules/_forms.scss */
 
 textarea {
 	padding: 6px;
@@ -1079,31 +1079,31 @@ textarea {
 /* line 9, sass/modules/_comments.scss */
 
 .comment-list {
-	list-style: none;
 	margin: 0;
+	list-style: none;
 }
 
-/* line 14, sass/modules/_comments.scss */
+/* line 15, sass/modules/_comments.scss */
 
 .comment-meta {
 	margin: 0 0 14px;
 }
 
-/* line 18, sass/modules/_comments.scss */
+/* line 19, sass/modules/_comments.scss */
 
 .avatar {
 	margin: 0 10px 0 0;
 	float: left;
 }
 
-/* line 24, sass/modules/_comments.scss */
+/* line 25, sass/modules/_comments.scss */
 
 .comment-content a {
 	word-wrap: break-word;
 	word-break: keep-all;
 }
 
-/* line 28, sass/modules/_comments.scss */
+/* line 29, sass/modules/_comments.scss */
 
 .bypostauthor {
 	display: block;
@@ -1116,7 +1116,7 @@ textarea {
 	padding: 0;
 }
 
-/* line 7, sass/modules/_social-icons.scss */
+/* line 8, sass/modules/_social-icons.scss */
 
 .menu-social-menu-container .menu li {
 	margin-right: 23px;
@@ -1124,26 +1124,26 @@ textarea {
 	list-style: none;
 }
 
-/* line 13, sass/modules/_social-icons.scss */
+/* line 14, sass/modules/_social-icons.scss */
 
 .menu-social-menu-container .menu li:last-child {
 	margin: 0;
 }
 
-/* line 18, sass/modules/_social-icons.scss */
+/* line 19, sass/modules/_social-icons.scss */
 
 .menu-social-menu-container .menu a {
 	color: #666666;
 }
 
-/* line 21, sass/modules/_social-icons.scss */
+/* line 22, sass/modules/_social-icons.scss */
 
 .menu-social-menu-container .menu a:hover,
 .menu-social-menu-container .menu a:focus {
 	color: #cccccc;
 }
 
-/* line 27, sass/modules/_social-icons.scss */
+/* line 28, sass/modules/_social-icons.scss */
 
 .menu-social-menu-container .menu a::before {
 	font-size: 1.75rem;
@@ -1219,7 +1219,7 @@ Infinite scroll
 	margin-right: auto;
 }
 
-/* line 20, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+/* line 20, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 
 .site::after {
 	clear: both;
@@ -1280,7 +1280,7 @@ Infinite scroll
 	width: 66.41902%;
 }
 
-/* line 89, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+/* line 89, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
 
 #primary:last-child {
 	margin-right: 0;
@@ -1296,7 +1296,7 @@ Infinite scroll
 	margin-right: 0;
 }
 
-/* line 89, /Users/stacy/Sites/WDS Theme/wp-content/_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+/* line 89, C:/Users/Eric/Documents/_WebDevStudios/_WebDevSites/wdsdev.dev/wp-content/themes/_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
 
 #secondary:last-child {
 	margin-right: 0;
@@ -1306,14 +1306,14 @@ Infinite scroll
 
 @media screen and (max-width: 600px) {
 
-/* line 119, sass/modules/_navigation.scss */
+/* line 120, sass/modules/_navigation.scss */
 
 .menu-toggle,
 .main-navigation.toggled .nav-menu {
 	display: block;
 }
 
-/* line 124, sass/modules/_navigation.scss */
+/* line 125, sass/modules/_navigation.scss */
 
 .main-navigation ul {
 	display: none;

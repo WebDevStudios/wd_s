@@ -28,8 +28,9 @@ img {
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
+		@include margin(0 auto);
+
 		display: block;
-		margin: 0 auto;
 	}
 
 	.wp-caption-text {

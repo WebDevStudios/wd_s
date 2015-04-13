@@ -19,7 +19,7 @@ hr {
 }
 
 figure {
-	margin: 0;
+	@include margin(0);
 }
 
 // Lists
