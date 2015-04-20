@@ -20,10 +20,6 @@
 	margin: 0 rem(10) 0 0;
 }
 
-.comment-content a {
-	@include word-break(keep-all);
-}
-
 .bypostauthor {
 	display: block;
 }
