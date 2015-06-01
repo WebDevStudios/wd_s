@@ -307,7 +307,7 @@ select,
 textarea
 {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1;
+    line-height: 1.625;
 
     color: #111;
 }
@@ -366,7 +366,7 @@ pre
 {
     font-family: 'Courier 10 Pitch', Courier, monospace;
     font-size: .9375rem;
-    line-height: 1.6;
+    line-height: 1.625;
 
     overflow: auto;
 
@@ -717,9 +717,92 @@ a:active
     color: #21759b;
 }
 
-.menu ul li
+.menu
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.menu li
 {
     margin: 0 .625rem 0 0;
+}
+
+.menu ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.menu.menu-horizontal li
+{
+    display: inline-block;
+}
+
+.menu.menu-vertical li
+{
+    margin: 0;
+}
+
+.menu.menu-vertical a
+{
+    padding: .625rem;
+
+    border-bottom: 1px solid #ccc;
+}
+
+.menu.dropdown ul
+{
+    position: absolute;
+    z-index: 99999;
+    top: 1.5em;
+    left: -999em;
+
+    float: left;
+
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+.menu.dropdown ul ul
+{
+    top: 0;
+    left: -999em;
+}
+
+.menu.dropdown ul li:hover > ul,
+.menu.dropdown ul li.focus > ul
+{
+    left: 100%;
+}
+
+.menu.dropdown ul a
+{
+    width: 200px;
+    height: auto;
+}
+
+.menu.dropdown li:hover > ul,
+.menu.dropdown li.focus > ul
+{
+    left: auto;
+}
+
+.menu.dropdown li
+{
+    position: relative;
+
+    float: left;
+}
+
+.menu a
+{
+    display: block;
+
+    text-decoration: none;
 }
 
 .main-navigation
@@ -735,61 +818,6 @@ a:active
 .main-navigation ul
 {
     display: none;
-
-    margin: 0;
-    padding-left: 0;
-
-    list-style: none;
-}
-
-.main-navigation ul ul
-{
-    position: absolute;
-    z-index: 99999;
-    top: 1.5em;
-    left: -999em;
-
-    float: left;
-
-    box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
-}
-
-.main-navigation ul ul ul
-{
-    top: 0;
-    left: -999em;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul
-{
-    left: 100%;
-}
-
-.main-navigation ul a
-{
-    width: 200px;
-    height: auto;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul
-{
-    left: auto;
-}
-
-.main-navigation li
-{
-    position: relative;
-
-    float: left;
-}
-
-.main-navigation a
-{
-    display: block;
-
-    text-decoration: none;
 }
 
 .menu-toggle,
@@ -1037,19 +1065,11 @@ textarea
     display: block;
 }
 
-.menu-social
-{
-    margin: 0;
-    padding: 0;
-}
-
 .menu-social li
 {
     display: inline-block;
 
     margin-right: 1.5rem;
-
-    list-style: none;
 }
 
 .menu-social li:last-child
@@ -1159,9 +1179,179 @@ textarea
     speak: none;
 }
 
-/*--------------------------------------------------------------
-Infinite scroll
---------------------------------------------------------------*/
+.social-icons
+{
+    margin: 0;
+    padding: 0;
+}
+
+.social-icons li
+{
+    display: inline-block;
+
+    margin-right: 1.5rem;
+}
+
+.social-icons li:last-child
+{
+    margin: 0;
+}
+
+.social-icons .icon
+{
+    width: 48px;
+    height: 48px;
+}
+
+.social-icons .icon-rss
+{
+    fill: #333;
+}
+
+.social-icons .icon-rss:hover
+{
+    fill: #f90;
+}
+
+.social-icons .icon-rss-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-rss-square:hover
+{
+    fill: #f90;
+}
+
+.social-icons .icon-twitter
+{
+    fill: #333;
+}
+
+.social-icons .icon-twitter:hover
+{
+    fill: #00aced;
+}
+
+.social-icons .icon-twitter-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-twitter-square:hover
+{
+    fill: #00aced;
+}
+
+.social-icons .icon-facebook
+{
+    fill: #333;
+}
+
+.social-icons .icon-facebook:hover
+{
+    fill: #3b5998;
+}
+
+.social-icons .icon-facebook-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-facebook-square:hover
+{
+    fill: #3b5998;
+}
+
+.social-icons .icon-googleplus
+{
+    fill: #333;
+}
+
+.social-icons .icon-googleplus:hover
+{
+    fill: #dd4b39;
+}
+
+.social-icons .icon-googleplus-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-googleplus-square:hover
+{
+    fill: #dd4b39;
+}
+
+.social-icons .icon-pinterest
+{
+    fill: #333;
+}
+
+.social-icons .icon-pinterest:hover
+{
+    fill: #cb2027;
+}
+
+.social-icons .icon-pinterest-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-pinterest-square:hover
+{
+    fill: #cb2027;
+}
+
+.social-icons .icon-linkedin
+{
+    fill: #333;
+}
+
+.social-icons .icon-linkedin:hover
+{
+    fill: #007bb6;
+}
+
+.social-icons .icon-linkedin-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-linkedin-square:hover
+{
+    fill: #007bb6;
+}
+
+.social-icons .icon-youtube
+{
+    fill: #333;
+}
+
+.social-icons .icon-youtube:hover
+{
+    fill: #b00;
+}
+
+.social-icons .icon-youtube-square
+{
+    fill: #333;
+}
+
+.social-icons .icon-youtube-square:hover
+{
+    fill: #b00;
+}
+
+.social-icons .icon-instagram
+{
+    fill: #333;
+}
+
+.social-icons .icon-instagram:hover
+{
+    fill: #517fa4;
+}
 
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer
@@ -1174,14 +1364,15 @@ Infinite scroll
     display: block;
 }
 
-.site
+.wrap
 {
     max-width: 85.375em;
     margin-right: auto;
     margin-left: auto;
+    padding: 0 1.25em;
 }
 
-.site::after
+.wrap::after
 {
     display: table;
     clear: both;
@@ -1189,17 +1380,23 @@ Infinite scroll
     content: '';
 }
 
+.site-header,
+.site-footer
+{
+    padding: 0 1.25em;
+}
+
 .site-content
 {
     margin: 1.25rem auto;
 }
 
-#primary
+.primary
 {
     width: 100%;
 }
 
-#secondary
+.secondary
 {
     width: 100%;
 }
@@ -1214,7 +1411,8 @@ Infinite scroll
     max-width: 100%;
 }
 
-.widget_search .search-submit
+.widget_search .search-submit,
+.widget_search button
 {
     display: none;
 }
@@ -1234,7 +1432,7 @@ Infinite scroll
 
 @media (min-width: 64em)
 {
-    #primary
+    .primary
     {
         display: block;
         float: left;
@@ -1243,12 +1441,12 @@ Infinite scroll
         margin-right: .7429420505%;
     }
 
-    #primary:last-child
+    .primary:last-child
     {
         margin-right: 0;
     }
 
-    #secondary
+    .secondary
     {
         display: block;
         float: left;
@@ -1258,7 +1456,7 @@ Infinite scroll
         margin-right: 0;
     }
 
-    #secondary:last-child
+    .secondary:last-child
     {
         margin-right: 0;
     }
@@ -1266,9 +1464,13 @@ Infinite scroll
 
 @media (min-width: 85.375em)
 {
+    .wrap
+    {
+        padding: 0;
+    }
+
     .site-content
     {
         margin: 2.5rem auto 3.75rem;
     }
 }
-
