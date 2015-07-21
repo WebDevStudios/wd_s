@@ -75,6 +75,15 @@
             font-weight: normal;
             font-family: $font-icon;
         }
+
+        @if $position == 'before' or $position == 'before, &:after' {
+            margin-right: rem(6);
+        }
+
+        @if $position == 'after' or $position == 'before, &:after' {
+            margin-left: rem(6);
+        }
+        
         // Include any extra rules supplied for the pseudo-element
         @content;
     }
