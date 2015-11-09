@@ -61,8 +61,7 @@ function _s_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         '_s_copyright_text',
         array(
-            'default'           => '',
-            'sanitize_callback' => '_s_sanitize_customizer_text'
+            'default'           => ''
         )
     );
     $wp_customize->add_control(
@@ -72,6 +71,7 @@ function _s_customize_register( $wp_customize ) {
             'description' => __( 'The copyright text will be displayed beneath the menu in the footer.', '_s' ),
             'section'     => '_s_footer_section',
             'type'        => 'text',
+            'sanitize'    => 'html'
         )
     );
 }
