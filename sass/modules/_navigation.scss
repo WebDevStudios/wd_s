@@ -21,18 +21,14 @@ a {
 // Default menu (active after a fresh WordPress install)
 
 .menu {
-	@include margin-padding-reset;
-
-	list-style: none;
+	@include list-reset;
 
 	li {
 		margin: 0 rem(10) 0 0;
 	}
 
 	ul {
-		@include margin-padding-reset;
-
-		list-style: none;
+		@include list-reset;
 	}
 
 	&.menu-horizontal {
@@ -82,7 +78,7 @@ a {
 
 			// Sub-menu links
 			a {
-				@include size(200px auto);
+				@include size(rem(200) auto);
 			}
 
 			:hover > a,

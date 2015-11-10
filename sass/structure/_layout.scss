@@ -6,8 +6,9 @@
 
 .wrap {
 	@include outer-container;
+
 	padding: 0 2*$gutter;
-	
+
 	@include wider-than(desktop) {
 		padding: 0;
 	}
@@ -39,6 +40,6 @@
 
 	@include wider-than(tablet-landscape) {
 		@include span-columns(4);
-		@include omega();
+		@include omega;
 	}
 }
