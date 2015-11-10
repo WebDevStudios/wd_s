@@ -50,15 +50,6 @@ p {
 	margin: 0 0 rem(24) 0;
 }
 
-.smoothing {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.legibility {
-  text-rendering: optimizeLegibility;
-}
-
 b,
 strong {
 	font-weight: 700;
@@ -147,5 +138,5 @@ big {
 .comment-content,
 .widget-title,
 .widget {
-	@include word-break();
+	@include word-break;
 }

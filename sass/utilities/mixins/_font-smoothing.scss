@@ -1,0 +1,29 @@
+// ----------------------------------------------------------------------
+
+  // Font Smoothing
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Greg Rickaby
+/// @group wds
+////
+
+/// Improve the font rendering to better match client PSDs. Side effects include: slower
+/// rednering of pages. Use only when necessary!
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///        @include font-smoothing;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+//			-webkit-font-smoothing: antialiased;
+//			-moz-osx-font-smoothing: grayscale;
+///    }
+
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

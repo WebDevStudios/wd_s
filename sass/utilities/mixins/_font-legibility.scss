@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------
+
+  // Font Legibility
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Greg Rickaby
+/// @group wds
+////
+
+/// Improve the font rendering to better match client PSDs. Side effects include: slower
+/// rednering of pages. Use only when necessary!
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///        @include font-legibility;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+///          text-rendering: optimizeLegibility;
+///          -moz-font-feature-settings: 'liga', 'kern';
+///          -moz-osx-font-smoothing: grayscale;
+///          -webkit-font-smoothing: antialiased;
+///    }
+
+@mixin font-legibility {
+	text-rendering: optimizeLegibility; // Improved kerning pairs & ligatures
+	-moz-font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+	-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
+	-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
+}
