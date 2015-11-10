@@ -7,7 +7,7 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_setup' ) ) {
+if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -99,10 +99,9 @@ function _s_setup() {
 		foreach ( $page_builder_areas as $page_builder_area_slug => $page_builder_area ) {
 			register_page_builder_area( $page_builder_area_slug, $page_builder_area );
 		}
-
 	}
 }
-} // _s_setup
+endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
