@@ -6,6 +6,7 @@ wd_s
 # Features
 * Grunt
 * Sass
+* PostCSS
 * SassDocs
 * Bourbon
 * Neat
