@@ -79,16 +79,28 @@ module.exports = function(grunt) {
 				map: true,
 				processors: [
 					require('autoprefixer')({ browsers: ['last 2 versions'] }),
-					require('css-mqpacker')
 			]},
 			dist: {
 				src: 'style.css'
 			}
 		},
 
+		cmq: {
+			options: {
+				log: false
+			},
+			dist: {
+				files: {
+					'style.css': 'style.css'
+				}
+			}
+		},
+
 		cssnano: {
 			options: {
-				sourcemap: true
+				sourcemap: true,
+				autoprefixer: false,
+				zindex: false
 			},
 			dist: {
 				files: {
@@ -188,16 +200,6 @@ module.exports = function(grunt) {
 					type: 'wp-theme'
 				}
 			}
-			/*plugin_name: {
-				options: {
-					cwd: 'plugins/plugin_name',
-					domainPath: '/languages/',
-					potFilename: 'plugin_name.pot',
-					type: 'wp-plugin'
-				}
-			}
-			repeat as necessary
-			*/
 		},
 
 		addtextdomain: {
@@ -211,18 +213,6 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			/*plugin_name: {
-				options: {
-					textdomain: 'text-domain'
-				},
-				target: {
-					files: {
-						src: ['*.php']
-					}
-				}
-			}
-			repeat as necessary
-			*/
 		},
 
 		phpcs: {
@@ -273,7 +263,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'postcss', 'cssnano']);
+	grunt.registerTask('styles', ['sass', 'postcss', 'cmq', 'cssnano']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
