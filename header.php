@@ -30,7 +30,7 @@
 
 	<?php wds_page_builder_area( 'hero' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div class="wrap">
 
 			<div class="site-branding">
