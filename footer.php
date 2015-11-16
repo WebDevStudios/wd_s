@@ -17,7 +17,7 @@
 		<?php wds_page_builder_area( 'after_content' ); ?>
 	</div>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="wrap">
 
 			<div class="site-info">
