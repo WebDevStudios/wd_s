@@ -107,4 +107,3 @@ function _s_include_svg_definitions() {
 		require_once( $svg_defs );
 	}
 }
-add_action( 'wp_head', '_s_include_svg_definitions', 999 );
