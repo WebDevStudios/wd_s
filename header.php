@@ -42,7 +42,7 @@
 				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
 				<?php
 					wp_nav_menu( array(
