@@ -1,8 +1,3 @@
-////
-/// @author Damon Cook
-/// @group wds
-////
-
 /// Media Queries using Sass List Maps
 /// Define our breakpoints in $breakpoints variable and assign key value pairs in ems.
 ///
@@ -19,6 +14,9 @@
 /// @param {String} $screen-size - Typical values are phone portrait, phone landscape, desktop, large-desktop. [See available Breakpoints](#variable-breakpoints)
 ///
 /// @requires $breakpoints
+///
+/// @author Damon Cook
+/// @group wds
 
 @mixin wider-than($screen-size) {
 	@if map-has-key($breakpoints, $screen-size) {
@@ -27,6 +25,41 @@
 		}
 	} @else if ($screen-size) {
 		@media (min-width: $screen-size) {
+			@content;
+		}
+	} @else {
+		// Debugging - can be used thanks to map-has-key() instead of loop
+		@warn "Breakpoint '#{$screen-size}' does not exist!"
+	}
+}
+
+/// Media Queries using Sass List Maps
+/// Define our breakpoints in $breakpoints variable and assign key value pairs in ems.
+///
+/// @example scss - Basic usage
+///    h1 {
+///        margin-left: 20px;
+///
+///        @include narrower-than(desktop) {
+///            margin-left: 40px;
+///        }
+///
+/// @output @media (max-width: 85.375em) {}
+///
+/// @param {String} $screen-size - Typical values are phone portrait, phone landscape, desktop, large-desktop. [See available Breakpoints](#variable-breakpoints)
+///
+/// @requires $breakpoints
+///
+/// @author Rommel Castro
+/// @group wds
+
+@mixin narrower-than($screen-size) {
+	@if map-has-key($breakpoints, $screen-size) {
+		@media (max-width: map-get($breakpoints, $screen-size)) {
+			@content;
+		}
+	} @else if ($screen-size) {
+		@media (max-width: $screen-size) {
 			@content;
 		}
 	} @else {
