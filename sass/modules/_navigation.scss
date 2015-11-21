@@ -131,7 +131,7 @@ a {
 	ul {
 		display: none;
 
-		@include wider-than(phone-landscape) {
+		@include wider-than($bp-phone-landscape) {
 			display: block;
 		}
 	}
@@ -145,7 +145,7 @@ a {
 .menu-toggle {
 	display: block;
 
-	@include wider-than(phone-landscape) {
+	@include wider-than($bp-phone-landscape) {
 		display: none;
 	}
 }
