@@ -9,7 +9,7 @@
 	text-align: center;
 
 	// After 1024px, let's float and text align left
-	@include wider-than(tablet-landscape) {
+	@include wider-than($bp-tablet-landscape) {
 		float: left;
 		text-align: left;
 	}
