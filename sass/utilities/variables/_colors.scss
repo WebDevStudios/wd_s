@@ -25,32 +25,34 @@ $color-border-input: $color-light-gray;
 $color-border-abbr: $color-dark-gray;
 
 // Social Media Colors
-$color-rss: #ff9900;
-$color-twitter: #00aced;
 $color-facebook: #3b5998;
 $color-googleplus: #dd4b39;
-$color-pinterest: #cb2027;
-$color-linkedin: #007bb6;
-$color-youtube: #bb0000;
 $color-instagram: #517fa4;
+$color-linkedin: #007bb6;
+$color-pinterest: #cb2027;
+$color-rss: #ff9900;
+$color-twitter: #00aced;
+$color-youtube: #bb0000;
 
+// $social-colors() map
 $social-colors: (
-	rss: $color-rss,
-	rss-square: $color-rss,
-	twitter: $color-twitter,
-	twitter-square: $color-twitter,
 	facebook: $color-facebook,
 	facebook-square: $color-facebook,
 	googleplus: $color-googleplus,
 	googleplus-square: $color-googleplus,
-	pinterest: $color-pinterest,
-	pinterest-square: $color-pinterest,
+	instagram: $color-instagram,
 	linkedin: $color-linkedin,
 	linkedin-square: $color-linkedin,
+	pinterest: $color-pinterest,
+	pinterest-square: $color-pinterest,
+	rss: $color-rss,
+	rss-square: $color-rss,
+	twitter: $color-twitter,
+	twitter-square: $color-twitter,
 	youtube: $color-youtube,
 	youtube-square: $color-youtube,
-	instagram: $color-instagram,
 );
+
 // GRAYSCALE
 
 // Black & White
