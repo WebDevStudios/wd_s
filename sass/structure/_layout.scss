@@ -9,7 +9,7 @@
 
 	padding: 0 2*$gutter;
 
-	@include wider-than(desktop) {
+	@include wider-than($bp-desktop) {
 		padding: 0;
 	}
 }
@@ -22,7 +22,7 @@
 .site-content {
 	margin: rem(20) auto;
 
-	@include wider-than(desktop) {
+	@include wider-than($bp-desktop) {
 		margin: rem(40) auto rem(60);
 	}
 }
@@ -30,7 +30,7 @@
 .primary {
 	@include fill-parent;
 
-	@include wider-than(tablet-landscape) {
+	@include wider-than($bp-tablet-landscape) {
 		@include span-columns(8);
 	}
 }
@@ -38,7 +38,7 @@
 .secondary {
 	@include fill-parent;
 
-	@include wider-than(tablet-landscape) {
+	@include wider-than($bp-tablet-landscape) {
 		@include span-columns(4);
 		@include omega;
 	}
