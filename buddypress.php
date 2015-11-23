@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'pagebuilder/template-parts/content', 'buddypress' ); ?>
+					<?php get_template_part( 'templates/content', 'buddypress' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
