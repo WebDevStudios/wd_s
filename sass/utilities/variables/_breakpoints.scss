@@ -2,13 +2,12 @@
 // Media Query Breakpoints
 //--------------------------------------------------------------
 
-/// Breakpoints Sass list map for Media Queries @mixin
+/// Standard Media Query Breakpoints
 /// @group wds
-$breakpoints: (
-	large-desktop: 105em, // 1680px
-	desktop: 85.375em, // 1366px
-	tablet-landscape: 64em, // 1024px
-	tablet-portrait: 48em, // 768px
-	phone-landscape: 40em, // 640px
-	phone-portrait: 22.5em, // 360px
-);
+
+$large-desktop: rem(1680);
+$desktop: rem(1366);
+$tablet-landscape: rem(1024);
+$tablet-portrait: rem(768);
+$phone-landscape: rem(640);
+$phone-portrait: rem(360);
