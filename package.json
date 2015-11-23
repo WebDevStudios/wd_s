@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "autoprefixer": "latest",
+    "css-mqpacker": "latest",
     "glob": "latest",
     "grunt": "latest",
     "grunt-combine-media-queries": "latest",

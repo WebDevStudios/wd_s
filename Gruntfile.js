@@ -61,7 +61,6 @@ module.exports = function(grunt) {
 			options: {
 				sourceMap: true,
 				outputStyle: 'expanded',
-				lineNumbers: true,
 				includePaths: [
 					'bower_components/bourbon/app/assets/stylesheets',
 					'bower_components/neat/app/assets/stylesheets'
@@ -78,29 +77,19 @@ module.exports = function(grunt) {
 			options: {
 				map: true,
 				processors: [
-					require('autoprefixer')({ browsers: ['last 2 versions'] }),
+					require('autoprefixer')({ browsers: 'last 2 versions' }),
+					require('css-mqpacker')({ sort: true }),
 			]},
 			dist: {
 				src: 'style.css'
 			}
 		},
 
-		cmq: {
-			options: {
-				log: false,
-			},
-			dist: {
-				files: {
-					'style.css': 'style.css'
-				}
-			}
-		},
-
 		cssnano: {
 			options: {
-				sourcemap: false,
+				autoprefixer: false,
 				safe: true,
-				autoprefixer: false
+				sourcemap: false,
 			},
 			dist: {
 				files: {
@@ -263,7 +252,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'cmq', 'postcss', 'cssnano']);
+	grunt.registerTask('styles', ['sass', 'postcss', 'cssnano']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
