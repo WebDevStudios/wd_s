@@ -1,28 +1,25 @@
 //--------------------------------------------------------------
-// Colors
+//   COLORS
+//    - Primary palette
+//    - Social Media Colors
+//       - $social-colors() map
+
 //   GRAYSCALE
 //    - Black & White
 //    - Grayscale
+//
+//   ELEMENTS & SKINNING
+//     - General
+//     - Accessibility
+//     - Links
+//     - Forms
 //-------------------------------------------------------------
 
+// COLORS
+
+// Primary palette
 $color-blue: #21759b;
 $color-light-yellow: #fff9c0;
-
-$color-background-body: $color-white;
-$color-background-screen-reader: $color-whitesmoke;
-$color-background-hr: $color-light-gray;
-$color-background-button: $color-blue;
-
-$color-text-screen-reader: $color-blue;
-$color-text-input: $color-dark-gray;
-$color-text-input-focus: $color-darkest-gray;
-$color-link: $color-blue;
-$color-link-visited: $color-blue;
-$color-link-hover: $color-blue;
-$color-text-main: $color-darkest-gray;
-
-$color-border-input: $color-light-gray;
-$color-border-abbr: $color-dark-gray;
 
 // Social Media Colors
 $color-facebook: #3b5998;
@@ -71,9 +68,26 @@ $color-silver: #cccccc;
 $color-alto: #dddddd;
 $color-gallery: #eeeeee;
 $color-whitesmoke: #f1f1f1;
+
+// ELEMENTS & SKINNING
+
+// General
+$color-background-body: $color-white;
 $color-text-main: $color-cod-gray;
 $color-background-hr: $color-silver;
 $color-border-abbr: $color-dove-gray;
+
+// Accessibility
+$color-background-screen-reader: $color-whitesmoke;
+$color-text-screen-reader: $color-blue;
+
+// Links
+$color-link: $color-blue;
+$color-link-visited: $color-blue;
+$color-link-hover: $color-blue;
+
+// Forms
+$color-background-button: $color-blue;
 $color-border-input: $color-silver;
 $color-text-input: $color-dove-gray;
 $color-text-input-focus: $color-cod-gray;
