@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 
 		cmq: {
 			options: {
-				log: false
+				log: false,
 			},
 			dist: {
 				files: {
@@ -98,9 +98,9 @@ module.exports = function(grunt) {
 
 		cssnano: {
 			options: {
-				sourcemap: true,
-				autoprefixer: false,
-				zindex: false
+				sourcemap: false,
+				safe: true,
+				autoprefixer: false
 			},
 			dist: {
 				files: {
@@ -263,7 +263,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'postcss', 'cmq', 'cssnano']);
+	grunt.registerTask('styles', ['sass', 'cmq', 'postcss', 'cssnano']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);

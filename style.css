@@ -919,46 +919,6 @@ textarea {
 	vertical-align: top;
 }
 
-.social-icons .social-icon .icon-rss {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-rss:hover {
-	fill: #ff9900;
-}
-
-.social-icons .social-icon .icon-rss-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-rss-square:hover {
-	fill: #ff9900;
-}
-
-.social-icons .social-icon .icon-twitter {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-twitter:hover {
-	fill: #00aced;
-}
-
-.social-icons .social-icon .icon-twitter-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-twitter-square:hover {
-	fill: #00aced;
-}
-
 .social-icons .social-icon .icon-facebook {
 	height: 1.5rem;
 	width: 1.5rem;
@@ -999,24 +959,14 @@ textarea {
 	fill: #dd4b39;
 }
 
-.social-icons .social-icon .icon-pinterest {
+.social-icons .social-icon .icon-instagram {
 	height: 1.5rem;
 	width: 1.5rem;
 	fill: #ffffff;
 }
 
-.social-icons .social-icon .icon-pinterest:hover {
-	fill: #cb2027;
-}
-
-.social-icons .social-icon .icon-pinterest-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-pinterest-square:hover {
-	fill: #cb2027;
+.social-icons .social-icon .icon-instagram:hover {
+	fill: #517fa4;
 }
 
 .social-icons .social-icon .icon-linkedin {
@@ -1039,6 +989,66 @@ textarea {
 	fill: #007bb6;
 }
 
+.social-icons .social-icon .icon-pinterest {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-pinterest:hover {
+	fill: #cb2027;
+}
+
+.social-icons .social-icon .icon-pinterest-square {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-pinterest-square:hover {
+	fill: #cb2027;
+}
+
+.social-icons .social-icon .icon-rss {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-rss:hover {
+	fill: #ff9900;
+}
+
+.social-icons .social-icon .icon-rss-square {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-rss-square:hover {
+	fill: #ff9900;
+}
+
+.social-icons .social-icon .icon-twitter {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-twitter:hover {
+	fill: #00aced;
+}
+
+.social-icons .social-icon .icon-twitter-square {
+	height: 1.5rem;
+	width: 1.5rem;
+	fill: #ffffff;
+}
+
+.social-icons .social-icon .icon-twitter-square:hover {
+	fill: #00aced;
+}
+
 .social-icons .social-icon .icon-youtube {
 	height: 1.5rem;
 	width: 1.5rem;
@@ -1057,16 +1067,6 @@ textarea {
 
 .social-icons .social-icon .icon-youtube-square:hover {
 	fill: #bb0000;
-}
-
-.social-icons .social-icon .icon-instagram {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-instagram:hover {
-	fill: #517fa4;
 }
 
 .social-icons .social-icon:last-child {
@@ -1093,8 +1093,6 @@ textarea {
 .widget_search .search-submit {
 	display: none;
 }
-
-/*# sourceMappingURL=style.css.map */
 
 @media (min-width: 40em) {
 
@@ -1152,3 +1150,5 @@ textarea {
 
 }
 
+
+/*# sourceMappingURL=style.css.map */
