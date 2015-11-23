@@ -1,17 +1,12 @@
 //--------------------------------------------------------------
 // Colors
+//   GRAYSCALE
+//    - Black & White
+//    - Grayscale
 //-------------------------------------------------------------
 
 $color-blue: #21759b;
-$color-dark-gray: #666666;
-$color-darker-gray: #333333;
-$color-darkest-gray: #111111;
-$color-light-gray: #cccccc;
-$color-lighter-gray: #eeeeee;
-$color-whitesmoke: #f1f1f1;
 $color-light-yellow: #fff9c0;
-$color-black: #000000;
-$color-white: #ffffff;
 
 $color-background-body: $color-white;
 $color-background-screen-reader: $color-whitesmoke;
@@ -56,3 +51,27 @@ $social-colors: (
 	youtube-square: $color-youtube,
 	instagram: $color-instagram,
 );
+// GRAYSCALE
+
+// Black & White
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Grayscale
+$color-gray: #808080;
+
+$color-cod-gray: #111111;
+$color-mineshaft: #333333;
+$color-dove-gray: #666666;
+$color-gray-alt: #929292;
+$color-silver-chalice: #aaaaaa;
+$color-silver: #cccccc;
+$color-alto: #dddddd;
+$color-gallery: #eeeeee;
+$color-whitesmoke: #f1f1f1;
+$color-text-main: $color-cod-gray;
+$color-background-hr: $color-silver;
+$color-border-abbr: $color-dove-gray;
+$color-border-input: $color-silver;
+$color-text-input: $color-dove-gray;
+$color-text-input-focus: $color-cod-gray;
