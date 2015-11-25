@@ -84,8 +84,8 @@ module.exports = function(grunt) {
 		 */
 		sass: {
 			options: {
-				lineNumbers: true,
 				outputStyle: 'expanded',
+				sourceComments: true,
 				sourceMap: true,
 				includePaths: [
 					'bower_components/bourbon/app/assets/stylesheets',
@@ -125,7 +125,6 @@ module.exports = function(grunt) {
 			options: {
 				autoprefixer: false,
 				safe: true,
-				sourcemap: false,
 			},
 			dist: {
 				files: {
@@ -160,7 +159,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'js/',
-					src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
+					src: ['**/*.js', '!**/*.min.js', '!concat/*.js', '!customizer.js'],
 					dest: 'js/',
 					ext: '.min.js'
 				}]
