@@ -1,18 +1,28 @@
 module.exports = function(grunt) {
 
-	// load all grunt tasks in package.json matching the `grunt-*` pattern
+	// Load all grunt tasks in package.json matching the `grunt-*` pattern.
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		/**
+		 * Bind Grunt tasks to Git hooks.
+		 *
+		 * @link https://github.com/wecodemore/grunt-githooks
+		 */
 		githooks: {
 			all: {
 				'pre-commit': 'default'
 			}
 		},
 
+		/**
+		 * Convert a set of images into a spritesheet and corresponding CSS variables.
+		 *
+		 * @link https://github.com/Ensighten/grunt-spritesmith
+		 */
 		sprite: {
 			all: {
 				'src': 'images/sprites/*.png',
@@ -23,9 +33,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Minify SVGs using SVGO.
+		 *
+		 * @link https://github.com/sindresorhus/grunt-svgmin
+		 */
 		svgmin: {
 			options: {
-				plugins: [ // https://github.com/svg/svgo/tree/master/plugins
+				plugins: [
 					{ removeComments: true },
 					{ removeTitle: true },
 					{ removeUselessStrokeAndFill: true },
@@ -42,6 +57,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Merge SVGs into a single SVG.
+		 *
+		 * @link https://github.com/FWeinb/grunt-svgstore
+		 */
 		svgstore: {
 			options: {
 				prefix: 'icon-',
@@ -57,10 +77,16 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Compile Sass into CSS using node-sass.
+		 *
+		 * @link https://github.com/sindresorhus/grunt-sass
+		 */
 		sass: {
 			options: {
-				sourceMap: true,
+				lineNumbers: true,
 				outputStyle: 'expanded',
+				sourceMap: true,
 				includePaths: [
 					'bower_components/bourbon/app/assets/stylesheets',
 					'bower_components/neat/app/assets/stylesheets'
@@ -73,6 +99,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Apply several post-processors to CSS using PostCSS.
+		 *
+		 * @link https://github.com/nDmitry/grunt-postcss
+		 */
 		postcss: {
 			options: {
 				map: true,
@@ -81,10 +112,15 @@ module.exports = function(grunt) {
 					require('css-mqpacker')({ sort: true }),
 			]},
 			dist: {
-				src: 'style.css'
+				src: ['style.css', '!*.min.js']
 			}
 		},
 
+		/**
+		 * A modular minifier, built on top of the PostCSS ecosystem.
+		 *
+		 * @link https://github.com/ben-eb/cssnano
+		 */
 		cssnano: {
 			options: {
 				autoprefixer: false,
@@ -98,6 +134,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Concatenate files.
+		 *
+		 * @link https://github.com/gruntjs/grunt-contrib-concat
+		 */
 		concat: {
 			dist: {
 				src: ['js/concat/*.js'],
@@ -105,9 +146,15 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Minify files with UglifyJS.
+		 *
+		 * @link https://github.com/gruntjs/grunt-contrib-uglify
+		 */
 		uglify: {
 			build: {
 				options: {
+					sourceMap: true,
 					mangle: false
 				},
 				files: [{
@@ -120,6 +167,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Minify PNG, JPG, and GIF images.
+		 *
+		 * @link https://github.com/gruntjs/grunt-contrib-imagemin
+		 */
 		imagemin: {
 			dynamic: {
 				files: [{
@@ -131,6 +183,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Run tasks whenever watched files change.
+		 *
+		 * @link https://github.com/gruntjs/grunt-contrib-watch
+		 */
 		watch: {
 
 			scripts: {
@@ -168,18 +225,42 @@ module.exports = function(grunt) {
 					livereload: true,
 				},
 			},
+
+			images: {
+				files: ['images/*'],
+				tasks: ['imageminnewer'],
+				options: {
+					spawn: false,
+					livereload: true,
+				},
+			},
 		},
 
+		/**
+		 * Run shell commands.
+		 *
+		 * @link https://github.com/sindresorhus/grunt-shell
+		 */
 		shell: {
 			grunt: {
 				command: '',
 			}
 		},
 
+		/**
+		 * Clear files and folders.
+		 *
+		 * @link https://github.com/gruntjs/grunt-contrib-clean
+		 */
 		clean: {
 			js: ['js/project*', 'js/**/*.min.js']
 		},
 
+		/**
+		 * Internationalize WordPress themes and plugins.
+		 *
+		 * @link https://github.com/claudiosmweb/grunt-wp-i18n
+		 */
 		makepot: {
 			theme: {
 				options: {
@@ -191,19 +272,11 @@ module.exports = function(grunt) {
 			}
 		},
 
-		addtextdomain: {
-			theme: {
-				options: {
-					textdomain: '_s'
-				},
-				target: {
-					files: {
-						src: ['*.php']
-					}
-				}
-			},
-		},
-
+		/**
+		 * Grunt plugin for running PHP Code Sniffer.
+		 *
+		 * @link https://github.com/SaschaGalley/grunt-phpcs
+		 */
 		phpcs: {
 			application: {
 				dir: [
@@ -217,6 +290,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Create theme Sass documentation.
+		 *
+		 * @link https://github.com/SassDoc/grunt-sassdoc
+		 */
 		sassdoc: {
 			default: {
 				src: [
@@ -240,25 +318,30 @@ module.exports = function(grunt) {
 			},
 		},
 
+		/**
+		 * Automatic Notifications when Grunt tasks fail.
+		 *
+		 * @link https://github.com/dylang/grunt-notify
+		 */
 		notify_hooks: {
 			options: {
 				enabled: true,
-				max_jshint_notifications: 5, // Limit the # of js-hint notifications (there can be many).
-				title: "wd_s", // Don't use package.json, since it's _s at the moment.
-				success: false, // Don't show success notifications.
-				duration: 2, // How long the notification shows.
+				max_jshint_notifications: 5,
+				title: "wd_s",
+				success: false,
+				duration: 2,
 			}
 		},
-
 	});
 
+	// Register Grunt tasks.
 	grunt.registerTask('styles', ['sass', 'postcss', 'cssnano']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
 	grunt.registerTask('icons', ['svgmin', 'svgstore']);
 	grunt.registerTask('i18n', ['makepot']);
-	grunt.registerTask('default', ['styles', 'javascript', 'imageminnewer', 'icons', 'i18n', 'sassdoc']);
+	grunt.registerTask('default', ['styles', 'javascript', 'sprites', 'imageminnewer', 'icons', 'i18n', 'sassdoc']);
 
 	// grunt-notify shows native notifications on errors.
 	grunt.loadNpmTasks('grunt-notify');
