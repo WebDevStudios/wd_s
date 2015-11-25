@@ -157,7 +157,6 @@ figure {
 
 /* line 294, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -244,8 +243,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -683,6 +680,19 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
+/* line 6, /Applications/MAMP/htdocs/wd_s/sass/base/_window-ready.scss */
+.not-ready {
+  opacity: 0;
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+
+/* line 12, /Applications/MAMP/htdocs/wd_s/sass/base/_window-ready.scss */
+body.ready .not-ready {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* line 7, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .wrap {
   max-width: 85.375em;
@@ -698,13 +708,6 @@ The `sprites` mixin generates identical output to the CSS template
   display: table;
 }
 
-@media screen and (min-width: 85.375rem) {
-  /* line 7, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
-  .wrap {
-    padding: 0;
-  }
-}
-
 /* line 17, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .site-header,
 .site-footer {
@@ -716,49 +719,14 @@ The `sprites` mixin generates identical output to the CSS template
   margin: 1.25rem auto;
 }
 
-@media screen and (min-width: 85.375rem) {
-  /* line 22, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
-  .site-content {
-    margin: 2.5rem auto 3.75rem;
-  }
-}
-
 /* line 30, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .primary {
   width: 100%;
 }
 
-@media screen and (min-width: 64rem) and (max-width: 105rem) {
-  /* line 30, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
-  .primary {
-    float: left;
-    display: block;
-    margin-right: 0.7429420505%;
-    width: 66.4190193165%;
-  }
-  /* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
-  .primary:last-child {
-    margin-right: 0;
-  }
-}
-
 /* line 38, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .secondary {
   width: 100%;
-}
-
-@media screen and (min-width: 64rem) {
-  /* line 38, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
-  .secondary {
-    float: left;
-    display: block;
-    margin-right: 0.7429420505%;
-    width: 32.838038633%;
-  }
-  /* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
-  .secondary:last-child {
-    margin-right: 0;
-  }
 }
 
 /* line 5, /Applications/MAMP/htdocs/wd_s/sass/modules/_header.scss */
@@ -896,13 +864,6 @@ a:hover, a:focus, a:active {
   display: none;
 }
 
-@media screen and (min-width: 40rem) {
-  /* line 131, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
-  .main-navigation ul {
-    display: block;
-  }
-}
-
 /* line 139, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .main-navigation.toggled ul {
   display: block;
@@ -911,13 +872,6 @@ a:hover, a:focus, a:active {
 /* line 145, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu-toggle {
   display: block;
-}
-
-@media screen and (min-width: 40rem) {
-  /* line 145, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
-  .menu-toggle {
-    display: none;
-  }
 }
 
 /* line 157, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
@@ -1151,14 +1105,6 @@ textarea {
   text-align: center;
 }
 
-@media screen and (min-width: 64rem) {
-  /* line 6, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
-  .social-icons {
-    float: left;
-    text-align: left;
-  }
-}
-
 /* line 18, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon {
   display: inline-block;
@@ -1377,4 +1323,49 @@ textarea {
   display: none;
 }
 
+@media screen and (min-width: 40rem) {/* line 131, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+  .main-navigation ul {
+    display: block;
+  }/* line 145, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 64rem) and (max-width: 105rem) {/* line 30, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .primary {
+    float: left;
+    display: block;
+    margin-right: 0.7429420505%;
+    width: 66.4190193165%;
+  }/* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+  .primary:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 64rem) {/* line 38, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .secondary {
+    float: left;
+    display: block;
+    margin-right: 0.7429420505%;
+    width: 32.838038633%;
+  }/* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+  .secondary:last-child {
+    margin-right: 0;
+  }/* line 6, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+  .social-icons {
+    float: left;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 85.375rem) {/* line 7, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .wrap {
+    padding: 0;
+  }/* line 22, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .site-content {
+    margin: 2.5rem auto 3.75rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
