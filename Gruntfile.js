@@ -42,7 +42,6 @@ module.exports = function(grunt) {
 			options: {
 				plugins: [
 					{ removeComments: true },
-					{ removeTitle: true },
 					{ removeUselessStrokeAndFill: true },
 					{ removeEmptyAttrs: true }
 				]
