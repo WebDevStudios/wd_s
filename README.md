@@ -8,8 +8,8 @@ wd_s
 * Sass
 * PostCSS
 * SassDocs
-* Bourbon
-* Neat
+* [Bourbon](http://bourbon.io/)
+* [Neat](http://neat.bourbon.io/)
 * Bower
 * Live reload
 * WDS Simple Page Builder support
