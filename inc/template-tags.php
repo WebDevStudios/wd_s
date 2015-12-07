@@ -124,8 +124,14 @@ add_action( 'save_post',     '_s_category_transient_flusher' );
 /**
  * Return SVG markup.
  *
- * @param  array   $args  Paramenters needed to display an SVG.
- * @return string         SVG markup.
+ * @param  array  $args {
+ *     Paramenters needed to display an SVG.
+ *
+ *     @param string $icon Required. Use the icon filename, e.g. "facebook-square".
+ *     @param string $title Optional. SVG title, e.g. "Facebook".
+ *     @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
+ * }
+ * @return string SVG markup.
  */
 function _s_get_svg( $args = array() ) {
 
@@ -141,9 +147,9 @@ function _s_get_svg( $args = array() ) {
 
 	// Set up defaults.
 	$defaults = array(
-		'icon'  => '', // Required. Use the icon filename, "facebook-square".
-		'title' => '', // Optional. SVG title, "Facebook".
-		'desc'  => ''  // Optional. SVG description, "Share this post on Facebook".
+		'icon'  => '',
+		'title' => '',
+		'desc'  => ''
 	);
 
 	// Finally, parse those args.
