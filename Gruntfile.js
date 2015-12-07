@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '',
-					src: ['images/svg/*.svg'],
+					src: ['images/svg-icons/*.svg'],
 					dest: ''
 				}]
 			}
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 			},
 			default: {
 				files: {
-					'images/svg-defs.svg': 'images/svg/*.svg',
+					'images/svg-defs.svg': 'images/svg-icons/*.svg',
 				}
 			}
 		},
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
 			},
 
 			svg: {
-				files: ['images/svg/*.svg'],
+				files: ['images/svg-icons/*.svg'],
 				tasks: ['svgstore'],
 				options: {
 					spawn: false,
