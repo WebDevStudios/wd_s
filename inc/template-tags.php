@@ -113,7 +113,7 @@ function _s_categorized_blog() {
  */
 function _s_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
+		return false;
 	}
 	// Like, beat it. Dig?
 	delete_transient( '_s_categories' );
@@ -124,24 +124,56 @@ add_action( 'save_post',     '_s_category_transient_flusher' );
 /**
  * Return SVG markup.
  *
- * @param  string   $icon_name   Use the icon name, such as "facebook-square"
+ * @param  array   $args  Paramenters needed to display an SVG.
+ * @return string         SVG markup.
  */
-function _s_get_svg( $icon_name ) {
+function _s_get_svg( $args = array() ) {
 
-	$svg = '<svg class="icon icon-' . esc_html( $icon_name ) . '">';
-	$svg .= '	<use xlink:href="#icon-' . esc_html( $icon_name ) . '"></use>';
+	// Make sure $args are an array.
+	if ( empty( $args ) ) {
+		return esc_html__( 'Please define default parameters in the form of an array.', '_s' );
+	}
+
+	// YUNO define an icon?
+	if ( false === array_key_exists( 'icon', $args ) ) {
+		return esc_html__( 'Please define an SVG icon filename.', '_s' );
+	}
+
+	// Set up defaults.
+	$defaults = array(
+		'icon'  => '', // Required. Use the icon filename, "facebook-square".
+		'title' => '', // Optional. SVG title, "Facebook".
+		'desc'  => ''  // Optional. SVG description, "Share this post on Facebook".
+	);
+
+	// Finally, parse those args.
+	$args = wp_parse_args( $args, $defaults );
+
+	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '">';
+
+	// If there is a title, display it.
+	if ( $args['title'] ) {
+		$svg .= '	<title>' . esc_html( $args['title'] ) . '</title>';
+	}
+
+	// If there is a description, display it.
+	if ( $args['desc'] ) {
+		$svg .= '	<desc>' . esc_html( $args['desc'] ) . '</desc>';
+	}
+
+	$svg .= '	<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
 	$svg .= '</svg>';
 
 	return $svg;
 }
 
 /**
- * Echo SVG markup.
+ * Display an SVG.
  *
- * @param  string   $icon_name   Use the icon name, such as "facebook-square"
+ * @param  array  $args  Paramenters needed to display an SVG.
  */
-function _s_do_svg( $icon_name ) {
-	echo _s_get_svg( $icon_name );
+function _s_do_svg( $args = array() ) {
+	echo _s_get_svg( $args );
 }
 
 /**
@@ -163,7 +195,7 @@ function _s_get_the_excerpt( $num_words = 20, $more = '...' ) {
  */
 function _s_do_post_image( $size = 'thumbnail' ) {
 
-	// If featured image is present, use that
+	// If featured image is present, use that.
 	if ( has_post_thumbnail() ) {
 		return the_post_thumbnail( $size );
 	}
@@ -172,10 +204,10 @@ function _s_do_post_image( $size = 'thumbnail' ) {
 	$media = get_attached_media( 'image', get_the_ID() );
 	$media = current( $media );
 
-	// Set up default image path
+	// Set up default image path.
 	$media_url = get_stylesheet_directory_uri() . '/images/placeholder.png';
 
-	// If an image is present, then use it
+	// If an image is present, then use it.
 	if ( is_array( $media ) && 0 < count( $media ) ) {
 		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
 	}
@@ -191,7 +223,7 @@ function _s_do_post_image( $size = 'thumbnail' ) {
  */
 function _s_get_post_image_uri( $size = 'thumbnail' ) {
 
-	// If featured image is present, use that
+	// If featured image is present, use that.
 	if ( has_post_thumbnail() ) {
 
 		$featured_image_id = get_post_thumbnail_id( get_the_ID() );
@@ -202,14 +234,14 @@ function _s_get_post_image_uri( $size = 'thumbnail' ) {
 		}
 	}
 
-	// Check for any attached image
+	// Check for any attached image.
 	$media = get_attached_media( 'image', get_the_ID() );
 	$media = current( $media );
 
-	// Set up default image path
+	// Set up default image path.
 	$media_url = get_stylesheet_directory_uri() . '/images/placeholder.png';
 
-	// If an image is present, then use it
+	// If an image is present, then use it.
 	if ( is_array( $media ) && 0 < count( $media ) ) {
 		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
 	}
@@ -231,22 +263,22 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 
 	// If there is no url, return.
 	if ( '' == $attachment_url ) {
-		return;
+		return false;
 	}
 
-	// Get the upload directory paths
+	// Get the upload directory paths.
 	$upload_dir_paths = wp_upload_dir();
 
-	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
 	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
 
-		// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
 		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
 
-		// Remove the upload path base directory from the attachment URL
+		// Remove the upload path base directory from the attachment URL.
 		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
 
-		// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+		// Finally, run a custom database query to get the attachment ID from the modified attachment URL.
 		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
 
 	}
@@ -259,14 +291,14 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  */
 function _s_do_copyright_text() {
 
-	// Grab our customizer settings
+	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
 
-	// Stop if there's nothing to display
+	// Stop if there's nothing to display.
 	if ( ! $copyright_text ) {
-		return;
+		return false;
 	}
 
-	// Echo the text
+	// Echo the text.
 	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
 }

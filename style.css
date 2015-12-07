@@ -17,28 +17,30 @@ Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Normalizing styles have been helped along thanks to the fine work of
 Bo-Yi Wu (https://github.com/appleboy/), Nicolas Gallagher (https://github.com/necolas), and Jonathan Neal (https://github.com/jonathantneal).
 */
-
+/* line 4, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*,
-*::after,
-*::before {
-	box-sizing: inherit;
+/* line 9, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
 }
 
+/* line 21, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 html {
-	font-family: sans-serif;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 body {
-	background: #ffffff;
-	margin: 0;
+  background: #ffffff;
+  margin: 0;
 }
 
+/* line 45, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 article,
 aside,
 details,
@@ -52,797 +54,978 @@ menu,
 nav,
 section,
 summary {
-	display: block;
+  display: block;
 }
 
+/* line 64, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 audio,
 canvas,
 progress,
 video {
-	display: inline-block;
-	vertical-align: baseline;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
+/* line 79, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 audio:not([controls]) {
-	display: none;
-	height: 0;
+  display: none;
+  height: 0;
 }
 
+/* line 87, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 [hidden],
 template {
-	display: none;
+  display: none;
 }
 
+/* line 97, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 a {
-	background-color: transparent;
+  background-color: transparent;
 }
 
-a:active,
-a:hover {
-	outline: 0;
+/* line 104, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
+a:active, a:hover {
+  outline: 0;
 }
 
+/* line 114, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 abbr[title] {
-	border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
+/* line 120, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 b,
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
+/* line 133, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 dfn {
-	font-style: italic;
+  font-style: italic;
 }
 
+/* line 140, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
+/* line 174, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 mark {
-	background: #ff0;
-	color: #000;
+  background: #ff0;
+  color: #000;
 }
 
+/* line 205, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 small {
-	font-size: 80%;
+  font-size: 80%;
 }
 
+/* line 211, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
+/* line 219, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 
+/* line 223, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 
+/* line 270, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 img {
-	border: 0;
+  border: 0;
 }
 
+/* line 279, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 svg:not(:root) {
-	overflow: hidden;
+  overflow: hidden;
 }
 
+/* line 288, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 figure {
-	margin: 1em 40px;
+  margin: 1em 40px;
 }
 
+/* line 294, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 hr {
-	box-sizing: content-box;
-	height: 0;
+  box-sizing: content-box;
+  height: 0;
 }
 
+/* line 302, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 pre {
-	overflow: auto;
+  overflow: auto;
 }
 
+/* line 309, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 code,
 kbd,
 pre,
 samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
+/* line 332, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button,
 input,
 optgroup,
 select,
 textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
 }
 
+/* line 348, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button {
-	overflow: visible;
+  overflow: visible;
 }
 
+/* line 357, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button,
 select {
-	text-transform: none;
+  text-transform: none;
 }
 
+/* line 370, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 
+/* line 383, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button[disabled],
 html input[disabled] {
-	cursor: default;
+  cursor: default;
 }
 
+/* line 390, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
+/* line 399, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 input {
-	line-height: normal;
+  line-height: normal;
 }
 
+/* line 407, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box; /* 1 */
-	padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
+/* line 421, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
+  height: auto;
 }
 
+/* line 430, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 input[type="search"] {
-	-webkit-appearance: textfield; /* 1 */ /* 2 */
-	box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
 }
 
+/* line 441, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
+/* line 448, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
 }
 
+/* line 459, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 legend {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
+/* line 470, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 textarea {
-	overflow: auto;
+  overflow: auto;
 }
 
+/* line 477, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 optgroup {
-	font-weight: bold;
+  font-weight: bold;
 }
 
+/* line 486, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
+/* line 491, /Applications/MAMP/htdocs/wd_s/sass/base/_normalize.scss */
 td,
 th {
-	padding: 0;
+  padding: 0;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 body,
 button,
 input,
 select,
 textarea {
-	color: #111111;
-	font-family: "Open Sans", sans-serif;
-	line-height: 1.625;
+  color: #111111;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.625;
 }
 
+/* line 49, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 p {
-	margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 53, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 b,
 strong {
-	font-weight: 700;
+  font-weight: 700;
 }
 
+/* line 58, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 dfn,
 cite,
 em,
 i {
-	font-style: italic;
+  font-style: italic;
 }
 
+/* line 65, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 blockquote,
 q {
-	margin: 0 1.5rem;
-	quotes: "" "";
+  margin: 0 1.5rem;
+  quotes: "" "";
 }
 
-blockquote:before,
-blockquote:after,
+/* line 70, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
+blockquote:before, blockquote:after,
 q:before,
 q:after {
-	content: "";
+  content: "";
 }
 
+/* line 76, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 address {
-	margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 80, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 pre {
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 0.9375rem;
-	line-height: 1.625;
-	margin: 0 0 1.5rem;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.5rem;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 0.9375rem;
+  line-height: 1.625;
+  margin: 0 0 1.5rem;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.5rem;
 }
 
+/* line 90, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 0.9375rem;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 0.9375rem;
 }
 
+/* line 98, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 abbr,
 acronym {
-	border-bottom: 1px dotted #666666;
-	cursor: help;
+  border-bottom: 1px dotted #666666;
+  cursor: help;
 }
 
+/* line 104, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 mark,
 ins {
-	text-decoration: none;
+  text-decoration: none;
 }
 
+/* line 109, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 sup,
 sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
+/* line 118, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
 
+/* line 122, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 sub {
-	top: .5ex;
+  top: .5ex;
 }
 
+/* line 126, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 small {
-	font-size: 75%;
+  font-size: 75%;
 }
 
+/* line 130, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
 
+/* line 135, /Applications/MAMP/htdocs/wd_s/sass/base/_typography.scss */
 .entry-title,
 .entry-content,
 .comments-title,
 .comment-content,
 .widget-title,
 .widget {
-	word-wrap: break-word;
-	word-break: keep-all;
+  word-wrap: break-word;
+  word-break: keep-all;
 }
 
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/base/_accessibility.scss */
 .screen-reader-text {
-	height: auto;
-	width: 1px;
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute !important;
+  height: auto;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	height: auto;
-	width: auto;
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	left: 0.3125rem;
-	line-height: normal;
-	padding: 0.9375rem 1.4375rem 0.875rem;
-	text-decoration: none;
-	top: 0.3125rem;
-	z-index: 100000; /* Above WP toolbar */
+/* line 15, /Applications/MAMP/htdocs/wd_s/sass/base/_accessibility.scss */
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  height: auto;
+  width: auto;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  left: 0.3125rem;
+  line-height: normal;
+  padding: 0.9375rem 1.4375rem 0.875rem;
+  text-decoration: none;
+  top: 0.3125rem;
+  z-index: 100000;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/base/_alignments.scss */
 .alignleft {
-	display: inline;
-	float: left;
-	margin: 0 1.5rem 0 0;
+  display: inline;
+  float: left;
+  margin: 0 1.5rem 0 0;
 }
 
+/* line 11, /Applications/MAMP/htdocs/wd_s/sass/base/_alignments.scss */
 .alignright {
-	display: inline;
-	float: right;
-	margin: 0 0 0 1.5rem;
+  display: inline;
+  float: right;
+  margin: 0 0 0 1.5rem;
 }
 
+/* line 17, /Applications/MAMP/htdocs/wd_s/sass/base/_alignments.scss */
 .aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* line 20, /Applications/MAMP/htdocs/wd_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .clear::after,
 .entry-content::after,
 .comment-content::after,
 .site-header::after,
 .site-content::after,
 .site-footer::after {
-	clear: both;
-	content: "";
-	display: table;
+  clear: both;
+  content: "";
+  display: table;
 }
 
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 embed,
 iframe,
 object {
-	max-width: 100%;
+  max-width: 100%;
 }
 
+/* line 13, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 hr {
-	height: 1px;
-	width: auto;
-	background-color: #cccccc;
-	border: 0;
-	margin: 0 0 1.5rem 0;
+  height: 1px;
+  width: auto;
+  background-color: #cccccc;
+  border: 0;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 21, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 figure {
-	margin: 0;
+  margin: 0;
 }
 
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 ul,
 ol {
-	margin: 0 0 3rem 1.5rem;
+  margin: 0 0 3rem 1.5rem;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 ul {
-	list-style: disc;
+  list-style: disc;
 }
 
+/* line 36, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
+/* line 40, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 li > ul,
 li > ol {
-	margin: 0 0 0 1.5rem;
+  margin: 0 0 0 1.5rem;
 }
 
+/* line 45, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 dt {
-	font-weight: 700;
+  font-weight: 700;
 }
 
+/* line 49, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 dd {
-	margin: 0 1.5rem 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 0;
 }
 
+/* line 55, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 table {
-	height: auto;
-	width: 100%;
-	margin: 0 0 1.5rem 0;
+  height: auto;
+  width: 100%;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 61, /Applications/MAMP/htdocs/wd_s/sass/base/_elements.scss */
 th {
-	font-weight: 700;
+  font-weight: 700;
 }
 
+/* line 9, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
-	margin: 0;
-	padding: 0;
-	border: none;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
+/* line 18, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 img {
-	height: auto;
-	max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
+/* line 24, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption {
-	margin: 0 0 1.5rem 0;
-	max-width: 100%;
+  margin: 0 0 1.5rem 0;
+  max-width: 100%;
 }
 
+/* line 28, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
+/* line 34, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption.aligncenter {
-	margin: 0 auto 1.5rem auto;
+  margin: 0 auto 1.5rem auto;
 }
 
+/* line 39, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption.alignleft {
-	margin-right: 1.5rem;
+  margin-right: 1.5rem;
 }
 
+/* line 44, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption.alignright {
-	margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
+/* line 48, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption .wp-caption-text {
-	margin: 0.75rem 0;
+  margin: 0.75rem 0;
 }
 
+/* line 53, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .wp-caption-text {
-	text-align: center;
+  text-align: center;
 }
 
+/* line 59, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery {
-	margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 63, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-item {
-	height: auto;
-	width: 100%;
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
 }
 
+/* line 70, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-2 .gallery-item {
-	max-width: 50%;
+  max-width: 50%;
 }
 
+/* line 74, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+  max-width: 33.33%;
 }
 
+/* line 78, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-4 .gallery-item {
-	max-width: 25%;
+  max-width: 25%;
 }
 
+/* line 82, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-5 .gallery-item {
-	max-width: 20%;
+  max-width: 20%;
 }
 
+/* line 86, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+  max-width: 16.66%;
 }
 
+/* line 90, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+  max-width: 14.28%;
 }
 
+/* line 94, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
+  max-width: 12.5%;
 }
 
+/* line 98, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+  max-width: 11.11%;
 }
 
+/* line 103, /Applications/MAMP/htdocs/wd_s/sass/base/_media.scss */
 .gallery-caption {
-	display: block;
+  display: block;
 }
 
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/* line 6, /Applications/MAMP/htdocs/wd_s/sass/base/_window-ready.scss */
+.not-ready {
+  opacity: 0;
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+
+/* line 12, /Applications/MAMP/htdocs/wd_s/sass/base/_window-ready.scss */
+body.ready .not-ready {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .wrap {
-	max-width: 85.375em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0 1.25em;
+  max-width: 85.375em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.25em;
 }
 
+/* line 20, /Applications/MAMP/htdocs/wd_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .wrap::after {
-	clear: both;
-	content: "";
-	display: table;
+  clear: both;
+  content: "";
+  display: table;
 }
 
+/* line 17, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .site-header,
 .site-footer {
-	padding: 0 1.25em;
+  padding: 0 1.25em;
 }
 
+/* line 22, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .site-content {
-	margin: 1.25rem auto;
+  margin: 1.25rem auto;
 }
 
+/* line 30, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .primary {
-	width: 100%;
+  width: 100%;
 }
 
+/* line 38, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
 .secondary {
-	width: 100%;
+  width: 100%;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/modules/_header.scss */
 .site-title {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 
+/* line 9, /Applications/MAMP/htdocs/wd_s/sass/modules/_header.scss */
 .site-description {
-	font-size: 1.5rem;
-	margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 a {
-	color: #21759b;
+  color: #21759b;
 }
 
+/* line 10, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 a:visited {
-	color: #21759b;
+  color: #21759b;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #21759b;
+/* line 14, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+a:hover, a:focus, a:active {
+  color: #21759b;
 }
 
+/* line 23, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+/* line 20, /Applications/MAMP/htdocs/wd_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .menu::after {
-	clear: both;
-	content: "";
-	display: table;
+  clear: both;
+  content: "";
+  display: table;
 }
 
+/* line 26, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu li {
-	margin: 0 0.625rem 0 0;
+  margin: 0 0.625rem 0 0;
 }
 
+/* line 30, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+/* line 20, /Applications/MAMP/htdocs/wd_s/bower_components/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .menu ul::after {
-	clear: both;
-	content: "";
-	display: table;
+  clear: both;
+  content: "";
+  display: table;
 }
 
+/* line 36, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.menu-horizontal li {
-	display: inline-block;
+  display: inline-block;
 }
 
+/* line 43, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.menu-vertical li {
-	margin: 0;
+  margin: 0;
 }
 
+/* line 47, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.menu-vertical a {
-	padding: 0.625rem;
-	border-bottom: 1px solid #cccccc;
+  padding: 0.625rem;
+  border-bottom: 1px solid #cccccc;
 }
 
+/* line 56, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	left: -999em;
-	position: absolute;
-	top: 1.5em;
-	z-index: 99999;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  left: -999em;
+  position: absolute;
+  top: 1.5em;
+  z-index: 99999;
 }
 
+/* line 65, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown ul ul {
-	left: -999em;
-	top: 0;
+  left: -999em;
+  top: 0;
 }
 
+/* line 73, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown ul li:hover > ul,
 .menu.dropdown ul li.focus > ul {
-	left: 100%;
+  left: 100%;
 }
 
+/* line 80, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown ul a {
-	height: auto;
-	width: 12.5rem;
+  height: auto;
+  width: 12.5rem;
 }
 
+/* line 94, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown li:hover > ul,
 .menu.dropdown li.focus > ul {
-	left: auto;
+  left: auto;
 }
 
+/* line 100, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu.dropdown li {
-	float: left;
-	position: relative;
+  float: left;
+  position: relative;
 }
 
+/* line 111, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu a {
-	display: block;
-	text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
+/* line 123, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .main-navigation {
-	height: auto;
-	width: 100%;
-	clear: both;
-	display: block;
-	float: left;
+  height: auto;
+  width: 100%;
+  clear: both;
+  display: block;
+  float: left;
 }
 
+/* line 131, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .main-navigation ul {
-	display: none;
+  display: none;
 }
 
+/* line 139, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .main-navigation.toggled ul {
-	display: block;
+  display: block;
 }
 
+/* line 145, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .menu-toggle {
-	display: block;
+  display: block;
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+/* line 157, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5rem 0;
-	overflow: hidden;
+  margin: 0 0 1.5rem 0;
+  overflow: hidden;
 }
 
+/* line 162, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	height: auto;
-	width: 50%;
-	float: left;
+  height: auto;
+  width: 50%;
+  float: left;
 }
 
+/* line 168, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	height: auto;
-	width: 50%;
-	float: right;
-	text-align: right;
+  height: auto;
+  width: 50%;
+  float: right;
+  text-align: right;
 }
 
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .entry-title {
-	font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
+/* line 11, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .sticky {
-	display: block;
+  display: block;
 }
 
+/* line 15, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .hentry {
-	margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
+/* line 19, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .byline,
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
+/* line 24, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .single .byline,
 .group-blog .byline {
-	display: inline;
+  display: inline;
 }
 
+/* line 29, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5rem 0 0;
+  margin: 1.5rem 0 0;
 }
 
+/* line 35, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .page-links {
-	margin: 0 0 1.5rem 0;
-	clear: both;
+  margin: 0 0 1.5rem 0;
+  clear: both;
 }
 
+/* line 41, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .edit-link {
-	margin: 0 1.5rem;
+  margin: 0 1.5rem;
 }
 
+/* line 47, /Applications/MAMP/htdocs/wd_s/sass/modules/_content.scss */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-	display: none;
+  display: none;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 button,
 input,
 select,
 textarea {
-	font-size: 100%;
-	margin: 0;
-	vertical-align: baseline;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
 }
 
+/* line 14, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #666666;
-	border: none;
-	border-radius: 0;
-	color: #ffffff;
-	min-height: 1.9375rem;
-	vertical-align: top;
-	-webkit-appearance: none;
+  background-color: #666666;
+  border: none;
+  border-radius: 0;
+  color: #ffffff;
+  min-height: 1.9375rem;
+  vertical-align: top;
+  -webkit-appearance: none;
 }
 
+/* line 26, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: #333333;
+  background-color: #333333;
 }
 
-button:active,
-button:focus,
+/* line 30, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: #333333;
+  background-color: #333333;
 }
 
+/* line 36, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0;
+  padding: 0;
 }
 
+/* line 42, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="text"]::-ms-clear,
 input[type="search"]::-ms-clear {
-	display: none;
+  display: none;
 }
 
+/* line 47, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="search"] {
-	-webkit-appearance: textfield;
-	box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
 }
 
+/* line 51, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
+/* line 56, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
+/* line 62, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -851,13 +1034,14 @@ input[type="search"],
 input[type="tel"],
 input[type="number"],
 textarea {
-	color: #666666;
-	border: 1px solid #cccccc;
-	border-radius: 0;
-	line-height: 1.45;
-	-webkit-appearance: none;
+  color: #666666;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  line-height: 1.45;
+  -webkit-appearance: none;
 }
 
+/* line 76, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -866,289 +1050,322 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-	color: #111111;
+  color: #111111;
 }
 
+/* line 81, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 0.1875rem 0.3125rem;
+  padding: 0.1875rem 0.3125rem;
 }
 
+/* line 89, /Applications/MAMP/htdocs/wd_s/sass/modules/_forms.scss */
 textarea {
-	height: auto;
-	width: 100%;
-	overflow: auto;
-	padding: 0.375rem;
-	vertical-align: top;
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  padding: 0.375rem;
+  vertical-align: top;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/modules/_comments.scss */
 .comments-title {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
+/* line 9, /Applications/MAMP/htdocs/wd_s/sass/modules/_comments.scss */
 .comment-list {
-	list-style: none;
-	margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
+/* line 14, /Applications/MAMP/htdocs/wd_s/sass/modules/_comments.scss */
 .comment-meta {
-	margin: 0 0 0.875rem 0;
+  margin: 0 0 0.875rem 0;
 }
 
+/* line 18, /Applications/MAMP/htdocs/wd_s/sass/modules/_comments.scss */
 .avatar {
-	margin: 0 0.625rem 0 0;
-	float: left;
+  margin: 0 0.625rem 0 0;
+  float: left;
 }
 
+/* line 24, /Applications/MAMP/htdocs/wd_s/sass/modules/_comments.scss */
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
+/* line 6, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons {
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
+/* line 18, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon {
-	display: inline-block;
-	margin-right: 0.75rem;
-	vertical-align: top;
+  display: inline-block;
+  margin-right: 0.75rem;
+  vertical-align: top;
 }
 
-.social-icons .social-icon .icon-rss {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-rss:hover {
-	fill: #ff9900;
-}
-
-.social-icons .social-icon .icon-rss-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-rss-square:hover {
-	fill: #ff9900;
-}
-
-.social-icons .social-icon .icon-twitter {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-twitter:hover {
-	fill: #00aced;
-}
-
-.social-icons .social-icon .icon-twitter-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-twitter-square:hover {
-	fill: #00aced;
-}
-
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-facebook {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-facebook:hover {
-	fill: #3b5998;
+  fill: #3b5998;
 }
 
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-facebook-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-facebook-square:hover {
-	fill: #3b5998;
+  fill: #3b5998;
 }
 
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-googleplus {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-googleplus:hover {
-	fill: #dd4b39;
+  fill: #dd4b39;
 }
 
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-googleplus-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-googleplus-square:hover {
-	fill: #dd4b39;
+  fill: #dd4b39;
 }
 
-.social-icons .social-icon .icon-pinterest {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-pinterest:hover {
-	fill: #cb2027;
-}
-
-.social-icons .social-icon .icon-pinterest-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-pinterest-square:hover {
-	fill: #cb2027;
-}
-
-.social-icons .social-icon .icon-linkedin {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-linkedin:hover {
-	fill: #007bb6;
-}
-
-.social-icons .social-icon .icon-linkedin-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-linkedin-square:hover {
-	fill: #007bb6;
-}
-
-.social-icons .social-icon .icon-youtube {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-youtube:hover {
-	fill: #bb0000;
-}
-
-.social-icons .social-icon .icon-youtube-square {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
-}
-
-.social-icons .social-icon .icon-youtube-square:hover {
-	fill: #bb0000;
-}
-
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-instagram {
-	height: 1.5rem;
-	width: 1.5rem;
-	fill: #ffffff;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
 }
 
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon .icon-instagram:hover {
-	fill: #517fa4;
+  fill: #517fa4;
 }
 
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-linkedin {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-linkedin:hover {
+  fill: #007bb6;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-linkedin-square {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-linkedin-square:hover {
+  fill: #007bb6;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-pinterest {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-pinterest:hover {
+  fill: #cb2027;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-pinterest-square {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-pinterest-square:hover {
+  fill: #cb2027;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-rss {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-rss:hover {
+  fill: #ff9900;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-rss-square {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-rss-square:hover {
+  fill: #ff9900;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-twitter {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-twitter:hover {
+  fill: #00aced;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-twitter-square {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-twitter-square:hover {
+  fill: #00aced;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-youtube {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-youtube:hover {
+  fill: #bb0000;
+}
+
+/* line 27, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-youtube-square {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: #ffffff;
+}
+
+/* line 32, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+.social-icons .social-icon .icon-youtube-square:hover {
+  fill: #bb0000;
+}
+
+/* line 39, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
 .social-icons .social-icon:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
+/* line 7, /Applications/MAMP/htdocs/wd_s/sass/plugins/_jetpack.scss */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	display: none;
+  display: none;
 }
 
+/* line 14, /Applications/MAMP/htdocs/wd_s/sass/plugins/_jetpack.scss */
 .infinity-end.neverending .site-footer {
-	display: block;
+  display: block;
 }
 
+/* line 5, /Applications/MAMP/htdocs/wd_s/sass/widgets/_widgets.scss */
 .widget {
-	margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
+/* line 9, /Applications/MAMP/htdocs/wd_s/sass/widgets/_widgets.scss */
 .widget select {
-	max-width: 100%;
+  max-width: 100%;
 }
 
+/* line 16, /Applications/MAMP/htdocs/wd_s/sass/widgets/_widgets.scss */
 .widget_search .search-submit {
-	display: none;
+  display: none;
 }
 
+@media screen and (min-width: 40rem) {/* line 131, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+  .main-navigation ul {
+    display: block;
+  }/* line 145, /Applications/MAMP/htdocs/wd_s/sass/modules/_navigation.scss */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 64rem) and (max-width: 105rem) {/* line 30, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .primary {
+    float: left;
+    display: block;
+    margin-right: 0.7429420505%;
+    width: 66.4190193165%;
+  }/* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+  .primary:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 64rem) {/* line 38, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .secondary {
+    float: left;
+    display: block;
+    margin-right: 0.7429420505%;
+    width: 32.838038633%;
+  }/* line 89, /Applications/MAMP/htdocs/wd_s/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
+  .secondary:last-child {
+    margin-right: 0;
+  }/* line 6, /Applications/MAMP/htdocs/wd_s/sass/modules/_icons.scss */
+  .social-icons {
+    float: left;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 85.375rem) {/* line 7, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .wrap {
+    padding: 0;
+  }/* line 22, /Applications/MAMP/htdocs/wd_s/sass/structure/_layout.scss */
+  .site-content {
+    margin: 2.5rem auto 3.75rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
-
-@media (min-width: 40em) {
-
-.main-navigation ul {
-	display: block;
-}
-
-.menu-toggle {
-	display: none;
-}
-
-}
-
-@media (min-width: 64em) {
-
-.primary {
-	float: left;
-	display: block;
-	margin-right: 0.7429420505%;
-	width: 66.4190193165%;
-}
-
-.primary:last-child {
-	margin-right: 0;
-}
-
-.secondary {
-	float: left;
-	display: block;
-	margin-right: 0.7429420505%;
-	width: 32.838038633%;
-	margin-right: 0;
-}
-
-.secondary:last-child {
-	margin-right: 0;
-}
-
-.social-icons {
-	float: left;
-	text-align: left;
-}
-
-}
-
-@media (min-width: 85.375em) {
-
-.wrap {
-	padding: 0;
-}
-
-.site-content {
-	margin: 2.5rem auto 3.75rem;
-}
-
-}
-

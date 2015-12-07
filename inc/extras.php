@@ -37,6 +37,9 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
+	$classes[] = 'no-js';
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );

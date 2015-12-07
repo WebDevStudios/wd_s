@@ -12,11 +12,10 @@
   },
   "devDependencies": {
     "autoprefixer": "latest",
+    "css-mqpacker": "latest",
     "glob": "latest",
     "grunt": "latest",
-    "grunt-combine-media-queries": "latest",
     "grunt-contrib-concat": "latest",
-    "grunt-contrib-connect": "latest",
     "grunt-contrib-imagemin": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
