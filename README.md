@@ -13,7 +13,7 @@ wd_s
 * Bower
 * Live reload
 * WDS Simple Page Builder support
-* [SVG support](images/svg/README.md)
+* [SVG support](images/svg-icons/README.md)
 * Image sprite support
 * Script linting and CSS minifcation
 
