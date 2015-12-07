@@ -9,7 +9,21 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
 
 ### Inline SVG helper functions
 
-[`_s_get_svg( $icon_name ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125) 
+[`_s_get_svg( $args = array() ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125) 
+```
+/**
+ * Return SVG markup.
+ *
+ * @param  array  $args {
+ *     Paramenters needed to display an SVG.
+ *
+ *     @param string $icon Required. Use the icon filename, e.g. "facebook-square".
+ *     @param string $title Optional. SVG title, e.g. "Facebook".
+ *     @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
+ * }
+ * @return string SVG markup.
+ */
+```
 
 Example usage:
 `<?php echo _s_get_svg( 'twitter'); ?>`
