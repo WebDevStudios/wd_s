@@ -71,6 +71,7 @@ textarea {
 	border: 1px solid $color-border-input;
 	border-radius: 0;
 	line-height: 1.45;
+	padding: rem(3) rem(5);
 	-webkit-appearance: none; // Remove iOS styles
 
 	&:focus {
@@ -78,18 +79,9 @@ textarea {
 	}
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: rem(3) rem(5);
-}
-
 textarea {
 	@include size(100% auto);
 
 	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
-	padding: rem(6);
 	vertical-align: top; // Improves readability and alignment in all browsers
 }
