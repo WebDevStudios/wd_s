@@ -1,0 +1,44 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------
+
+// Structure
+
+.wrap {
+	@include outer-container;
+
+	padding: 0 2*$gutter;
+
+	@include media($desktop) {
+		padding: 0;
+	}
+}
+
+.site-header,
+.site-footer {
+	padding: 0 2*$gutter;
+}
+
+.site-content {
+	margin: rem(20) auto;
+
+	@include media($desktop) {
+		margin: rem(40) auto rem(60);
+	}
+}
+
+.primary {
+	@include fill-parent;
+
+	@include media($tablet-landscape) {
+		@include span-columns(8);
+	}
+}
+
+.secondary {
+	@include fill-parent;
+
+	@include media($tablet-landscape) {
+		@include span-columns(4);
+	}
+}

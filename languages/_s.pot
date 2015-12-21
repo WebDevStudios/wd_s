@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-11-25 18:46:29+00:00\n"
+"POT-Creation-Date: 2015-12-21 14:59:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,6 +130,14 @@ msgstr ""
 #: inc/template-tags.php:71
 #. translators: %s: Name of current post
 msgid "Edit %s"
+msgstr ""
+
+#: inc/template-tags.php:140
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "Please define an SVG icon filename."
 msgstr ""
 
 #: search.php:21
