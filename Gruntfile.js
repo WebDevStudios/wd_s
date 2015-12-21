@@ -25,10 +25,10 @@ module.exports = function(grunt) {
 		 */
 		sprite: {
 			all: {
-				'src': 'images/sprites/*.png',
-				'dest': 'images/sprites.png',
-				'destCss': 'sass/base/_sprites.scss',
-				'imgPath': 'images/sprites.png',
+				'src': 'assets/images/sprites/*.png',
+				'dest': 'assets/images/sprites.png',
+				'destCss': 'assets/sass/base/_sprites.scss',
+				'imgPath': 'assets/images/sprites.png',
 				'algorithm': 'binary-tree',
 			}
 		},
@@ -49,9 +49,9 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '',
-					src: ['images/svg-icons/*.svg'],
-					dest: ''
+					cwd: 'assets/images/svg-icons/',
+					src: ['*.svg'],
+					dest: 'assets/images/svg-icons/'
 				}]
 			}
 		},
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 			},
 			default: {
 				files: {
-					'images/svg-defs.svg': 'images/svg-icons/*.svg',
+					'assets/images/svg-defs.svg': 'assets/images/svg-icons/*.svg',
 				}
 			}
 		},
@@ -87,13 +87,13 @@ module.exports = function(grunt) {
 				sourceComments: true,
 				sourceMap: true,
 				includePaths: [
-					'bower_components/bourbon/app/assets/stylesheets',
-					'bower_components/neat/app/assets/stylesheets'
+					'assets/bower_components/bourbon/app/assets/stylesheets',
+					'assets/bower_components/neat/app/assets/stylesheets'
 				]
 			},
 			dist: {
 				files: {
-					'style.css': 'sass/style.scss'
+					'style.css': 'assets/sass/style.scss'
 				}
 			}
 		},
@@ -139,8 +139,8 @@ module.exports = function(grunt) {
 		 */
 		concat: {
 			dist: {
-				src: ['js/concat/*.js'],
-				dest: 'js/project.js',
+				src: ['assets/js/concat/*.js'],
+				dest: 'assets/js/project.js',
 			}
 		},
 
@@ -157,9 +157,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: 'js/',
+					cwd: 'assets/js/',
 					src: ['**/*.js', '!**/*.min.js', '!concat/*.js', '!customizer.js'],
-					dest: 'js/',
+					dest: 'assets/js/',
 					ext: '.min.js'
 				}]
 			}
@@ -174,9 +174,9 @@ module.exports = function(grunt) {
 			dynamic: {
 				files: [{
 					expand: true,
-					cwd: 'images/',
+					cwd: 'assets/images/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'images/'
+					dest: 'assets/images/'
 				}]
 			}
 		},
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
 		watch: {
 
 			scripts: {
-				files: ['js/**/*.js'],
+				files: ['assets/js/**/*.js'],
 				tasks: ['javascript'],
 				options: {
 					spawn: false,
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 			},
 
 			css: {
-				files: ['sass/**/*.scss'],
+				files: ['assets/sass/**/*.scss'],
 				tasks: ['styles'],
 				options: {
 					spawn: false,
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 			},
 
 			sprite: {
-				files: ['images/sprites/*.png'],
+				files: ['assets/images/sprites/*.png'],
 				tasks: ['sprite', 'styles'],
 				options: {
 					spawn: false,
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
 			},
 
 			svg: {
-				files: ['images/svg-icons/*.svg'],
+				files: ['assets/images/svg-icons/*.svg'],
 				tasks: ['svgstore'],
 				options: {
 					spawn: false,
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
 			},
 
 			images: {
-				files: ['images/*'],
+				files: ['assets/images/*'],
 				tasks: ['imageminnewer'],
 				options: {
 					spawn: false,
@@ -251,7 +251,7 @@ module.exports = function(grunt) {
 		 * @link https://github.com/gruntjs/grunt-contrib-clean
 		 */
 		clean: {
-			js: ['js/project*', 'js/**/*.min.js']
+			js: ['assets/js/project*', 'assets/js/**/*.min.js']
 		},
 
 		/**
@@ -297,8 +297,8 @@ module.exports = function(grunt) {
 			default: {
 				src: [
 					'sass/**/*.scss',
-					'bower_components/bourbon/app/assets/stylesheets',
-					'bower_components/neat/app/assets/stylesheets'
+					'assets/bower_components/bourbon/app/assets/stylesheets',
+					'assets/bower_components/neat/app/assets/stylesheets'
 				],
 				options: {
 					dest: './sassdoc/',
