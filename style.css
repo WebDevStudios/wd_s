@@ -740,22 +740,62 @@ body.ready .not-ready {
   margin: 0 0 1.5rem 0;
 }
 
-/* line 7, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 6, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 a {
   color: #21759b;
 }
 
-/* line 10, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 9, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 a:visited {
   color: #21759b;
 }
 
-/* line 14, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 13, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 a:hover, a:focus, a:active {
   color: #21759b;
 }
 
-/* line 23, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 21, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.menu-toggle {
+  display: block;
+}
+
+/* line 24, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.menu-toggle .icon {
+  height: 0.875rem;
+  width: 0.75rem;
+  display: inline-block;
+  fill: #ffffff;
+  margin-right: 0.3125rem;
+  vertical-align: middle;
+}
+
+/* line 33, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.menu-toggle .menu-toggle-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 44, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.main-navigation {
+  height: auto;
+  width: 100%;
+  clear: both;
+  display: block;
+  float: left;
+}
+
+/* line 52, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.main-navigation ul {
+  display: none;
+}
+
+/* line 60, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+.main-navigation.toggled ul {
+  display: block;
+}
+
+/* line 66, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu {
   margin: 0;
   padding: 0;
@@ -769,12 +809,12 @@ a:hover, a:focus, a:active {
   display: table;
 }
 
-/* line 26, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 69, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu li {
   margin: 0 0.625rem 0 0;
 }
 
-/* line 30, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 73, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu ul {
   margin: 0;
   padding: 0;
@@ -788,23 +828,23 @@ a:hover, a:focus, a:active {
   display: table;
 }
 
-/* line 36, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 79, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.menu-horizontal li {
   display: inline-block;
 }
 
-/* line 43, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 86, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.menu-vertical li {
   margin: 0;
 }
 
-/* line 47, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 90, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.menu-vertical a {
   padding: 0.625rem;
   border-bottom: 1px solid #cccccc;
 }
 
-/* line 56, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 99, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -814,67 +854,43 @@ a:hover, a:focus, a:active {
   z-index: 99999;
 }
 
-/* line 65, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 108, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown ul ul {
   left: -999em;
   top: 0;
 }
 
-/* line 73, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 116, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown ul li:hover > ul,
 .menu.dropdown ul li.focus > ul {
   left: 100%;
 }
 
-/* line 80, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 123, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown ul a {
   height: auto;
   width: 12.5rem;
 }
 
-/* line 94, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 137, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown li:hover > ul,
 .menu.dropdown li.focus > ul {
   left: auto;
 }
 
-/* line 100, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 143, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu.dropdown li {
   float: left;
   position: relative;
 }
 
-/* line 111, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 154, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .menu a {
   display: block;
   text-decoration: none;
 }
 
-/* line 123, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
-.main-navigation {
-  height: auto;
-  width: 100%;
-  clear: both;
-  display: block;
-  float: left;
-}
-
-/* line 131, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
-.main-navigation ul {
-  display: none;
-}
-
-/* line 139, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
-.main-navigation.toggled ul {
-  display: block;
-}
-
-/* line 145, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
-.menu-toggle {
-  display: block;
-}
-
-/* line 157, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 170, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -882,7 +898,7 @@ a:hover, a:focus, a:active {
   overflow: hidden;
 }
 
-/* line 162, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 175, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -891,7 +907,7 @@ a:hover, a:focus, a:active {
   float: left;
 }
 
-/* line 168, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+/* line 181, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -1314,12 +1330,12 @@ textarea {
   display: none;
 }
 
-@media screen and (min-width: 40rem) {/* line 131, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
-  .main-navigation ul {
-    display: block;
-  }/* line 145, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+@media screen and (min-width: 40rem) {/* line 21, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
   .menu-toggle {
     display: none;
+  }/* line 52, /Applications/MAMP/htdocs/wd_s/assets/sass/modules/_navigation.scss */
+  .main-navigation ul {
+    display: block;
   }
 }
 
