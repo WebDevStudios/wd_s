@@ -23,3 +23,13 @@ $visual-grid: false;        // true/false
 $visual-grid-color: pink;   // color of visual grid
 $visual-grid-index: front;  // front/back
 $visual-grid-opacity: 0.2;  // opacity of visual grid
+
+
+/// $variable: new-breakpoint( range of values, # of grid columns at the breakpoint )
+$mqs-phone-portrait: new-breakpoint(max-width rem($phone-portrait - 1) 2);
+$mqs-phone-landscape: new-breakpoint(min-width rem($phone-portrait) max-width rem($phone-landscape) 4);
+$mqs-tablet-portrait: new-breakpoint(min-width rem($phone-landscape + 1) max-width rem($tablet-portrait) 4);
+$mqs-tablet-landscape: new-breakpoint(min-width rem($tablet-portrait + 1) max-width rem($tablet-landscape) 8);
+$mqs-desktop: new-breakpoint(min-width rem($tablet-landscape + 1) max-width rem($desktop));
+$mqs-large-desktop: new-breakpoint(min-width rem($desktop + 1) max-width rem($large-desktop - 1));
+$mqs-xl-desktop: new-breakpoint(min-width rem($large-desktop));
