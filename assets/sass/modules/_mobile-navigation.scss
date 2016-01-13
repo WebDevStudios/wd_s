@@ -29,6 +29,7 @@
 
 	&.more {
 		background-color: rgba($color-black, .7);
+		padding-top: rem(25);
 	}
 
 	// Adjust padding for admin bar
@@ -150,7 +151,10 @@
 
 	ul {
 		box-shadow: none;
-		top: 0;
+
+		.mobile-menu-more:not(.sub-menu-more) & {
+			top: 0;
+		}
 	}
 }
 
@@ -217,8 +221,11 @@
 			display: block;
 			left: 0;
 			position: fixed;
-			top: 0;
 			z-index: -1;
+
+			.admin-bar & {
+				padding-top: rem(15);
+			}
 		}
 
 		.sub-menu .sub-menu {
