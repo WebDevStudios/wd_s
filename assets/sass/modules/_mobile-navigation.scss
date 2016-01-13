@@ -22,10 +22,13 @@
 	// when the "More" items are displayed
 	&.more,
 	.sub-menu {
-		background-color: rgba($color-black, .7);
 		position: fixed;
 		transition: all 0.5s ease;
 		width: 100%;
+	}
+
+	&.more {
+		background-color: rgba($color-black, .7);
 	}
 
 	// Adjust padding for admin bar
@@ -134,13 +137,21 @@
 }
 
 // Style the more/fly-in menu
-.menu ul.mobile-nav-menu-more,
-.menu .sub-menu {
+.mobile-nav-menu .menu ul.mobile-nav-menu-more,
+.mobile-nav-menu .menu > .sub-menu {
 	background-color: $color-gray;
 	left: 0;
 	height: 100vh;
 	position: absolute;
 	top: 0;
+}
+
+.mobile-nav-menu .menu.dropdown {
+
+	ul {
+		box-shadow: none;
+		top: 0;
+	}
 }
 
 // Style the close button
@@ -203,12 +214,16 @@
 	.visible:active {
 
 		.sub-menu {
-			background-color: transparent;
 			display: block;
 			left: 0;
 			position: fixed;
 			top: 0;
 			z-index: -1;
+		}
+
+		.sub-menu .sub-menu {
+			padding-left: rem(10);
+			position: relative;
 		}
 	}
 
@@ -225,6 +240,20 @@
 		li {
 			display: block;
 			width: 100%;
+		}
+	}
+}
+
+// Always display the submenus of "More" items
+.mobile-nav-menu .dropdown {
+
+	> li:nth-child(n+6) {
+
+		.sub-menu {
+			display: block;
+			left: 0;
+			padding-left: rem(10);
+			position: relative;
 		}
 	}
 }
