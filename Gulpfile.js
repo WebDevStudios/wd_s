@@ -1,3 +1,4 @@
+// Require our dependencies
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
@@ -33,6 +34,7 @@ gulp.task('clean', function() {
 gulp.task('svgmin', function() {
 	return gulp.src(paths.icons)
 	.pipe(svgmin({ plugins: [
+		{ removeDoctype: true },
 		{ removeComments: true },
 		{ removeEmptyAttrs: true },
 		{ removeUselessStrokeAndFill: true }
@@ -43,7 +45,9 @@ gulp.task('svgmin', function() {
 // Concatenate icons in a single SVG sprite.
 gulp.task('icons', ['clean'], function() {
 	return gulp.src(paths.icons)
-	.pipe(svgstore())
+	.pipe(svgstore( { plugins: [
+		{ inlineSVG: true }
+	]}))
 	.pipe(gulp.dest('assets/images/'));
 });
 
@@ -60,7 +64,7 @@ gulp.task('sprites', ['clean'], function() {
 });
 
 // Compile Sass and create stylesheet.
-gulp.task('sass', ['clean'], function() {
+gulp.task('sass', function() {
 	return gulp.src('assets/sass/*.scss')
 	.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -74,12 +78,10 @@ gulp.task('sass', ['clean'], function() {
 // Minify stylesheet
 gulp.task('css', ['clean'], function() {
 	return gulp.src('style.css')
-	.pipe(sourcemaps.init())
 		.pipe(cssnano({
 			safe: true
 		}))
 		.pipe(rename('style.min.css'))
-	.pipe(sourcemaps.write('.'))
 	.pipe(gulp.dest('./'));
 });
 
@@ -105,9 +107,9 @@ gulp.task('images', function() {
 });
 
 // Reload browsers on file changes.
-gulp.task('browser-sync', function() {
+gulp.task('browsersync', function() {
 	browserSync.init({
-		proxy: "_s.dev"
+		proxy: "testing.dev"
 	});
 	gulp.watch(['*.css', 'assets/js/*.js', 'assets/images/*']).on('change', reload);
 });
