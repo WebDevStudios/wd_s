@@ -1,0 +1,230 @@
+//--------------------------------------------------------------
+// Mobile Navigation
+//--------------------------------------------------------------
+
+// Fix scrolling on the entire body
+// when the more menu is visible
+.mobile-menu-more {
+	overflow: hidden;
+}
+
+// Fix the menu to the bottom of the window
+.mobile-nav-menu {
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: all 0.5s ease;
+	width: 0;
+
+	// Add a background color to the menu
+	// when the "More" items are displayed
+	&.more,
+	.sub-menu {
+		background-color: rgba($color-black, .7);
+		position: fixed;
+		transition: all 0.5s ease;
+		width: 100%;
+	}
+
+	// Adjust padding for admin bar
+	.admin-bar & {
+		padding-top: rem(56);
+
+		@include media($wp-admin-bar) {
+			padding-top: rem(40);
+		}
+	}
+
+	li {
+		cursor: pointer;
+	}
+}
+
+// Remove margins from all menu items
+.mobile-nav-menu {
+
+	// Only target the parent menu
+	.menu {
+
+		// Only target top-level items
+		> li {
+			margin: 0;
+
+			a {
+				padding: 0 rem(10);
+			}
+		}
+	}
+}
+
+// Make sure the first four items are equal widths
+.mobile-nav-menu {
+
+	// Only target the parent menu
+	.menu {
+
+		// Only target top-level items
+		> li:nth-child(-n+5) {
+			background-color: $color-white;
+			border-top: 1px solid rgba($color-black, .1);
+			bottom: 0;
+			height: rem(64);
+			left: 0;
+			position: fixed;
+			text-align: center;
+			width: 20%;
+
+			> a {
+				@include vertical-align(middle);
+
+				font-size: rem(12);
+				line-height: 1.2;
+			}
+		}
+
+		// Loop through each LI and add
+		// 20% left positioning for each incremental LI
+		@for $item from 2 through 5 {
+
+			> li:nth-child(#{$item}){
+				left: 20% * ( $item - 1 );
+			}
+		}
+	}
+}
+
+// Hide anything more than the first four items
+.mobile-nav-menu {
+
+	// Only target the parent menu
+	.menu {
+
+		// Only target top-level items
+		> li:nth-child(n+6) {
+			display: none;
+		}
+	}
+}
+
+// Show the remaining menu items when the ".more" class is active
+.mobile-nav-menu.more {
+
+	// Only target the parent menu
+	.menu {
+
+		> li:nth-child(n+6) {
+			display: block;
+			left: 0;
+			position: relative;
+			top: 0;
+			width: 100%;
+
+			.sub-menu-more & {
+				display: none;
+			}
+
+			a {
+				color: $color-white;
+				padding: rem(10) rem(20);
+			}
+		}
+	}
+}
+
+// Style the more/fly-in menu
+.menu ul.mobile-nav-menu-more,
+.menu .sub-menu {
+	background-color: $color-gray;
+	left: 0;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+}
+
+// Style the close button
+.close-mobile-menu {
+	@include size(rem(32));
+
+	background-color: transparent;
+	display: none;
+	position: absolute;
+	right: rem(12);
+	top: rem(10);
+	z-index: 1;
+
+	.admin-bar & {
+		top: rem(56);
+
+		@include media($wp-admin-bar) {
+			top: rem(40);
+		}
+	}
+
+	// Get rid of that nasty hover state
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+
+		svg {
+			opacity: .6;
+			transition: all 0.5s ease;
+		}
+	}
+
+	// Only display when more items are visible
+	.more & {
+		display: block;
+	}
+
+	svg {
+		@include size(100%);
+
+		fill: $color-white;
+		transition: all 0.5s ease;
+	}
+}
+
+// Don't show the submenu when we hover the parent
+.mobile-nav-menu .dropdown {
+
+	.menu-item-has-children:hover {
+
+		.sub-menu {
+			display: none;
+		}
+	}
+
+	.visible,
+	.visible:hover,
+	.visible:focus,
+	.visible:active {
+
+		.sub-menu {
+			background-color: transparent;
+			display: block;
+			left: 0;
+			position: fixed;
+			top: 0;
+			z-index: -1;
+		}
+	}
+
+	.sub-menu {
+
+		a {
+			color: $color-white;
+			font-size: rem(16);
+			padding: rem(10) rem(20);
+			text-align: left;
+			width: 100%;
+		}
+
+		li {
+			display: block;
+			width: 100%;
+		}
+	}
+}

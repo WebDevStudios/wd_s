@@ -68,6 +68,9 @@ function _s_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Enqueue the mobile nav script. Just enqueue it everywhere for testing.
+	wp_enqueue_script( '_s-mobile-nav', get_template_directory_uri() . '/assets/js/mobile-nav-menu' . $suffix . '.js', array( 'jquery' ), $version, true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 

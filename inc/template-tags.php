@@ -308,3 +308,34 @@ function _s_do_copyright_text() {
 	// Echo the text.
 	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
 }
+
+/**
+ * Output the mobile navigation
+ */
+function _s_do_mobile_navigation_menu() {
+?>
+	<nav id="mobile-menu" class="mobile-nav-menu">
+		<button class="close-mobile-menu"><span class="screen-reader-text"><?php _e( 'Close menu', '_s' ); ?></span><?php _s_do_svg( array( 'icon' => 'close' ) ); ?></button>
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id'        => 'primary-menu',
+				'menu_class'     => 'menu dropdown'
+			) );
+		?>
+		<!-- <div class="menu-menu-1-container">
+			<ul id="primary-menu" class="menu dropdown">
+				<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="http://cmc.underscores/">Home</a></li>
+				<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page</a></li>
+				<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 2</a></li>
+				<li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 3</a></li>
+				<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 4</a></li>
+				<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 5</a></li>
+				<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 6</a></li>
+				<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 7</a></li>
+				<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="http://cmc.underscores/sample-page/">Sample Page 8</a></li>
+			</ul>
+		</div> -->
+	</nav>
+<?php
+}

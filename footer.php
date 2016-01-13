@@ -28,6 +28,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php _s_do_mobile_navigation_menu(); ?>
+
 <?php wp_footer(); ?>
 
 </body>
