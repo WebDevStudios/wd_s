@@ -11,13 +11,16 @@
     "url": "https://github.com/WebDevStudios/wd_s/issues/"
   },
   "devDependencies": {
+    "autoprefixer": "latest",
     "browser-sync": "latest",
+    "css-mqpacker": "latest",
     "del": "latest",
     "glob": "latest",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
     "gulp-imagemin": "latest",
+    "gulp-postcss": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
@@ -25,7 +28,9 @@
     "gulp-svgstore": "latest",
     "gulp-uglify": "latest",
     "gulp.spritesmith": "latest",
-    "node-neat": "latest"
+    "node-neat": "latest",
+    "require-dir": "latest",
+    "path": "latest"
   },
   "license": "GPL-2.0+"
 }

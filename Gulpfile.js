@@ -1,4 +1,6 @@
 // Require our dependencies
+var autoprefixer = require('autoprefixer');
+var mqpacker = require('css-mqpacker');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
@@ -6,6 +8,7 @@ var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var neat = require('node-neat').includePaths;
+var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
@@ -15,20 +18,15 @@ var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
 var uglify = require('gulp-uglify');
 
-
 // Set assets paths.
 var paths = {
+	css: ['./*.css', '!*.min.css'],
 	icons: 'assets/images/svg-icons/*.svg',
 	images: ['assets/images/*', '!assets/images/*.svg'],
 	scripts: 'assets/js/concat/*.js',
 	sprites: 'assets/images/sprites/*.png',
 	sass: 'assets/sass/**/*.scss'
 };
-
-// Clean files.
-gulp.task('clean', function() {
-	return del(['build']);
-});
 
 // Minify SVG files.
 gulp.task('svgmin', function() {
@@ -43,7 +41,7 @@ gulp.task('svgmin', function() {
 });
 
 // Concatenate icons in a single SVG sprite.
-gulp.task('icons', ['clean'], function() {
+gulp.task('icons', function() {
 	return gulp.src(paths.icons)
 	.pipe(svgstore( { plugins: [
 		{ inlineSVG: true }
@@ -52,7 +50,7 @@ gulp.task('icons', ['clean'], function() {
 });
 
 // Concatenate images into a single PNG sprite.
-gulp.task('sprites', ['clean'], function() {
+gulp.task('sprites', function() {
 	return gulp.src(paths.sprites)
 	.pipe(spritesmith({
 		imgName:   'sprites.png',
@@ -75,19 +73,53 @@ gulp.task('sass', function() {
 	.pipe(gulp.dest('./'));
 });
 
-// Minify stylesheet
-gulp.task('css', ['clean'], function() {
-	return gulp.src('style.css')
-		.pipe(cssnano({
-			safe: true
+// Compile Sass and run stylesheet through PostCSS.
+gulp.task('postcss', function() {
+	return gulp.src('assets/sass/*.scss', paths.css)
+
+	// Wrap tasks in a sourcemap.
+	.pipe(sourcemaps.init())
+
+		// Compile Sass using LibSass.
+		.pipe(sass({
+			includePaths: neat, // Include Bourbon & Neat
+			outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
 		}))
-		.pipe(rename('style.min.css'))
+
+		// Parse with PostCSS plugins.
+		.pipe(postcss([
+			autoprefixer({
+				browsers: ['last 2 version'] // Parse CSS and add vendor prefixes.
+			}),
+			mqpacker({
+				sort: true // Pack the same CSS media query rules into one rule.
+			}),
+		]))
+
+	// Create sourcemap.
+	.pipe(sourcemaps.write())
+
+	// Create style.css.
+	.pipe(gulp.dest('./'))
+});
+
+// Minify and optimize style.css.
+gulp.task('cssnano', function() {
+	return gulp.src('style.min.css')
+
+	.pipe(sourcemaps.init({
+		loadMaps: true // Use the existing sourcemap.
+	}))
+		.pipe(cssnano({
+			safe: true // Use safe optimizations
+		}))
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('./'));
 });
 
 // Concatenate and minify javascripts.
-gulp.task('scripts', ['clean'], function() {
-  return gulp.src(paths.scripts)
+gulp.task('scripts', function() {
+	return gulp.src(paths.scripts)
 	.pipe(sourcemaps.init())
 		.pipe(uglify({
 			mangle: false
@@ -99,7 +131,7 @@ gulp.task('scripts', ['clean'], function() {
 
 // Optimize images.
 gulp.task('images', function() {
-  return gulp.src(paths.images)
+	return gulp.src(paths.images)
 	.pipe(imagemin({
 		optimizationLevel: 5
 	}))
@@ -121,6 +153,9 @@ gulp.task('watch', function() {
 	gulp.watch(paths.sass, ['sass', 'css']);
 	gulp.watch(paths.scripts, ['scripts']);
 });
+
+// Deal with all the CSS tasks.
+gulp.task('styles', ['postcss', 'cssnano']);
 
 // Default "gulp" task.
 gulp.task('default', ['svgmin', 'icons', 'images', 'sprites', 'sass', 'css', 'scripts']);
