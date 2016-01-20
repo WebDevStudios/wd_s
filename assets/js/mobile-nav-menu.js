@@ -21,7 +21,7 @@ window.MobileNavMenu = {};
         that.$c = {
             window: $(window),
             mobileNavMenuContainer: $( '.mobile-nav-menu' ),
-            menuItemCount: $( '.mobile-nav-menu .menu > li' ).length
+            menuItemCount: $( '.mobile-nav-menu .mobile-nav > li' ).length
         };
     };
 
@@ -40,7 +40,7 @@ window.MobileNavMenu = {};
         $( 'body' ).on( 'click', '.mobile-menu-more-link', that.displayMoreItems );
 
         // Add the more classes when hovering a parent menu item
-        $( 'body' ).on( 'click', '.mobile-nav-menu .menu-item-has-children', that.setSecondClick );
+        $( 'body' ).on( 'click', '.mobile-nav-menu .menu-item-has-children a', that.setSecondClick );
 
         // Hide the menu when the close button is clicked
         $( 'body' ).on( 'click', '.close-mobile-menu', that.hideMoreItems );
@@ -56,7 +56,7 @@ window.MobileNavMenu = {};
 
     	// By this point, we know we have at least 5 items
     	// Add our "more" link
-		$( '.mobile-nav-menu .menu > li:nth-child(4)' ).after( '<li class="mobile-menu-more-link"><a href="#">More</a></li>' );
+		$( '.mobile-nav-menu .mobile-nav > li:nth-child(4)' ).after( '<li class="mobile-menu-more-link"><a href="#">More</a></li>' );
     }
 
     // Toggle the menu items on a click of the "more" link
@@ -82,19 +82,21 @@ window.MobileNavMenu = {};
     // Let the submenu parent be a normal link on the second click
     that.setSecondClick = function(event) {
 
-        // Remove any instances of classes already in place
-        // This makes sure we can click to switch between submenus
-        that.removeMenuClasses();
+        console.log( 'child click', this );
 
         // Check to see if this parent has the visible class
-        if( ! $( this ).hasClass( 'visible' ) ) {
+        if( ! $( this ).parent( 'li' ).hasClass( 'visible' ) ) {
 
             // Don't let the link fire as a normal link
             event.preventDefault();
         }
 
+        // Remove any instances of classes already in place
+        // This makes sure we can click to switch between submenus
+        that.removeMenuClasses();
+
         // Toggle the class to display the submenu
-        $( this ).toggleClass( 'visible' );
+        $( this ).parent( 'li' ).toggleClass( 'visible' );
 
         // Add our "more" classes as we do when clicking the "More" link
         that.$c.mobileNavMenuContainer.toggleClass( 'more' );

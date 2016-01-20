@@ -13,7 +13,7 @@
 	display: block;
 	height: 100%;
 	left: 0;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	transition: all 0.5s ease;
 	width: 0;
@@ -22,7 +22,6 @@
 	// when the "More" items are displayed
 	&.more,
 	.sub-menu {
-		position: fixed;
 		transition: all 0.5s ease;
 		width: 100%;
 	}
@@ -50,7 +49,7 @@
 .mobile-nav-menu {
 
 	// Only target the parent menu
-	.menu {
+	.mobile-nav {
 
 		// Only target top-level items
 		> li {
@@ -67,7 +66,7 @@
 .mobile-nav-menu {
 
 	// Only target the parent menu
-	.menu {
+	.mobile-nav {
 
 		// Only target top-level items
 		> li:nth-child(-n+5) {
@@ -81,9 +80,11 @@
 			width: 20%;
 
 			> a {
-				@include vertical-align(middle);
+				// @include vertical-align(middle);
 
+				display: block;
 				font-size: rem(12);
+				height: 100%;
 				line-height: 1.2;
 			}
 		}
@@ -103,7 +104,7 @@
 .mobile-nav-menu {
 
 	// Only target the parent menu
-	.menu {
+	.mobile-nav {
 
 		// Only target top-level items
 		> li:nth-child(n+6) {
@@ -116,7 +117,7 @@
 .mobile-nav-menu.more {
 
 	// Only target the parent menu
-	.menu {
+	.mobile-nav {
 
 		> li:nth-child(n+6) {
 			display: block;
@@ -124,6 +125,10 @@
 			position: relative;
 			top: 0;
 			width: 100%;
+
+			.sub-menu {
+				opacity: 1;
+			}
 
 			.sub-menu-more & {
 				display: none;
@@ -138,8 +143,8 @@
 }
 
 // Style the more/fly-in menu
-.mobile-nav-menu .menu ul.mobile-nav-menu-more,
-.mobile-nav-menu .menu > .sub-menu {
+.mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more,
+.mobile-nav-menu .mobile-nav > .sub-menu {
 	background-color: $color-gray;
 	left: 0;
 	height: 100vh;
@@ -147,7 +152,7 @@
 	top: 0;
 }
 
-.mobile-nav-menu .menu.dropdown {
+.mobile-nav-menu .mobile-nav {
 
 	ul {
 		box-shadow: none;
@@ -203,12 +208,24 @@
 }
 
 // Don't show the submenu when we hover the parent
-.mobile-nav-menu .dropdown {
+.mobile-nav.dropdown {
 
 	.menu-item-has-children:hover {
 
 		.sub-menu {
 			display: none;
+		}
+	}
+
+	.mobile-menu-more:not(.sub-menu-more) & {
+
+		.menu-item-has-children:hover {
+
+		.sub-menu {
+				display: block;
+				left: 0;
+				opacity: 1;
+			}
 		}
 	}
 
@@ -220,8 +237,8 @@
 		.sub-menu {
 			display: block;
 			left: 0;
+			opacity: 1;
 			position: fixed;
-			z-index: -1;
 
 			.admin-bar & {
 				padding-top: rem(15);
@@ -235,6 +252,9 @@
 	}
 
 	.sub-menu {
+		left: 0;
+		opacity: 0;
+		z-index: -1;
 
 		a {
 			color: $color-white;
@@ -252,7 +272,7 @@
 }
 
 // Always display the submenus of "More" items
-.mobile-nav-menu .dropdown {
+.mobile-nav {
 
 	> li:nth-child(n+6) {
 
@@ -261,6 +281,91 @@
 			left: 0;
 			padding-left: rem(10);
 			position: relative;
+		}
+	}
+}
+
+// Add styles for non-JS users
+// This gives the menu a horizontal scroll
+.no-js {
+
+	.mobile-nav-menu {
+		bottom: 0;
+		font-size: 0;
+		height: rem(64);
+		overflow-x: auto;
+		top: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		white-space: nowrap;
+		width: 100%;
+
+		.mobile-nav {
+
+			a {
+				padding: 0;
+			}
+
+			> li:nth-child(n+6) {
+				display: inline-block;
+			}
+
+			li {
+				background-color: $color-white;
+				border-top: 1px solid rgba($color-black, .1);
+				display: inline-block;
+				float: none;
+				font-size: rem(12);
+				height: rem(64);
+				left: 0;
+				min-width: 20%;
+				position: relative;
+				text-align: center;
+				vertical-align: top;
+				width: auto;
+
+				> a {
+					display: block;
+					font-size: rem(12);
+					height: 100%;
+					line-height: 1.2;
+				}
+
+				&.menu-item-has-children {
+
+					> a {
+						display: inline-block;
+						vertical-align: top;
+					}
+
+					&:hover {
+
+						.sub-menu {
+							display: inline-block;
+							left: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.sub-menu {
+			display: inline-block;
+			float: none;
+			left: 0;
+			opacity: 1;
+			position: relative;
+			top: auto;
+			width: auto;
+			z-index: 1;
+
+			a {
+				color: $color-link;
+			}
+
+			li {
+				border: none;
+			}
 		}
 	}
 }
