@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/WebDevStudios/wd_s/issues/"
   },
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "latest",
     "browser-sync": "latest",
     "css-mqpacker": "latest",
@@ -23,14 +23,16 @@
     "gulp-postcss": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
+    "gulp-sort": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-svgmin": "latest",
     "gulp-svgstore": "latest",
     "gulp-uglify": "latest",
+    "gulp-wp-pot": "latest",
     "gulp.spritesmith": "latest",
     "node-neat": "latest",
-    "require-dir": "latest",
-    "path": "latest"
+    "path": "latest",
+    "require-dir": "latest"
   },
   "license": "GPL-2.0+"
 }

@@ -1,22 +1,24 @@
 // Require our dependencies
 var autoprefixer = require('autoprefixer');
-var mqpacker = require('css-mqpacker');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
 var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
+var mqpacker = require('css-mqpacker');
 var neat = require('node-neat').includePaths;
 var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var sort = require('gulp-sort');
 var sourcemaps = require('gulp-sourcemaps');
 var spritesmith = require('gulp.spritesmith');
 var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
 var uglify = require('gulp-uglify');
+var wpPot = require('gulp-wp-pot');
 
 // Set assets paths.
 var paths = {
@@ -27,6 +29,7 @@ var paths = {
 	sprites: 'assets/images/sprites/*.png',
 	sass: 'assets/sass/**/*.scss'
 };
+
 
 // Minify SVG files.
 gulp.task('svgmin', function() {
@@ -40,6 +43,7 @@ gulp.task('svgmin', function() {
 	.pipe(gulp.dest('assets/images/svg-icons/'));
 });
 
+
 // Concatenate icons in a single SVG sprite.
 gulp.task('icons', function() {
 	return gulp.src(paths.icons)
@@ -48,6 +52,7 @@ gulp.task('icons', function() {
 	]}))
 	.pipe(gulp.dest('assets/images/'));
 });
+
 
 // Concatenate images into a single PNG sprite.
 gulp.task('sprites', function() {
@@ -61,6 +66,7 @@ gulp.task('sprites', function() {
 	.pipe(gulp.dest('assets/images/'));
 });
 
+
 // Compile Sass and create stylesheet.
 gulp.task('sass', function() {
 	return gulp.src('assets/sass/*.scss')
@@ -72,6 +78,7 @@ gulp.task('sass', function() {
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('./'));
 });
+
 
 // Compile Sass and run stylesheet through PostCSS.
 gulp.task('postcss', function() {
@@ -103,6 +110,7 @@ gulp.task('postcss', function() {
 	.pipe(gulp.dest('./'))
 });
 
+
 // Minify and optimize style.css.
 gulp.task('cssnano', function() {
 	return gulp.src('style.min.css')
@@ -117,6 +125,7 @@ gulp.task('cssnano', function() {
 	.pipe(gulp.dest('./'));
 });
 
+
 // Concatenate and minify javascripts.
 gulp.task('scripts', function() {
 	return gulp.src(paths.scripts)
@@ -129,6 +138,7 @@ gulp.task('scripts', function() {
 	.pipe(gulp.dest('assets/js'));
 });
 
+
 // Optimize images.
 gulp.task('images', function() {
 	return gulp.src(paths.images)
@@ -137,6 +147,20 @@ gulp.task('images', function() {
 	}))
 	.pipe(gulp.dest('assets/images'));
 });
+
+
+// Make POT file.
+// https://www.npmjs.com/package/gulp-wp-pot
+gulp.task('wp-pot', function () {
+	return gulp.src('*.php')
+		.pipe(sort())
+		.pipe(wpPot( {
+			domain: 'testing.dev',
+			destFile:'_s.pot',
+		} ))
+		.pipe(gulp.dest('languages/'));
+});
+
 
 // Reload browsers on file changes.
 gulp.task('browsersync', function() {
