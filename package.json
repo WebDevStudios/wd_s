@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/WebDevStudios/wd_s/issues/"
   },
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "latest",
     "css-mqpacker": "latest",
     "glob": "latest",
