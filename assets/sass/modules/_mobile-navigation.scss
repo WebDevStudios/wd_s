@@ -77,15 +77,26 @@
 			left: 0;
 			position: fixed;
 			text-align: center;
+			transition: all 0.5s ease;
 			width: 20%;
 
+			&:hover {
+				background-color: $color-gallery;
+				transition: all 0.5s ease;
+			}
+
 			> a {
-				// @include vertical-align(middle);
 
 				display: block;
 				font-size: rem(12);
 				height: 100%;
 				line-height: 1.2;
+
+				span {
+					@include vertical-align(middle);
+
+					display: block;
+				}
 			}
 		}
 
@@ -261,7 +272,6 @@
 			font-size: rem(16);
 			padding: rem(10) rem(20);
 			text-align: left;
-			width: 100%;
 		}
 
 		li {
@@ -289,6 +299,13 @@
 // This gives the menu a horizontal scroll
 .no-js {
 
+	&.admin-bar {
+
+		.mobile-nav-menu {
+			padding-top: 0;
+		}
+	}
+
 	.mobile-nav-menu {
 		bottom: 0;
 		font-size: 0;
@@ -300,14 +317,62 @@
 		white-space: nowrap;
 		width: 100%;
 
+		> div {
+
+			&:before,
+			&:after {
+				position: fixed;
+				bottom: 0;
+				height: 100%;
+				width: 25%;
+				content: "";
+				pointer-events: none; /* so the text is still selectable */
+				z-index: 20;
+			}
+
+			&:after {
+				right: 0;
+				background: linear-gradient(to left,
+				rgba(255,255,255, 1) 0%,
+				rgba(255,255,255, 0) 100%
+				);
+			}
+
+			&:before {
+				left: 0;
+				background: linear-gradient(to left,
+				rgba(255,255,255, 0) 0%,
+				rgba(255,255,255, 1) 100%
+				);
+			}
+		}
+
 		.mobile-nav {
 
 			a {
-				padding: 0;
+				padding: 0 rem(10);
+				text-align: center;
+
+				span {
+					@include vertical-align(middle);
+
+					display: block;
+				}
 			}
 
-			> li:nth-child(n+6) {
-				display: inline-block;
+			> li {
+
+				&:nth-child(n+6) {
+					display: inline-block;
+				}
+
+				&:first-of-type {
+					padding-left: rem(50);
+				}
+
+				&:last-of-type {
+					padding-right: rem(50);
+				}
 			}
 
 			li {
@@ -318,7 +383,7 @@
 				font-size: rem(12);
 				height: rem(64);
 				left: 0;
-				min-width: 20%;
+				margin: 0;
 				position: relative;
 				text-align: center;
 				vertical-align: top;
@@ -366,6 +431,13 @@
 			li {
 				border: none;
 			}
+		}
+	}
+
+	.mobile-nav-menu {
+
+		.menu.dropdown ul a {
+			width: auto;
 		}
 	}
 }

@@ -56,7 +56,7 @@ window.MobileNavMenu = {};
 
     	// By this point, we know we have at least 5 items
     	// Add our "more" link
-		$( '.mobile-nav-menu .mobile-nav > li:nth-child(4)' ).after( '<li class="mobile-menu-more-link"><a href="#">More</a></li>' );
+		$( '.mobile-nav-menu .mobile-nav > li:nth-child(4)' ).after( '<li class="mobile-menu-more-link"><a href="#"><span><i class="more-icon"></i>More</span></a></li>' );
     }
 
     // Toggle the menu items on a click of the "more" link

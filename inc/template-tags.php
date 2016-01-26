@@ -320,7 +320,9 @@ function _s_do_mobile_navigation_menu() {
 			wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_id'        => 'primary-menu',
-				'menu_class'     => 'menu dropdown mobile-nav'
+				'menu_class'     => 'menu dropdown mobile-nav',
+				'link_before'    => '<span>',
+				'link_after'     => '</span>'
 			) );
 		?>
 	</nav>
