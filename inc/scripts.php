@@ -55,10 +55,21 @@ function _s_scripts() {
 	 */
 	$suffix = ( true === $debug ) ? '' : '.min';
 
-	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );
+	// Register styles.
+	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
+	wp_register_style( 'animate.css', get_stylesheet_directory_uri() . '/assets/bower_components/animate.css/animate' . $suffix . '.css', array(), $version );
+
+	// Enqueue styles.
+	wp_enqueue_style( '_s-google-font' );
+	wp_enqueue_style( 'animate.css' );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
+<<<<<<< HEAD
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), $version, true );
+=======
+	// Enqueue scripts.
+	wp_enqueue_script( '_s-project', get_template_directory_uri() . '/assets/js/project' . $suffix . '.js', array( 'jquery' ), $version, true );
+>>>>>>> master
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -93,11 +104,20 @@ endif;
  */
 function _s_include_svg_icons() {
 
+<<<<<<< HEAD
 	// Define SVG sprite file
 	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
 
 	// If it exsists, include it
 	if ( file_exists( $svg_icons ) ) {
 		require_once( $svg_icons );
+=======
+	// Define SVG sprite file.
+	$svg_defs = get_template_directory() . '/assets/images/svg-defs.svg';
+
+	// If it exsists, include it.
+	if ( file_exists( $svg_defs ) ) {
+		require_once( $svg_defs );
+>>>>>>> master
 	}
 }

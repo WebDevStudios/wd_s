@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 
 // Links
-
 a {
 	color: $color-link;
 
@@ -18,8 +17,52 @@ a {
 	}
 }
 
-// Default menu (active after a fresh WordPress install)
+// Navicon menu
+.menu-toggle {
+	display: block;
 
+	.icon {
+		@include size(rem(12) rem(14));
+
+		display: inline-block;
+		fill: $color-white;
+		margin-right: rem(5);
+		vertical-align: middle;
+	}
+
+	.menu-toggle-text {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	@include media($phone-landscape) {
+		display: none;
+	}
+}
+
+// Main navigation container
+.main-navigation {
+	@include size(100% auto);
+
+	clear: both;
+	display: block;
+	float: left;
+
+	// Menu area
+	ul {
+		display: none;
+
+		@include media($phone-landscape) {
+			display: block;
+		}
+	}
+
+	&.toggled ul {
+		display: block;
+	}
+}
+
+// Menu defaults
 .menu {
 	@include list-reset;
 
@@ -119,37 +162,7 @@ a {
 	}
 }
 
-// Main navigation (after creating a menu in the dashboard)
-.main-navigation {
-	@include size(100% auto);
-
-	clear: both;
-	display: block;
-	float: left;
-
-	// Menu area
-	ul {
-		display: none;
-
-		@include media($phone-landscape) {
-			display: block;
-		}
-	}
-
-	&.toggled ul {
-		display: block;
-	}
-}
-
-// Small menu
-.menu-toggle {
-	display: block;
-
-	@include media($phone-landscape) {
-		display: none;
-	}
-}
-
+// Other navigation
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
