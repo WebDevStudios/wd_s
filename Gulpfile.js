@@ -25,62 +25,20 @@ var paths = {
 	css: ['./*.css', '!*.min.css'],
 	icons: 'assets/images/svg-icons/*.svg',
 	images: ['assets/images/*', '!assets/images/*.svg'],
+	php: './*.php',
+	sass: 'assets/sass/**/*.scss',
 	scripts: 'assets/js/concat/*.js',
-	sprites: 'assets/images/sprites/*.png',
-	sass: 'assets/sass/**/*.scss'
+	sprites: 'assets/images/sprites/*.png'
 };
 
-
-// Minify SVG files.
-gulp.task('svgmin', function() {
-	return gulp.src(paths.icons)
-	.pipe(svgmin({ plugins: [
-		{ removeDoctype: true },
-		{ removeComments: true },
-		{ removeEmptyAttrs: true },
-		{ removeUselessStrokeAndFill: true }
-	]}))
-	.pipe(gulp.dest('assets/images/svg-icons/'));
-});
-
-
-// Concatenate icons in a single SVG sprite.
-gulp.task('icons', function() {
-	return gulp.src(paths.icons)
-	.pipe(svgstore( { plugins: [
-		{ inlineSVG: true }
-	]}))
-	.pipe(gulp.dest('assets/images/'));
-});
-
-
-// Concatenate images into a single PNG sprite.
-gulp.task('sprites', function() {
-	return gulp.src(paths.sprites)
-	.pipe(spritesmith({
-		imgName:   'sprites.png',
-		cssName:   '../../assets/sass/base/_sprites.scss',
-		imgPath:   'assets/images/sprites.png',
-		algorithm: 'binary-tree'
-	}))
-	.pipe(gulp.dest('assets/images/'));
-});
-
-
-// Compile Sass and create stylesheet.
-gulp.task('sass', function() {
-	return gulp.src('assets/sass/*.scss')
-	.pipe(sourcemaps.init())
-		.pipe(sass({
-			includePaths: neat,
-			outputStyle: 'expanded'
-		}))
-	.pipe(sourcemaps.write())
-	.pipe(gulp.dest('./'));
-});
-
-
-// Compile Sass and run stylesheet through PostCSS.
+/**
+ * Compile Sass and run stylesheet through PostCSS.
+ *
+ * https://www.npmjs.com/package/gulp-sass
+ * https://www.npmjs.com/package/gulp-postcss
+ * https://www.npmjs.com/package/gulp-autoprefixer
+ * https://www.npmjs.com/package/css-mqpacker
+ */
 gulp.task('postcss', function() {
 	return gulp.src('assets/sass/*.scss', paths.css)
 
@@ -96,10 +54,10 @@ gulp.task('postcss', function() {
 		// Parse with PostCSS plugins.
 		.pipe(postcss([
 			autoprefixer({
-				browsers: ['last 2 version'] // Parse CSS and add vendor prefixes.
+				browsers: ['last 2 version']
 			}),
 			mqpacker({
-				sort: true // Pack the same CSS media query rules into one rule.
+				sort: true
 			}),
 		]))
 
@@ -107,40 +65,58 @@ gulp.task('postcss', function() {
 	.pipe(sourcemaps.write())
 
 	// Create style.css.
-	.pipe(gulp.dest('./'))
-});
-
-
-// Minify and optimize style.css.
-gulp.task('cssnano', function() {
-	return gulp.src('style.min.css')
-
-	.pipe(sourcemaps.init({
-		loadMaps: true // Use the existing sourcemap.
-	}))
-		.pipe(cssnano({
-			safe: true // Use safe optimizations
-		}))
-	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('./'));
 });
 
-
-// Concatenate and minify javascripts.
-gulp.task('scripts', function() {
-	return gulp.src(paths.scripts)
-	.pipe(sourcemaps.init())
-		.pipe(uglify({
-			mangle: false
-		}))
-		.pipe(concat('scripts.js'))
-	.pipe(sourcemaps.write())
-	.pipe(gulp.dest('assets/js'));
+/**
+ * Minify and optimize style.css.
+ *
+ * https://www.npmjs.com/package/gulp-cssnano
+ */
+gulp.task('cssnano', function() {
+	return gulp.src('style.css')
+	.pipe(cssnano({
+		safe: true // Use safe optimizations
+	}))
+	.pipe(rename('style.min.css'))
+	.pipe(gulp.dest('./'));
 });
 
+/**
+ * Minify SVG files.
+ *
+ * https://www.npmjs.com/package/gulp-svgmin
+ */
+gulp.task('svgmin', function() {
+	return gulp.src(paths.icons)
+	.pipe(svgmin({ plugins: [
+		{ removeDoctype: true },
+		{ removeComments: true },
+		{ removeEmptyAttrs: true },
+		{ removeUselessStrokeAndFill: true }
+	]}))
+	.pipe(gulp.dest('assets/images/svg-icons/'));
+});
 
-// Optimize images.
-gulp.task('images', function() {
+/**
+ * Concatenate icons in a single SVG sprite.
+ *
+ * https://www.npmjs.com/package/gulp-svgstore
+ */
+gulp.task('svgstore', function() {
+	return gulp.src(paths.icons)
+	.pipe(svgstore({
+		inlineSvg: true
+	}))
+	.pipe(gulp.dest('assets/images/'));
+});
+
+/**
+ * Optimize images.
+ *
+ * https://www.npmjs.com/package/gulp-imagemin
+ */
+gulp.task('imagemin', function() {
 	return gulp.src(paths.images)
 	.pipe(imagemin({
 		optimizationLevel: 5
@@ -148,38 +124,102 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('assets/images'));
 });
 
-
-// Make POT file.
-// https://www.npmjs.com/package/gulp-wp-pot
-gulp.task('wp-pot', function () {
-	return gulp.src('*.php')
-		.pipe(sort())
-		.pipe(wpPot( {
-			domain: 'testing.dev',
-			destFile:'_s.pot',
-		} ))
-		.pipe(gulp.dest('languages/'));
+/**
+ * Concatenate images into a single PNG sprite.
+ *
+ * https://www.npmjs.com/package/gulp.spritesmith
+ */
+gulp.task('spritesmith', function() {
+	return gulp.src(paths.sprites)
+	.pipe(spritesmith({
+		imgName:   'sprites.png',
+		cssName:   '../../assets/sass/base/_sprites.scss',
+		imgPath:   'assets/images/sprites.png',
+		algorithm: 'binary-tree'
+	}))
+	.pipe(gulp.dest('assets/images/'));
 });
 
+/**
+ * Concatenate and minify javascripts.
+ *
+ * https://www.npmjs.com/package/gulp-uglify
+ * https://www.npmjs.com/package/gulp-concat
+ */
+gulp.task('uglify', function() {
+	return gulp.src(paths.scripts)
+	.pipe(sourcemaps.init())
+		.pipe(uglify({
+			mangle: false
+		}))
+		.pipe(concat('project.js'))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest('assets/js'));
+});
 
-// Reload browsers on file changes.
-gulp.task('browsersync', function() {
+/**
+ * Make POT file for i18n.
+ *
+ * https://www.npmjs.com/package/gulp-wp-pot
+ */
+gulp.task('i18n', function () {
+	return gulp.src(paths.php)
+	.pipe(sort())
+	.pipe(wpPot({
+		domain: '_s.dev',
+		destFile:'_s.pot',
+		package: '_s',
+		bugReport: 'http://example.com',
+		lastTranslator: 'John Doe <mail@example.com>',
+		team: 'Team Team <mail@example.com>'
+	}))
+	.pipe(gulp.dest('languages/'));
+});
+
+/**
+ * Reload browsers on file changes.
+ *
+ * https://www.npmjs.com/package/browser-sync
+ */
+gulp.task('serve', function() {
 	browserSync.init({
-		proxy: "testing.dev"
+		proxy: "_s.dev"
 	});
 	gulp.watch(['*.css', 'assets/js/*.js', 'assets/images/*']).on('change', reload);
 });
 
-// Rerun the task when a file changes.
-gulp.task('watch', function() {
-	gulp.watch(paths.icons, ['svgmin','icons']);
-	gulp.watch(paths.sprites, ['sprites']);
-	gulp.watch(paths.sass, ['sass', 'css']);
+/**
+ * Re-run a task when a file changes.
+ *
+ * https://www.npmjs.com/package/gulp-watch
+ */
+gulp.task('watch', ['serve'], function() {
+	gulp.watch(paths.icons, ['icons']);
+	gulp.watch(paths.sass, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
+	gulp.watch(paths.sprites, ['sprites']);
 });
 
-// Deal with all the CSS tasks.
-gulp.task('styles', ['postcss', 'cssnano']);
+/**
+ * Delete compiled files.
+ */
+gulp.task('clean:icons', function() {
+	return del(['assets/images/svg-icons.svg']);
+});
 
-// Default "gulp" task.
-gulp.task('default', ['svgmin', 'icons', 'images', 'sprites', 'sass', 'css', 'scripts']);
+gulp.task('clean:styles', function() {
+	return del(['style.css', 'style.min.css']);
+});
+
+gulp.task('clean:scripts', function() {
+	return del(['assets/js/project.js']);
+});
+
+/**
+ * Create indivdual tasks.
+ */
+gulp.task('icons', ['clean:icons', 'svgmin', 'svgstore']);
+gulp.task('styles', ['clean:styles', 'postcss', 'cssnano']);
+gulp.task('scripts', ['clean:scripts', 'uglify']);
+gulp.task('sprites', ['imagemin', 'spritesmith']);
+gulp.task('default', ['i18n','icons', 'styles', 'scripts', 'sprites']);
