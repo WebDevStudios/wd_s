@@ -28,6 +28,7 @@
     "tests"
   ],
   "dependencies": {
+    "animate.css": "latest",
     "bourbon": "latest",
     "neat": "latest"
   }
