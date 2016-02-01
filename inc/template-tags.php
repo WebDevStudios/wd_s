@@ -125,7 +125,7 @@ add_action( 'save_post',     '_s_category_transient_flusher' );
  * Return SVG markup.
  *
  * @param  array  $args {
- *     Paramenters needed to display an SVG.
+ *     Parameters needed to display an SVG.
  *
  *     @param string $icon Required. Use the icon filename, e.g. "facebook-square".
  *     @param string $title Optional. SVG title, e.g. "Facebook".
@@ -145,27 +145,28 @@ function _s_get_svg( $args = array() ) {
 		return esc_html__( 'Please define an SVG icon filename.', '_s' );
 	}
 
-	// Set up defaults.
+	// Set defaults.
 	$defaults = array(
 		'icon'  => '',
 		'title' => '',
 		'desc'  => ''
 	);
 
-	// Finally, parse those args.
+	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
+	// Begin SVG markup
 	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '">';
 
-	// If there is a title, display it.
-	if ( $args['title'] ) {
-		$svg .= '	<title>' . esc_html( $args['title'] ) . '</title>';
-	}
+		// If there is a title, display it.
+		if ( $args['title'] ) {
+			$svg .= '	<title>' . esc_html( $args['title'] ) . '</title>';
+		}
 
-	// If there is a description, display it.
-	if ( $args['desc'] ) {
-		$svg .= '	<desc>' . esc_html( $args['desc'] ) . '</desc>';
-	}
+		// If there is a description, display it.
+		if ( $args['desc'] ) {
+			$svg .= '	<desc>' . esc_html( $args['desc'] ) . '</desc>';
+		}
 
 	$svg .= '	<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
 	$svg .= '</svg>';
@@ -176,22 +177,52 @@ function _s_get_svg( $args = array() ) {
 /**
  * Display an SVG.
  *
- * @param  array  $args  Paramenters needed to display an SVG.
+ * @param  array  $args  Parameters needed to display an SVG.
  */
 function _s_do_svg( $args = array() ) {
 	echo _s_get_svg( $args );
 }
 
 /**
- * Limit the excerpt.
+ * Trim the title legnth.
  *
- * @param  int     $num_words  The word limit.
- * @param  string  $more       The "read more" text.
- *
- * @return string              The shortened excerpt.
+ * @param  array  $args  Parameters include length and more.
+ * @return string        The shortened excerpt.
  */
-function _s_get_the_excerpt( $num_words = 20, $more = '...' ) {
-	return wp_trim_words( get_the_excerpt(), $num_words, $more );
+function _s_get_the_title( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length'  => 12,
+		'more'    => '...'
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the title.
+	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
+}
+
+/**
+ * Limit the excerpt length.
+ *
+ * @param  array  $args  Parameters include length and more.
+ * @return string        The shortened excerpt.
+ */
+function _s_get_the_excerpt( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length' => 20,
+		'more'   => '...'
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the excerpt.
+	return wp_trim_words( get_the_excerpt(), absint( $args['length'] ), esc_html( $args['more'] ) );
 }
 
 /**
