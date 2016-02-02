@@ -25,7 +25,16 @@ $gravity-form-label-color: $color-mineshaft;
 		input[type=tel],
 		input[type=number],
 		input[type=password] {
+			padding: rem(10) rem(5);
+		}
 
+		// Default select/drop-down
+		// Feel free to change the svg being used
+		select {
+			background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
+			border-radius: 0;
+			padding: rem(10) rem(5);
+			-webkit-appearance: none;
 		}
 
 	}// .gform_body .gform_fields .gfield
