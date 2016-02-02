@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+// Gravity Forms
+// Visit this link for CSS Targeting Examples - Very Helpful
+// https://www.gravityhelp.com/documentation/article/css-targeting-examples/
+//--------------------------------------------------------------
+
+$gravity-form-label-color: $color-mineshaft;
+
+// Contains entire form
+.gform_wrapper {
+
+	// Main form body and all the fields it contains
+	& .gform_body .gform_fields .gfield {
+		margin-bottom: rem(25); // space between input and label below
+
+		// Standard field label
+		.gfield_label {
+			color: $gravity-form-label-color;
+		}
+
+		// Standard form fields
+		input[type=text],
+		input[type=url],
+		input[type=email],
+		input[type=tel],
+		input[type=number],
+		input[type=password] {
+
+		}
+
+	}// .gform_body .gform_fields .gfield
+
+	// Footer area - typically contains submit button
+	& .gform_footer {
+
+		input.button,
+		input[type=submit] {
+			// This will target submit buttons
+			// You may need to use !important
+		}
+	}
+}
