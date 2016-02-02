@@ -4,21 +4,26 @@
 // https://www.gravityhelp.com/documentation/article/css-targeting-examples/
 //--------------------------------------------------------------
 
-$gravity-form-label-color: $color-mineshaft;
-
 // Contains entire form
 .gform_wrapper {
 
-	// Main form body and all the fields it contains
+	// Main form field selector.
+	// Visit the link above and add in the field types / classes that you need to target.
+	// Most fields can be styled in the block below.
 	& .gform_body .gform_fields .gfield {
 		margin-bottom: rem(25); // space between input and label below
 
 		// Standard field label
 		.gfield_label {
-			color: $gravity-form-label-color;
+			color: $color-mineshaft;
+
+			// Require field Indicator (Asterisk)
+			.gfield_required {
+
+			}
 		}
 
-		// Standard form fields
+		// Standard fields
 		input[type=text],
 		input[type=url],
 		input[type=email],
@@ -71,15 +76,25 @@ $gravity-form-label-color: $color-mineshaft;
 					padding: rem(10) rem(5);
 				}
 			}
+
+			// For styling the icon when select is active
+			&.chosen-container-single.chosen-with-drop {
+
+				.chosen-single div b {
+					border: none; // hiding the previous triangle (border)
+					@include triangle(18px, $color-silver, up);
+				}
+			}
+		}// End of Chosen select
+
+		// Remove icon for default multi-select
+		select[multiple="multiple"] {
+			background: none;
 		}
 
-		// For styling the icon when select is active
-		.chosen-container-single.chosen-with-drop {
-
-			.chosen-single div b {
-				border: none; // hiding the previous triangle (border)
-				@include triangle(18px, $color-silver, up);
-			}
+		.ginput_container_time select {
+			background-position-x: 90%;
+			background-size: rem(10);
 		}
 	}
 
