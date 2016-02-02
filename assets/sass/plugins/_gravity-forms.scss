@@ -28,11 +28,12 @@ $gravity-form-label-color: $color-mineshaft;
 			padding: rem(10) rem(5);
 		}
 
-		// Default select/drop-down
+		// Default Drop-Down (Select) Field
 		// Feel free to change the svg icon being used
 		select {
 			background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
 			border-radius: 0;
+			line-height: 1.45;
 			margin-left: 0 !important;
 			padding: rem(10) rem(5);
 			-webkit-appearance: none;
