@@ -4,8 +4,23 @@
 // https://www.gravityhelp.com/documentation/article/css-targeting-examples/
 //--------------------------------------------------------------
 
+$gf-form-padding: 0; // set outer padding on form
+$gf-form-bg: $color-white; // background color of form
+$gf-form-border-width: 0; // border-width on form
+$gf-form-border-color: $color-white; // border color
+
+$gf-form-label-font-size: rem(16);
+$gf-form-label-font-color: $color-mineshaft;
+$gf-form-label-font-weight: 700;
+
+$gf-form-input-padding: rem(11) rem(5);
+
+
 // Contains entire form
 .gform_wrapper {
+	background: $gf-form-bg;
+	border: $gf-form-border-width solid $gf-form-border-color;
+	padding: $gf-form-padding;
 
 	// Main form field selector.
 	// Visit the link above and add in the field types / classes that you need to target.
@@ -15,7 +30,9 @@
 
 		// Standard field label
 		.gfield_label {
-			color: $color-mineshaft;
+			color: $gf-form-label-font-color;
+			font-size: $gf-form-label-font-size;
+			font-weight: $gf-form-label-font-weight;
 
 			// Require field Indicator (Asterisk)
 			.gfield_required {
@@ -30,7 +47,7 @@
 		input[type=tel],
 		input[type=number],
 		input[type=password] {
-			padding: rem(10) rem(5);
+			padding: $gf-form-input-padding;
 		}
 
 		// Default Drop-Down (Select) Field
@@ -40,7 +57,7 @@
 			border-radius: 0;
 			line-height: 1.45;
 			margin-left: 0 !important;
-			padding: rem(10) rem(5);
+			padding: $gf-form-input-padding;
 			-webkit-appearance: none;
 		}
 
@@ -52,7 +69,7 @@
 				background: none;
 				border-radius: 0;
 				height: auto;
-				padding: rem(11) rem(5) rem(11);
+				padding: rem(11) rem(5) rem(10);
 			}
 
 			// Default state of icon for select
