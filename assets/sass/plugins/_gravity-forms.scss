@@ -41,12 +41,12 @@ $gf-form-input-padding: rem(11) rem(5);
 		}
 
 		// Standard fields
-		input[type=text],
-		input[type=url],
-		input[type=email],
-		input[type=tel],
-		input[type=number],
-		input[type=password] {
+		input[type="text"],
+		input[type="url"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"] {
 			padding: $gf-form-input-padding;
 		}
 
@@ -119,7 +119,7 @@ $gf-form-input-padding: rem(11) rem(5);
 	& .gform_footer {
 
 		input.button,
-		input[type=submit] {
+		input[type="submit"] {
 			// This will target submit buttons
 			// You may need to use !important
 		}
