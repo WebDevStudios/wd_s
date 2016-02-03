@@ -65,7 +65,8 @@ gulp.task('postcss', function() {
 	.pipe(sourcemaps.write())
 
 	// Create style.css.
-	.pipe(gulp.dest('./'));
+	.pipe(gulp.dest('./'))
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -79,7 +80,8 @@ gulp.task('cssnano', function() {
 		safe: true // Use safe optimizations
 	}))
 	.pipe(rename('style.min.css'))
-	.pipe(gulp.dest('./'));
+	.pipe(gulp.dest('./'))
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -108,7 +110,8 @@ gulp.task('svgstore', function() {
 	.pipe(svgstore({
 		inlineSvg: true
 	}))
-	.pipe(gulp.dest('assets/images/'));
+	.pipe(gulp.dest('assets/images/'))
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -137,7 +140,8 @@ gulp.task('spritesmith', function() {
 		imgPath:   'assets/images/sprites.png',
 		algorithm: 'binary-tree'
 	}))
-	.pipe(gulp.dest('assets/images/'));
+	.pipe(gulp.dest('assets/images/'))
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -154,7 +158,8 @@ gulp.task('uglify', function() {
 		}))
 		.pipe(concat('project.js'))
 	.pipe(sourcemaps.write())
-	.pipe(gulp.dest('assets/js'));
+	.pipe(gulp.dest('assets/js'))
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -177,23 +182,26 @@ gulp.task('i18n', function () {
 });
 
 /**
- * Reload browsers on file changes.
+ * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
  */
-gulp.task('serve', function() {
-	browserSync.init({
-		proxy: "_s.dev"
-	});
-	gulp.watch(['*.css', 'assets/js/*.js', 'assets/images/*']).on('change', reload);
-});
+gulp.task('watch', function() {
 
-/**
- * Re-run a task when a file changes.
- *
- * https://www.npmjs.com/package/gulp-watch
- */
-gulp.task('watch', ['serve'], function() {
+	// Files to watch.
+	var files = [
+		paths.icons,
+		paths.sass,
+		paths.scripts,
+		paths.sprites
+	];
+
+	// Kick off BrowserSync.
+	browserSync.init( files, {
+		proxy: "_s.dev",
+	});
+
+	// Run tasks when files change.
 	gulp.watch(paths.icons, ['icons']);
 	gulp.watch(paths.sass, ['styles']);
 	gulp.watch(paths.scripts, ['scripts']);
