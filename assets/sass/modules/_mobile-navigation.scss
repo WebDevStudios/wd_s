@@ -43,6 +43,22 @@
 	li {
 		cursor: pointer;
 	}
+
+	// Set the width and position of the parent div
+	> div {
+		bottom: rem(84); // the fixed menu is 64px tall, so give it some breathing room
+		position: absolute;
+		right: 0;
+		width: 50vw;
+
+		@include media($tablet-portrait) {
+			bottom: auto;
+			left: 0;
+			right: auto;
+			top: 0;
+			width: 100%;
+		}
+	}
 }
 
 // Remove margins from all menu items
@@ -131,10 +147,12 @@
 	.mobile-nav {
 
 		> li:nth-child(n+6) {
+			bottom: 0;
+			clear: both;
 			display: block;
-			left: 0;
+			float: right;
 			position: relative;
-			top: 0;
+			right: 0;
 			width: 100%;
 
 			.sub-menu {
@@ -232,10 +250,11 @@
 
 		.menu-item-has-children:hover {
 
-		.sub-menu {
+			.sub-menu {
 				display: block;
-				left: 0;
+				left: auto;
 				opacity: 1;
+				right: 0;
 			}
 		}
 	}
@@ -246,13 +265,27 @@
 	.visible:active {
 
 		.sub-menu {
+			bottom: rem(84);
 			display: block;
-			left: 0;
+			left: auto;
 			opacity: 1;
 			position: fixed;
+			right: 0;
+			top: auto;
 
-			.admin-bar & {
-				padding-top: rem(15);
+			@include media($tablet-portrait) {
+				bottom: auto;
+				left: 0;
+				right: auto;
+				top: 0;
+			}
+
+			.sub-menu {
+				bottom: 0;
+
+				@include media($tablet-portrait) {
+					bottom: auto;
+				}
 			}
 		}
 
@@ -266,6 +299,13 @@
 		left: 0;
 		opacity: 0;
 		z-index: -1;
+		width: 50vw;
+
+		@include media($tablet-portrait) {
+			left: auto;
+			right: 0;
+			width: 100%;
+		}
 
 		a {
 			color: $color-white;
