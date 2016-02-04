@@ -109,9 +109,19 @@ $gf-form-input-padding: rem(11) rem(5);
 			background: none;
 		}
 
+		// Time drop-down
 		.ginput_container_time select {
-			background-position-x: 90%;
-			background-size: rem(10);
+			background-position-x: 90%; // position icon
+			background-size: rem(10); // set icon size
+		}
+
+		// Address field
+		.ginput_container_address {
+
+			// Country drop-down
+			.address_country select {
+				width: 97.5%; // match width of other fields
+			}
 		}
 	}
 
