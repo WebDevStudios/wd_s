@@ -9,12 +9,16 @@ $gf-form-bg: $color-white; // background color of form
 $gf-form-border-width: 0; // border-width on form
 $gf-form-border-color: $color-white; // border color
 
+// Fields / Rows
+$gf-form-field-margin-bottom: rem(25); // margin between field and label below
+
+// Labels
 $gf-form-label-font-size: rem(16);
 $gf-form-label-font-color: $color-mineshaft;
 $gf-form-label-font-weight: 700;
 
+// Inputs
 $gf-form-input-padding: rem(11) rem(5);
-
 
 // Contains entire form
 .gform_wrapper {
@@ -26,7 +30,7 @@ $gf-form-input-padding: rem(11) rem(5);
 	// Visit the link above and add in the field types / classes that you need to target.
 	// Most fields can be styled in the block below.
 	& .gform_body .gform_fields .gfield {
-		margin-bottom: rem(25); // space between input and label below
+		margin-bottom: $gf-form-field-margin-bottom; // space between input and label below
 
 		// Standard field label
 		.gfield_label {
