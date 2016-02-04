@@ -4,9 +4,6 @@
 window.MobileNavMenu = {};
 ( function( window, $, that ) {
 
-    // Private variable
-    var fooVariable = 'foo';
-
     // Constructor
     that.init = function() {
         that.cache();
@@ -81,8 +78,6 @@ window.MobileNavMenu = {};
 
     // Let the submenu parent be a normal link on the second click
     that.setSecondClick = function(event) {
-
-        console.log( 'child click', this );
 
         // Check to see if this parent has the visible class
         if( ! $( this ).parent( 'li' ).hasClass( 'visible' ) ) {
