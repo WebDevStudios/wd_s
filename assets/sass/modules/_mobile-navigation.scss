@@ -18,6 +18,11 @@
 	transition: all 0.5s ease;
 	width: 0;
 
+	// Don't show this puppy above tablet-landscape
+	@include media($tablet-landscape) {
+		display: none;
+	}
+
 	// Add a background color to the menu
 	// when the "More" items are displayed
 	&.more,
