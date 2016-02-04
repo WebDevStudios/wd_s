@@ -299,6 +299,10 @@
 			position: relative;
 		}
 	}
+}
+
+// Adjust link and anchor styles for submenus
+.mobile-nav.dropdown {
 
 	.sub-menu {
 		left: 0;
@@ -341,7 +345,7 @@
 }
 
 // Add styles for non-JS users
-// This gives the menu a horizontal scroll
+// Add a horizontal scroll and faded edges
 .no-js {
 
 	&.admin-bar {
@@ -363,6 +367,8 @@
 		width: 100%;
 
 		> div {
+			bottom: 0;
+			left: 0;
 
 			&:before,
 			&:after {
@@ -391,6 +397,13 @@
 				);
 			}
 		}
+	}
+}
+
+// Adjust display of menu items
+.no-js {
+
+	.mobile-nav-menu {
 
 		.mobile-nav {
 
@@ -412,11 +425,11 @@
 				}
 
 				&:first-of-type {
-					padding-left: rem(50);
+					padding-left: rem(100);
 				}
 
 				&:last-of-type {
-					padding-right: rem(50);
+					padding-right: rem(100);
 				}
 			}
 
@@ -433,6 +446,23 @@
 				text-align: center;
 				vertical-align: top;
 				width: auto;
+
+				&:hover {
+					background-color: $color-white;
+				}
+			}
+		}
+	}
+}
+
+// Adjust display of submenus and links
+.no-js {
+
+	.mobile-nav-menu {
+
+		.mobile-nav {
+
+			li {
 
 				> a {
 					display: block;
@@ -459,22 +489,25 @@
 			}
 		}
 
-		.sub-menu {
-			display: inline-block;
-			float: none;
-			left: 0;
-			opacity: 1;
-			position: relative;
-			top: auto;
-			width: auto;
-			z-index: 1;
+		.mobile-nav.dropdown {
 
-			a {
-				color: $color-link;
-			}
+			.sub-menu {
+				display: inline-block;
+				float: none;
+				left: 0;
+				opacity: 1;
+				position: relative;
+				top: auto;
+				width: auto;
+				z-index: 1;
 
-			li {
-				border: none;
+				a {
+					color: $color-link;
+				}
+
+				li {
+					border: none;
+				}
 			}
 		}
 	}
