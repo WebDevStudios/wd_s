@@ -173,7 +173,7 @@ gulp.task('i18n', function () {
 	.pipe(wpPot({
 		domain: '_s.dev',
 		destFile:'_s.pot',
-		package: '_s',
+		package: 'wd_s',
 		bugReport: 'http://example.com',
 		lastTranslator: 'John Doe <mail@example.com>',
 		team: 'Team Team <mail@example.com>'
