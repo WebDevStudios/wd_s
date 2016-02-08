@@ -171,9 +171,9 @@ gulp.task('i18n', function () {
 	return gulp.src(paths.php)
 	.pipe(sort())
 	.pipe(wpPot({
-		domain: 'wd_s',
-		destFile:'wd_s.pot',
-		package: 'wd_s',
+		domain: '_s',
+		destFile:'_s.pot',
+		package: '_s',
 		bugReport: 'http://example.com',
 		lastTranslator: 'John Doe <mail@example.com>',
 		team: 'Team Team <mail@example.com>'

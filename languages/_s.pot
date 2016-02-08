@@ -1,8 +1,8 @@
-# Copyright (C) 2016 wd_s
-# This file is distributed under the same license as the wd_s package.
+# Copyright (C) 2016 _s
+# This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
-"Project-Id-Version: wd_s\n"
+"Project-Id-Version: _s\n"
 "Report-Msgid-Bugs-To: http://example.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -185,7 +185,7 @@ msgid "To search this site, enter a search term"
 msgstr ""
 
 #: searchform.php:3
-msgctxt "wd_s"
+msgctxt "_s"
 msgid "Search"
 msgstr ""
 
