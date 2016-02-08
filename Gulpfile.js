@@ -25,7 +25,7 @@ var paths = {
 	css: ['./*.css', '!*.min.css'],
 	icons: 'assets/images/svg-icons/*.svg',
 	images: ['assets/images/*', '!assets/images/*.svg'],
-	php: './*.php',
+	php: ['./*.php', './**/*.php'],
 	sass: 'assets/sass/**/*.scss',
 	scripts: 'assets/js/concat/*.js',
 	sprites: 'assets/images/sprites/*.png'
