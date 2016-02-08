@@ -171,8 +171,8 @@ gulp.task('i18n', function () {
 	return gulp.src(paths.php)
 	.pipe(sort())
 	.pipe(wpPot({
-		destFile:'_s.pot',
 		domain: 'wd_s',
+		destFile:'wd_s.pot',
 		package: 'wd_s',
 		bugReport: 'http://example.com',
 		lastTranslator: 'John Doe <mail@example.com>',
