@@ -21,6 +21,8 @@ function _s_setup() {
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
 	 * to change '_s' to the name of your theme in all the template files.
+	 * You will also need to update the Gulpfile with the new text domain
+	 * and matching destination POT file.
 	 */
 	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
