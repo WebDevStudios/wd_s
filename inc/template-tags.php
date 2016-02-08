@@ -25,12 +25,12 @@ function _s_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', '_s' ),
+		esc_html_x( 'Posted on %s', 'post date', 'wd_s' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', '_s' ),
+		esc_html_x( 'by %s', 'post author', 'wd_s' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -47,28 +47,28 @@ function _s_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'wd_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wd_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wd_s' ) );
 		if ( $tags_list ) {
-						printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+						printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wd_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'wd_s' ), esc_html__( '1 Comment', 'wd_s' ), esc_html__( '% Comments', 'wd_s' ) );
 		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', '_s' ),
+			esc_html__( 'Edit %s', 'wd_s' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
@@ -137,12 +137,12 @@ function _s_get_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', '_s' );
+		return esc_html__( 'Please define default parameters in the form of an array.', 'wd_s' );
 	}
 
 	// YUNO define an icon?
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', '_s' );
+		return esc_html__( 'Please define an SVG icon filename.', 'wd_s' );
 	}
 
 	// Set defaults.

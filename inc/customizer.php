@@ -19,8 +19,8 @@ function _s_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         '_s_social_links_section',
         array(
-            'title'       => __( 'Social Links', '_s' ),
-            'description' => __( 'These are the settings for social links. Please limit the number of social links to 5.', '_s' ),
+            'title'       => __( 'Social Links', 'wd_s' ),
+            'description' => __( 'These are the settings for social links. Please limit the number of social links to 5.', 'wd_s' ),
             'priority'    => 90,
         )
     );
@@ -41,7 +41,7 @@ function _s_customize_register( $wp_customize ) {
 	    $wp_customize->add_control(
 	        '_s_' . $network . '_link',
 	        array(
-	            'label'   => sprintf( __( '%s Link', '_s' ), ucwords( $network ) ),
+	            'label'   => sprintf( __( '%s Link', 'wd_s' ), ucwords( $network ) ),
 	            'section' => '_s_social_links_section',
 	            'type'    => 'text',
 	        )
@@ -52,7 +52,7 @@ function _s_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         '_s_footer_section',
         array(
-            'title'    => __( 'Footer Customization', '_s' ),
+            'title'    => __( 'Footer Customization', 'wd_s' ),
             'priority' => 90,
         )
     );
@@ -67,8 +67,8 @@ function _s_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         '_s_copyright_text',
         array(
-            'label'       => __( 'Copyright Text', '_s' ),
-            'description' => __( 'The copyright text will be displayed beneath the menu in the footer.', '_s' ),
+            'label'       => __( 'Copyright Text', 'wd_s' ),
+            'description' => __( 'The copyright text will be displayed beneath the menu in the footer.', 'wd_s' ),
             'section'     => '_s_footer_section',
             'type'        => 'text',
             'sanitize'    => 'html'

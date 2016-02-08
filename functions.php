@@ -20,9 +20,9 @@ function _s_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files.
+	 * to change 'wd_s' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wd_s', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function _s_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', '_s' ),
+		'primary' => esc_html__( 'Primary Menu', 'wd_s' ),
 	) );
 
 	/*
@@ -90,9 +90,9 @@ function _s_setup() {
 
 		// Define areas
 		$page_builder_areas = array(
-			'hero'           => array( 'name' => esc_html__( 'Hero Area', '_s' ), ),
-			'before_content' => array( 'name' => esc_html__( 'Before Content Area', '_s' ), ),
-			'after_content'  => array( 'name' => esc_html__( 'After Content Area', '_s' ), ),
+			'hero'           => array( 'name' => esc_html__( 'Hero Area', 'wd_s' ), ),
+			'before_content' => array( 'name' => esc_html__( 'Before Content Area', 'wd_s' ), ),
+			'after_content'  => array( 'name' => esc_html__( 'After Content Area', 'wd_s' ), ),
 		);
 
 		// Loop through and register each area
@@ -125,9 +125,9 @@ function _s_widgets_init() {
 
 	// Define sidebars
 	$sidebars = array(
-		'sidebar-1'  => esc_html__( 'Sidebar 1', '_s' ),
-	//	'sidebar-2'  => esc_html__( 'Sidebar 2', '_s' ),
-	//	'sidebar-3'  => esc_html__( 'Sidebar 3', '_s' ),
+		'sidebar-1'  => esc_html__( 'Sidebar 1', 'wd_s' ),
+	//	'sidebar-2'  => esc_html__( 'Sidebar 2', 'wd_s' ),
+	//	'sidebar-3'  => esc_html__( 'Sidebar 3', 'wd_s' ),
 	);
 
 	// Loop through each sidebar and register
@@ -135,7 +135,7 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => $sidebar_name,
 			'id'            => $sidebar_id,
-			'description'   => sprintf ( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
+			'description'   => sprintf ( esc_html__( 'Widget area for %s', 'wd_s' ), $sidebar_name ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
