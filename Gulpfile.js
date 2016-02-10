@@ -7,7 +7,9 @@ var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var mqpacker = require('css-mqpacker');
-var neat = require('node-neat').includePaths;
+var bourbon = require('bourbon').includePaths;
+var neat = require('bourbon-neat').includePaths;
+var notify = require('gulp-notify');
 var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
@@ -32,6 +34,19 @@ var paths = {
 };
 
 /**
+ * Growl notification for errors.
+ * https://www.npmjs.com/package/gulp-notify
+ */
+function handleErrors() {
+	var args = Array.prototype.slice.call(arguments);
+	notify.onError({
+		title: 'Compile Error',
+		message: '<%= error.message %>'
+	}).apply(this, args);
+	this.emit('end');
+}
+
+/**
  * Compile Sass and run stylesheet through PostCSS.
  *
  * https://www.npmjs.com/package/gulp-sass
@@ -47,7 +62,8 @@ gulp.task('postcss', function() {
 
 		// Compile Sass using LibSass.
 		.pipe(sass({
-			includePaths: neat, // Include Bourbon & Neat
+			includePaths: ['bourbon', 'bourbon-neat'],
+			errLogToConsole: true,
 			outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
 		}))
 
@@ -64,6 +80,9 @@ gulp.task('postcss', function() {
 	// Create sourcemap.
 	.pipe(sourcemaps.write())
 
+	// Handle errors.
+	.on('error', handleErrors)
+
 	// Create style.css.
 	.pipe(gulp.dest('./'))
 	.pipe(browserSync.stream());
@@ -79,6 +98,7 @@ gulp.task('cssnano', function() {
 	.pipe(cssnano({
 		safe: true // Use safe optimizations
 	}))
+	.on('error', handleErrors)
 	.pipe(rename('style.min.css'))
 	.pipe(gulp.dest('./'))
 	.pipe(browserSync.stream());
@@ -110,6 +130,7 @@ gulp.task('svgstore', function() {
 	.pipe(svgstore({
 		inlineSvg: true
 	}))
+	.on('error', handleErrors)
 	.pipe(gulp.dest('assets/images/'))
 	.pipe(browserSync.stream());
 });
@@ -124,6 +145,7 @@ gulp.task('imagemin', function() {
 	.pipe(imagemin({
 		optimizationLevel: 5
 	}))
+	.on('error', handleErrors)
 	.pipe(gulp.dest('assets/images'));
 });
 
@@ -140,6 +162,7 @@ gulp.task('spritesmith', function() {
 		imgPath:   'assets/images/sprites.png',
 		algorithm: 'binary-tree'
 	}))
+	.on('error', handleErrors)
 	.pipe(gulp.dest('assets/images/'))
 	.pipe(browserSync.stream());
 });
@@ -156,7 +179,8 @@ gulp.task('uglify', function() {
 		.pipe(uglify({
 			mangle: false
 		}))
-		.pipe(concat('project.js'))
+	.pipe(concat('project.js'))
+	.on('error', handleErrors)
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('assets/js'))
 	.pipe(browserSync.stream());
@@ -178,6 +202,7 @@ gulp.task('i18n', function () {
 		lastTranslator: 'John Doe <mail@example.com>',
 		team: 'Team Team <mail@example.com>'
 	}))
+	.on('error', handleErrors)
 	.pipe(gulp.dest('languages/'));
 });
 
