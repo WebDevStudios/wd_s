@@ -62,7 +62,7 @@ gulp.task('postcss', function() {
 
 		// Compile Sass using LibSass.
 		.pipe(sass({
-			includePaths: ['bourbon', 'bourbon-neat'],
+			includePaths: ['bourbon', 'neat'],
 			errLogToConsole: true,
 			outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
 		}))
