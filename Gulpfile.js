@@ -10,6 +10,7 @@ var gutil = require('gulp-util');
 var imagemin = require('gulp-imagemin');
 var mqpacker = require('css-mqpacker');
 var neat = require('bourbon-neat').includePaths;
+var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
