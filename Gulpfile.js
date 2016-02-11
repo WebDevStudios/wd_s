@@ -61,6 +61,7 @@ function handleErrors () {
 gulp.task('postcss', function() {
 	return gulp.src('assets/sass/*.scss', paths.css)
 
+	.pipe(plumber({ errorHandler: handleErrors }))
 	// Wrap tasks in a sourcemap.
 	.pipe(sourcemaps.init())
 
@@ -84,12 +85,9 @@ gulp.task('postcss', function() {
 	// Create sourcemap.
 	.pipe(sourcemaps.write())
 
-	// Handle errors.
-	.on('error', handleErrors())
-
 	// Create style.css.
 	.pipe(gulp.dest('./'))
-	.pipe(browserSync.stream());
+	.pipe(browserSync.stream())
 });
 
 /**
@@ -99,10 +97,13 @@ gulp.task('postcss', function() {
  */
 gulp.task('cssnano', function() {
 	return gulp.src('style.css')
+	
+	.pipe(plumber({ errorHandler: handleErrors }))
+	
 	.pipe(cssnano({
 		safe: true // Use safe optimizations
 	}))
-	.on('error', handleErrors())
+
 	.pipe(rename('style.min.css'))
 	.pipe(gulp.dest('./'))
 	.pipe(browserSync.stream());
@@ -149,7 +150,7 @@ gulp.task('imagemin', function() {
 	.pipe(imagemin({
 		optimizationLevel: 5
 	}))
-	.on('error', handleErrors())
+	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(gulp.dest('assets/images'));
 });
 
@@ -166,7 +167,7 @@ gulp.task('spritesmith', function() {
 		imgPath:   'assets/images/sprites.png',
 		algorithm: 'binary-tree'
 	}))
-	.on('error', handleErrors())
+	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(gulp.dest('assets/images/'))
 	.pipe(browserSync.stream());
 });
@@ -179,15 +180,13 @@ gulp.task('spritesmith', function() {
  */
 gulp.task('uglify', function() {
 	return gulp.src(paths.scripts)
+	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(sourcemaps.init())
 		.pipe(uglify({
 			mangle: false
 		}))
 	.pipe(concat('project.js'))
 	.pipe(sourcemaps.write())
-	.pipe(plumber({
-		errorHandler: onError,
-	}))
 	.pipe(gulp.dest('assets/js'))
 	.pipe(browserSync.stream());
 });
