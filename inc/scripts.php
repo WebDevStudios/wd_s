@@ -62,7 +62,6 @@ function _s_scripts() {
 
 	// Register styles.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
-	wp_register_style( 'animate.css', get_stylesheet_directory_uri() . '/assets/bower_components/animate.css/animate' . $suffix . '.css', array(), $version );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
