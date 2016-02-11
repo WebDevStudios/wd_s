@@ -1,5 +1,5 @@
-assets/bower_components/bourbon
-assets/bower_components/neat
+assets/bower_components/bourbon/
+assets/bower_components/neat/
 node_modules/
 .idea/
 .sass-cache
