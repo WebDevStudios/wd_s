@@ -23,6 +23,9 @@ Bo-Yi Wu (https://github.com/appleboy/), Nicolas Gallagher (https://github.com/n
 @import "neat";
 @import "utilities/mixins/index";
 
+// Animate.css via Scss
+@import "utilities/animate/index";
+
 @import "base/index";
 @import "structure/index";
 @import "modules/index";

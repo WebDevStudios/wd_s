@@ -10,8 +10,11 @@ wd_s
 * [Bourbon](http://bourbon.io/)
 * [Neat](http://neat.bourbon.io/)
 * BrowserSync
+* [Animate.scss](assets/sass/utilities/animate/README.md)
+* Bower
+* Live reload
 * WDS Simple Page Builder support
-* [SVG support](images/svg-icons/README.md)
+* [SVG support](assets/images/svg-icons/README.md)
 * Image sprite support
 * Script linting and CSS minifcation
 
