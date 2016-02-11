@@ -16,6 +16,7 @@
     "gulp-cssnano": "^2.1.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
@@ -28,7 +29,8 @@
     "gulp.spritesmith": "^6.2.0",
     "node-neat": "^1.7.2",
     "path": "^0.12.7",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "vinyl": "^1.1.1"
   },
   "devDependencies": {},
   "scripts": {

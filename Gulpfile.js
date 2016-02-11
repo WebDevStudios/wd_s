@@ -1,5 +1,6 @@
 // Require our dependencies
 var autoprefixer = require('autoprefixer');
+var bourbon = require('bourbon').includePaths;
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
@@ -7,9 +8,8 @@ var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var mqpacker = require('css-mqpacker');
-var bourbon = require('bourbon').includePaths;
 var neat = require('bourbon-neat').includePaths;
-var notify = require('gulp-notify');
+var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
@@ -33,18 +33,11 @@ var paths = {
 	sprites: 'assets/images/sprites/*.png'
 };
 
-/**
- * Growl notification for errors.
- * https://www.npmjs.com/package/gulp-notify
- */
-function handleErrors() {
-	var args = Array.prototype.slice.call(arguments);
-	notify.onError({
-		title: 'Compile Error',
-		message: '<%= error.message %>'
-	}).apply(this, args);
+var onError = function (err) {
+	gutil.beep();
+	console.log(err);
 	this.emit('end');
-}
+};
 
 /**
  * Compile Sass and run stylesheet through PostCSS.
@@ -81,7 +74,7 @@ gulp.task('postcss', function() {
 	.pipe(sourcemaps.write())
 
 	// Handle errors.
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 
 	// Create style.css.
 	.pipe(gulp.dest('./'))
@@ -98,7 +91,7 @@ gulp.task('cssnano', function() {
 	.pipe(cssnano({
 		safe: true // Use safe optimizations
 	}))
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 	.pipe(rename('style.min.css'))
 	.pipe(gulp.dest('./'))
 	.pipe(browserSync.stream());
@@ -130,7 +123,7 @@ gulp.task('svgstore', function() {
 	.pipe(svgstore({
 		inlineSvg: true
 	}))
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 	.pipe(gulp.dest('assets/images/'))
 	.pipe(browserSync.stream());
 });
@@ -145,7 +138,7 @@ gulp.task('imagemin', function() {
 	.pipe(imagemin({
 		optimizationLevel: 5
 	}))
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 	.pipe(gulp.dest('assets/images'));
 });
 
@@ -162,7 +155,7 @@ gulp.task('spritesmith', function() {
 		imgPath:   'assets/images/sprites.png',
 		algorithm: 'binary-tree'
 	}))
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 	.pipe(gulp.dest('assets/images/'))
 	.pipe(browserSync.stream());
 });
@@ -180,8 +173,10 @@ gulp.task('uglify', function() {
 			mangle: false
 		}))
 	.pipe(concat('project.js'))
-	.on('error', handleErrors)
 	.pipe(sourcemaps.write())
+	.pipe(plumber({
+		errorHandler: onError,
+	}))
 	.pipe(gulp.dest('assets/js'))
 	.pipe(browserSync.stream());
 });
@@ -202,7 +197,7 @@ gulp.task('i18n', function () {
 		lastTranslator: 'John Doe <mail@example.com>',
 		team: 'Team Team <mail@example.com>'
 	}))
-	.on('error', handleErrors)
+	.on('error', handleErrors())
 	.pipe(gulp.dest('languages/'));
 });
 
