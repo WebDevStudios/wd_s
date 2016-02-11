@@ -35,11 +35,20 @@ var paths = {
 	sprites: 'assets/images/sprites/*.png'
 };
 
-var onError = function (err) {
-	gutil.beep();
-	console.log(err);
-	this.emit('end');
-};
+function handleErrors () {
+	var args = Array.prototype.slice.call(arguments);
+	
+    notify.onError({
+        title: 'Task Failed [<%= error.message %>',
+        message: 'See console.',
+        sound: 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+    }).apply(this, args);
+
+    gutil.beep(); // Beep 'sosumi' again
+
+    // Prevent the 'watch' task from stopping
+    this.emit('end');
+}
 
 /**
  * Compile Sass and run stylesheet through PostCSS.
