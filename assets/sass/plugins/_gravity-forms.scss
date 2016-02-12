@@ -28,6 +28,8 @@ $gf-input-padding: $padding-input;
 .gform_wrapper {
 	background: $gf-bg;
 	border: $gf-border-width solid $gf-border-color;
+	margin-right: 0 !important;
+	max-width: 100% !important;
 	padding: $gf-padding;
 
 	// Main form field selector.
@@ -48,12 +50,6 @@ $gf-input-padding: $padding-input;
 			}
 		}
 
-		// Targets two-column rows
-		&.gf_left_half,
-		&.gf_right_half {
-			margin-bottom: $gf-field-margin-bottom;
-		}
-
 		// Standard fields
 		input[type="text"],
 		input[type="url"],
@@ -61,8 +57,19 @@ $gf-input-padding: $padding-input;
 		input[type="tel"],
 		input[type="number"],
 		input[type="password"],
+		input[type="file"],
 		textarea {
 			padding: $gf-input-padding;
+			width: 100% !important;
+
+			@include media($phone-landscape) {
+				width: 49% !important;
+			}
+		}
+
+		// Text area
+		textarea {
+			width: 100% !important;
 		}
 
 		// Default Drop-Down (Select) Field
@@ -78,7 +85,7 @@ $gf-input-padding: $padding-input;
 			width: 100% !important;
 
 			@include media($phone-landscape) {
-				width: 47.5% !important; // GF default
+				width: 49% !important;
 			}
 		}
 
@@ -123,7 +130,8 @@ $gf-input-padding: $padding-input;
 					@include triangle(12px, $color-silver, up); // adjust size and color for active icon
 				}
 			}
-		}// End of Chosen select
+		}
+		// End of Chosen select
 
 		// Remove icon for default multi-select
 		select[multiple="multiple"] {
@@ -145,6 +153,45 @@ $gf-input-padding: $padding-input;
 			}
 		}
 	}
+
+	//--------------------------------------------------------------
+	// Two Columns
+	// Mostly sizing adjustments here.
+	//--------------------------------------------------------------
+
+	// Target two-column rows
+	& .gform_body .gform_fields .gfield.gf_left_half,
+	& .gform_body .gform_fields .gfield.gf_right_half {
+		margin-bottom: $gf-field-margin-bottom;
+		width: 100% !important;
+
+		@include media($phone-landscape) {
+			width: 49% !important;
+		}
+
+		// Inputs
+		input[type="text"],
+		input[type="url"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"],
+		input[type="file"] {
+			width: 100% !important;
+
+			@include media($phone-landscape) {
+				width: 100% !important;
+			}
+		}
+	}
+
+	// Target just left column on two-column row
+	&.gf_left_half {
+
+		@include media($phone-landscape) {
+			margin-right: 2% !important;
+		}
+	}// end of two-columns
 
 	// Footer area - typically contains submit button
 	& .gform_footer {
