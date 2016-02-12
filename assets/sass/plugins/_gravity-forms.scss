@@ -22,7 +22,7 @@ $gf-label-font-weight: 700;
 $gf-input-color-border: $color-input-border;
 $gf-input-color-text: $color-input-text;
 $gf-input-color-focus-text: $color-input-focus-text;
-$gf-input-padding: rem(11) rem(5);
+$gf-input-padding: $padding-input;
 
 // Contains entire form
 .gform_wrapper {
@@ -84,13 +84,13 @@ $gf-input-padding: rem(11) rem(5);
 				background: none;
 				border-radius: 0;
 				height: auto;
-				padding: rem(11) rem(5) rem(10);
+				padding: $gf-input-padding;
 			}
 
 			// Default state of icon for select
 			.chosen-single div b {
-				@include position(absolute, rem(19) rem(11) null null);
-				@include triangle(18px, $color-silver, down);
+				@include position(absolute, 40% rem(11) null null);
+				@include triangle(12px, $color-silver, down); // adjust size and color
 
 				background: none; // hide the default chosen background
 			}
@@ -114,7 +114,7 @@ $gf-input-padding: rem(11) rem(5);
 
 				.chosen-single div b {
 					border: none; // hiding the previous triangle (border)
-					@include triangle(18px, $color-silver, up);
+					@include triangle(12px, $color-silver, up); // adjust size and color for active icon
 				}
 			}
 		}// End of Chosen select
