@@ -69,11 +69,17 @@ $gf-input-padding: $padding-input;
 		// Feel free to change the svg icon being used
 		select {
 			background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
+			background-size: rem(12);
 			border-radius: 0;
 			line-height: 1.45;
 			margin-left: 0 !important;
 			padding: $gf-input-padding;
 			-webkit-appearance: none;
+			width: 100% !important;
+
+			@include media($phone-landscape) {
+				width: 47.5% !important; // GF default
+			}
 		}
 
 		// Chosen select!
