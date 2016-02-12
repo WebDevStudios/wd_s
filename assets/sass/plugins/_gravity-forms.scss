@@ -114,6 +114,7 @@ $gf-input-padding: $padding-input;
 				// Search box by default has a small magnifying icon on right
 				.chosen-search input[type="text"] {
 					background: none;
+					width: 100% !important;
 				}
 
 				// Search results list
