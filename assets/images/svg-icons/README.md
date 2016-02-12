@@ -26,7 +26,7 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
 ```
 
 Example usage:
-`<?php echo _s_get_svg( 'twitter'); ?>`
+`<?php echo _s_get_svg( array( 'icon' => 'twitter' ) ); ?>`
 
 Output:
 ```
@@ -34,14 +34,14 @@ Output:
     <use xlink:href="#icon-twitter"></use>
 </svg>
 ```
-[`_s_do_svg( $icon_name ); // Echo SVG markup`](../blob/master/inc/template-tags.php#L139)
+[`_s_do_svg( array( 'icon' => $icon_name ) ); // Echo SVG markup`](../blob/master/inc/template-tags.php#L139)
 
 Example usage:
-`<?php _s_do_svg( 'facebook' ); ?>`
+`<?php _s_do_svg( array( 'icon' => 'facebook' ) ); ?>`
 
 Output:
 ```
-<svg class="icon icon-facebook">
+<svg class="icon facebook">
     <use xlink:href="#icon-facebook"></use>
 </svg>
 ```
