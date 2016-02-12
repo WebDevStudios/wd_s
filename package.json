@@ -29,10 +29,7 @@
     "gulp-util": "^3.0.7",
     "gulp-wp-pot": "^1.1.1",
     "gulp.spritesmith": "^6.2.0",
-    "node-neat": "^1.7.2",
-    "path": "^0.12.7",
-    "require-dir": "^0.3.0",
-    "vinyl": "^1.1.1"
+    "node-neat": "^1.7.2"
   },
   "devDependencies": {},
   "scripts": {
