@@ -4,13 +4,14 @@
 // https://www.gravityhelp.com/documentation/article/css-targeting-examples/
 //--------------------------------------------------------------
 
+// Form
 $gf-padding: 0; // set outer padding on form
 $gf-bg: $color-white; // background color of form
 $gf-border-width: 0; // border-width on form
 $gf-border-color: $color-white; // border color
 
 // Fields / Rows
-$gf-field-margin-bottom: rem(25); // margin between field and label below
+$gf-field-margin-bottom: rem(25); // margin between field and label below (vertical spacing between rows)
 
 // Labels
 $gf-label-font-size: rem(16);
@@ -45,6 +46,12 @@ $gf-input-padding: rem(11) rem(5);
 			.gfield_required {
 
 			}
+		}
+
+		// Targets two-column rows
+		&.gf_left_half,
+		&.gf_right_half {
+			margin-bottom: $gf-field-margin-bottom;
 		}
 
 		// Standard fields
