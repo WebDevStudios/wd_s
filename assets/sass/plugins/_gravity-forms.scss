@@ -4,39 +4,42 @@
 // https://www.gravityhelp.com/documentation/article/css-targeting-examples/
 //--------------------------------------------------------------
 
-$gf-form-padding: 0; // set outer padding on form
-$gf-form-bg: $color-white; // background color of form
-$gf-form-border-width: 0; // border-width on form
-$gf-form-border-color: $color-white; // border color
+$gf-padding: 0; // set outer padding on form
+$gf-bg: $color-white; // background color of form
+$gf-border-width: 0; // border-width on form
+$gf-border-color: $color-white; // border color
 
 // Fields / Rows
-$gf-form-field-margin-bottom: rem(25); // margin between field and label below
+$gf-field-margin-bottom: rem(25); // margin between field and label below
 
 // Labels
-$gf-form-label-font-size: rem(16);
-$gf-form-label-font-color: $color-mineshaft;
-$gf-form-label-font-weight: 700;
+$gf-label-font-size: rem(16);
+$gf-label-font-color: $color-mineshaft;
+$gf-label-font-weight: 700;
 
 // Inputs
-$gf-form-input-padding: rem(11) rem(5);
+$gf-input-color-border: $color-input-border;
+$gf-input-color-text: $color-input-text;
+$gf-input-color-focus-text: $color-input-focus-text;
+$gf-input-padding: rem(11) rem(5);
 
 // Contains entire form
 .gform_wrapper {
-	background: $gf-form-bg;
-	border: $gf-form-border-width solid $gf-form-border-color;
-	padding: $gf-form-padding;
+	background: $gf-bg;
+	border: $gf-border-width solid $gf-border-color;
+	padding: $gf-padding;
 
 	// Main form field selector.
 	// Visit the link above and add in the field types / classes that you need to target.
 	// Most fields can be styled in the block below.
 	& .gform_body .gform_fields .gfield {
-		margin-bottom: $gf-form-field-margin-bottom; // space between input and label below
+		margin-bottom: $gf-field-margin-bottom; // space between input and label below
 
 		// Standard field label
 		.gfield_label {
-			color: $gf-form-label-font-color;
-			font-size: $gf-form-label-font-size;
-			font-weight: $gf-form-label-font-weight;
+			color: $gf-label-font-color;
+			font-size: $gf-label-font-size;
+			font-weight: $gf-label-font-weight;
 
 			// Require field Indicator (Asterisk)
 			.gfield_required {
@@ -50,8 +53,9 @@ $gf-form-input-padding: rem(11) rem(5);
 		input[type="email"],
 		input[type="tel"],
 		input[type="number"],
-		input[type="password"] {
-			padding: $gf-form-input-padding;
+		input[type="password"],
+		textarea {
+			padding: $gf-input-padding;
 		}
 
 		// Default Drop-Down (Select) Field
@@ -61,7 +65,7 @@ $gf-form-input-padding: rem(11) rem(5);
 			border-radius: 0;
 			line-height: 1.45;
 			margin-left: 0 !important;
-			padding: $gf-form-input-padding;
+			padding: $gf-input-padding;
 			-webkit-appearance: none;
 		}
 
