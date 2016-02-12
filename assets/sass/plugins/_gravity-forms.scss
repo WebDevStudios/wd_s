@@ -8,10 +8,14 @@
 //	BASE LAYOUT - ONE COLUMN
 //	TWO COLUMN LAYOUT
 //	CHOSEN SELECT
+//	ADVANCED FIELDS
+//	 - Advanced Field Container
+//	   - Name
+//	 - Time
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
-// Local Variables
+// LOCAL VARIABLES
 //--------------------------------------------------------------
 
 // Form
@@ -35,7 +39,7 @@ $gf-input-color-focus-text: $color-input-focus-text;
 $gf-input-padding: $padding-input;
 
 //--------------------------------------------------------------
-// Base Styles
+//	BASE STYLES
 //--------------------------------------------------------------
 .gform_wrapper { // the entire form
 	background: $gf-bg;
@@ -104,8 +108,8 @@ $gf-input-padding: $padding-input;
 }
 
 //--------------------------------------------------------------
-// Base Layout
-// One Column
+//	BASE LAYOUT
+//	One Column
 //--------------------------------------------------------------
 .gform_wrapper .gform_body .gform_fields .gfield {
 
@@ -141,9 +145,8 @@ $gf-input-padding: $padding-input;
 }
 
 //--------------------------------------------------------------
-// Two Column Layout
+//	TWO COLUMN LAYOUT
 //--------------------------------------------------------------
-
 .gform_wrapper .gform_body .gform_fields .gfield.gf_left_half,
 .gform_wrapper .gform_body .gform_fields .gfield.gf_right_half {
 
@@ -181,7 +184,7 @@ $gf-input-padding: $padding-input;
 }
 
 //--------------------------------------------------------------
-// Chosen Select
+//	CHOSEN SELECT
 //--------------------------------------------------------------
 .gform_wrapper .gform_body .gform_fields .gfield {
 
@@ -226,6 +229,61 @@ $gf-input-padding: $padding-input;
 				border: none; // hiding the previous triangle (border)
 				@include triangle(12px, $color-silver, up); // adjust size and color for active icon
 			}
+		}
+	}
+}
+
+//--------------------------------------------------------------
+//	ADVANCED FIELDS
+//	https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
+//--------------------------------------------------------------
+.gform_wrapper .gform_body .gform_fields .gfield {
+
+	// Advanced Field Container
+	& .ginput_complex {
+
+		// Name Field
+		&.ginput_container_name {
+
+			// First / Last name spans
+			.name_first,
+			.name_last {
+				padding-right: 0;
+				width: 100%;
+
+				@include media($phone-landscape) {
+					width: 49%;
+				}
+
+				// First / Last name inputs
+				input[type="text"] {
+					width: 100% !important;
+				}
+			}
+
+			// First name only
+			.name_first {
+
+				@include media($phone-landscape) {
+					float: left;
+					margin-right: 2%;
+				}
+			}
+		}
+	}
+
+	// Time
+	& .gfield_time_hour,
+	& .gfield_time_minute,
+	& .gfield_time_ampm {
+
+		input {
+			padding: $gf-input-padding;
+			width: 70% !important;
+		}
+
+		select {
+			width: rem(75) !important;
 		}
 	}
 }
