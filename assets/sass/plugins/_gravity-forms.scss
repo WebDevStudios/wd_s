@@ -1,7 +1,17 @@
 //--------------------------------------------------------------
-// Gravity Forms
-// Visit this link for CSS Targeting Examples - Very Helpful
-// https://www.gravityhelp.com/documentation/article/css-targeting-examples/
+//	Gravity Forms
+//	Visit this link for CSS Targeting Examples - Very Helpful
+//	https://www.gravityhelp.com/documentation/article/css-targeting-examples/
+//
+//	LOCAL VARIABLES
+//	BASE STYLES
+//	BASE LAYOUT - ONE COLUMN
+//	TWO COLUMN LAYOUT
+//	CHOSEN SELECT
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// Local Variables
 //--------------------------------------------------------------
 
 // Form
@@ -24,146 +34,121 @@ $gf-input-color-text: $color-input-text;
 $gf-input-color-focus-text: $color-input-focus-text;
 $gf-input-padding: $padding-input;
 
-// Contains entire form
-.gform_wrapper {
+//--------------------------------------------------------------
+// Base Styles
+//--------------------------------------------------------------
+.gform_wrapper { // the entire form
 	background: $gf-bg;
 	border: $gf-border-width solid $gf-border-color;
 	margin-right: 0 !important;
 	max-width: 100% !important;
 	padding: $gf-padding;
 
-	// Main form field selector.
-	// Visit the link above and add in the field types / classes that you need to target.
-	// Most fields can be styled in the block below.
-	& .gform_body .gform_fields .gfield {
+	// Single and two-column
+	& .gform_body .gform_fields .gfield,
+	& .gform_body .gform_fields .gfield.gf_left_half,
+	& .gform_body .gform_fields .gfield.gf_right_half {
 		margin-bottom: $gf-field-margin-bottom; // space between input and label below
+	}
 
-		// Standard field label
-		.gfield_label {
-			color: $gf-label-font-color;
-			font-size: $gf-label-font-size;
-			font-weight: $gf-label-font-weight;
+	// Labels
+	.gfield_label {
+		color: $gf-label-font-color;
+		font-size: $gf-label-font-size;
+		font-weight: $gf-label-font-weight;
 
-			// Require field Indicator (Asterisk)
-			.gfield_required {
+		// Require field Indicator (Asterisk)
+		.gfield_required {
 
-			}
-		}
-
-		// Standard fields
-		input[type="text"],
-		input[type="url"],
-		input[type="email"],
-		input[type="tel"],
-		input[type="number"],
-		input[type="password"],
-		input[type="file"],
-		textarea {
-			padding: $gf-input-padding;
-			width: 100% !important;
-
-			@include media($phone-landscape) {
-				width: 49% !important;
-			}
-		}
-
-		// Text area
-		textarea {
-			width: 100% !important;
-		}
-
-		// Default Drop-Down (Select) Field
-		// Feel free to change the svg icon being used
-		select {
-			background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
-			background-size: rem(12);
-			border-radius: 0;
-			line-height: 1.45;
-			margin-left: 0 !important;
-			padding: $gf-input-padding;
-			-webkit-appearance: none;
-			width: 100% !important;
-
-			@include media($phone-landscape) {
-				width: 49% !important;
-			}
-		}
-
-		// Chosen select!
-		.chosen-container-single {
-			font-size: rem(16);
-
-			.chosen-single {
-				background: none;
-				border-radius: 0;
-				height: auto;
-				padding: $gf-input-padding;
-			}
-
-			// Default state of icon for select
-			.chosen-single div b {
-				@include position(absolute, 40% rem(11) null null);
-				@include triangle(12px, $color-silver, down); // adjust size and color
-
-				background: none; // hide the default chosen background
-			}
-
-			// These styles are for the Chosen drop-down area
-			.chosen-drop {
-
-				// Search box by default has a small magnifying icon on right
-				.chosen-search input[type="text"] {
-					background: none;
-					width: 100% !important;
-				}
-
-				// Search results list
-				.chosen-results li {
-					padding: rem(10) rem(5);
-				}
-			}
-
-			// For styling the icon when select is active
-			&.chosen-container-single.chosen-with-drop {
-
-				.chosen-single div b {
-					border: none; // hiding the previous triangle (border)
-					@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-				}
-			}
-		}
-		// End of Chosen select
-
-		// Remove icon for default multi-select
-		select[multiple="multiple"] {
-			background: none;
-		}
-
-		// Time drop-down
-		.ginput_container_time select {
-			background-position-x: 90%; // position icon
-			background-size: rem(10); // set icon size
-		}
-
-		// Address field
-		.ginput_container_address {
-
-			// Country drop-down
-			.address_country select {
-				width: 97.5%; // match width of other fields
-			}
 		}
 	}
 
-	//--------------------------------------------------------------
-	// Two Columns
-	// Mostly sizing adjustments here.
-	//--------------------------------------------------------------
+	// Standard fields
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	input[type="file"],
+	textarea {
+		padding: $gf-input-padding;
+	}
 
-	// Target two-column rows
-	& .gform_body .gform_fields .gfield.gf_left_half,
-	& .gform_body .gform_fields .gfield.gf_right_half {
-		margin-bottom: $gf-field-margin-bottom;
+	// Default Drop-Down (Select) Field
+	// Feel free to change the svg icon being used
+	select {
+		background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
+		background-size: rem(12);
+		border-radius: 0;
+		line-height: 1.45;
+		margin-left: 0 !important;
+		padding: $gf-input-padding;
+		-webkit-appearance: none;
+	}
+
+	// Remove icon for default multi-select
+	select[multiple="multiple"] {
+		background: none;
+	}
+
+	// Footer area - typically contains submit button
+	& .gform_footer {
+
+		input.button,
+		input[type="submit"] {
+			// This will target submit buttons
+			// You may need to use !important
+		}
+	}
+}
+
+//--------------------------------------------------------------
+// Base Layout
+// One Column
+//--------------------------------------------------------------
+.gform_wrapper .gform_body .gform_fields .gfield {
+
+	// Standard fields
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	input[type="file"],
+	textarea {
+		width: 100% !important;
+
+		@include media($phone-landscape) {
+			width: 49% !important;
+		}
+	}
+
+	textarea {
+		width: 100% !important;
+	}
+
+	// Default Drop-Down (Select) Field
+	// Feel free to change the svg icon being used
+	select {
+		width: 100% !important;
+
+		@include media($phone-landscape) {
+			width: 49% !important;
+		}
+	}
+}
+
+//--------------------------------------------------------------
+// Two Column Layout
+//--------------------------------------------------------------
+
+.gform_wrapper .gform_body .gform_fields .gfield.gf_left_half,
+.gform_wrapper .gform_body .gform_fields .gfield.gf_right_half {
+
+	&.gf_left_half,
+	&.gf_right_half {
 		width: 100% !important;
 
 		@include media($phone-landscape) {
@@ -192,15 +177,55 @@ $gf-input-padding: $padding-input;
 		@include media($phone-landscape) {
 			margin-right: 2% !important;
 		}
-	}// end of two-columns
+	}
+}
 
-	// Footer area - typically contains submit button
-	& .gform_footer {
+//--------------------------------------------------------------
+// Chosen Select
+//--------------------------------------------------------------
+.gform_wrapper .gform_body .gform_fields .gfield {
 
-		input.button,
-		input[type="submit"] {
-			// This will target submit buttons
-			// You may need to use !important
+	// Chosen select!
+	.chosen-container-single {
+		font-size: rem(16);
+
+		.chosen-single {
+			background: none;
+			border-radius: 0;
+			height: auto;
+			padding: $gf-input-padding;
+		}
+
+		// Default state of icon for select
+		.chosen-single div b {
+			@include position(absolute, 40% rem(11) null null);
+			@include triangle(12px, $color-silver, down); // adjust size and color
+
+			background: none; // hide the default chosen background
+		}
+
+		// These styles are for the Chosen drop-down area
+		.chosen-drop {
+
+			// Search box by default has a small magnifying icon on right
+			.chosen-search input[type="text"] {
+				background: none;
+				width: 100% !important;
+			}
+
+			// Search results list
+			.chosen-results li {
+				padding: rem(10) rem(5);
+			}
+		}
+
+		// For styling the icon when select is active
+		&.chosen-container-single.chosen-with-drop {
+
+			.chosen-single div b {
+				border: none; // hiding the previous triangle (border)
+				@include triangle(12px, $color-silver, up); // adjust size and color for active icon
+			}
 		}
 	}
 }
