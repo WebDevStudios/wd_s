@@ -2,6 +2,14 @@
 //	Gravity Forms
 //	Visit this link for CSS Targeting Examples - Very Helpful
 //	https://www.gravityhelp.com/documentation/article/css-targeting-examples/
+//
+//	LOCAL VARIABLES
+//	BASE STYLES
+//	BASE LAYOUT - ONE COLUMN
+//	TWO COLUMN LAYOUT
+//	CONFIRMATION MESSAGE
+//	CHOSEN SELECT
+//	ADVANCED FIELDS
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
@@ -91,6 +99,11 @@ $gf-input-padding: $padding-input;
 	// Remove icon for default multi-select
 	select[multiple="multiple"] {
 		background: none;
+	}
+
+	// Validation error message - displays above the form
+	.validation_error {
+
 	}
 
 	// Form Heading
