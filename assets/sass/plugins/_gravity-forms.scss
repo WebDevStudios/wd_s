@@ -175,6 +175,14 @@ $gf-input-padding: $padding-input;
 }
 
 //--------------------------------------------------------------
+// CONFORMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
+//--------------------------------------------------------------
+.gforms_confirmation_message { // container element
+	// .gform_confirmation_wrapper - the message wrapper
+	// .gform_confirmation_message - message div
+}
+
+//--------------------------------------------------------------
 //	CHOSEN SELECT
 //--------------------------------------------------------------
 .gform_wrapper .gform_body .gform_fields .gfield {
