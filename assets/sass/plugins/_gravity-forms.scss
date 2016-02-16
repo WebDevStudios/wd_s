@@ -45,6 +45,12 @@ $gf-input-padding: $padding-input;
 		margin-bottom: $gf-field-margin-bottom; // space between input and label below
 	}
 
+	// Error Labels (Required fields)
+	.gfield_error {
+		// .gfield_label - error label
+		// .validation_message - required error text
+	}
+
 	// Labels
 	.gfield_label {
 		color: $gf-label-font-color;
