@@ -2,16 +2,6 @@
 //	Gravity Forms
 //	Visit this link for CSS Targeting Examples - Very Helpful
 //	https://www.gravityhelp.com/documentation/article/css-targeting-examples/
-//
-//	LOCAL VARIABLES
-//	BASE STYLES
-//	BASE LAYOUT - ONE COLUMN
-//	TWO COLUMN LAYOUT
-//	CHOSEN SELECT
-//	ADVANCED FIELDS
-//	 - Advanced Field Container
-//	   - Name
-//	 - Time
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
@@ -42,13 +32,13 @@ $gf-input-padding: $padding-input;
 //	BASE STYLES
 //--------------------------------------------------------------
 .gform_wrapper { // the entire form
-	background: $gf-bg;
-	border: $gf-border-width solid $gf-border-color;
-	margin-right: 0 !important;
-	max-width: 100% !important;
-	padding: $gf-padding;
+	background: $gf-bg; // background for the form
+	border: $gf-border-width solid $gf-border-color; // outer form border
+	margin-right: 0 !important; // allow for full width of containing element
+	max-width: 100% !important; // allow for full width of containing element
+	padding: $gf-padding; // form padding
 
-	// Single and two-column
+	// Single and two-column fields
 	& .gform_body .gform_fields .gfield,
 	& .gform_body .gform_fields .gfield.gf_left_half,
 	& .gform_body .gform_fields .gfield.gf_right_half {
@@ -189,10 +179,11 @@ $gf-input-padding: $padding-input;
 //--------------------------------------------------------------
 .gform_wrapper .gform_body .gform_fields .gfield {
 
-	// Chosen select!
+	// Containing div
 	.chosen-container-single {
 		font-size: rem(16);
 
+		// Link holding initial selection - what user first sees
 		.chosen-single {
 			background: none;
 			border-color: $gf-input-color-border;
@@ -209,7 +200,7 @@ $gf-input-padding: $padding-input;
 			background: none; // hide the default chosen background
 		}
 
-		// These styles are for the Chosen drop-down area
+		// Selections drop-down
 		.chosen-drop {
 
 			// Search box by default has a small magnifying icon on right
@@ -260,7 +251,7 @@ $gf-input-padding: $padding-input;
 					width: 49%;
 				}
 
-				// First / Last name inputs
+				// Text inputs
 				input[type="text"] {
 					width: 100% !important;
 				}
@@ -276,6 +267,7 @@ $gf-input-padding: $padding-input;
 				}
 			}
 
+			// Right field
 			.ginput_right {
 				margin-left: 0;
 
@@ -293,16 +285,17 @@ $gf-input-padding: $padding-input;
 		}
 	}
 
-	// Time
+	// Time fields
 	& .gfield_time_hour,
 	& .gfield_time_minute,
 	& .gfield_time_ampm {
 
+		// Hour / Minute input
 		input {
-			//padding: $gf-input-padding;
 			width: 70% !important;
 		}
 
+		// AM / PM select
 		select {
 			width: rem(75) !important;
 		}
