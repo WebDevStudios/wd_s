@@ -76,7 +76,7 @@ $gf-input-padding: $padding-input;
 	input[type="password"],
 	input[type="file"],
 	textarea {
-		padding: $gf-input-padding;
+		padding: $gf-input-padding !important;
 	}
 
 	// Default Drop-Down (Select) Field
@@ -84,6 +84,7 @@ $gf-input-padding: $padding-input;
 	select {
 		background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
 		background-size: rem(12);
+		border-color: $gf-input-color-border;
 		border-radius: 0;
 		line-height: 1.45;
 		margin-left: 0 !important;
@@ -194,6 +195,7 @@ $gf-input-padding: $padding-input;
 
 		.chosen-single {
 			background: none;
+			border-color: $gf-input-color-border;
 			border-radius: 0;
 			height: auto;
 			padding: $gf-input-padding;
@@ -242,10 +244,13 @@ $gf-input-padding: $padding-input;
 	// Advanced Field Container
 	& .ginput_complex {
 
-		// Name Field
-		&.ginput_container_name {
+		// Field Containers
+		&.ginput_container_name,
+		&.ginput_container_address {
 
-			// First / Last name spans
+			// Left / Right fields
+			.ginput_left,
+			.ginput_right,
 			.name_first,
 			.name_last {
 				padding-right: 0;
@@ -261,7 +266,8 @@ $gf-input-padding: $padding-input;
 				}
 			}
 
-			// First name only
+			// Left field
+			.ginput_left,
 			.name_first {
 
 				@include media($phone-landscape) {
@@ -269,6 +275,21 @@ $gf-input-padding: $padding-input;
 					margin-right: 2%;
 				}
 			}
+
+			.ginput_right {
+				margin-left: 0;
+
+				@include media(phone-landscape) {
+					margin-left: 1.6%;
+				}
+			}
+		}
+
+		// Selects
+		select,
+		.ginput_right select {
+			line-height: 1.45;
+			width: 100% !important;
 		}
 	}
 
@@ -278,7 +299,7 @@ $gf-input-padding: $padding-input;
 	& .gfield_time_ampm {
 
 		input {
-			padding: $gf-input-padding;
+			//padding: $gf-input-padding;
 			width: 70% !important;
 		}
 
