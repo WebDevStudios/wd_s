@@ -4,19 +4,10 @@ wd_s
 [WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used as our new project theme boilerplate. Pull requests are welcome!
 
 # Features
-* Gulp
-* Sass
-* PostCSS
-* [Bourbon](http://bourbon.io/)
-* [Neat](http://neat.bourbon.io/)
-* BrowserSync
-* [Animate.scss](assets/sass/utilities/animate/README.md)
-* Bower
-* Live reload
-* WDS Simple Page Builder support
-* [SVG support](assets/images/svg-icons/README.md)
-* Image sprite support
-* Script linting and CSS minifcation
+[Gulp](http://gulpjs.com/), [Sass](http://sass-lang.com/), [PostCSS](https://github.com/postcss/postcss),  [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), [BrowserSync](https://www.browsersync.io/), [Animate.scss](assets/sass/utilities/animate/README.md), [WDS Simple Page Builder support](https://github.com/WebDevStudios/WDS-Simple-Page-Builder), [SVG support](assets/images/svg-icons/README.md), [Image sprite support](assets/images/sprites/README.md), Script linting and CSS minifcation.
+
+## Jump to:
+[Pre-Installation](#pre-installation) | [Theme Setup](#theme-setup) | [Installation](#installation) | [Gulp Tasks](#gulp-tasks)
 
 # Pre-Installation
 
@@ -55,12 +46,12 @@ cd /your-project/wordpress/wp-content/themes/your-theme
 2) Install dependencies
 
 ```bash
-npm install && bower install
+npm install
 ```
 
 You are now ready to use wd_s!
 
-# How to use Grunt
+# Gulp Tasks
 
 1) From the command line, navigate to your theme
 
@@ -70,20 +61,16 @@ cd /your-project/wordpress/wp-content/themes/your-theme
 
 2) Type any of the following Grunt tasks to perform an action:
 
-`grunt watch` - Automatically handle changes to CSS, JS, SVGs, and image sprites. Plus live reload!
+`gulp watch` - Automatically handle changes to CSS, JS, SVGs, and image sprites. Plus live reload!
 
-`grunt javascript` - Concatenate and minify javascript files
+`gulp icons` - Minify, concatenate, and clean SVG icons.
 
-`grunt styles` - Comb, compile, prefix, combine media queries, and minify CSS files
+`gulp i18n` - Scan the theme and create a POT file
 
-`grunt imageminnewer` - Minify images
+`gulp scripts` - Concatenate and minify javascript files
 
-`grunt sprites` - Generate an image sprite and the associated Sass (sprite.png)
+`gulp sprites` - Generate an image sprite and the associated Sass (sprite.png)
 
-`grunt icons` - Generate the SVG sprite (svg-defs.svg)
+`gulp styles` - Comb, compile, prefix, combine media queries, and minify CSS files
 
-`grunt i18n` - Generate a translation file
-
-`grunt sassdoc` - Re-generate the SassDocs
-
-`grunt` - Do all the above tasks at the same time
+`gulp` - Runs the following tasks at the same time: i18n, icons, scripts, styles, sprites
