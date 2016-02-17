@@ -15,21 +15,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: $color-dove-gray;
+	background-color: $color-button-background;
 	border: none;
 	border-radius: 0;
-	color: $color-white;
+	color: $color-button-text;
 	min-height: rem(31);
 	vertical-align: top;
 	-webkit-appearance: none; // Remove iOS styles
 
 	&:hover {
-		background-color: $color-mineshaft;
+		background-color: $color-button-background-hover;
 	}
 
 	&:active,
 	&:focus {
-		background-color: $color-mineshaft;
+		background-color: $color-button-background-hover;
 	}
 }
 
@@ -67,15 +67,15 @@ input[type="search"],
 input[type="tel"],
 input[type="number"],
 textarea {
-	color: $color-text-input;
-	border: 1px solid $color-border-input;
+	color: $color-input-text;
+	border: 1px solid $color-input-border;
 	border-radius: 0;
 	line-height: 1.45;
-	padding: rem(3) rem(5);
+	padding: $padding-input;
 	-webkit-appearance: none; // Remove iOS styles
 
 	&:focus {
-		color: $color-text-input-focus;
+		color: $color-input-focus-text;
 	}
 }
 
