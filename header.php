@@ -46,13 +46,12 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
+			<nav class="site-navigation main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu"><?php _s_do_svg( array( 'icon' => 'bars', 'title' => 'Display Menu' ) ); ?><span class="menu-toggle-text"><?php esc_html_e( 'Menu', '_s' ); ?></span></button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'menu dropdown'
+						'menu_class'     => 'primary-menu menu dropdown'
 					) );
 				?>
 			</nav><!-- #site-navigation -->
