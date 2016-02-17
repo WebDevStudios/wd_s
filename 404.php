@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div class="wrap content-area">
 
-		<main id="main" class="site-main">
+		<main class="site-main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
