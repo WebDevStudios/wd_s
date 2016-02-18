@@ -3,13 +3,13 @@
 //	Visit this link for CSS Targeting Examples - Very Helpful
 //	https://www.gravityhelp.com/documentation/article/css-targeting-examples/
 //
-//	LOCAL VARIABLES
 //	BASE STYLES
-//	BASE LAYOUT - ONE COLUMN
-//	TWO COLUMN LAYOUT
+//	FORM HEADER
+//	FORM FOOTER
 //	CONFIRMATION MESSAGE
-//	CHOSEN SELECT
-//	ADVANCED FIELDS
+//	SELECTS
+// 	CHOSEN SELECT
+//	CONTENT OVERRIDES
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
@@ -43,8 +43,6 @@ $gf-input-padding: $padding-input;
 .gform_wrapper { // the entire form
 	background: $gf-bg; // background for the form
 	border: $gf-border-width solid $gf-border-color; // outer form border
-	margin-right: 0 !important; // allow for full width of containing element
-	max-width: 100% !important; // allow for full width of containing element
 	padding: $gf-padding; // form padding
 
 	// Single and two-column fields
@@ -52,12 +50,6 @@ $gf-input-padding: $padding-input;
 	& .gform_body .gform_fields .gfield.gf_left_half,
 	& .gform_body .gform_fields .gfield.gf_right_half {
 		margin-bottom: $gf-field-margin-bottom; // space between input and label below
-	}
-
-	// Error Labels (Required fields)
-	.gfield_error {
-		// .gfield_label - error label
-		// .validation_message - required error text
 	}
 
 	// Labels
@@ -82,7 +74,10 @@ $gf-input-padding: $padding-input;
 	input[type="file"],
 	textarea {
 		background: $gf-input-color-background;
-		padding: $gf-input-padding !important;
+	}
+
+	textarea {
+		width: 100%;
 	}
 
 	// Default Drop-Down (Select) Field
@@ -94,43 +89,118 @@ $gf-input-padding: $padding-input;
 		border-color: $gf-input-color-border;
 		border-radius: 0;
 		line-height: 1.45;
-		margin-left: 0 !important;
 		padding: $gf-input-padding;
 		-webkit-appearance: none;
+		width: 100%;
+
+		@include media($phone-landscape) {
+			width: 49%;
+		}
 	}
 
 	// Remove icon for default multi-select
 	select[multiple="multiple"] {
 		background: $gf-input-color-background;
 	}
+}
 
-	// Validation error message - displays above the form
-	.validation_error {
+//--------------------------------------------------------------
+// 	FORM HEADER
+//--------------------------------------------------------------
+.gform_wrapper .gform_heading {
+	// .gform_title - form title
+	// .gform_description - form description
+}
 
+//--------------------------------------------------------------
+// 	FORM FOOTER
+//--------------------------------------------------------------
+.gform_wrapper .gform_footer {
+
+	input.button,
+	input[type="submit"] {
+		// This will target submit buttons
+	}
+}
+
+//--------------------------------------------------------------
+//	CONFIRMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
+//--------------------------------------------------------------
+.gforms_confirmation_message { // container element
+	// .gform_confirmation_wrapper - the message wrapper
+	// .gform_confirmation_message - message div
+}
+
+//--------------------------------------------------------------
+//	SELECTS
+//--------------------------------------------------------------
+.gform_wrapper .gform_body .gform_fields .gfield select,
+.gform_wrapper.gf_browser_chrome .gform_body .gform_fields .gfield select {
+	margin-left: 0;
+	width: 100% !important; // overrides GF !important
+
+	@include media($phone-landscape) {
+		width: 49% !important;
+	}
+}
+
+//--------------------------------------------------------------
+//	CHOSEN SELECT
+//--------------------------------------------------------------
+.gform_wrapper .gfield .chosen-container-single {
+	font-size: rem(16);
+
+	// Link holding initial selection - what user first sees
+	.chosen-single {
+		background: $gf-input-color-background;
+		border-color: $gf-input-color-border;
+		border-radius: 0;
+		height: auto;
+		padding: $gf-input-padding;
 	}
 
-	// Form Heading
-	.gform_heading {
-		// .gform_heading - form title
-		// .gform_description - form description
+	// Default state of icon for select
+	.chosen-single div b {
+		@include position(absolute, 40% rem(11) null null);
+		@include triangle(12px, $color-silver, down); // adjust size and color
+
+		background: none; // hide the default chosen background
 	}
 
-	// Footer area - typically contains submit button
-	& .gform_footer {
+	// Selections drop-down
+	.chosen-drop {
 
-		input.button,
-		input[type="submit"] {
-			// This will target submit buttons
-			// You may need to use !important
+		// Search box by default has a small magnifying icon on right
+		.chosen-search input[type="text"] {
+			background: none;
+		}
+
+		// Search results list
+		.chosen-results li {
+			padding: rem(10) rem(5);
+		}
+	}
+
+	// For styling the icon when select is active
+	&.chosen-container-single.chosen-with-drop {
+
+		.chosen-single {
+			background-image: none;
+		}
+
+		.chosen-single div b {
+			border: none; // hiding the previous triangle (border)
+			@include triangle(12px, $color-silver, up); // adjust size and color for active icon
 		}
 	}
 }
 
 //--------------------------------------------------------------
-//	BASE LAYOUT
-//	One Column
+//	CONTENT OVERRIDES
 //--------------------------------------------------------------
-.gform_wrapper .gform_body .gform_fields .gfield {
+#content .gform_wrapper {
+	margin-right: 0; // allow for full width of containing element
+	max-width: 100%; // allow for full width of containing element
 
 	// Standard fields
 	input[type="text"],
@@ -140,41 +210,38 @@ $gf-input-padding: $padding-input;
 	input[type="number"],
 	input[type="password"],
 	input[type="file"],
-	textarea {
-		width: 100% !important;
+	textarea{
+		padding: $gf-input-padding;
+		width: 100%;
 
 		@include media($phone-landscape) {
-			width: 49% !important;
+			width: 49%;
 		}
 	}
 
+	.chosen-search input[type="text"],
 	textarea {
-		width: 100% !important;
+		width: 100%;
 	}
 
-	// Default Drop-Down (Select) Field
-	// Feel free to change the svg icon being used
-	select {
-		width: 100% !important;
+	// Validation error message (displays at top of form)
+	.validation_error {
 
-		@include media($phone-landscape) {
-			width: 49% !important;
-		}
 	}
-}
 
-//--------------------------------------------------------------
-//	TWO COLUMN LAYOUT
-//--------------------------------------------------------------
-.gform_wrapper .gform_body .gform_fields .gfield.gf_left_half,
-.gform_wrapper .gform_body .gform_fields .gfield.gf_right_half {
+	// Error labels (required fields)
+	.gfield_error {
+		// .gfield_label - error label
+		// .validation_message - required error text
+	}
 
-	&.gf_left_half,
-	&.gf_right_half {
-		width: 100% !important;
+	// Two-column fields
+	.gf_left_half,
+	.gf_right_half {
+		width: 100%;
 
 		@include media($phone-landscape) {
-			width: 49% !important;
+			width: 49%;
 		}
 
 		// Inputs
@@ -185,155 +252,28 @@ $gf-input-padding: $padding-input;
 		input[type="number"],
 		input[type="password"],
 		input[type="file"] {
-			width: 100% !important;
 
 			@include media($phone-landscape) {
-				width: 100% !important;
+				width: 100%;
 			}
 		}
 	}
 
 	// Target just left column on two-column row
-	&.gf_left_half {
+	.gf_left_half {
 
 		@include media($phone-landscape) {
-			margin-right: 2% !important;
-		}
-	}
-}
-
-//--------------------------------------------------------------
-//	CONFORMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
-//--------------------------------------------------------------
-.gforms_confirmation_message { // container element
-	// .gform_confirmation_wrapper - the message wrapper
-	// .gform_confirmation_message - message div
-}
-
-//--------------------------------------------------------------
-//	CHOSEN SELECT
-//--------------------------------------------------------------
-.gform_wrapper .gform_body .gform_fields .gfield {
-
-	// Containing div
-	.chosen-container-single {
-		font-size: rem(16);
-
-		// Link holding initial selection - what user first sees
-		.chosen-single {
-			background: $gf-input-color-background;
-			border-color: $gf-input-color-border;
-			border-radius: 0;
-			height: auto;
-			padding: $gf-input-padding;
-		}
-
-		// Default state of icon for select
-		.chosen-single div b {
-			@include position(absolute, 40% rem(11) null null);
-			@include triangle(12px, $color-silver, down); // adjust size and color
-
-			background: none; // hide the default chosen background
-		}
-
-		// Selections drop-down
-		.chosen-drop {
-
-			// Search box by default has a small magnifying icon on right
-			.chosen-search input[type="text"] {
-				background: none;
-				width: 100% !important;
-			}
-
-			// Search results list
-			.chosen-results li {
-				padding: rem(10) rem(5);
-			}
-		}
-
-		// For styling the icon when select is active
-		&.chosen-container-single.chosen-with-drop {
-
-			.chosen-single div b {
-				border: none; // hiding the previous triangle (border)
-				@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-			}
-		}
-	}
-}
-
-//--------------------------------------------------------------
-//	ADVANCED FIELDS
-//	https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
-//--------------------------------------------------------------
-.gform_wrapper .gform_body .gform_fields .gfield {
-
-	// Advanced Field Container
-	& .ginput_complex {
-
-		// Field Containers
-		&.ginput_container_name,
-		&.ginput_container_address {
-
-			// Left / Right fields
-			.ginput_left,
-			.ginput_right,
-			.name_first,
-			.name_last {
-				padding-right: 0;
-				width: 100%;
-
-				@include media($phone-landscape) {
-					width: 49%;
-				}
-
-				// Text inputs
-				input[type="text"] {
-					width: 100% !important;
-				}
-			}
-
-			// Left field
-			.ginput_left,
-			.name_first {
-
-				@include media($phone-landscape) {
-					float: left;
-					margin-right: 2%;
-				}
-			}
-
-			// Right field
-			.ginput_right {
-				margin-left: 0;
-
-				@include media(phone-landscape) {
-					margin-left: 1.6%;
-				}
-			}
-		}
-
-		// Selects
-		select,
-		.ginput_right select {
-			line-height: 1.45;
-			width: 100% !important;
+			margin-right: 2%;
 		}
 	}
 
-	// Time fields
-	& .gfield_time_hour,
-	& .gfield_time_minute,
-	& .gfield_time_ampm {
+	// Advanced fields
+	// https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
+	.ginput_complex {
 
-		// Hour / Minute input
-		input {
-			width: 70% !important;
-		}
-
-		// AM / PM select
-		select {
-			width: rem(75) !important;
+		.name_first input[type="text"],
+		.name_last input[type="text"] {
+			width: 100%;
 		}
 	}
 }
