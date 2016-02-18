@@ -147,66 +147,57 @@ $gf-input-padding: $padding-input;
 //--------------------------------------------------------------
 //	CHOSEN SELECT
 //--------------------------------------------------------------
-.gform_wrapper .gfield {
+.gform_wrapper .gfield .chosen-container-single {
+	font-size: rem(16);
 
-	// Set left margin
-	select {
-		margin-left: 0;
+	// Link holding initial selection - what user first sees
+	.chosen-single {
+		background: $gf-input-color-background;
+		border-color: $gf-input-color-border;
+		border-radius: 0;
+		height: auto;
+		padding: $gf-input-padding;
 	}
 
-	// Containing div
-	.chosen-container-single {
-		font-size: rem(16);
+	// Default state of icon for select
+	.chosen-single div b {
+		@include position(absolute, 40% rem(11) null null);
+		@include triangle(12px, $color-silver, down); // adjust size and color
 
-		// Link holding initial selection - what user first sees
+		background: none; // hide the default chosen background
+	}
+
+	// Selections drop-down
+	.chosen-drop {
+
+		// Search box by default has a small magnifying icon on right
+		.chosen-search input[type="text"] {
+			background: none;
+			//width: 100% !important;
+		}
+
+		// Search results list
+		.chosen-results li {
+			padding: rem(10) rem(5);
+		}
+	}
+
+	// For styling the icon when select is active
+	&.chosen-container-single.chosen-with-drop {
+
 		.chosen-single {
-			background: $gf-input-color-background;
-			border-color: $gf-input-color-border;
-			border-radius: 0;
-			height: auto;
-			padding: $gf-input-padding;
+			background-image: none;
 		}
 
-		// Default state of icon for select
 		.chosen-single div b {
-			@include position(absolute, 40% rem(11) null null);
-			@include triangle(12px, $color-silver, down); // adjust size and color
-
-			background: none; // hide the default chosen background
-		}
-
-		// Selections drop-down
-		.chosen-drop {
-
-			// Search box by default has a small magnifying icon on right
-			.chosen-search input[type="text"] {
-				background: none;
-				//width: 100% !important;
-			}
-
-			// Search results list
-			.chosen-results li {
-				padding: rem(10) rem(5);
-			}
-		}
-
-		// For styling the icon when select is active
-		&.chosen-container-single.chosen-with-drop {
-
-			.chosen-single {
-				background-image: none;
-			}
-
-			.chosen-single div b {
-				border: none; // hiding the previous triangle (border)
-				@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-			}
+			border: none; // hiding the previous triangle (border)
+			@include triangle(12px, $color-silver, up); // adjust size and color for active icon
 		}
 	}
 }
 
 //--------------------------------------------------------------
-// CONTENT OVERRIDES
+//	CONTENT OVERRIDES
 //--------------------------------------------------------------
 #content .gform_wrapper {
 	margin-right: 0; // allow for full width of containing element
