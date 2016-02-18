@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/WebDevStudios/wd_s.png?label=ready&title=Ready)](https://waffle.io/WebDevStudios/wd_s)
 wd_s
 ===
 
