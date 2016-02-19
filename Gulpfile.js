@@ -279,7 +279,7 @@ gulp.task('clean:pot', function() {
  */
 gulp.task('i18n', ['clean:pot','wp-pot']);
 gulp.task('icons', ['clean:icons', 'svg']);
-gulp.task('styles', ['clean:styles', 'postcss', 'cssnano']);
+gulp.task('styles', ['clean:styles', 'postcss', 'cssnano', 'sass:lint']);
 gulp.task('scripts', ['clean:scripts', 'uglify']);
 gulp.task('sprites', ['imagemin', 'spritesmith']);
 gulp.task('default', ['i18n','icons', 'styles', 'scripts', 'sprites']);
