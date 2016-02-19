@@ -214,8 +214,12 @@ gulp.task('wp-pot', function () {
  * Sass linting
  */
 gulp.task('sass:lint', function () {
-    gulp.src('assets/sass/**/*.s+(a|c)ss')
-        .pipe(sassLint({}))
+    gulp.src([
+        'assets/sass/**/*.scss',
+        '!assets/sass/base/_normalize.scss',
+        '!assets/sass/utilities/animate/**/*.*'
+    ])
+        .pipe(sassLint())
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError())
 });
