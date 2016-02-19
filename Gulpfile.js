@@ -17,6 +17,7 @@ var postcss = require('gulp-postcss');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var sassLint = require('gulp-sass-lint');
 var sort = require('gulp-sort');
 var sourcemaps = require('gulp-sourcemaps');
 var spritesmith = require('gulp.spritesmith');
@@ -207,6 +208,16 @@ gulp.task('wp-pot', function () {
 		team: 'Team <mail@_s.com>'
 	}))
 	.pipe(gulp.dest('languages/'));
+});
+
+/**
+ * Sass linting
+ */
+gulp.task('sass:lint', function () {
+    gulp.src('assets/sass/**/*.s+(a|c)ss')
+        .pipe(sassLint({}))
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
 });
 
 /**
