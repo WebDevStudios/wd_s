@@ -1,3 +1,15 @@
+#   Sample Configs
+#     - https://github.com/sasstools/sass-lint/blob/develop/docs/sass-lint.yml
+#     - https://github.com/sasstools/gulp-sass-lint/blob/master/tests/.sass-lint.yml
+
+#   Sass Lint Rules
+#     - https://github.com/sasstools/sass-lint/tree/develop/docs/rules
+
+#   Severity
+#     - 0: turns rule off
+#     - 1: set as a warning
+#     - 2: set to error
+
 # Linter Options
 options:
   # Don't merge default rules
@@ -6,8 +18,9 @@ options:
   formatter: stylish
 # File Options
 files:
-  ignore:
-    - 'assets/sass/base/_normalize.scss'
+  # include: '**/*.s+(a|c)ss'
+  # ignore: ''
+
 # Rule Configuration
 rules:
  # Extends
