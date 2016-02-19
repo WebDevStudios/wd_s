@@ -25,30 +25,33 @@ files:
 rules:
  # Extends
   extends-before-mixins: 0
-  extends-before-declarations: 0
+  extends-before-declarations: 1
   placeholder-in-extend: 0
 
   # Mixins
-  mixins-before-declarations: 0
+  mixins-before-declarations:
+    - 1
+    -
+      exclude: ['media'] # except @include media();
 
   # Line Spacing
-  one-declaration-per-line: 0
-  empty-line-between-blocks: 0
-  single-line-per-selector: 0
+  one-declaration-per-line: 1
+  empty-line-between-blocks: 1
+  single-line-per-selector: 1
 
   # Disallows
-  no-color-keywords: 0
-  no-color-literals: 0
-  no-css-comments: 0
+  no-color-keywords: 1
+  no-color-literals: 1
+  no-css-comments: 1
   no-debug: 0
   no-duplicate-properties: 0
   no-empty-rulesets: 0
   no-extends: 0
   no-ids: 0
   no-important: 0
-  no-invalid-hex: 0
+  no-invalid-hex: 1
   no-mergeable-selectors: 0
-  no-misspelled-properties: 0
+  no-misspelled-properties: 1
   no-qualifying-elements: 0
   no-trailing-zero: 0
   no-transition-all: 0
@@ -72,30 +75,76 @@ rules:
 
   # Style Guide
   border-zero: 0
-  brace-style: 0
+  brace-style:
+    - 1
+    -
+      style: 1tbs
+      allow-single-line: false
+  class-name-format:
+    - 1
+    -
+      allow-leading-underscore: false
+      ignore: ['current_page_item', 'widget_search'] # ignore selectors declared by WordPress
+
   clean-import-paths: 0
   empty-args: 0
-  hex-length: 0
-  hex-notation: 0
+  hex-length: 1
+  hex-notation:
+    - 1
+    -
+      style: lowercase
+
   indentation: 0
-  leading-zero: 0
-  nesting-depth: 0
+  leading-zero:
+    - 1
+    -
+      include: true
+
+  nesting-depth:
+    - 1
+    -
+      max-depth: 4
+
+  property-units:
+    - 1
+    -
+      per-property: { width: ['rem'], height: ['rem'], margin: ['rem'], padding: ['rem'] }
+
   property-sort-order: 1
-  quotes: 0
-  shorthand-values: 0
+  quotes:
+    - 1
+    -
+      style: double
+
+  shorthand-values:
+    - 1
+    -
+      allowed-shorthands:
+        - 1
+        - 2
+
   url-quotes: 0
-  variable-for-property: 0
-  zero-unit: 0
+  variable-for-property:
+    - 1
+    -
+      properties: ['color']
+
+  zero-unit: 1
 
   # Inner Spacing
-  space-after-comma: 0
-  space-before-colon: 0
-  space-after-colon: 0
-  space-before-brace: 0
-  space-before-bang: 0
-  space-after-bang: 0
+  space-after-comma: 1
+  space-before-colon: 1
+  space-after-colon: 1
+  space-before-brace: 1
+  space-before-bang: 1
+  space-after-bang: 1
+  space-around-operator:
+    - 1
+    -
+      include: true
+
   space-between-parens: 0
 
   # Final Items
-  trailing-semicolon: 0
+  trailing-semicolon: 1
   final-newline: 0
