@@ -22,12 +22,12 @@ $layers: (
 );
 
 // Gets the index (in reverse) of the item's position to use as z-index.
-@function layer-index($layer) {
-	@return index(reverse-list($layers), $layer);
+@function layer-index( $layer) {
+	@return index(reverse-list( $layers ), $layer );
 }
 
 // z-index Mixin used to automatically assign z-index based on position in $layers
-@mixin z-index($layer, $position:relative) {
+@mixin z-index( $layer, $position: relative ) {
 	position: $position;
-	z-index: layer-index($layer);
+	z-index: layer-index( $layer );
 }
