@@ -41,7 +41,10 @@ rules:
 
   # Disallows
   no-color-keywords: 1
-  no-color-literals: 1
+  no-color-literals: 
+    - 1
+    -
+      allow-rgba: true
   no-css-comments: 1
   no-debug: 0
   no-duplicate-properties: 0
