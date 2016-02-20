@@ -15,13 +15,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	-webkit-appearance: none; // Remove iOS styles
 	background-color: $color-dove-gray;
 	border: none;
 	border-radius: 0;
 	color: $color-white;
 	min-height: rem(31);
 	vertical-align: top;
-	-webkit-appearance: none; // Remove iOS styles
 
 	&:hover {
 		background-color: $color-mineshaft;
@@ -67,12 +67,12 @@ input[type="search"],
 input[type="tel"],
 input[type="number"],
 textarea {
+	-webkit-appearance: none; // Remove iOS styles
 	color: $color-text-input;
 	border: 1px solid $color-border-input;
 	border-radius: 0;
 	line-height: 1.45;
 	padding: rem(3) rem(5);
-	-webkit-appearance: none; // Remove iOS styles
 
 	&:focus {
 		color: $color-text-input-focus;
