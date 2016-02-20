@@ -7,7 +7,7 @@
 .wrap {
 	@include outer-container;
 
-	padding: 0 2*$gutter;
+	padding: 0 2 * $gutter;
 
 	@include media($desktop) {
 		padding: 0;
@@ -16,7 +16,7 @@
 
 .site-header,
 .site-footer {
-	padding: 0 2*$gutter;
+	padding: 0 2 * $gutter;
 }
 
 .site-content {
