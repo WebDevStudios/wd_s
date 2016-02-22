@@ -68,14 +68,14 @@ input[type="tel"],
 input[type="number"],
 textarea {
 	-webkit-appearance: none; // Remove iOS styles
-	color: $color-text-input;
-	border: 1px solid $color-border-input;
+	color: $color-input-text;
+	border: 1px solid $color-input-border;
 	border-radius: 0;
 	line-height: 1.45;
 	padding: rem(3) rem(5);
 
 	&:focus {
-		color: $color-text-input-focus;
+		color: $color-input-focus-text;
 	}
 }
 
