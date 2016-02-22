@@ -56,6 +56,13 @@ function handleErrors () {
 }
 
 /**
+ * Delete style.css and style.min.css before we minify and optimize
+ */
+gulp.task('clean:styles', function() {
+	return del(['style.css', 'style.min.css'])
+});
+
+/**
  * Compile Sass and run stylesheet through PostCSS.
  *
  * https://www.npmjs.com/package/gulp-sass
