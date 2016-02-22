@@ -123,11 +123,15 @@
 .mobile-nav-menu.more {
 
 	.mobile-nav-menu-hidden {
-		bottom: rem(84);
+		bottom: 0;
 		display: block;
+		max-height: 100%;
+		overflow: scroll;
+		padding-bottom: rem(84);
 		position: absolute;
 		right: 0;
 		width: 50vw;
+		z-index: -1;
 
 		li {
 			bottom: 0;
@@ -257,13 +261,7 @@
 			position: fixed;
 			right: 0;
 			top: auto;
-
-			@include media($tablet-portrait) {
-				bottom: auto;
-				left: 0;
-				right: auto;
-				top: 0;
-			}
+			width: 50vw;
 
 			.sub-menu {
 				bottom: 0;
