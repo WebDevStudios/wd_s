@@ -64,7 +64,7 @@ function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
 	// Enqueue scripts.
-	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), $version, true );
+	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/js/project.js', array( 'jquery' ), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
