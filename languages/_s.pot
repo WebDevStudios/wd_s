@@ -1,26 +1,28 @@
-# Copyright (C) 2015 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
+# Copyright (C) 2016 _s
+# This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-12-21 14:59:28+00:00\n"
+"Project-Id-Version: _s\n"
+"Report-Msgid-Bugs-To: http://_s.com\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: John Doe <mail@_s.com>\n"
+"Language-Team: Team <mail@_s.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
 #: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:22
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
 #: 404.php:30
@@ -28,19 +30,25 @@ msgid "Most Used Categories"
 msgstr ""
 
 #: 404.php:47
-#. translators: %1$s: smiley
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:40 comments.php:61
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40, comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:64
+#: comments.php:43, comments.php:64
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:65
+#: comments.php:44, comments.php:65
 msgid "Newer Comments"
 msgstr ""
 
@@ -48,27 +56,35 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:47 header.php:50
+#: functions.php:49
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:95
 msgid "Hero Area"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:96
 msgid "Before Content Area"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:97
 msgid "After Content Area"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:130
 msgid "Sidebar 1"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:131
+msgid "Sidebar 2"
+msgstr ""
+
+#: functions.php:132
+msgid "Sidebar 3"
+msgstr ""
+
+#: functions.php:140
 msgid "Widget area for %s"
 msgstr ""
 
@@ -76,14 +92,16 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: header.php:50
+msgid "Menu"
+msgstr ""
+
 #: inc/customizer.php:22
 msgid "Social Links"
 msgstr ""
 
 #: inc/customizer.php:23
-msgid ""
-"These are the settings for social links. Please limit the number of social "
-"links to 5."
+msgid "These are the settings for social links. Please limit the number of social links to 5."
 msgstr ""
 
 #: inc/customizer.php:44
@@ -102,8 +120,27 @@ msgstr ""
 msgid "The copyright text will be displayed beneath the menu in the footer."
 msgstr ""
 
-#: inc/template-tags.php:50 inc/template-tags.php:56
-#. translators: used between list items, there is a space after the comma
+#: inc/scripts.php:15
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/scripts.php:16
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-tags.php:28
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:33
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:50, inc/template-tags.php:56
 msgid ", "
 msgstr ""
 
@@ -128,7 +165,6 @@ msgid "% Comments"
 msgstr ""
 
 #: inc/template-tags.php:71
-#. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
@@ -148,6 +184,11 @@ msgstr ""
 msgid "To search this site, enter a search term"
 msgstr ""
 
+#: searchform.php:3
+msgctxt "_s"
+msgid "Search"
+msgstr ""
+
 #: searchform.php:4
 msgid "Submit"
 msgstr ""
@@ -161,19 +202,14 @@ msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:18 template-parts/content-single.php:20
-#: template-parts/content.php:29
+#: template-parts/content-page.php:18, template-parts/content-single.php:20, template-parts/content.php:29
 msgid "Pages:"
 msgstr ""
 
@@ -182,69 +218,5 @@ msgid "Edit"
 msgstr ""
 
 #: template-parts/content.php:22
-#. translators: %s: Name of current post
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "_s"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Automattic"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://automattic.com/"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Page Builder Only"
-msgstr ""
-
-#: comments.php:31
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/scripts.php:15
-#. Translators: If there are characters in your language that are not supported
-#. by the following, translate this to 'off'. Do not translate into your own
-#. language.
-msgctxt "Roboto font: on or off"
-msgid "on"
-msgstr ""
-
-#: inc/scripts.php:16
-msgctxt "Open Sans font: on or off"
-msgid "on"
-msgstr ""
-
-#: inc/template-tags.php:28
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/template-tags.php:33
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#: searchform.php:3
-msgctxt "_s"
-msgid "Search"
 msgstr ""

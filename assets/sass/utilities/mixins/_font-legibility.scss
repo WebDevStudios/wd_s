@@ -26,8 +26,8 @@
 ///    }
 
 @mixin font-legibility {
-	text-rendering: optimizeLegibility; // Improved kerning pairs & ligatures
-	-moz-font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+	-moz-font-feature-settings: "liga", "kern"; // Control over advanced typographic features in OpenType fonts.
 	-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
 	-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
+	text-rendering: optimizeLegibility; // Improved kerning pairs & ligatures
 }

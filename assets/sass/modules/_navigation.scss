@@ -88,8 +88,8 @@ a {
 		}
 
 		a {
-			padding: rem(10);
 			border-bottom: 1px solid $color-background-hr;
+			padding: rem(10);
 		}
 	}
 
@@ -97,7 +97,7 @@ a {
 
 		// Sub-menu
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 3px 3px rgba($color-black, 0.2);
 			float: left;
 			left: -999em;
 			position: absolute;

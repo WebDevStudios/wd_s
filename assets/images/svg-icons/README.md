@@ -1,15 +1,15 @@
 # SVG's with wd_s
 
-All of the starter SVG icons included in this repo are from [IcoMoon App](https://icomoon.io/app/). The /svg-icons/ directory is a compileable directory, and is associated with the following tasks in wd_s's [Gruntfile.js](../../blob/master/Gruntfile.js):
+All of the starter SVG icons included in this repo are from [IcoMoon App](https://icomoon.io/app/). The /svg-icons/ directory is a compileable directory, and is associated with the following tasks in wd_s's [Gulpfile.js](../../blob/master/Gulpfile.js):
 
-* `svgmin` - minifies and cleans up some extraneous SVG 
-* `svgstore` - merges multiple SVGs into single file, e.g. [svg-defs.svg](../blob/master/images/svg-defs.svg)
+* `svgmin` - minifies and cleans up some extraneous SVG
+* `svgstore` - merges multiple SVGs into single file, e.g. [svg-icons.svg](../blob/master/images/svg-icons.svg)
 
 ## Using SVGs with wd_s
 
 ### Inline SVG helper functions
 
-[`_s_get_svg( $args = array() ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125) 
+[`_s_get_svg( $args = array() ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125)
 ```
 /**
  * Return SVG markup.
@@ -26,7 +26,7 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
 ```
 
 Example usage:
-`<?php echo _s_get_svg( 'twitter'); ?>`
+`<?php echo _s_get_svg( array( 'icon' => 'twitter' ) ); ?>`
 
 Output:
 ```
@@ -34,14 +34,14 @@ Output:
     <use xlink:href="#icon-twitter"></use>
 </svg>
 ```
-[`_s_do_svg( $icon_name ); // Echo SVG markup`](../blob/master/inc/template-tags.php#L139)
+[`_s_do_svg( array( 'icon' => $icon_name ) ); // Echo SVG markup`](../blob/master/inc/template-tags.php#L139)
 
-Example usage: 
-`<?php _s_do_svg( 'facebook' ); ?>`
+Example usage:
+`<?php _s_do_svg( array( 'icon' => 'facebook' ) ); ?>`
 
 Output:
 ```
-<svg class="icon icon-facebook">
+<svg class="icon facebook">
     <use xlink:href="#icon-facebook"></use>
 </svg>
 ```

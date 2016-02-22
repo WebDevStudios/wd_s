@@ -1,0 +1,51 @@
+{
+  "name": "wd_s",
+  "version": "1.0.0",
+  "description": "A theme boilerplate for WebDevStudios.",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
+    "browser-sync": "^2.11.1",
+    "css-mqpacker": "^4.0.0",
+    "del": "^2.2.0",
+    "glob": "^6.0.4",
+    "gulp": "^3.9.1",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-sort": "^1.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^1.2.1",
+    "gulp-svgstore": "^5.0.5",
+    "gulp-uglify": "^1.5.2",
+    "gulp-util": "^3.0.7",
+    "gulp-wp-pot": "^1.1.1",
+    "gulp.spritesmith": "^6.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebDevStudios/wd_s.git"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "WebDevStudios",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/WebDevStudios/wd_s/issues"
+  },
+  "homepage": "https://github.com/WebDevStudios/wd_s#readme"
+}
