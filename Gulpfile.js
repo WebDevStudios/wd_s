@@ -70,7 +70,7 @@ gulp.task('clean:styles', function() {
  * https://www.npmjs.com/package/gulp-autoprefixer
  * https://www.npmjs.com/package/css-mqpacker
  */
-gulp.task('postcss', function() {
+gulp.task('postcss', ['clean:styles'], function() {
 	return gulp.src('assets/sass/*.scss', paths.css)
 
 	// Deal with errors.
