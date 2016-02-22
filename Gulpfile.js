@@ -285,25 +285,11 @@ gulp.task('watch', function() {
 });
 
 /**
-
-gulp.task('clean:styles', function() {
-	return del(['style.css', 'style.min.css']);
-});
-
-gulp.task('clean:scripts', function() {
-	return del(['assets/js/project.js']);
-});
-
-gulp.task('clean:pot', function() {
-	return del(['languages/_s.pot']);
-});
-
-/**
  * Create indivdual tasks.
  */
-gulp.task('i18n', ['clean:pot','wp-pot']);
-gulp.task('styles', ['clean:styles', 'postcss', 'cssnano', 'sass:lint']);
+gulp.task('i18n', ['wp-pot']);
 gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
+gulp.task('styles', ['sass:lint']);
 gulp.task('sprites', ['imagemin', 'spritesmith']);
 gulp.task('default', ['i18n','icons', 'styles', 'scripts', 'sprites']);
