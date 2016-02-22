@@ -101,7 +101,7 @@ gulp.task('postcss', ['clean:styles'], function() {
 
 	// Create style.css.
 	.pipe(gulp.dest('./'))
-	.pipe(browserSync.stream())
+	.pipe(browserSync.stream());
 });
 
 /**
@@ -109,7 +109,7 @@ gulp.task('postcss', ['clean:styles'], function() {
  *
  * https://www.npmjs.com/package/gulp-cssnano
  */
-gulp.task('cssnano', function() {
+gulp.task('cssnano', ['postcss'], function() {
 	return gulp.src('style.css')
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(cssnano({
