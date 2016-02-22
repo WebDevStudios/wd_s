@@ -238,7 +238,7 @@ gulp.task('clean:pot', function() {
  *
  * https://www.npmjs.com/package/gulp-wp-pot
  */
-gulp.task('wp-pot', function () {
+gulp.task('wp-pot', ['clean:pot'], function () {
 	return gulp.src(paths.php)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(sort())
