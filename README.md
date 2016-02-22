@@ -84,5 +84,5 @@ See [Gruntfile.js](https://github.com/WebDevStudios/wd_s/blob/master/Gruntfile.j
 
 # Contributing and Support
 
-Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please file an [issue](https://github.com/WebDevStudios/wd_s/issues) before submitting a pull request.
+Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/CONTRIBUTING.md) before submitting a pull request.
 
