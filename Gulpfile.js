@@ -121,6 +121,20 @@ gulp.task('cssnano', ['postcss'], function() {
 });
 
 /**
+ * Sass linting
+ */
+gulp.task('sass:lint', ['cssnano'], function () {
+	gulp.src([
+		'assets/sass/**/*.scss',
+		'!assets/sass/base/_normalize.scss',
+		'!assets/sass/utilities/animate/**/*.*',
+		'!assets/sass/base/_sprites.scss'
+	])
+	.pipe(sassLint())
+	.pipe(sassLint.format())
+	.pipe(sassLint.failOnError());
+});
+
 /**
  * Delete the svg-icons.svg before we minify, concat
  */
@@ -235,21 +249,6 @@ gulp.task('wp-pot', function () {
 		team: 'Team <mail@_s.com>'
 	}))
 	.pipe(gulp.dest('languages/'));
-});
-
-/**
- * Sass linting
- */
-gulp.task('sass:lint', function () {
-	gulp.src([
-		'assets/sass/**/*.scss',
-		'!assets/sass/base/_normalize.scss',
-		'!assets/sass/utilities/animate/**/*.*',
-		'!assets/sass/base/_sprites.scss'
-	])
-		.pipe(sassLint())
-		.pipe(sassLint.format())
-		.pipe(sassLint.failOnError())
 });
 
 /**
