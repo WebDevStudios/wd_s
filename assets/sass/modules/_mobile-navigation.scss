@@ -33,7 +33,6 @@
 
 	&.more {
 		background-color: rgba($color-black, .7);
-		padding-top: rem(25);
 	}
 
 	// Adjust padding for admin bar
@@ -47,22 +46,6 @@
 
 	li {
 		cursor: pointer;
-	}
-
-	// Set the width and position of the parent div
-	> div {
-		bottom: rem(84); // the fixed menu is 64px tall, so give it some breathing room
-		position: absolute;
-		right: 0;
-		width: 50vw;
-
-		@include media($tablet-portrait) {
-			bottom: auto;
-			left: 0;
-			right: auto;
-			top: 0;
-			width: 100%;
-		}
 	}
 }
 
@@ -88,18 +71,26 @@
 
 	// Only target the parent menu
 	.mobile-nav {
+		align-items: flex-end;
+		bottom: 0;
+		display: flex;
+		height: rem(64);
+		justify-content: space-between;
+		position: absolute;
+		width: 100vw;
 
 		// Only target top-level items
 		> li:nth-child(-n+5) {
 			background-color: $color-white;
 			border-top: 1px solid rgba($color-black, .1);
-			bottom: 0;
+			// bottom: 0;
+			flex-grow: 1;
 			height: rem(64);
-			left: 0;
-			position: fixed;
+			// left: 0;
+			// position: fixed;
 			text-align: center;
 			transition: all 0.5s ease;
-			width: 20%;
+			// width: 20%;
 
 			&:hover {
 				background-color: $color-gallery;
@@ -120,47 +111,36 @@
 				}
 			}
 		}
-
-		// Loop through each LI and add
-		// 20% left positioning for each incremental LI
-		@for $item from 2 through 5 {
-
-			> li:nth-child(#{$item}){
-				left: 20% * ( $item - 1 );
-			}
-		}
 	}
 }
 
 // Hide anything more than the first four items
-.mobile-nav-menu {
-
-	// Only target the parent menu
-	.mobile-nav {
-
-		// Only target top-level items
-		> li:nth-child(n+6) {
-			display: none;
-		}
-	}
+.mobile-nav-menu-hidden {
+	display: none;
 }
 
 // Show the remaining menu items when the ".more" class is active
 .mobile-nav-menu.more {
 
-	// Only target the parent menu
-	.mobile-nav {
+	.mobile-nav-menu-hidden {
+		bottom: rem(84);
+		display: block;
+		position: absolute;
+		right: 0;
+		width: 50vw;
 
-		> li:nth-child(n+6) {
+		li {
 			bottom: 0;
 			clear: both;
 			display: block;
 			float: right;
+			margin: 0;
 			position: relative;
 			right: 0;
 			width: 100%;
 
 			.sub-menu {
+				margin-left: 10%;
 				opacity: 1;
 			}
 
@@ -325,21 +305,8 @@
 
 		li {
 			display: block;
-			width: 100%;
-		}
-	}
-}
-
-// Always display the submenus of "More" items
-.mobile-nav {
-
-	> li:nth-child(n+6) {
-
-		.sub-menu {
-			display: block;
-			left: 0;
-			padding-left: rem(10);
-			position: relative;
+			float: none;
+			margin: 0;
 		}
 	}
 }
