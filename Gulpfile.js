@@ -205,6 +205,13 @@ gulp.task('uglify', function() {
 });
 
 /**
+ * Delete the theme's .pot before we create a new one
+ */
+gulp.task('clean:pot', function() {
+	return del(['languages/_s.pot']);
+});
+
+/**
  * Scan the theme and create a POT file.
  *
  * https://www.npmjs.com/package/gulp-wp-pot
