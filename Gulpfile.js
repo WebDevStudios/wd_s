@@ -122,8 +122,10 @@ gulp.task('cssnano', ['postcss'], function() {
 
 /**
  * Sass linting
+ *
+ * https://www.npmjs.com/package/sass-lint
  */
-gulp.task('sass:lint', ['cssnano'], function () {
+gulp.task('sass:lint', ['cssnano'], function() {
 	gulp.src([
 		'assets/sass/**/*.scss',
 		'!assets/sass/base/_normalize.scss',
@@ -238,7 +240,7 @@ gulp.task('clean:pot', function() {
  *
  * https://www.npmjs.com/package/gulp-wp-pot
  */
-gulp.task('wp-pot', ['clean:pot'], function () {
+gulp.task('wp-pot', ['clean:pot'], function() {
 	return gulp.src(paths.php)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(sort())
@@ -260,20 +262,13 @@ gulp.task('wp-pot', ['clean:pot'], function () {
  */
 gulp.task('watch', function() {
 
-	// Files to watch.
-	var files = [
-		paths.icons,
-		paths.sass,
-		paths.scripts,
-		paths.sprites
-	];
-
 	// Kick off BrowserSync.
-	browserSync.init( files, {
-		open: false,
-		proxy: "_s.com",
+	browserSync({
+		open: false,             // Open project in a new tab?
+		injectChanges: true,     // Auto inject changes instead of full reload
+		proxy: "_s.com",         // Use http://_s.com:3000 to use BrowserSync
 		watchOptions: {
-			debounceDelay: 1000
+			debounceDelay: 1000  // Wait 1 second before injecting
 		}
 	});
 
