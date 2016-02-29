@@ -1399,7 +1399,7 @@ textarea {
   display: block;
   max-height: 100%;
   overflow: scroll;
-  padding-bottom: 5.25rem;
+  padding: 5.25rem 0;
   position: absolute;
   right: 0;
   width: 50vw;
@@ -1420,7 +1420,7 @@ textarea {
 
 /* line 144, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more .mobile-nav-menu-hidden li .sub-menu {
-  margin-left: 10%;
+  padding-left: 10%;
   opacity: 1;
 }
 

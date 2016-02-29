@@ -125,7 +125,7 @@
 		display: block;
 		max-height: 100%;
 		overflow: scroll;
-		padding-bottom: rem(84);
+		padding: rem(84) 0;
 		position: absolute;
 		right: 0;
 		width: 50vw;
@@ -142,7 +142,7 @@
 			width: 100%;
 
 			.sub-menu {
-				margin-left: 10%;
+				padding-left: 10%;
 				opacity: 1;
 			}
 
