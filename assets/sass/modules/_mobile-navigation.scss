@@ -10,12 +10,13 @@
 
 // Fix the menu to the bottom of the window
 .mobile-nav-menu {
+	@include transition(all 0.5s ease);
+
 	display: block;
 	height: 100%;
 	left: 0;
 	position: fixed;
 	top: 0;
-	transition: all 0.5s ease;
 	width: 0;
 
 	// Don't show this puppy above tablet-landscape
@@ -27,7 +28,8 @@
 	// when the "More" items are displayed
 	&.more,
 	.sub-menu {
-		transition: all 0.5s ease;
+		@include transition(all 0.5s ease);
+
 		width: 100%;
 	}
 
@@ -81,20 +83,16 @@
 
 		// Only target top-level items
 		> li:nth-child(-n+5) {
+			@include transition(all 0.5s ease);
+
 			background-color: $color-white;
 			border-top: 1px solid rgba($color-black, .1);
-			// bottom: 0;
 			flex-grow: 1;
 			height: rem(64);
-			// left: 0;
-			// position: fixed;
 			text-align: center;
-			transition: all 0.5s ease;
-			// width: 20%;
 
 			&:hover {
 				background-color: $color-gallery;
-				transition: all 0.5s ease;
 			}
 
 			> a {
@@ -208,7 +206,6 @@
 
 		svg {
 			opacity: .6;
-			transition: all 0.5s ease;
 		}
 	}
 
@@ -219,9 +216,9 @@
 
 	svg {
 		@include size(100%);
+		@include transition(all 0.5s ease);
 
 		fill: $color-white;
-		transition: all 0.5s ease;
 	}
 }
 
@@ -291,7 +288,6 @@
 		@include media($tablet-portrait) {
 			left: auto;
 			right: 0;
-			width: 100%;
 		}
 
 		a {
