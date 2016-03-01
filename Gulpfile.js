@@ -33,7 +33,8 @@ var paths = {
 	images: ['assets/images/*', '!assets/images/*.svg'],
 	php: ['./*.php', './**/*.php'],
 	sass: 'assets/sass/**/*.scss',
-	scripts: 'assets/js/concat/*.js',
+	concat_scripts: 'assets/js/concat/*.js',
+	scripts: 'assets/js/*.js',
 	sprites: 'assets/images/sprites/*.png'
 };
 
@@ -210,22 +211,30 @@ gulp.task('clean:scripts', function() {
 });
 
 /**
- * Concatenate and minify javascripts.
- *
- * https://www.npmjs.com/package/gulp-uglify
+ * Concatenate javascripts.
  * https://www.npmjs.com/package/gulp-concat
  */
-gulp.task('uglify', ['clean:scripts'], function() {
-	return gulp.src(paths.scripts)
+gulp.task('concat', ['clean:scripts'], function() {
+	return gulp.src(paths.concat_scripts)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(sourcemaps.init())
-		.pipe(uglify({
-			mangle: false
-		}))
 	.pipe(concat('project.js'))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('assets/js'))
 	.pipe(browserSync.stream());
+});
+
+ /**
+  * Minify javascripts.
+  * https://www.npmjs.com/package/gulp-uglify
+  */
+gulp.task('uglify', ['concat'], function() {
+    return gulp.src(paths.scripts)
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify({
+		mangle: false
+	}))
+    .pipe(gulp.dest('assets/js'));
 });
 
 /**
