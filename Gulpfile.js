@@ -34,7 +34,7 @@ var paths = {
 	php: ['./*.php', './**/*.php'],
 	sass: 'assets/sass/**/*.scss',
 	concat_scripts: 'assets/js/concat/*.js',
-	scripts: 'assets/js/*.js',
+	scripts: ['assets/js/*.js', '!assets/js/*.min.js', '!assets/js/customizer.js'],
 	sprites: 'assets/images/sprites/*.png'
 };
 
@@ -229,12 +229,12 @@ gulp.task('concat', ['clean:scripts'], function() {
   * https://www.npmjs.com/package/gulp-uglify
   */
 gulp.task('uglify', ['concat'], function() {
-    return gulp.src(paths.scripts)
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify({
+	return gulp.src(paths.scripts)
+	.pipe(rename({suffix: '.min'}))
+	.pipe(uglify({
 		mangle: false
 	}))
-    .pipe(gulp.dest('assets/js'));
+	.pipe(gulp.dest('assets/js'));
 });
 
 /**
