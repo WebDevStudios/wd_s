@@ -46,7 +46,7 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav class="site-navigation main-navigation">
+			<nav id="main-navigation" class="site-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu"><?php _s_do_svg( array( 'icon' => 'bars', 'title' => 'Display Menu' ) ); ?><span class="menu-toggle-text"><?php esc_html_e( 'Menu', '_s' ); ?></span></button>
 				<?php
 					wp_nav_menu( array(
