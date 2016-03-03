@@ -211,7 +211,7 @@ gulp.task('clean:scripts', function() {
 });
 
 /**
- * Concatenate javascripts.
+ * Concatenate javascripts after they're clobbered.
  * https://www.npmjs.com/package/gulp-concat
  */
 gulp.task('concat', ['clean:scripts'], function() {
@@ -225,7 +225,7 @@ gulp.task('concat', ['clean:scripts'], function() {
 });
 
  /**
-  * Minify javascripts.
+  * Minify javascripts after they're concatenated.
   * https://www.npmjs.com/package/gulp-uglify
   */
 gulp.task('uglify', ['concat'], function() {
