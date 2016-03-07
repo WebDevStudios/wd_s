@@ -124,8 +124,12 @@ a {
 	@include size(100% auto);
 
 	clear: both;
-	display: block;
+	display: none;
 	float: left;
+
+	@include media($tablet-landscape) {
+		display: block;
+	}
 
 	// Menu area
 	ul {

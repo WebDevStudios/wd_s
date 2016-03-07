@@ -855,26 +855,26 @@ a:hover, a:focus, a:active {
   height: auto;
   width: 100%;
   clear: both;
-  display: block;
+  display: none;
   float: left;
 }
 
-/* line 131, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 135, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .main-navigation ul {
   display: none;
 }
 
-/* line 139, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 143, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .main-navigation.toggled ul {
   display: block;
 }
 
-/* line 145, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 149, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .menu-toggle {
   display: block;
 }
 
-/* line 157, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 161, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -882,7 +882,7 @@ a:hover, a:focus, a:active {
   overflow: hidden;
 }
 
-/* line 162, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 166, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -891,7 +891,7 @@ a:hover, a:focus, a:active {
   float: left;
 }
 
-/* line 168, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+/* line 172, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -1742,10 +1742,10 @@ textarea {
   display: none;
 }
 
-@media screen and (min-width: 40rem) {/* line 131, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+@media screen and (min-width: 40rem) {/* line 135, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
   .main-navigation ul {
     display: block;
-  }/* line 145, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+  }/* line 149, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
   .menu-toggle {
     display: none;
   }
@@ -1791,6 +1791,9 @@ textarea {
   }/* line 89, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .secondary:last-child {
     margin-right: 0;
+  }/* line 123, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_navigation.scss */
+  .main-navigation {
+    display: block;
   }/* line 6, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_icons.scss */
   .social-icons {
     float: left;
