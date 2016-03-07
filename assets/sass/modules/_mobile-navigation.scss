@@ -114,7 +114,16 @@
 
 // Hide anything more than the first four items
 .mobile-nav-menu-hidden {
-	display: none;
+	@include transition(opacity 0.5s ease);
+
+	opacity: 0;
+}
+
+.mobile-menu-more:not(.sub-menu-more) {
+
+	.mobile-nav-menu-hidden {
+		opacity: 1;
+	}
 }
 
 // Show the remaining menu items when the ".more" class is active

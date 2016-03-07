@@ -1390,10 +1390,16 @@ textarea {
 
 /* line 116, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu-hidden {
-  display: none;
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
-/* line 123, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 124, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+.mobile-menu-more:not(.sub-menu-more) .mobile-nav-menu-hidden {
+  opacity: 1;
+}
+
+/* line 132, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more .mobile-nav-menu-hidden {
   bottom: 0;
   display: block;
@@ -1406,7 +1412,7 @@ textarea {
   z-index: -1;
 }
 
-/* line 134, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 143, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more .mobile-nav-menu-hidden li {
   bottom: 0;
   clear: both;
@@ -1418,24 +1424,24 @@ textarea {
   width: 100%;
 }
 
-/* line 144, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 153, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more .mobile-nav-menu-hidden li .sub-menu {
   padding-left: 10%;
   opacity: 1;
 }
 
-/* line 149, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 158, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .sub-menu-more .mobile-nav-menu.more .mobile-nav-menu-hidden li {
   display: none;
 }
 
-/* line 153, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 162, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more .mobile-nav-menu-hidden li a {
   color: #ffffff;
   padding: 0.625rem 1.25rem;
 }
 
-/* line 162, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 171, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more,
 .mobile-nav-menu .mobile-nav > .sub-menu {
   background-color: #808080;
@@ -1445,17 +1451,17 @@ textarea {
   top: 0;
 }
 
-/* line 173, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 182, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu .mobile-nav ul {
   box-shadow: none;
 }
 
-/* line 176, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 185, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-menu-more:not(.sub-menu-more) .mobile-nav-menu .mobile-nav ul {
   top: 0;
 }
 
-/* line 183, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 192, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .close-mobile-menu {
   height: 2rem;
   width: 2rem;
@@ -1467,27 +1473,27 @@ textarea {
   z-index: 1;
 }
 
-/* line 193, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 202, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .admin-bar .close-mobile-menu {
   top: 3.5rem;
 }
 
-/* line 202, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 211, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .close-mobile-menu:hover, .close-mobile-menu:active, .close-mobile-menu:focus {
   background-color: transparent;
 }
 
-/* line 207, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 216, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .close-mobile-menu:hover svg, .close-mobile-menu:active svg, .close-mobile-menu:focus svg {
   opacity: .6;
 }
 
-/* line 213, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 222, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .more .close-mobile-menu {
   display: block;
 }
 
-/* line 217, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 226, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .close-mobile-menu svg {
   height: 100%;
   width: 100%;
@@ -1495,12 +1501,12 @@ textarea {
   fill: #ffffff;
 }
 
-/* line 230, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 239, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .menu-item-has-children:hover .sub-menu {
   display: none;
 }
 
-/* line 239, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 248, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-menu-more:not(.sub-menu-more) .mobile-nav.dropdown .menu-item-has-children:hover .sub-menu {
   display: block;
   left: auto;
@@ -1508,7 +1514,7 @@ textarea {
   right: 0;
 }
 
-/* line 253, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 262, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .visible .sub-menu,
 .mobile-nav.dropdown .visible:hover .sub-menu,
 .mobile-nav.dropdown .visible:focus .sub-menu,
@@ -1523,7 +1529,7 @@ textarea {
   width: 50vw;
 }
 
-/* line 263, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 272, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .visible .sub-menu .sub-menu,
 .mobile-nav.dropdown .visible:hover .sub-menu .sub-menu,
 .mobile-nav.dropdown .visible:focus .sub-menu .sub-menu,
@@ -1531,7 +1537,7 @@ textarea {
   bottom: 0;
 }
 
-/* line 272, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 281, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .visible .sub-menu .sub-menu,
 .mobile-nav.dropdown .visible:hover .sub-menu .sub-menu,
 .mobile-nav.dropdown .visible:focus .sub-menu .sub-menu,
@@ -1540,7 +1546,7 @@ textarea {
   position: relative;
 }
 
-/* line 282, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 291, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .sub-menu {
   left: 0;
   opacity: 0;
@@ -1548,7 +1554,7 @@ textarea {
   width: 50vw;
 }
 
-/* line 293, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 302, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .sub-menu a {
   color: #ffffff;
   font-size: 1rem;
@@ -1556,19 +1562,19 @@ textarea {
   text-align: left;
 }
 
-/* line 300, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 309, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav.dropdown .sub-menu li {
   display: block;
   float: none;
   margin: 0;
 }
 
-/* line 314, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 323, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js.admin-bar .mobile-nav-menu {
   padding-top: 0;
 }
 
-/* line 319, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 328, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu {
   bottom: 0;
   font-size: 0;
@@ -1581,13 +1587,13 @@ textarea {
   width: 100%;
 }
 
-/* line 330, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 339, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu > div {
   bottom: 0;
   left: 0;
 }
 
-/* line 334, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 343, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu > div:before, .no-js .mobile-nav-menu > div:after {
   position: fixed;
   bottom: 0;
@@ -1599,25 +1605,25 @@ textarea {
   z-index: 20;
 }
 
-/* line 345, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 354, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu > div:after {
   right: 0;
   background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* line 353, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 362, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu > div:before {
   left: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, white 100%);
 }
 
-/* line 371, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 380, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav a {
   padding: 0 0.625rem;
   text-align: center;
 }
 
-/* line 375, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 384, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav a span {
   position: relative;
   top: 50%;
@@ -1627,22 +1633,22 @@ textarea {
   display: block;
 }
 
-/* line 384, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 393, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav > li:nth-child(n+6) {
   display: inline-block;
 }
 
-/* line 388, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 397, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav > li:first-of-type {
   padding-left: 6.25rem;
 }
 
-/* line 392, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 401, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav > li:last-of-type {
   padding-right: 6.25rem;
 }
 
-/* line 397, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 406, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav li {
   background-color: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -1658,12 +1664,12 @@ textarea {
   width: auto;
 }
 
-/* line 411, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 420, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav li:hover {
   background-color: #ffffff;
 }
 
-/* line 428, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 437, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav li > a {
   display: block;
   font-size: 0.75rem;
@@ -1671,19 +1677,19 @@ textarea {
   line-height: 1.2;
 }
 
-/* line 437, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 446, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav li.menu-item-has-children > a {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 444, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 453, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav li.menu-item-has-children:hover .sub-menu {
   display: inline-block;
   left: 0;
 }
 
-/* line 455, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 464, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav.dropdown .sub-menu {
   display: inline-block;
   float: none;
@@ -1695,17 +1701,17 @@ textarea {
   z-index: 1;
 }
 
-/* line 465, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 474, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav.dropdown .sub-menu a {
   color: #21759b;
 }
 
-/* line 469, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 478, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .mobile-nav.dropdown .sub-menu li {
   border: none;
 }
 
-/* line 478, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+/* line 487, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .no-js .mobile-nav-menu .menu.dropdown ul a {
   width: auto;
 }
@@ -1745,13 +1751,13 @@ textarea {
   }
 }
 
-@media screen and (min-width: 48rem) {/* line 263, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+@media screen and (min-width: 48rem) {/* line 272, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
   .mobile-nav.dropdown .visible .sub-menu .sub-menu,
   .mobile-nav.dropdown .visible:hover .sub-menu .sub-menu,
   .mobile-nav.dropdown .visible:focus .sub-menu .sub-menu,
   .mobile-nav.dropdown .visible:active .sub-menu .sub-menu {
     bottom: auto;
-  }/* line 282, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+  }/* line 291, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
   .mobile-nav.dropdown .sub-menu {
     left: auto;
     right: 0;
@@ -1761,7 +1767,7 @@ textarea {
 @media screen and (min-width: 48.9375rem) {/* line 41, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
   .admin-bar .mobile-nav-menu {
     padding-top: 2.5rem;
-  }/* line 193, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
+  }/* line 202, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
   .admin-bar .close-mobile-menu {
     top: 2.5rem;
   }
