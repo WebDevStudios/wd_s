@@ -16,20 +16,20 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: none; // Remove iOS styles
-	background-color: $color-dove-gray;
+	background-color: $color-button-background;
 	border: none;
 	border-radius: 0;
-	color: $color-white;
+	color: $color-button-text;
 	min-height: rem(31);
 	vertical-align: top;
 
 	&:hover {
-		background-color: $color-mineshaft;
+		background-color: $color-button-background-hover;
 	}
 
 	&:active,
 	&:focus {
-		background-color: $color-mineshaft;
+		background-color: $color-button-background-hover;
 	}
 }
 
