@@ -1295,7 +1295,7 @@ textarea {
 
 /* line 12, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu {
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
   display: block;
   height: 100%;
   left: 0;
@@ -1307,7 +1307,7 @@ textarea {
 /* line 29, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu.more,
 .mobile-nav-menu .sub-menu {
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
   width: 100%;
 }
 
@@ -1355,7 +1355,7 @@ textarea {
 
 /* line 85, /Applications/MAMP/htdocs/mywd_s/wp-content/themes/wd_s/assets/sass/modules/_mobile-navigation.scss */
 .mobile-nav-menu .mobile-nav > li:nth-child(-n+5) {
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
   background-color: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-flex-grow: 1;
@@ -1491,7 +1491,7 @@ textarea {
 .close-mobile-menu svg {
   height: 100%;
   width: 100%;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
   fill: #ffffff;
 }
 
