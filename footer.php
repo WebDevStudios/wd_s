@@ -13,19 +13,15 @@
 
 	</div><!-- #content -->
 
-	<div class="footer-area">
-		<?php wds_page_builder_area( 'after_content' ); ?>
-	</div>
-
 	<footer class="site-footer">
 		<div class="wrap">
 
 			<div class="site-info">
 				<?php _s_do_copyright_text(); ?>
-			</div><!-- .site-info -->
+			</div>
 
 		</div><!-- .wrap -->
-	</footer><!-- #colophon -->
+	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

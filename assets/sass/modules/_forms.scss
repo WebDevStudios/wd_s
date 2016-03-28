@@ -64,8 +64,16 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
-input[type="tel"],
 input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
 	-webkit-appearance: none; // Remove iOS styles
 	color: $color-input-text;

@@ -16,7 +16,7 @@ if ( ! function_exists( '_s_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function _s_setup() {
-	/*
+	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
@@ -29,7 +29,7 @@ function _s_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
+	/**
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
@@ -37,7 +37,7 @@ function _s_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
+	/**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -49,7 +49,7 @@ function _s_setup() {
 		'primary' => esc_html__( 'Primary Menu', '_s' ),
 	) );
 
-	/*
+	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -70,38 +70,6 @@ function _s_setup() {
 	// Add styles to the post editor
 	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
 
-	/**
-	 * Enable support and set configuration options for
-	 * WDS Simple Page Builder.
-	 */
-	if ( class_exists( 'WDS_Simple_Page_Builder' ) && version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) {
-
-		// Add theme support
-		add_theme_support( 'wds-simple-page-builder' );
-
-		// Define options
-		wds_page_builder_theme_support( array(
-			'hide_options'    => 'disabled', // set to true to hide them completely
-			'parts_dir'       => 'pagebuilder',
-			'parts_prefix'    => 'part',
-			'use_wrap'        => 'on', // on is TRUE
-			'container'       => 'section',
-			'container_class' => 'pagebuilder-part', // can use multiple classes, separated by a space
-			'post_types'      => array( 'page', ), // Add any other supported post types here
-		) );
-
-		// Define areas
-		$page_builder_areas = array(
-			'hero'           => array( 'name' => esc_html__( 'Hero Area', '_s' ), ),
-			'before_content' => array( 'name' => esc_html__( 'Before Content Area', '_s' ), ),
-			'after_content'  => array( 'name' => esc_html__( 'After Content Area', '_s' ), ),
-		);
-
-		// Loop through and register each area
-		foreach ( $page_builder_areas as $page_builder_area_slug => $page_builder_area ) {
-			register_page_builder_area( $page_builder_area_slug, $page_builder_area );
-		}
-	}
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
@@ -174,6 +142,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load styles and scripts
+ * Load styles and scripts.
  */
 require get_template_directory() . '/inc/scripts.php';

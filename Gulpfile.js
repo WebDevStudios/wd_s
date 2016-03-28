@@ -295,6 +295,6 @@ gulp.task('watch', function() {
 gulp.task('i18n', ['wp-pot']);
 gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
-gulp.task('styles', ['sass:lint']);
+gulp.task('styles', ['cssnano']);
 gulp.task('sprites', ['imagemin', 'spritesmith']);
 gulp.task('default', ['i18n','icons', 'styles', 'scripts', 'sprites']);

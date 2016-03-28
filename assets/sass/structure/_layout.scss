@@ -16,7 +16,10 @@
 
 .site-header,
 .site-footer {
-	padding: 0 2 * $gutter;
+
+	@include media($tablet-landscape) {
+		padding: 0 2 * $gutter;
+	}
 }
 
 .site-content {

@@ -28,9 +28,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<?php wds_page_builder_area( 'hero' ); ?>
-
-	<header id="masthead" class="site-header">
+	<header class="site-header">
 		<div class="wrap">
 
 			<div class="site-branding">
@@ -46,8 +44,8 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="main-navigation" class="site-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu"><?php _s_do_svg( array( 'icon' => 'bars', 'title' => 'Display Menu' ) ); ?><span class="menu-toggle-text"><?php esc_html_e( 'Menu', '_s' ); ?></span></button>
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _s_do_svg( array( 'icon' => 'bars', 'title' => 'Display Menu' ) ); ?><span class="menu-toggle-text"><?php esc_html_e( 'Menu', '_s' ); ?></span></button>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
@@ -58,7 +56,5 @@
 
 		</div><!-- .wrap -->
 	</header><!-- #masthead -->
-
-	<?php wds_page_builder_area( 'before_content' ); ?>
 
 	<div id="content" class="site-content">

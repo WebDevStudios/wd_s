@@ -1,16 +1,18 @@
 /**
- * After everything has loaded, add a "ready" class to <body>.
+ * File window-ready.js
+ *
+ * Add a "ready" class to <body> when window is ready.
  */
 window.Window_Ready = {};
 ( function( window, $, that ) {
 
-	// Constructor
+	// Constructor.
 	that.init = function() {
 		that.cache();
 		that.bindEvents();
 	};
 
-	// Cache document elements
+	// Cache document elements.
 	that.cache = function() {
 		that.$c = {
 			window: $(window),
@@ -18,17 +20,17 @@ window.Window_Ready = {};
 		};
 	};
 
-	// Combine all events
+	// Combine all events.
 	that.bindEvents = function() {
 		that.$c.window.load( that.addBodyClass );
 	};
 
-	// Add a class to <body>
+	// Add a class to <body>.
 	that.addBodyClass = function() {
 		that.$c.body.addClass( 'ready' );
 	};
 
-	// Engage
+	// Engage!
 	$( that.init );
 
 })( window, jQuery, window.Window_Ready );

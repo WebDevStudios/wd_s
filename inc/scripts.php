@@ -1,17 +1,24 @@
 <?php
+/**
+ * Custom scripts and styles.
+ *
+ * @package _s
+ */
 
 /**
  * Register Google font.
+ *
+ * @link http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
  */
 function _s_font_url() {
 
 	$fonts_url = '';
 
-	/*
-	* Translators: If there are characters in your language that are not
-	* supported by the following, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by the following, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$roboto = _x( 'on', 'Roboto font: on or off', '_s' );
 	$open_sans = _x( 'on', 'Open Sans font: on or off', '_s' );
 
@@ -99,10 +106,10 @@ endif;
  */
 function _s_include_svg_icons() {
 
-	// Define SVG sprite file
+	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
 
-	// If it exsists, include it
+	// If it exsists, include it.
 	if ( file_exists( $svg_icons ) ) {
 		require_once( $svg_icons );
 	}

@@ -13,9 +13,8 @@
 get_header(); ?>
 
 	<div class="wrap">
-
 		<div class="primary content-area">
-			<main class="site-main">
+			<main id="main" class="site-main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -25,7 +24,6 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</div><!-- .primary -->
-
 	</div><!-- .wrap -->
 
 <?php get_footer(); ?>

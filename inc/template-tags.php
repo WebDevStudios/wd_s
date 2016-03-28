@@ -118,7 +118,7 @@ function _s_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( '_s_categories' );
 }
-add_action( 'edit_category', '_s_category_transient_flusher' );
+add_action( 'delete_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
 
 /**
@@ -160,15 +160,15 @@ function _s_get_svg( $args = array() ) {
 
 		// If there is a title, display it.
 		if ( $args['title'] ) {
-			$svg .= '	<title>' . esc_html( $args['title'] ) . '</title>';
+			$svg .= '<title>' . esc_html( $args['title'] ) . '</title>';
 		}
 
 		// If there is a description, display it.
 		if ( $args['desc'] ) {
-			$svg .= '	<desc>' . esc_html( $args['desc'] ) . '</desc>';
+			$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
 		}
 
-	$svg .= '	<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
 	$svg .= '</svg>';
 
 	return $svg;
@@ -324,7 +324,7 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 }
 
 /**
- * Echo the copyright text saved in the Customizer
+ * Echo the copyright text saved in the Customizer.
  */
 function _s_do_copyright_text() {
 

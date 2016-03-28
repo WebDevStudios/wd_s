@@ -1,12 +1,9 @@
 //--------------------------------------------------------------
 //   COLORS
 //    - Primary palette
+//    - Grayscale
 //    - Social Media Colors
 //       - $social-colors() map
-
-//   GRAYSCALE
-//    - Black & White
-//    - Grayscale
 //
 //   ELEMENTS & SKINNING
 //     - General
@@ -19,6 +16,20 @@
 // Primary palette
 $color-blue: #21759b;
 $color-light-yellow: #fff9c0;
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Grayscale
+$color-gray: #808080;
+$color-cod-gray: #111111;
+$color-mineshaft: #333333;
+$color-dove-gray: #666666;
+$color-gray-alt: #929292;
+$color-silver-chalice: #aaaaaa;
+$color-silver: #cccccc;
+$color-alto: #dddddd;
+$color-gallery: #eeeeee;
+$color-whitesmoke: #f1f1f1;
 
 // Social Media Colors
 $color-facebook: #3b5998;
@@ -48,25 +59,6 @@ $social-colors: (
 	youtube: $color-youtube,
 	youtube-square: $color-youtube,
 );
-
-// GRAYSCALE
-
-// Black & White
-$color-black: #000000;
-$color-white: #ffffff;
-
-// Grayscale
-$color-gray: #808080;
-
-$color-cod-gray: #111111;
-$color-mineshaft: #333333;
-$color-dove-gray: #666666;
-$color-gray-alt: #929292;
-$color-silver-chalice: #aaaaaa;
-$color-silver: #cccccc;
-$color-alto: #dddddd;
-$color-gallery: #eeeeee;
-$color-whitesmoke: #f1f1f1;
 
 // ELEMENTS & SKINNING
 

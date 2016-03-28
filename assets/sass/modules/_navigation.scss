@@ -97,16 +97,17 @@ a {
 
 		// Sub-menu
 		ul {
+			@include position(absolute, rem(24) null null rem(-9999));
+
+			background-color: $color-white;
 			box-shadow: 0 3px 3px rgba($color-black, 0.2);
 			float: left;
-			left: -999em;
-			position: absolute;
-			top: em(24px);
+			padding: rem(8);
 			z-index: 99999;
 
 			// Sub-sub menu
 			ul {
-				left: -999em;
+				left: rem(-9999);
 				top: 0;
 			}
 

@@ -1,9 +1,12 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * Template part for displaying page content in page.php.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
+
 ?>
 
 <article <?php post_class(); ?>>
@@ -12,16 +15,27 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
 		<?php
+			the_content();
+
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', '_s' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
