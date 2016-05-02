@@ -297,7 +297,7 @@ gulp.task('watch', function() {
 });
 
 /**
- * Create indivdual tasks.
+ * Create individual tasks.
  */
 gulp.task('i18n', ['wp-pot']);
 gulp.task('icons', ['svg']);
