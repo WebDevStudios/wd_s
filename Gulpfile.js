@@ -304,4 +304,4 @@ gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
 gulp.task('styles', ['cssnano']);
 gulp.task('sprites', ['spritesmith']);
-gulp.task('default', ['i18n', 'icons', 'styles', 'scripts', 'sprites', 'imagemin']);
+gulp.task('default', ['sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin']);
