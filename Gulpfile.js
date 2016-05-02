@@ -197,7 +197,7 @@ gulp.task('clean:sprites', function() {
  *
  * https://www.npmjs.com/package/gulp.spritesmith
  */
-gulp.task('spritesmith', ['clean:sprites'] function() {
+gulp.task('spritesmith', ['clean:sprites'], function() {
 	return gulp.src(paths.sprites)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(spritesmith({
