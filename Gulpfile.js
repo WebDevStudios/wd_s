@@ -122,7 +122,7 @@ gulp.task('cssnano', ['postcss'], function() {
 });
 
 /**
- * Sass linting
+ * Sass linting.
  *
  * https://www.npmjs.com/package/sass-lint
  */
@@ -139,7 +139,7 @@ gulp.task('sass:lint', ['cssnano'], function() {
 });
 
 /**
- * Delete the svg-icons.svg before we minify, concat
+ * Delete the svg-icons.svg before we minify, concat.
  */
 gulp.task('clean:icons', function() {
 	return del(['assets/images/svg-icons.svg']);
@@ -186,11 +186,18 @@ gulp.task('imagemin', function() {
 });
 
 /**
+ * Delete the sprites.png before rebuilding sprite.
+ */
+gulp.task('clean:sprites', function() {
+	return del(['assets/images/sprites.png']);
+});
+
+/**
  * Concatenate images into a single PNG sprite.
  *
  * https://www.npmjs.com/package/gulp.spritesmith
  */
-gulp.task('spritesmith', function() {
+gulp.task('spritesmith', ['clean:sprites'] function() {
 	return gulp.src(paths.sprites)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(spritesmith({
@@ -204,7 +211,7 @@ gulp.task('spritesmith', function() {
 });
 
 /**
- * Delete scripts before we concat and minify
+ * Delete scripts before we concat and minify.
  */
 gulp.task('clean:scripts', function() {
 	return del(['assets/js/project.js', 'assets/js/*.min.js']);
@@ -238,7 +245,7 @@ gulp.task('uglify', ['concat'], function() {
 });
 
 /**
- * Delete the theme's .pot before we create a new one
+ * Delete the theme's .pot before we create a new one.
  */
 gulp.task('clean:pot', function() {
 	return del(['languages/_s.pot']);
@@ -296,5 +303,5 @@ gulp.task('i18n', ['wp-pot']);
 gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
 gulp.task('styles', ['cssnano']);
-gulp.task('sprites', ['imagemin', 'spritesmith']);
-gulp.task('default', ['i18n','icons', 'styles', 'scripts', 'sprites']);
+gulp.task('sprites', ['spritesmith']);
+gulp.task('default', ['i18n', 'icons', 'styles', 'scripts', 'sprites', 'imagemin']);
