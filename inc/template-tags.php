@@ -156,7 +156,7 @@ function _s_get_svg( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Begin SVG markup
-	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '">';
+	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '" aria-hidden="true">';
 
 		// If there is a title, display it.
 		if ( $args['title'] ) {
