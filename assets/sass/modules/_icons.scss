@@ -4,33 +4,23 @@
 
 // Social icons <ul>
 .social-icons {
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
-
-	// After 1024px, let's float and text align left
-	@include media($tablet-landscape) {
-		float: left;
-		text-align: left;
-	}
+	@include clearfix;
+	@include list-reset;
 
 	// Each icon <li>
 	.social-icon {
-		display: inline-block;
-		margin-right: rem(12);
-		vertical-align: top;
 
 		// Loop through all social icons
 		@each $social-color, $color in $social-colors {
 
 			// Set styles on those social icons!
 			.icon-#{$social-color} {
-				@include size(rem(24) rem(24));
+				@include size(rem(30) rem(30));
 
-				fill: $color-white;
+				fill: $color;
 
 				&:hover {
-					fill: $color;
+					fill: lighten($color, 20%);
 				}
 			}
 		}
