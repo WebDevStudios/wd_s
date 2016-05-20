@@ -8,7 +8,7 @@ window.MobileNavMenu = {};
     that.init = function() {
         that.cache();
 
-        if ( that.meetsRequirements ) {
+        if ( that.meetsRequirements() ) {
             that.bindEvents();
         }
     };
@@ -17,6 +17,7 @@ window.MobileNavMenu = {};
     that.cache = function() {
         that.$c = {
             window: $(window),
+            body: $( 'body' ),
             mobileNavMenuContainer: $( '.mobile-nav-menu' ),
             menuItemCount: $( '.mobile-nav-menu .mobile-nav > li' ).length
         };
@@ -34,13 +35,13 @@ window.MobileNavMenu = {};
     	that.replaceLastMenuItem();
 
     	// Show more items when the "more" item is clicked
-        $( 'body' ).on( 'click', '.mobile-menu-more-link', that.displayMoreItems );
+        that.$c.body.on( 'click', '.mobile-menu-more-link', that.displayMoreItems );
 
         // Add the more classes when hovering a parent menu item
-        $( 'body' ).on( 'click', '.mobile-nav-menu .menu-item-has-children > a', that.setSecondClick );
+        that.$c.body.on( 'click', '.mobile-nav-menu .menu-item-has-children > a', that.setSecondClick );
 
         // Hide the menu when the close button is clicked
-        $( 'body' ).on( 'click', '.close-mobile-menu', that.hideMoreItems );
+        that.$c.body.on( 'click', '.close-mobile-menu', that.hideMoreItems );
     };
 
     // Do we meet the requirements?
@@ -66,7 +67,7 @@ window.MobileNavMenu = {};
         event.preventDefault();
 
         // Hide the menu if it's already opened
-        if ( $( 'body' ).hasClass( 'mobile-menu-more' ) && ! $( 'body' ).hasClass( 'sub-menu-more' ) ) {
+        if ( that.$c.body.hasClass( 'mobile-menu-more' ) && ! that.$c.body.hasClass( 'sub-menu-more' ) ) {
             that.removeMenuClasses();
             return;
         }
@@ -76,7 +77,7 @@ window.MobileNavMenu = {};
         that.removeMenuClasses();
 
         that.$c.mobileNavMenuContainer.toggleClass( 'more' );
-        $( 'body' ).toggleClass( 'mobile-menu-more' );
+        that.$c.body.toggleClass( 'mobile-menu-more' );
 
     };
 
@@ -85,7 +86,6 @@ window.MobileNavMenu = {};
 
         // Check to see if this parent has the visible class
         if( ! $( this ).parent( 'li' ).hasClass( 'visible' ) ) {
-
             // Don't let the link fire as a normal link
             event.preventDefault();
         }
@@ -99,7 +99,7 @@ window.MobileNavMenu = {};
 
         // Add our "more" classes as we do when clicking the "More" link
         that.$c.mobileNavMenuContainer.toggleClass( 'more' );
-        $( 'body' ).toggleClass( 'mobile-menu-more sub-menu-more' );
+        that.$c.body.toggleClass( 'mobile-menu-more sub-menu-more' );
     };
 
     // Hide the menu items
@@ -111,7 +111,7 @@ window.MobileNavMenu = {};
 
         // Remove any instances of classes already in place
         // This makes sure we can click to switch between submenus
-        $( 'body' ).removeClass( 'mobile-menu-more sub-menu-more' );
+        that.$c.body.removeClass( 'mobile-menu-more sub-menu-more' );
         that.$c.mobileNavMenuContainer.removeClass( 'more' );
         $( '.menu-item-has-children' ).removeClass( 'visible' );
     }
