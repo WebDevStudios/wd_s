@@ -10,8 +10,9 @@
 
 // Fix the menu to the bottom of the window
 .mobile-nav-menu {
-	@include transition(opacity 0.5s ease);
+	@include transition(background-color 0.2s linear, width 0.2s linear);
 
+	background-color: rgba($color-black, 0);
 	display: block;
 	height: 100%;
 	left: 0;
@@ -26,15 +27,17 @@
 
 	// Add a background color to the menu
 	// when the "More" items are displayed
+	&.more {
+		background-color: rgba($color-black, 0.7);
+	}
+
 	&.more,
 	.sub-menu {
-		@include transition(opacity 0.5s ease);
-
 		width: 100%;
 	}
 
-	&.more {
-		background-color: rgba($color-black, .7);
+	.sub-menu {
+		@include transition(opacity 0.5s linear);
 	}
 
 	// Adjust padding for admin bar
@@ -114,9 +117,19 @@
 
 // Hide anything more than the first four items
 .mobile-nav-menu-hidden {
-	@include transition(opacity 0.5s ease);
+	@include transition(opacity 0.5s linear);
 
+	bottom: 0;
+	display: block;
+	max-height: 100%;
 	opacity: 0;
+	overflow: scroll;
+	padding: rem(84) 0;
+	position: absolute;
+	right: 0;
+	visibility: hidden;
+	width: 50vw;
+	z-index: -1;
 }
 
 .mobile-menu-more:not(.sub-menu-more) {
@@ -130,15 +143,7 @@
 .mobile-nav-menu.more {
 
 	.mobile-nav-menu-hidden {
-		bottom: 0;
-		display: block;
-		max-height: 100%;
-		overflow: scroll;
-		padding: rem(84) 0;
-		position: absolute;
-		right: 0;
-		width: 50vw;
-		z-index: -1;
+		visibility: visible;
 
 		li {
 			bottom: 0;
