@@ -211,17 +211,10 @@ gulp.task('spritesmith', ['clean:sprites'], function() {
 });
 
 /**
- * Delete scripts before we concat and minify.
- */
-gulp.task('clean:scripts', function() {
-	return del(['assets/js/project.js', 'assets/js/*.min.js']);
-});
-
-/**
  * Concatenate javascripts after they're clobbered.
  * https://www.npmjs.com/package/gulp-concat
  */
-gulp.task('concat', ['clean:scripts'], function() {
+gulp.task('concat', function() {
 	return gulp.src(paths.concat_scripts)
 	.pipe(plumber({ errorHandler: handleErrors }))
 	.pipe(sourcemaps.init())
