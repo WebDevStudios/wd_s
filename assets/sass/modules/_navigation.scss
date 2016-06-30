@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 
 // Links
+
 a {
 	color: $color-link;
 
@@ -17,52 +18,8 @@ a {
 	}
 }
 
-// Navicon menu
-.menu-toggle {
-	display: block;
+// Default menu (active after a fresh WordPress install)
 
-	.icon {
-		@include size(rem(12) rem(14));
-
-		display: inline-block;
-		fill: $color-white;
-		margin-right: rem(5);
-		vertical-align: middle;
-	}
-
-	.menu-toggle-text {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	@include media($phone-landscape) {
-		display: none;
-	}
-}
-
-// Main navigation container
-.main-navigation {
-	@include size(100% auto);
-
-	clear: both;
-	display: block;
-	float: left;
-
-	// Menu area
-	ul {
-		display: none;
-
-		@include media($phone-landscape) {
-			display: block;
-		}
-	}
-
-	&.toggled ul {
-		display: block;
-	}
-}
-
-// Menu defaults
 .menu {
 	@include list-reset;
 
@@ -88,8 +45,8 @@ a {
 		}
 
 		a {
-			border-bottom: 1px solid $color-background-hr;
 			padding: rem(10);
+			border-bottom: 1px solid $color-background-hr;
 		}
 	}
 
@@ -97,17 +54,16 @@ a {
 
 		// Sub-menu
 		ul {
-			@include position(absolute, rem(24) null null rem(-9999));
-
-			background-color: $color-white;
-			box-shadow: 0 3px 3px rgba($color-black, 0.2);
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
-			padding: rem(8);
+			left: -999em;
+			position: absolute;
+			top: em(24px);
 			z-index: 99999;
 
 			// Sub-sub menu
 			ul {
-				left: rem(-9999);
+				left: -999em;
 				top: 0;
 			}
 
@@ -163,7 +119,41 @@ a {
 	}
 }
 
-// Other navigation
+// Main navigation (after creating a menu in the dashboard)
+.main-navigation {
+	@include size(100% auto);
+
+	clear: both;
+	display: none;
+	float: left;
+
+	@include media($tablet-landscape) {
+		display: block;
+	}
+
+	// Menu area
+	ul {
+		display: none;
+
+		@include media($phone-landscape) {
+			display: block;
+		}
+	}
+
+	&.toggled ul {
+		display: block;
+	}
+}
+
+// Small menu
+.menu-toggle {
+	display: block;
+
+	@include media($phone-landscape) {
+		display: none;
+	}
+}
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {

@@ -1,0 +1,505 @@
+//--------------------------------------------------------------
+// Mobile Navigation
+//--------------------------------------------------------------
+
+// Fix scrolling on the entire body
+// when the more menu is visible
+.mobile-menu-more {
+	overflow: hidden;
+}
+
+// Fix the menu to the bottom of the window
+.mobile-nav-menu {
+	@include transition(background-color 0.2s linear, width 0.2s linear);
+
+	background-color: rgba($color-black, 0);
+	display: block;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 0;
+
+	// Don't show this puppy above tablet-landscape
+	@include media($tablet-landscape) {
+		display: none;
+	}
+
+	// Add a background color to the menu
+	// when the "More" items are displayed
+	&.more {
+		background-color: rgba($color-black, 0.7);
+	}
+
+	&.more,
+	.sub-menu {
+		width: 100%;
+	}
+
+	.sub-menu {
+		@include transition(opacity 0.5s linear);
+	}
+
+	// Adjust padding for admin bar
+	.admin-bar & {
+		padding-top: rem(56);
+
+		@include media($wp-admin-bar) {
+			padding-top: rem(40);
+		}
+	}
+
+	li {
+		cursor: pointer;
+	}
+}
+
+// Remove margins from all menu items
+.mobile-nav-menu {
+
+	// Only target the parent menu
+	.mobile-nav {
+
+		// Only target top-level items
+		> li {
+			flex: 1 0 20%;
+			margin: 0;
+
+			a {
+				padding: 0 rem(10);
+			}
+		}
+	}
+}
+
+// Make sure the first four items are equal widths
+.mobile-nav-menu {
+
+	// Only target the parent menu
+	.mobile-nav {
+		align-items: flex-end;
+		bottom: 0;
+		display: flex;
+		height: rem(64);
+		justify-content: space-between;
+		position: absolute;
+		width: 100vw;
+
+		// Only target top-level items
+		> li:nth-child(-n+5) {
+			@include transition(opacity 0.5s ease);
+
+			background-color: $color-white;
+			border-top: 1px solid rgba($color-black, .1);
+			flex-grow: 1;
+			height: rem(64);
+			text-align: center;
+
+			&:hover {
+				background-color: $color-gallery;
+			}
+
+			> a {
+				display: block;
+				font-size: rem(12);
+				height: 100%;
+				line-height: 1.2;
+
+				span {
+					@include vertical-align(middle);
+
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+// Hide anything more than the first four items
+.mobile-nav-menu-hidden {
+	@include transition(opacity 0.5s linear);
+
+	bottom: 0;
+	display: block;
+	max-height: 100%;
+	opacity: 0;
+	overflow: scroll;
+	padding: rem(84) 0;
+	position: absolute;
+	right: 0;
+	visibility: hidden;
+	width: 50vw;
+	z-index: -1;
+}
+
+.mobile-menu-more:not(.sub-menu-more) {
+
+	.mobile-nav-menu-hidden {
+		opacity: 1;
+	}
+}
+
+// Show the remaining menu items when the ".more" class is active
+.mobile-nav-menu.more {
+
+	.mobile-nav-menu-hidden {
+		visibility: visible;
+
+		li {
+			bottom: 0;
+			clear: both;
+			display: block;
+			float: right;
+			margin: 0;
+			position: relative;
+			right: 0;
+			width: 100%;
+
+			.sub-menu {
+				padding-left: 10%;
+				opacity: 1;
+			}
+
+			.sub-menu-more & {
+				display: none;
+			}
+
+			a {
+				color: $color-white;
+				padding: rem(10) rem(20);
+			}
+		}
+	}
+}
+
+// Style the more/fly-in menu
+.mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more,
+.mobile-nav-menu .mobile-nav > .sub-menu {
+	background-color: $color-gray;
+	left: 0;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+}
+
+.mobile-nav-menu .mobile-nav {
+
+	ul {
+		box-shadow: none;
+
+		.mobile-menu-more:not(.sub-menu-more) & {
+			top: 0;
+		}
+	}
+}
+
+// Style the close button
+.close-mobile-menu {
+	@include size(rem(32));
+
+	background-color: transparent;
+	display: none;
+	position: absolute;
+	right: rem(12);
+	top: rem(10);
+	z-index: 1;
+
+	.admin-bar & {
+		top: rem(56);
+
+		@include media($wp-admin-bar) {
+			top: rem(40);
+		}
+	}
+
+	// Get rid of that nasty hover state
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+
+		svg {
+			opacity: .6;
+		}
+	}
+
+	// Only display when more items are visible
+	.more & {
+		display: block;
+	}
+
+	svg {
+		@include size(100%);
+		@include transition(opacity 0.5s ease);
+
+		fill: $color-white;
+	}
+}
+
+// Don't show the submenu when we hover the parent
+.mobile-nav.dropdown {
+
+	.menu-item-has-children:hover {
+
+		.sub-menu {
+			display: none;
+		}
+	}
+
+	.mobile-menu-more:not(.sub-menu-more) & {
+
+		.menu-item-has-children:hover {
+
+			.sub-menu {
+				display: block;
+				left: auto;
+				opacity: 1;
+				right: 0;
+			}
+		}
+	}
+
+	.visible,
+	.visible:hover,
+	.visible:focus,
+	.visible:active {
+
+		.sub-menu {
+			bottom: rem(84);
+			display: block;
+			left: auto;
+			opacity: 1;
+			position: fixed;
+			right: 0;
+			top: auto;
+			width: 50vw;
+
+			.sub-menu {
+				bottom: 0;
+
+				@include media($tablet-portrait) {
+					bottom: auto;
+				}
+			}
+		}
+
+		.sub-menu .sub-menu {
+			padding-left: rem(10);
+			position: relative;
+		}
+	}
+}
+
+// Adjust link and anchor styles for submenus
+.mobile-nav.dropdown {
+
+	.sub-menu {
+		left: 0;
+		opacity: 0;
+		z-index: -1;
+		width: 50vw;
+
+		@include media($tablet-portrait) {
+			left: auto;
+			right: 0;
+		}
+
+		a {
+			color: $color-white;
+			font-size: rem(16);
+			padding: rem(10) rem(20);
+			text-align: left;
+		}
+
+		li {
+			display: block;
+			float: none;
+			margin: 0;
+		}
+	}
+}
+
+// Adjust submenu z-index when parent is visible
+.mobile-nav.dropdown .visible {
+
+	// Adjust z-index when visible
+	.sub-menu {
+		z-index: 1;
+	}
+}
+
+// Add styles for non-JS users
+// Add a horizontal scroll and faded edges
+.no-js {
+
+	&.admin-bar {
+
+		.mobile-nav-menu {
+			padding-top: 0;
+		}
+	}
+
+	.mobile-nav-menu {
+		bottom: 0;
+		font-size: 0;
+		height: rem(64);
+		overflow-x: auto;
+		top: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		white-space: nowrap;
+		width: 100%;
+
+		> div {
+			bottom: 0;
+			left: 0;
+
+			&:before,
+			&:after {
+				position: fixed;
+				bottom: 0;
+				height: 100%;
+				width: 25%;
+				content: "";
+				pointer-events: none; /* so the text is still selectable */
+				z-index: 20;
+			}
+
+			&:after {
+				right: 0;
+				background: linear-gradient(to left,
+				rgba(255,255,255, 1) 0%,
+				rgba(255,255,255, 0) 100%
+				);
+			}
+
+			&:before {
+				left: 0;
+				background: linear-gradient(to left,
+				rgba(255,255,255, 0) 0%,
+				rgba(255,255,255, 1) 100%
+				);
+			}
+		}
+	}
+}
+
+// Adjust display of menu items
+.no-js {
+
+	.mobile-nav-menu {
+
+		.mobile-nav {
+
+			a {
+				padding: 0 rem(10);
+				text-align: center;
+
+				span {
+					@include vertical-align(middle);
+
+					display: block;
+				}
+			}
+
+			> li {
+
+				&:nth-child(n+6) {
+					display: inline-block;
+				}
+
+				&:first-of-type {
+					padding-left: rem(100);
+				}
+
+				&:last-of-type {
+					padding-right: rem(100);
+				}
+			}
+
+			li {
+				background-color: $color-white;
+				border-top: 1px solid rgba($color-black, .1);
+				display: inline-block;
+				float: none;
+				font-size: rem(12);
+				height: rem(64);
+				left: 0;
+				margin: 0;
+				position: relative;
+				text-align: center;
+				vertical-align: top;
+				width: auto;
+
+				&:hover {
+					background-color: $color-white;
+				}
+			}
+		}
+	}
+}
+
+// Adjust display of submenus and links
+.no-js {
+
+	.mobile-nav-menu {
+
+		.mobile-nav {
+
+			li {
+
+				> a {
+					display: block;
+					font-size: rem(12);
+					height: 100%;
+					line-height: 1.2;
+				}
+
+				&.menu-item-has-children {
+
+					> a {
+						display: inline-block;
+						vertical-align: top;
+					}
+
+					&:hover {
+
+						.sub-menu {
+							display: inline-block;
+							left: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.mobile-nav.dropdown {
+
+			.sub-menu {
+				display: inline-block;
+				float: none;
+				left: 0;
+				opacity: 1;
+				position: relative;
+				top: auto;
+				width: auto;
+				z-index: 1;
+
+				a {
+					color: $color-link;
+				}
+
+				li {
+					border: none;
+				}
+			}
+		}
+	}
+
+	.mobile-nav-menu {
+
+		.menu.dropdown ul a {
+			width: auto;
+		}
+	}
+}
