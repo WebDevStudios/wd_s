@@ -67,7 +67,6 @@ function _s_scripts() {
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
-	wp_enqueue_style( 'animate.css' );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
 	// Enqueue scripts.
