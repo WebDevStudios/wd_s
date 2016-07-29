@@ -37,6 +37,11 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Are we on mobile?
+	if ( wp_is_mobile() ) {
+		$classes[] = 'mobile';
+	}
+
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 

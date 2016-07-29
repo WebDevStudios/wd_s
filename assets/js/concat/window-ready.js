@@ -4,33 +4,33 @@
  * Add a "ready" class to <body> when window is ready.
  */
 window.Window_Ready = {};
-( function( window, $, that ) {
+( function( window, $, app ) {
 
 	// Constructor.
-	that.init = function() {
-		that.cache();
-		that.bindEvents();
+	app.init = function() {
+		app.cache();
+		app.bindEvents();
 	};
 
 	// Cache document elements.
-	that.cache = function() {
-		that.$c = {
-			window: $(window),
-			body: $(document.body),
+	app.cache = function() {
+		app.$c = {
+			window: $( window ),
+			body: $( document.body ),
 		};
 	};
 
 	// Combine all events.
-	that.bindEvents = function() {
-		that.$c.window.load( that.addBodyClass );
+	app.bindEvents = function() {
+		app.$c.window.load( app.addBodyClass );
 	};
 
 	// Add a class to <body>.
-	that.addBodyClass = function() {
-		that.$c.body.addClass( 'ready' );
+	app.addBodyClass = function() {
+		app.$c.body.addClass( 'ready' );
 	};
 
 	// Engage!
-	$( that.init );
+	$( app.init );
 
 })( window, jQuery, window.Window_Ready );
