@@ -50,7 +50,7 @@ $gf-input-padding: $padding-input;
 	& .gform_body .gform_fields .gfield.gf_left_half,
 	& .gform_body .gform_fields .gfield.gf_right_half {
 		margin-bottom: $gf-field-margin-bottom; // space between input and label below
-	}
+	} // & .gform_body .gform_fields .gfield, & .gform_body .gform_fields .gfield.gf_left_half, & .gform_body .gform_fields .gfield.gf_right_half
 
 	// Labels
 	.gfield_label {
@@ -61,8 +61,8 @@ $gf-input-padding: $padding-input;
 		// Require field Indicator (Asterisk)
 		.gfield_required {
 
-		}
-	}
+		} // .gfield_required
+	} // .gfield_label
 
 	// Standard fields
 	input[type="text"],
@@ -74,11 +74,11 @@ $gf-input-padding: $padding-input;
 	input[type="file"],
 	textarea {
 		background: $gf-input-color-background;
-	}
+	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
 
 	textarea {
 		width: 100%;
-	}
+	} // textarea
 
 	// Default Drop-Down (Select) Field
 	// Feel free to change the svg icon being used
@@ -96,12 +96,12 @@ $gf-input-padding: $padding-input;
 		@include media($phone-landscape) {
 			width: 49%;
 		}
-	}
+	} // select
 
 	// Remove icon for default multi-select
 	select[multiple="multiple"] {
 		background: $gf-input-color-background;
-	}
+	} //select[multiple="multiple"]
 }
 
 //--------------------------------------------------------------
@@ -110,7 +110,7 @@ $gf-input-padding: $padding-input;
 .gform_wrapper .gform_heading {
 	// .gform_title - form title
 	// .gform_description - form description
-}
+} //.gform_wrapper .gform_heading
 
 //--------------------------------------------------------------
 // 	FORM FOOTER
@@ -120,8 +120,8 @@ $gf-input-padding: $padding-input;
 	input.button,
 	input[type="submit"] {
 		// This will target submit buttons
-	}
-}
+	} // input.button, input[type="submit"]
+} // .gform_wrapper .gform_footer
 
 //--------------------------------------------------------------
 //	CONFIRMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
@@ -129,7 +129,7 @@ $gf-input-padding: $padding-input;
 .gforms_confirmation_message { // container element
 	// .gform_confirmation_wrapper - the message wrapper
 	// .gform_confirmation_message - message div
-}
+} // .gforms_confirmation_message
 
 //--------------------------------------------------------------
 //	SELECTS
@@ -142,7 +142,7 @@ $gf-input-padding: $padding-input;
 	@include media($phone-landscape) {
 		width: 49% !important;
 	}
-}
+} // .gform_wrapper .gform_body .gform_fields .gfield select, .gform_wrapper.gf_browser_chrome .gform_body .gform_fields .gfield select
 
 //--------------------------------------------------------------
 //	CHOSEN SELECT
@@ -157,7 +157,7 @@ $gf-input-padding: $padding-input;
 		border-radius: 0;
 		height: auto;
 		padding: $gf-input-padding;
-	}
+	} // .chosen-single
 
 	// Default state of icon for select
 	.chosen-single div b {
@@ -165,7 +165,7 @@ $gf-input-padding: $padding-input;
 		@include triangle(12px, $color-silver, down); // adjust size and color
 
 		background: none; // hide the default chosen background
-	}
+	} // .chosen-single div b
 
 	// Selections drop-down
 	.chosen-drop {
@@ -173,27 +173,27 @@ $gf-input-padding: $padding-input;
 		// Search box by default has a small magnifying icon on right
 		.chosen-search input[type="text"] {
 			background: none;
-		}
+		} // .chosen-search input[type="text"]
 
 		// Search results list
 		.chosen-results li {
 			padding: rem(10) rem(5);
-		}
-	}
+		} // .chosen-results li
+	} // .chosen-drop
 
 	// For styling the icon when select is active
 	&.chosen-container-single.chosen-with-drop {
 
 		.chosen-single {
 			background-image: none;
-		}
+		} // .chosen-single
 
 		.chosen-single div b {
 			border: none; // hiding the previous triangle (border)
 			@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-		}
-	}
-}
+		} // .chosen-single div b
+	} // &.chosen-container-single.chosen-with-drop
+} // .gform_wrapper .gfield .chosen-container-single
 
 //--------------------------------------------------------------
 //	CONTENT OVERRIDES
@@ -210,30 +210,30 @@ $gf-input-padding: $padding-input;
 	input[type="number"],
 	input[type="password"],
 	input[type="file"],
-	textarea{
+	textarea {
 		padding: $gf-input-padding;
 		width: 100%;
 
 		@include media($phone-landscape) {
 			width: 49%;
 		}
-	}
+	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
 
 	.chosen-search input[type="text"],
 	textarea {
 		width: 100%;
-	}
+	} // .chosen-search input[type="text"], textarea
 
 	// Validation error message (displays at top of form)
 	.validation_error {
 
-	}
+	} // .validation_error
 
 	// Error labels (required fields)
 	.gfield_error {
 		// .gfield_label - error label
 		// .validation_message - required error text
-	}
+	} // .gfield_error
 
 	// Two-column fields
 	.gf_left_half,
@@ -256,8 +256,8 @@ $gf-input-padding: $padding-input;
 			@include media($phone-landscape) {
 				width: 100%;
 			}
-		}
-	}
+		} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"]
+	} // .gf_left_half, .gf_right_half
 
 	// Target just left column on two-column row
 	.gf_left_half {
@@ -265,7 +265,7 @@ $gf-input-padding: $padding-input;
 		@include media($phone-landscape) {
 			margin-right: 2%;
 		}
-	}
+	} // .gf_left_half
 
 	// Advanced fields
 	// https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
@@ -274,6 +274,6 @@ $gf-input-padding: $padding-input;
 		.name_first input[type="text"],
 		.name_last input[type="text"] {
 			width: 100%;
-		}
-	}
-}
+		} // .name_first input[type="text"], .name_last input[type="text"]
+	} // .ginput_complex
+} // #content .gform_wrapper 

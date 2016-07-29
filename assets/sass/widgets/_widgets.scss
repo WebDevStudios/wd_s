@@ -5,14 +5,13 @@
 .widget {
 	margin: 0 0 rem(24);
 
-	// Make sure select elements fit in widgets
+	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
-	}
-}
+	} // select
+} // .widget
 
-// Search widget
-
+// Search widget.
 .widget_search .search-submit {
 	display: none;
-}
+} // .widget_search .search-submit

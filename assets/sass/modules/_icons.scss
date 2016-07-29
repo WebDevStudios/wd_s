@@ -21,13 +21,13 @@
 
 				&:hover {
 					fill: lighten($color, 20%);
-				}
-			}
-		}
+				} // &:hover
+			} // .icon-#{$social-color}
+		} // end each loop
 
 		// No margin for the last <li> item
 		&:last-child {
 			margin-right: 0;
-		}
-	}
-}
+		} // &:last-child
+	} // .social-icon
+} // .social-icons

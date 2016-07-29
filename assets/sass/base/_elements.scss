@@ -2,13 +2,15 @@
 // HTML Elements
 //--------------------------------------------------------------
 
+//--------------------------------------------------------------
 // Iframes
+//--------------------------------------------------------------
 
 embed,
 iframe,
 object {
 	max-width: 100%;
-}
+} // embed, iframe, object
 
 hr {
 	@include size(auto 1px);
@@ -16,48 +18,52 @@ hr {
 	background-color: $color-background-hr;
 	border: 0;
 	margin: 0 0 rem(24) 0;
-}
+} // hr
 
 figure {
 	margin: 0;
-}
+} // figure
 
+//--------------------------------------------------------------
 // Lists
+//--------------------------------------------------------------
 
 ul,
 ol {
 	margin: 0 0 rem(48) rem(24);
-}
+} // ul, ol
 
 ul {
 	list-style: disc;
-}
+} // ul
 
 ol {
 	list-style: decimal;
-}
+} // ol
 
 li > ul,
 li > ol {
 	margin: 0 0 0 rem(24);
-}
+} //li > ul, li > ol
 
 dt {
 	font-weight: 700;
-}
+} // dt
 
 dd {
 	margin: 0 rem(24) rem(24) 0;
-}
+} // dd
 
+//--------------------------------------------------------------
 // Tables
+//--------------------------------------------------------------
 
 table {
 	@include size(100% auto);
-	
+
 	margin: 0 0 rem(24) 0;
-}
+} // table
 
 th {
 	font-weight: 700;
-}
+} //th

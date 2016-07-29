@@ -9,14 +9,14 @@ a {
 
 	&:visited {
 		color: $color-link-visited;
-	}
+	} // &:visited
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color-link-hover;
-	}
-}
+	} // &:hover, &:focus, &:active
+} // a
 
 // Default menu (active after a fresh WordPress install)
 
@@ -25,29 +25,29 @@ a {
 
 	li {
 		margin: 0 rem(10) 0 0;
-	}
+	} // li
 
 	ul {
 		@include list-reset;
-	}
+	} // ul
 
 	&.menu-horizontal {
 
 		li {
 			display: inline-block;
-		}
-	}
+		} // li
+	} // &.menu-horizontal
 
 	&.menu-vertical {
 
 		li {
 			margin: 0;
-		}
+		} // li
 
 		a {
 			padding: rem(10);
 			border-bottom: 1px solid $color-background-hr;
-		}
+		} // a
 	}
 
 	&.dropdown {
@@ -65,7 +65,7 @@ a {
 			ul {
 				left: -999em;
 				top: 0;
-			}
+			} // ul
 
 			// Sub-menu items
 			li {
@@ -73,13 +73,13 @@ a {
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
-				}
-			}
+				} // &:hover > ul, &.focus > ul
+			} // li
 
 			// Sub-menu links
 			a {
 				@include size(rem(200) auto);
-			}
+			} // a
 
 			:hover > a,
 			.focus > a {
@@ -88,13 +88,13 @@ a {
 			a:hover,
 			a.focus {
 			}
-		}
+		} // ul
 
 		// Display sub-menu on hover
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-		}
+		} //
 
 		// Menu items
 		li {
@@ -104,20 +104,20 @@ a {
 			&:hover > a,
 			&.focus > a {
 			}
-		}
-	}
+		} // li
+	} // &.dropdown
 
 	// Menu hyperlinks
 	a {
 		display: block;
 		text-decoration: none;
-	}
+	} // a
 
 	// Current items
 	.current_page_item a,
 	.current-menu-item a {
 	}
-}
+} // .menu
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
@@ -138,12 +138,12 @@ a {
 		@include media($phone-landscape) {
 			display: block;
 		}
-	}
+	} // ul
 
 	&.toggled ul {
 		display: block;
 	}
-}
+} // .main-navigation
 
 // Small menu
 .menu-toggle {
@@ -152,8 +152,9 @@ a {
 	@include media($phone-landscape) {
 		display: none;
 	}
-}
+} // .menu-toggle
 
+// Navigation on Comment, Post and Posts
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
@@ -161,18 +162,18 @@ a {
 	.site-main & {
 		margin: 0 0 rem(24) 0;
 		overflow: hidden;
-	}
+	} // .site-main &
 
 	& .nav-previous {
 		@include size(50% auto);
 
 		float: left;
-	}
+	} // & .nav-previous
 
 	& .nav-next {
 		@include size(50% auto);
 
 		float: right;
 		text-align: right;
-	}
-}
+	} // & .nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation

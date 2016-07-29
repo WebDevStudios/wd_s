@@ -2,8 +2,7 @@
 // Base Layout
 //--------------------------------------------------------------
 
-// Structure
-
+// Structure.
 .wrap {
 	@include outer-container;
 
@@ -12,7 +11,7 @@
 	@include media($desktop) {
 		padding: 0;
 	}
-}
+} // .wrap
 
 .site-header,
 .site-footer {
@@ -20,7 +19,7 @@
 	@include media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
-}
+} // .site-header, .site-footer
 
 .site-content {
 	margin: rem(20) auto;
@@ -28,7 +27,7 @@
 	@include media($desktop) {
 		margin: rem(40) auto rem(60);
 	}
-}
+} // .site-content
 
 .primary {
 	@include fill-parent;
@@ -36,7 +35,7 @@
 	@include media($tablet-landscape) {
 		@include span-columns(8);
 	}
-}
+} // .primary
 
 .secondary {
 	@include fill-parent;
@@ -44,4 +43,4 @@
 	@include media($tablet-landscape) {
 		@include span-columns(4);
 	}
-}
+} // .secondary

@@ -2,49 +2,58 @@
 // Site Content
 //--------------------------------------------------------------
 
-// Posts and pages
+//--------------------------------------------------------------
+// Posts and Pages
+//--------------------------------------------------------------
 
+// Entry Title
 .entry-title {
 	font-size: rem(36);
-}
+} // .entry-title
 
+// Sticy and Comments Link
 .sticky,
 .comments-link {
 	display: block;
-}
+} // .sticky, .comments-link
 
+// hentry
 .hentry {
 	margin: 0 0 rem(24) 0;
-}
+} // .hentry
 
+// byline and update post date
 .byline,
 .updated:not(.published) {
 	display: none;
-}
+} // .byline, .updated:not(.published)
 
+// byline for single and group
 .single .byline,
 .group-blog .byline {
 	display: inline;
-}
+} // .single .byline, .group-blog .byline
 
+// Page content, entry content and entry summary
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: rem(24) 0 0;
-}
+} // .page-content, .entry-content, .entry-summary
 
+// Page links
 .page-links {
 	clear: both;
 	margin: 0 0 rem(24) 0;
-}
+} // .page-links
 
+// Edit link
 .edit-link {
 	margin: 0 rem(24);
-}
+} // .edit-link
 
 // Asides
-
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
-}
+} // .blog .format-aside .entry-title, .archive .format-aside .entry-title

@@ -5,23 +5,22 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 0;    
+	border: 0;
 	padding:0;
 	width: 100%;
 
-	// $phone-landscape
+
 	@include media($phone-landscape) {
 		border: rem(1) solid $color-silver;
-	} // $phone-landscape
+	}
 
 	// thead
 	thead {
 		display: none;
 
-		// $phone-landscape
 		@include media($phone-landscape) {
 			display: table-row-group;
-		} // $phone-landscape
+		}
 	} // thead
 
 	// th, td shared styles
@@ -30,10 +29,9 @@ table {
 		padding: rem(10);
 		text-align: center;
 
-		// $phone-landscape
 		@include media($phone-landscape) {
 			display: table-cell;
-		} // $phone-landscape
+		}
 	} // th, td shared styles
 
 	// th
@@ -42,10 +40,9 @@ table {
 		letter-spacing: rem(1);
 		text-transform: uppercase;
 
-		// $phone-landscape
 		@include media($phone-landscape) {
 			display: table-cell;
-		} // $phone-landscape
+		}
 	} // th
 
 	// tr
@@ -53,14 +50,13 @@ table {
 		display: block;
 		margin-bottom: rem(10);
 
- 		// $phone-landscape
 		@include media($phone-landscape) {
 			display: table-row;
 			margin-bottom: 0;
-		} // $phone-landscape
+		}
 	} // tr
 
-	// td 
+	// td
 	td {
 		border: rem(1) solid $color-silver;
 		border-bottom: 0;
@@ -75,14 +71,14 @@ table {
 		// last-child
 		&:last-child {
 			border-bottom: rem(1) solid $color-silver;
-		} // last-child
+		} // &:last-child
 
 		// before
 		&:before {
 			content: '';
 			float: left;
-	      	font-weight: bold;
-	      	text-transform: uppercase;
-		} // before
+			font-weight: bold;
+			text-transform: uppercase;
+		} // &:before
 	} // td
 } // table

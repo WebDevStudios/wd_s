@@ -9,7 +9,7 @@ textarea {
 	font-size: 100%; // Corrects font size not being inherited in all browsers
 	margin: 0; // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
-}
+} // button, input, select, textarea
 
 button,
 input[type="button"],
@@ -25,24 +25,24 @@ input[type="submit"] {
 
 	&:hover {
 		background-color: $color-button-background-hover;
-	}
+	} // &:hover
 
 	&:active,
 	&:focus {
 		background-color: $color-button-background-hover;
-	}
-}
+	} // &:active, &:focus
+} // button, input[type="button"], input[type="reset"], input[type="submit"]
 
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; // Addresses excess padding in IE8/9
-}
+} // input[type="checkbox"], input[type="radio"]
 
 // remove the clear x icon in IE
 input[type="text"]::-ms-clear,
 input[type="search"]::-ms-clear {
 	display: none;
-}
+} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
 
 input[type="search"] {
 	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
@@ -50,14 +50,14 @@ input[type="search"] {
 
 	&::-webkit-search-decoration { // Corrects inner padding displayed oddly in S5, Chrome on OSX
 		-webkit-appearance: none;
-	}
-}
+	} // &::-webkit-search-decoratio
+} // input[type="search"] 
 
 button::-moz-focus-inner,
 input::-moz-focus-inner { // Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 	border: 0;
 	padding: 0;
-}
+} // button::-moz-focus-inner, input::-moz-focus-inner
 
 input[type="text"],
 input[type="email"],
@@ -84,12 +84,12 @@ textarea {
 
 	&:focus {
 		color: $color-input-focus-text;
-	}
-}
+	} // &:focus
+} // input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea
 
 textarea {
 	@include size(100% auto);
 
 	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
 	vertical-align: top; // Improves readability and alignment in all browsers
-}
+} // textarea

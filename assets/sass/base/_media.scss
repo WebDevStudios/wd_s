@@ -2,25 +2,33 @@
 // Media
 // --------------------------------------------------------------
 
+// Page, Entry and Comment Content
 .page-content,
 .entry-content,
 .comment-content {
 
+	// WP smiley
 	img.wp-smiley {
 		@include margin-padding-reset;
 
 		border: none;
-	}
-}
+	} // img.wp-smiley
+} // .page-content, .entry-content, .comment-content
 
+// --------------------------------------------------------------
 // Images
+// --------------------------------------------------------------
 
 img {
 	height: auto;
 	max-width: 100%;
 }
 
+// --------------------------------------------------------------
 // Captions
+// --------------------------------------------------------------
+
+// Image captions
 .wp-caption {
 	margin: 0 0 rem(24) 0;
 	max-width: 100%;
@@ -28,38 +36,43 @@ img {
 	img[class*="wp-image-"] {
 		display: block;
 		margin: 0 auto;
-	}
+	} // img[class*="wp-image-"]
 
 	// Add auto margins so image is centered
 	&.aligncenter {
 		margin: 0 auto rem(24) auto;
-	}
+	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
 		margin-right: rem(24);
-	}
+	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
 		margin-left: rem(24);
-	}
+	} // &.alignright
 
 	.wp-caption-text {
 		margin: rem(12) 0;
-	}
-}
+	} // .wp-caption-text
+} // .wp-caption
 
+// Image caption text
 .wp-caption-text {
 	text-align: center;
-}
+} // .wp-caption-text 
 
+// --------------------------------------------------------------
 // Galleries
+// --------------------------------------------------------------
 
+// Gallery
 .gallery {
 	margin: 0 0 rem(24) 0;
-}
+} // .gallery
 
+// Gallery items
 .gallery-item {
 	@include size(100% auto);
 
@@ -69,41 +82,43 @@ img {
 
 	.gallery-columns-2 & {
 		max-width: 50%;
-	}
+	} //.gallery-columns-2 &
 
 	.gallery-columns-3 & {
 		max-width: 33.33%;
-	}
+	} //.gallery-columns-3 &
 
 	.gallery-columns-4 & {
 		max-width: 25%;
-	}
+	} // .gallery-columns-4 &
 
 	.gallery-columns-5 & {
 		max-width: 20%;
-	}
+	} // .gallery-columns-5 &
 
 	.gallery-columns-6 & {
 		max-width: 16.66%;
-	}
+	} // .gallery-columns-6 &
 
 	.gallery-columns-7 & {
 		max-width: 14.28%;
-	}
+	} // .gallery-columns-7 &
 
 	.gallery-columns-8 & {
 		max-width: 12.5%;
-	}
+	} // .gallery-columns-8 &
 
 	.gallery-columns-9 & {
 		max-width: 11.11%;
-	}
-}
+	} // .gallery-columns-9 &
+} // .gallery-item
 
+// Gallery caption
 .gallery-caption {
 	display: block;
-}
+} // .gallery-caption
 
+// Fluid embed
 .fluid-embed {
 	height: 0;
 	overflow: hidden;
@@ -115,15 +130,17 @@ img {
 	iframe {
 		@include position(absolute, 0 null null 0);
 		@include size(100%);
-	}
-}
+	} // embed, object, iframe
+} // .fluid-embed
 
+// Center image background
 .image-as-background {
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
-}
+} // .image-as-background
 
+// Video as background
 .video-as-background {
 	@include size(100% 100%);
 
@@ -132,8 +149,9 @@ img {
 	object-fit: cover;
 	object-position: center top;
 	z-index: 1;
-}
+} // .video-as-background
 
+// svg defs
 .svg-defs {
 	display: none;
-}
+} // .svg-defs 

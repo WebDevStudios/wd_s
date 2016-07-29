@@ -12,5 +12,5 @@
 	body.ready & {
 		opacity: 1;
 		visibility: visible;
-	}
-}
+	} // body.ready &
+} // .not-ready
