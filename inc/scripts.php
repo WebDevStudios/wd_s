@@ -83,7 +83,7 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
- * Add SVG definitions to <head>.
+ * Add SVG definitions to footer.
  */
 function _s_include_svg_icons() {
 
