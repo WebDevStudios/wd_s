@@ -184,7 +184,7 @@ function _s_do_svg( $args = array() ) {
 }
 
 /**
- * Trim the title legnth.
+ * Trim the title length.
  *
  * @param  array  $args  Parameters include length and more.
  * @return string        The shortened excerpt.
@@ -203,6 +203,25 @@ function _s_get_the_title( $args = array() ) {
 	// Trim the title.
 	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
 }
+
+/**
+ * Customize "Read More" string on <!-- more --> with the_content();
+ */
+function _s_content_more_link() {
+	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
+}
+add_filter( 'the_content_more_link', '_s_content_more_link' );
+
+/**
+ * Customize the [...] on the_excerpt();
+ *
+ * @param string   $more     The current $more string.
+ * @return string            Replace with "Read More..."
+ */
+function _s_excerpt_more( $more ) {
+	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
+}
+add_filter( 'excerpt_more', '_s_excerpt_more' );
 
 /**
  * Limit the excerpt length.
@@ -383,13 +402,6 @@ function _s_get_social_share() {
  }
 
 /**
- * Echo social sharing icons.
- */
-function _s_do_social_share() {
-	echo _s_get_social_share();
-}
-
-/**
  * Output the mobile navigation
  */
 function _s_do_mobile_navigation_menu() {
@@ -410,6 +422,5 @@ function _s_do_mobile_navigation_menu() {
 			) );
 		?>
 	</nav>
-
 	<?php
 }
