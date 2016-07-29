@@ -210,7 +210,7 @@ gulp.task('spritesmith', ['clean:sprites'], function() {
 });
 
 /**
- * Concatenate javascripts after they're clobbered.
+ * Concatenate javascript files into one.
  * https://www.npmjs.com/package/gulp-concat
  */
 gulp.task('concat', function() {
@@ -224,7 +224,7 @@ gulp.task('concat', function() {
 });
 
  /**
-  * Minify javascripts after they're concatenated.
+  * Minify compiled javascript after concatenated.
   * https://www.npmjs.com/package/gulp-uglify
   */
 gulp.task('uglify', ['concat'], function() {
@@ -286,11 +286,13 @@ gulp.task('watch', function() {
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.concat_scripts, ['scripts']);
 	gulp.watch(paths.sprites, ['sprites']);
+	gulp.watch(paths.php, ['markup']);
 });
 
 /**
  * Create individual tasks.
  */
+gulp.task('markup', browserSync.reload);
 gulp.task('i18n', ['wp-pot']);
 gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
