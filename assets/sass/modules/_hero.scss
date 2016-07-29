@@ -1,0 +1,71 @@
+//--------------------------------------------------------------
+// Hero
+//
+// http://codepen.io/webdevstudios/pen/RRrJLP
+//--------------------------------------------------------------
+
+// Hero container.
+.hero-area {
+	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
+
+	// Transparent overlay (optional).
+	&:after {
+		@include position(absolute, 0 0 null null);
+		@include size(100% 100%);
+
+		background-color: rgba($color-black, 0.6);
+		content: '';
+		z-index: 2;
+	} // transparent overlay
+
+	// Gradient overlay (optional).
+	// &:after {
+	// 	@include linear-gradient(to bottom, rgba($color-black, 0) 0%, rgba($color-black, 0.50) 50%);
+	// 	@include position(absolute, 0 0 null null);
+	// 	@include size(100% 100%);
+
+	// 	content: '';
+	// 	z-index: 2;
+	// } // gradient overlay
+
+	// Content container.
+	.hero-content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: rem(500); // width of content container
+		min-height: rem(500);  // height of hero
+		position: relative;
+		text-align: center;
+		z-index: 3;
+
+		// Set defaults.
+		.hero-title,
+		.hero-description,
+		.hero-button {
+			color: $color-white;
+		} // .hero-title
+
+		// Add padding to description.
+		.hero-description {
+			padding-bottom: rem(24);
+		} // .hero-description
+
+		// Style button.
+		.hero-button {
+			@include padding(rem(12) rem(40));
+
+			background: transparent;
+			border: 2px solid $color-white;
+
+			&:hover {
+				background: rgba($color-black, 0.7);
+				text-decoration: none;
+			}
+		} // .hero-button
+	} // .hero-content
+} // .hero-area

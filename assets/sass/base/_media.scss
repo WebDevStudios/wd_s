@@ -104,7 +104,6 @@ img {
 	display: block;
 }
 
-// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 .fluid-embed {
 	height: 0;
 	overflow: hidden;
@@ -117,6 +116,22 @@ img {
 		@include position(absolute, 0 null null 0);
 		@include size(100%);
 	}
+}
+
+.image-as-background {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.video-as-background {
+	@include size(100% 100%);
+
+	position: absolute;
+	display: block;
+	object-fit: cover;
+	object-position: center top;
+	z-index: 1;
 }
 
 .svg-defs {
