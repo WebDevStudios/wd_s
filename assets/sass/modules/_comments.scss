@@ -23,3 +23,30 @@
 .bypostauthor {
 	display: block;
 }
+
+// Comment Form
+.comment-form {
+	@include span-columns(12);
+
+	input:not(.submit) {
+		width: 100%;
+
+		@include media($phone-landscape) {
+			max-width: rem(250);
+		}
+	}
+} // .comment-form
+
+// Default labels for comment form
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+
+	label {
+		@include span-columns(12);
+
+		@include media($phone-landscape) {
+			width: rem(75);
+		}
+	}
+} // .comment-form-author, .comment-form-email, .comment-form-url
