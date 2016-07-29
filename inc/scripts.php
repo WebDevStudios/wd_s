@@ -90,8 +90,9 @@ function _s_include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
 
-	// If it exsists, include it.
+	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
 		require_once( $svg_icons );
 	}
 }
+add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
