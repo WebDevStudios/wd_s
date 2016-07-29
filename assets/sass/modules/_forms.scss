@@ -11,28 +11,6 @@ textarea {
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
 } // button, input, select, textarea
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: none; // Remove iOS styles
-	background-color: $color-button-background;
-	border: none;
-	border-radius: 0;
-	color: $color-button-text;
-	min-height: rem(31);
-	vertical-align: top;
-
-	&:hover {
-		background-color: $color-button-background-hover;
-	} // &:hover
-
-	&:active,
-	&:focus {
-		background-color: $color-button-background-hover;
-	} // &:active, &:focus
-} // button, input[type="button"], input[type="reset"], input[type="submit"]
-
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; // Addresses excess padding in IE8/9
@@ -75,12 +53,12 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	-webkit-appearance: none; // Remove iOS styles
-	color: $color-input-text;
-	border: 1px solid $color-input-border;
+	border: rem(1) solid $color-input-border;
 	border-radius: 0;
-	line-height: 1.45;
-	padding: rem(3) rem(5);
+	color: $color-input-text;
+	line-height: 1.5;
+	padding: $padding-input;
+	appearance: none;
 
 	&:focus {
 		color: $color-input-focus-text;
