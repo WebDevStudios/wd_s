@@ -1,0 +1,84 @@
+//--------------------------------------------------------------
+// Modal
+//--------------------------------------------------------------
+
+.modal {
+	@include clearfix;
+	@include position(fixed, 0 0 0 0);
+
+	background-color: rgba(0,0,0,0.3);
+	display: none;
+	overflow: hidden;
+	z-index: 1050;
+
+	// When the .modal-open class is set.
+	&.modal-open {
+		display: block;
+		overflow-x: hidden;
+		overflow-y: auto;
+	} // &.modal-open
+
+	// Center the modal container.
+	.modal-dialog {
+		@include position(absolute, 50% null null 50%);
+
+		transform: translate(-50%, -50%);
+		width: auto;
+	} // .modal-dialog
+
+	// The modal content container.
+	.modal-content {
+		background-clip: padding-box;
+		background-color: $color-white;
+		border-radius: rem(3);
+		box-shadow: 0 0 rem(10) rem(3) rgba(0, 0, 0, 0.5);
+		outline: 0;
+		padding: rem(10);
+		position: relative;
+
+		// The modal header container.
+		.modal-header {
+			text-align: center;
+
+			// Close "X" button.
+			.close {
+				@include margin-padding-reset;
+				@include size(rem(30) rem(30));
+				@include position(absolute, rem(-15) rem(-15) null null);
+
+				background: $color-black;
+				border: rem(3) solid $color-white;
+				border-radius: 50%;
+				color: $color-white;
+				cursor: pointer;
+				font-size: rem(30);
+				line-height: 0;
+				outline: none;
+				padding: 0;
+
+				&:after {
+					@include clearfix;
+				} // &:after
+			} // .close
+		} // .modal-header
+
+		// The modal body container.
+		.modal-body {
+			position: relative;
+		} // .modal-body
+
+		// The modal footer container.
+		.modal-footer {
+		} // .modal-footer
+	} // .modal-content
+
+	// Remove the border from embedded elements.
+	.fluid-embed {
+
+		embed,
+		object,
+		iframe {
+			border: none;
+		} // embed, object, iframe
+	} // .fluid-embed
+} // .modal
