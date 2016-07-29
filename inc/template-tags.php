@@ -154,18 +154,19 @@ function _s_get_svg( $args = array() ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
+	// Figure out which title to use.
+	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
+
 	// Begin SVG markup
 	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '" aria-hidden="true">';
 
-		// If there is a title, display it.
-		if ( $args['title'] ) {
-			$svg .= '<title>' . esc_html( $args['title'] ) . '</title>';
-		}
+	// Add title markup.
+	$svg .= '<title>' . esc_html( $title ) . '</title>';
 
-		// If there is a description, display it.
-		if ( $args['desc'] ) {
-			$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
-		}
+	// If there is a description, display it.
+	if ( $args['desc'] ) {
+		$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
+	}
 
 	$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
 	$svg .= '</svg>';
