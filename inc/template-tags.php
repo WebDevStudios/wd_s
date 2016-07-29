@@ -55,7 +55,7 @@ function _s_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
 		if ( $tags_list ) {
-						printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -88,7 +88,6 @@ function _s_categorized_blog() {
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
@@ -396,7 +395,8 @@ function _s_do_mobile_navigation_menu() {
 
 	// Figure out which menu we're pulling
 	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
-?>
+	?>
+
 	<nav id="mobile-menu" class="mobile-nav-menu">
 		<button class="close-mobile-menu"><span class="screen-reader-text"><?php _e( 'Close menu', '_s' ); ?></span><?php _s_do_svg( array( 'icon' => 'close' ) ); ?></button>
 		<?php
@@ -409,5 +409,6 @@ function _s_do_mobile_navigation_menu() {
 			) );
 		?>
 	</nav>
-<?php
+
+	<?php
 }
