@@ -33,8 +33,8 @@ var paths = {
 	images: ['assets/images/*', '!assets/images/*.svg'],
 	php: ['./*.php', './**/*.php'],
 	sass: 'assets/sass/**/*.scss',
-	concat_scripts: 'assets/js/concat/*.js',
-	scripts: ['assets/js/*.js', '!assets/js/*.min.js', '!assets/js/customizer.js'],
+	concat_scripts: 'assets/scripts/concat/*.js',
+	scripts: ['assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/customizer.js'],
 	sprites: 'assets/images/sprites/*.png'
 };
 
@@ -219,7 +219,7 @@ gulp.task('concat', function() {
 	.pipe(sourcemaps.init())
 	.pipe(concat('project.js'))
 	.pipe(sourcemaps.write())
-	.pipe(gulp.dest('assets/js'))
+	.pipe(gulp.dest('assets/scripts'))
 	.pipe(browserSync.stream());
 });
 
@@ -233,7 +233,7 @@ gulp.task('uglify', ['concat'], function() {
 	.pipe(uglify({
 		mangle: false
 	}))
-	.pipe(gulp.dest('assets/js'));
+	.pipe(gulp.dest('assets/scripts'));
 });
 
 /**
