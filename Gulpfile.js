@@ -161,6 +161,7 @@ gulp.task('svg', ['clean:icons'], function() {
 		run: function($, file) {
 			$('svg').attr('style', 'display:none');
 			$('[fill]').removeAttr('fill');
+			$('path').removeAttr('class');
 		},
 		parserOptions: { xmlMode: true }
 	}))
