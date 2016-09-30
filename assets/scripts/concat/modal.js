@@ -31,17 +31,17 @@ window.WDS_Modal = {};
 	// Combine all events.
 	app.bindEvents = function() {
 
-		// Triger a modal to open
-		app.$c.body.on( 'click', '.modal-trigger', app.openModal );
+		// Trigger a modal to open.
+		app.$c.body.on( 'click touchstart', '.modal-trigger', app.openModal );
 
-		// Trigger the close button to close the modal
-		app.$c.body.on( 'click', '.close', app.closeModal );
+		// Trigger the close button to close the modal.
+		app.$c.body.on( 'click touchstart', '.close', app.closeModal );
 
-		// Allow the user to close the modal by hitting the esc key
+		// Allow the user to close the modal by hitting the esc key.
 		app.$c.body.on( 'keydown', app.escKeyClose );
 
-		// Allow the user to close the modal by clicking outside of the modal
-		app.$c.body.on( 'click', 'div.modal-open', app.closeModalByClick );
+		// Allow the user to close the modal by clicking outside of the modal.
+		app.$c.body.on( 'click touchstart', 'div.modal-open', app.closeModalByClick );
 	};
 
 	// Open the modal.
