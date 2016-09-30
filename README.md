@@ -58,19 +58,20 @@ From the command line, type any of the following to perform an action:
 
 `gulp icons` - Minify, concatenate, and clean SVG icons.
 
-`gulp i18n` - Scan the theme and create a POT file
+`gulp i18n` - Scan the theme and create a POT file.
 
-`gulp sass:lint` - Run Sass against WordPress code standards
+`gulp sass:lint` - Run Sass against WordPress code standards.
 
-`gulp scripts` - Concatenate and minify javascript files
+`gulp js:lint` - Run Javascript against WordPress code standards.
 
-`gulp sprites` - Generate an image sprite and the associated Sass (sprite.png)
+`gulp scripts` - Concatenate and minify javascript files.
 
-`gulp styles` - Compile, prefix, combine media queries, and minify CSS files
+`gulp sprites` - Generate an image sprite and the associated Sass (sprite.png).
 
-`gulp` - Runs the following tasks at the same time: i18n, icons, scripts, styles, sprites
+`gulp styles` - Compile, prefix, combine media queries, and minify CSS files.
+
+`gulp` - Runs the following tasks at the same time: i18n, icons, scripts, styles, sprites.
 
 ## Contributing and Support
 
 Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/CONTRIBUTING.md) before submitting a pull request.
-
