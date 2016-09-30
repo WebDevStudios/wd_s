@@ -424,3 +424,16 @@ function _s_do_mobile_navigation_menu() {
 	</nav>
 	<?php
 }
+
+/**
+ * Retrieve the social links saved in the customizer
+ * @return mixed HTML output of social links
+ * @author Corey Collins
+ */
+function _s_get_social_network_links() {
+
+	ob_start();
+	?>
+	<?
+	return ob_get_clean();
+}
