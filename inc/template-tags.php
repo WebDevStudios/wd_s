@@ -157,7 +157,7 @@ function _s_get_svg( $args = array() ) {
 	// Figure out which title to use.
 	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
-	// Begin SVG markup
+	// Begin SVG markup.
 	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '" aria-hidden="true">';
 
 	// Add title markup.
@@ -249,7 +249,7 @@ function _s_get_the_excerpt( $args = array() ) {
  *
  * @param string  $size  The image size you want to display.
  */
-function _s_do_post_image( $size = 'thumbnail' ) {
+function _s_get_post_image( $size = 'thumbnail' ) {
 
 	// If featured image is present, use that.
 	if ( has_post_thumbnail() ) {
@@ -268,7 +268,13 @@ function _s_do_post_image( $size = 'thumbnail' ) {
 		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
 	}
 
-	echo '<img src="' . esc_url( $media_url ) . '" class="attachment-thumbnail wp-post-image" alt="' . esc_html( get_the_title() )  . '" />';
+	// Start the markup.
+	ob_start(); ?>
+
+	<img src="<?php echo esc_url( $media_url ); ?>" class="attachment-thumbnail wp-post-image" alt="<?php echo esc_html( get_the_title() ); ?>"/>
+
+	<?php
+	return ob_get_clean();
 }
 
 /**
@@ -345,7 +351,7 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 /**
  * Echo the copyright text saved in the Customizer.
  */
-function _s_do_copyright_text() {
+function _s_get_copyright_text() {
 
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
@@ -404,10 +410,13 @@ function _s_get_social_share() {
 /**
  * Output the mobile navigation
  */
-function _s_do_mobile_navigation_menu() {
+function _s_get_mobile_navigation_menu() {
 
 	// Figure out which menu we're pulling
 	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
+
+	// Start the markup.
+	ob_start();
 	?>
 
 	<nav id="mobile-menu" class="mobile-nav-menu">
@@ -423,4 +432,47 @@ function _s_do_mobile_navigation_menu() {
 		?>
 	</nav>
 	<?php
+	return ob_get_clean();
+}
+
+/**
+ * Retrieve the social links saved in the customizer
+ * @return mixed HTML output of social links
+ *
+ * @author Corey Collins
+ */
+function _s_get_social_network_links() {
+
+	// Create an array of our social links for ease of setup.
+	// Change the order of the networks in this array to change the output order
+    $social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
+
+    // Kickoff our output buffer
+	ob_start(); ?>
+
+	<ul class="social-icons">
+	<?php
+	// Loop through our network array
+	foreach( $social_networks as $network ) :
+
+		// Look for the social network's URL
+		$network_url = get_theme_mod( '_s_' . $network . '_link' );
+
+		// Only display the list item if a URL is set
+		if ( isset( $network_url ) && ! empty ( $network_url ) ) : ?>
+			<li class="social-icon <?php esc_attr_e( $network ); ?>">
+				<a href="<?php echo esc_url( $network_url ); ?>">
+					<?php _s_do_svg( array(
+						'icon'  => $network . '-square',
+						'title' => sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) )
+					) ); ?>
+					<span class="screen-reader-text"><?php echo sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); ?></span>
+				</a>
+			</li><!-- .social-icon -->
+		<?php endif;
+	endforeach; ?>
+	</ul><!-- .social-icons -->
+
+	<?php // Return everything inside our output buffer
+	return ob_get_clean();
 }

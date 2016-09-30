@@ -1,33 +1,34 @@
 // Require our dependencies
-var autoprefixer = require('autoprefixer');
-var bourbon = require('bourbon').includePaths;
-var browserSync = require('browser-sync');
-var cheerio = require('gulp-cheerio');
-var concat = require('gulp-concat');
-var cssnano = require('gulp-cssnano');
-var del = require('del');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var imagemin = require('gulp-imagemin');
-var mqpacker = require('css-mqpacker');
-var neat = require('bourbon-neat').includePaths;
-var notify = require('gulp-notify');
-var plumber = require('gulp-plumber');
-var postcss = require('gulp-postcss');
-var reload = browserSync.reload;
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-var sassLint = require('gulp-sass-lint');
-var sort = require('gulp-sort');
-var sourcemaps = require('gulp-sourcemaps');
-var spritesmith = require('gulp.spritesmith');
-var svgmin = require('gulp-svgmin');
-var svgstore = require('gulp-svgstore');
-var uglify = require('gulp-uglify');
-var wpPot = require('gulp-wp-pot');
+const autoprefixer = require('autoprefixer');
+const bourbon = require('bourbon').includePaths;
+const browserSync = require('browser-sync');
+const cheerio = require('gulp-cheerio');
+const concat = require('gulp-concat');
+const cssnano = require('gulp-cssnano');
+const del = require('del');
+const eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const imagemin = require('gulp-imagemin');
+const mqpacker = require('css-mqpacker');
+const neat = require('bourbon-neat').includePaths;
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const reload = browserSync.reload;
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const sort = require('gulp-sort');
+const sourcemaps = require('gulp-sourcemaps');
+const spritesmith = require('gulp.spritesmith');
+const svgmin = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
+const uglify = require('gulp-uglify');
+const wpPot = require('gulp-wp-pot');
 
 // Set assets paths.
-var paths = {
+const paths = {
 	css: ['./*.css', '!*.min.css'],
 	icons: 'assets/images/svg-icons/*.svg',
 	images: ['assets/images/*', '!assets/images/*.svg'],
@@ -119,22 +120,6 @@ gulp.task('cssnano', ['postcss'], function() {
 	.pipe(rename('style.min.css'))
 	.pipe(gulp.dest('./'))
 	.pipe(browserSync.stream());
-});
-
-/**
- * Sass linting.
- *
- * https://www.npmjs.com/package/sass-lint
- */
-gulp.task('sass:lint', ['cssnano'], function() {
-	gulp.src([
-		'assets/sass/**/*.scss',
-		'!assets/sass/base/_normalize.scss',
-		'!assets/sass/base/_sprites.scss'
-	])
-	.pipe(sassLint())
-	.pipe(sassLint.format())
-	.pipe(sassLint.failOnError());
 });
 
 /**
@@ -265,6 +250,43 @@ gulp.task('wp-pot', ['clean:pot'], function() {
 });
 
 /**
+ * Sass linting.
+ *
+ * https://www.npmjs.com/package/sass-lint
+ */
+gulp.task('sass:lint', function() {
+	gulp.src([
+		'assets/sass/**/*.scss',
+		'!assets/sass/base/_normalize.scss',
+		'!assets/sass/base/_sprites.scss',
+		'!node_modules/**'
+	])
+		.pipe(sassLint())
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError());
+});
+
+/**
+ * Javascript linting.
+ *
+ * https://www.npmjs.com/package/gulp-eslint
+ */
+gulp.task('js:lint', function() {
+	return gulp.src([
+		'assets/scripts/concat/*.js',
+		'assets/scripts/*.js',
+		'!assets/scripts/project.js',
+		'!assets/scripts/project.min.js',
+		'!Gruntfile.js',
+		'!Gulpfile.js',
+		'!node_modules/**'
+	])
+		.pipe(eslint())
+		.pipe(eslint.format())
+		.pipe(eslint.failAfterError());
+});
+
+/**
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
@@ -299,4 +321,5 @@ gulp.task('icons', ['svg']);
 gulp.task('scripts', ['uglify']);
 gulp.task('styles', ['cssnano']);
 gulp.task('sprites', ['spritesmith']);
-gulp.task('default', ['sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin']);
+gulp.task('lint', ['sass:lint', 'js:lint']);
+gulp.task('default', ['sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin', 'lint']);
