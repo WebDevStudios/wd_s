@@ -33,4 +33,4 @@ window.Window_Ready = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.Window_Ready );
+} )( window, jQuery, window.Window_Ready );

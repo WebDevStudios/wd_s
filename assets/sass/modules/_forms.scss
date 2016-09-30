@@ -11,12 +11,13 @@ textarea {
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
 } // button, input, select, textarea
 
+// Addresses excess padding in IE8/9
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0; // Addresses excess padding in IE8/9
+	padding: 0;
 } // input[type="checkbox"], input[type="radio"]
 
-// remove the clear x icon in IE
+// Remove the clear x icon in IE
 input[type="text"]::-ms-clear,
 input[type="search"]::-ms-clear {
 	display: none;
@@ -25,14 +26,17 @@ input[type="search"]::-ms-clear {
 input[type="search"] {
 	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
 	box-sizing: content-box;
-
-	&::-webkit-search-decoration { // Corrects inner padding displayed oddly in S5, Chrome on OSX
+	
+	// Corrects inner padding displayed oddly in S5, Chrome on OSX
+	&::-webkit-search-decoration { 
 		-webkit-appearance: none;
-	} // &::-webkit-search-decoratio
+	} // &::-webkit-search-decoration
 } // input[type="search"] 
 
+// Corrects inner padding and border displayed oddly in FF3/4 
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 button::-moz-focus-inner,
-input::-moz-focus-inner { // Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+input::-moz-focus-inner { 
 	border: 0;
 	padding: 0;
 } // button::-moz-focus-inner, input::-moz-focus-inner
@@ -53,12 +57,12 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	border: rem(1) solid $color-input-border;
+	appearance: none;
 	border-radius: 0;
+	border: rem(1) solid $color-input-border;
 	color: $color-input-text;
 	line-height: 1.5;
 	padding: $padding-input;
-	appearance: none;
 
 	&:focus {
 		color: $color-input-focus-text;

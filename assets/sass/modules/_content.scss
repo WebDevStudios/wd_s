@@ -22,13 +22,13 @@
 	margin: 0 0 rem(24) 0;
 } // .hentry
 
-// byline and update post date
+// Byline and update post date
 .byline,
 .updated:not(.published) {
 	display: none;
 } // .byline, .updated:not(.published)
 
-// byline for single and group
+// Byline for single and group
 .single .byline,
 .group-blog .byline {
 	display: inline;

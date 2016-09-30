@@ -43,18 +43,17 @@
 			// Close "X" button.
 			.close {
 				@include margin-padding-reset;
-				@include size(rem(30) rem(30));
 				@include position(absolute, rem(-15) rem(-15) null null);
+				@include size(rem(30) rem(30));
 
 				background: $color-black;
-				border: rem(3) solid $color-white;
 				border-radius: 50%;
+				border: rem(3) solid $color-white;
 				color: $color-white;
 				cursor: pointer;
 				font-size: rem(30);
 				line-height: 0;
 				outline: none;
-				padding: 0;
 
 				&:after {
 					@include clearfix;

@@ -6,7 +6,6 @@
 .page-content,
 .entry-content,
 .comment-content {
-
 	// WP smiley
 	img.wp-smiley {
 		@include margin-padding-reset;
@@ -53,6 +52,7 @@ img {
 		margin-left: rem(24);
 	} // &.alignright
 
+	// Add top and bottom margin to caption text
 	.wp-caption-text {
 		margin: rem(12) 0;
 	} // .wp-caption-text
@@ -82,11 +82,11 @@ img {
 
 	.gallery-columns-2 & {
 		max-width: 50%;
-	} //.gallery-columns-2 &
+	} // .gallery-columns-2 &
 
 	.gallery-columns-3 & {
 		max-width: 33.33%;
-	} //.gallery-columns-3 &
+	} // .gallery-columns-3 &
 
 	.gallery-columns-4 & {
 		max-width: 25%;
@@ -136,22 +136,22 @@ img {
 // Center image background
 .image-as-background {
 	background-position: center center;
-	background-size: cover;
 	background-repeat: no-repeat;
+	background-size: cover;
 } // .image-as-background
 
 // Video as background
 .video-as-background {
 	@include size(100% 100%);
 
-	position: absolute;
 	display: block;
 	object-fit: cover;
 	object-position: center top;
+	position: absolute;
 	z-index: 1;
 } // .video-as-background
 
 // svg defs
 .svg-defs {
 	display: none;
-} // .svg-defs 
+} // .svg-defs

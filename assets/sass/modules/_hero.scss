@@ -18,7 +18,7 @@
 		background-color: rgba($color-black, 0.6);
 		content: '';
 		z-index: 2;
-	} // transparent overlay
+	} // &:after
 
 	// Gradient overlay (optional).
 	// &:after {
@@ -28,7 +28,7 @@
 
 	// 	content: '';
 	// 	z-index: 2;
-	// } // gradient overlay
+	// } // &:after
 
 	// Content container.
 	.hero-content {
@@ -38,7 +38,7 @@
 		justify-content: center;
 		margin: 0 auto;
 		max-width: rem(500); // width of content container
-		min-height: rem(500);  // height of hero
+		min-height: rem(500); // height of hero
 		position: relative;
 		text-align: center;
 		z-index: 3;
@@ -48,7 +48,7 @@
 		.hero-description,
 		.hero-button {
 			color: $color-white;
-		} // .hero-title
+		} // .hero-title, .hero-description, .hero-button
 
 		// Add padding to description.
 		.hero-description {

@@ -9,11 +9,6 @@ table {
 	padding:0;
 	width: 100%;
 
-
-	@include media($phone-landscape) {
-		border: rem(1) solid $color-silver;
-	}
-
 	// thead
 	thead {
 		display: none;
@@ -23,7 +18,7 @@ table {
 		}
 	} // thead
 
-	// th, td shared styles
+	// th, td
 	th,
 	td {
 		padding: rem(10);
@@ -32,7 +27,7 @@ table {
 		@include media($phone-landscape) {
 			display: table-cell;
 		}
-	} // th, td shared styles
+	} // th, td
 
 	// th
 	th {
@@ -58,8 +53,8 @@ table {
 
 	// td
 	td {
-		border: rem(1) solid $color-silver;
 		border-bottom: 0;
+		border: rem(1) solid $color-silver;
 		display: block;
 		font-size: rem(13);
 		text-align: center;
@@ -81,4 +76,8 @@ table {
 			text-transform: uppercase;
 		} // &:before
 	} // td
+
+	@include media($phone-landscape) {
+		border: rem(1) solid $color-silver;
+	}
 } // table

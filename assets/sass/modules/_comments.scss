@@ -13,7 +13,7 @@
 	margin: 0;
 } // .comment-list
 
-// Comment-meta
+// Comment meta
 .comment-meta {
 	margin: 0 0 rem(14) 0;
 } // .comment-meta
@@ -24,7 +24,7 @@
 	margin: 0 rem(10) 0 0;
 } // .avatar
 
-// bypostauthor
+// By post author
 .bypostauthor {
 	display: block;
 } // .bypostauthor
@@ -46,7 +46,6 @@
 .comment-form-author,
 .comment-form-email,
 .comment-form-url {
-
 	label {
 		@include span-columns(12);
 
@@ -55,7 +54,6 @@
 		}
 	} // label
 } // .comment-form-author, .comment-form-email, .comment-form-url
-
 
 // Nested comments spacing from mobile to desktop
 .comment-list .children {

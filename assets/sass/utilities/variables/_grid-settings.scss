@@ -23,7 +23,6 @@ $visual-grid-color: #ffc0cb;   // color of visual grid
 $visual-grid-index: front;  // front/back
 $visual-grid-opacity: 0.2;  // opacity of visual grid
 
-
 // $variable: new-breakpoint( range of values, # of grid columns at the breakpoint )
 $mqs-phone-portrait: new-breakpoint(max-width rem($phone-portrait - 1) 2);
 $mqs-phone-landscape: new-breakpoint(min-width rem($phone-portrait) max-width rem($phone-landscape) 4);

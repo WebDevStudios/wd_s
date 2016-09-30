@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 
 // Links
-
 a {
 	color: $color-link;
 
@@ -19,7 +18,6 @@ a {
 } // a
 
 // Default menu (active after a fresh WordPress install)
-
 .menu {
 	@include list-reset;
 
@@ -45,20 +43,19 @@ a {
 		} // li
 
 		a {
-			padding: rem(10);
 			border-bottom: 1px solid $color-background-hr;
+			padding: rem(10);
 		} // a
-	}
+	} // &.menu-vertical
 
 	&.dropdown {
 
 		// Sub-menu
 		ul {
+			@include position(absolute, rem(24) null null -999em);
+
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
-			left: -999em;
-			position: absolute;
-			top: em(24px);
 			z-index: 99999;
 
 			// Sub-sub menu
@@ -81,20 +78,20 @@ a {
 				@include size(rem(200) auto);
 			} // a
 
-			:hover > a,
+			&:hover > a,
 			.focus > a {
-			}
+			} // &:hover > a, .focus > a
 
 			a:hover,
 			a.focus {
-			}
+			} // a:hover, a.focus
 		} // ul
 
 		// Display sub-menu on hover
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-		} //
+		} // li:hover > ul, li.focus > ul
 
 		// Menu items
 		li {
@@ -103,7 +100,7 @@ a {
 
 			&:hover > a,
 			&.focus > a {
-			}
+			} // &:hover > a, &.focus > a
 		} // li
 	} // &.dropdown
 
@@ -116,7 +113,7 @@ a {
 	// Current items
 	.current_page_item a,
 	.current-menu-item a {
-	}
+	} // .current_page_item a, .current-menu-item a
 } // .menu
 
 // Main navigation (after creating a menu in the dashboard)
@@ -126,10 +123,6 @@ a {
 	clear: both;
 	display: none;
 	float: left;
-
-	@include media($tablet-landscape) {
-		display: block;
-	}
 
 	// Menu area
 	ul {
@@ -141,6 +134,10 @@ a {
 	} // ul
 
 	&.toggled ul {
+		display: block;
+	} // &.toggled ul
+
+	@include media($tablet-landscape) {
 		display: block;
 	}
 } // .main-navigation
@@ -164,16 +161,16 @@ a {
 		overflow: hidden;
 	} // .site-main &
 
-	& .nav-previous {
+	&.nav-previous {
 		@include size(50% auto);
 
 		float: left;
-	} // & .nav-previous
+	} // &.nav-previous
 
-	& .nav-next {
+	&.nav-next {
 		@include size(50% auto);
 
 		float: right;
 		text-align: right;
-	} // & .nav-next
+	} // &.nav-next
 } // .comment-navigation, .posts-navigation, .post-navigation
