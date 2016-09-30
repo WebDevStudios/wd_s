@@ -449,7 +449,13 @@ function _s_get_social_network_links() {
 		// Only display the list item if a URL is set
 		if ( isset( $network_url ) && ! empty ( $network_url ) ) : ?>
 			<li class="social-network social-network-<?php esc_attr_e( $network ); ?>">
-				<a href="<?php echo esc_url( $network_url ); ?>"><?php _s_do_svg( array( 'icon' => $network . '-square' ) ); ?></a>
+				<a href="<?php echo esc_url( $network_url ); ?>">
+					<?php _s_do_svg( array(
+						'icon'  => $network . '-square',
+						'title' => sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) )
+					) ); ?>
+					<span class="screen-reader-text"><?php echo sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); ?></span>
+				</a>
 			</li>
 		<?php endif;
 	endforeach; ?>
