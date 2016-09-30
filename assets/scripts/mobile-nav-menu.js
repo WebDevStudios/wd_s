@@ -119,4 +119,4 @@ window.MobileNavMenu = {};
     // Engage
     $( app.init );
 
-})( window, jQuery, window.MobileNavMenu );
+} )( window, jQuery, window.MobileNavMenu );
