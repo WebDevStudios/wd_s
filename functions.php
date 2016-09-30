@@ -68,9 +68,6 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 
-	// Add styles to the post editor
-	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
-
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
