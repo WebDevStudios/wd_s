@@ -28,5 +28,7 @@
     "tests"
   ],
   "dependencies": {
+    "normalize-css": "normalize.css#^4.2.0",
+    "animate.css": "^3.5.2"
   }
 }
