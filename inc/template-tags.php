@@ -157,7 +157,7 @@ function _s_get_svg( $args = array() ) {
 	// Figure out which title to use.
 	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
-	// Begin SVG markup
+	// Begin SVG markup.
 	$svg = '<svg class="icon icon-' . esc_html( $args['icon'] ) . '" aria-hidden="true">';
 
 	// Add title markup.
@@ -249,7 +249,7 @@ function _s_get_the_excerpt( $args = array() ) {
  *
  * @param string  $size  The image size you want to display.
  */
-function _s_do_post_image( $size = 'thumbnail' ) {
+function _s_get_post_image( $size = 'thumbnail' ) {
 
 	// If featured image is present, use that.
 	if ( has_post_thumbnail() ) {
@@ -268,7 +268,13 @@ function _s_do_post_image( $size = 'thumbnail' ) {
 		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
 	}
 
-	echo '<img src="' . esc_url( $media_url ) . '" class="attachment-thumbnail wp-post-image" alt="' . esc_html( get_the_title() )  . '" />';
+	// Start the markup.
+	ob_start(); ?>
+
+	<img src="<?php echo esc_url( $media_url ); ?>" class="attachment-thumbnail wp-post-image" alt="<?php echo esc_html( get_the_title() ); ?>"/>
+
+	<?php
+	return ob_get_clean();
 }
 
 /**
