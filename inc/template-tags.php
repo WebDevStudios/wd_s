@@ -428,12 +428,32 @@ function _s_do_mobile_navigation_menu() {
 /**
  * Retrieve the social links saved in the customizer
  * @return mixed HTML output of social links
+ *
  * @author Corey Collins
  */
 function _s_get_social_network_links() {
 
+	// Create an array of our social links for ease of setup.
+    $social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
+
 	ob_start();
 	?>
+	<ul class="social-icons">
+	<?php
+	// Loop through our network array
+	foreach( $social_networks as $network ) :
+
+		// Look for the social network's URL
+		$network_url = get_theme_mod( '_s_' . $network . '_link' );
+
+		// Only display the list item if a URL is set
+		if ( isset( $network_url ) && ! empty ( $network_url ) ) : ?>
+			<li class="social-network social-network-<?php esc_attr_e( $network ); ?>">
+				<a href="<?php echo esc_url( $network_url ); ?>"><?php _s_do_svg( array( 'icon' => $network . '-square' ) ); ?></a>
+			</li>
+		<?php endif;
+	endforeach; ?>
+	</ul>
 	<?
 	return ob_get_clean();
 }
