@@ -436,8 +436,9 @@ function _s_get_social_network_links() {
 	// Create an array of our social links for ease of setup.
     $social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
 
-	ob_start();
-	?>
+    // Kickoff our output buffer
+	ob_start(); ?>
+
 	<ul class="social-icons">
 	<?php
 	// Loop through our network array
@@ -460,6 +461,7 @@ function _s_get_social_network_links() {
 		<?php endif;
 	endforeach; ?>
 	</ul><!-- .social-icons -->
-	<?
+
+	<?php // Return everything inside our output buffer
 	return ob_get_clean();
 }
