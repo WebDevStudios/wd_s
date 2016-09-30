@@ -2,31 +2,26 @@
 // Mobile Navigation
 //--------------------------------------------------------------
 
-// Fix scrolling on the entire body
-// when the more menu is visible
+// Fix scrolling on the entire body when the more menu is visible
 .mobile-menu-more {
 	overflow: hidden;
 } // .mobile-menu-more
 
 // Fix the menu to the bottom of the window
 .mobile-nav-menu {
+	@include position(fixed, 0 null null 0);
+	@include size(0 100%);
 	@include transition(background-color 0.2s linear, width 0.2s linear);
 
 	background-color: rgba($color-black, 0);
 	display: block;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 0;
 
 	// Don't show this puppy above tablet-landscape
 	@include media($tablet-landscape) {
 		display: none;
 	}
 
-	// Add a background color to the menu
-	// when the "More" items are displayed
+	// Add a background color to the menu when the "More" items are displayed
 	&.more {
 		background-color: rgba($color-black, 0.7);
 	} // &.more
@@ -47,7 +42,7 @@
 		@include media($wp-admin-bar) {
 			padding-top: rem(40);
 		}
-	} // .admin-bar
+	} // .admin-bar &
 
 	li {
 		cursor: pointer;
@@ -77,13 +72,12 @@
 
 	// Only target the parent menu
 	.mobile-nav {
+		@include position(absolute, null null 0 null);
+		@include size(100vw rem(64));
+
 		align-items: flex-end;
-		bottom: 0;
 		display: flex;
-		height: rem(64);
 		justify-content: space-between;
-		position: absolute;
-		width: 100vw;
 
 		// Only target top-level items
 		> li:nth-child(-n+5) {
@@ -117,21 +111,20 @@
 
 // Hide anything more than the first four items
 .mobile-nav-menu-hidden {
+	@include position(absolute, null 0 0 null);
 	@include transition(opacity 0.5s linear);
 
-	bottom: 0;
 	display: block;
 	max-height: 100%;
 	opacity: 0;
 	overflow: scroll;
 	padding: rem(84) 0;
-	position: absolute;
-	right: 0;
 	visibility: hidden;
 	width: 50vw;
 	z-index: -1;
 } // .mobile-nav-menu-hidden
 
+// Show hidden mobile nav menu 
 .mobile-menu-more:not(.sub-menu-more) {
 
 	.mobile-nav-menu-hidden {
@@ -146,18 +139,17 @@
 		visibility: visible;
 
 		li {
-			bottom: 0;
+			@include position(relative, null 0 0 null);
+			
 			clear: both;
 			display: block;
 			float: right;
 			margin: 0;
-			position: relative;
-			right: 0;
 			width: 100%;
 
 			.sub-menu {
-				padding-left: 10%;
 				opacity: 1;
+				padding-left: 10%;
 			} // .sub-menu
 
 			.sub-menu-more & {
@@ -175,11 +167,10 @@
 // Style the more/fly-in menu
 .mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more,
 .mobile-nav-menu .mobile-nav > .sub-menu {
+	@include position(absolute, 0 null null 0);
+
 	background-color: $color-gray;
-	left: 0;
 	height: 100vh;
-	position: absolute;
-	top: 0;
 } // .mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more, .mobile-nav-menu .mobile-nav > .sub-menu 
 
 .mobile-nav-menu .mobile-nav {
@@ -195,13 +186,11 @@
 
 // Style the close button
 .close-mobile-menu {
+	@include position(absolute, rem(10) rem(12) null null);
 	@include size(rem(32));
 
 	background-color: transparent;
 	display: none;
-	position: absolute;
-	right: rem(12);
-	top: rem(10);
 	z-index: 1;
 
 	.admin-bar & {
@@ -219,7 +208,7 @@
 		background-color: transparent;
 
 		svg {
-			opacity: .6;
+			opacity: 0.6;
 		} // svg
 	} // &:hover, &:active, &:focus
 
@@ -234,7 +223,7 @@
 
 		fill: $color-white;
 	} // svg
-}
+} // .close-mobile-menu
 
 // Don't show the submenu when we hover the parent
 .mobile-nav.dropdown {
@@ -265,13 +254,10 @@
 	.visible:active {
 
 		.sub-menu {
-			bottom: rem(84);
+			@include position(fixed, auto 0 rem(84) auto);
+
 			display: block;
-			left: auto;
 			opacity: 1;
-			position: fixed;
-			right: 0;
-			top: auto;
 			width: 50vw;
 
 			.sub-menu {
@@ -280,8 +266,8 @@
 				@include media($tablet-portrait) {
 					bottom: auto;
 				}
-			}
-		}
+			} // .sub-menu
+		} // .sub-menu
 
 		.sub-menu .sub-menu {
 			padding-left: rem(10);
@@ -296,13 +282,8 @@
 	.sub-menu {
 		left: 0;
 		opacity: 0;
-		z-index: -1;
 		width: 50vw;
-
-		@include media($tablet-portrait) {
-			left: auto;
-			right: 0;
-		}
+		z-index: -1;
 
 		a {
 			color: $color-white;
@@ -316,8 +297,13 @@
 			float: none;
 			margin: 0;
 		} // li
+
+		@include media($tablet-portrait) {
+			left: auto;
+			right: 0;
+		}
 	} // .sub-menu
-} //.mobile-nav.dropdown
+} // .mobile-nav.dropdown
 
 // Adjust submenu z-index when parent is visible
 .mobile-nav.dropdown .visible {
@@ -325,7 +311,7 @@
 	// Adjust z-index when visible
 	.sub-menu {
 		z-index: 1;
-	} //.sub-menu
+	} // .sub-menu
 } // .mobile-nav.dropdown .visible
 
 // Add styles for non-JS users
@@ -340,15 +326,15 @@
 	} // &.admin-bar
 
 	.mobile-nav-menu {
+		@include size(100% rem(64));
+
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		-webkit-overflow-scrolling: touch;
 		bottom: 0;
 		font-size: 0;
-		height: rem(64);
 		overflow-x: auto;
 		top: auto;
-		-webkit-overflow-scrolling: touch;
-		-ms-overflow-style: -ms-autohiding-scrollbar;
 		white-space: nowrap;
-		width: 100%;
 
 		> div {
 			bottom: 0;
@@ -356,29 +342,22 @@
 
 			&:before,
 			&:after {
-				position: fixed;
-				bottom: 0;
-				height: 100%;
-				width: 25%;
-				content: "";
+				@include position(fixed, null null 0 null);
+				@include size(25% 100%);
+
+				content: '';
 				pointer-events: none; /* so the text is still selectable */
 				z-index: 20;
 			} // &:before, &:after
 
 			&:after {
+				background: linear-gradient(to left, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 100%);
 				right: 0;
-				background: linear-gradient(to left,
-				rgba(255,255,255, 1) 0%,
-				rgba(255,255,255, 0) 100%
-				);
 			} // &:after
 
 			&:before {
+				background: linear-gradient(to left, rgba(255,255,255, 0) 0%, rgba(255,255,255, 1) 100%);
 				left: 0;
-				background: linear-gradient(to left,
-				rgba(255,255,255, 0) 0%,
-				rgba(255,255,255, 1) 100%
-				);
 			} // &:before
 		} // > div
 	} // .mobile-nav-menu
@@ -399,41 +378,40 @@
 					@include vertical-align(middle);
 
 					display: block;
-				}
+				} // span
 			} // a
 
 			> li {
 
 				&:nth-child(n+6) {
 					display: inline-block;
-				}
+				} // &:nth-child(n+6)
 
 				&:first-of-type {
 					padding-left: rem(100);
-				}
+				} // &:first-of-type
 
 				&:last-of-type {
 					padding-right: rem(100);
-				}
+				} // &:last-of-type
 			} // > li
 
 			li {
+				@include position(relative, null null null 0);
+				@include size(auto rem(64));
+
 				background-color: $color-white;
 				border-top: 1px solid rgba($color-black, .1);
 				display: inline-block;
 				float: none;
 				font-size: rem(12);
-				height: rem(64);
-				left: 0;
 				margin: 0;
-				position: relative;
 				text-align: center;
 				vertical-align: top;
-				width: auto;
 
 				&:hover {
 					background-color: $color-white;
-				} // &;hover
+				} // &:hover
 			} // li
 		} // .mobile-nav
 	} // .mobile-nav-menu
@@ -467,7 +445,7 @@
 						.sub-menu {
 							display: inline-block;
 							left: 0;
-						} //.sub-menu
+						} // .sub-menu
 					} // &:hover
 				} // &.menu-item-has-children
 			} // li
@@ -476,12 +454,11 @@
 		.mobile-nav.dropdown {
 
 			.sub-menu {
+				@include position(relative, auto null null 0);
+
 				display: inline-block;
 				float: none;
-				left: 0;
 				opacity: 1;
-				position: relative;
-				top: auto;
 				width: auto;
 				z-index: 1;
 
@@ -493,7 +470,7 @@
 					border: none;
 				} // li
 			} // .sub-menu
-		} // .mobile-nav
+		} // .mobile-nav.dropdown
 	} // .mobile-nav-menu
 
 	.mobile-nav-menu {
