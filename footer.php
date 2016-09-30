@@ -17,7 +17,7 @@
 		<div class="wrap">
 
 			<div class="site-info">
-				<?php _s_do_copyright_text(); ?>
+				<?php echo _s_get_copyright_text(); ?>
 			</div>
 
 		</div><!-- .wrap -->

@@ -345,7 +345,7 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 /**
  * Echo the copyright text saved in the Customizer.
  */
-function _s_do_copyright_text() {
+function _s_get_copyright_text() {
 
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
