@@ -404,10 +404,13 @@ function _s_get_social_share() {
 /**
  * Output the mobile navigation
  */
-function _s_do_mobile_navigation_menu() {
+function _s_get_mobile_navigation_menu() {
 
 	// Figure out which menu we're pulling
 	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
+
+	// Start the markup.
+	ob_start();
 	?>
 
 	<nav id="mobile-menu" class="mobile-nav-menu">
@@ -423,4 +426,5 @@ function _s_do_mobile_navigation_menu() {
 		?>
 	</nav>
 	<?php
+	return ob_get_clean();
 }
