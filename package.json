@@ -10,6 +10,7 @@
     "browser-sync": "^2.11.1",
     "css-mqpacker": "^4.0.0",
     "del": "^2.2.0",
+    "eslint-config-wordpress": "^0.1.0",
     "glob": "^6.0.4",
     "gulp": "^3.9.1",
     "gulp-cheerio": "^0.6.2",
