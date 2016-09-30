@@ -3,12 +3,11 @@
  *
  * Deal with the search form.
  */
-window.WDS_Search = {};
+window.wdsSearch = {};
 
 ( function ( window, $, app ) {
-
 	// Constructor.
-	app.init = function() {
+	app.init = function () {
 		app.cache();
 
 		if ( app.meetsRequirements() ) {
@@ -17,20 +16,19 @@ window.WDS_Search = {};
 	};
 
 	// Cache all the things.
-	app.cache = function() {
+	app.cache = function () {
 		app.$c = {
-			body: $( 'body' ),
+			'body': $( 'body' )
 		};
 	};
 
 	// Do we meet the requirements?
-	app.meetsRequirements = function() {
+	app.meetsRequirements = function () {
 		return $( '.search-field' ).length;
 	};
 
 	// Combine all events.
-	app.bindEvents = function() {
-
+	app.bindEvents = function () {
 		// Remove placeholder text from search field on focus.
 		app.$c.body.on( 'focus', '.search-field', app.removePlaceholderText );
 
@@ -39,16 +37,14 @@ window.WDS_Search = {};
 	};
 
 	// Remove placeholder text from search field.
-	app.removePlaceholderText = function() {
-
+	app.removePlaceholderText = function () {
 		var $search_field = $( this );
 
 		$search_field.data( 'placeholder', $search_field.attr( 'placeholder' ) ).attr( 'placeholder', '' );
 	};
 
 	// Replace placeholder text from search field.
-	app.addPlaceholderText = function() {
-
+	app.addPlaceholderText = function () {
 		var $search_field = $( this );
 
 		$search_field.attr( 'placeholder', $search_field.data( 'placeholder' ) ).data( 'placeholder', '' );
@@ -56,5 +52,4 @@ window.WDS_Search = {};
 
 	// Engage!
 	$( app.init );
-
-} )( window, jQuery, window.WDS_Search );
+} )( window, jQuery, window.wdsSearch );

@@ -3,12 +3,11 @@
  *
  * Deal with multiple modals and their media.
  */
-window.WDS_Modal = {};
+window.wdsModal = {};
 
 ( function ( window, $, app ) {
-
 	// Constructor.
-	app.init = function() {
+	app.init = function () {
 		app.cache();
 
 		if ( app.meetsRequirements() ) {
@@ -17,20 +16,19 @@ window.WDS_Modal = {};
 	};
 
 	// Cache all the things.
-	app.cache = function() {
+	app.cache = function () {
 		app.$c = {
-			body: $( 'body' ),
+			'body': $( 'body' )
 		};
 	};
 
 	// Do we meet the requirements?
-	app.meetsRequirements = function() {
+	app.meetsRequirements = function () {
 		return $( '.modal-trigger' ).length;
 	};
 
 	// Combine all events.
-	app.bindEvents = function() {
-
+	app.bindEvents = function () {
 		// Trigger a modal to open.
 		app.$c.body.on( 'click touchstart', '.modal-trigger', app.openModal );
 
@@ -45,8 +43,7 @@ window.WDS_Modal = {};
 	};
 
 	// Open the modal.
-	app.openModal = function() {
-
+	app.openModal = function () {
 		// Figure out which modal we're opening and store the object.
 		var $modal = $( $( this ).data( 'target' ) );
 
@@ -58,8 +55,7 @@ window.WDS_Modal = {};
 	};
 
 	// Close the modal.
-	app.closeModal = function() {
-
+	app.closeModal = function () {
 		// Figure the opened modal we're closing and store the object.
 		var $modal = $( $( 'div.modal-open .close' ).data( 'target' ) );
 
@@ -80,22 +76,20 @@ window.WDS_Modal = {};
 	};
 
 	// Close if "esc" key is pressed.
-	app.escKeyClose = function(e) {
-		if ( 27 == e.keyCode ) {
+	app.escKeyClose = function ( event ) {
+		if ( 27 === event.keyCode ) {
 			app.closeModal();
 		}
 	};
 
 	// Close if the user clicks outside of the modal
-	app.closeModalByClick = function(e) {
-
+	app.closeModalByClick = function ( event ) {
 		// If the parent container is NOT the modal dialog container, close the modal
-		if ( ! $( e.target ).parents( 'div' ).hasClass( 'modal-dialog' ) ) {
+		if ( !$( event.target ).parents( 'div' ).hasClass( 'modal-dialog' ) ) {
 			app.closeModal();
 		}
 	};
 
 	// Engage!
 	$( app.init );
-
-} )( window, jQuery, window.WDS_Modal );
+} )( window, jQuery, window.wdsModal );
