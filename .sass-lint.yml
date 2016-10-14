@@ -10,22 +10,17 @@
 #     - 1: set as a warning
 #     - 2: set to error
 
-# Linter Options
-options:
-  # Don't merge default rules
-  merge-default-rules: false
-  # Set the formatter to 'html'
-  formatter: stylish
 # File Options
 files:
-  # include: '**/*.s+(a|c)ss'
-  # ignore: ''
+  ignore:
+    - 'sass/vendor/**/*.scss'
+    - 'sass/tests/**/*.scss'
+    - 'bourbon/app/**/*.scss'
+    - 'bourbon-neat/app/**/*.scss'
 
 # Rule Configuration
 rules:
  # Extends
-  extends-before-mixins: 0
-  extends-before-declarations: 1
   placeholder-in-extend: 0
 
   # Mixins
@@ -35,30 +30,25 @@ rules:
       exclude: ['media'] # except @include media();
 
   # Line Spacing
-  one-declaration-per-line: 1
-  empty-line-between-blocks: 1
-  single-line-per-selector: 1
+  empty-line-between-blocks:
+    - 1
+    -
+      allow-single-line-rulesets: false
 
   # Disallows
-  no-color-keywords: 1
   no-color-literals: 
     - 1
     -
       allow-rgba: true
-  no-css-comments: 1
   no-debug: 0
-  no-duplicate-properties: 0
-  no-empty-rulesets: 0
-  no-extends: 0
   no-ids: 0
-  no-important: 0
-  no-invalid-hex: 1
   no-mergeable-selectors: 0
-  no-misspelled-properties: 1
-  no-qualifying-elements: 0
-  no-trailing-zero: 0
-  no-transition-all: 0
-  no-url-protocols: 0
+  no-qualifying-elements:
+    - 1
+    -
+      allow-element-with-attribute: true
+      allow-element-with-class: false
+      allow-element-with-id: false
   no-vendor-prefixes: 0
   no-warn: 0
 
@@ -68,15 +58,26 @@ rules:
   force-pseudo-nesting: 0
 
   # Name Formats
-  function-name-format: 0
-  mixin-name-format: 0
-  placeholder-name-format: 0
+  function-name-format:
+    - 1
+    - 
+      convention-explanation: Please use hyphenated lowercase for function names. Also, you may use a leading underscore if you prefer.
+  mixin-name-format:
+    - 1
+    -
+      convention-explanation: Please use hyphenated lowercase for mixin names. Also, you may use a leading underscore if you prefer.
+  placeholder-name-format:
+    - 1
+    -
+      convention-explanation: Please use hyphenated lowercase for placeholder names. Also, you may use a leading underscore if you prefer.
   variable-name-format:
-    - 0
+    - 1
     -
       allow-leading-underscore: false
+      convention-explanation: Please use hyphenated lowercase for variable names. No leading underscore is allowed.
 
   # Style Guide
+  attribute-quotes: 1
   border-zero: 0
   brace-style:
     - 1
@@ -87,17 +88,20 @@ rules:
     - 1
     -
       allow-leading-underscore: false
+      convention-explanation: Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option.
       ignore: ['current_page_item', 'widget_search'] # ignore selectors declared by WordPress
 
-  clean-import-paths: 0
   empty-args: 0
   hex-length: 1
-  hex-notation:
+  hex-notation: 1
+  id-name-format:
     - 1
     -
-      style: lowercase
-
-  indentation: 0
+      convention-explanation: Please try to use hyphenated lowercase ID name format. If overriding a plugin that does not use this format then please ignore or extend the list of ignore option.
+  indentation:
+    - 1
+    -
+      size: tab
   leading-zero:
     - 1
     -
@@ -106,14 +110,13 @@ rules:
   nesting-depth:
     - 1
     -
-      max-depth: 4
+      max-depth: 3
 
   property-units:
     - 1
     -
-      per-property: { width: ['rem'], height: ['rem'], margin: ['rem'], padding: ['rem'] }
+      per-property: { width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
 
-  property-sort-order: 1
   quotes:
     - 1
     -
@@ -126,28 +129,8 @@ rules:
         - 1
         - 2
 
-  url-quotes: 0
-  variable-for-property:
-    - 1
-    -
-      properties: ['color']
-
-  zero-unit: 1
-
   # Inner Spacing
-  space-after-comma: 1
-  space-before-colon: 1
-  space-after-colon: 1
-  space-before-brace: 1
-  space-before-bang: 1
-  space-after-bang: 1
-  space-around-operator:
-    - 1
-    -
-      include: true
-
   space-between-parens: 0
 
   # Final Items
-  trailing-semicolon: 1
   final-newline: 0
