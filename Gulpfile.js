@@ -209,8 +209,11 @@ gulp.task( 'spritesmith', [ 'clean:sprites' ], () =>
 );
 
 /**
- * Concatenate JavaScript files into one.
+ * Concatenate and transform JavaScript.
+ *
  * https://www.npmjs.com/package/gulp-concat
+ * https://github.com/babel/gulp-babel
+ * https://www.npmjs.com/package/gulp-sourcemaps
  */
 gulp.task( 'concat', () =>
 	gulp.src( paths.concat_scripts )
@@ -240,7 +243,8 @@ gulp.task( 'concat', () =>
 );
 
 /**
-  * Minify compiled JavaScript after concatenated.
+  * Minify compiled JavaScript.
+  *
   * https://www.npmjs.com/package/gulp-uglify
   */
 gulp.task( 'uglify', [ 'concat' ], () =>
