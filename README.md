@@ -9,7 +9,7 @@ I feature some of the web's most exciting technologies like: [Gulp](http://gulpj
 
 ### Prerequisites
 
-Because I'm bundled with Gulp, basic knowledge of the command line and the following dependencies are required: [Node](http://nodejs.org/) and [Gulp CLI](https://github.com/gulpjs/gulp-cli) (`npm install -g gulp-cli`).
+Because I'm bundled with Gulp, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org), [Gulp CLI](https://github.com/gulpjs/gulp-cli) (`npm install -g gulp-cli`), and [Bower](https://bower.io/) (`npm install -g bower`).
 
 ### Quick Start
 If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
@@ -43,12 +43,12 @@ After you've installed and activated me. It's time to setup Gulp.
 cd /your-project/wordpress/wp-content/themes/your-theme
 ```
 
-2) Install Node dependencies
+2) Install theme dependencies
 
 ```bash
-npm install
+npm install && bower install
 ```
-![Install and Gulp](https://dl.dropbox.com/s/cj1p6xjz51cpckq/wd_s-install.gif?dl=0)
+![Install and Gulp](https://dl.dropboxusercontent.com/s/cj1p6xjz51cpckq/wd_s-install.gif?dl=0)
 
 ### Gulp Tasks
 
