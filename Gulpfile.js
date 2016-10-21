@@ -1,5 +1,6 @@
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
+const babel = require( 'gulp-babel' );
 const bourbon = require( 'bourbon' ).includePaths;
 const browserSync = require( 'browser-sync' );
 const cheerio = require( 'gulp-cheerio' );
@@ -203,6 +204,9 @@ gulp.task( 'concat', function () {
 	return gulp.src( paths.concat_scripts )
 	.pipe( plumber( {'errorHandler': handleErrors} ) )
 	.pipe( sourcemaps.init() )
+	.pipe( babel( {
+		presets: [ 'es2015' ]
+	} ) )
 	.pipe( concat( 'project.js' ) )
 	.pipe( sourcemaps.write() )
 	.pipe( gulp.dest( 'assets/scripts' ) )
