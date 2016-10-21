@@ -48,7 +48,7 @@ cd /your-project/wordpress/wp-content/themes/your-theme
 ```bash
 npm install && bower install
 ```
-![Install and Gulp](https://dl.dropbox.com/s/cj1p6xjz51cpckq/wd_s-install.gif?dl=0)
+![Install and Gulp](https://dl.dropboxusercontent.com/s/cj1p6xjz51cpckq/wd_s-install.gif?dl=0)
 
 ### Gulp Tasks
 
