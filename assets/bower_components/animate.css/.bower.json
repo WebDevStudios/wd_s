@@ -17,7 +17,6 @@
     "commit": "dac3dab7b59cb6072b5d0fe23eae3805e370a58c"
   },
   "_source": "https://github.com/daneden/animate.css.git",
-  "_target": "^3.5.2",
-  "_originalSource": "animate.css",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "animate.css"
 }
