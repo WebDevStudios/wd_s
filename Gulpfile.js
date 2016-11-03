@@ -310,7 +310,7 @@ gulp.task( 'js:lint', () =>
 		'assets/scripts/concat/*.js',
 		'assets/scripts/*.js',
 		'!assets/scripts/project.js',
-		'!assets/scripts/project.min.js',
+		'!assets/scripts/*.min.js',
 		'!Gruntfile.js',
 		'!Gulpfile.js',
 		'!node_modules/**'
