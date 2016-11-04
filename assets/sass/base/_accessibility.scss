@@ -10,6 +10,7 @@
 	height: rem(1);
 	overflow: hidden;
 	position: absolute !important;
+	white-space: nowrap; // do not smuch text in screen readers
 
 	&:hover,
 	&:active,
