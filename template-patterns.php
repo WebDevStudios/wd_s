@@ -105,44 +105,110 @@ function _s_get_pattern_section( $args = array() ) {
 	return ob_get_clean();
 }
 
-?>
+/**
+ * Build a global pattern element.
+ *
+ * @param   array  $args  The array of colors or fonts.
+ * @return  string        The pattern documentation.
+ *
+ * @author Carrie Forde
+ */
+function _s_get_global_pattern_section( $args = array() ) {
 
-<!-- Start Template Partterns -->
-get_header();
+	$defaults = array(
+		'global_type' => '', // Can be 'colors' or 'fonts'.
+		'title'       => '', // Give the section a title
+		'arguments'   => array(), // Use key => value pairs to pass colors or fonts.
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	ob_start(); ?>
+
+	<section class="pattern-section">
+		<header class="pattern-section-header">
+			<h2 class="pattern-section-title"><?php esc_html_e( $args['title'] ); ?></h2>
+		</header>
+
+		<div class="pattern-section-content">
+
+			<?php // We'll alter the output slightly depending upon the global type.
+			switch ( $args['global_type'] ) :
+
+				case 'colors' : ?>
+
+					<div class="swatch-container">
+
+					<?php // Grab the array of colors.
+					$colors = $args['arguments'];
+
+					foreach ( $colors as $name => $hex ) :
+						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
+
+						<div class="swatch" style="background-color: <?php esc_attr_e( $hex ); ?>;">
+							<header><?php esc_html_e( $name ); ?></header>
+							<footer><?php esc_html_e( $color_var ); ?></footer>
+						</div><!-- .swatch -->
+
+					<?php endforeach; ?>
+					</div>
+					<?php break;
+
+				case 'fonts' : ?>
+
+					<div class="font-container">
+
+					<?php // Grab the array of fonts.
+					$fonts = $args['arguments'];
+
+					foreach ( $fonts as $name => $family ) :
+						$font_var = '$font-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
+
+						<div style="font-family: <?php esc_attr_e( $family ); ?>"><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></div>
+
+						<div style="font-family: <?php esc_attr_e( $family ); ?>"><em><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></em></div>
+
+						<div style="font-family: <?php esc_attr_e( $family ); ?>"><strong><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></strong></div>
+					<?php endforeach; ?>
+					</div>
+					<?php break; ?>
+			<?php endswitch; ?>
+		</div>
+	</section>
+
+	<?php return ob_get_clean();
+}
+
+// Start Template Partterns
+get_header(); ?>
 
 	<div class="wrap">
 		<div class="primary content-area">
 			<main id="main" class="site-main" role="main">
 
-				<section class="pattern-section">
-					<header class="pattern-section-header">
-						<h2 class="pattern-section-title"><?php esc_html_e( 'Colors', '_s' ); ?></h2>
-					</header><!-- .pattern-section-header -->
+				<?php
 
-					<div class="pattern-section-content">
-						<div class="swatch-container">
-						<?php
+				echo _s_get_global_pattern_section( array(
+					'global_type'  => 'colors',
+					'title'        => 'Colors',
+					'arguments'    => array(
+						'Blue'         => '#21759b',
+						'Light Yellow' => '#fff9c0',
+						'Black'        => '#000000',
+						'White'        => '#FFFFFF',
+					),
+				) );
 
-						// The list of theme colors.
-						$colors = array(
-							'Blue'         => '#21759b',
-							'Light Yellow' => '#fff9c0',
-							'Black'        => '#000000',
-							'White'        => '#FFFFFF',
-						);
-
-						// Loop through and build swatches.
-						foreach ( $colors as $name => $hex ) : ?>
-
-							<div class="swatch" style="background-color: <?php echo esc_attr( $hex ); ?>;">
-								<header><?php echo esc_html( $name ); ?></header>
-								<footer>$color-<?php echo str_replace( ' ', '-', strtolower( $name ) ); ?></footer>
-							</div><!-- .swatch -->
-
-						<?php endforeach; ?>
-						</div><!-- .swatch-container -->
-					</div><!-- .pattern-section-content -->
-				</section><!-- .pattern-section -->
+				echo _s_get_global_pattern_section( array(
+					'global_type'  => 'fonts',
+					'title'        => 'Fonts',
+					'arguments'    => array(
+						'Sans'  => '"Open Sans", sans-serif',
+						'Serif' => 'Roboto, Georgia, Times, "Times New Roman", serif',
+						'Code'  => 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
+						'Pre'   => '"Courier 10 Pitch", Courier, monospace',
+					),
+				) );
+				?>
 
 				<?php
 					/**
