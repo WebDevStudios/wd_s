@@ -5,14 +5,12 @@
  * @package _s
  */
 
-get_header();
-
 /**
  * Build a pattern section.
  *
  * @param  array  $args  The pattern defaults.
  * @return string        The pattern documentation.
- * @author Greg Rickaby Carrie Ford
+ * @author Greg Rickaby Carrie Forde
  */
 function _s_get_pattern_section( $args = array() ) {
 
@@ -40,7 +38,7 @@ function _s_get_pattern_section( $args = array() ) {
 		),
 		'use' => array(
 			'xlink:href' => true,
-		)
+		),
 	) );
 
 	ob_start();
@@ -108,6 +106,9 @@ function _s_get_pattern_section( $args = array() ) {
 }
 
 ?>
+
+<!-- Start Template Partterns -->
+get_header();
 
 	<div class="wrap">
 		<div class="primary content-area">
