@@ -10,9 +10,9 @@
 @mixin omega-reset($nth) {
 	&:nth-child(#{$nth}) {
 		margin-right: flex-gutter();
-	}
+	} // &:nth-child(#{$nth})
 
-	&:nth-child(#{$nth} +1) {
+	&:nth-child(#{$nth} + 1) {
 		clear: none;
-	}
-}
+	} // &:nth-child(#{$nth} + 1)
+} // @mixin omega-reset($nth)

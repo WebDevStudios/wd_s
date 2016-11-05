@@ -36,7 +36,7 @@ rules:
       allow-single-line-rulesets: false
 
   # Disallows
-  no-color-literals: 
+  no-color-literals:
     - 1
     -
       allow-rgba: true
@@ -60,7 +60,7 @@ rules:
   # Name Formats
   function-name-format:
     - 1
-    - 
+    -
       convention-explanation: Please use hyphenated lowercase for function names. Also, you may use a leading underscore if you prefer.
   mixin-name-format:
     - 1
@@ -134,3 +134,9 @@ rules:
 
   # Final Items
   final-newline: 0
+
+  no-misspelled-properties:
+    - 1
+    -
+      'extra-properties':
+        - '-webkit-overflow-scrolling'

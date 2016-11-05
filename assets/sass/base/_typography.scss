@@ -71,10 +71,10 @@ q {
 	margin: 0 rem(24);
 	quotes: "" "";
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: "";
-	}  // &:before, &:after
+	}  // &::before, &::after
 } // blockquote, q
 
 address {
