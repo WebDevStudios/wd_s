@@ -117,7 +117,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 	// Set defaults.
 	$defaults = array(
 		'global_type' => '',      // Can be 'colors' or 'fonts'.
-		'title'       => '',      // Give the section a title
+		'title'       => '',      // Give the section a title.
 		'arguments'   => array(), // Use key => value pairs to pass colors or fonts.
 	);
 
@@ -211,6 +211,7 @@ get_header(); ?>
 						'Light Yellow' => '#fff9c0',
 						'Black'        => '#000000',
 						'White'        => '#FFFFFF',
+						'Red'          => '#f00000',
 					),
 				) );
 
