@@ -8,8 +8,8 @@
 /**
  * Build a pattern section.
  *
- * @param  array  $args  The pattern defaults.
- * @return string        The pattern documentation.
+ * @param array $args The pattern defaults.
+ * @return string The pattern documentation.
  * @author Greg Rickaby Carrie Forde
  */
 function _s_get_pattern_section( $args = array() ) {
@@ -49,7 +49,7 @@ function _s_get_pattern_section( $args = array() ) {
 
 		<?php if ( $args['title'] ) : ?>
 		<header class="pattern-section-header">
-			<h2 class="pattern-section-title"><?php esc_html_e( $args['title'] ); ?></h2>
+			<h2 class="pattern-section-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header><!-- .pattern-section-header -->
 		<?php endif; ?>
 
@@ -90,7 +90,7 @@ function _s_get_pattern_section( $args = array() ) {
 
 			<?php if ( $args['usage'] ) : ?>
 				<p><strong><?php esc_html_e( 'Usage', '_s' ); ?>:</strong></p>
-				<pre><?php esc_html_e( $args['usage'] ); ?></pre>
+				<pre><?php echo esc_html( $args['usage'] ); ?></pre>
 			<?php endif; ?>
 
 			<?php if ( $args['output'] ) : ?>
@@ -108,25 +108,27 @@ function _s_get_pattern_section( $args = array() ) {
 /**
  * Build a global pattern element.
  *
- * @param   array  $args  The array of colors or fonts.
- * @return  string        The pattern documentation.
- *
+ * @param array $args The array of colors or fonts.
+ * @return string The pattern documentation.
  * @author Carrie Forde
  */
 function _s_get_global_pattern_section( $args = array() ) {
 
+	// Set defaults.
 	$defaults = array(
-		'global_type' => '', // Can be 'colors' or 'fonts'.
-		'title'       => '', // Give the section a title
+		'global_type' => '',      // Can be 'colors' or 'fonts'.
+		'title'       => '',      // Give the section a title
 		'arguments'   => array(), // Use key => value pairs to pass colors or fonts.
 	);
+
+	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
 	ob_start(); ?>
 
 	<section class="pattern-section">
 		<header class="pattern-section-header">
-			<h2 class="pattern-section-title"><?php esc_html_e( $args['title'] ); ?></h2>
+			<h2 class="pattern-section-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header>
 
 		<div class="pattern-section-content">
@@ -144,9 +146,9 @@ function _s_get_global_pattern_section( $args = array() ) {
 					foreach ( $colors as $name => $hex ) :
 						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
 
-						<div class="swatch" style="background-color: <?php esc_attr_e( $hex ); ?>;">
-							<header><?php esc_html_e( $name ); ?></header>
-							<footer><?php esc_html_e( $color_var ); ?></footer>
+						<div class="swatch" style="background-color: <?php echo esc_attr( $hex ); ?>;">
+							<header><?php echo esc_html( $name ); ?></header>
+							<footer><?php echo esc_html( $color_var ); ?></footer>
 						</div><!-- .swatch -->
 
 					<?php endforeach; ?>
@@ -163,11 +165,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 					foreach ( $fonts as $name => $family ) :
 						$font_var = '$font-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
 
-						<div style="font-family: <?php esc_attr_e( $family ); ?>"><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></div>
-
-						<div style="font-family: <?php esc_attr_e( $family ); ?>"><em><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></em></div>
-
-						<div style="font-family: <?php esc_attr_e( $family ); ?>"><strong><?php esc_html_e( $font_var ); ?>: <?php esc_html_e( $family ); ?></strong></div>
+						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
 					</div>
 					<?php break; ?>
@@ -178,7 +176,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 	<?php return ob_get_clean();
 }
 
-// Start Template Partterns
+// Start Template Partterns.
 get_header(); ?>
 
 	<div class="wrap">
@@ -205,10 +203,10 @@ get_header(); ?>
 				/**
 				 * Colors.
 				 */
-				echo _s_get_global_pattern_section( array(
-					'global_type'  => 'colors',
-					'title'        => 'Colors',
-					'arguments'    => array(
+				echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
+					'global_type' => 'colors',
+					'title'       => 'Colors',
+					'arguments'   => array(
 						'Blue'         => '#21759b',
 						'Light Yellow' => '#fff9c0',
 						'Black'        => '#000000',
@@ -219,7 +217,7 @@ get_header(); ?>
 				/**
 				 * Fonts.
 				 */
-				echo _s_get_global_pattern_section( array(
+				echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
 					'global_type'  => 'fonts',
 					'title'        => 'Fonts',
 					'arguments'    => array(
@@ -233,71 +231,71 @@ get_header(); ?>
 				/**
 				 * H1.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H1',
-					'description'  => 'Display an H1',
-					'usage'        => '<h1>This is a headline</h1> or <div class="h1">This is a headline</div>',
-					'output'       => '<h1>This is a headline one</h1>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H1',
+					'description' => 'Display an H1',
+					'usage'       => '<h1>This is a headline</h1> or <div class="h1">This is a headline</div>',
+					'output'      => '<h1>This is a headline one</h1>',
 				) );
 
 				/**
 				 * H2.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H2',
-					'description'  => 'Display an H2',
-					'usage'        => '<h2>This is a headline</h2> or <div class="h2">This is a headline</div>',
-					'output'       => '<h2>This is a headline two</h2>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H2',
+					'description' => 'Display an H2',
+					'usage'       => '<h2>This is a headline</h2> or <div class="h2">This is a headline</div>',
+					'output'      => '<h2>This is a headline two</h2>',
 				) );
 
 				/**
 				 * H3.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H3',
-					'description'  => 'Display an H3',
-					'usage'        => '<h3>This is a headline</h3> or <div class="h3">This is a headline</div>',
-					'output'       => '<h3>This is a headline three</h3>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H3',
+					'description' => 'Display an H3',
+					'usage'       => '<h3>This is a headline</h3> or <div class="h3">This is a headline</div>',
+					'output'      => '<h3>This is a headline three</h3>',
 				) );
 
 				/**
 				 * H4.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H4',
-					'description'  => 'Display an H4',
-					'usage'        => '<h4>This is a headline</h4> or <div class="h4">This is a headline</div>',
-					'output'       => '<h4>This is a headline four</h4>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H4',
+					'description' => 'Display an H4',
+					'usage'       => '<h4>This is a headline</h4> or <div class="h4">This is a headline</div>',
+					'output'      => '<h4>This is a headline four</h4>',
 				) );
 
 				/**
 				 * H5.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H5',
-					'description'  => 'Display an H5',
-					'usage'        => '<h5>This is a headline</h5> or <div class="h5">This is a headline</div>',
-					'output'       => '<h5>This is a headline five</h5>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H5',
+					'description' => 'Display an H5',
+					'usage'       => '<h5>This is a headline</h5> or <div class="h5">This is a headline</div>',
+					'output'      => '<h5>This is a headline five</h5>',
 				) );
 
 				/**
 				 * H6.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'H6',
-					'description'  => 'Display an H6',
-					'usage'        => '<h6>This is a headline</h6> or <div class="h6">This is a headline</div>',
-					'output'       => '<h6>This is a headline six</h6>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'H6',
+					'description' => 'Display an H6',
+					'usage'       => '<h6>This is a headline</h6> or <div class="h6">This is a headline</div>',
+					'output'      => '<h6>This is a headline six</h6>',
 				) );
 
 				/**
 				 * SVGs.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'SVG',
-					'description'  => 'Display inline SVGs.',
-					'usage'        => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
-					'parameters'   => array(
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'SVG',
+					'description' => 'Display inline SVGs.',
+					'usage'       => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
+					'parameters'  => array(
 						'$args' => '(required) Configuration arguments.',
 					),
 					'arguments'    => array(
@@ -311,21 +309,21 @@ get_header(); ?>
 				/**
 				 * Button.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'Button',
-					'description'  => 'Display a button.',
-					'usage'        => '<button class="button" href="#">Click Me</button>',
-					'output'       => '<button class="button">Click Me</button>',
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'Button',
+					'description' => 'Display a button.',
+					'usage'       => '<button class="button" href="#">Click Me</button>',
+					'output'      => '<button class="button">Click Me</button>',
 				) );
 
 				/**
 				 * Search Form.
 				 */
-				echo _s_get_pattern_section( array(
-					'title'        => 'Search Form',
-					'description'  => 'Display the search form.',
-					'usage'        => '<?php get_search_form(); ?>',
-					'output'       => get_search_form(),
+				echo _s_get_pattern_section( array( // WPCS: XSS OK.
+					'title'       => 'Search Form',
+					'description' => 'Display the search form.',
+					'usage'       => '<?php get_search_form(); ?>',
+					'output'      => get_search_form(),
 				) );
 
 				?>
