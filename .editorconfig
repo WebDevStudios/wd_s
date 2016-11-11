@@ -18,7 +18,7 @@ charset = utf-8
 indent_style = tab
 indent_size = 4
 
-# Matches the exact files either package.json or .travis.yml
-[{package.json,.travis.yml}]
+# Matches the exact files
+[{package.json,bower.json,.bowerrc,.eslintrc,.travis.yml,.sass-lint.yml,phpcs.xml}]
 indent_style = space
 indent_size = 2
