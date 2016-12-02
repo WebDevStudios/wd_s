@@ -6,6 +6,9 @@
 window.wdsModal = {};
 
 ( function ( window, $, app ) {
+
+	var $modal_toggle;
+
 	// Constructor.
 	app.init = function () {
 		app.cache();
@@ -44,6 +47,9 @@ window.wdsModal = {};
 
 	// Open the modal.
 	app.openModal = function () {
+		// Store the modal toggle element
+		$modal_toggle = $( this );
+
 		// Figure out which modal we're opening and store the object.
 		var $modal = $( $( this ).data( 'target' ) );
 
@@ -76,6 +82,10 @@ window.wdsModal = {};
 
 		// Remove the body class.
 		app.$c.body.removeClass( 'modal-open' );
+
+		// Revert focus back to toggle element
+		$modal_toggle.focus();
+
 	};
 
 	// Close if "esc" key is pressed.
