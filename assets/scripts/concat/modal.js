@@ -8,6 +8,7 @@ window.wdsModal = {};
 ( function ( window, $, app ) {
 
 	var $modal_toggle;
+	var $focusable_children;
 
 	// Constructor.
 	app.init = function () {
@@ -59,8 +60,17 @@ window.wdsModal = {};
 		// Add body class.
 		app.$c.body.addClass( 'modal-open' );
 
-		// Shift keyboard focus to modal
-		$modal.focus();
+		// Find the focusable children of the modal.
+		// This list may be incomplete, really wish jQuery had the :focusable pseudo like jQuery UI does.
+		// For more about :input see: https://api.jquery.com/input-selector/
+		$focusable_children = $modal.find('a, :input, [tabindex]');
+
+		// Ideally, there is always one (the close button), but you never know.
+		if ( $focusable_children.length > 0 ) {
+			// Shift focus to the first focusable element.
+			$focusable_children[0].focus();
+		}
+
 	};
 
 	// Close the modal.
@@ -102,6 +112,11 @@ window.wdsModal = {};
 			app.closeModal();
 		}
 	};
+
+	// Find the first focusable element inside of the modal.
+	app.findFirstFocusChild = function( $modal ) {
+
+	}
 
 	// Engage!
 	$( app.init );
