@@ -125,9 +125,6 @@ window.wdsModal = {};
 			var $focused = $( ':focus' );
 			var focusIndex = $focusableChildren.index( $focused );
 
-			console.log( $focused, document.activeElement );
-			console.log( focusIndex );
-
 			if ( 0 === focusIndex && event.shiftKey ) {
 				// If this is the first focusable element, and shift is held when pressing tab, go back to last focusable element.
 				$focusableChildren[ $focusableChildren.length - 1 ].focus();
