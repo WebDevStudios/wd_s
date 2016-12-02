@@ -52,6 +52,9 @@ window.wdsModal = {};
 
 		// Add body class.
 		app.$c.body.addClass( 'modal-open' );
+
+		// Shift keyboard focus to modal
+		$modal.focus();
 	};
 
 	// Close the modal.
