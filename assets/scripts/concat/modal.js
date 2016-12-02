@@ -113,11 +113,6 @@ window.wdsModal = {};
 		}
 	};
 
-	// Find the first focusable element inside of the modal.
-	app.findFirstFocusChild = function( $modal ) {
-
-	}
-
 	// Engage!
 	$( app.init );
 } )( window, jQuery, window.wdsModal );
