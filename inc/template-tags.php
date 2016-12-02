@@ -78,49 +78,6 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function _s_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( '_s_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false.
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in _s_categorized_blog.
- */
-function _s_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return false;
-	}
-	// Like, beat it. Dig?
-	delete_transient( '_s_categories' );
-}
-add_action( 'delete_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
-
-/**
  * Return SVG markup.
  *
  * @param  array  $args {
@@ -316,42 +273,6 @@ function _s_get_post_image_uri( $size = 'thumbnail' ) {
 	}
 
 	return $media_url;
-}
-
-/**
- * Get an attachment ID from it's URL.
- *
- * @param string $attachment_url The URL of the attachment.
- * @return int The attachment ID.
- */
-function _s_get_attachment_id_from_url( $attachment_url = '' ) {
-
-	global $wpdb;
-
-	$attachment_id = false;
-
-	// If there is no url, return.
-	if ( '' === $attachment_url ) {
-		return false;
-	}
-
-	// Get the upload directory paths.
-	$upload_dir_paths = wp_upload_dir();
-
-	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
-	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
-
-		// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
-		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
-
-		// Remove the upload path base directory from the attachment URL.
-		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
-
-		// Do something with $result.
-		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS: db call ok , cache ok.
-	}
-
-	return $attachment_id;
 }
 
 /**
