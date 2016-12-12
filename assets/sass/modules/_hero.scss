@@ -11,12 +11,12 @@
 	z-index: 1;
 
 	// Transparent overlay (optional).
-	&:after {
+	&::after {
 		@include position(absolute, 0 0 null null);
 		@include size(100% 100%);
 
 		background-color: rgba($color-black, 0.6);
-		content: '';
+		content: "";
 		z-index: 2;
 	} // &:after
 

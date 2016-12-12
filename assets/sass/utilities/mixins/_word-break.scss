@@ -27,6 +27,6 @@
 
 
 @mixin word-break($word-break: keep-all) {
-	word-wrap: break-word;
 	word-break: $word-break;
+	word-wrap: break-word;
 }

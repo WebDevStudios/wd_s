@@ -13,9 +13,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<?php global $is_IE; if ( $is_IE ) : ?>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<?php endif; ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -38,9 +35,9 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				$description = get_bloginfo( 'description', 'display' ); ?>
+				<?php if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; // WPCS: xss ok. ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
@@ -49,12 +46,12 @@
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'menu dropdown'
+						'menu_class'     => 'menu dropdown',
 					) );
 				?>
 			</nav><!-- #site-navigation -->
 
 		</div><!-- .wrap -->
-	</header><!-- #masthead -->
+	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">

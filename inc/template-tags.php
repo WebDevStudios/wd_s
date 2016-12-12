@@ -8,117 +8,74 @@
  */
 
 if ( ! function_exists( '_s_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function _s_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function _s_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf(
+			esc_html_x( 'Posted on %s', 'post date', '_s' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+
+		$byline = sprintf(
+			esc_html_x( 'by %s', 'post author', '_s' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		);
+
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', '_s' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', '_s' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-}
 endif;
 
 if ( ! function_exists( '_s_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function _s_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
-		if ( $categories_list && _s_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function _s_entry_footer() {
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+			if ( $categories_list && _s_categorized_blog() ) {
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
+			if ( $tags_list ) {
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
 		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
+			echo '</span>';
 		}
-	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
-		echo '</span>';
+		edit_post_link(
+			sprintf(
+				/* translators: %s: Name of current post */
+				esc_html__( 'Edit %s', '_s' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', '_s' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
-}
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function _s_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( '_s_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false.
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in _s_categorized_blog.
- */
-function _s_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return false;
-	}
-	// Like, beat it. Dig?
-	delete_transient( '_s_categories' );
-}
-add_action( 'delete_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
 
 /**
  * Return SVG markup.
@@ -148,7 +105,7 @@ function _s_get_svg( $args = array() ) {
 	$defaults = array(
 		'icon'  => '',
 		'title' => '',
-		'desc'  => ''
+		'desc'  => '',
 	);
 
 	// Parse args.
@@ -158,13 +115,13 @@ function _s_get_svg( $args = array() ) {
 	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
 	// Set aria hidden.
-	$aria_hidden =  ' aria-hidden="true"';
+	$aria_hidden = ' aria-hidden="true"';
 
 	// Set ARIA.
 	$aria_labelledby = '';
 	if ( $args['title'] && $args['desc'] ) {
 		$aria_labelledby = ' aria-labelledby="title-ID desc-ID"';
-		$aria_hidden =  '';
+		$aria_hidden = '';
 	}
 
 	// Begin SVG markup.
@@ -193,7 +150,7 @@ function _s_get_svg( $args = array() ) {
 /**
  * Trim the title length.
  *
- * @param  array  $args  Parameters include length and more.
+ * @param array $args Parameters include length and more.
  * @return string        The shortened excerpt.
  */
 function _s_get_the_title( $args = array() ) {
@@ -201,7 +158,7 @@ function _s_get_the_title( $args = array() ) {
 	// Set defaults.
 	$defaults = array(
 		'length'  => 12,
-		'more'    => '...'
+		'more'    => '...',
 	);
 
 	// Parse args.
@@ -222,8 +179,8 @@ add_filter( 'the_content_more_link', '_s_content_more_link' );
 /**
  * Customize the [...] on the_excerpt();
  *
- * @param string   $more     The current $more string.
- * @return string            Replace with "Read More..."
+ * @param string $more The current $more string.
+ * @return string Replace with "Read More..."
  */
 function _s_excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
@@ -233,15 +190,15 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
 /**
  * Limit the excerpt length.
  *
- * @param  array  $args  Parameters include length and more.
- * @return string        The shortened excerpt.
+ * @param array $args Parameters include length and more.
+ * @return string The shortened excerpt.
  */
 function _s_get_the_excerpt( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
 		'length' => 20,
-		'more'   => '...'
+		'more'   => '...',
 	);
 
 	// Parse args.
@@ -254,7 +211,7 @@ function _s_get_the_excerpt( $args = array() ) {
 /**
  * Echo an image, no matter what.
  *
- * @param string  $size  The image size you want to display.
+ * @param string $size The image size you want to display.
  */
 function _s_get_post_image( $size = 'thumbnail' ) {
 
@@ -263,7 +220,7 @@ function _s_get_post_image( $size = 'thumbnail' ) {
 		return the_post_thumbnail( $size );
 	}
 
-	// Check for any attached image
+	// Check for any attached image.
 	$media = get_attached_media( 'image', get_the_ID() );
 	$media = current( $media );
 
@@ -287,8 +244,8 @@ function _s_get_post_image( $size = 'thumbnail' ) {
 /**
  * Return an image URI, no matter what.
  *
- * @param  string  $size  The image size you want to return.
- * @return string         The image URI.
+ * @param  string $size The image size you want to return.
+ * @return string The image URI.
  */
 function _s_get_post_image_uri( $size = 'thumbnail' ) {
 
@@ -319,43 +276,6 @@ function _s_get_post_image_uri( $size = 'thumbnail' ) {
 }
 
 /**
- * Get an attachment ID from it's URL.
- *
- * @param  string  $attachment_url  The URL of the attachment.
- * @return int                      The attachment ID.
- */
-function _s_get_attachment_id_from_url( $attachment_url = '' ) {
-
-	global $wpdb;
-
-	$attachment_id = false;
-
-	// If there is no url, return.
-	if ( '' == $attachment_url ) {
-		return false;
-	}
-
-	// Get the upload directory paths.
-	$upload_dir_paths = wp_upload_dir();
-
-	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
-	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
-
-		// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
-		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
-
-		// Remove the upload path base directory from the attachment URL.
-		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
-
-		// Finally, run a custom database query to get the attachment ID from the modified attachment URL.
-		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
-
-	}
-
-	return $attachment_id;
-}
-
-/**
  * Echo the copyright text saved in the Customizer.
  */
 function _s_get_copyright_text() {
@@ -380,9 +300,9 @@ function _s_get_copyright_text() {
 function _s_get_social_share() {
 
 	// Build the sharing URLs.
-	$twitter_url  = 'https://twitter.com/share?text=' . urlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode ( get_the_permalink() );
-	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode ( get_the_permalink() );
-	$linkedin_url = 'https://www.linkedin.com/shareArticle?title=' . urlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode ( get_the_permalink() );
+	$twitter_url  = 'https://twitter.com/share?text=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
+	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( get_the_permalink() );
+	$linkedin_url = 'https://www.linkedin.com/shareArticle?title=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
 
 	// Start the markup.
 	ob_start(); ?>
@@ -391,19 +311,19 @@ function _s_get_social_share() {
 		<ul class="social-icons menu menu-horizontal">
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $twitter_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'twitter-square', 'title' => 'Twitter', 'desc' => __( 'Share on Twitter', '_s' ) ) ); ?>
+					<?php echo _s_get_svg( array( 'icon' => 'twitter-square', 'title' => 'Twitter', 'desc' => __( 'Share on Twitter', '_s' ) ) ); // WPCS: XSS ok. ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $facebook_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'facebook-square', 'title' => 'Facebook', 'desc' => __( 'Share on Facebook', '_s' ) ) ); ?>
+					<?php echo _s_get_svg( array( 'icon' => 'facebook-square', 'title' => 'Facebook', 'desc' => __( 'Share on Facebook', '_s' ) ) ); // WPCS: XSS ok. ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $linkedin_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=475, height=505' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'linkedin-square', 'title' => 'LinkedIn', 'desc' => __( 'Share on LinkedIn', '_s' ) ) ); ?>
+					<?php echo _s_get_svg( array( 'icon' => 'linkedin-square', 'title' => 'LinkedIn', 'desc' => __( 'Share on LinkedIn', '_s' ) ) ); // WPCS: XSS ok. ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
 				</a>
 			</li>
@@ -412,14 +332,14 @@ function _s_get_social_share() {
 
 	<?php
 	return ob_get_clean();
- }
+}
 
 /**
  * Output the mobile navigation
  */
 function _s_get_mobile_navigation_menu() {
 
-	// Figure out which menu we're pulling
+	// Figure out which menu we're pulling.
 	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
 
 	// Start the markup.
@@ -427,14 +347,14 @@ function _s_get_mobile_navigation_menu() {
 	?>
 
 	<nav id="mobile-menu" class="mobile-nav-menu">
-		<button class="close-mobile-menu"><span class="screen-reader-text"><?php _e( 'Close menu', '_s' ); ?></span><?php echo _s_get_svg( array( 'icon' => 'close' ) ); ?></button>
+		<button class="close-mobile-menu"><span class="screen-reader-text"><?php echo esc_html_e( 'Close menu', '_s' ); ?></span><?php echo _s_get_svg( array( 'icon' => 'close' ) ); // WPCS: XSS ok. ?></button>
 		<?php
 			wp_nav_menu( array(
 				'theme_location' => $mobile_menu,
 				'menu_id'        => 'primary-menu',
 				'menu_class'     => 'menu dropdown mobile-nav',
 				'link_before'    => '<span>',
-				'link_after'     => '</span>'
+				'link_after'     => '</span>',
 			) );
 		?>
 	</nav>
@@ -450,29 +370,26 @@ function _s_get_mobile_navigation_menu() {
 function _s_get_social_network_links() {
 
 	// Create an array of our social links for ease of setup.
-	// Change the order of the networks in this array to change the output order
+	// Change the order of the networks in this array to change the output order.
 	$social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
 
-	// Kickoff our output buffer
+	// Kickoff our output buffer.
 	ob_start(); ?>
 
 	<ul class="social-icons">
 	<?php
-	// Loop through our network array
-	foreach( $social_networks as $network ) :
+	// Loop through our network array.
+	foreach ( $social_networks as $network ) :
 
-		// Look for the social network's URL
+		// Look for the social network's URL.
 		$network_url = get_theme_mod( '_s_' . $network . '_link' );
 
-		// Only display the list item if a URL is set
-		if ( isset( $network_url ) && ! empty ( $network_url ) ) : ?>
-			<li class="social-icon <?php esc_attr_e( $network ); ?>">
+		// Only display the list item if a URL is set.
+		if ( isset( $network_url ) && ! empty( $network_url ) ) : ?>
+			<li class="social-icon <?php echo esc_attr( $network ); ?>">
 				<a href="<?php echo esc_url( $network_url ); ?>">
-					<?php echo _s_get_svg( array(
-						'icon'  => $network . '-square',
-						'title' => sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) )
-					) ); ?>
-					<span class="screen-reader-text"><?php echo sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); ?></span>
+					<?php echo _s_get_svg( array( 'icon' => $network . '-square', 'title' => sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ) ) ); // WPCS: XSS ok. ?>
+					<span class="screen-reader-text"><?php echo sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
 				</a>
 			</li><!-- .social-icon -->
 		<?php endif;

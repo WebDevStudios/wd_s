@@ -54,7 +54,7 @@ a {
 		ul {
 			@include position(absolute, rem(24) null null -999em);
 
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 3px 3px rgba($color-black, 0.2);
 			float: left;
 			z-index: 99999;
 
@@ -89,9 +89,9 @@ a {
 
 		// Display sub-menu on hover
 		li:hover > ul,
-		li.focus > ul {
+		.focus > ul {
 			left: auto;
-		} // li:hover > ul, li.focus > ul
+		} // li:hover > ul, .focus > ul
 
 		// Menu items
 		li {

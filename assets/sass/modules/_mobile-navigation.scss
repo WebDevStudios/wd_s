@@ -84,14 +84,14 @@
 			@include transition(opacity 0.5s ease);
 
 			background-color: $color-white;
-			border-top: 1px solid rgba($color-black, .1);
+			border-top: 1px solid rgba($color-black, 0.1);
 			flex-grow: 1;
 			height: rem(64);
 			text-align: center;
 
 			&:hover {
 				background-color: $color-gallery;
-			} // &:hover 
+			} // &:hover
 
 			> a {
 				display: block;
@@ -124,7 +124,7 @@
 	z-index: -1;
 } // .mobile-nav-menu-hidden
 
-// Show hidden mobile nav menu 
+// Show hidden mobile nav menu
 .mobile-menu-more:not(.sub-menu-more) {
 
 	.mobile-nav-menu-hidden {
@@ -140,7 +140,7 @@
 
 		li {
 			@include position(relative, null 0 0 null);
-			
+
 			clear: both;
 			display: block;
 			float: right;
@@ -165,13 +165,13 @@
 } // .mobile-nav-menu.more
 
 // Style the more/fly-in menu
-.mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more,
+.mobile-nav-menu .mobile-nav .mobile-nav-menu-more,
 .mobile-nav-menu .mobile-nav > .sub-menu {
 	@include position(absolute, 0 null null 0);
 
 	background-color: $color-gray;
 	height: 100vh;
-} // .mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more, .mobile-nav-menu .mobile-nav > .sub-menu 
+} // .mobile-nav-menu .mobile-nav ul.mobile-nav-menu-more, .mobile-nav-menu .mobile-nav > .sub-menu
 
 .mobile-nav-menu .mobile-nav {
 
@@ -340,25 +340,25 @@
 			bottom: 0;
 			left: 0;
 
-			&:before,
-			&:after {
+			&::before,
+			&::after {
 				@include position(fixed, null null 0 null);
 				@include size(25% 100%);
 
-				content: '';
-				pointer-events: none; /* so the text is still selectable */
+				content: "";
+				pointer-events: none; // So the text is still selectable.
 				z-index: 20;
-			} // &:before, &:after
+			} // &::before, &::after
 
-			&:after {
-				background: linear-gradient(to left, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 100%);
+			&::after {
+				background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 				right: 0;
-			} // &:after
+			} // &::after
 
-			&:before {
-				background: linear-gradient(to left, rgba(255,255,255, 0) 0%, rgba(255,255,255, 1) 100%);
+			&::before {
+				background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 				left: 0;
-			} // &:before
+			} // &::before
 		} // > div
 	} // .mobile-nav-menu
 } // .no-js
