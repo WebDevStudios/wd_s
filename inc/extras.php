@@ -238,3 +238,74 @@ function _s_placeholder_image( $args = array() ) {
 
 	return "<img src='$url' width='$width' height='$height' alt='$alt' />";
 }
+
+/**
+ * Returns an photo from Unsplash.com wrapped in an <img> that can be used
+ * in a theme. There are limited category and search capabilities to attempt
+ * matching the site subject.
+ *
+ * @author Ben Lobaugh
+ * @throws Exception Details of missing parameters.
+ * @param array $args {.
+ *		@type int $width
+ *		@type int $height
+ *		@type string $category Optional. Maybe be one of: buildings, food, nature, people, technology, objects
+ *		@type string $keywords Optional. Comma seperated list of keywords, such as: sailboat, water
+ * }
+ * @return string
+ **/
+function _s_placeholder_unsplash( $args = array() ) {
+	$default_args = array(
+		'width'				=> '',
+		'height'			=> '',
+		'category'			=> '',
+		'keywords'			=> '',
+	);
+
+	$args = wp_parse_args( $args, $default_args );
+
+	$valid_categories = array(
+		'buildings',
+		'food',
+		'nature',
+		'people',
+		'technology',
+		'objects',
+	);
+
+	// If there is an invalid category lets erase it.
+	if ( ! empty( $args['category'] )  && ! in_array( $args['category'], $valid_categories, true ) ) {
+		$args['category'] = '';
+	}
+
+	// Perform some quick data validation.
+	if ( ! is_numeric( $args['width'] ) ) {
+		throw new Exception( __( 'Width must be an integer', '_s' ) );
+	}
+
+	if ( ! is_numeric( $args['height'] ) ) {
+		throw new Exception( __( 'Height must be an integer', '_s' ) );
+	}
+
+	// Set up the url to the image.
+	$url = 'https://source.unsplash.com/';
+
+	// Apply a category if desired.
+	if ( ! empty( $args['category'] ) ) {
+		$category = rawurlencode( $args['category'] );
+		$url .= "category/$category/";
+	}
+
+	// Dimensions go after category but before search keywords.
+	$url .= "{$args['width']}x{$args['height']}";
+
+	if ( ! empty( $args['keywords'] ) ) {
+		$keywords = rawurlencode( $args['keywords'] );
+		$url .= "?$keywords";
+	}
+
+	// Text that will be utilized by screen readers.
+	$alt = apply_filters( '_s_placeholder_image_alt', __( 'WebDevStudios Placeholder Image', '_s' ) );
+
+	return "<img src='$url' width='{$args['width']}' height='{$args['height']}' alt='$alt' />";
+}
