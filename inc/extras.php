@@ -189,15 +189,39 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  *
  * @author Ben Lobaugh
  *
- * @param integer $width
- * @param integer $height
- * @param string $background_color Optional
- * @param string $text_color Optional
+ * @param array $args {
+ *		@type int $width
+ *		@type int $height
+ *		@type string $background_color
+ *		@type string $text_color
+ * }
  * @return string
  **/
-function _s_placeholder_image( $width, $height, $background_color = 'dddddd', $text_color = '000000' ) {
-	
+function _s_placeholder_image( $args = array() ) {
+	$default_args = array(
+		'width'				=> '',
+		'height'			=> '',
+		'background_color'	=> 'dddddd',
+		'text_color'		=> '000000',
+	);	
+
+	$args = wp_parse_args( $args, $default_args );
+
+	// Extract the vars we want to work with
+	$width 				= $args['width'];
+	$height			 	= $args['height'];
+	$background_color	= $args['background_color'];
+	$text_color 		= $args['text_color'];
+
 	// Perform some quick data validation
+	if ( ! is_numeric( $width ) ) {
+		throw new Exception( "Width must be an integer" );
+	}
+
+	if ( ! is_numeric( $height ) ) {
+		throw new Exception( "Height must be an integer" );
+	}
+
 	if ( ! ctype_xdigit( $background_color ) ) {
 		throw new Exception( "Please provide a valid hex color value for background_color" );
 	}
