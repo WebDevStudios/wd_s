@@ -93,3 +93,34 @@ window.wdsModal = {};
 	// Engage!
 	$( app.init );
 } )( window, jQuery, window.wdsModal );
+
+// Load the yt iframe api js file from youtube.
+// NOTE THE IFRAME URL MUST HAVE 'enablejsapi=1' appended to it.
+// example: src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
+var tag = document.createElement('script');
+tag.id = 'iframe-yt';
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// This var and function have to be available globally due to yt js iframe api.
+var player;
+function onYouTubeIframeAPIReady() {
+	var modal = jQuery('div.modal-open');
+	var iframeid = modal.find('iframe').attr('id');
+
+	player = new YT.Player( iframeid , {
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		}
+	});
+}
+
+function onPlayerReady(event) {
+
+}
+
+function onPlayerStateChange() {
+	jQuery( window ).focus();
+}
