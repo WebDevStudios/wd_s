@@ -181,3 +181,36 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 
 	return $attachment_id;
 }
+
+/**
+ * Returns an <img> that can be used anywhere a placeholder image is needed
+ * in a theme. The image is a simple colored block with the image dimensions
+ * displayed in the middle.
+ *
+ * @author Ben Lobaugh
+ *
+ * @param integer $width
+ * @param integer $height
+ * @param string $background_color Optional
+ * @param string $text_color Optional
+ * @return string
+ **/
+function _s_placeholder_image( $width, $height, $background_color = 'dddddd', $text_color = '000000' ) {
+	
+	// Perform some quick data validation
+	if ( ! ctype_xdigit( $background_color ) ) {
+		throw new Exception( "Please provide a valid hex color value for background_color" );
+	}
+
+	if ( ! ctype_xdigit( $text_color ) ) {
+		throw new Exception( "Please provide a valid hex color value for text_color" );
+	}
+
+	// Set up the url to the image
+	$url = "http://placeholder.wdslab.com/i/{$width}x$height/$background_color/$text_color";
+
+	// Text that will be utilized by screen readers
+	$alt = apply_filters( '_s_placeholder_image_alt', 'WebDevStudios Placeholder Image' );
+
+	return "<img src='$url' width='$width' height='$height' alt='$alt' />";
+}
