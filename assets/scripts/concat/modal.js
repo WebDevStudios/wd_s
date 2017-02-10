@@ -88,8 +88,15 @@ window.wdsModal = {};
 		// Get the iframe src URL.
 		var url = $iframe.attr( 'src' );
 
-		// Remove the source URL, then add it back, so the video can be played again later.
-		$iframe.attr( 'src', '' ).attr( 'src', url );
+		// Removing/Readding the URL will effectively break the YouTube API.
+		// So let's not do that when the iframe URL contains the enablejsapi parameter.
+		if ( ! url.includes( 'enablejsapi=1' ) ) {
+			// Remove the source URL, then add it back, so the video can be played again later.
+			$iframe.attr( 'src', '' ).attr( 'src', url );
+		} else {
+			// Use the YouTube API to stop the video.
+			player.stopVideo();
+		}
 
 		// Finally, hide the modal.
 		$modal.removeClass( 'modal-open' );
