@@ -68,6 +68,8 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
