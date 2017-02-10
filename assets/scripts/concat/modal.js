@@ -169,6 +169,7 @@ function onPlayerReady(event) {
 
 }
 
-function onPlayerStateChange() {
-	jQuery( window ).focus();
+function onPlayerStateChange( event ) {
+	// Set focus to the first focusable element inside of the modal the player is in.
+	jQuery( event.target.a ).parents( '.modal' ).find('a, :input, [tabindex]').first().focus();
 }
