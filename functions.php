@@ -132,11 +132,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer/customizer.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
@@ -160,3 +155,8 @@ require get_template_directory() . '/inc/hooks.php';
  * Load custom queries.
  */
 require get_template_directory() . '/inc/queries.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer/customizer.php';
