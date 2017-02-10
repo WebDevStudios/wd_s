@@ -1,110 +1,84 @@
 <?php
 /**
- * _s Theme Customizer.
+ * Set up the theme customizer.
  *
  * @package _s
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * Include other customizer files.
  */
-function _s_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-	// Add our social link options.
-	$wp_customize->add_section(
-		'_s_social_links_section',
-		array(
-			'title'       => esc_html__( 'Social Links', '_s' ),
-			'description' => esc_html__( 'These are the settings for social links. Please limit the number of social links to 5.', '_s' ),
-			'priority'    => 90,
-		)
-	);
-
-	// Create an array of our social links for ease of setup.
-	$social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
-
-	// Loop through our networks to setup our fields.
-	foreach ( $social_networks as $network ) {
-
-		$wp_customize->add_setting(
-			'_s_' . $network . '_link',
-			array(
-				'default' => '',
-				'sanitize_callback' => '_s_sanitize_customizer_url',
-	        )
-	    );
-	    $wp_customize->add_control(
-	        '_s_' . $network . '_link',
-	        array(
-	            'label'   => sprintf( esc_html__( '%s Link', '_s' ), ucwords( $network ) ),
-	            'section' => '_s_social_links_section',
-	            'type'    => 'text',
-	        )
-	    );
-	}
-
-	// Add our Footer Customization section section.
-	$wp_customize->add_section(
-		'_s_footer_section',
-		array(
-			'title'    => esc_html__( 'Footer Customization', '_s' ),
-			'priority' => 90,
-		)
-	);
-
-	// Add our copyright text field.
-	$wp_customize->add_setting(
-		'_s_copyright_text',
-		array(
-			'default' => '',
-		)
-	);
-	$wp_customize->add_control(
-		'_s_copyright_text',
-		array(
-			'label'       => esc_html__( 'Copyright Text', '_s' ),
-			'description' => esc_html__( 'The copyright text will be displayed beneath the menu in the footer.', '_s' ),
-			'section'     => '_s_footer_section',
-			'type'        => 'text',
-			'sanitize'    => 'html',
-		)
-	);
+function _s_include_custom_controls() {
+	require get_template_directory() . '/inc/customizer/panels.php';
+	require get_template_directory() . '/inc/customizer/sections.php';
+	require get_template_directory() . '/inc/customizer/settings.php';
+	require get_template_directory() . '/inc/customizer/tinymce.php';
 }
-add_action( 'customize_register', '_s_customize_register' );
+add_action( 'customize_register', '_s_include_custom_controls', -999 );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function _s_customize_preview_js() {
+	wp_enqueue_script( 'tiny_mce' );
+	wp_enqueue_script( '_s-customize-tinymce', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( '_s-customizer', get_template_directory_uri() . '/inc/customizer/assets/scripts/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
 
 /**
- * Sanitize our customizer text inputs.
+ * Add live preview support via postMessage.
  *
- * @param  string $input Text saved in Customizer input fields.
- * @return string        Sanitized output.
- *
- * @author Corey Collins
+ * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29
+ * @param object $wp_customize An instance of WP_Customize_Manager class.
+ * @author Greg Rickaby
  */
-function _s_sanitize_customizer_text( $input ) {
-	return sanitize_text_field( force_balance_tags( $input ) );
+function _s_live_preview_support( $wp_customize ) {
+
+	// Settings to apply live preview to.
+	$settings = array(
+		'blogname',
+		'blogdescription',
+		'_s_copyright_text',
+	);
+
+	// Loop through and add the live preview to each setting.
+	foreach ( (array) $settings as $setting_name ) {
+
+		// Try to get the customizer setting.
+		$setting = $wp_customize->get_setting( $setting_name );
+
+		// Skip if it is not an object to avoid notices.
+		if ( ! is_object( $setting ) ) {
+			continue;
+		}
+
+		// Set the transport to avoid page refresh.
+		$setting->transport = 'postMessage';
+	}
 }
+add_action( 'customize_register', '_s_live_preview_support', 999 );
 
 /**
- * Sanitize our customizer URL inputs.
+ * Add support for the fancy new edit icons.
  *
- * @param  string $input The URL we need to validate.
- * @return string        Sanitized output.
- *
- * @author Corey Collins
+ * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/
+ * @param object $wp_customize An instance of WP_Customize_Manager class.
+ * @author Greg Rickaby
  */
-function _s_sanitize_customizer_url( $input ) {
-	return esc_url( $input );
+function _s_selective_refresh_support( $wp_customize ) {
+
+	// The <div> classname to append edit icon too.
+	$settings = array(
+		'blogname'          => '.site-title a',
+		'blogdescription'   => '.site-description',
+		'_s_copyright_text' => '.site-info',
+	);
+
+	// Loop through, and add selector partials.
+	foreach ( (array) $settings as $setting => $selector ) {
+		$args = array( 'selector' => $selector );
+		$wp_customize->selective_refresh->add_partial( $setting, $args );
+	}
 }
+add_action( 'customize_register', '_s_selective_refresh_support' );
