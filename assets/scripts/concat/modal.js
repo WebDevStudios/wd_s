@@ -164,7 +164,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // This var and function have to be available globally due to yt js iframe api.
 var player;
 function onYouTubeIframeAPIReady() {
-	var modal = jQuery('div.modal');
+  var modal = jQuery('div.modal');
 	var iframeid = modal.find('iframe').attr('id');
 
 	player = new YT.Player( iframeid , {

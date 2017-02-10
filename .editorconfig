@@ -19,6 +19,6 @@ indent_style = tab
 indent_size = 4
 
 # Matches the exact files
-[{package.json,bower.json,.bowerrc,.eslintrc,.travis.yml,.sass-lint.yml,phpcs.xml}]
+[{package.json,bower.json,.bowerrc,.eslintrc.js,.travis.yml,.sass-lint.yml,phpcs.xml}]
 indent_style = space
 indent_size = 2

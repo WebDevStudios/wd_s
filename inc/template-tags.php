@@ -169,25 +169,6 @@ function _s_get_the_title( $args = array() ) {
 }
 
 /**
- * Customize "Read More" string on <!-- more --> with the_content();
- */
-function _s_content_more_link() {
-	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
-}
-add_filter( 'the_content_more_link', '_s_content_more_link' );
-
-/**
- * Customize the [...] on the_excerpt();
- *
- * @param string $more The current $more string.
- * @return string Replace with "Read More..."
- */
-function _s_excerpt_more( $more ) {
-	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
-}
-add_filter( 'excerpt_more', '_s_excerpt_more' );
-
-/**
  * Limit the excerpt length.
  *
  * @param array $args Parameters include length and more.
@@ -288,8 +269,8 @@ function _s_get_copyright_text() {
 		return false;
 	}
 
-	// Echo the text.
-	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
+	// Return the text.
+	return '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
 }
 
 /**
