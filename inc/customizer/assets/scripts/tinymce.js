@@ -4,16 +4,15 @@
  * Theme Customizer editor enhancements for a better user experience.
  */
 
-window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
-
-(function( window, document, $, app, undefined ) {
+window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
+( function( window, document, $, app, undefined ) {
 	'use strict';
 
 	/**
 	 * Config from WP localization
 	 * @type object
 	 */
-	app.l10n = window.wds_customizer_editor_config || {};
+	app.l10n = window.wdsAdditionalTinyMCE || {};
 
 	/**
 	 * Caches elements
@@ -32,19 +31,20 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 	 * @return  void
 	 */
 	app.init = function() {
-		// build cached elements
+
+		// Build cached elements.
 		app.cache();
 
-		// bail early if requirements aren't met
-		if ( ! app.meets_requirements() ) {
+		// Bail early if requirements aren't met.
+		if ( ! app.MeetsRequirements() ) {
 			return;
 		}
 
-		// rebind editors when a control section is clicked
-		$( '.control-section').on( 'click', app.bind_editors );
+		// Rebind editors when a control section is clicked.
+		$( '.control-section' ).on( 'click', app.bindEditors );
 
-		// update customizer option when tinymce is changed.
-		$( '.wds-customize-text-editor' ).find( 'textarea' ).on( 'change keyup', app.editor_updated );
+		// Update customizer option when tinymce is changed.
+		$( '.wds-customize-text-editor' ).find( 'textarea' ).on( 'change keyup', app.editorUpdated );
 	};
 
 	/**
@@ -52,21 +52,24 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 	 *
 	 * @return void
 	 */
-	app.bind_editors = function() {
+	app.bindEditors = function() {
+
 		// Was needed a timeout since RTE is not initialized when this code run.
-		setTimeout(function () {
+		setTimeout( function() {
 			for ( var i = 0; i < tinymce.editors.length; i++ ) {
-				tinymce.editors[i].onChange.add(function (ed, e) {
+
+				tinymce.editors[i].onChange.add( function ( ed, e ) {
+
 					// Update HTML view textarea (that is the one used to send the data to server).
 					ed.save();
 
-					// update the customize option.
+					// Update the customize option.
 					wp.customize( ed.id, function ( obj ) {
 						obj.set( ed.getContent() );
-					} );
+					});
                 });
             }
-        }, 1000);
+        }, 1000 );
 	};
 
 	/**
@@ -75,13 +78,13 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 	 * @param  obj evt 	JS event object.
 	 * @return void
 	 */
-	app.editor_updated = function( evt ) {
+	app.editorUpdated = function( evt ) {
 		var $me = $( this );
 
-		// update the customize option.
+		// Update the customize option.
 		wp.customize( this.id, function ( obj ) {
 			obj.set( $me.val() );
-		} );
+		});
 	};
 
 	/**
@@ -89,8 +92,8 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 	 *
 	 * @return bool True if requirements are met, false otherwise.
 	 */
-	app.meets_requirements = function() {
-		return ( $( '.wds-customize-text-editor' ).length > 0 );
+	app.MeetsRequirements = function() {
+		return ( 0 < $( '.wds-customize-text-editor' ).length  );
 	};
 
 	/**
@@ -99,7 +102,8 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 	 * @return void
 	 */
 	app.log = function( str ) {
-		// bail early if no console
+
+		// Bail early if no console.
 		if ( ! window.console ) {
 			return;
 		}
@@ -107,9 +111,9 @@ window.WDS_Customizer_Editor_Config = window.WDS_Customizer_Editor_Config || {};
 		window.console.log( str );
 	};
 
-	// fire init on document.ready
+	// Fire init on document.ready.
 	$( document ).ready( app.init );
 
 	return app;
 
-})( window, document, jQuery, window.WDS_Customizer_Editor_Config );
+})( window, document, jQuery, window.wdsAdditionalTinyMCE );
