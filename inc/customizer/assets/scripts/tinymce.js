@@ -93,7 +93,7 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	 * @return bool True if requirements are met, false otherwise.
 	 */
 	app.MeetsRequirements = function() {
-		return ( 0 < $( '.wds-customize-text-editor' ).length  );
+		return $( '.wds-customize-text-editor' ).length;
 	};
 
 	/**
