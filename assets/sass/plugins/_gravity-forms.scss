@@ -93,7 +93,7 @@ $gf-input-padding: $padding-input;
 		padding: $gf-input-padding;
 		width: 100%;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			width: 49%;
 		}
 	} // select
@@ -139,7 +139,7 @@ $gf-input-padding: $padding-input;
 	margin-left: 0;
 	width: 100% !important; // overrides GF !important
 
-	@include media($phone-landscape) {
+	@include grid-media($phone-landscape) {
 		width: 49% !important;
 	}
 } // .gform_wrapper .gform_body .gform_fields .gfield select, .gform_wrapper.gf_browser_chrome .gform_body .gform_fields .gfield select
@@ -215,7 +215,7 @@ $gf-input-padding: $padding-input;
 		padding: $gf-input-padding;
 		width: 100%;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			width: 49%;
 		}
 	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
@@ -250,12 +250,12 @@ $gf-input-padding: $padding-input;
 		input[type="password"],
 		input[type="file"] {
 
-			@include media($phone-landscape) {
+			@include grid-media($phone-landscape) {
 				width: 100%;
 			}
 		} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"]
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			width: 49%;
 		}
 	} // .gf_left_half, .gf_right_half
@@ -263,7 +263,7 @@ $gf-input-padding: $padding-input;
 	// Target just left column on two-column row
 	.gf_left_half {
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			margin-right: 2%;
 		}
 	} // .gf_left_half

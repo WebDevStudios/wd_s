@@ -128,7 +128,7 @@ a {
 	ul {
 		display: none;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: block;
 		}
 	} // ul
@@ -137,7 +137,7 @@ a {
 		display: block;
 	} // &.toggled ul
 
-	@include media($tablet-landscape) {
+	@include grid-media($tablet-landscape) {
 		display: block;
 	}
 } // .main-navigation
@@ -146,7 +146,7 @@ a {
 .menu-toggle {
 	display: block;
 
-	@include media($phone-landscape) {
+	@include grid-media($phone-landscape) {
 		display: none;
 	}
 } // .menu-toggle

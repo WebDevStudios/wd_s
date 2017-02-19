@@ -17,7 +17,7 @@
 	display: block;
 
 	// Don't show this puppy above tablet-landscape
-	@include media($tablet-landscape) {
+	@include grid-media($tablet-landscape) {
 		display: none;
 	}
 
@@ -39,7 +39,7 @@
 	.admin-bar & {
 		padding-top: rem(56);
 
-		@include media($wp-admin-bar) {
+		@include grid-media($wp-admin-bar) {
 			padding-top: rem(40);
 		}
 	} // .admin-bar &
@@ -196,7 +196,7 @@
 	.admin-bar & {
 		top: rem(56);
 
-		@include media($wp-admin-bar) {
+		@include grid-media($wp-admin-bar) {
 			top: rem(40);
 		}
 	} // .admin-bar &
@@ -263,7 +263,7 @@
 			.sub-menu {
 				bottom: 0;
 
-				@include media($tablet-portrait) {
+				@include grid-media($tablet-portrait) {
 					bottom: auto;
 				}
 			} // .sub-menu
@@ -298,7 +298,7 @@
 			margin: 0;
 		} // li
 
-		@include media($tablet-portrait) {
+		@include grid-media($tablet-portrait) {
 			left: auto;
 			right: 0;
 		}

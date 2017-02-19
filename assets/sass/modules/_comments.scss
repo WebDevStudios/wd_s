@@ -31,12 +31,12 @@
 
 // Comment Form
 .comment-form {
-	@include span-columns(12);
+	@include grid-column(12);
 
 	input:not(.submit) {
 		width: 100%;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			max-width: rem(250);
 		}
 	} // input:not(.submit)
@@ -47,9 +47,9 @@
 .comment-form-email,
 .comment-form-url {
 	label {
-		@include span-columns(12);
+		@include grid-column(12);
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			width: rem(75);
 		}
 	} // label
@@ -60,11 +60,11 @@
 	margin-left: 0;
 	padding-left: rem(20);
 
-	@include media($phone-landscape) {
+	@include grid-media($phone-landscape) {
 		padding-left: rem(35);
 	}
 
-	@include media($tablet-portrait) {
+	@include grid-media($tablet-portrait) {
 		padding-left: rem(60);
 	}
 } // .comment-list .children

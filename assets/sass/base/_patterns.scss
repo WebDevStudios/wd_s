@@ -65,7 +65,7 @@
 	// Each swatch.
 	.swatch {
 		@include size(100% rem(125));
-		@include span-columns(3);
+		@include grid-column(3);
 
 		border-radius: rem(5);
 		border: rem(1) solid black;
