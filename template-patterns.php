@@ -40,12 +40,7 @@ get_header(); ?>
 				/**
 				 * Button.
 				 */
-				echo _s_get_pattern_section( array( // WPCS: XSS OK.
-					'title'       => 'Button',
-					'description' => 'Display a button.',
-					'usage'       => '<button class="button" href="#">Click Me</button>',
-					'output'      => '<button class="button">Click Me</button>',
-				) );
+
 
 				/**
 				 * Search Form.

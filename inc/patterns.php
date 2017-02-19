@@ -202,5 +202,6 @@ function _s_hook_theme_patterns() {
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
 	get_template_part( $template_dir, 'icons' );
+	get_template_part( $template_dir, 'buttons' );
 }
 add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
