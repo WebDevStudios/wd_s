@@ -2,7 +2,7 @@
 /**
  * Custom ACF functions.
  *
- * A place to custom funcdtionality related to Advanced Custom Fields.
+ * A place for custom functionality related to Advanced Custom Fields.
  *
  * @package _s
  */
