@@ -29,19 +29,8 @@ function _s_get_pattern_section( $args = array() ) {
 	// Parse arguments.
 	$args = wp_parse_args( $args, $defaults );
 
-	// Add additional HTML tags to the wp_kses() allowed html filter.
-	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'svg' => array(
-			'aria-hidden' => true,
-			'class'       => true,
-			'id'          => true,
-			'role'        => true,
-			'title'       => true,
-		),
-		'use' => array(
-			'xlink:href' => true,
-		),
-	) );
+	// Grab our allowed tags.
+	$allowed_tags = _s_pattern_allowed_html();
 
 	ob_start();
 
@@ -105,6 +94,31 @@ function _s_get_pattern_section( $args = array() ) {
 	</section><!-- .pattern-section -->
 	<?php
 	return ob_get_clean();
+}
+
+/**
+ * Declare HTML tags allowed for patterns.
+ *
+ * @return array The allowed tags and attributes.
+ * @author Carrie Forde
+ */
+function _s_pattern_allowed_html() {
+
+	// Add additional HTML tags to the wp_kses() allowed html filter.
+	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
+		'svg' => array(
+			'aria-hidden' => true,
+			'class'       => true,
+			'id'          => true,
+			'role'        => true,
+			'title'       => true,
+		),
+		'use' => array(
+			'xlink:href' => true,
+		),
+	) );
+
+	return $allowed_tags;
 }
 
 /**
