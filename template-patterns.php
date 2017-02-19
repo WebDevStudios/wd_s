@@ -35,20 +35,7 @@ get_header(); ?>
 				/**
 				 * SVGs.
 				 */
-				echo _s_get_pattern_section( array( // WPCS: XSS OK.
-					'title'       => 'SVG',
-					'description' => 'Display inline SVGs.',
-					'usage'       => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
-					'parameters'  => array(
-						'$args' => '(required) Configuration arguments.',
-					),
-					'arguments'    => array(
-						'icon'  => '(required) The SVG icon file name. Default none',
-						'title' => '(optional) The title of the icon. Default: none',
-						'desc'  => '(optional) The description of the icon. Default: none',
-					),
-					'output'       => _s_get_svg( array( 'icon' => 'facebook-square' ) ),
-				) );
+
 
 				/**
 				 * Button.

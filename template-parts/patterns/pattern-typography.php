@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying colors & fonts in the pattern library.
+ * The template used for displaying typography in the pattern library.
  *
  * @package _s
  */
