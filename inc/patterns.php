@@ -32,9 +32,12 @@ function _s_get_pattern_section( $args = array() ) {
 	// Grab our allowed tags.
 	$allowed_tags = _s_pattern_allowed_html();
 
+	// Add a unique class to the wrapper.
+	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) );
+
 	ob_start(); ?>
 
-	<div class="pattern-document">
+	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
 
 		<?php if ( $args['title'] ) : ?>
 		<header class="pattern-document-header">
@@ -139,9 +142,12 @@ function _s_get_global_pattern_section( $args = array() ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
+	// Add a unique class to the wrapper.
+	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) );
+
 	ob_start(); ?>
 
-	<section class="pattern-document">
+	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
 		<header class="pattern-document-header">
 			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header>
@@ -186,7 +192,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 					<?php break; ?>
 			<?php endswitch; ?>
 		</div>
-	</section>
+	</div>
 
 	<?php return ob_get_clean();
 }
