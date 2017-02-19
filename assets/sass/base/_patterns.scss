@@ -54,6 +54,15 @@
 			padding: rem(5);
 		} // code
 	} // &-content
+
+	// Always display the global patterns.
+	&.pattern-colors,
+	&.pattern-fonts {
+
+		.pattern-document-content {
+			display: block;
+		} // .pattern-document-content
+	} // &.pattern-colors, &.pattern-fonts
 } // .pattern-document
 
 
