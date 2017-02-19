@@ -68,6 +68,8 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
@@ -130,11 +132,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
@@ -143,3 +140,23 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load styles and scripts.
  */
 require get_template_directory() . '/inc/scripts.php';
+
+/**
+ * Load custom ACF features.
+ */
+require get_template_directory() . '/inc/acf.php';
+
+/**
+ * Load custom filters and hooks.
+ */
+require get_template_directory() . '/inc/hooks.php';
+
+/**
+ * Load custom queries.
+ */
+require get_template_directory() . '/inc/queries.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer/customizer.php';

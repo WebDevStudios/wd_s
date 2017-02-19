@@ -274,13 +274,9 @@ gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
 		.pipe( sort() )
 		.pipe( wpPot( {
 			'domain': '_s',
-			'destFile': '_s.pot',
 			'package': '_s',
-			'bugReport': 'http://_s.com',
-			'lastTranslator': 'John Doe <mail@_s.com>',
-			'team': 'Team <mail@_s.com>'
 		} ) )
-		.pipe( gulp.dest( 'languages/' ) )
+		.pipe( gulp.dest( 'languages/_s.pot' ) )
 );
 
 /**
