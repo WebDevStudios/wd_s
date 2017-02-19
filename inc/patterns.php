@@ -191,3 +191,14 @@ function _s_get_global_pattern_section( $args = array() ) {
 
 	<?php return ob_get_clean();
 }
+
+/**
+ * Hook the theme's pattern template parts into the Pattern template.
+ *
+ * @author Carrie Forde
+ */
+function _s_hook_theme_patterns() {
+
+	get_template_part( 'template-parts/patterns/globals' );
+}
+add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
