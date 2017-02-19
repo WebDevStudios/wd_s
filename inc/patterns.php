@@ -39,18 +39,11 @@ function _s_get_pattern_section( $args = array() ) {
 		<?php if ( $args['title'] ) : ?>
 		<header class="pattern-document-header">
 			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<button type="button" class="pattern-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .pattern-document-header -->
 		<?php endif; ?>
 
 		<div class="pattern-document-content">
-
-			<div class="pattern-document-live">
-
-			<?php if ( $args['output'] ) : ?>
-				<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
-			<?php endif; ?>
-
-			</div><!-- .pattern-document-live -->
 
 			<div class="pattern-document-details">
 
@@ -89,6 +82,14 @@ function _s_get_pattern_section( $args = array() ) {
 
 			</div><!-- .pattern-document-usage -->
 		</div><!-- .pattern-document-content -->
+
+		<div class="pattern-document-live">
+
+		<?php if ( $args['output'] ) : ?>
+			<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
+		<?php endif; ?>
+
+		</div><!-- .pattern-document-live -->
 	</div><!-- .pattern-document -->
 
 	<?php return ob_get_clean();
