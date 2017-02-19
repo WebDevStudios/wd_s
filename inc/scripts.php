@@ -79,6 +79,11 @@ function _s_scripts() {
 	// Enqueue the mobile nav script
 	// Since we're showing/hiding based on CSS and wp_is_mobile is wp_is_imperfect, enqueue this everywhere.
 	wp_enqueue_script( '_s-mobile-nav', get_template_directory_uri() . '/assets/scripts/mobile-nav-menu' . $suffix . '.js', array( 'jquery' ), $version, true );
+
+	// Enqueue the Pattern Library script.
+	if ( is_page_template( 'template-patterns.php' ) ) {
+		wp_enqueue_script( '_s-pattern-library', get_template_directory_uri() . '/assets/scripts/patterns' . $suffix . '.js', array( 'jquery' ), $version, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
