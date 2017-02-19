@@ -52,6 +52,11 @@ function _s_body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
+	// Add a cleaner class for the pattern page template.
+	if ( is_page_template( 'template-patterns.php' ) ) {
+		$classes[] = 'template-patterns';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );

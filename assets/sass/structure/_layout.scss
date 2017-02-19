@@ -32,6 +32,11 @@
 .primary {
 	@include grid-media($tablet-landscape) {
 		@include grid-column(8);
+
+		// Patterns will never have a sidebar, and should be full-width.
+		.template-patterns & {
+			width: 100%;
+		} // .template-patterns
 	}
 } // .primary
 
