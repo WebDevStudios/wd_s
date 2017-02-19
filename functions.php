@@ -160,3 +160,8 @@ require get_template_directory() . '/inc/queries.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer/customizer.php';
+
+/**
+ * Pattern Library.
+ */
+require get_template_directory() . '/inc/patterns.php';
