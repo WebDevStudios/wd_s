@@ -43,3 +43,14 @@ $mqs-xl-desktop: (
 	columns: 12,
 	media: $large-desktop,
 );
+
+
+//-----------------------------------------
+// Box Sizing
+//
+// Make sure all elements use box-sizing:
+// border-box by default.
+//-----------------------------------------
+* {
+	box-sizing: border-box;
+}
