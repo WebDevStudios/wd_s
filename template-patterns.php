@@ -13,6 +13,8 @@ get_header(); ?>
 		<div class="primary content-area">
 			<main id="main" class="site-main" role="main">
 
+				<?php do_action( '_s_pattern_content' ); ?>
+
 				<?php
 				/**
 				 * Possible patterns baked in with wd_s...
@@ -30,34 +32,7 @@ get_header(); ?>
 				 * SVG Icon
 				 */
 
-				/**
-				 * Colors.
-				 */
-				echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
-					'global_type' => 'colors',
-					'title'       => 'Colors',
-					'arguments'   => array(
-						'Blue'         => '#21759b',
-						'Light Yellow' => '#fff9c0',
-						'Black'        => '#000000',
-						'White'        => '#FFFFFF',
-						'Red'          => '#f00000',
-					),
-				) );
 
-				/**
-				 * Fonts.
-				 */
-				echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
-					'global_type'  => 'fonts',
-					'title'        => 'Fonts',
-					'arguments'    => array(
-						'Sans'  => '"Open Sans", sans-serif',
-						'Serif' => 'Roboto, Georgia, Times, "Times New Roman", serif',
-						'Code'  => 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
-						'Pre'   => '"Courier 10 Pitch", Courier, monospace',
-					),
-				) );
 
 				/**
 				 * H1.
