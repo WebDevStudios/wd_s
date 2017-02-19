@@ -197,7 +197,7 @@ function _s_get_global_pattern_section( $args = array() ) {
  */
 function _s_hook_theme_patterns() {
 
-	get_template_part( 'template-parts/patterns/globals' );
-	get_template_part( 'template-parts/patterns/typography' );
+	get_template_part( 'template-parts/patterns/pattern', 'globals' );
+	get_template_part( 'template-parts/patterns/pattern', 'typography' );
 }
 add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
