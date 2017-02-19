@@ -6,11 +6,15 @@
 // Pattern defaults
 //-----------------------------------------
 .pattern-document {
-	border-bottom: rem(1) solid black;
 	margin-bottom: $gutter * 2;
 
 	// The section <header>
 	&-header {
+		border-bottom: rem(1) solid gray;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: $gutter;
+		padding-bottom: $gutter;
 
 		// The title.
 		h2 {
@@ -26,8 +30,7 @@
 
 	// The section content <div>
 	&-content {
-		border-bottom: rem(1) solid gray;
-		padding-bottom: $gutter;
+		display: none;
 
 		// Reset.
 		h4,
