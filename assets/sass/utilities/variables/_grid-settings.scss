@@ -17,7 +17,7 @@ $gutter: 12px;
 //-----------------------------------------
 $mqs-phone-portrait: (
 	columns: 2,
-	media: $phone-portrait - 1,
+	media: 359px, // $phone-portrait - 1px
 );
 $mqs-phone-landscape: (
 	columns: 4,
