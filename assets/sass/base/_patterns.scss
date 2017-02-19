@@ -5,7 +5,7 @@
 //-----------------------------------------
 // Pattern defaults
 //-----------------------------------------
-.pattern-section {
+.pattern-document {
 	border-bottom: rem(1) solid black;
 	margin-bottom: $gutter * 2;
 
@@ -51,7 +51,7 @@
 			padding: rem(5);
 		} // code
 	} // &-content
-} // .pattern-section
+} // .pattern-document
 
 
 //-----------------------------------------

@@ -32,33 +32,31 @@ function _s_get_pattern_section( $args = array() ) {
 	// Grab our allowed tags.
 	$allowed_tags = _s_pattern_allowed_html();
 
-	ob_start();
+	ob_start(); ?>
 
-	?>
-
-	<section class="pattern-section">
+	<div class="pattern-document">
 
 		<?php if ( $args['title'] ) : ?>
-		<header class="pattern-section-header">
-			<h2 class="pattern-section-title"><?php echo esc_html( $args['title'] ); ?></h2>
-		</header><!-- .pattern-section-header -->
+		<header class="pattern-document-header">
+			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+		</header><!-- .pattern-document-header -->
 		<?php endif; ?>
 
-		<div class="pattern-section-content">
+		<div class="pattern-document-content">
 
-			<div class="pattern-section-live">
+			<div class="pattern-document-live">
 
 			<?php if ( $args['output'] ) : ?>
 				<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
 			<?php endif; ?>
 
-			</div><!-- .pattern-section-live -->
+			</div><!-- .pattern-document-live -->
 
-			<div class="pattern-section-details">
+			<div class="pattern-document-details">
 
 			<?php if ( $args['description'] ) : ?>
 				<p><strong><?php esc_html_e( 'Description', '_s' ); ?>:</strong></p>
-				<p class="pattern-section-description"><?php echo esc_html( $args['description'] ); ?></p>
+				<p class="pattern-document-description"><?php echo esc_html( $args['description'] ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $args['parameters'] ) : ?>
@@ -75,9 +73,9 @@ function _s_get_pattern_section( $args = array() ) {
 				<?php endforeach; ?>
 			<?php endif; ?>
 
-			</div><!-- .pattern-section-details -->
+			</div><!-- .pattern-document-details -->
 
-			<div class="pattern-section-usage">
+			<div class="pattern-document-usage">
 
 			<?php if ( $args['usage'] ) : ?>
 				<p><strong><?php esc_html_e( 'Usage', '_s' ); ?>:</strong></p>
@@ -89,11 +87,11 @@ function _s_get_pattern_section( $args = array() ) {
 				<pre><?php echo esc_html( $args['output'] ); ?></pre>
 			<?php endif; ?>
 
-			</div><!-- .pattern-section-usage -->
-		</div><!-- .pattern-section-content -->
-	</section><!-- .pattern-section -->
-	<?php
-	return ob_get_clean();
+			</div><!-- .pattern-document-usage -->
+		</div><!-- .pattern-document-content -->
+	</div><!-- .pattern-document -->
+
+	<?php return ob_get_clean();
 }
 
 /**
@@ -142,12 +140,12 @@ function _s_get_global_pattern_section( $args = array() ) {
 
 	ob_start(); ?>
 
-	<section class="pattern-section">
-		<header class="pattern-section-header">
-			<h2 class="pattern-section-title"><?php echo esc_html( $args['title'] ); ?></h2>
+	<section class="pattern-document">
+		<header class="pattern-document-header">
+			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header>
 
-		<div class="pattern-section-content">
+		<div class="pattern-document-content">
 
 			<?php // We'll alter the output slightly depending upon the global type.
 			switch ( $args['global_type'] ) :
@@ -200,5 +198,6 @@ function _s_get_global_pattern_section( $args = array() ) {
 function _s_hook_theme_patterns() {
 
 	get_template_part( 'template-parts/patterns/globals' );
+	get_template_part( 'template-parts/patterns/typography' );
 }
 add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
