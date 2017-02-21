@@ -32,7 +32,7 @@
     "gulp-uglify": "~2",
     "gulp-util": "~3",
     "gulp-wp-pot": "~2",
-    "spritesmith": "~3"
+    "gulp.spritesmith": "~3"
   },
   "devDependencies": {},
   "scripts": {
