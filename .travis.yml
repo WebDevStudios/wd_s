@@ -59,7 +59,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install ESLint, the pluggable linting utility for JavaScript and JSX
     # @link http://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint eslint-config-wordpress; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -67,8 +67,8 @@ before_script:
 script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-    # Run the theme through JSHint.
-    - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
+    # Run the theme through ESLint.
+    - if [[ "$SNIFF" == "1" ]]; then eslint -config .eslintrc.js assets/scripts/concat; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link http://pear.php.net/package/PHP_CodeSniffer/
