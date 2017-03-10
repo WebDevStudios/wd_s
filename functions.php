@@ -68,6 +68,15 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		// Custom logo support.
+		add_theme_support( 'custom-logo', array(
+			'height'      => 250,
+			'width'       => 500,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+		) );
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
@@ -115,11 +124,6 @@ function _s_widgets_init() {
 
 }
 add_action( 'widgets_init', '_s_widgets_init' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
