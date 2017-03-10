@@ -1,5 +1,6 @@
 wd_s
 ===
+[![Stories in Ready](https://badge.waffle.io/WebDevStudios/wd_s.svg?label=ready&title=Ready)](http://waffle.io/WebDevStudios/wd_s)
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
