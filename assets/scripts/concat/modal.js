@@ -5,13 +5,13 @@
  */
 window.wdsModal = {};
 
-( function ( window, $, app ) {
+( function( window, $, app ) {
 
 	var $modalToggle;
 	var $focusableChildren;
 
 	// Constructor.
-	app.init = function () {
+	app.init = function() {
 		app.cache();
 
 		if ( app.meetsRequirements() ) {
@@ -20,19 +20,20 @@ window.wdsModal = {};
 	};
 
 	// Cache all the things.
-	app.cache = function () {
+	app.cache = function() {
 		app.$c = {
 			'body': $( 'body' )
 		};
 	};
 
 	// Do we meet the requirements?
-	app.meetsRequirements = function () {
+	app.meetsRequirements = function() {
 		return $( '.modal-trigger' ).length;
 	};
 
 	// Combine all events.
-	app.bindEvents = function () {
+	app.bindEvents = function() {
+
 		// Trigger a modal to open.
 		app.$c.body.on( 'click touchstart', '.modal-trigger', app.openModal );
 
@@ -51,7 +52,8 @@ window.wdsModal = {};
 	};
 
 	// Open the modal.
-	app.openModal = function () {
+	app.openModal = function() {
+
 		// Store the modal toggle element
 		$modalToggle = $( this );
 
@@ -67,10 +69,11 @@ window.wdsModal = {};
 		// Find the focusable children of the modal.
 		// This list may be incomplete, really wish jQuery had the :focusable pseudo like jQuery UI does.
 		// For more about :input see: https://api.jquery.com/input-selector/
-		$focusableChildren = $modal.find('a, :input, [tabindex]');
+		$focusableChildren = $modal.find( 'a, :input, [tabindex]' );
 
 		// Ideally, there is always one (the close button), but you never know.
-		if ( $focusableChildren.length > 0 ) {
+		if ( 0 < $focusableChildren.length ) {
+
 			// Shift focus to the first focusable element.
 			$focusableChildren[0].focus();
 		}
@@ -78,7 +81,8 @@ window.wdsModal = {};
 	};
 
 	// Close the modal.
-	app.closeModal = function () {
+	app.closeModal = function() {
+
 		// Figure the opened modal we're closing and store the object.
 		var $modal = $( $( 'div.modal-open .close' ).data( 'target' ) );
 
@@ -87,15 +91,18 @@ window.wdsModal = {};
 
 		// Only do this if there are any iframes.
 		if ( $iframe.length ) {
+
 			// Get the iframe src URL.
 			var url = $iframe.attr( 'src' );
 
 			// Removing/Readding the URL will effectively break the YouTube API.
 			// So let's not do that when the iframe URL contains the enablejsapi parameter.
 			if ( ! url.includes( 'enablejsapi=1' ) ) {
+
 				// Remove the source URL, then add it back, so the video can be played again later.
 				$iframe.attr( 'src', '' ).attr( 'src', url );
 			} else {
+
 				// Use the YouTube API to stop the video.
 				player.stopVideo();
 			}
@@ -113,61 +120,64 @@ window.wdsModal = {};
 	};
 
 	// Close if "esc" key is pressed.
-	app.escKeyClose = function ( event ) {
+	app.escKeyClose = function( event ) {
 		if ( 27 === event.keyCode ) {
 			app.closeModal();
 		}
 	};
 
 	// Close if the user clicks outside of the modal
-	app.closeModalByClick = function ( event ) {
+	app.closeModalByClick = function( event ) {
+
 		// If the parent container is NOT the modal dialog container, close the modal
-		if ( !$( event.target ).parents( 'div' ).hasClass( 'modal-dialog' ) ) {
+		if ( ! $( event.target ).parents( 'div' ).hasClass( 'modal-dialog' ) ) {
 			app.closeModal();
 		}
 	};
 
 	// Trap the keyboard into a modal when one is active.
-	app.trapKeyboardMaybe = function ( event ) {
+	app.trapKeyboardMaybe = function( event ) {
 
 		// We only need to do stuff when the modal is open and tab is pressed.
-		if ( 9 === event.which && $( '.modal-open' ).length > 0 ) {
+		if ( 9 === event.which && 0 < $( '.modal-open' ).length ) {
 			var $focused = $( ':focus' );
 			var focusIndex = $focusableChildren.index( $focused );
 
 			if ( 0 === focusIndex && event.shiftKey ) {
+
 				// If this is the first focusable element, and shift is held when pressing tab, go back to last focusable element.
 				$focusableChildren[ $focusableChildren.length - 1 ].focus();
 				event.preventDefault();
 			} else if ( ! event.shiftKey && focusIndex === $focusableChildren.length - 1 ) {
+
 				// If this is the last focusable element, and shift is not held, go back to the first focusable element.
 				$focusableChildren[0].focus();
 				event.preventDefault();
 			}
 		}
-	}
+	};
 
 	// Engage!
 	$( app.init );
-} )( window, jQuery, window.wdsModal );
+})( window, jQuery, window.wdsModal );
 
 // Load the yt iframe api js file from youtube.
 // NOTE THE IFRAME URL MUST HAVE 'enablejsapi=1' appended to it.
 // example: src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
 // It also _must_ have an ID attribute.
-var tag = document.createElement('script');
+var tag = document.createElement( 'script' );
 tag.id = 'iframe-yt';
 tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var firstScriptTag = document.getElementsByTagName( 'script' )[0];
+firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
 
 // This var and function have to be available globally due to yt js iframe api.
 var player;
 function onYouTubeIframeAPIReady() {
-  var modal = jQuery('div.modal');
-	var iframeid = modal.find('iframe').attr('id');
+  var modal = jQuery( 'div.modal' );
+	var iframeid = modal.find( 'iframe' ).attr( 'id' );
 
-	player = new YT.Player( iframeid , {
+	player = new YT.Player( iframeid, {
 		events: {
 			'onReady': onPlayerReady,
 			'onStateChange': onPlayerStateChange
@@ -175,11 +185,12 @@ function onYouTubeIframeAPIReady() {
 	});
 }
 
-function onPlayerReady(event) {
+function onPlayerReady( event ) {
 
 }
 
 function onPlayerStateChange( event ) {
+
 	// Set focus to the first focusable element inside of the modal the player is in.
-	jQuery( event.target.a ).parents( '.modal' ).find('a, :input, [tabindex]').first().focus();
+	jQuery( event.target.a ).parents( '.modal' ).find( 'a, :input, [tabindex]' ).first().focus();
 }
