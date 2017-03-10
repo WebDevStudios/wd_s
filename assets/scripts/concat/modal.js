@@ -7,8 +7,8 @@ window.wdsModal = {};
 
 ( function( window, $, app ) {
 
-	var $modalToggle;
-	var $focusableChildren;
+	let $modalToggle,
+		$focusableChildren;
 
 	// Constructor.
 	app.init = function() {
@@ -58,7 +58,7 @@ window.wdsModal = {};
 		$modalToggle = $( this );
 
 		// Figure out which modal we're opening and store the object.
-		var $modal = $( $( this ).data( 'target' ) );
+		let $modal = $( $( this ).data( 'target' ) );
 
 		// Display the modal.
 		$modal.addClass( 'modal-open' );
@@ -84,16 +84,16 @@ window.wdsModal = {};
 	app.closeModal = function() {
 
 		// Figure the opened modal we're closing and store the object.
-		var $modal = $( $( 'div.modal-open .close' ).data( 'target' ) );
+		let $modal = $( $( 'div.modal-open .close' ).data( 'target' ) ),
 
-		// Find the iframe in the $modal object.
-		var $iframe = $modal.find( 'iframe' );
+			// Find the iframe in the $modal object.
+			$iframe = $modal.find( 'iframe' );
 
 		// Only do this if there are any iframes.
 		if ( $iframe.length ) {
 
 			// Get the iframe src URL.
-			var url = $iframe.attr( 'src' );
+			let url = $iframe.attr( 'src' );
 
 			// Removing/Readding the URL will effectively break the YouTube API.
 			// So let's not do that when the iframe URL contains the enablejsapi parameter.
@@ -140,8 +140,8 @@ window.wdsModal = {};
 
 		// We only need to do stuff when the modal is open and tab is pressed.
 		if ( 9 === event.which && 0 < $( '.modal-open' ).length ) {
-			var $focused = $( ':focus' );
-			var focusIndex = $focusableChildren.index( $focused );
+			let $focused = $( ':focus' ),
+				focusIndex = $focusableChildren.index( $focused );
 
 			if ( 0 === focusIndex && event.shiftKey ) {
 
