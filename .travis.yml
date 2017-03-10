@@ -57,7 +57,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
-    - if [[ "$SNIFF" == "1" ]]; then yarn global add eslint eslint-config-wordpress; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint eslint-config-wordpress; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -86,6 +86,6 @@ notifications:
 # Caching
 # @link https://docs.travis-ci.com/user/caching
 cache:
-  yarn: true
+  npm: true
   directories:
     - node_modules
