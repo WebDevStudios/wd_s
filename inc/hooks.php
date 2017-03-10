@@ -87,3 +87,16 @@ function _s_excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
 }
 add_filter( 'excerpt_more', '_s_excerpt_more' );
+
+/**
+ * Enable custom mime types.
+ *
+ * @param array $mimes Current allowed mime types.
+ * @return array Updated allowed mime types.
+ */
+function _s_custom_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	$mimes['svgz'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', '_s_custom_mime_types' );
