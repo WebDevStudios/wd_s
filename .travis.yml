@@ -29,11 +29,9 @@ matrix:
         - php: '7.0'
         # aliased to a recent 7.1.x version
         - php: '7.1'
-        # aliased to a recent hhvm version
-        - php: 'hhvm'
 
     allow_failures:
-        - php: 'hhvm'
+        - php: ''
 
 # Use this to prepare the system to install prerequisites or dependencies.
 # e.g. sudo apt-get update.
@@ -68,7 +66,7 @@ script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
     # Run the theme through ESLint.
-    - if [[ "$SNIFF" == "1" ]]; then eslint -config .eslintrc.js assets/scripts/concat; fi
+    - if [[ "$SNIFF" == "1" ]]; then eslint --config .eslintrc.js assets/scripts/concat; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link http://pear.php.net/package/PHP_CodeSniffer/
