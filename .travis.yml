@@ -46,7 +46,7 @@ before_script:
     - export SNIFFS_DIR=/tmp/sniffs
     # Install ESLint, the pluggable linting utility for JavaScript and JSX
     # @link http://eslint.org/
-    - yarn install -g eslint eslint-config-wordpress
+    - yarn global add eslint eslint-config-wordpress
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
@@ -86,4 +86,6 @@ notifications:
 # Caching
 # @link https://docs.travis-ci.com/user/caching
 cache:
-    yarn: true
+  yarn: true
+  directories:
+    - node_modules
