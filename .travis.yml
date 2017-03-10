@@ -44,6 +44,9 @@ matrix:
 before_script:
     - export PHPCS_DIR=/tmp/phpcs
     - export SNIFFS_DIR=/tmp/sniffs
+    # Install ESLint, the pluggable linting utility for JavaScript and JSX
+    # @link http://eslint.org/
+    - yarn install -g eslint eslint-config-wordpress; fi
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
@@ -55,9 +58,6 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
-    # Install ESLint, the pluggable linting utility for JavaScript and JSX
-    # @link http://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint eslint-config-wordpress; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -82,3 +82,8 @@ script:
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
     email: false
+
+# Caching
+# @link https://docs.travis-ci.com/user/caching
+cache:
+    yarn: true
