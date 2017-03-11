@@ -48,12 +48,15 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
-    # Install ESLint: The pluggable linting utility for JavaScript and JSX
+    # Install ESLint: The pluggable linting utility for JavaScript and JSX.
     # @link http://eslint.org/
     - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
     # Install WordPress JavaScript Coding Standards shareable config for ESLint.
     # @link https://www.npmjs.com/package/eslint-config-wordpress
     - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint-config-wordpress; fi
+    # Install Sass Lint.
+    # @link https://github.com/sasstools/sass-lint
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g sass-lint; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -73,11 +76,15 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./phpcs.xml --extensions=php; fi
     # Run the theme JavaScript partials through ESLint.
     - if [[ "$SNIFF" == "1" ]]; then eslint -c ./.eslintrc.js ./assets/scripts/concat; fi
+    # Run the theme Sass partials through Sass Lint.
+    - if [[ "$SNIFF" == "1" ]]; then sass-lint -v -q -c ./.sass-lint.yml ./assets/sass/**/*.scss; fi
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
-    email: false
+  email: false
+  slack:
+    secure: lDFLE+EZrQu9phgxUFFekrH4nqdbeY/qDdOVYD4QRznHGdfNswn7HhVt7CAGjVHEiqkG9J6LzZCOxjy93TMoXgRr/hIBkqJI2oYDBwlEf0P3G0XiPEuWSQvm8Ao9N7nUoF2OlyeA44SRuFTrAbNKjlAw4Nwk08Ew3LjByREYJ6k=
 
 # Caching
 # @link https://docs.travis-ci.com/user/caching/
