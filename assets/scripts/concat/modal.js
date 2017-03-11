@@ -8,13 +8,18 @@ window.wdsModal = {};
 ( function( window, $, app ) {
 
 	let $modalToggle,
-		$focusableChildren;
+		$focusableChildren,
+		$player,
+		$tag = document.createElement( 'script' ),
+		$firstScriptTag = document.getElementsByTagName( 'script' )[0],
+		YT;
 
 	// Constructor.
 	app.init = function() {
 		app.cache();
 
 		if ( app.meetsRequirements() ) {
+			$firstScriptTag.parentNode.insertBefore( $tag, $firstScriptTag );
 			app.bindEvents();
 		}
 	};
@@ -104,7 +109,7 @@ window.wdsModal = {};
 			} else {
 
 				// Use the YouTube API to stop the video.
-				player.stopVideo();
+				$player.stopVideo();
 			}
 		}
 
@@ -157,40 +162,31 @@ window.wdsModal = {};
 		}
 	};
 
+	// Hook into YouTube <iframe>.
+	app.onYouTubeIframeAPIReady = function() {
+		let $modal = $( 'div.modal' ),
+			$iframeid = $modal.find( 'iframe' ).attr( 'id' );
+
+		$player = new YT.Player( $iframeid, {
+			events: {
+				'onReady': app.onPlayerReady,
+				'onStateChange': app.onPlayerStateChange
+			}
+		});
+	};
+
+	// Do something on player ready.
+	app.onPlayerReady = function() {
+	};
+
+	// Do something on player state change.
+	app.onPlayerStateChange = function() {
+
+		// Set focus to the first focusable element inside of the modal the player is in.
+		$( event.target.a ).parents( '.modal' ).find( 'a, :input, [tabindex]' ).first().focus();
+	};
+
+
 	// Engage!
 	$( app.init );
 })( window, jQuery, window.wdsModal );
-
-// Load the yt iframe api js file from youtube.
-// NOTE THE IFRAME URL MUST HAVE 'enablejsapi=1' appended to it.
-// example: src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-// It also _must_ have an ID attribute.
-var tag = document.createElement( 'script' );
-tag.id = 'iframe-yt';
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName( 'script' )[0];
-firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
-
-// This var and function have to be available globally due to yt js iframe api.
-var player;
-function onYouTubeIframeAPIReady() {
-  var modal = jQuery( 'div.modal' );
-	var iframeid = modal.find( 'iframe' ).attr( 'id' );
-
-	player = new YT.Player( iframeid, {
-		events: {
-			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
-		}
-	});
-}
-
-function onPlayerReady( event ) {
-
-}
-
-function onPlayerStateChange( event ) {
-
-	// Set focus to the first focusable element inside of the modal the player is in.
-	jQuery( event.target.a ).parents( '.modal' ).find( 'a, :input, [tabindex]' ).first().focus();
-}
