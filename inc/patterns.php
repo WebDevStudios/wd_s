@@ -14,7 +14,7 @@
  * @return string The pattern documentation.
  * @author Greg Rickaby Carrie Forde
  */
-function _s_get_pattern_section( $args = array() ) {
+function _s_display_pattern_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
@@ -33,9 +33,7 @@ function _s_get_pattern_section( $args = array() ) {
 	$allowed_tags = _s_pattern_allowed_html();
 
 	// Add a unique class to the wrapper.
-	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) );
-
-	ob_start(); ?>
+	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
 
 	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
 
@@ -95,7 +93,7 @@ function _s_get_pattern_section( $args = array() ) {
 		</div><!-- .pattern-document-live -->
 	</div><!-- .pattern-document -->
 
-	<?php return ob_get_clean();
+	<?php
 }
 
 /**
@@ -130,7 +128,7 @@ function _s_pattern_allowed_html() {
  * @return string The pattern documentation.
  * @author Carrie Forde
  */
-function _s_get_global_pattern_section( $args = array() ) {
+function _s_display_global_pattern_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
@@ -143,9 +141,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Add a unique class to the wrapper.
-	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) );
-
-	ob_start(); ?>
+	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
 
 	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
 		<header class="pattern-document-header">
@@ -194,7 +190,7 @@ function _s_get_global_pattern_section( $args = array() ) {
 		</div>
 	</div>
 
-	<?php return ob_get_clean();
+	<?php
 }
 
 /**

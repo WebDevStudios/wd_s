@@ -11,7 +11,7 @@
 	<h2 class="pattern-heading"><?php esc_html_e( 'Icons', '_s' ); ?></h2>
 
 	<?php // SVG
-	echo _s_get_pattern_section( array( // WPCS: XSS OK.
+	_s_display_pattern_section( array(
 		'title'       => 'SVG',
 		'description' => 'Display inline SVGs.',
 		'usage'       => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',

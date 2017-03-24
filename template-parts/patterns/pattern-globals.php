@@ -11,7 +11,7 @@
 	<h2 class="pattern-heading"><?php esc_html_e( 'Globals', '_s' ); ?></h2>
 
 	<?php // Theme colors. ?>
-	<?php echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
+	<?php _s_display_global_pattern_section( array( // WPCS: XSS OK.
 		'global_type' => 'colors',
 		'title'       => 'Colors',
 		'arguments'   => array(
@@ -24,7 +24,7 @@
 	) ); ?>
 
 	<?php // Theme fonts. ?>
-	<?php echo _s_get_global_pattern_section( array( // WPCS: XSS OK.
+	<?php _s_display_global_pattern_section( array( // WPCS: XSS OK.
 		'global_type'  => 'fonts',
 		'title'        => 'Fonts',
 		'arguments'    => array(
