@@ -4,10 +4,9 @@
 
 // Hide text meant only for screen readers
 .screen-reader-text {
-	@include size(rem(1) auto);
+	@include size(rem(1));
 
 	clip: rect(rem(1), rem(1), rem(1), rem(1));
-	height: rem(1);
 	overflow: hidden;
 	position: absolute;
 	white-space: nowrap; // do not smuch text in screen readers

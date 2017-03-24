@@ -100,7 +100,7 @@ function _s_customize_copyright_text( $wp_customize ) {
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		new _s_Text_Editor_Custom_Control(
+		new Text_Editor_Custom_Control(
 			$wp_customize,
 			'_s_copyright_text',
 			array(

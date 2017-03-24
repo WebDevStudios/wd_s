@@ -1,5 +1,6 @@
 wd_s
 ===
+[![Stories in Ready](https://badge.waffle.io/WebDevStudios/wd_s.svg?label=ready&title=Ready)](http://waffle.io/WebDevStudios/wd_s) [![Build Status](https://travis-ci.org/WebDevStudios/wd_s.svg?branch=master)](https://travis-ci.org/WebDevStudios/wd_s)
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
@@ -11,7 +12,7 @@ If that weren't enough, I also support [synchronized JSON](https://www.advancedc
 
 ### Prerequisites
 
-Because I'm bundled with Gulp, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org), [Gulp CLI](https://github.com/gulpjs/gulp-cli) (`npm install -g gulp-cli`), and [Bower](https://bower.io/) (`npm install -g bower`).
+Because I'm bundled with Gulp, basic knowledge of the command line and the following dependencies are required: either [Yarn](https://yarnpkg.com) or [Node](https://nodejs.org), [Gulp CLI](https://github.com/gulpjs/gulp-cli) (`npm install -g gulp-cli`), and [Bower](https://bower.io/) (`npm install -g bower`).
 
 ### Quick Start
 If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
@@ -45,8 +46,13 @@ After you've installed and activated me. It's time to setup Gulp.
 cd /your-project/wordpress/wp-content/themes/your-theme
 ```
 
-2) Install theme dependencies
+2) Install theme dependencies (use either Yarn or NPM)
 
+Yarn
+```bash
+yarn install && bower install
+```
+NPM
 ```bash
 npm install && bower install
 ```
