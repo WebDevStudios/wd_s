@@ -116,8 +116,14 @@ function _s_pattern_allowed_html() {
 		'use' => array(
 			'xlink:href' => true,
 		),
+		'input' => array(
+			'type'        => true,
+			'name'        => true,
+			'value'       => true,
+			'placeholder' => true,
+			'class'       => true,
+		),
 	) );
-
 	return $allowed_tags;
 }
 
