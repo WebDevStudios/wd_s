@@ -15,6 +15,6 @@
 		'title'       => 'Search Form',
 		'description' => 'Display the search form.',
 		'usage'       => '<?php get_search_form(); ?>',
-		'output'      => get_search_form(),
+		'output'      => get_search_form( $echo = false ),
 	) ); ?>
 </section>
