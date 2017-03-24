@@ -35,6 +35,7 @@
 
 		// Patterns will never have a sidebar, and should be full-width.
 		.template-patterns & {
+			margin-left: 0;
 			width: 100%;
 		} // .template-patterns
 	}
