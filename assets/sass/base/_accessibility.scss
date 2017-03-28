@@ -4,12 +4,11 @@
 
 // Hide text meant only for screen readers
 .screen-reader-text {
-	@include size(rem(1) auto);
+	@include size(rem(1));
 
 	clip: rect(rem(1), rem(1), rem(1), rem(1));
-	height: rem(1);
 	overflow: hidden;
-	position: absolute !important;
+	position: absolute;
 	white-space: nowrap; // do not smuch text in screen readers
 
 	&:hover,
@@ -20,7 +19,7 @@
 		background-color: $color-background-screen-reader;
 		border-radius: $border-radius;
 		box-shadow: 0 0 rem(2) rem(2) rgba($color-black, 0.6);
-		clip: auto !important;
+		clip: auto;
 		color: $color-text-screen-reader;
 		display: block;
 		font-size: rem(14);

@@ -17,14 +17,14 @@
 		<div class="wrap">
 
 			<div class="site-info">
-				<?php echo _s_get_copyright_text(); ?>
+				<?php echo wp_kses_post( _s_get_copyright_text() ); ?>
 			</div>
 
 		</div><!-- .wrap -->
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
-<?php echo _s_get_mobile_navigation_menu(); ?>
+<?php echo wp_kses_post( _s_get_mobile_navigation_menu() ); ?>
 
 <?php wp_footer(); ?>
 

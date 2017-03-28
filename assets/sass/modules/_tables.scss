@@ -3,10 +3,10 @@
 //--------------------------------------------------------------
 
 table {
+	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 0;
-	padding:0;
+	padding: 0;
 	width: 100%;
 
 	// thead
@@ -53,8 +53,8 @@ table {
 
 	// td
 	td {
-		border-bottom: 0;
 		border: rem(1) solid $color-silver;
+		border-bottom: 0;
 		display: block;
 		font-size: rem(13);
 		text-align: center;
@@ -69,12 +69,12 @@ table {
 		} // &:last-child
 
 		// before
-		&:before {
-			content: '';
+		&::before {
+			content: "";
 			float: left;
 			font-weight: bold;
 			text-transform: uppercase;
-		} // &:before
+		} // &::before
 	} // td
 
 	@include media($phone-landscape) {

@@ -51,7 +51,7 @@ $gf-input-padding: $padding-input;
 	&.gform_body .gform_fields .gfield.gf_right_half {
 		margin-bottom: $gf-field-margin-bottom; // space between input and label below
 	} // &.gform_body .gform_fields .gfield, &.gform_body .gform_fields .gfield.gf_left_half, &.gform_body .gform_fields .gfield.gf_right_half
-	
+
 	// Labels
 	.gfield_label {
 		color: $gf-label-font-color;
@@ -84,9 +84,9 @@ $gf-input-padding: $padding-input;
 	// Feel free to change the svg icon being used
 	select {
 		-webkit-appearance: none;
+		background: url("assets/images/svg-icons/caret-down.svg") no-repeat 97% transparent;
 		background-color: $gf-input-color-background;
 		background-size: rem(12);
-		background: url(assets/images/svg-icons/caret-down.svg) no-repeat 97% transparent;
 		border-color: $gf-input-color-border;
 		border-radius: 0;
 		line-height: 1.45;
@@ -254,7 +254,7 @@ $gf-input-padding: $padding-input;
 				width: 100%;
 			}
 		} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"]
-		
+
 		@include media($phone-landscape) {
 			width: 49%;
 		}
@@ -278,4 +278,3 @@ $gf-input-padding: $padding-input;
 		} // .name_first input[type="text"], .name_last input[type="text"]
 	} // .ginput_complex
 } // #content .gform_wrapper
- 

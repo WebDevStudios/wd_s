@@ -8,18 +8,18 @@ input[type="reset"],
 input[type="submit"] {
 	appearance: none;
 	background-color: $color-button-background;
+	border: none;
 	border-radius: 0;
 	border-width: 0;
-	border: none;
 	color: $color-button-text;
 	line-height: 1.5;
 	margin: 0;
 	padding: $padding-input;
 
 	// IE 11 helper.
-	body.ie & {
+	.ie & {
 		height: rem(35);
-	} // body.ie &
+	} // .ie &
 
 	&:hover {
 		background-color: $color-button-background-hover;
