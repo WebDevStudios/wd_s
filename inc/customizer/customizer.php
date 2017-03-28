@@ -12,7 +12,7 @@ function _s_include_custom_controls() {
 	require get_template_directory() . '/inc/customizer/panels.php';
 	require get_template_directory() . '/inc/customizer/sections.php';
 	require get_template_directory() . '/inc/customizer/settings.php';
-	require get_template_directory() . '/inc/customizer/tinymce.php';
+	require get_template_directory() . '/inc/customizer/class-text-editor-custom-control.php';
 }
 add_action( 'customize_register', '_s_include_custom_controls', -999 );
 
