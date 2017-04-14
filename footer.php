@@ -24,20 +24,27 @@
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
-<nav id="mobile-menu" class="mobile-nav-menu">
-	<button class="close-mobile-menu"><span class="screen-reader-text"><?php echo esc_html_e( 'Close menu', '_s' ); ?></span><?php echo _s_get_svg( array( 'icon' => 'close' ) ); // WPCS: XSS ok. ?></button>
-	<?php
-		wp_nav_menu( array(
-			'theme_location' => $mobile_menu,
-			'menu_id'        => 'primary-menu',
-			'menu_class'     => 'menu dropdown mobile-nav',
-			'link_before'    => '<span>',
-			'link_after'     => '</span>',
-		) );
-	?>
-</nav>
-
 <?php wp_footer(); ?>
 
+<nav class="off-canvas-container" aria-hidden="true">
+	<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', 'wds' ); ?>">
+		<span class="close"></span>
+	</button>
+	<?php
+		// Mobile menu args.
+		$mobile_args = array(
+			'theme_location'  => 'mobile',
+			'container'       => 'div',
+			'container_class' => 'off-canvas-content',
+			'container_id'    => '',
+			'menu_id'         => 'mobile-menu',
+			'menu_class'      => 'mobile-menu',
+		);
+
+		// Display the mobile menu.
+		wp_nav_menu( $mobile_args );
+	?>
+</nav>
+<div class="off-canvas-screen"></div>
 </body>
 </html>
