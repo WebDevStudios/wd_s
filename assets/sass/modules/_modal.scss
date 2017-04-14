@@ -31,7 +31,7 @@
 		background-clip: padding-box;
 		background-color: $color-white;
 		border-radius: rem(3);
-		box-shadow: 0 0 rem(10) rem(3) rgba($color-black, 0.5);
+		box-shadow: 0 0 10px 3px rgba($color-black, 0.5);
 		outline: 0;
 		padding: rem(10);
 		position: relative;
@@ -47,7 +47,7 @@
 				@include size(rem(30) rem(30));
 
 				background: $color-black;
-				border: rem(3) solid $color-white;
+				border: 3px solid $color-white;
 				border-radius: 50%;
 				color: $color-white;
 				cursor: pointer;

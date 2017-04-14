@@ -53,7 +53,7 @@ table {
 
 	// td
 	td {
-		border: rem(1) solid $color-silver;
+		border: 1px solid $color-silver;
 		border-bottom: 0;
 		display: block;
 		font-size: em(13);
@@ -78,6 +78,6 @@ table {
 	} // td
 
 	@include media($phone-landscape) {
-		border: rem(1) solid $color-silver;
+		border: 1px solid $color-silver;
 	}
 } // table

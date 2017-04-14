@@ -401,7 +401,7 @@
 				@include size(auto rem(64));
 
 				background-color: $color-white;
-				border-top: 1px solid rgba($color-black, .1);
+				border-top: 1px solid rgba($color-black, 0.1);
 				display: inline-block;
 				float: none;
 				font-size: em(12);
