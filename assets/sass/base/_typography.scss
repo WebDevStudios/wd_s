@@ -69,11 +69,11 @@ i {
 blockquote,
 q {
 	margin: 0 rem(24);
-	quotes: "" "";
+	quotes: '" "';
 
 	&::before,
 	&::after {
-		content: "";
+		content: '';
 	}  // &::before, &::after
 } // blockquote, q
 

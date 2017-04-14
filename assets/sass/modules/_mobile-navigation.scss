@@ -345,7 +345,7 @@
 				@include position(fixed, null null 0 null);
 				@include size(25% 100%);
 
-				content: "";
+				content: '';
 				pointer-events: none; // So the text is still selectable.
 				z-index: 20;
 			} // &::before, &::after
