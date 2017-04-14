@@ -3,7 +3,7 @@
  *
  * Create an accordion style dropdown.
  */
-window.wdsMobileMenuDropdowns = {};
+window.wdsMobileMenu = {};
 ( function( window, $, app ) {
 
 	// Constructor.
