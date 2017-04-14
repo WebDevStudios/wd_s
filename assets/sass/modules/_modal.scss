@@ -6,7 +6,7 @@
 	@include clearfix;
 	@include position(fixed, 0 0 0 0);
 
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba($color-black, 0.3);
 	display: none;
 	overflow: hidden;
 	z-index: 1050;
