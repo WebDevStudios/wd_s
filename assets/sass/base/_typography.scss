@@ -83,7 +83,7 @@ address {
 
 pre {
 	font-family: $font-pre;
-	font-size: rem(15);
+	font-size: em(15);
 	line-height: $line-height-pre;
 	margin: 0 0 rem(24);
 	max-width: 100%;
@@ -96,7 +96,7 @@ kbd,
 tt,
 var {
 	font-family: $font-code;
-	font-size: rem(15);
+	font-size: em(15);
 } // code, kbd, tt, var
 
 abbr,

@@ -31,7 +31,7 @@ table {
 
 	// th
 	th {
-		font-size: rem(14);
+		font-size: em(14);
 		letter-spacing: rem(1);
 		text-transform: uppercase;
 
@@ -56,7 +56,7 @@ table {
 		border: rem(1) solid $color-silver;
 		border-bottom: 0;
 		display: block;
-		font-size: rem(13);
+		font-size: em(13);
 		text-align: center;
 
 		@include media($phone-landscape) {

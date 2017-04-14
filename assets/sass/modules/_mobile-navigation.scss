@@ -95,7 +95,7 @@
 
 			> a {
 				display: block;
-				font-size: rem(12);
+				font-size: em(12);
 				height: 100%;
 				line-height: 1.2;
 
@@ -287,7 +287,7 @@
 
 		a {
 			color: $color-white;
-			font-size: rem(16);
+			font-size: em(16);
 			padding: rem(10) rem(20);
 			text-align: left;
 		} // a
@@ -404,7 +404,7 @@
 				border-top: 1px solid rgba($color-black, .1);
 				display: inline-block;
 				float: none;
-				font-size: rem(12);
+				font-size: em(12);
 				margin: 0;
 				text-align: center;
 				vertical-align: top;
@@ -428,7 +428,7 @@
 
 				> a {
 					display: block;
-					font-size: rem(12);
+					font-size: em(12);
 					height: 100%;
 					line-height: 1.2;
 				} // > a
