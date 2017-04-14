@@ -142,15 +142,6 @@ a {
 	}
 } // .main-navigation
 
-// Small menu
-.menu-toggle {
-	display: block;
-
-	@include media($phone-landscape) {
-		display: none;
-	}
-} // .menu-toggle
-
 // Navigation on Comment, Post and Posts
 .comment-navigation,
 .posts-navigation,
