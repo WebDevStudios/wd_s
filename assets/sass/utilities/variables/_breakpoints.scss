@@ -5,10 +5,10 @@
 /// Standard Media Query Breakpoints
 /// @group wds
 
-$large-desktop: rem(1680);
-$desktop: rem(1366);
-$tablet-landscape: rem(1024);
-$wp-admin-bar: rem(783);
-$tablet-portrait: rem(768);
-$phone-landscape: rem(640);
-$phone-portrait: rem(360);
+$large-desktop: em(1680);
+$desktop: em(1366);
+$tablet-landscape: em(1024);
+$wp-admin-bar: em(783);
+$tablet-portrait: em(768);
+$phone-landscape: em(640);
+$phone-portrait: em(360);
