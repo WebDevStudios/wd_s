@@ -196,7 +196,7 @@ function _s_get_the_excerpt( $args = array() ) {
 /**
  * Echo an image, no matter what.
  *
- * @param string $size The image size to display.
+ * @param string $size The image size to display. Default is thumbnail.
  */
 function _s_display_post_image( $size = 'thumbnail' ) {
 
@@ -217,7 +217,7 @@ function _s_display_post_image( $size = 'thumbnail' ) {
 /**
  * Return an image URL, no matter what.
  *
- * @param  string $size The image size to return.
+ * @param  string $size The image size to return. Deafault is thumbnail.
  * @return string       The image URL.
  */
 function _s_get_post_image_url( $size = 'thumbnail' ) {
@@ -240,7 +240,7 @@ function _s_get_post_image_url( $size = 'thumbnail' ) {
 /**
  * Get the URL of an image that's attached to the current post, else a placeholder image URL.
  *
- * @param  string $size [description]
+ * @param  string $size The image size to return. Deafault is thumbnail.
  * @return string       The image URL.
  */
 function _s_get_attached_image_url( $size = 'thumbnail' ) {
