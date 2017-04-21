@@ -24,7 +24,7 @@
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
-<?php echo wp_kses_post( _s_get_mobile_navigation_menu() ); ?>
+<?php _s_display_mobile_navigation_menu(); ?>
 
 <?php wp_footer(); ?>
 
