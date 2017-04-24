@@ -69,18 +69,18 @@ function _s_customize_social_icons( $wp_customize ) {
 			array(
 				'default' => '',
 				'sanitize_callback' => 'esc_url',
-	        )
-	    );
+			)
+		);
 
-	    // Create the setting field.
-	    $wp_customize->add_control(
-	        '_s_' . $network . '_link',
-	        array(
-	            'label'   => sprintf( esc_html__( '%s Link', '_s' ), ucwords( $network ) ),
-	            'section' => '_s_social_links_section',
-	            'type'    => 'text',
-	        )
-	    );
+		// Create the setting field.
+		$wp_customize->add_control(
+			'_s_' . $network . '_link',
+			array(
+				'label'   => /* translators: the social network name. */ sprintf( esc_html__( '%s Link', '_s' ), ucwords( $network ) ),
+				'section' => '_s_social_links_section',
+				'type'    => 'text',
+			)
+		);
 	}
 }
 add_action( 'customize_register', '_s_customize_social_icons' );
