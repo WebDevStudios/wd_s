@@ -5,8 +5,11 @@
 // Structure.
 .wrap {
 	@include grid-container;
+	@include margin-auto;
 
+	max-width: 100%;
 	padding: 0 2 * $gutter;
+	width: rem(960);
 
 	@include grid-media($desktop) {
 		padding: 0;
