@@ -44,7 +44,7 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', 'wds' ); ?>">
+			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
 				<span class="hamburger"></span>
 			</button>
 
