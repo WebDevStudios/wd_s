@@ -109,26 +109,26 @@ function _s_get_placeholder_image( $args = array() ) {
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
-		throw new Exception( __( 'Width must be an integer', '_s' ) );
+		throw new Exception( esc_html__( 'Width must be an integer', '_s' ) );
 	}
 
 	if ( ! is_numeric( $height ) ) {
-		throw new Exception( __( 'Height must be an integer', '_s' ) );
+		throw new Exception( esc_html__( 'Height must be an integer', '_s' ) );
 	}
 
 	if ( ! ctype_xdigit( $background_color ) ) {
-		throw new Exception( __( 'Please provide a valid hex color value for background_color', '_s' ) );
+		throw new Exception( esc_html__( 'Please provide a valid hex color value for background_color', '_s' ) );
 	}
 
 	if ( ! ctype_xdigit( $text_color ) ) {
-		throw new Exception( __( 'Please provide a valid hex color value for text_color', '_s' ) );
+		throw new Exception( esc_html__( 'Please provide a valid hex color value for text_color', '_s' ) );
 	}
 
 	// Set up the url to the image.
 	$url = "http://placeholder.wdslab.com/i/{$width}x$height/$background_color/$text_color";
 
 	// Text that will be utilized by screen readers.
-	$alt = apply_filters( '_s_placeholder_image_alt', __( 'WebDevStudios Placeholder Image', '_s' ) );
+	$alt = apply_filters( '_s_placeholder_image_alt', esc_html__( 'WebDevStudios Placeholder Image', '_s' ) );
 
 	return "<img src='$url' width='$width' height='$height' alt='$alt' />";
 }
@@ -174,11 +174,11 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $args['width'] ) ) {
-		throw new Exception( __( 'Width must be an integer', '_s' ) );
+		throw new Exception( esc_html__( 'Width must be an integer', '_s' ) );
 	}
 
 	if ( ! is_numeric( $args['height'] ) ) {
-		throw new Exception( __( 'Height must be an integer', '_s' ) );
+		throw new Exception( esc_html__( 'Height must be an integer', '_s' ) );
 	}
 
 	// Set up the url to the image.
@@ -199,7 +199,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 	}
 
 	// Text that will be utilized by screen readers.
-	$alt = apply_filters( '_s_placeholder_image_alt', __( 'WebDevStudios Placeholder Image', '_s' ) );
+	$alt = apply_filters( '_s_placeholder_image_alt', esc_html__( 'WebDevStudios Placeholder Image', '_s' ) );
 
 	return "<img src='$url' width='{$args['width']}' height='{$args['height']}' alt='$alt' />";
 }

@@ -19,8 +19,8 @@ function _s_font_url() {
 	 * supported by the following, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$roboto = _x( 'on', 'Roboto font: on or off', '_s' );
-	$open_sans = _x( 'on', 'Open Sans font: on or off', '_s' );
+	$roboto = esc_html_x( 'on', 'Roboto font: on or off', '_s' );
+	$open_sans = esc_html_x( 'on', 'Open Sans font: on or off', '_s' );
 
 	if ( 'off' !== $roboto || 'off' !== $open_sans ) {
 		$font_families = array();
