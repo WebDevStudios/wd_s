@@ -26,7 +26,7 @@ $gf-border-color: $color-white; // border color
 $gf-field-margin-bottom: rem(25); // margin between field and label below (vertical spacing between rows)
 
 // Labels
-$gf-label-font-size: rem(16);
+$gf-label-font-size: em(16);
 $gf-label-font-color: $color-mineshaft;
 $gf-label-font-weight: 700;
 
@@ -65,13 +65,13 @@ $gf-input-padding: $padding-input;
 	} // .gfield_label
 
 	// Standard fields
-	input[type="text"],
-	input[type="url"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	input[type="password"],
-	input[type="file"],
+	input[type='text'],
+	input[type='url'],
+	input[type='email'],
+	input[type='tel'],
+	input[type='number'],
+	input[type='password'],
+	input[type='file'],
 	textarea {
 		background: $gf-input-color-background;
 	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
@@ -84,7 +84,7 @@ $gf-input-padding: $padding-input;
 	// Feel free to change the svg icon being used
 	select {
 		-webkit-appearance: none;
-		background: url("assets/images/svg-icons/caret-down.svg") no-repeat 97% transparent;
+		background: url('assets/images/svg-icons/caret-down.svg') no-repeat 97% transparent;
 		background-color: $gf-input-color-background;
 		background-size: rem(12);
 		border-color: $gf-input-color-border;
@@ -99,7 +99,7 @@ $gf-input-padding: $padding-input;
 	} // select
 
 	// Remove icon for default multi-select
-	select[multiple="multiple"] {
+	select[multiple='multiple'] {
 		background: $gf-input-color-background;
 	} // select[multiple="multiple"]
 } // .gform_wrapper
@@ -118,7 +118,7 @@ $gf-input-padding: $padding-input;
 .gform_wrapper .gform_footer {
 
 	input.button,
-	input[type="submit"] {
+	input[type='submit'] {
 		// This will target submit buttons
 	} // input.button, input[type="submit"]
 } // .gform_wrapper .gform_footer
@@ -171,7 +171,7 @@ $gf-input-padding: $padding-input;
 	.chosen-drop {
 
 		// Search box by default has a small magnifying icon on right
-		.chosen-search input[type="text"] {
+		.chosen-search input[type='text'] {
 			background: none;
 		} // .chosen-search input[type="text"]
 
@@ -204,13 +204,13 @@ $gf-input-padding: $padding-input;
 	max-width: 100%; // allow for full width of containing element
 
 	// Standard fields
-	input[type="text"],
-	input[type="url"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	input[type="password"],
-	input[type="file"],
+	input[type='text'],
+	input[type='url'],
+	input[type='email'],
+	input[type='tel'],
+	input[type='number'],
+	input[type='password'],
+	input[type='file'],
 	textarea {
 		padding: $gf-input-padding;
 		width: 100%;
@@ -220,7 +220,7 @@ $gf-input-padding: $padding-input;
 		}
 	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
 
-	.chosen-search input[type="text"],
+	.chosen-search input[type='text'],
 	textarea {
 		width: 100%;
 	} // .chosen-search input[type="text"], textarea
@@ -242,13 +242,13 @@ $gf-input-padding: $padding-input;
 		width: 100%;
 
 		// Inputs
-		input[type="text"],
-		input[type="url"],
-		input[type="email"],
-		input[type="tel"],
-		input[type="number"],
-		input[type="password"],
-		input[type="file"] {
+		input[type='text'],
+		input[type='url'],
+		input[type='email'],
+		input[type='tel'],
+		input[type='number'],
+		input[type='password'],
+		input[type='file'] {
 
 			@include media($phone-landscape) {
 				width: 100%;
@@ -272,8 +272,8 @@ $gf-input-padding: $padding-input;
 	// https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
 	.ginput_complex {
 
-		.name_first input[type="text"],
-		.name_last input[type="text"] {
+		.name_first input[type='text'],
+		.name_last input[type='text'] {
 			width: 100%;
 		} // .name_first input[type="text"], .name_last input[type="text"]
 	} // .ginput_complex

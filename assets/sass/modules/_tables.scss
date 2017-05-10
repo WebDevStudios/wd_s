@@ -31,7 +31,7 @@ table {
 
 	// th
 	th {
-		font-size: rem(14);
+		font-size: em(14);
 		letter-spacing: rem(1);
 		text-transform: uppercase;
 
@@ -53,10 +53,10 @@ table {
 
 	// td
 	td {
-		border: rem(1) solid $color-silver;
+		border: 1px solid $color-silver;
 		border-bottom: 0;
 		display: block;
-		font-size: rem(13);
+		font-size: em(13);
 		text-align: center;
 
 		@include media($phone-landscape) {
@@ -70,7 +70,7 @@ table {
 
 		// before
 		&::before {
-			content: "";
+			content: '';
 			float: left;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -78,6 +78,6 @@ table {
 	} // td
 
 	@include media($phone-landscape) {
-		border: rem(1) solid $color-silver;
+		border: 1px solid $color-silver;
 	}
 } // table
