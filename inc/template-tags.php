@@ -196,68 +196,66 @@ function _s_get_the_excerpt( $args = array() ) {
 /**
  * Echo an image, no matter what.
  *
- * @param string $size The image size you want to display.
+ * @param string $size The image size to display. Default is thumbnail.
  */
-function _s_get_post_image( $size = 'thumbnail' ) {
+function _s_display_post_image( $size = 'thumbnail' ) {
 
-	// If featured image is present, use that.
+	// If post has a featured image, display it.
 	if ( has_post_thumbnail() ) {
-		return the_post_thumbnail( $size );
+		the_post_thumbnail( $size );
+		return;
 	}
 
-	// Check for any attached image.
-	$media = get_attached_media( 'image', get_the_ID() );
-	$media = current( $media );
+	$attached_image_url = _s_get_attached_image_url( $size );
 
-	// Set up default image path.
-	$media_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
-
-	// If an image is present, then use it.
-	if ( is_array( $media ) && 0 < count( $media ) ) {
-		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
-	}
-
-	// Start the markup.
-	ob_start(); ?>
-
-	<img src="<?php echo esc_url( $media_url ); ?>" class="attachment-thumbnail wp-post-image" alt="<?php echo esc_html( get_the_title() ); ?>"/>
-
+	// Else, display an attached image or placeholder.
+	?>
+	<img src="<?php echo esc_url( $attached_image_url ); ?>" class="attachment-thumbnail wp-post-image" alt="<?php echo esc_html( get_the_title() ); ?>"/>
 	<?php
-	return ob_get_clean();
 }
 
 /**
- * Return an image URI, no matter what.
+ * Return an image URL, no matter what.
  *
- * @param  string $size The image size you want to return.
- * @return string The image URI.
+ * @param  string $size The image size to return. Deafault is thumbnail.
+ * @return string       The image URL.
  */
-function _s_get_post_image_uri( $size = 'thumbnail' ) {
+function _s_get_post_image_url( $size = 'thumbnail' ) {
 
-	// If featured image is present, use that.
+	// If post has a featured image, return its URL.
 	if ( has_post_thumbnail() ) {
 
 		$featured_image_id = get_post_thumbnail_id( get_the_ID() );
-		$media = wp_get_attachment_image_src( $featured_image_id, $size );
+		$media             = wp_get_attachment_image_src( $featured_image_id, $size );
 
 		if ( is_array( $media ) ) {
 			return current( $media );
 		}
 	}
 
+	// Else, return the URL for an attached image or placeholder.
+	return _s_get_attached_image_url( $size );
+}
+
+/**
+ * Get the URL of an image that's attached to the current post, else a placeholder image URL.
+ *
+ * @param  string $size The image size to return. Deafault is thumbnail.
+ * @return string       The image URL.
+ */
+function _s_get_attached_image_url( $size = 'thumbnail' ) {
+
 	// Check for any attached image.
 	$media = get_attached_media( 'image', get_the_ID() );
 	$media = current( $media );
 
-	// Set up default image path.
-	$media_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
-
-	// If an image is present, then use it.
-	if ( is_array( $media ) && 0 < count( $media ) ) {
-		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
+	// If an image is attached, return its URL.
+	if ( is_array( $media ) && $media ) {
+		return 'thumbnail' === $size ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
 	}
 
-	return $media_url;
+	// Return URL to a placeholder image as a fallback.
+	return get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
 }
 
 /**
@@ -278,19 +276,16 @@ function _s_get_copyright_text() {
 }
 
 /**
- * Build social sharing icons.
- *
- * @return string
+ * Display social sharing icons.
  */
-function _s_get_social_share() {
+function _s_display_social_icons() {
 
 	// Build the sharing URLs.
 	$twitter_url  = 'https://twitter.com/share?text=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
 	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( get_the_permalink() );
 	$linkedin_url = 'https://www.linkedin.com/shareArticle?title=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
 
-	// Start the markup.
-	ob_start(); ?>
+	?>
 	<div class="social-share">
 		<h5 class="social-share-title"><?php esc_html_e( 'Share This', '_s' ); ?></h5>
 		<ul class="social-icons menu menu-horizontal">
@@ -314,23 +309,18 @@ function _s_get_social_share() {
 			</li>
 		</ul>
 	</div><!-- .social-share -->
-
 	<?php
-	return ob_get_clean();
 }
 
 /**
- * Output the mobile navigation
+ * Display the mobile navigation menu.
  */
-function _s_get_mobile_navigation_menu() {
+function _s_display_mobile_navigation_menu() {
 
 	// Figure out which menu we're pulling.
 	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
 
-	// Start the markup.
-	ob_start();
 	?>
-
 	<nav id="mobile-menu" class="mobile-nav-menu">
 		<button class="close-mobile-menu"><span class="screen-reader-text"><?php echo esc_html_e( 'Close menu', '_s' ); ?></span><?php echo _s_get_svg( array( 'icon' => 'close' ) ); // WPCS: XSS ok. ?></button>
 		<?php
@@ -342,45 +332,38 @@ function _s_get_mobile_navigation_menu() {
 				'link_after'     => '</span>',
 			) );
 		?>
-	</nav>
+	</nav><!-- .mobile-nav-menu -->
 	<?php
-	return ob_get_clean();
 }
 
 /**
- * Retrieve the social links saved in the customizer
- *
- * @return mixed HTML output of social links
+ * Display the social links saved in the customizer.
  */
-function _s_get_social_network_links() {
+function _s_display_social_network_links() {
 
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
 	$social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
 
-	// Kickoff our output buffer.
-	ob_start(); ?>
-
+	?>
 	<ul class="social-icons">
-	<?php
-	// Loop through our network array.
-	foreach ( $social_networks as $network ) :
+		<?php
+		// Loop through our network array.
+		foreach ( $social_networks as $network ) :
 
-		// Look for the social network's URL.
-		$network_url = get_theme_mod( '_s_' . $network . '_link' );
+			// Look for the social network's URL.
+			$network_url = get_theme_mod( '_s_' . $network . '_link' );
 
-		// Only display the list item if a URL is set.
-		if ( isset( $network_url ) && ! empty( $network_url ) ) : ?>
-			<li class="social-icon <?php echo esc_attr( $network ); ?>">
-				<a href="<?php echo esc_url( $network_url ); ?>">
-					<?php echo _s_get_svg( array( 'icon' => $network . '-square', 'title' => /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ) ) ); // WPCS: XSS ok. ?>
-					<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
-				</a>
-			</li><!-- .social-icon -->
-		<?php endif;
-	endforeach; ?>
+			// Only display the list item if a URL is set.
+			if ( ! empty( $network_url ) ) : ?>
+				<li class="social-icon <?php echo esc_attr( $network ); ?>">
+					<a href="<?php echo esc_url( $network_url ); ?>">
+						<?php echo _s_get_svg( array( 'icon' => $network . '-square', 'title' => /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ) ) ); // WPCS: XSS ok. ?>
+						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+					</a>
+				</li><!-- .social-icon -->
+			<?php endif;
+		endforeach; ?>
 	</ul><!-- .social-icons -->
-
 	<?php
-	return ob_get_clean();
 }
