@@ -25,10 +25,10 @@
 	}
 
 	@if not unitless($context) {
-		$base: strip-units($context);
+		$context: strip-units($context);
 	}
 
-	@return ($pixelvalue / $base-context) * 1em;
+	@return ($pixelvalue / $context) * 1em;
 }
 
 
@@ -44,10 +44,10 @@
 	}
 
 	@if not unitless($context) {
-		$base: strip-units($context);
+		$context: strip-units($context);
 	}
 
-	@return ($pixelvalue / $base-context) * 1rem;
+	@return ($pixelvalue / $context) * 1rem;
 }
 
 //-----------------------------------------

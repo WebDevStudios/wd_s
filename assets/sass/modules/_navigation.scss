@@ -142,14 +142,74 @@ a {
 	}
 } // .main-navigation
 
-// Small menu
-.menu-toggle {
-	display: block;
+//-----------------------------------------
+// Mobile menu defaults
+//-----------------------------------------
+.mobile-menu {
+	@include list-reset;
 
-	@include media($phone-landscape) {
-		display: none;
+	ul {
+		@include list-reset;
 	}
-} // .menu-toggle
+
+	li {
+		list-style: none;
+		padding: rem(12);
+		position: relative;
+	}
+
+	a {
+		color: $color-white;
+		font-size: rem(14);
+		padding: rem(5);
+
+		&:focus {
+			outline: rem(2) solid $color-white;
+		} // &:focus
+	}
+
+	// Submenu dropdowns.
+	.sub-menu {
+		display: none;
+
+		&.is-visible {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+	} // .sub-menu
+
+	// Create a down arrow on parent items.
+	.parent-indicator {
+		@include position(absolute, rem(10) rem(10) null null);
+		@include size(rem(35));
+
+		background-color: transparent;
+		display: inline-block;
+		padding: rem(5);
+		z-index: 9999;
+
+		&:focus {
+			outline: rem(2) solid $color-white;
+		} // &:focus
+	} // .parent-indicator
+
+	// Parent menu items.
+	.menu-item-has-children {
+		max-height: rem(52);
+		overflow-y: hidden;
+		transition: max-height 0.5s;
+
+		&.is-visible {
+			max-height: rem(500);
+
+			// When visible, flip the down arrow.
+			.down-arrow {
+				transform: rotateX(180deg);
+			} // .down-arrow
+		} // .is-visible
+	} // .menu-item-has-children
+} // .mobile-menu
 
 // Navigation on Comment, Post and Posts
 .comment-navigation,
