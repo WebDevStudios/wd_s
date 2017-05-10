@@ -84,10 +84,10 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  * @author Ben Lobaugh
  * @throws Exception Details of missing parameters.
  * @param array $args {.
- *		@type int $width
- *		@type int $height
- *		@type string $background_color
- *		@type string $text_color
+ * @type int $width
+ * @type int $height
+ * @type string $background_color
+ * @type string $text_color
  * }
  * @return string
  */
@@ -141,10 +141,10 @@ function _s_get_placeholder_image( $args = array() ) {
  * @author Ben Lobaugh
  * @throws Exception Details of missing parameters.
  * @param array $args {.
- *		@type int $width
- *		@type int $height
- *		@type string $category Optional. Maybe be one of: buildings, food, nature, people, technology, objects
- *		@type string $keywords Optional. Comma seperated list of keywords, such as: sailboat, water
+ * @type int $width
+ * @type int $height
+ * @type string $category Optional. Maybe be one of: buildings, food, nature, people, technology, objects
+ * @type string $keywords Optional. Comma seperated list of keywords, such as: sailboat, water
  * }
  * @return string
  */
