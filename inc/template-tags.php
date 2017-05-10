@@ -291,19 +291,31 @@ function _s_display_social_icons() {
 		<ul class="social-icons menu menu-horizontal">
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $twitter_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'twitter-square', 'title' => 'Twitter', 'desc' => __( 'Share on Twitter', '_s' ) ) ); // WPCS: XSS ok. ?>
+					<?php echo _s_get_svg( array( // WPCS: XSS ok.
+						'icon'  => 'twitter-square',
+						'title' => 'Twitter',
+						'desc'  => esc_html__( 'Share on Twitter', '_s' ),
+					) ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $facebook_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'facebook-square', 'title' => 'Facebook', 'desc' => __( 'Share on Facebook', '_s' ) ) ); // WPCS: XSS ok. ?>
+					<?php echo _s_get_svg( array( // WPCS: XSS ok.
+						'icon'  => 'facebook-square',
+						'title' => 'Facebook',
+						'desc'  => esc_html__( 'Share on Facebook', '_s' ),
+					) ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
 				<a href="<?php echo esc_url( $linkedin_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=475, height=505' ); return false;">
-					<?php echo _s_get_svg( array( 'icon' => 'linkedin-square', 'title' => 'LinkedIn', 'desc' => __( 'Share on LinkedIn', '_s' ) ) ); // WPCS: XSS ok. ?>
+					<?php echo _s_get_svg( array( // WPCS: XSS ok.
+						'icon'  => 'linkedin-square',
+						'title' => 'LinkedIn',
+						'desc'  => esc_html__( 'Share on LinkedIn', '_s' ),
+					) ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
 				</a>
 			</li>
@@ -334,8 +346,11 @@ function _s_display_social_network_links() {
 			if ( ! empty( $network_url ) ) : ?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?>">
 					<a href="<?php echo esc_url( $network_url ); ?>">
-						<?php echo _s_get_svg( array( 'icon' => $network . '-square', 'title' => /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ) ) ); // WPCS: XSS ok. ?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( __( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+						<?php echo _s_get_svg( array( // WPCS: XSS ok.
+							'icon'  => $network . '-square',
+							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
+						) ); ?>
+						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
 					</a>
 				</li><!-- .social-icon -->
 			<?php endif;
