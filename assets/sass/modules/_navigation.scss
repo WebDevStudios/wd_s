@@ -221,13 +221,13 @@ a {
 		overflow: hidden;
 	} // .site-main &
 
-	&.nav-previous {
+	.nav-previous {
 		@include size(50% auto);
 
 		float: left;
 	} // &.nav-previous
 
-	&.nav-next {
+	.nav-next {
 		@include size(50% auto);
 
 		float: right;

@@ -47,9 +47,28 @@
 	margin: 0 0 rem(24) 0;
 } // .page-links
 
+// Tags links
+.tags-links {
+	margin-left: rem(24);
+} // .tags-links
+
 // Edit link
 .edit-link {
-	margin: 0 rem(24);
+	margin: 0 0 0 rem(5);
+
+	a {
+		display: inline-block;
+		font-size: rem(12);
+		text-transform: lowercase;
+
+		&::before {
+			content: '(';
+		}
+
+		&::after {
+			content: ')';
+		}
+	} // a
 } // .edit-link
 
 // Asides
