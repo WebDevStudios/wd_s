@@ -85,13 +85,13 @@
 		} // &:focus, &:active
 	} // textara
 
+	.form-submit {
+		margin: 0;
+	} // .form-submit
+
 	// Submit button.
 	input[type='submit'] {
 		width: rem(196);
-
-		@include media($tablet-landscape) {
-			margin-top: rem(75);
-		}
 	} // input[type="submit"]
 } // .comment-form
 
@@ -105,7 +105,7 @@
 	margin: 0;
 
 	// Even comments get nice gray background.
-	.even > .comment-body {
+	.even:not(.bypostauthor) > .comment-body {
 		background-color: $color-gallery;
 	} // .even > .comment-body
 
@@ -251,6 +251,7 @@
 		} // .comment-reply-title
 
 		.form-submit {
+			margin: 0;
 
 			input[type='submit'] {
 				margin-top: rem(5);
