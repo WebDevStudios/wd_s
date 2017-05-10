@@ -261,7 +261,7 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 /**
  * Echo the copyright text saved in the Customizer.
  */
-function _s_get_copyright_text() {
+function _s_display_copyright_text() {
 
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
@@ -272,7 +272,7 @@ function _s_get_copyright_text() {
 	}
 
 	// Return the text.
-	return '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
+	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
 }
 
 /**
@@ -309,30 +309,6 @@ function _s_display_social_icons() {
 			</li>
 		</ul>
 	</div><!-- .social-share -->
-	<?php
-}
-
-/**
- * Display the mobile navigation menu.
- */
-function _s_display_mobile_navigation_menu() {
-
-	// Figure out which menu we're pulling.
-	$mobile_menu = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
-
-	?>
-	<nav id="mobile-menu" class="mobile-nav-menu">
-		<button class="close-mobile-menu"><span class="screen-reader-text"><?php echo esc_html_e( 'Close menu', '_s' ); ?></span><?php echo _s_get_svg( array( 'icon' => 'close' ) ); // WPCS: XSS ok. ?></button>
-		<?php
-			wp_nav_menu( array(
-				'theme_location' => $mobile_menu,
-				'menu_id'        => 'primary-menu',
-				'menu_class'     => 'menu dropdown mobile-nav',
-				'link_before'    => '<span>',
-				'link_after'     => '</span>',
-			) );
-		?>
-	</nav><!-- .mobile-nav-menu -->
 	<?php
 }
 
