@@ -19,8 +19,8 @@ function _s_font_url() {
 	 * supported by the following, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$roboto = _x( 'on', 'Roboto font: on or off', '_s' );
-	$open_sans = _x( 'on', 'Open Sans font: on or off', '_s' );
+	$roboto = esc_html_x( 'on', 'Roboto font: on or off', '_s' );
+	$open_sans = esc_html_x( 'on', 'Open Sans font: on or off', '_s' );
 
 	if ( 'off' !== $roboto || 'off' !== $open_sans ) {
 		$font_families = array();
@@ -74,15 +74,6 @@ function _s_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
-
-	// Enqueue the mobile nav script
-	// Since we're showing/hiding based on CSS and wp_is_mobile is wp_is_imperfect, enqueue this everywhere.
-	wp_enqueue_script( '_s-mobile-nav', get_template_directory_uri() . '/assets/scripts/mobile-nav-menu' . $suffix . '.js', array( 'jquery' ), $version, true );
-
-	// Enqueue the Pattern Library script.
-	if ( is_page_template( 'template-patterns.php' ) ) {
-		wp_enqueue_script( '_s-pattern-library', get_template_directory_uri() . '/assets/scripts/patterns' . $suffix . '.js', array( 'jquery' ), $version, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );

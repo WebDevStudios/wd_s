@@ -12,18 +12,18 @@ textarea {
 } // button, input, select, textarea
 
 // Addresses excess padding in IE8/9
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
 	padding: 0;
 } // input[type="checkbox"], input[type="radio"]
 
 // Remove the clear x icon in IE
-input[type="text"]::-ms-clear,
-input[type="search"]::-ms-clear {
+input[type='text']::-ms-clear,
+input[type='search']::-ms-clear {
 	display: none;
 } // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
 
-input[type="search"] {
+input[type='search'] {
 	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
 	box-sizing: content-box;
 
@@ -41,24 +41,24 @@ input::-moz-focus-inner {
 	padding: 0;
 } // button::-moz-focus-inner, input::-moz-focus-inner
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+input[type='range'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='color'],
 textarea {
 	appearance: none;
-	border: rem(1) solid $color-input-border;
+	border: 1px solid $color-input-border;
 	border-radius: 0;
 	color: $color-input-text;
 	line-height: 1.5;

@@ -1,0 +1,125 @@
+//--------------------------------------------------------------
+// Off Canvas Drawer
+//--------------------------------------------------------------
+.off-canvas {
+
+	// The container.
+	&-container {
+		@include position(fixed, 0 auto 0 0);
+		@include size(rem(220) 100%);
+
+		-webkit-overflow-scrolling: touch;
+		background-color: $color-cod-gray;
+		overflow-y: auto;
+		transform: translateX(rem(-220));
+		transition: transform 0.25s linear;
+		z-index: 9998;
+
+		&.is-visible {
+			transform: translateX(0);
+		}
+
+		// Deal with the admin bar.
+		.admin-bar & {
+			padding-top: rem(46);
+
+			@include grid-media($wp-admin-bar) {
+				padding-top: rem(32);
+			}
+		} // .admin-bar &
+	} // .off-canvas-container
+
+	// The hamburger nav.
+	&-open {
+		@include position(absolute, null rem(24) null null);
+		@include size(rem(35));
+
+		background-color: transparent;
+		display: block;
+		padding: 0;
+
+		@include grid-media($tablet-portrait) {
+			display: none;
+		}
+
+		&:focus,
+		&:hover {
+			background-color: transparent;
+			outline: rem(2) solid $color-white;
+		} // &:focus, &:hover
+
+		// When open, display the burger.
+		&.is-visible {
+
+			.hamburger {
+				background-color: transparent;
+
+				&::before,
+				&::after {
+					top: 0;
+				}
+
+				&::before {
+					transform: rotate(45deg);
+				}
+
+				&::after {
+					transform: rotate(-45deg);
+				}
+			} // .hamburger
+		} // .is-visible
+	} // .off-canvas-button
+
+	// The close "X" button.
+	&-close {
+		@include position(absolute, rem(10) rem(10) null null);
+
+		background-color: transparent;
+		display: none;
+		padding: rem(12) rem(5);
+		z-index: 9999;
+
+		&:focus,
+		&:hover {
+			background: transparent;
+			outline: rem(2) solid $color-white;
+		} // &:focus, &:hover
+
+		.admin-bar & {
+			top: rem(60);
+
+			@include grid-media($wp-admin-bar) {
+				top: rem(46);
+			}
+		} // .admin-bar &
+
+		.is-visible & {
+			display: inline-block;
+		} // .is-visible &
+	} // .off-canvas-close
+
+	// The background screen.
+	&-screen {
+		@include position(fixed, 0);
+
+		background: $color-black;
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+		visibility: hidden;
+		z-index: 9996;
+
+		&.is-visible {
+			opacity: 0.4;
+			visibility: visible;
+		}
+	} // .off-canvas-screen
+
+	// Content container.
+	&-content {
+		display: none;
+
+		.is-visible & {
+			display: block;
+		}
+	} // .off-canvas-content
+} // .off-canvas

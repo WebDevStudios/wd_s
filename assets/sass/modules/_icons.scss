@@ -32,3 +32,102 @@
 		} // &:last-child
 	} // .social-icon
 } // .social-icons
+
+
+//-----------------------------------------
+// Hamburger icon
+//-----------------------------------------
+.hamburger {
+	background-color: transparent;
+	cursor: pointer;
+	display: block;
+	outline: none;
+	top: 40%;
+
+	&,
+	&::before,
+	&::after {
+		@include size(rem(35) rem(5));
+
+		background: $color-cod-gray;
+		border-radius: rem(1);
+		content: "";
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		transition: all 0.5s ease-in-out; // too much going on, use "all"
+	}
+
+	&::before {
+		top: rem(-10);
+	}
+
+	&::after {
+		bottom: rem(-10);
+	}
+} // .hamburger
+
+
+//-----------------------------------------
+// Close icon
+//-----------------------------------------
+.close {
+	cursor: pointer;
+	display: block;
+	margin-top: rem(-5);
+	outline: none;
+
+	&::before,
+	&::after {
+		@include size(rem(20) rem(3));
+
+		background: $color-white;
+		border-radius: rem(1);
+		content: "";
+		cursor: pointer;
+		display: block;
+		position: relative;
+	}
+
+	&::before {
+		top: rem(3);
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+} // .cross
+
+//--------------------------------------------------------------
+// Down arrow icon
+//--------------------------------------------------------------
+.down-arrow {
+	cursor: pointer;
+	display: block;
+	margin-left: rem(10);
+	outline: none;
+	transition: transform 0.8s ease-in-out;
+
+	&::before,
+	&::after {
+		@include size(rem(10) rem(2));
+
+		background: $color-white;
+		border-radius: rem(1);
+		content: "";
+		cursor: pointer;
+		display: block;
+		position: relative;
+	}
+
+	&::before {
+		left: rem(-6);
+		top: rem(2);
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-225deg);
+	}
+} // .down-arrow

@@ -36,13 +36,19 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
+				<?php endif; ?>
 
-				$description = get_bloginfo( 'description', 'display' ); ?>
-				<?php if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; // WPCS: xss ok. ?></p>
+				<?php
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) :
+				?>
+					<p class="site-description"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
+
+			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
+				<span class="hamburger"></span>
+			</button>
 
 			<nav id="site-navigation" class="main-navigation">
 				<?php

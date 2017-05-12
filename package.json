@@ -5,8 +5,8 @@
   "main": "Gulpfile.js",
   "dependencies": {
     "babel-preset-es2015": "~6",
-    "bourbon": "~4",
-    "bourbon-neat": "~1",
+    "bourbon": "~4.3",
+    "bourbon-neat": "~2",
     "browser-sync": "~2",
     "css-mqpacker": "~5",
     "del": "~2",

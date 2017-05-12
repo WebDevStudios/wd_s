@@ -51,8 +51,9 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 66,
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -80,7 +81,14 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	// Comment form args.
+	// @link https://codex.wordpress.org/Function_Reference/comment_form#Default_.24args_array
+	$comment_args = array(
+		'class_submit' => 'button',
+	);
+
+	// Spit out the comment form.
+	comment_form( $comment_args );
 	?>
 
 </div><!-- #comments -->

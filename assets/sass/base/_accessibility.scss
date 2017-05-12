@@ -18,11 +18,11 @@
 
 		background-color: $color-background-screen-reader;
 		border-radius: $border-radius;
-		box-shadow: 0 0 rem(2) rem(2) rgba($color-black, 0.6);
+		box-shadow: 0 0 2px 2px rgba($color-black, 0.6);
 		clip: auto;
 		color: $color-text-screen-reader;
 		display: block;
-		font-size: rem(14);
+		font-size: em(14);
 		font-weight: 700;
 		left: rem(5);
 		line-height: normal;

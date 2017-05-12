@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Theme Coding Standards">
+<ruleset name="WebDevStudios Coding Standards">
   <!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
   <!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/blob/develop/WordPress-Core/ruleset.xml -->
 
@@ -14,4 +14,13 @@
     <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
   </rule>
+
+  <!-- Doc block alignments -->
+  <rule ref="Squiz.Commenting.DocCommentAlignment" />
+
+  <!-- In some cases this isn't possible to catch -->
+  <rule ref="Squiz.PHP.DisallowMultipleAssignments.Found">
+    <severity>0</severity>
+  </rule>
+
 </ruleset>

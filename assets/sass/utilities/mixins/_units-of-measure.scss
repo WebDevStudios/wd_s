@@ -6,7 +6,7 @@
 // Strip Units Forked from Bourbon 4 https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
 //-----------------------------------------
 @function strip-unit($number) {
-	@if type-of($number) == "number" and not unitless($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
 		@return $number / ($number * 0 + 1);
 	}
 
@@ -25,10 +25,10 @@
 	}
 
 	@if not unitless($context) {
-		$base: strip-units($context);
+		$context: strip-units($context);
 	}
 
-	@return ($pixelvalue / $base-context) * 1em;
+	@return ($pixelvalue / $context) * 1em;
 }
 
 
@@ -44,10 +44,10 @@
 	}
 
 	@if not unitless($context) {
-		$base: strip-units($context);
+		$context: strip-units($context);
 	}
 
-	@return ($pixelvalue / $base-context) * 1rem;
+	@return ($pixelvalue / $context) * 1rem;
 }
 
 //-----------------------------------------

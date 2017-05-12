@@ -2,69 +2,260 @@
 // Comments
 //--------------------------------------------------------------
 
-// Comment title
-.comments-title {
-	font-size: rem(24);
-} // .comments-title
+//-----------------------------------------
+// Comment area scaffolding
+//-----------------------------------------
+.comments-area {
+	border-top: 1px solid $color-silver;
+	margin: rem(100) rem(24) rem(151);
+	max-width: $max-width;
 
-// Comment list
-.comment-list {
-	list-style: none;
-	margin: 0;
-} // .comment-list
+	@media(max-width: $max-width) {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-// Comment meta
-.comment-meta {
-	margin: 0 0 rem(14) 0;
-} // .comment-meta
+	.comment-reply-title {
+		margin-top: rem(47);
+	} // .comment-reply-title
 
-// Comments avatar
-.avatar {
-	float: left;
-	margin: 0 rem(10) 0 0;
-} // .avatar
+	.comments-title {
+		font-size: em(24);
+		margin-top: rem(126);
+	} // .comments-title
 
-// By post author
-.bypostauthor {
-	display: block;
-} // .bypostauthor
+	.comment-notes {
+		font-size: em(16);
+		margin-bottom: rem(54);
+	} // .comment-notes
+} // .comments-area
 
-// Comment Form
-.comment-form {
-	@include grid-column(12);
 
-	input:not(.submit) {
+//-----------------------------------------
+// Labels
+//-----------------------------------------
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+
+	label {
+		float: left;
+		font-size: em(16);
+		text-transform: uppercase;
 		width: 100%;
+	} // label
+} // .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url
+
+
+//-----------------------------------------
+// The comment form.
+//-----------------------------------------
+.comment-form {
+	@include clearfix;
+
+	width: 100%;
+
+	// Any input (except submit button)
+	input:not(.submit) {
+		clear: both;
+		transition: border 0.2s ease-in-out;
+		width: 100%;
+
+		// Focus + active state.
+		&:focus,
+		&:active {
+			border: 1px solid $color-mineshaft;
+		} // &:focus, &:active
 
 		@include grid-media($phone-landscape) {
 			max-width: rem(250);
 		}
 	} // input:not(.submit)
+
+	// Comment text area.
+	textarea {
+		max-width: rem(870);
+		transition: border 0.2s ease-in-out;
+
+		// Focus + active state.
+		&:focus,
+		&:active {
+			border: 1px solid $color-mineshaft;
+		} // &:focus, &:active
+	} // textara
+
+	.form-submit {
+		margin: 0;
+	} // .form-submit
+
+	// Submit button.
+	input[type='submit'] {
+		width: rem(196);
+	} // input[type="submit"]
 } // .comment-form
 
-// Default labels for comment form
-.comment-form-author,
-.comment-form-email,
-.comment-form-url {
-	label {
-		@include grid-column(12);
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+.comment-list {
+	@include list-reset;
+
+	margin: 0;
+
+	// Even comments get nice gray background.
+	.even:not(.bypostauthor) > .comment-body {
+		background-color: $color-gallery;
+	} // .even > .comment-body
+
+	// Each comment body.
+	.comment-body {
+		padding: rem(36);
+	} // .comment-body
+
+	// Comment content.
+	.comment-content {
+		margin: rem(31) 0 rem(28);
+		max-width: rem(936);
+	} // .comment-content
+
+	// Comment meta.
+	.comment-meta {
+		@include clearfix;
+
+		margin: 0 0 rem(14) 0;
+	} // .comment-meta
+
+	// The comment author name.
+	.comment-author {
+		line-height: 1;
+	} // .comment-author
+
+	// The date/time.
+	.comment-metadata {
+		line-height: 1;
+		margin-top: rem(5);
+
+		a {
+			color: $color-silver-chalice;
+			text-decoration: none;
+		} // a
+
+		time {
+			font-size: em(12);
+		} // time
+	} // .comment-metadata
+
+	// Comments avatar.
+	.avatar {
+		border-radius: 50%;
+		float: left;
+		margin: rem(-6) rem(26) 0 0;
 
 		@include grid-media($phone-landscape) {
-			width: rem(75);
+			margin-top: rem(-12);
 		}
-	} // label
-} // .comment-form-author, .comment-form-email, .comment-form-url
+	} // .avatar
 
-// Nested comments spacing from mobile to desktop
-.comment-list .children {
-	margin-left: 0;
-	padding-left: rem(20);
+	// By post author.
+	.bypostauthor {
+		background-color: $color-light-yellow;
+		display: block;
+	} // .bypostauthor
 
-	@include grid-media($phone-landscape) {
-		padding-left: rem(35);
-	}
+	// The reply link/button thingy.
+	.comment-reply-link {
+		font-weight: 700;
+	} // .comment-reply-link
 
-	@include grid-media($tablet-portrait) {
-		padding-left: rem(60);
-	}
-} // .comment-list .children
+	// If someone replies with code...
+	pre,
+	code {
+		margin: 0;
+		padding-top: rem(5);
+		width: 100%;
+	} // pre, code
+} // .comment-list
+
+
+//-----------------------------------------
+// Nested children scaffolding.
+//-----------------------------------------
+.comment-list {
+
+	// Comment children.
+	.children {
+		list-style: none;
+		margin: rem(40) 0;
+		padding-left: rem(20);
+
+		@include grid-media($phone-landscape) {
+			padding-left: rem(35);
+		}
+
+		@include grid-media($tablet-portrait) {
+			padding-left: rem(60);
+		}
+
+		.depth-4,
+		.depth-5,
+		.depth-6,
+		.depth-7,
+		.depth-8,
+		.depth-9,
+		.depth-10 {
+
+			// Increase line height on mobile for better readability.
+			.comment-author {
+				line-height: 1.25;
+
+				@include grid-media($phone-landscape) {
+					line-height: 1;
+				}
+			} // .comment-author
+		} // .depth-x
+	} // .children
+} // .comment-list
+
+
+//-----------------------------------------
+// Inline reply
+//-----------------------------------------
+.comment-list {
+
+	.comment-respond {
+		background-color: $color-white;
+		padding: rem(24) 0;
+
+		@include grid-media($phone-landscape) {
+			padding-left: rem(36);
+			padding-right: rem(36);
+		}
+
+		.comment-reply-title {
+
+			// The "cancel reply".
+			a {
+				display: inline-block;
+				text-transform: lowercase;
+
+				&::before {
+					content: '(';
+				}
+
+				&::after {
+					content: ')';
+				}
+			} // a
+		} // .comment-reply-title
+
+		.form-submit {
+			margin: 0;
+
+			input[type='submit'] {
+				margin-top: rem(5);
+			}
+		} // .form-submit
+	} // .comment-respond
+} // .comment-list
