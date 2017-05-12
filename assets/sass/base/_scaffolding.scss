@@ -1,11 +1,11 @@
 //--------------------------------------------------------------
-// Pattern Library
+// scaffolding Library
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Pattern defaults
+// scaffolding defaults
 //-----------------------------------------
-.pattern-document {
+.scaffolding-document {
 	margin-bottom: $gutter * 2;
 
 	// The section <header>
@@ -26,7 +26,7 @@
 			margin-top: rem(12);
 			font-style: italic;
 		} // p
-	} // .pattern-section-header
+	} // .scaffolding-section-header
 
 	// The section content <div>
 	&-content {
@@ -55,15 +55,15 @@
 		} // code
 	} // &-content
 
-	// Always display the global patterns.
-	&.pattern-colors,
-	&.pattern-fonts {
+	// Always display the global scaffolding.
+	&.scaffolding-colors,
+	&.scaffolding-fonts {
 
-		.pattern-document-content {
+		.scaffolding-document-content {
 			display: block;
-		} // .pattern-document-content
-	} // &.pattern-colors, &.pattern-fonts
-} // .pattern-document
+		} // .scaffolding-document-content
+	} // &.scaffolding-colors, &.scaffolding-fonts
+} // .scaffolding-document
 
 
 //-----------------------------------------

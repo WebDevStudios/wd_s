@@ -1,56 +1,56 @@
 <?php
 /**
- * Custom Pattern Library functions.
+ * Custom scaffolding Library functions.
  *
- * File for custom Pattern Library functionality.
+ * File for custom scaffolding Library functionality.
  *
  * @package _s
  */
 
 /**
- * Build a pattern section.
+ * Build a scaffolding section.
  *
- * @param array $args The pattern defaults.
- * @return string The pattern documentation.
+ * @param array $args The scaffolding defaults.
+ * @return string The scaffolding documentation.
  * @author Greg Rickaby Carrie Forde
  */
-function _s_display_pattern_section( $args = array() ) {
+function _s_display_scaffolding_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'title'        => '',       // The pattern title.
-		'description'  => '',       // The pattern description.
-		'usage'        => '',       // The template tag or markup needed to display the pattern.
-		'parameters'   => array(),  // Does the pattern have params? Like $args?
-		'arguments'    => array(),  // If the pattern has params, what are the $args?
-		'output'       => '',       // Use the template tag or pattern HTML markup here. It will be sanitized displayed.
+		'title'        => '',       // The scaffolding title.
+		'description'  => '',       // The scaffolding description.
+		'usage'        => '',       // The template tag or markup needed to display the scaffolding.
+		'parameters'   => array(),  // Does the scaffolding have params? Like $args?
+		'arguments'    => array(),  // If the scaffolding has params, what are the $args?
+		'output'       => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
 	);
 
 	// Parse arguments.
 	$args = wp_parse_args( $args, $defaults );
 
 	// Grab our allowed tags.
-	$allowed_tags = _s_pattern_allowed_html();
+	$allowed_tags = _s_scaffolding_allowed_html();
 
 	// Add a unique class to the wrapper.
-	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
+	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
 
-	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
+	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 
 		<?php if ( $args['title'] ) : ?>
-		<header class="pattern-document-header">
-			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
-			<button type="button" class="pattern-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
-		</header><!-- .pattern-document-header -->
+		<header class="scaffolding-document-header">
+			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
+		</header><!-- .scaffolding-document-header -->
 		<?php endif; ?>
 
-		<div class="pattern-document-content">
+		<div class="scaffolding-document-content">
 
-			<div class="pattern-document-details">
+			<div class="scaffolding-document-details">
 
 			<?php if ( $args['description'] ) : ?>
 				<p><strong><?php esc_html_e( 'Description', '_s' ); ?>:</strong></p>
-				<p class="pattern-document-description"><?php echo esc_html( $args['description'] ); ?></p>
+				<p class="scaffolding-document-description"><?php echo esc_html( $args['description'] ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $args['parameters'] ) : ?>
@@ -67,9 +67,9 @@ function _s_display_pattern_section( $args = array() ) {
 				<?php endforeach; ?>
 			<?php endif; ?>
 
-			</div><!-- .pattern-document-details -->
+			</div><!-- .scaffolding-document-details -->
 
-			<div class="pattern-document-usage">
+			<div class="scaffolding-document-usage">
 
 			<?php if ( $args['usage'] ) : ?>
 				<p><strong><?php esc_html_e( 'Usage', '_s' ); ?>:</strong></p>
@@ -81,28 +81,28 @@ function _s_display_pattern_section( $args = array() ) {
 				<pre><?php echo esc_html( $args['output'] ); ?></pre>
 			<?php endif; ?>
 
-			</div><!-- .pattern-document-usage -->
-		</div><!-- .pattern-document-content -->
+			</div><!-- .scaffolding-document-usage -->
+		</div><!-- .scaffolding-document-content -->
 
-		<div class="pattern-document-live">
+		<div class="scaffolding-document-live">
 
 		<?php if ( $args['output'] ) : ?>
 			<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
 		<?php endif; ?>
 
-		</div><!-- .pattern-document-live -->
-	</div><!-- .pattern-document -->
+		</div><!-- .scaffolding-document-live -->
+	</div><!-- .scaffolding-document -->
 
 	<?php
 }
 
 /**
- * Declare HTML tags allowed for patterns.
+ * Declare HTML tags allowed for scaffolding.
  *
  * @return array The allowed tags and attributes.
  * @author Carrie Forde
  */
-function _s_pattern_allowed_html() {
+function _s_scaffolding_allowed_html() {
 
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
@@ -128,13 +128,13 @@ function _s_pattern_allowed_html() {
 }
 
 /**
- * Build a global pattern element.
+ * Build a global scaffolding element.
  *
  * @param array $args The array of colors or fonts.
- * @return string The pattern documentation.
+ * @return string The scaffolding documentation.
  * @author Carrie Forde
  */
-function _s_display_global_pattern_section( $args = array() ) {
+function _s_display_global_scaffolding_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
@@ -147,14 +147,14 @@ function _s_display_global_pattern_section( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Add a unique class to the wrapper.
-	$class = 'pattern-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
+	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
 
-	<div class="pattern-document <?php echo esc_attr( $class ); ?>">
-		<header class="pattern-document-header">
-			<h2 class="pattern-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
+		<header class="scaffolding-document-header">
+			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header>
 
-		<div class="pattern-document-content">
+		<div class="scaffolding-document-content">
 
 			<?php // We'll alter the output slightly depending upon the global type.
 			switch ( $args['global_type'] ) :
@@ -200,13 +200,13 @@ function _s_display_global_pattern_section( $args = array() ) {
 }
 
 /**
- * Hook the theme's pattern template parts into the Pattern template.
+ * Hook the theme's scaffolding template parts into the scaffolding template.
  *
  * @author Carrie Forde
  */
-function _s_hook_theme_patterns() {
+function _s_hook_theme_scaffolding() {
 
-	$template_dir = 'template-parts/patterns/pattern';
+	$template_dir = 'template-parts/scaffolding/scaffolding';
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
@@ -214,4 +214,4 @@ function _s_hook_theme_patterns() {
 	get_template_part( $template_dir, 'buttons' );
 	get_template_part( $template_dir, 'forms' );
 }
-add_action( '_s_pattern_content', '_s_hook_theme_patterns' );
+add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );

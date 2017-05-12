@@ -25,7 +25,7 @@ module.exports = {
 		// Encourages use of dot notation whenever possible
 		'dot-notation': ['error', {
 			allowKeywords: true,
-			allowPattern: '^[a-z]+(_[a-z]+)+$'
+			allowscaffolding: '^[a-z]+(_[a-z]+)+$'
 		}],
 		// Enforce newline at the end of file, with no multiple empty lines
 		'eol-last': 'error',

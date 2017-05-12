@@ -52,9 +52,9 @@ function _s_body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
-	// Add a cleaner class for the pattern page template.
-	if ( is_page_template( 'template-patterns.php' ) ) {
-		$classes[] = 'template-patterns';
+	// Add a cleaner class for the scaffolding page template.
+	if ( is_page_template( 'template-scaffolding.php' ) ) {
+		$classes[] = 'template-scaffolding';
 	}
 
 	return $classes;

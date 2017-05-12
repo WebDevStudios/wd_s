@@ -1,18 +1,18 @@
 <?php
 /**
- * The template used for displaying forms in the pattern library.
+ * The template used for displaying forms in the scaffolding library.
  *
  * @package _s
  */
 ?>
 
-<section class="section-pattern">
+<section class="section-scaffolding">
 
-	<h2 class="pattern-heading"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
 
 	<?php // Search form.
 	$echo = false; // set echo to false so the search form outputs correctly.
-	_s_display_pattern_section( array(
+	_s_display_scaffolding_section( array(
 		'title'       => 'Search Form',
 		'description' => 'Display the search form.',
 		'usage'       => '<?php get_search_form(); ?>',

@@ -1,17 +1,17 @@
 <?php
 /**
- * The template used for displaying icons in the pattern library.
+ * The template used for displaying icons in the scaffolding library.
  *
  * @package _s
  */
 ?>
 
-<section class="section-pattern">
+<section class="section-scaffolding">
 
-	<h2 class="pattern-heading"><?php esc_html_e( 'Icons', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading"><?php esc_html_e( 'Icons', '_s' ); ?></h2>
 
 	<?php // SVG
-	_s_display_pattern_section( array(
+	_s_display_scaffolding_section( array(
 		'title'       => 'SVG',
 		'description' => 'Display inline SVGs.',
 		'usage'       => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
