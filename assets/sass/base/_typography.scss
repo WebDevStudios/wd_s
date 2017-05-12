@@ -2,6 +2,11 @@
 // Typography
 //--------------------------------------------------------------
 
+// Because rem is relative to the root of the document, we need to set the font-size on html. This *MUST* be in px.
+html {
+	font-size: $base-context * 1px;
+}
+
 body,
 button,
 input,
