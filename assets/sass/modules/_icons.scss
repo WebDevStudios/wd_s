@@ -51,11 +51,13 @@
 
 		background: $color-cod-gray;
 		border-radius: rem(1);
-		content: "";
+		content: '';
 		cursor: pointer;
 		display: block;
 		position: absolute;
+		// sass-lint:disable no-transition-all
 		transition: all 0.5s ease-in-out; // too much going on, use "all"
+		// sass-lint:enable no-transition-all
 	}
 
 	&::before {
@@ -83,7 +85,7 @@
 
 		background: $color-white;
 		border-radius: rem(1);
-		content: "";
+		content: '';
 		cursor: pointer;
 		display: block;
 		position: relative;
@@ -115,7 +117,7 @@
 
 		background: $color-white;
 		border-radius: rem(1);
-		content: "";
+		content: '';
 		cursor: pointer;
 		display: block;
 		position: relative;

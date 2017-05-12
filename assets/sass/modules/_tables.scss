@@ -13,7 +13,7 @@ table {
 	thead {
 		display: none;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: table-row-group;
 		}
 	} // thead
@@ -24,7 +24,7 @@ table {
 		padding: rem(10);
 		text-align: center;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: table-cell;
 		}
 	} // th, td
@@ -35,7 +35,7 @@ table {
 		letter-spacing: rem(1);
 		text-transform: uppercase;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: table-cell;
 		}
 	} // th
@@ -45,7 +45,7 @@ table {
 		display: block;
 		margin-bottom: rem(10);
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: table-row;
 			margin-bottom: 0;
 		}
@@ -59,7 +59,7 @@ table {
 		font-size: em(13);
 		text-align: center;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			border-bottom: 0;
 		}
 
@@ -77,7 +77,7 @@ table {
 		} // &::before
 	} // td
 
-	@include media($phone-landscape) {
+	@include grid-media($phone-landscape) {
 		border: 1px solid $color-silver;
 	}
 } // table

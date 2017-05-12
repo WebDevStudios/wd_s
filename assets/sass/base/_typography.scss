@@ -2,6 +2,13 @@
 // Typography
 //--------------------------------------------------------------
 
+// Because rem is relative to the root of the document, we need to set the font-size on html. This *MUST* be in px.
+html {
+	// sass-lint:disable property-units
+	font-size: $base-context * 1px;
+	// sass-lint:enable property-units
+}
+
 body,
 button,
 input,

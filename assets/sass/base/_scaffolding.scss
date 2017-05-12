@@ -1,0 +1,106 @@
+//--------------------------------------------------------------
+// Scaffolding Library
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Scaffolding defaults
+//-----------------------------------------
+.scaffolding-document {
+	margin-bottom: $gutter * 2;
+
+	// The section <header>
+	&-header {
+		border-bottom: rem(1) solid gray;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: $gutter;
+		padding-bottom: $gutter;
+
+		// The title.
+		h2 {
+			@include margin-padding-reset;
+		} // h2
+
+		// The text.
+		p {
+			margin-top: rem(12);
+			font-style: italic;
+		} // p
+	} // .scaffolding-section-header
+
+	// The section content <div>
+	&-content {
+		display: none;
+
+		// Reset.
+		h4,
+		p {
+			margin: $gutter 0;
+		} // h4, p
+
+		// The <pre> container.
+		pre {
+			background-color: white;
+			border: rem(1) solid lightgray;
+			color: gray;
+			margin: 0 0 $gutter;
+			padding: $gutter;
+		} // pre
+
+		// The <code> container.
+		code {
+			background-color: lightgray;
+			font-size: rem(13);
+			padding: rem(5);
+		} // code
+	} // &-content
+
+	// Always display the global scaffolding.
+	&.scaffolding-colors,
+	&.scaffolding-fonts {
+
+		.scaffolding-document-content {
+			display: block;
+		} // .scaffolding-document-content
+	} // &.scaffolding-colors, &.scaffolding-fonts
+} // .scaffolding-document
+
+
+//-----------------------------------------
+// Color swatch defaults
+//-----------------------------------------
+.swatch-container {
+	@include clearfix;
+
+	position: relative;
+
+	// Each swatch.
+	.swatch {
+		@include size(100% rem(125));
+		@include grid-column(3);
+
+		border-radius: rem(5);
+		border: rem(1) solid black;
+		margin-bottom: $gutter;
+		position: relative;
+		text-align: center;
+
+		// The swatch <header>
+		& header {
+			color: black;
+			padding-top: rem(25);
+		} // header
+
+		// The swatch <footer>
+		& footer {
+			@include position(absolute, null null 0 null);
+
+			background-color: white;
+			border-bottom-left-radius: rem(5);
+			border-bottom-right-radius: rem(5);
+			font-size: rem(12);
+			padding: rem(10);
+			width: 100%;
+		} // footer
+	} // .swatch
+} // .swatch-container

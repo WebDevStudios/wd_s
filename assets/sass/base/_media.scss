@@ -7,7 +7,7 @@
 .entry-content,
 .comment-content {
 	// WP smiley
-	img.wp-smiley {
+	.wp-smiley {
 		@include margin-padding-reset;
 
 		border: none;
@@ -141,7 +141,7 @@ img {
 	max-width: calc(100% + 70px);
 	width: calc(100% + 70px);
 
-	@include media($tablet-landscape) {
+	@include grid-media($tablet-landscape) {
 		margin-left: rem(-115);
 		max-width: calc(100% + 230px);
 		width: calc(100% + 230px);

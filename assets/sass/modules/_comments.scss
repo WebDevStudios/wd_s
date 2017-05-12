@@ -8,9 +8,8 @@
 .comments-area {
 	border-top: 1px solid $color-silver;
 	margin: rem(100) rem(24) rem(151);
-	max-width: $max-width;
 
-	@include media($max-width) {
+	@include grid-media($desktop) {
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -68,7 +67,7 @@
 			border: 1px solid $color-mineshaft;
 		} // &:focus, &:active
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			max-width: rem(250);
 		}
 	} // input:not(.submit)
@@ -153,7 +152,7 @@
 		float: left;
 		margin: rem(-6) rem(26) 0 0;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			margin-top: rem(-12);
 		}
 	} // .avatar
@@ -190,11 +189,11 @@
 		margin: rem(40) 0;
 		padding-left: rem(20);
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			padding-left: rem(35);
 		}
 
-		@include media($tablet-portrait) {
+		@include grid-media($tablet-portrait) {
 			padding-left: rem(60);
 		}
 
@@ -210,7 +209,7 @@
 			.comment-author {
 				line-height: 1.25;
 
-				@include media($phone-landscape) {
+				@include grid-media($phone-landscape) {
 					line-height: 1;
 				}
 			} // .comment-author
@@ -228,7 +227,7 @@
 		background-color: $color-white;
 		padding: rem(24) 0;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			padding-left: rem(36);
 			padding-right: rem(36);
 		}

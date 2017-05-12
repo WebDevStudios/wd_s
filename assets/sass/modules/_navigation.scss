@@ -78,6 +78,7 @@ a {
 				@include size(rem(200) auto);
 			} // a
 
+			// sass-lint:disable no-qualifying-elements
 			&:hover > a,
 			.focus > a {
 			} // &:hover > a, .focus > a
@@ -85,6 +86,7 @@ a {
 			a:hover,
 			a.focus {
 			} // a:hover, a.focus
+			// sass-lint:enable no-qualifying-elements
 		} // ul
 
 		// Display sub-menu on hover
@@ -128,7 +130,7 @@ a {
 	ul {
 		display: none;
 
-		@include media($phone-landscape) {
+		@include grid-media($phone-landscape) {
 			display: block;
 		}
 	} // ul
@@ -137,7 +139,7 @@ a {
 		display: block;
 	} // &.toggled ul
 
-	@include media($tablet-landscape) {
+	@include grid-media($tablet-landscape) {
 		display: block;
 	}
 } // .main-navigation

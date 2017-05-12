@@ -3,31 +3,55 @@
 // http://neat.bourbon.io/examples/
 // --------------------------------------------------------------
 
-$column: em(69);       // default width of your colums
-$gutter: em(12);       // default width of the gutters
-$max-width: em(960);   // max-width of the grid/theme in pixels
-$total-columns: 12;    // number of columns
+$neat-grid: (
+	columns: 12,
+	gutter: 12px,
+);
 
-// To calculate grids see:
-// http://gridcalculator.dk/#/960/12/12/0
+// Gutter is no longer required for Neat, but is used throughout the theme.
+$gutter: 12px;
+$max-width: 960px;
 
-// Set Bourbon's flex-grid variables to match what Neat is doing
-// http://bourbon.io/docs/#flex-grid
 
-$fg-column: $column;
-$fg-gutter: $gutter;
+//-----------------------------------------
+// Custom Grids
+//-----------------------------------------
+$mqs-phone-portrait: (
+	columns: 2,
+	media: 359px, // $phone-portrait - 1px
+);
+$mqs-phone-landscape: (
+	columns: 4,
+	media: $phone-landscape,
+);
+$mqs-tablet-portrait: (
+	columns: 4,
+	media: $tablet-portrait,
+);
+$mqs-tablet-landscape: (
+	columns: 8,
+	media: $tablet-landscape,
+);
+$mqs-desktop: (
+	columns: 12,
+	media: $desktop,
+);
+$mqs-large-desktop: (
+	columns: 12,
+	media: $large-desktop,
+);
+$mqs-xl-desktop: (
+	columns: 12,
+	media: $large-desktop,
+);
 
-// Optional - A handy visual grid overlay
-$visual-grid: false;        // true/false
-$visual-grid-color: #ffc0cb;   // color of visual grid
-$visual-grid-index: front;  // front/back
-$visual-grid-opacity: 0.2;  // opacity of visual grid
 
-// $variable: new-breakpoint( range of values, # of grid columns at the breakpoint )
-$mqs-phone-portrait: new-breakpoint(max-width rem($phone-portrait - 1) 2);
-$mqs-phone-landscape: new-breakpoint(min-width rem($phone-portrait) max-width rem($phone-landscape) 4);
-$mqs-tablet-portrait: new-breakpoint(min-width rem($phone-landscape + 1) max-width rem($tablet-portrait) 4);
-$mqs-tablet-landscape: new-breakpoint(min-width rem($tablet-portrait + 1) max-width rem($tablet-landscape) 8);
-$mqs-desktop: new-breakpoint(min-width rem($tablet-landscape + 1) max-width rem($desktop));
-$mqs-large-desktop: new-breakpoint(min-width rem($desktop + 1) max-width rem($large-desktop - 1));
-$mqs-xl-desktop: new-breakpoint(min-width rem($large-desktop));
+//-----------------------------------------
+// Box Sizing
+//
+// Make sure all elements use box-sizing:
+// border-box by default.
+//-----------------------------------------
+* {
+	box-sizing: border-box;
+}

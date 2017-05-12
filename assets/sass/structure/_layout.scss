@@ -4,11 +4,14 @@
 
 // Structure.
 .wrap {
-	@include outer-container;
+	@include grid-container;
+	@include margin-auto;
 
+	max-width: 100%;
 	padding: 0 2 * $gutter;
+	width: rem(960);
 
-	@include media($desktop) {
+	@include grid-media($desktop) {
 		padding: 0;
 	}
 } // .wrap
@@ -16,7 +19,7 @@
 .site-header,
 .site-footer {
 
-	@include media($tablet-landscape) {
+	@include grid-media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
 } // .site-header, .site-footer
@@ -24,23 +27,25 @@
 .site-content {
 	margin: rem(20) auto;
 
-	@include media($desktop) {
+	@include grid-media($desktop) {
 		margin: rem(40) auto rem(60);
 	}
 } // .site-content
 
 .primary {
-	@include fill-parent;
+	@include grid-media($tablet-landscape) {
+		@include grid-column(8);
 
-	@include media($tablet-landscape) {
-		@include span-columns(8);
+		// scaffolding will never have a sidebar, and should be full-width.
+		.template-scaffolding & {
+			margin-left: 0;
+			width: 100%;
+		} // .template-scaffolding
 	}
 } // .primary
 
 .secondary {
-	@include fill-parent;
-
-	@include media($tablet-landscape) {
-		@include span-columns(4);
+	@include grid-media($tablet-landscape) {
+		@include grid-column(4);
 	}
 } // .secondary

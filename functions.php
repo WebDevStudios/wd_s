@@ -164,3 +164,8 @@ require get_template_directory() . '/inc/queries.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer/customizer.php';
+
+/**
+ * scaffolding Library.
+ */
+require get_template_directory() . '/inc/scaffolding.php';
