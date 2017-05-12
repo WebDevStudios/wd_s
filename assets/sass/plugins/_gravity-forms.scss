@@ -83,14 +83,14 @@ $gf-input-padding: $padding-input;
 	// Default Drop-Down (Select) Field
 	// Feel free to change the svg icon being used
 	select {
-		-webkit-appearance: none;
+		appearance: none;
 		background: url('assets/images/svg-icons/caret-down.svg') no-repeat 97% transparent;
 		background-color: $gf-input-color-background;
 		background-size: rem(12);
 		border-color: $gf-input-color-border;
 		border-radius: 0;
 		line-height: 1.45;
-		padding: $gf-input-padding;
+		padding: $gf-input-padding !important; // need to override GF's "browser" stylesheet
 		width: 100%;
 
 		@include media($phone-landscape) {
@@ -278,3 +278,13 @@ $gf-input-padding: $padding-input;
 		} // .name_first input[type="text"], .name_last input[type="text"]
 	} // .ginput_complex
 } // #content .gform_wrapper
+
+//-----------------------------------------
+// IE 11 fixes...
+//-----------------------------------------
+select {
+
+	&::-ms-expand {
+		display: none; // Hide ugly dropdown arrow in IE11
+	}
+} // select
