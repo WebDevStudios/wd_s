@@ -10,7 +10,7 @@
 	margin: rem(100) rem(24) rem(151);
 	max-width: $max-width;
 
-	@media(max-width: $max-width) {
+	@include grid-media($max-width) {
 		margin-left: auto;
 		margin-right: auto;
 	}

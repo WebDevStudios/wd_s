@@ -96,6 +96,10 @@ $gf-input-padding: $padding-input;
 		@include grid-media($phone-landscape) {
 			width: 49%;
 		}
+
+		&::-ms-expand {
+			display: none; // Remove default dropdown arrow in IE11.
+		}
 	} // select
 
 	// Remove icon for default multi-select
@@ -278,13 +282,3 @@ $gf-input-padding: $padding-input;
 		} // .name_first input[type="text"], .name_last input[type="text"]
 	} // .ginput_complex
 } // #content .gform_wrapper
-
-//-----------------------------------------
-// IE 11 fixes...
-//-----------------------------------------
-select {
-
-	&::-ms-expand {
-		display: none; // Hide ugly dropdown arrow in IE11
-	}
-} // select

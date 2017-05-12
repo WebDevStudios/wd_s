@@ -76,7 +76,7 @@ table {
 			text-transform: uppercase;
 		} // &::before
 	} // td
-	
+
 	@include grid-media($phone-landscape) {
 		border: 1px solid $color-silver;
 	}

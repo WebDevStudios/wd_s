@@ -78,6 +78,7 @@ a {
 				@include size(rem(200) auto);
 			} // a
 
+			// sass-lint:disable no-qualifying-elements
 			&:hover > a,
 			.focus > a {
 			} // &:hover > a, .focus > a
@@ -85,6 +86,7 @@ a {
 			a:hover,
 			a.focus {
 			} // a:hover, a.focus
+			// sass-lint:enable no-qualifying-elements
 		} // ul
 
 		// Display sub-menu on hover
