@@ -115,7 +115,6 @@ rules:
   property-units:
     - 1
     -
-      # per-property: { width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
       per-property: { border: ['px'], box-shadow: ['px'], font-size: ['em'], letter-spacing: ['em'], text-shadow: ['em'], width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem', 'em'] }
 
   quotes:
