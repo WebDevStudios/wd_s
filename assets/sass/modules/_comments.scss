@@ -8,9 +8,8 @@
 .comments-area {
 	border-top: 1px solid $color-silver;
 	margin: rem(100) rem(24) rem(151);
-	max-width: $max-width;
 
-	@include grid-media($max-width) {
+	@include grid-media($desktop) {
 		margin-left: auto;
 		margin-right: auto;
 	}
