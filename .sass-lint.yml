@@ -13,10 +13,14 @@
 # File Options
 files:
   ignore:
-  - 'sass/vendor/**/*.scss'
-  - 'sass/tests/**/*.scss'
-  - 'bourbon/app/**/*.scss'
-  - 'bourbon-neat/app/**/*.scss'
+   - 'sass/vendor/**/*.scss'
+   - 'sass/tests/**/*.scss'
+   - 'bourbon/app/**/*.scss'
+   - 'bourbon-neat/app/**/*.scss'
+   - './assets/sass/style.scss'
+   - './assets/sass/base/_scaffolding.scss'
+   - './assets/sass/plugins/_gravity-forms.scss'
+   - './assets/sass/utilities/mixins/_omega-reset.scss'
 
 # Rule Configuration
 rules:
@@ -27,7 +31,7 @@ rules:
   mixins-before-declarations:
   - 1
   -
-    exclude: ['media'] # except @include grid-media();
+    exclude: ['grid-media'] # allow @include grid-media();
 
   # Line Spacing
   empty-line-between-blocks:
@@ -51,6 +55,9 @@ rules:
     allow-element-with-id: false
   no-vendor-prefixes: 0
   no-warn: 0
+
+  no-empty-rulesets:
+    - 0
 
   # Nesting
   force-attribute-nesting: 0
@@ -110,7 +117,7 @@ rules:
   nesting-depth:
   - 1
   -
-    max-depth: 3
+    max-depth: 4
 
   property-units:
     - 1
