@@ -1,7 +1,7 @@
 /**
 * WDS Scaffolding.
 */
-window.WDS_Scaffolding = {};
+window.wdsScaffolding = {};
 ( function( window, $, app ) {
 
 	// Constructor.
@@ -46,4 +46,4 @@ window.WDS_Scaffolding = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.WDS_Scaffolding );
+})( window, jQuery, window.wdsScaffolding );
