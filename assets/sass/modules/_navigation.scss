@@ -139,7 +139,7 @@ a {
 		display: block;
 	} // &.toggled ul
 
-	@include grid-media($tablet-landscape) {
+	@include grid-media($tablet-portrait) {
 		display: block;
 	}
 } // .main-navigation
