@@ -173,6 +173,25 @@ function _s_get_the_title( $args = array() ) {
 }
 
 /**
+ * Customize "Read More" string on <!-- more --> with the_content();
+ */
+function _s_content_more_link() {
+	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
+}
+add_filter( 'the_content_more_link', '_s_content_more_link' );
+
+/**
+ * Customize the [...] on the_excerpt();
+ *
+ * @param string $more The current $more string.
+ * @return string Replace with "Read More..."
+ */
+function _s_excerpt_more( $more ) {
+	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
+}
+add_filter( 'excerpt_more', '_s_excerpt_more' );
+
+/**
  * Limit the excerpt length.
  *
  * @param array $args Parameters include length and more.
@@ -256,6 +275,42 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 
 	// Return URL to a placeholder image as a fallback.
 	return get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+}
+
+/**
+ * Get an attachment ID from it's URL.
+ *
+ * @param string $attachment_url The URL of the attachment.
+ * @return int The attachment ID.
+ */
+function _s_get_attachment_id_from_url( $attachment_url = '' ) {
+
+	global $wpdb;
+
+	$attachment_id = false;
+
+	// If there is no url, return.
+	if ( '' === $attachment_url ) {
+		return false;
+	}
+
+	// Get the upload directory paths.
+	$upload_dir_paths = wp_upload_dir();
+
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
+	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
+		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+
+		// Remove the upload path base directory from the attachment URL.
+		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+
+		// Do something with $result.
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS: db call ok , cache ok.
+	}
+
+	return $attachment_id;
 }
 
 /**
