@@ -16,10 +16,6 @@ $max-width: 960px;
 //-----------------------------------------
 // Custom Grids
 //-----------------------------------------
-$mqs-phone-portrait: (
-	columns: 2,
-	media: 359px, // $phone-portrait - 1px
-);
 $mqs-phone-landscape: (
 	columns: 4,
 	media: $phone-landscape,
