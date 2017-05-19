@@ -1,0 +1,15 @@
+//--------------------------------------------------------------
+// GET GUTTER 
+//--------------------------------------------------------------
+
+////
+/// @author Carrie Forde
+/// @group wds
+////
+
+@function get-gutter($grid) {
+
+	$gutter: map-get($grid, gutter);
+
+	@return rem($gutter);
+}
