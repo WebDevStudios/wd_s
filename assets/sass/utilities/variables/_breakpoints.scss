@@ -6,23 +6,23 @@
 /// @group wds
 
 $large-desktop: (
-	media: 1680px
+	media: em(1680)
 );
 $desktop: (
-	media: 1366px
+	media: em(1366)
 );
 $tablet-landscape: (
-	media: 1024px
+	media: em(1024)
 );
 $wp-admin-bar: (
-	media: 783px
+	media: em(783)
 );
 $tablet-portrait: (
-	media: 768px
+	media: em(768)
 );
 $phone-landscape: (
-	media: 640px
+	media: em(640)
 );
 $phone-portrait: (
-	media: 360px
+	media: em(360)
 );
