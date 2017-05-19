@@ -1,0 +1,43 @@
+//--------------------------------------------------------------
+// MEDIA 
+//--------------------------------------------------------------
+
+////
+/// @author Carrie Forde
+/// @group wds
+////
+
+////
+/// @param  {map | measurement}  $min  - The value for min-width.
+/// @param  {map | measurement}  $max  - The value for max-width.
+///
+/// @example - scss  Media Query
+///  @include media(null, $tablet-portrait) {};
+///  // @media and screen (max-width: $tablet-portrait)
+////
+
+@mixin media($min, $max) {
+
+	// If the user passes a grid Sass map, set the variable to the media's value.
+	@if type-of($min) == 'map' {
+		$min: map-get($min, media);
+	}
+	@if type-of($max) == 'map' {
+		$max: map-get($max, media);
+	}
+
+	// Create the media query.
+	@if $min == null {
+		@media only screen and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+}
