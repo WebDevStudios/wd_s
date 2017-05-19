@@ -7,7 +7,15 @@
 /// @group wds
 ////
 
-@function get-gutter($grid) {
+////
+/// @param  map  $grid  $neat-grid - The Sass map from which the gutter is needed.
+///
+/// @example scss Get Gutter Function
+///  get-gutter($neat-grid);
+///  // rem(12)
+////
+
+@function get-gutter($grid: $neat-grid) {
 
 	$gutter: map-get($grid, gutter);
 
