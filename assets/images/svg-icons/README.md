@@ -55,7 +55,7 @@ There are two ways to add and/or remove SVG icons from wd_s:
 2. [**Recommended**](#recommended) - especially if you're working on a team, and want to have a manifest of all icons, and you're mostly using [IcoMoon App](https://icomoon.io/app/).
 
 #### "Fast and Furious" method
-If you just want to drop in a new SVG icon (or remove existing one), and be on your way. Then just drop your SVG icon into the /svg-icons/ directory, run `grunt icons`, and be on your merry way.
+If you just want to drop in a new SVG icon (or remove existing one), and be on your way. Then just drop your SVG icon into the /svg-icons/ directory, run `gulp icons`, and be on your merry way.
 
 #### Recommended
 If your project requires keeping track of the library of icons available, and you want your team to be able to update and maintain via [IcoMoon App](https://icomoon.io/app/), then this is the recommended method.
