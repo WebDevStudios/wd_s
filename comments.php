@@ -21,11 +21,12 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
+	<h2 class="screen-reader-text"><?php esc_html_e( 'Comment section', '_s' ); ?></h2>
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
 					/* translators: the number of comments */
@@ -34,11 +35,11 @@ if ( post_password_required() ) {
 					'<span>' . get_the_title() . '</span>'
 				);
 			?>
-		</h2>
+		</h3>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h2>
+			<h3 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h3>
 			<div class="nav-links">
 
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', '_s' ) ); ?></div>
