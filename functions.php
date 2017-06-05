@@ -117,8 +117,8 @@ function _s_widgets_init() {
 			'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
 			'before_widget' => '<aside class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		) );
 	}
 
