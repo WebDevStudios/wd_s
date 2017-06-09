@@ -1,25 +1,21 @@
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
 const babel = require( 'gulp-babel' );
-const bourbon = require( 'bourbon' ).includePaths;
 const browserSync = require( 'browser-sync' );
 const cheerio = require( 'gulp-cheerio' );
 const concat = require( 'gulp-concat' );
 const cssnano = require( 'gulp-cssnano' );
 const del = require( 'del' );
-const eslint = require( 'gulp-eslint' );
 const gulp = require( 'gulp' );
 const gutil = require( 'gulp-util' );
 const imagemin = require( 'gulp-imagemin' );
 const mqpacker = require( 'css-mqpacker' );
-const neat = require( 'bourbon-neat' ).includePaths;
 const notify = require( 'gulp-notify' );
 const plumber = require( 'gulp-plumber' );
 const postcss = require( 'gulp-postcss' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
 const sass = require( 'gulp-sass' );
-const sassLint = require( 'gulp-sass-lint' );
 const sort = require( 'gulp-sort' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const spritesmith = require( 'gulp.spritesmith' );
@@ -84,7 +80,6 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 
 			// Compile Sass using LibSass.
 			.pipe( sass( {
-				'includePaths': [].concat( bourbon, neat ),
 				'errLogToConsole': true,
 				'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
 			} ) )
@@ -92,7 +87,7 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 			// Parse with PostCSS plugins.
 			.pipe( postcss( [
 				autoprefixer( {
-					'browsers': [ 'last 2 version' ]
+					'browsers': [ 'last 2 versions' ]
 				} ),
 				mqpacker( {
 					'sort': true
@@ -105,6 +100,11 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 		// Create style.css.
 		.pipe( gulp.dest( './' ) )
 		.pipe( browserSync.stream() )
+
+		.pipe(notify({
+			message: '✔ Sass compiled',
+			onLast: true
+		}))
 );
 
 /**
