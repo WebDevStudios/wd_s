@@ -5,12 +5,11 @@
   "main": "Gulpfile.js",
   "dependencies": {
     "babel-preset-es2015": "~6",
-    "bourbon": "~4.3",
-    "bourbon-neat": "~2",
     "browser-sync": "~2",
     "css-mqpacker": "~5",
     "del": "~2",
     "eslint-config-wordpress": "~1",
+    "foundation-sites": "~6",
     "glob": "~7",
     "gulp": "~3",
     "gulp-babel": "~6",
@@ -36,7 +35,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"No test specified\""
+    "watch": "gulp watch"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
   "keywords": [
