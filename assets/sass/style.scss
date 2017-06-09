@@ -16,13 +16,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 
 */
 
-// Import our settings.
-// http://foundation.zurb.com/sites/docs/sass.html#compiling-manually
-@import 'settings';
-
 // Load Foundation.
-// http://foundation.zurb.com/sites/docs/sass.html#loading-the-framework
-@import 'vendors/foundation';
+@import 'foundation/index';
 
 // Our most basic level file type (variables, typography, etc).
 @import 'base/index';
