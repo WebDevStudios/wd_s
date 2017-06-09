@@ -16,17 +16,25 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 
 */
 
-$output-bourbon-deprecation-warnings: false;
-@import 'bourbon';
-@import 'utilities/variables/index';
-@import 'neat';
-@import 'utilities/mixins/index';
-@import 'assets/bower_components/normalize-css/normalize.css';
-@import 'assets/bower_components/animate.css/animate.css';
+// Import our settings.
+// http://foundation.zurb.com/sites/docs/sass.html#compiling-manually
+@import 'settings';
 
+// Load Foundation.
+// http://foundation.zurb.com/sites/docs/sass.html#loading-the-framework
+@import 'vendors/foundation';
+
+// Our most basic level file type (variables, typography, etc).
 @import 'base/index';
-@import 'structure/index';
-@import 'modules/index';
+
+// Our second level of file types that make up base files (forms, lists, etc).
+@import 'components/index';
+
+// Large parts of our site that make up components (header, footer, etc).
+@import 'sections/index';
+
+// Our largest file types that encompass overall individual page styles.
+@import 'pages/index';
+
+// Third-party file types such as plugins.
 @import 'plugins/index';
-@import 'views/index';
-@import 'widgets/index';
