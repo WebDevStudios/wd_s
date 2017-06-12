@@ -16,6 +16,24 @@
 
 	<footer class="site-footer">
 		<div class="row">
+			<div class="medium-3 columns">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+			</div>
+
+			<div class="medium-3 columns">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+			</div>
+
+			<div class="medium-3 columns">
+				<?php dynamic_sidebar( 'footer-3' ); ?>
+			</div>
+
+			<div class="medium-3 columns">
+				<?php dynamic_sidebar( 'footer-4' ); ?>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="site-info">
 				<?php _s_display_copyright_text(); ?>
 			</div>
