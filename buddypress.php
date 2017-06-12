@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<div class="wrap">
+<div class="row">
 	<div class="primary content-area">
 		<main id="main" class="site-main" role="main">
 			<?php while ( have_posts() ) :
@@ -22,6 +22,6 @@ get_header(); ?>
 			<?php endwhile; ?>
 		</main><!-- #main -->
 	</div><!-- .primary -->
-</div><!-- .wrap -->
+</div><!-- .row -->
 
 <?php get_footer(); ?>
