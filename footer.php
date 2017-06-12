@@ -26,8 +26,8 @@
 <div class="off-canvas position-left" id="off-canvas-menu" data-off-canvas>
 	<?php
 	wp_nav_menu( array(
-		'theme_location' => 'primary',
-		'menu_id'        => 'primary-menu',
+		'theme_location' => 'mobile',
+		'menu_id'        => 'mobile-menu',
 		'menu_class'     => 'vertical menu',
 		'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 		'walker'         => new WDS_Submenu_Classes(),
@@ -36,6 +36,8 @@
 </div>
 
 <?php wp_footer(); ?>
+
+<div class="off-canvas-screen"></div>
 
 </body>
 </html>
