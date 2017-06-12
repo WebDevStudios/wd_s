@@ -24,29 +24,15 @@
 <body <?php body_class(); ?>>
 
 <div class="off-canvas position-left" id="off-canvas-menu" data-off-canvas>
-	<ul class="menu vertical" data-accordion-menu>
-		<li><a href="#">One</a>
-			<ul class="menu vertical">
-				<li><a href="#">One</a></li>
-				<li><a href="#">Two</a>
-					<ul class="menu vertical">
-						<li><a href="#">One</a></li>
-						<li><a href="#">Two</a>
-							<ul class="menu vertical">
-								<li><a href="#">One</a></li>
-								<li><a href="#">Two</a></li>
-								<li><a href="#">Three</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Three</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Three</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Two</a></li>
-		<li><a href="#">Three</a></li>
-	</ul>
+	<?php
+	wp_nav_menu( array(
+		'theme_location' => 'primary',
+		'menu_id'        => 'primary-menu',
+		'menu_class'     => 'vertical menu',
+		'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
+		'walker'         => new WDS_Submenu_Classes(),
+	) );
+	?>
 </div>
 
 <div id="page" class="site">
@@ -72,36 +58,14 @@
 			<div class="column medium-10 align-middle" id="example-menu">
 				<div class="top-bar-left medium-8">
 					<?php
-					// wp_nav_menu( array(
-					// 	'theme_location' => 'primary',
-					// 	'menu_id'        => 'primary-menu',
-					// 	'menu_class'     => 'dropdown menu',
-					// ) );
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'menu_class'     => 'dropdown menu',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+						'walker'         => new WDS_Submenu_Classes(),
+					) );
 					?>
-
-					<ul class="dropdown menu" data-dropdown-menu>
-						<li><a href="#">One</a>
-							<ul class="menu vertical">
-								<li><a href="#">One</a></li>
-								<li><a href="#">Two</a>
-									<ul class="menu vertical">
-										<li><a href="#">One</a></li>
-										<li><a href="#">Two</a>
-											<ul class="menu vertical">
-												<li><a href="#">One</a></li>
-												<li><a href="#">Two</a></li>
-												<li><a href="#">Three</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Three</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Three</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Two</a></li>
-						<li><a href="#">Three</a></li>
-					</ul>
 				</div><!-- .top-bar-left -->
 				<div class="top-bar-right medium-4">
 					<?php get_search_form(); ?>
