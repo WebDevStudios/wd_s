@@ -26,10 +26,8 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header class="site-header">
-		<div class="wrap">
-
+		<div class="row">
 			<div class="site-branding">
-
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
@@ -39,9 +37,10 @@
 				<?php endif; ?>
 
 				<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) :
-				?>
+				$description = get_bloginfo( 'description', 'display' );
+
+				if ( $description || is_customize_preview() ) :
+					?>
 					<p class="site-description"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
@@ -52,15 +51,15 @@
 
 			<nav id="site-navigation" class="main-navigation">
 				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'menu dropdown',
-					) );
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+					'menu_class'     => 'menu dropdown',
+				) );
 				?>
 			</nav><!-- #site-navigation -->
-
-		</div><!-- .wrap -->
+		</div><!-- .row -->
 	</header><!-- .site-header -->
 
-	<div id="content" class="site-content">
+	<main id="main" class="site-main" role="main">
+		<div id="content" class="site-content">

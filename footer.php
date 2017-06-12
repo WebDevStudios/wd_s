@@ -11,16 +11,15 @@
 
 ?>
 
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</main><!-- #main -->
 
 	<footer class="site-footer">
-		<div class="wrap">
-
+		<div class="row">
 			<div class="site-info">
 				<?php _s_display_copyright_text(); ?>
 			</div>
-
-		</div><!-- .wrap -->
+		</div><!-- .row -->
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
@@ -30,21 +29,24 @@
 	<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">
 		<span class="close"></span>
 	</button>
-	<?php
-		// Mobile menu args.
-		$mobile_args = array(
-			'theme_location'  => 'mobile',
-			'container'       => 'div',
-			'container_class' => 'off-canvas-content',
-			'container_id'    => '',
-			'menu_id'         => 'mobile-menu',
-			'menu_class'      => 'mobile-menu',
-		);
 
-		// Display the mobile menu.
-		wp_nav_menu( $mobile_args );
+	<?php
+	// Mobile menu args.
+	$mobile_args = array(
+		'theme_location'  => 'mobile',
+		'container'       => 'div',
+		'container_class' => 'off-canvas-content',
+		'container_id'    => '',
+		'menu_id'         => 'mobile-menu',
+		'menu_class'      => 'mobile-menu',
+	);
+
+	// Display the mobile menu.
+	wp_nav_menu( $mobile_args );
 	?>
 </nav>
+
 <div class="off-canvas-screen"></div>
+
 </body>
 </html>
