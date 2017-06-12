@@ -33,8 +33,46 @@ const paths = {
 	'sass': 'assets/sass/**/*.scss',
 	'concat_scripts': 'assets/scripts/concat/*.js',
 	'scripts': [ 'assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/customizer.js' ],
-	'sprites': 'assets/images/sprites/*.png'
+	'sprites': 'assets/images/sprites/*.png',
+	'foundation': 'node_modules/foundation-sites/js/'
 };
+
+// Set Foundation components.
+const foundationComponents = [
+
+	// Foundation (required)
+	paths.foundation + 'foundation.core.js',
+	paths.foundation + 'foundation.util.mediaQuery.js',
+
+	// Disable unwanted components by commenting them out.
+	paths.foundation + 'foundation.abide.js',
+	paths.foundation + 'foundation.accordion.js',
+	paths.foundation + 'foundation.accordionMenu.js',
+	paths.foundation + 'foundation.drilldown.js',
+	paths.foundation + 'foundation.dropdown.js',
+	paths.foundation + 'foundation.dropdownMenu.js',
+	paths.foundation + 'foundation.equalizer.js',
+	paths.foundation + 'foundation.interchange.js',
+	paths.foundation + 'foundation.magellan.js',
+	paths.foundation + 'foundation.offcanvas.js',
+	paths.foundation + 'foundation.orbit.js',
+	paths.foundation + 'foundation.responsiveMenu.js',
+	paths.foundation + 'foundation.responsiveToggle.js',
+	paths.foundation + 'foundation.reveal.js',
+	paths.foundation + 'foundation.slider.js',
+	paths.foundation + 'foundation.sticky.js',
+	paths.foundation + 'foundation.tabs.js',
+	paths.foundation + 'foundation.toggler.js',
+	paths.foundation + 'foundation.tooltip.js',
+	paths.foundation + 'foundation.util.box.js',
+	paths.foundation + 'foundation.util.keyboard.js',
+	paths.foundation + 'foundation.util.motion.js',
+	paths.foundation + 'foundation.util.nest.js',
+	paths.foundation + 'foundation.util.timerAndImageLoader.js',
+	paths.foundation + 'foundation.util.touch.js',
+	paths.foundation + 'foundation.util.triggers.js',
+	paths.foundation + 'foundation.zf.responsiveAccordionTabs.js'
+];
 
 /**
  * Handle errors and alert the user.
@@ -216,7 +254,7 @@ gulp.task( 'spritesmith', [ 'clean:sprites' ], () =>
  * https://www.npmjs.com/package/gulp-sourcemaps
  */
 gulp.task( 'concat', () =>
-	gulp.src( paths.concat_scripts )
+	gulp.src( foundationComponents + paths.concat_scripts )
 
 		// Deal with errors.
 		.pipe( plumber(
