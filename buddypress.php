@@ -12,19 +12,16 @@
 
 get_header(); ?>
 
-	<div class="wrap">
-		<div class="primary content-area">
-			<main id="main" class="site-main" role="main">
+<div class="wrap">
+	<div class="primary content-area">
+		<main id="main" class="site-main" role="main">
+			<?php while ( have_posts() ) :
+				the_post(); ?>
 
-				<?php while ( have_posts() ) :
-					the_post(); ?>
-
-					<?php get_template_part( 'template-parts/content', 'buddypress' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			</main><!-- #main -->
-		</div><!-- .primary -->
-	</div><!-- .wrap -->
+				<?php get_template_part( 'template-parts/content', 'buddypress' ); ?>
+			<?php endwhile; ?>
+		</main><!-- #main -->
+	</div><!-- .primary -->
+</div><!-- .wrap -->
 
 <?php get_footer(); ?>
