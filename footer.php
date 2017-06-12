@@ -23,30 +23,19 @@
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
-
-<nav class="off-canvas-container" aria-hidden="true">
-	<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">
-		<span class="close"></span>
-	</button>
-
+<div class="off-canvas position-left" id="off-canvas-menu" data-off-canvas>
 	<?php
-	// Mobile menu args.
-	$mobile_args = array(
-		'theme_location'  => 'mobile',
-		'container'       => 'div',
-		'container_class' => 'off-canvas-content',
-		'container_id'    => '',
-		'menu_id'         => 'mobile-menu',
-		'menu_class'      => 'mobile-menu',
-	);
-
-	// Display the mobile menu.
-	wp_nav_menu( $mobile_args );
+	wp_nav_menu( array(
+		'theme_location' => 'primary',
+		'menu_id'        => 'primary-menu',
+		'menu_class'     => 'vertical menu',
+		'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
+		'walker'         => new WDS_Submenu_Classes(),
+	) );
 	?>
-</nav>
+</div>
 
-<div class="off-canvas-screen"></div>
+<?php wp_footer(); ?>
 
 </body>
 </html>

@@ -23,18 +23,6 @@
 
 <body <?php body_class(); ?>>
 
-<div class="off-canvas position-left" id="off-canvas-menu" data-off-canvas>
-	<?php
-	wp_nav_menu( array(
-		'theme_location' => 'primary',
-		'menu_id'        => 'primary-menu',
-		'menu_class'     => 'vertical menu',
-		'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
-		'walker'         => new WDS_Submenu_Classes(),
-	) );
-	?>
-</div>
-
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
@@ -50,12 +38,12 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<div class="title-bar column small-3" data-responsive-toggle="example-menu" data-hide-for="medium">
+			<div class="title-bar column small-3" data-responsive-toggle="main-site-navigation" data-hide-for="medium">
 				<button class="menu-icon" type="button" data-toggle="off-canvas-menu"></button>
-				<div class="title-bar-title">Menu</div>
+				<div class="title-bar-title"><?php esc_html_e( 'Menu', '_s' ); ?></div>
 			</div>
 
-			<div class="column medium-10 align-middle" id="example-menu">
+			<div class="column medium-10 align-middle" id="main-site-navigation">
 				<div class="top-bar-left medium-8">
 					<?php
 					wp_nav_menu( array(
