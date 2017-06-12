@@ -28,7 +28,7 @@ const autoprefixer = require( 'autoprefixer' ),
 	paths = {
 		'concat_scripts': 'assets/scripts/concat/*.js',
 		'css': [ './*.css', '!*.min.css' ],
-		'foundation': 'node_modules/foundation-sites/js/',
+		'foundationJS': 'node_modules/foundation-sites/js/',
 		'icons': 'assets/images/svg-icons/*.svg',
 		'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 		'php': [ './*.php', './**/*.php' ],
@@ -37,42 +37,45 @@ const autoprefixer = require( 'autoprefixer' ),
 		'sprites': 'assets/images/sprites/*.png'
 	},
 
-	// Set Foundation components.
-	foundationComponents = [
+	// Set theme Javascript directories.
+	themeJavascriptDir = [
 
-		// Rrquired components.
-		paths.foundation + 'foundation.core.js',
-		paths.foundation + 'foundation.util.mediaQuery.js',
+		// Required Foundation components.
+		paths.foundationJS + 'foundation.core.js',
+		paths.foundationJS + 'foundation.util.mediaQuery.js',
 
-		// Optional components.
+		// Optional Foundation components.
 		// To disable, just comment them out.
-		paths.foundation + 'foundation.abide.js',
-		paths.foundation + 'foundation.accordion.js',
-		paths.foundation + 'foundation.accordionMenu.js',
-		paths.foundation + 'foundation.drilldown.js',
-		paths.foundation + 'foundation.dropdown.js',
-		paths.foundation + 'foundation.dropdownMenu.js',
-		paths.foundation + 'foundation.equalizer.js',
-		paths.foundation + 'foundation.interchange.js',
-		paths.foundation + 'foundation.magellan.js',
-		paths.foundation + 'foundation.offcanvas.js',
-		paths.foundation + 'foundation.orbit.js',
-		paths.foundation + 'foundation.responsiveMenu.js',
-		paths.foundation + 'foundation.responsiveToggle.js',
-		paths.foundation + 'foundation.reveal.js',
-		paths.foundation + 'foundation.slider.js',
-		paths.foundation + 'foundation.sticky.js',
-		paths.foundation + 'foundation.tabs.js',
-		paths.foundation + 'foundation.toggler.js',
-		paths.foundation + 'foundation.tooltip.js',
-		paths.foundation + 'foundation.util.box.js',
-		paths.foundation + 'foundation.util.keyboard.js',
-		paths.foundation + 'foundation.util.motion.js',
-		paths.foundation + 'foundation.util.nest.js',
-		paths.foundation + 'foundation.util.timerAndImageLoader.js',
-		paths.foundation + 'foundation.util.touch.js',
-		paths.foundation + 'foundation.util.triggers.js',
-		paths.foundation + 'foundation.zf.responsiveAccordionTabs.js'
+		paths.foundationJS + 'foundation.abide.js',
+		paths.foundationJS + 'foundation.accordion.js',
+		paths.foundationJS + 'foundation.accordionMenu.js',
+		paths.foundationJS + 'foundation.drilldown.js',
+		paths.foundationJS + 'foundation.dropdown.js',
+		paths.foundationJS + 'foundation.dropdownMenu.js',
+		paths.foundationJS + 'foundation.equalizer.js',
+		paths.foundationJS + 'foundation.interchange.js',
+		paths.foundationJS + 'foundation.magellan.js',
+		paths.foundationJS + 'foundation.offcanvas.js',
+		paths.foundationJS + 'foundation.orbit.js',
+		paths.foundationJS + 'foundation.responsiveMenu.js',
+		paths.foundationJS + 'foundation.responsiveToggle.js',
+		paths.foundationJS + 'foundation.reveal.js',
+		paths.foundationJS + 'foundation.slider.js',
+		paths.foundationJS + 'foundation.sticky.js',
+		paths.foundationJS + 'foundation.tabs.js',
+		paths.foundationJS + 'foundation.toggler.js',
+		paths.foundationJS + 'foundation.tooltip.js',
+		paths.foundationJS + 'foundation.util.box.js',
+		paths.foundationJS + 'foundation.util.keyboard.js',
+		paths.foundationJS + 'foundation.util.motion.js',
+		paths.foundationJS + 'foundation.util.nest.js',
+		paths.foundationJS + 'foundation.util.timerAndImageLoader.js',
+		paths.foundationJS + 'foundation.util.touch.js',
+		paths.foundationJS + 'foundation.util.triggers.js',
+		paths.foundationJS + 'foundation.zf.responsiveAccordionTabs.js',
+
+		// Required theme scripts.
+		paths.concat_scripts
 	];
 
 /**
@@ -250,7 +253,7 @@ gulp.task( 'spritesmith', [ 'clean:sprites' ], () =>
  * https://www.npmjs.com/package/gulp-sourcemaps
  */
 gulp.task( 'concat', () =>
-	gulp.src( foundationComponents + paths.concat_scripts )
+	gulp.src( themeJavascriptDir )
 
 		// Deal with errors.
 		.pipe( plumber(
