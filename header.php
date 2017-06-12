@@ -28,7 +28,7 @@
 
 	<header class="site-header">
 		<div class="row">
-			<div class="site-branding column small-9 medium-10 large-2">
+			<div class="site-branding column small-12 large-2">
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
@@ -38,12 +38,12 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<div class="title-bar column small-3 medium-2" data-responsive-toggle="main-site-navigation" data-hide-for="large">
+			<div class="title-bar column small-12" data-responsive-toggle="main-site-navigation" data-hide-for="large">
 				<button class="menu-icon" type="button" data-toggle="off-canvas-menu"></button>
 				<div class="title-bar-title"><?php esc_html_e( 'Menu', '_s' ); ?></div>
 			</div><!-- .title-bar -->
 
-			<div class="column medium-10 align-middle" id="main-site-navigation">
+			<div class="column large-10 align-middle" id="main-site-navigation">
 				<div class="top-bar-left medium-8">
 					<?php
 					wp_nav_menu( array(
