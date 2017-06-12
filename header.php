@@ -22,12 +22,27 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div class="off-canvas position-left" id="off-canvas-menu" data-off-canvas>
+	<ul class="menu vertical" data-accordion-menu>
+		<li><a href="#">One</a>
+			<ul class="menu vertical">
+				<li><a href="#">One</a></li>
+				<li><a href="#">Two</a></li>
+				<li><a href="#">Three</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Two</a></li>
+		<li><a href="#">Three</a></li>
+	</ul>
+</div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header class="site-header">
 		<div class="row">
-			<div class="site-branding">
+			<div class="site-branding column small-9 medium-2">
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
@@ -35,29 +50,39 @@
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
-
-				<?php
-				$description = get_bloginfo( 'description', 'display' );
-
-				if ( $description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo esc_html( $description ); ?></p>
-				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
-				<span class="hamburger"></span>
-			</button>
+			<div class="title-bar column small-3" data-responsive-toggle="example-menu" data-hide-for="medium">
+				<button class="menu-icon" type="button" data-toggle="off-canvas-menu"></button>
+				<div class="title-bar-title">Menu</div>
+			</div>
 
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown',
-				) );
-				?>
-			</nav><!-- #site-navigation -->
+			<div class="column medium-10 align-middle" id="example-menu">
+				<div class="top-bar-left medium-8">
+					<?php
+					// wp_nav_menu( array(
+					// 	'theme_location' => 'primary',
+					// 	'menu_id'        => 'primary-menu',
+					// 	'menu_class'     => 'dropdown menu',
+					// ) );
+					?>
+
+					<ul class="dropdown menu" data-dropdown-menu>
+						<li><a href="#">One</a>
+							<ul class="menu vertical">
+								<li><a href="#">One</a></li>
+								<li><a href="#">Two</a></li>
+								<li><a href="#">Three</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Two</a></li>
+						<li><a href="#">Three</a></li>
+					</ul>
+				</div><!-- .top-bar-left -->
+				<div class="top-bar-right medium-4">
+					<?php get_search_form(); ?>
+				</div><!-- .top-bar-right -->
+			</div><!-- .top-bar -->
 		</div><!-- .row -->
 	</header><!-- .site-header -->
 
