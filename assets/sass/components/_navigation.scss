@@ -1,0 +1,14 @@
+//--------------------------------------------------------------
+// Primary Navigation Menu
+//
+// Styles for the primary navigation menu in the header and the off-canvas mobile menu.
+//--------------------------------------------------------------
+
+// Target the off-canvas menu.
+.off-canvas {
+
+	// Indent our submenus on mobile.
+	.is-accordion-submenu {
+		padding-left: 1rem;
+	} // .is-accordion-submenu
+} // .off-canvas
