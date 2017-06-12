@@ -6,14 +6,11 @@
  * @package _s
  */
 
-// Start Template Scaffolding.
 get_header(); ?>
 
 <div class="row">
 	<div class="primary content-area">
-		<main id="main" class="site-main" role="main">
-			<?php do_action( '_s_scaffolding_content' ); ?>
-		</main><!-- #main -->
+		<?php do_action( '_s_scaffolding_content' ); ?>
 	</div><!-- .primary -->
 </div><!-- .row -->
 

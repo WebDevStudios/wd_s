@@ -11,7 +11,6 @@ get_header(); ?>
 
 <div class="row">
 	<section class="primary content-area">
-		<main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) : ?>
 			<header class="page-header">
@@ -33,7 +32,6 @@ get_header(); ?>
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
-		</main><!-- #main -->
 	</section><!-- .primary -->
 
 	<?php get_sidebar(); ?>
