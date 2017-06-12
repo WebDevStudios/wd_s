@@ -41,7 +41,7 @@
 			<div class="title-bar column small-3" data-responsive-toggle="main-site-navigation" data-hide-for="medium">
 				<button class="menu-icon" type="button" data-toggle="off-canvas-menu"></button>
 				<div class="title-bar-title"><?php esc_html_e( 'Menu', '_s' ); ?></div>
-			</div>
+			</div><!-- .title-bar -->
 
 			<div class="column medium-10 align-middle" id="main-site-navigation">
 				<div class="top-bar-left medium-8">
@@ -58,7 +58,7 @@
 				<div class="top-bar-right medium-4">
 					<?php get_search_form(); ?>
 				</div><!-- .top-bar-right -->
-			</div><!-- .top-bar -->
+			</div><!-- #main-site-navigation -->
 		</div><!-- .row -->
 	</header><!-- .site-header -->
 
