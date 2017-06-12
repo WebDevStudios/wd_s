@@ -27,7 +27,7 @@
 
 	<header class="site-header">
 		<div class="row">
-			<div class="site-branding">
+			<div class="small-12 medium-3 columns site-branding">
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
@@ -45,19 +45,21 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
-				<span class="hamburger"></span>
-			</button>
+			<div class="small-12 medium-9 columns">
+				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
+					<span class="hamburger"></span>
+				</button>
 
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown',
-				) );
-				?>
-			</nav><!-- #site-navigation -->
+				<nav id="site-navigation" class="main-navigation">
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'menu_class'     => 'menu dropdown',
+					) );
+					?>
+				</nav><!-- #site-navigation -->
+			</div>
 		</div><!-- .row -->
 	</header><!-- .site-header -->
 
