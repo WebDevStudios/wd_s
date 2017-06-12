@@ -9,7 +9,7 @@
     "css-mqpacker": "~5",
     "del": "~2",
     "eslint-config-wordpress": "~1",
-    "foundation-sites": "~6",
+    "foundation-sites": "^6.3.1",
     "glob": "~7",
     "gulp": "~3",
     "gulp-babel": "~6",
