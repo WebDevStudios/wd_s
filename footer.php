@@ -14,13 +14,13 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-		<div class="wrap">
+		<div class="row">
 
 			<div class="site-info">
 				<?php _s_display_copyright_text(); ?>
 			</div>
 
-		</div><!-- .wrap -->
+		</div><!-- .row -->
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
