@@ -8,12 +8,13 @@
  *
  * @package _s
  */
+
 get_header(); ?>
 
-	<div class="primary content-area">
-		<main id="main" class="site-main">
-			<?php _s_display_content_blocks(); ?>
-		</main><!-- #main -->
+<div class="row">
+	<div class="medium-12 columns primary content-area">
+		<?php _s_display_content_blocks(); ?>
 	</div><!-- .primary -->
+</div><!-- .row -->
 
 <?php get_footer(); ?>
