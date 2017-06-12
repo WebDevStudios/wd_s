@@ -15,7 +15,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="primary content-area">
+	<div class="small-12 medium-9 columns primary content-area ">
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/content', 'page' );

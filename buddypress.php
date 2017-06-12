@@ -13,7 +13,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="primary content-area">
+	<div class="medium-12 columns primary content-area">
 		<?php while ( have_posts() ) :
 			the_post(); ?>
 

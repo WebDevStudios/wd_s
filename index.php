@@ -15,7 +15,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="primary content-area">
+	<div class="small-12 medium-9 columns primary content-area">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>

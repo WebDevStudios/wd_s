@@ -10,8 +10,8 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="primary content-area">
-		<section class="error-404 not-found">
+	<div class="medium-12 columns primary content-area">
+		<article class="error-404 not-found">
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Sorry, this page doesn\'t exist.', '_s' ); ?></h1>
 			</header><!-- .page-header -->
@@ -21,7 +21,7 @@ get_header(); ?>
 
 				<?php get_search_form(); ?>
 			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		</article><!-- .error-404 -->
 	</div><!-- .primary -->
 </div><!-- .row -->
 
