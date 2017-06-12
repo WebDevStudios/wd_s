@@ -26,7 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header class="site-header">
-		<div class="wrap">
+		<div class="row">
 
 			<div class="site-branding">
 
@@ -60,7 +60,7 @@
 				?>
 			</nav><!-- #site-navigation -->
 
-		</div><!-- .wrap -->
+		</div><!-- .row -->
 	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">
