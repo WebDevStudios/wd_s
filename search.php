@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div class="wrap">
+<div class="row">
 	<section class="primary content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
@@ -37,6 +37,6 @@ get_header(); ?>
 	</section><!-- .primary -->
 
 	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+</div><!-- .row -->
 
 <?php get_footer(); ?>
