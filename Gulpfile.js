@@ -1,78 +1,79 @@
 // Require our dependencies
-const autoprefixer = require( 'autoprefixer' );
-const babel = require( 'gulp-babel' );
-const browserSync = require( 'browser-sync' );
-const cheerio = require( 'gulp-cheerio' );
-const concat = require( 'gulp-concat' );
-const cssnano = require( 'gulp-cssnano' );
-const del = require( 'del' );
-const gulp = require( 'gulp' );
-const gutil = require( 'gulp-util' );
-const imagemin = require( 'gulp-imagemin' );
-const mqpacker = require( 'css-mqpacker' );
-const notify = require( 'gulp-notify' );
-const plumber = require( 'gulp-plumber' );
-const postcss = require( 'gulp-postcss' );
-const reload = browserSync.reload;
-const rename = require( 'gulp-rename' );
-const sass = require( 'gulp-sass' );
-const sort = require( 'gulp-sort' );
-const sourcemaps = require( 'gulp-sourcemaps' );
-const spritesmith = require( 'gulp.spritesmith' );
-const svgmin = require( 'gulp-svgmin' );
-const svgstore = require( 'gulp-svgstore' );
-const uglify = require( 'gulp-uglify' );
-const wpPot = require( 'gulp-wp-pot' );
+const autoprefixer = require( 'autoprefixer' ),
+	babel = require( 'gulp-babel' ),
+	browserSync = require( 'browser-sync' ),
+	cheerio = require( 'gulp-cheerio' ),
+	concat = require( 'gulp-concat' ),
+	cssnano = require( 'gulp-cssnano' ),
+	del = require( 'del' ),
+	gulp = require( 'gulp' ),
+	gutil = require( 'gulp-util' ),
+	imagemin = require( 'gulp-imagemin' ),
+	mqpacker = require( 'css-mqpacker' ),
+	notify = require( 'gulp-notify' ),
+	plumber = require( 'gulp-plumber' ),
+	postcss = require( 'gulp-postcss' ),
+	reload = browserSync.reload,
+	rename = require( 'gulp-rename' ),
+	sass = require( 'gulp-sass' ),
+	sort = require( 'gulp-sort' ),
+	sourcemaps = require( 'gulp-sourcemaps' ),
+	spritesmith = require( 'gulp.spritesmith' ),
+	svgmin = require( 'gulp-svgmin' ),
+	svgstore = require( 'gulp-svgstore' ),
+	uglify = require( 'gulp-uglify' ),
+	wpPot = require( 'gulp-wp-pot' ),
 
-// Set assets paths.
-const paths = {
-	'css': [ './*.css', '!*.min.css' ],
-	'icons': 'assets/images/svg-icons/*.svg',
-	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
-	'php': [ './*.php', './**/*.php' ],
-	'sass': 'assets/sass/**/*.scss',
-	'concat_scripts': 'assets/scripts/concat/*.js',
-	'scripts': [ 'assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/customizer.js' ],
-	'sprites': 'assets/images/sprites/*.png',
-	'foundation': 'node_modules/foundation-sites/js/'
-};
+	// Set asset paths.
+	paths = {
+		'concat_scripts': 'assets/scripts/concat/*.js',
+		'css': [ './*.css', '!*.min.css' ],
+		'foundation': 'node_modules/foundation-sites/js/',
+		'icons': 'assets/images/svg-icons/*.svg',
+		'images': [ 'assets/images/*', '!assets/images/*.svg' ],
+		'php': [ './*.php', './**/*.php' ],
+		'sass': 'assets/sass/**/*.scss',
+		'scripts': [ 'assets/scripts/*.js', '!assets/scripts/*.min.js', '!assets/scripts/customizer.js' ],
+		'sprites': 'assets/images/sprites/*.png'
+	},
 
-// Set Foundation components.
-const foundationComponents = [
+	// Set Foundation components.
+	foundationComponents = [
 
-	// Foundation (required)
-	paths.foundation + 'foundation.core.js',
-	paths.foundation + 'foundation.util.mediaQuery.js',
+		// Rrquired components.
+		paths.foundation + 'foundation.core.js',
+		paths.foundation + 'foundation.util.mediaQuery.js',
 
-	// Disable unwanted components by commenting them out.
-	paths.foundation + 'foundation.abide.js',
-	paths.foundation + 'foundation.accordion.js',
-	paths.foundation + 'foundation.accordionMenu.js',
-	paths.foundation + 'foundation.drilldown.js',
-	paths.foundation + 'foundation.dropdown.js',
-	paths.foundation + 'foundation.dropdownMenu.js',
-	paths.foundation + 'foundation.equalizer.js',
-	paths.foundation + 'foundation.interchange.js',
-	paths.foundation + 'foundation.magellan.js',
-	paths.foundation + 'foundation.offcanvas.js',
-	paths.foundation + 'foundation.orbit.js',
-	paths.foundation + 'foundation.responsiveMenu.js',
-	paths.foundation + 'foundation.responsiveToggle.js',
-	paths.foundation + 'foundation.reveal.js',
-	paths.foundation + 'foundation.slider.js',
-	paths.foundation + 'foundation.sticky.js',
-	paths.foundation + 'foundation.tabs.js',
-	paths.foundation + 'foundation.toggler.js',
-	paths.foundation + 'foundation.tooltip.js',
-	paths.foundation + 'foundation.util.box.js',
-	paths.foundation + 'foundation.util.keyboard.js',
-	paths.foundation + 'foundation.util.motion.js',
-	paths.foundation + 'foundation.util.nest.js',
-	paths.foundation + 'foundation.util.timerAndImageLoader.js',
-	paths.foundation + 'foundation.util.touch.js',
-	paths.foundation + 'foundation.util.triggers.js',
-	paths.foundation + 'foundation.zf.responsiveAccordionTabs.js'
-];
+		// Optional components.
+		// To disable, just comment them out.
+		paths.foundation + 'foundation.abide.js',
+		paths.foundation + 'foundation.accordion.js',
+		paths.foundation + 'foundation.accordionMenu.js',
+		paths.foundation + 'foundation.drilldown.js',
+		paths.foundation + 'foundation.dropdown.js',
+		paths.foundation + 'foundation.dropdownMenu.js',
+		paths.foundation + 'foundation.equalizer.js',
+		paths.foundation + 'foundation.interchange.js',
+		paths.foundation + 'foundation.magellan.js',
+		paths.foundation + 'foundation.offcanvas.js',
+		paths.foundation + 'foundation.orbit.js',
+		paths.foundation + 'foundation.responsiveMenu.js',
+		paths.foundation + 'foundation.responsiveToggle.js',
+		paths.foundation + 'foundation.reveal.js',
+		paths.foundation + 'foundation.slider.js',
+		paths.foundation + 'foundation.sticky.js',
+		paths.foundation + 'foundation.tabs.js',
+		paths.foundation + 'foundation.toggler.js',
+		paths.foundation + 'foundation.tooltip.js',
+		paths.foundation + 'foundation.util.box.js',
+		paths.foundation + 'foundation.util.keyboard.js',
+		paths.foundation + 'foundation.util.motion.js',
+		paths.foundation + 'foundation.util.nest.js',
+		paths.foundation + 'foundation.util.timerAndImageLoader.js',
+		paths.foundation + 'foundation.util.touch.js',
+		paths.foundation + 'foundation.util.triggers.js',
+		paths.foundation + 'foundation.zf.responsiveAccordionTabs.js'
+	];
 
 /**
  * Handle errors and alert the user.
@@ -138,11 +139,6 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 		// Create style.css.
 		.pipe( gulp.dest( './' ) )
 		.pipe( browserSync.stream() )
-
-		.pipe(notify({
-			message: '✔ Sass compiled',
-			onLast: true
-		}))
 );
 
 /**
@@ -317,42 +313,6 @@ gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
 		.pipe( gulp.dest( 'languages/_s.pot' ) )
 );
 
-/**
- * Sass linting.
- *
- * https://www.npmjs.com/package/sass-lint
- */
-gulp.task( 'sass:lint', () =>
-	gulp.src( [
-		'assets/sass/**/*.scss',
-		'!assets/sass/base/_normalize.scss',
-		'!assets/sass/base/_sprites.scss',
-		'!node_modules/**'
-	] )
-		.pipe( sassLint() )
-		.pipe( sassLint.format() )
-		.pipe( sassLint.failOnError() )
-);
-
-/**
- * JavaScript linting.
- *
- * https://www.npmjs.com/package/gulp-eslint
- */
-gulp.task( 'js:lint', () =>
-	gulp.src( [
-		'assets/scripts/concat/*.js',
-		'assets/scripts/*.js',
-		'!assets/scripts/project.js',
-		'!assets/scripts/*.min.js',
-		'!Gruntfile.js',
-		'!Gulpfile.js',
-		'!node_modules/**'
-	] )
-		.pipe( eslint() )
-		.pipe( eslint.format() )
-		.pipe( eslint.failAfterError() )
-);
 
 /**
  * Process tasks and reload browsers on file changes.
