@@ -4,12 +4,11 @@
 // Styles for the primary navigation menu in the header and the off-canvas mobile menu.
 //--------------------------------------------------------------
 
-// Target the parent container.
-.top-bar {
-	background-color: transparent;
+// Target the off-canvas menu.
+.off-canvas {
 
-	// Adjust styles for the menu containers.
-	ul {
-		background-color: transparent;
-	} // ul
-} // .top-bar
+	// Indent our submenus on mobile.
+	.is-accordion-submenu {
+		padding-left: 1rem;
+	} // .is-accordion-submenu
+} // .off-canvas
