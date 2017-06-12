@@ -28,7 +28,19 @@
 		<li><a href="#">One</a>
 			<ul class="menu vertical">
 				<li><a href="#">One</a></li>
-				<li><a href="#">Two</a></li>
+				<li><a href="#">Two</a>
+					<ul class="menu vertical">
+						<li><a href="#">One</a></li>
+						<li><a href="#">Two</a>
+							<ul class="menu vertical">
+								<li><a href="#">One</a></li>
+								<li><a href="#">Two</a></li>
+								<li><a href="#">Three</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Three</a></li>
+					</ul>
+				</li>
 				<li><a href="#">Three</a></li>
 			</ul>
 		</li>
@@ -71,7 +83,19 @@
 						<li><a href="#">One</a>
 							<ul class="menu vertical">
 								<li><a href="#">One</a></li>
-								<li><a href="#">Two</a></li>
+								<li><a href="#">Two</a>
+									<ul class="menu vertical">
+										<li><a href="#">One</a></li>
+										<li><a href="#">Two</a>
+											<ul class="menu vertical">
+												<li><a href="#">One</a></li>
+												<li><a href="#">Two</a></li>
+												<li><a href="#">Three</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Three</a></li>
+									</ul>
+								</li>
 								<li><a href="#">Three</a></li>
 							</ul>
 						</li>
