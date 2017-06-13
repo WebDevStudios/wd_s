@@ -19,8 +19,9 @@
 // Load Foundation.
 @import 'foundation/index';
 
-// Load custom variables and mixins.
+// Load custom variables, functions, and mixins.
 @import 'utilities/variables/index';
+@import 'utilities/functions/index';
 @import 'utilities/mixins/index';
 
 // Our most basic level file type (variables, typography, etc).
