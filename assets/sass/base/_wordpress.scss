@@ -8,13 +8,13 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin: 0 rem-calc(24) 0 0;
+	margin: 0 $global-margin 0 0;
 } // .alignleft
 
 .alignright {
 	display: inline;
 	float: right;
-	margin: 0 0 0 rem-calc(24);
+	margin: 0 0 0 $global-margin;
 } // .alignright
 
 .aligncenter {
@@ -24,12 +24,85 @@
 } // .aligncenter
 
 //-----------------------------------------
+// Typography
+//-----------------------------------------
+
+pre {
+	background-color: $code-background;
+	color: $code-color;
+	font-family: $font-family-monospace;
+	font-size: em(15);
+	font-weight: $code-font-weight;
+	line-height: $global-lineheight;
+	margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+	overflow: auto;
+	padding: $code-padding;
+	white-space: pre;
+	word-break: normal;
+	word-wrap: normal;
+} // pre
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font-family-monospace;
+	font-size: em(15);
+} // code, kbd, tt, var
+
+abbr,
+acronym {
+	border-bottom: $code-border;
+	cursor: help;
+} // abbr, acronym
+
+mark,
+ins {
+	text-decoration: none;
+} // mark, ins
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+} // sup, sub
+
+sup {
+	bottom: 1ex;
+} // sup
+
+sub {
+	top: 0.5ex;
+} // sub
+
+small {
+	font-size: 75%;
+} // small
+
+big {
+	font-size: 125%;
+} // big
+
+// Word Wrapping
+.entry-title,
+.entry-content,
+.comments-title,
+.comment-content,
+.widget-title,
+.widget {
+	@include word-break;
+} // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget
+
+//-----------------------------------------
 // Captions
 //-----------------------------------------
 
 // Image captions
 .wp-caption {
-	margin: 0 0 rem-calc(24) 0;
+	margin: 0 0 $global-margin 0;
 	max-width: 100%;
 
 	img[class*='wp-image-'] {
@@ -39,22 +112,22 @@
 
 	// Add auto margins so image is centered
 	&.aligncenter {
-		margin: 0 auto rem-calc(24) auto;
+		margin: 0 auto $global-margin auto;
 	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
-		margin-right: rem-calc(24);
+		margin-right: $global-margin;
 	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
-		margin-left: rem-calc(24);
+		margin-left: $global-margin;
 	} // &.alignright
 
 	// Add top and bottom margin to caption text
 	.wp-caption-text {
-		margin: rem-calc(12) 0;
+		margin: $global-margin 0;
 	} // .wp-caption-text
 } // .wp-caption
 
@@ -69,7 +142,7 @@
 
 // Gallery
 .gallery {
-	margin: 0 0 rem-calc(24) 0;
+	margin: 0 0 $global-margin 0;
 } // .gallery
 
 // Gallery caption

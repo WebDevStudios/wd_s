@@ -16,11 +16,11 @@
 
 	// When the admin bar is present.
 	.admin-bar & {
-		padding-top: rem-calc(56);
+		padding-top: $global-padding * 3.5;
 	} // .admin-bar
 
 	// Indent our submenus on mobile.
 	.is-accordion-submenu {
-		padding-left: rem-calc(16);
+		padding-left: $global-padding;
 	} // .is-accordion-submenu
 } // .off-canvas
