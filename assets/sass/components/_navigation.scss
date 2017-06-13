@@ -1,10 +1,17 @@
 //--------------------------------------------------------------
 // Primary Navigation Menu
-//
-// Styles for the primary navigation menu in the header and the off-canvas mobile menu.
 //--------------------------------------------------------------
 
-// Target the off-canvas menu.
+//-----------------------------------------
+// Hamburger Icon
+//-----------------------------------------
+.hamburger-icon {
+	@include hamburger($black, $medium-gray, 20px, 16px, 2px, 3);
+} // .hamburger
+
+//-----------------------------------------
+// Off Canvas Drawer
+//-----------------------------------------
 .off-canvas {
 
 	// Indent our submenus on mobile.
