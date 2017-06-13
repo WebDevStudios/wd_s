@@ -13,14 +13,8 @@
 # File Options
 files:
   ignore:
-   - 'sass/vendor/**/*.scss'
-   - 'sass/tests/**/*.scss'
-   - 'bourbon/app/**/*.scss'
-   - 'bourbon-neat/app/**/*.scss'
+   - './assets/foundation/_settings.scss'
    - './assets/sass/style.scss'
-   - './assets/sass/base/_scaffolding.scss'
-   - './assets/sass/plugins/_gravity-forms.scss'
-   - './assets/sass/utilities/mixins/_omega-reset.scss'
 
 # Rule Configuration
 rules:
@@ -31,7 +25,7 @@ rules:
   mixins-before-declarations:
   - 1
   -
-    exclude: ['grid-media'] # allow @include grid-media();
+    exclude: ['breakpoint'] # allow @include breakpoint();
 
   # Line Spacing
   empty-line-between-blocks:
