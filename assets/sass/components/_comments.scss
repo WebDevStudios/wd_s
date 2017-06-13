@@ -7,7 +7,7 @@
 //-----------------------------------------
 .comments-area {
 	border-top: $input-border;
-	margin: rem-calc(100) rem-calc(24) rem-calc(151);
+	margin: $global-margin 0;
 
 	@include breakpoint(desktop) {
 		margin-left: auto;
@@ -15,17 +15,17 @@
 	}
 
 	.comment-reply-title {
-		margin-top: rem-calc(47);
+		margin-top: $global-margin;
 	} // .comment-reply-title
 
 	.comments-title {
 		font-size: em(24);
-		margin-top: rem-calc(126);
+		margin-top: $global-margin;
 	} // .comments-title
 
 	.comment-notes {
 		font-size: em(16);
-		margin-bottom: rem-calc(54);
+		margin-top: $global-margin;
 	} // .comment-notes
 } // .comments-area
 
@@ -95,12 +95,13 @@
 
 	// Each comment body.
 	.comment-body {
-		padding: rem-calc(36);
+		margin: $global-margin 0;
+		padding: $global-padding;
 	} // .comment-body
 
 	// Comment content.
 	.comment-content {
-		margin: rem-calc(31) 0 rem-calc(28);
+		margin: $global-margin 0;
 		max-width: rem-calc(936);
 	} // .comment-content
 
@@ -108,7 +109,7 @@
 	.comment-meta {
 		@include clearfix;
 
-		margin: 0 0 rem-calc(14) 0;
+		margin: 0 0 $global-margin 0;
 	} // .comment-meta
 
 	// The comment author name.
@@ -122,24 +123,21 @@
 		margin-top: rem-calc(5);
 
 		a {
-			color: $light-gray;
+			color: $black;
 			text-decoration: none;
 		} // a
 
-		time {
+		time,
+		.comment-edit-link {
 			font-size: em(12);
-		} // time
+		} // time, .comment-edit-link
 	} // .comment-metadata
 
 	// Comments avatar.
 	.avatar {
 		border-radius: 50%;
 		float: left;
-		margin: rem-calc(-6) rem-calc(26) 0 0;
-
-		@include breakpoint(phone-landscape) {
-			margin-top: rem-calc(-12);
-		}
+		margin: 0 $global-margin 0 0;
 	} // .avatar
 
 	// By post author.
@@ -157,7 +155,6 @@
 	pre,
 	code {
 		margin: 0;
-		padding-top: rem-calc(5);
 		width: 100%;
 	} // pre, code
 } // .comment-list
@@ -170,15 +167,15 @@
 	// Comment children.
 	.children {
 		list-style: none;
-		margin: rem-calc(40) 0;
-		padding-left: rem-calc(20);
+		margin: $global-margin * 2 0;
+		padding-left: $global-padding;
 
 		@include breakpoint(phone-landscape) {
-			padding-left: rem-calc(35);
+			padding-left: $global-padding * 2;
 		}
 
 		@include breakpoint(tablet-portrait) {
-			padding-left: rem-calc(60);
+			padding-left: $global-padding * 4;
 		}
 
 		.depth-4,
@@ -208,11 +205,11 @@
 
 	.comment-respond {
 		background-color: $white;
-		padding: rem-calc(24) 0;
+		padding: $global-padding 0;
 
 		@include breakpoint(phone-landscape) {
-			padding-left: rem-calc(36);
-			padding-right: rem-calc(36);
+			padding-left: $global-padding * 2;
+			padding-right: $global-padding * 2;
 		}
 
 		.comment-reply-title {
