@@ -1,0 +1,130 @@
+//--------------------------------------------------------------
+// WordPress Classes
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Alignments
+//-----------------------------------------
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 0 rem-calc(24) 0 0;
+} // .alignleft
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: 0 0 0 rem-calc(24);
+} // .alignright
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+} // .aligncenter
+
+//-----------------------------------------
+// Captions
+//-----------------------------------------
+
+// Image captions
+.wp-caption {
+	margin: 0 0 rem-calc(24) 0;
+	max-width: 100%;
+
+	img[class*='wp-image-'] {
+		display: block;
+		margin: 0 auto;
+	} // img[class*="wp-image-"]
+
+	// Add auto margins so image is centered
+	&.aligncenter {
+		margin: 0 auto rem-calc(24) auto;
+	} // &.aligncenter
+
+	// Add a margin right to left-aligned images with captions
+	&.alignleft {
+		margin-right: rem-calc(24);
+	} // &.alignleft
+
+	// Add a margin left to right-aligned images with captions
+	&.alignright {
+		margin-left: rem-calc(24);
+	} // &.alignright
+
+	// Add top and bottom margin to caption text
+	.wp-caption-text {
+		margin: rem-calc(12) 0;
+	} // .wp-caption-text
+} // .wp-caption
+
+// Image caption text
+.wp-caption-text {
+	text-align: center;
+} // .wp-caption-text
+
+//-----------------------------------------
+// Galleries
+//-----------------------------------------
+
+// Gallery
+.gallery {
+	margin: 0 0 rem-calc(24) 0;
+} // .gallery
+
+// Gallery caption
+.gallery-caption {
+	display: block;
+} // .gallery-caption
+
+// Gallery items
+.gallery-item {
+	@include size(100% auto);
+
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+
+	.gallery-columns-2 & {
+		max-width: 50%;
+	} // .gallery-columns-2 &
+
+	.gallery-columns-3 & {
+		max-width: 33.33%;
+	} // .gallery-columns-3 &
+
+	.gallery-columns-4 & {
+		max-width: 25%;
+	} // .gallery-columns-4 &
+
+	.gallery-columns-5 & {
+		max-width: 20%;
+	} // .gallery-columns-5 &
+
+	.gallery-columns-6 & {
+		max-width: 16.66%;
+	} // .gallery-columns-6 &
+
+	.gallery-columns-7 & {
+		max-width: 14.28%;
+	} // .gallery-columns-7 &
+
+	.gallery-columns-8 & {
+		max-width: 12.5%;
+	} // .gallery-columns-8 &
+
+	.gallery-columns-9 & {
+		max-width: 11.11%;
+	} // .gallery-columns-9 &
+} // .gallery-item
+
+//-----------------------------------------
+// Misc.
+//-----------------------------------------
+
+// That damn smiley face.
+.wp-smiley {
+	@include margin-padding-reset;
+
+	border: none;
+} // img.wp-smiley
