@@ -34,7 +34,7 @@
 		</div>
 
 		<div class="row">
-			<div class="site-info">
+			<div class="small-12 site-info text-center">
 				<?php _s_display_copyright_text(); ?>
 			</div>
 		</div><!-- .row -->
