@@ -26,7 +26,6 @@
 //-----------------------------------------
 // Typography
 //-----------------------------------------
-
 pre {
 	background-color: $code-background;
 	color: $code-color;
@@ -86,15 +85,12 @@ big {
 	font-size: 125%;
 } // big
 
-// Word Wrapping
-.entry-title,
-.entry-content,
-.comments-title,
-.comment-content,
-.widget-title,
-.widget {
-	@include word-break;
-} // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget
+//-----------------------------------------
+// Screen Readers
+//-----------------------------------------
+.screen-reader-text {
+	@include element-invisible;
+} // .screen-reader-text
 
 //-----------------------------------------
 // Captions
