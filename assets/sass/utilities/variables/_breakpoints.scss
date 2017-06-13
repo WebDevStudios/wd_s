@@ -10,6 +10,7 @@
 /// and merge the two together.
 ///
 /// @group wds
+
 $custom-breakpoints: (
 	phone-portrait: 360px,
 	phone-landscape: 640px,
@@ -35,14 +36,15 @@ $custom-breakpoints: (
 ///         	width: 15rem;
 ///         }
 ///    }
+
 $breakpoints: map-merge($breakpoints, $custom-breakpoints);
 
-/// Merge custom breakpoints classes with Foundation.
+/// Merge custom breakpoint classes with Foundation.
 ///
-/// @example scss - Basic Usage Sass
+/// @example html - Basic Usage CSS Class
 ///    <div class="column tablet-portrait">
 ///       <p>Foo text</p>
 ///    </div>
-///
-$custom-breakpoint-keys: map-keys($custom-breakpoints);
-$breakpoint-classes: join($breakpoint-classes, $custom-breakpoint-keys);
+
+$custom-breakpoint-keys: map-keys($custom-breakpoints); // Create a list of custom breakpoint names.
+$breakpoint-classes: join($breakpoint-classes, $custom-breakpoint-keys); // Merge the custom breakpoint names (keys) with Foundation.
