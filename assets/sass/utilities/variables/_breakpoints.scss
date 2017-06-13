@@ -1,0 +1,48 @@
+//--------------------------------------------------------------
+// Media Query Breakpoints
+//--------------------------------------------------------------
+
+/// Custom Media Query Breakpoints
+///
+/// Since each version of Foundation may
+/// require us to update _settings.scss,
+/// create a custom list of breakpoints
+/// and merge the two together.
+///
+/// @group wds
+$custom-breakpoints: (
+	phone-portrait: 360px,
+	phone-landscape: 640px,
+	tablet-portrait: 768px,
+	wp-admin-bar: 783px,
+	tablet-landscape: 1024px,
+	desktop: 1366px,
+	large-desktop: 1680px
+);
+
+/// Merge custom breakpoints with Foundation.
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///			@include breakpoint(tablet-portrait) {
+///			   width: rem-calc(240);
+///			}
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+///         @media (min-width: 48em) {
+///         	width: 15rem;
+///         }
+///    }
+$breakpoints: map-merge($breakpoints, $custom-breakpoints);
+
+/// Merge custom breakpoints classes with Foundation.
+///
+/// @example scss - Basic Usage Sass
+///    <div class="column tablet-portrait">
+///       <p>Foo text</p>
+///    </div>
+///
+$custom-breakpoint-keys: map-keys($custom-breakpoints);
+$breakpoint-classes: join($breakpoint-classes, $custom-breakpoint-keys);
