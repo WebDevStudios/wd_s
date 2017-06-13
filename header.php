@@ -46,8 +46,8 @@
 				<?php endif; ?>
 			</div><!-- . site-branding -->
 
-			<span class="column small-6 hamburger text-right" data-responsive-toggle="main-site-navigation" data-hide-for="large">
-				<button class="menu-icon" type="button" data-toggle="off-canvas-menu"></button>
+			<span class="column small-6 medium-10 hamburger text-right" data-responsive-toggle="main-site-navigation" data-hide-for="large">
+				<button class="hamburger-icon" type="button" data-toggle="off-canvas-menu"></button>
 				<div class="title-bar-title show-for-sr"><?php esc_html_e( 'Menu', '_s' ); ?></div>
 			</span>
 
