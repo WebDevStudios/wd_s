@@ -73,7 +73,7 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 			sprintf(
 				/* translators: %s: Name of current post */
 				esc_html__( 'Edit %s', '_s' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				the_title( '<span class="show-for-sr">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -296,7 +296,7 @@ function _s_display_social_icons() {
 						'title' => 'Twitter',
 						'desc'  => esc_html__( 'Share on Twitter', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
@@ -306,7 +306,7 @@ function _s_display_social_icons() {
 						'title' => 'Facebook',
 						'desc'  => esc_html__( 'Share on Facebook', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
@@ -316,7 +316,7 @@ function _s_display_social_icons() {
 						'title' => 'LinkedIn',
 						'desc'  => esc_html__( 'Share on LinkedIn', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
 				</a>
 			</li>
 		</ul>
@@ -350,7 +350,7 @@ function _s_display_social_network_links() {
 							'icon'  => $network . '-square',
 							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
 						) ); ?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+						<span class="show-for-sr"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
 					</a>
 				</li><!-- .social-icon -->
 			<?php endif;
