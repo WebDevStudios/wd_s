@@ -9,6 +9,6 @@
 
 	// Indent our submenus on mobile.
 	.is-accordion-submenu {
-		padding-left: 1rem;
+		padding-left: rem-calc(16);
 	} // .is-accordion-submenu
 } // .off-canvas
