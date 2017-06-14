@@ -2,25 +2,10 @@
 // Helpers
 //--------------------------------------------------------------
 
-// Fluid embed.
-.fluid-embed {
-	height: 0;
-	overflow: hidden;
-	padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
-	position: relative;
-
-	embed,
-	object,
-	iframe {
-		@include position(absolute, 0 null null 0);
-		@include size(100%);
-	} // embed, object, iframe
-} // .fluid-embed
-
-// Jetpack now auto wraps all oembed videos in a <div>
-// Let's make it full-width in the content cuz it looks cool.
-.full-width,
-.jetpack-video-wrapper {
+//-----------------------------------------
+// Full Width
+//-----------------------------------------
+.full-width {
 	margin-left: rem-calc(-35);
 	max-width: calc(100% + 70px);
 	width: calc(100% + 70px);
@@ -30,16 +15,20 @@
 		max-width: calc(100% + 230px);
 		width: calc(100% + 230px);
 	}
-} // .jetpack-video-wrapper
+} // .full-width
 
-// Center image background.
+//-----------------------------------------
+// Image As Background
+//-----------------------------------------
 .image-as-background {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 } // .image-as-background
 
-// Video as background.
+//-----------------------------------------
+// Video As Background
+//-----------------------------------------
 .video-as-background {
 	@include size(100%);
 
@@ -50,7 +39,9 @@
 	z-index: 1;
 } // .video-as-background
 
-// SVG definitions.
+//-----------------------------------------
+// SVG Definitions
+//-----------------------------------------
 .svg-defs {
 	display: none;
 } // .svg-defs
