@@ -95,8 +95,6 @@ big {
 //-----------------------------------------
 // Captions
 //-----------------------------------------
-
-// Image captions
 .wp-caption {
 	margin: 0 0 $global-margin 0;
 	max-width: 100%;
@@ -135,8 +133,6 @@ big {
 //-----------------------------------------
 // Galleries
 //-----------------------------------------
-
-// Gallery
 .gallery {
 	margin: 0 0 $global-margin 0;
 } // .gallery
@@ -190,8 +186,6 @@ big {
 //-----------------------------------------
 // Misc.
 //-----------------------------------------
-
-// That damn smiley face.
 .wp-smiley {
 	@include margin-padding-reset;
 
