@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-<div class="medium-12 columns primary content-area">
+<div class="small-12 primary content-area">
 	<?php _s_display_content_blocks(); ?>
 </div><!-- .primary -->
 
