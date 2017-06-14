@@ -15,20 +15,20 @@
 	</main><!-- #main -->
 
 	<footer class="site-footer">
-		<div class="row">
-			<div class="medium-3 columns">
+		<div class="row small-up-2 large-up-4">
+			<div class="column">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</div>
 
-			<div class="medium-3 columns">
+			<div class="column">
 				<?php dynamic_sidebar( 'footer-2' ); ?>
 			</div>
 
-			<div class="medium-3 columns">
+			<div class="column">
 				<?php dynamic_sidebar( 'footer-3' ); ?>
 			</div>
 
-			<div class="medium-3 columns">
+			<div class="column">
 				<?php dynamic_sidebar( 'footer-4' ); ?>
 			</div>
 		</div>
