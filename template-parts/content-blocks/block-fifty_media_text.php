@@ -6,7 +6,7 @@
  */
 
 // Get <img> data.
-$image_data = get_sub_field( 'left_content' );
+$image_data = get_sub_field( 'media_left' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
@@ -19,6 +19,6 @@ _s_display_block_options( array(
 	</div><!-- .fifty-media-wrap -->
 
 	<div class="column small-12 medium-6 fifty-text-wrap">
-		<?php echo force_balance_tags( get_sub_field( 'right_content' ) ); // WPCS XSS OK. ?>
+		<?php echo force_balance_tags( get_sub_field( 'content_right' ) ); // WPCS XSS OK. ?>
 	</div><!-- .fifty-text-wrap -->
 </section><!-- .fifty-media-text -->

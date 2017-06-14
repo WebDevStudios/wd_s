@@ -12,10 +12,10 @@ _s_display_block_options( array(
 ) );
 ?>
 	<div class="column small-12 medium-6 fifty-text-left">
-		<?php echo force_balance_tags( get_sub_field( 'left_content' ) ); // WPCS: XSS OK. ?>
+		<?php echo force_balance_tags( get_sub_field( 'content_left' ) ); // WPCS: XSS OK. ?>
 	</div><!-- .fifty-text-left-->
 
 	<div class="column small-12 medium-6 fifty-text-right">
-		<?php echo force_balance_tags( get_sub_field( 'right_content' ) ); // WPCS: XSS OK. ?>
+		<?php echo force_balance_tags( get_sub_field( 'content_right' ) ); // WPCS: XSS OK. ?>
 	</div><!-- .fifty-text-right-->
 </section><!-- .fifty-text-only -->
