@@ -8,7 +8,7 @@
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'row generic-content', // The class of the container.
+	'class'     => 'row content-block generic-content', // The class of the container.
 ) );
 ?>
 	<div class="column">

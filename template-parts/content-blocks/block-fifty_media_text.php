@@ -11,7 +11,7 @@ $image_data = get_sub_field( 'media_left' );
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'row fifty-media-text', // The class of the container.
+	'class'     => 'row content-block fifty-media-text', // The class of the container.
 ) );
 ?>
 	<div class="column small-12 medium-6 fifty-media-wrap">
