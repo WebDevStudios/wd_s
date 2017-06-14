@@ -12,6 +12,8 @@ _s_display_block_options( array(
 ) );
 ?>
 	<div class="row">
+		<div class="column small-12">
 		<?php echo force_balance_tags( get_sub_field( 'content' ) ); // WP XSS OK. ?>
-	</div>
+		</div><!-- .column -->
+	</div><!-- .row -->
 </section><!-- .generic-content -->
