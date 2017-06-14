@@ -11,10 +11,8 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="medium-12 columns primary content-area">
-		<?php _s_display_content_blocks(); ?>
-	</div><!-- .primary -->
-</div><!-- .row -->
+<div class="medium-12 columns primary content-area">
+	<?php _s_display_content_blocks(); ?>
+</div><!-- .primary -->
 
 <?php get_footer(); ?>
