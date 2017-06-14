@@ -286,7 +286,7 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1,
-                            "delay": 1
+                            "delay": 0
                         },
                         {
                             "key": "field_5908a2874dd20",
@@ -384,7 +384,7 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1,
-                            "delay": 1
+                            "delay": 0
                         },
                         {
                             "key": "field_59416b913f18e",
@@ -447,5 +447,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1497460559
+    "modified": 1497462283
 }
