@@ -89,7 +89,7 @@
             "label": "Background Video",
             "name": "background_video",
             "type": "file",
-            "instructions": "Add\/Upload a 1920x1080 .mp4 video file.",
+            "instructions": "Add\/Upload a 1920x1080 .mp4 video file. Note: background videos are only supported on hero's.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -129,5 +129,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1497459464
+    "modified": 1497463817
 }
