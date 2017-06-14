@@ -358,3 +358,34 @@ function _s_display_social_network_links() {
 	</ul><!-- .social-icons -->
 	<?php
 }
+
+/**
+ * Display cards.
+ *
+ * @link http://foundation.zurb.com/sites/docs/card.html
+ */
+function _s_display_card( $args = array() ) {
+
+	// Setup defaults.
+	$defaults = array(
+		'title' => '',
+		'image' => '',
+		'text'  => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+
+	<div class="card">
+		<img src="<?php echo esc_url( $args['image'] ); ?>">
+		<div class="card-divider">
+			<h4><?php echo esc_html( $args['title'] ); ?></h4>
+		</div>
+		<div class="card-section">
+			<p><?php echo force_balance_tags( $args['text'] ); ?></p>
+		</div>
+	</div><!-- .card -->
+
+<?php
+}
