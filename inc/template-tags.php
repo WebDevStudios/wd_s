@@ -27,7 +27,7 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: the date the post was published */
 			esc_html_x( 'Posted on %s', 'post date', '_s' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
 
 		$byline = sprintf(
