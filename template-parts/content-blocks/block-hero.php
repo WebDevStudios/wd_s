@@ -6,8 +6,6 @@
  */
 
 // Set up fields.
-$background_image = get_sub_field( 'background_image' );
-$background_video = get_sub_field( 'background_video' );
 $headline = get_sub_field( 'headline' );
 $text = get_sub_field( 'text' );
 $button_text = get_sub_field( 'button_text' );
