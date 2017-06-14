@@ -15,7 +15,7 @@
 	</main><!-- #main -->
 
 	<footer class="site-footer">
-		<div class="row small-up-2 large-up-4">
+		<div class="row small-up-1 medium-up-2 large-up-4">
 			<div class="column">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</div>
