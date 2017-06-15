@@ -7,15 +7,34 @@
             "label": "Font Color",
             "name": "font_color",
             "type": "color_picker",
-            "instructions": "",
+            "instructions": "Change the text color of this block.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": ""
+        },
+        {
+            "key": "field_5941ea778fe87",
+            "label": "Custom CSS Class",
+            "name": "custom_css_class",
+            "type": "text",
+            "instructions": "Add a custom CSS class to this block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "custom-class",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -35,5 +54,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1497459001
+    "modified": 1497492999
 }
