@@ -28,10 +28,11 @@ function _s_display_block_options( $args = array() ) {
 
 	// Setup defaults.
 	$defaults = array(
-		'background_type' => get_sub_field( 'background_type' ),
-		'font_color'      => get_sub_field( 'font_color' ),
-		'container'       => 'section',
-		'class'           => 'content-block',
+		'background_type'  => get_sub_field( 'background_type' ),
+		'font_color'       => get_sub_field( 'font_color' ),
+		'container'        => 'section',
+		'class'            => 'content-block',
+		'custom_css_class' => get_sub_field( 'custom_css_class' ),
 	);
 
 	// Parse args.
@@ -67,7 +68,7 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Print the opening container and any inline styles.
-	printf( '<%s class="%s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $inline_style ) );
+	printf( '<%s class="%s %s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $args['custom_css_class'] ), esc_attr( $inline_style ) );
 
 	// If video is chosen, add the video markup immediately below opening container.
 	if ( 'video' === $args['background_type']['value'] ) {
