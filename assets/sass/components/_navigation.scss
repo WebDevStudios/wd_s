@@ -1,14 +1,26 @@
 //--------------------------------------------------------------
 // Primary Navigation Menu
-//
-// Styles for the primary navigation menu in the header and the off-canvas mobile menu.
 //--------------------------------------------------------------
 
-// Target the off-canvas menu.
+//-----------------------------------------
+// Hamburger Icon
+//-----------------------------------------
+.hamburger-icon {
+	@include hamburger($black, $medium-gray, 20px, 16px, 2px, 3);
+} // .hamburger
+
+//-----------------------------------------
+// Off Canvas Drawer
+//-----------------------------------------
 .off-canvas {
+
+	// When the admin bar is present.
+	.admin-bar & {
+		padding-top: $global-padding * 3.5;
+	} // .admin-bar
 
 	// Indent our submenus on mobile.
 	.is-accordion-submenu {
-		padding-left: 1rem;
+		padding-left: $global-padding;
 	} // .is-accordion-submenu
 } // .off-canvas

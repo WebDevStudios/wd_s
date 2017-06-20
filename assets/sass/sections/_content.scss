@@ -1,0 +1,100 @@
+//--------------------------------------------------------------
+// Content
+//--------------------------------------------------------------
+
+// Sticky and comments Link.
+.sticky,
+.comments-link {
+	display: block;
+} // .sticky, .comments-link
+
+// hentry
+.hentry {
+	margin: 0 0 $global-margin * 2 0;
+} // .hentry
+
+// Byline and update post date.
+.byline,
+.updated:not(.published) {
+	display: none;
+} // .byline, .updated:not(.published)
+
+// Byline for single and group.
+.single .byline,
+.group-blog .byline {
+	display: inline;
+} // .single .byline, .group-blog .byline
+
+// Page content, entry content and entry summary.
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: $global-margin * 2 0 0;
+} // .page-content, .entry-content, .entry-summary
+
+// Page links.
+.page-links {
+	clear: both;
+	margin: 0 0 $global-margin * 2 0;
+} // .page-links
+
+// Tags links.
+.tags-links {
+	margin-left: $global-margin * 2;
+} // .tags-links
+
+// Edit link.
+.edit-link {
+	a {
+		font-size: em(12);
+		text-transform: lowercase;
+
+		&::before {
+			content: '(';
+		}
+
+		&::after {
+			content: ')';
+		}
+	} // a
+} // .edit-link
+
+// Asides.
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+} // .blog .format-aside .entry-title, .archive .format-aside .entry-title
+
+// Navigation on Comment, Post and Posts.
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 $global-margin 0;
+		overflow: hidden;
+	} // .site-main &
+
+	.nav-previous {
+		@include size(50% auto);
+
+		float: left;
+	} // &.nav-previous
+
+	.nav-next {
+		@include size(50% auto);
+
+		float: right;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation
+
+// Word wrapping.
+.entry-title,
+.entry-content,
+.comments-title,
+.comment-content,
+.widget-title,
+.widget {
+	@include word-break;
+} // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget

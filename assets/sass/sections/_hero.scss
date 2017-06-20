@@ -1,0 +1,54 @@
+//--------------------------------------------------------------
+// Hero
+//--------------------------------------------------------------
+.hero {
+	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
+
+	// Optional transparent overlay.
+	&::after {
+		@include size(100%);
+		@include position(absolute, 0 0 null null);
+
+		background-color: rgba($black, 0.7);
+		content: '';
+		z-index: 2;
+	} // .hero::after
+
+	// Content container.
+	&-content {
+		padding: $global-padding * 4 0;
+		position: relative;
+		z-index: 3;
+
+		@include breakpoint(admin-bar) {
+			padding: $global-padding * 8 0;
+		}
+	} // .hero-content
+
+	// Headline container.
+	&-headline {
+		font-size: rem-calc(48);
+		line-height: 1.2;
+		margin-bottom: $global-padding * 2;
+
+		@include breakpoint(medium) {
+			margin-bottom: $global-padding;
+		}
+	} // .hero-headline
+
+	// Text/burb container.
+	&-text {
+		font-size: rem-calc(18);
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(24);
+		}
+	} // .hero-text
+
+	// CTA button.
+	&-button {
+		margin-top: rem-calc(10);
+	} // .hero-button
+} // .hero

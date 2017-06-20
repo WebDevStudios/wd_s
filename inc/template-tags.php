@@ -27,7 +27,7 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: the date the post was published */
 			esc_html_x( 'Posted on %s', 'post date', '_s' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
 
 		$byline = sprintf(
@@ -73,7 +73,7 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 			sprintf(
 				/* translators: %s: Name of current post */
 				esc_html__( 'Edit %s', '_s' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				the_title( '<span class="show-for-sr">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -296,7 +296,7 @@ function _s_display_social_icons() {
 						'title' => 'Twitter',
 						'desc'  => esc_html__( 'Share on Twitter', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
@@ -306,7 +306,7 @@ function _s_display_social_icons() {
 						'title' => 'Facebook',
 						'desc'  => esc_html__( 'Share on Facebook', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
 				</a>
 			</li>
 			<li class="social-icon">
@@ -316,7 +316,7 @@ function _s_display_social_icons() {
 						'title' => 'LinkedIn',
 						'desc'  => esc_html__( 'Share on LinkedIn', '_s' ),
 					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
+					<span class="show-for-sr"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
 				</a>
 			</li>
 		</ul>
@@ -350,11 +350,42 @@ function _s_display_social_network_links() {
 							'icon'  => $network . '-square',
 							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
 						) ); ?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+						<span class="show-for-sr"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
 					</a>
 				</li><!-- .social-icon -->
 			<?php endif;
 		endforeach; ?>
 	</ul><!-- .social-icons -->
 	<?php
+}
+
+/**
+ * Display cards.
+ *
+ * @link http://foundation.zurb.com/sites/docs/card.html
+ */
+function _s_display_card( $args = array() ) {
+
+	// Setup defaults.
+	$defaults = array(
+		'title' => '',
+		'image' => '',
+		'text'  => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+
+	<div class="card">
+		<img src="<?php echo esc_url( $args['image'] ); ?>">
+		<div class="card-divider">
+			<h4><?php echo esc_html( $args['title'] ); ?></h4>
+		</div>
+		<div class="card-section">
+			<p><?php echo force_balance_tags( $args['text'] ); ?></p>
+		</div>
+	</div><!-- .card -->
+
+<?php
 }
