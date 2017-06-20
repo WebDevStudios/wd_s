@@ -20,8 +20,11 @@ matrix:
 
     include:
         - php: '5.6'
+          env: SNIFF=1 # Most production environments are still running PHP 5.6
         - php: '7.0'
-          env: SNIFF=1
+        - php: '7.1'
+
+    allow_failures:
         - php: '7.1'
 
 # Use this to prepare the system to install prerequisites or dependencies.
@@ -38,7 +41,7 @@ before_script:
     # Install the latest version of Node (required to run ESLint).
     - nvm install stable
     # Install CodeSniffer for WordPress Coding Standards checks.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.9 --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
     # Install PHP Compatibility sniffs.
