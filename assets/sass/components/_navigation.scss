@@ -24,3 +24,10 @@
 		padding-left: $global-padding;
 	} // .is-accordion-submenu
 } // .off-canvas
+
+//-----------------------------------------
+// Dropdown Navigation
+//-----------------------------------------
+.is-dropdown-submenu {
+	z-index: 2;
+} // .is-dropdown-submenu
