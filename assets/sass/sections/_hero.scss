@@ -22,7 +22,7 @@
 		position: relative;
 		z-index: 3;
 
-		@include breakpoint(admin-bar) {
+		@include breakpoint(wp-admin-bar) {
 			padding: $global-padding * 8 0;
 		}
 	} // .hero-content
