@@ -3,4 +3,8 @@
 //--------------------------------------------------------------
 .site-footer {
 	margin: $global-margin * 2 auto;
+
+	.menu>li {
+		display: inline;
+	} // .menu>li 
 } // .site-footer
