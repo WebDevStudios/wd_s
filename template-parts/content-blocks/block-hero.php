@@ -20,10 +20,10 @@ _s_display_block_options( array(
 	<div class="row align-center hero-content">
 		<div class="small-8 large-11 align-self-middle text-center">
 		<?php if ( $headline ) : ?>
-			<h1 class="hero-headline"><?php echo esc_html( $headline ); ?></h2>
+			<h2 class="hero-headline"><?php echo esc_html( $headline ); ?></h2>
 		<?php endif; ?>
 		<?php if ( $text ) : ?>
-			<h2 class="hero-text"><?php echo force_balance_tags( $text ); // WPCS xss ok. ?></h2>
+			<p class="hero-text"><?php echo force_balance_tags( $text ); // WPCS xss ok. ?></p>
 		<?php endif; ?>
 		<?php if ( $button_text ) : ?>
 			<a href="<?php echo esc_url( $button_url ); ?>" class="button large hero-button" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
