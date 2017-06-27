@@ -20,8 +20,11 @@ matrix:
 
     include:
         - php: '5.6'
+          env: SNIFF=1 # Most production environments are still running PHP 5.6
         - php: '7.0'
-          env: SNIFF=1
+        - php: '7.1'
+
+    allow_failures:
         - php: '7.1'
 
 # Use this to prepare the system to install prerequisites or dependencies.
@@ -36,9 +39,10 @@ before_script:
     - export PHPCS_DIR=/tmp/phpcs
     - export SNIFFS_DIR=/tmp/sniffs
     # Install the latest version of Node (required to run ESLint).
-    - nvm install stable
+    - nvm install node
+    - nvm use node
     # Install CodeSniffer for WordPress Coding Standards checks.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.9 --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
     # Install PHP Compatibility sniffs.
@@ -50,13 +54,13 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install ESLint: The pluggable linting utility for JavaScript and JSX.
     # @link http://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint; fi
     # Install WordPress JavaScript Coding Standards shareable config for ESLint.
     # @link https://www.npmjs.com/package/eslint-config-wordpress
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint-config-wordpress; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint-config-wordpress; fi
     # Install Sass Lint.
     # @link https://github.com/sasstools/sass-lint
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g sass-lint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g sass-lint; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -75,7 +79,7 @@ script:
     # --extensions: Only sniff PHP files.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./phpcs.xml --extensions=php; fi
     # Run the theme JavaScript partials through ESLint.
-    - if [[ "$SNIFF" == "1" ]]; then eslint -c ./.eslintrc.js ./assets/scripts/concat; fi
+    - if [[ "$SNIFF" == "1" ]]; then eslint -v -c ./.eslintrc.js ./assets/scripts/concat; fi
     # Run the theme Sass partials through Sass Lint.
     - if [[ "$SNIFF" == "1" ]]; then sass-lint -v -q -c ./.sass-lint.yml ./assets/sass/**/*.scss; fi
 
