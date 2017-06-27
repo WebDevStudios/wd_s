@@ -93,19 +93,19 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  */
 function _s_get_placeholder_image( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'background_color'	=> 'dddddd',
-		'text_color'		=> '000000',
+		'width'            => '',
+		'height'           => '',
+		'background_color' => 'dddddd',
+		'text_color'       => '000000',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
 
 	// Extract the vars we want to work with.
-	$width 				= $args['width'];
-	$height			 	= $args['height'];
-	$background_color	= $args['background_color'];
-	$text_color 		= $args['text_color'];
+	$width              = $args['width'];
+	$height             = $args['height'];
+	$background_color   = $args['background_color'];
+	$text_color         = $args['text_color'];
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
@@ -150,10 +150,10 @@ function _s_get_placeholder_image( $args = array() ) {
  */
 function _s_get_placeholder_unsplash( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'category'			=> '',
-		'keywords'			=> '',
+		'width'    => '',
+		'height'   => '',
+		'category' => '',
+		'keywords' => '',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
@@ -220,7 +220,7 @@ class WDS_Submenu_Classes extends Walker_Nav_Menu {
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @param int    $depth  Depth of menu item. Used for padding.
-	 * @param array  $args   An array of arguments. @see wp_nav_menu()
+	 * @param array  $args   An array of arguments. @see wp_nav_menu().
 	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 
@@ -233,8 +233,8 @@ class WDS_Submenu_Classes extends Walker_Nav_Menu {
 		}
 
 		// Depth-dependent classes.
-		$indent        = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
-		$display_depth = ( $depth + 1); // because it counts the first submenu as 0
+		$indent        = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent.
+		$display_depth = ( $depth + 1); // because it counts the first submenu as 0.
 
 		// Build our classes.
 		$classes = array(
