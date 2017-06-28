@@ -25,15 +25,3 @@ $base-context: 16;
 // Usage lh(12) = lh(12,12) = 1
 // Usage lh(24, 12) = 2
 //-----------------------------------------
-@function lh($font-size, $line-height: $font-size) {
-
-	@if not unitless($font-size) {
-		$font-size: strip-units($font-size);
-	}
-
-	@if not unitless($line-height) {
-		$line-height: strip-units($line-height);
-	}
-
-	@return $font-size / $line-height;
-}
