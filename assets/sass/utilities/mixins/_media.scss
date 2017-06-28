@@ -7,14 +7,14 @@
 /// @group wds
 ////
 
-////
+///
 /// @param  {map | measurement}  $min  - The value for min-width.
 /// @param  {map | measurement}  $max  - The value for max-width.
 ///
 /// @example - scss  Media Query
 ///  @include media(null, $tablet-portrait) {};
 ///  // @media and screen (max-width: $tablet-portrait)
-////
+///
 
 @mixin media($min, $max) {
 
