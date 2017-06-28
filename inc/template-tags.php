@@ -94,7 +94,7 @@ endif;
  * }
  * @return string SVG markup.
  */
-function _s_get_svg( $args = array() ) {
+function _s_display_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
@@ -150,7 +150,7 @@ function _s_get_svg( $args = array() ) {
 
 	$svg .= '</svg>';
 
-	return $svg;
+	echo $svg; // WPCS: XSS OK.
 }
 
 /**
