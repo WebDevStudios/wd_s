@@ -90,6 +90,7 @@ endif;
  * @param string $icon Required. Use the icon filename, e.g. "facebook-square".
  * @param string $title Optional. SVG title, e.g. "Facebook".
  * @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
+ * @param string $color Optional. Pass a theme color to give the icon a color other than the default. e.g. "blue".
  * }
  * @return string SVG markup.
  */
@@ -110,6 +111,7 @@ function _s_get_svg( $args = array() ) {
 		'icon'  => '',
 		'title' => '',
 		'desc'  => '',
+		'color' => '',
 	);
 
 	// Parse args.
@@ -129,7 +131,7 @@ function _s_get_svg( $args = array() ) {
 	}
 
 	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . ' fill-' . esc_attr( $args['color'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Add title markup.
 	$svg .= '<title>' . esc_html( $title ) . '</title>';
