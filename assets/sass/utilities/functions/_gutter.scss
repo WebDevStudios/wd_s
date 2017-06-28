@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-// GET GUTTER 
+// GUTTER 
 //--------------------------------------------------------------
 
 ////
@@ -7,15 +7,22 @@
 /// @group wds
 ////
 
+/// Easily get the gutter from any Neat 2.0.0 Sass map by passing just the name of the map.
 ///
 /// @param  map  $grid  $neat-grid - The Sass map from which the gutter is needed.
 ///
 /// @example scss Get Gutter Function
-///  get-gutter($neat-grid);
-///  // rem(12)
+///   .foo {
+///     padding: gutter($neat-grid);
+///   }
+///
+/// @example css - Output
+///   .foo {
+///     padding: 0.75rem;
+///   }
 ///
 
-@function get-gutter($grid: $neat-grid) {
+@function gutter($grid: $neat-grid) {
 
 	$gutter: map-get($grid, gutter);
 
