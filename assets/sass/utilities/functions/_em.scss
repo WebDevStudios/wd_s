@@ -1,0 +1,44 @@
+//--------------------------------------------------------------
+// EM
+//--------------------------------------------------------------
+
+////
+/// @group wds
+/// @author Jo Murgel
+////
+
+/// Convert pixel values to em.
+///
+/// @param  {int}  $pixelvalue - The desired font size.
+/// @param  {int}  $context - The context / font size of the parent element.
+///
+/// @link https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-em.scss
+///
+/// @example scss - Basic Usage
+///   .foo {
+///     font-size: em(12);
+///   }
+///   .bar {
+///     font-size: em(24, 18); // parent font size is different from $base-context, so we'll base the new context as the second param.
+///   }
+///
+/// @example css - Output
+///   .foo {
+///     font-size: 0.75em;
+///   }
+///   .bar {
+///     font-size: 1.33333em;
+///   }
+
+@function em($pixelvalue, $context: $base-context) {
+
+	@if not unitless($pixelvalue) {
+		$pixelvalue: strip-units($pixelvalue);
+	}
+
+	@if not unitless($context) {
+		$context: strip-units($context);
+	}
+
+	@return ($pixelvalue / $context) * 1em;
+}
