@@ -17,8 +17,8 @@
 ///
 /// @example scss - Basic Usage CSS Output
 ///    .foo {
-//			-webkit-font-smoothing: antialiased;
-//			-moz-osx-font-smoothing: grayscale;
+///        -moz-osx-font-smoothing: grayscale;
+///        -webkit-font-smoothing: antialiased;
 ///    }
 
 @mixin font-smoothing {

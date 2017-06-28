@@ -9,6 +9,11 @@
 	select {
 		max-width: 100%;
 	} // select
+
+	// Extend the h3 style for the widget titles.
+	.widget-title {
+		@extend .h3 !optional;
+	} // .widget-title
 } // .widget
 
 // Search widget.
