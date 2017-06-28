@@ -7,14 +7,24 @@
 /// @group wds
 ////
 
+/// Create min-width, max-width, or min-width _and_ max-width media queries.
 ///
-/// @param  {map | measurement}  $min  - The value for min-width.
-/// @param  {map | measurement}  $max  - The value for max-width.
+/// @param  {map | measurement}  $min  - The value for min-width, can be pulled from a Neat 2.0.0 Sass map, or any other number.
+/// @param  {map | measurement}  $max  - The value for max-width, can be pulled from a Neat 2.0.0 Sass map, or any other number.
 ///
-/// @example - scss  Media Query
-///  @include media(null, $tablet-portrait) {};
-///  // @media and screen (max-width: $tablet-portrait)
+/// @example - scss Basic Usage
+///  .foo {
+///    @include media(null, $tablet-portrait) {
+///      width: 50%;
+///    }
+///  }
 ///
+/// @example - css Output
+///  @media screen and (max-width: 768px) {
+///    .foo {
+///      width: 50%;
+///    }
+///  }
 
 @mixin media($min, $max) {
 
