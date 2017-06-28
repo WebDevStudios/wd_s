@@ -1,3 +1,29 @@
 //--------------------------------------------------------------
 // COLORS
 //--------------------------------------------------------------
+
+
+@mixin colors($colors: $theme-colors) {
+
+	@if type-of($colors) != 'map' {
+		@error 'Sorry, $colors is not a Sass map!';
+	}
+
+	@each $name, $color in $colors {
+
+		// Create background color classes.
+		.background-#{$name} {
+			background-color: $color;
+		}
+
+		// Create color classes.
+		.color-#{$name} {
+			color: $color;
+		}
+
+		// Create fill classes.
+		.fill-#{$name} {
+			fill: $color;
+		}
+	}
+}
