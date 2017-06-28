@@ -9,7 +9,7 @@
 
 /// Quickly and easily create grid classes for use with Neat 2.0.0.
 ///
-/// @param  map  $grid  $neat-grid - The Sass map on which the grid is based.
+/// @param  {map}  $grid  [$neat-grid] - The Sass map on which the grid is based.
 ///
 /// @example - scss Basic Usage
 ///  @include grid-media($tablet-portrait) {
