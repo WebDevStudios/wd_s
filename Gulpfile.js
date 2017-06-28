@@ -19,6 +19,7 @@ const postcss = require( 'gulp-postcss' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
 const sass = require( 'gulp-sass' );
+const sassdoc = require( 'sassdoc' );
 const sassLint = require( 'gulp-sass-lint' );
 const sort = require( 'gulp-sort' );
 const sourcemaps = require( 'gulp-sourcemaps' );
@@ -317,6 +318,18 @@ gulp.task( 'js:lint', () =>
 );
 
 /**
+ * Generate Sass docs.
+ */
+gulp.task( 'sassdoc', function() {
+	var options = {
+		dest: 'docs',
+	};
+
+	return gulp.src( 'assets/sass/**/*.scss' )
+		.pipe( sassdoc( options ) );
+});
+
+/**
  * Process tasks and reload browsers on file changes.
  *
  * https://www.npmjs.com/package/browser-sync
@@ -352,4 +365,5 @@ gulp.task( 'scripts', [ 'uglify' ] );
 gulp.task( 'styles', [ 'cssnano' ] );
 gulp.task( 'sprites', [ 'spritesmith' ] );
 gulp.task( 'lint', [ 'sass:lint', 'js:lint' ] );
+gulp.task( 'docs', ['sassdoc'] );
 gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin'] );
