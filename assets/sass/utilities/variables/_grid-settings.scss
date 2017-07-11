@@ -16,29 +16,34 @@ $max-width: 960px;
 //-----------------------------------------
 // Custom Grids
 //-----------------------------------------
-$mqs-phone-landscape: (
+$mqs-phone-up: (
 	columns: 4,
-	media: $phone-landscape,
+	media: $phone-up,
 );
-$mqs-tablet-portrait: (
+
+$mqs-tablet-portrait-up: (
 	columns: 4,
-	media: $tablet-portrait,
+	media: $tablet-portrait-up,
 );
-$mqs-tablet-landscape: (
+
+$mqs-wp-admin-bar: (
+	columns: 6,
+	media: $wp-admin-bar,
+);
+
+$mqs-tablet-landscape-up: (
 	columns: 8,
-	media: $tablet-landscape,
+	media: $tablet-landscape-up,
 );
-$mqs-desktop: (
+
+$mqs-desktop-up: (
 	columns: 12,
-	media: $desktop,
+	media: $desktop-up,
 );
-$mqs-large-desktop: (
+
+$mqs-large-desktop-up: (
 	columns: 12,
-	media: $large-desktop,
-);
-$mqs-xl-desktop: (
-	columns: 12,
-	media: $large-desktop,
+	media: $desktop-large-up,
 );
 
 

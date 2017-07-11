@@ -2,26 +2,32 @@
 // Media Query Breakpoints
 //--------------------------------------------------------------
 
-// Standard Media Query Breakpoints
+// Larger HD Desktops
+$desktop-large-up: (
+	media: em(1800)
+);
 
-$large-desktop: (
-	media: em(1680)
+// Standard Desktops and Larger Laptops
+$desktop-up: (
+	media: em(1200)
 );
-$desktop: (
-	media: em(1366)
+
+// Smaller Desktops and Standard iPad Tablet
+$tablet-landscape-up: (
+	media: em(900)
 );
-$tablet-landscape: (
-	media: em(1024)
-);
+
+// Breakpoint for WP Admin Bar
 $wp-admin-bar: (
 	media: em(783)
 );
-$tablet-portrait: (
-	media: em(768)
+
+// Smaller Tablets and Standard iPad Portrait
+$tablet-portrait-up: (
+	media: em(600)
 );
-$phone-landscape: (
-	media: em(640)
-);
-$phone-portrait: (
-	media: em(360)
+
+// Phones Smaller Than 500px in Width
+$phone-up: (
+	media: em(300)
 );
