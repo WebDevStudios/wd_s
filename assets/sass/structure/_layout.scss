@@ -11,7 +11,7 @@
 	padding: 0 2 * $gutter;
 	width: $max-width;
 
-	@include grid-media($desktop) {
+	@include grid-media($desktop-up) {
 		padding: 0;
 	}
 } // .wrap
@@ -19,7 +19,7 @@
 .site-header,
 .site-footer {
 
-	@include grid-media($tablet-landscape) {
+	@include grid-media($tablet-landscape-up) {
 		padding: 0 2 * $gutter;
 	}
 } // .site-header, .site-footer
@@ -27,13 +27,13 @@
 .site-content {
 	margin: rem(20) auto;
 
-	@include grid-media($desktop) {
+	@include grid-media($desktop-up) {
 		margin: rem(40) auto rem(60);
 	}
 } // .site-content
 
 .primary {
-	@include grid-media($tablet-landscape) {
+	@include grid-media($tablet-landscape-up) {
 		@include grid-column(8);
 
 		// scaffolding will never have a sidebar, and should be full-width.
@@ -45,7 +45,7 @@
 } // .primary
 
 .secondary {
-	@include grid-media($tablet-landscape) {
+	@include grid-media($tablet-landscape-up) {
 		@include grid-column(4);
 	}
 } // .secondary
