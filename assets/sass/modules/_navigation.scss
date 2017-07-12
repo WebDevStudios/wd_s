@@ -130,7 +130,7 @@ a {
 	ul {
 		display: none;
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone-up) {
 			display: block;
 		}
 	} // ul
@@ -139,7 +139,7 @@ a {
 		display: block;
 	} // &.toggled ul
 
-	@include grid-media($tablet-portrait) {
+	@include grid-media($tablet-portrait-up) {
 		display: block;
 	}
 } // .main-navigation

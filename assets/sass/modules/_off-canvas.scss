@@ -38,7 +38,7 @@
 		display: block;
 		padding: 0;
 
-		@include grid-media($tablet-portrait) {
+		@include grid-media($tablet-portrait-up) {
 			display: none;
 		}
 
