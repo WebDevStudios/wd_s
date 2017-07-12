@@ -196,7 +196,7 @@ gulp.task( 'clean:sprites', () => {
  *
  * https://www.npmjs.com/package/gulp.spritesmith
  */
-gulp.task( 'spritesmith', [ 'clean:sprites' ], () =>
+gulp.task( 'spritesmith', () =>
 	gulp.src( paths.sprites )
 		.pipe( plumber({'errorHandler': handleErrors}) )
 		.pipe( spritesmith({
@@ -229,7 +229,7 @@ gulp.task( 'concat', () =>
 
 		// Convert ES6+ to ES2015.
 		.pipe( babel({
-			presets: [ 'es2015' ]
+			presets: [ 'latest' ]
 		}) )
 
 		// Concatenate partials into a single script.
