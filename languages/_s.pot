@@ -7,10 +7,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:18
@@ -21,27 +21,35 @@ msgstr ""
 msgid "It seems we can’t find what you’re looking for. Perhaps searching can help."
 msgstr ""
 
-#: comments.php:31
+#: comments.php:24
+msgid "Comment section"
+msgstr ""
+
+#: comments.php:33
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40, comments.php:61
+#: comments.php:42, comments.php:64
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43, comments.php:64
+#: comments.php:45, comments.php:67
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44, comments.php:65
+#: comments.php:46, comments.php:68
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:78
+#: comments.php:81
 msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:30
+msgid "Close Menu"
 msgstr ""
 
 #: functions.php:49
@@ -49,19 +57,23 @@ msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:50
-msgid "Optional Mobile Menu"
+msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:107
 msgid "Sidebar 1"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:117
 msgid "Widget area for %s"
 msgstr ""
 
 #: header.php:26
 msgid "Skip to content"
+msgstr ""
+
+#: header.php:49
+msgid "Open Menu"
 msgstr ""
 
 #: search.php:20
@@ -72,54 +84,72 @@ msgstr ""
 msgid "To search this site, enter a search term"
 msgstr ""
 
+#: searchform.php:12
+msgctxt "_s"
+msgid "Search"
+msgstr ""
+
 #: searchform.php:13
 msgid "Submit"
 msgstr ""
 
-#: inc/customizer.php:22
-msgid "Social Links"
+#: template-scaffolding.php:2
+msgid "Scaffolding"
 msgstr ""
 
-#: inc/customizer.php:23
-msgid "These are the settings for social links. Please limit the number of social links to 5."
-msgstr ""
-
-#: inc/customizer.php:44
-msgid "%s Link"
-msgstr ""
-
-#: inc/customizer.php:55
-msgid "Footer Customization"
-msgstr ""
-
-#: inc/customizer.php:70
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/customizer.php:71
-msgid "The copyright text will be displayed beneath the menu in the footer."
-msgstr ""
-
-#: inc/extras.php:218, inc/extras.php:283
+#: inc/extras.php:112, inc/extras.php:177
 msgid "Width must be an integer"
 msgstr ""
 
-#: inc/extras.php:222, inc/extras.php:287
+#: inc/extras.php:116, inc/extras.php:181
 msgid "Height must be an integer"
 msgstr ""
 
-#: inc/extras.php:226
+#: inc/extras.php:120
 msgid "Please provide a valid hex color value for background_color"
 msgstr ""
 
-#: inc/extras.php:230
+#: inc/extras.php:124
 msgid "Please provide a valid hex color value for text_color"
 msgstr ""
 
-#: inc/extras.php:237, inc/extras.php:308
+#: inc/extras.php:131, inc/extras.php:202
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
+#: inc/hooks.php:81
+msgid "Read More"
+msgstr ""
+
+#: inc/hooks.php:92
+msgid "Read more..."
+msgstr ""
+
+#: inc/scaffolding.php:43
+msgid "Details"
+msgstr ""
+
+#: inc/scaffolding.php:52
+msgid "Description"
+msgstr ""
+
+#: inc/scaffolding.php:57
+msgid "Parameters"
+msgstr ""
+
+#: inc/scaffolding.php:64
+msgid "Arguments"
+msgstr ""
+
+#: inc/scaffolding.php:75
+msgid "Usage"
+msgstr ""
+
+#: inc/scaffolding.php:80
+msgid "HTML Output"
+msgstr ""
+
+#. translators: If there are characters in your language that are not
 #: inc/scripts.php:22
 msgctxt "Roboto font: on or off"
 msgid "on"
@@ -130,81 +160,70 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/template-tags.php:28
+#: inc/template-tags.php:29
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:33
+#: inc/template-tags.php:35
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:50, inc/template-tags.php:56
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:52, inc/template-tags.php:59
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:55
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:62
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:64
+#: inc/template-tags.php:68
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:64
+#: inc/template-tags.php:68
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:64
+#: inc/template-tags.php:68
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:71, template-parts/content-page.php:34
+#: inc/template-tags.php:75, template-parts/content-page.php:34
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:96
+#: inc/template-tags.php:100
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/template-tags.php:101
+#: inc/template-tags.php:105
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:175
-msgid "Read More"
-msgstr ""
-
-#: inc/template-tags.php:186
-msgid "Read more..."
-msgstr ""
-
-#: inc/template-tags.php:310
+#: inc/template-tags.php:290
 msgid "Share This"
 msgstr ""
 
-#: inc/template-tags.php:314, inc/template-tags.php:315
+#: inc/template-tags.php:297, inc/template-tags.php:299
 msgid "Share on Twitter"
 msgstr ""
 
-#: inc/template-tags.php:320, inc/template-tags.php:321
+#: inc/template-tags.php:307, inc/template-tags.php:309
 msgid "Share on Facebook"
 msgstr ""
 
-#: inc/template-tags.php:326, inc/template-tags.php:327
+#: inc/template-tags.php:317, inc/template-tags.php:319
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: inc/template-tags.php:350
-msgid "Close menu"
-msgstr ""
-
-#: inc/template-tags.php:391, inc/template-tags.php:392
+#: inc/template-tags.php:351, inc/template-tags.php:353
 msgid "Link to %s"
 msgstr ""
 
@@ -230,4 +249,72 @@ msgstr ""
 
 #: template-parts/content.php:32
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/customizer/panels.php:18
+msgid "Site Options"
+msgstr ""
+
+#: inc/customizer/panels.php:19
+msgid "Other theme options."
+msgstr ""
+
+#: inc/customizer/sections.php:17
+msgid "Additional Scripts"
+msgstr ""
+
+#: inc/customizer/sections.php:27
+msgid "Footer Customizations"
+msgstr ""
+
+#: inc/customizer/settings.php:26
+msgid "Header Scripts"
+msgstr ""
+
+#: inc/customizer/settings.php:27
+msgid "Additional scripts to add to the header. Basic HTML tags are allowed."
+msgstr ""
+
+#: inc/customizer/settings.php:46
+msgid "Footer Scripts"
+msgstr ""
+
+#: inc/customizer/settings.php:47
+msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
+msgstr ""
+
+#: inc/customizer/settings.php:79
+msgid "%s Link"
+msgstr ""
+
+#: inc/customizer/settings.php:107
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer/settings.php:108
+msgid "The copyright text will be displayed in the footer. Basic HTML tags allowed."
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-blank.php:11
+msgid "X"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-buttons.php:11
+msgid "Buttons"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-forms.php:11
+msgid "Forms"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-globals.php:11
+msgid "Globals"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-icons.php:11
+msgid "Icons"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-typography.php:11
+msgid "Typography"
 msgstr ""

@@ -5,7 +5,6 @@ module.exports = {
 		"es6": true,
 	},
 	"extends": "wordpress",
-	"installedESLint": true,
 	"plugins": [],
 	"rules": {
 		// Enforce spacing inside array brackets
