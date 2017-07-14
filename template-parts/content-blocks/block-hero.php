@@ -6,25 +6,27 @@
  */
 
 // Set up fields.
-$background_image = get_sub_field( 'background_image' );
-$background_video = get_sub_field( 'background_video' );
-$title = get_sub_field( 'title' );
-$blurb = get_sub_field( 'blurb' );
+$headline = get_sub_field( 'headline' );
+$text = get_sub_field( 'text' );
 $button_text = get_sub_field( 'button_text' );
 $button_url = get_sub_field( 'button_url' );
-$background_video_markup = '';
 
-// If a background video is uploaded.
-if ( $background_video['url'] ) {
-	$background_video_markup .= '<video class="video-as-background" autoplay muted loop preload="auto"><source src="' . esc_url( $background_video['url'] ) . '" type="video/mp4"></video>';
-}
-
+// Start a <container> with a possible media background.
+_s_display_block_options( array(
+	'container' => 'section', // Any HTML5 container: section, div, etc...
+	'class'     => 'hero content-block', // The class of the container.
+) );
 ?>
-<section class="hero-area image-as-background" style="background-image: url( <?php echo esc_url( $background_image['url'] ); ?> );" role="dialog" aria-labelledby="hero-title" aria-describedby="hero-description">
-	<?php echo $background_video_markup; // WPCS XSS OK. ?>
-	<div class="hero-content">
-		<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
-		<p class="hero-description"><?php echo force_balance_tags( $blurb ); // WP XSS OK. ?></p>
-		<a href="<?php echo esc_url( $button_url ); ?>" class="hero-button" title="<?php echo esc_html( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
+	<div class="row align-center hero-content">
+		<div class="small-8 large-11 align-self-middle text-center">
+		<?php if ( $headline ) : ?>
+			<h2 class="hero-headline"><?php echo esc_html( $headline ); ?></h2>
+		<?php endif; ?>
+		<?php if ( $text ) : ?>
+			<p class="hero-text"><?php echo force_balance_tags( $text ); // WPCS xss ok. ?></p>
+		<?php endif; ?>
+		<?php if ( $button_text ) : ?>
+			<a href="<?php echo esc_url( $button_url ); ?>" class="button large hero-button" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
+		<?php endif; ?>
 	</div><!-- .hero-content -->
-</section><!-- .hero-area -->
+</section><!-- .hero -->
