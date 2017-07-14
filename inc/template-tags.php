@@ -268,11 +268,12 @@ function _s_display_copyright_text() {
 
 	// Stop if there's nothing to display.
 	if ( ! $copyright_text ) {
-		return false;
+		return;
 	}
 
-	// Return the text.
-	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
+	?>
+	<span class="copyright-text"><?php echo wp_kses_post( $copyright_text ); ?></span>
+	<?php
 }
 
 /**
