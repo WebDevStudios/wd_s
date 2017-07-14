@@ -280,18 +280,12 @@ function _s_display_copyright_text() {
  * Display social sharing icons.
  */
 function _s_display_social_icons() {
-
-	// Build the sharing URLs.
-	$twitter_url  = 'https://twitter.com/share?text=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
-	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( get_the_permalink() );
-	$linkedin_url = 'https://www.linkedin.com/shareArticle?title=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
-
 	?>
 	<div class="social-share">
 		<h5 class="social-share-title"><?php esc_html_e( 'Share This', '_s' ); ?></h5>
 		<ul class="social-icons menu menu-horizontal">
 			<li class="social-icon">
-				<a href="<?php echo esc_url( $twitter_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
+				<a href="<?php echo esc_url( _s_get_twitter_share_url() ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
 					<?php echo _s_get_svg( array( // WPCS: XSS ok.
 						'icon'  => 'twitter-square',
 						'title' => 'Twitter',
@@ -301,7 +295,7 @@ function _s_display_social_icons() {
 				</a>
 			</li>
 			<li class="social-icon">
-				<a href="<?php echo esc_url( $facebook_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
+				<a href="<?php echo esc_url( _s_get_facebook_share_url() ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
 					<?php echo _s_get_svg( array( // WPCS: XSS ok.
 						'icon'  => 'facebook-square',
 						'title' => 'Facebook',
@@ -311,7 +305,7 @@ function _s_display_social_icons() {
 				</a>
 			</li>
 			<li class="social-icon">
-				<a href="<?php echo esc_url( $linkedin_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=475, height=505' ); return false;">
+				<a href="<?php echo esc_url( _s_get_linkedin_share_url() ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=475, height=505' ); return false;">
 					<?php echo _s_get_svg( array( // WPCS: XSS ok.
 						'icon'  => 'linkedin-square',
 						'title' => 'LinkedIn',
@@ -323,6 +317,39 @@ function _s_display_social_icons() {
 		</ul>
 	</div><!-- .social-share -->
 	<?php
+}
+
+/**
+ * Get the Twitter social sharing URL for the current page.
+ *
+ * @return string The URL.
+ */
+function _s_get_twitter_share_url() {
+	return add_query_arg( array(
+			'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			'url'  => rawurlencode( get_the_permalink() ),
+		), 'https://twitter.com/share' );
+}
+
+/**
+ * Get the Facebook social sharing URL for the current page.
+ *
+ * @return string The URL.
+ */
+function _s_get_facebook_share_url() {
+	return add_query_arg( 'u', rawurlencode( get_the_permalink() ) ), 'https://www.facebook.com/sharer/sharer.php' );
+}
+
+/**
+ * Get the LinkedIn social sharing URL for the current page.
+ *
+ * @return string The URL.
+ */
+function _s_get_linkedin_share_url() {
+	return add_query_arg( array(
+			'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			'url'   => rawurlencode( get_the_permalink() ),
+		), 'https://www.linkedin.com/shareArticle' );
 }
 
 /**
