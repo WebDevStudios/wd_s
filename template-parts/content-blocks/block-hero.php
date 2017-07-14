@@ -11,14 +11,13 @@ $text = get_sub_field( 'text' );
 $button_text = get_sub_field( 'button_text' );
 $button_url = get_sub_field( 'button_url' );
 
-// Start a <container> with a possible media background.
+// Start a <container> with a possible background media.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'hero content-block', // The class of the container.
+	'class'     => 'content-block hero', // The class of the container.
 ) );
 ?>
-	<div class="row align-center hero-content">
-		<div class="small-8 large-11 align-self-middle text-center">
+	<div class="hero-content">
 		<?php if ( $headline ) : ?>
 			<h2 class="hero-headline"><?php echo esc_html( $headline ); ?></h2>
 		<?php endif; ?>

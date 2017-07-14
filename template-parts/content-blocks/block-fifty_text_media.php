@@ -5,22 +5,21 @@
  * @package _s
  */
 
-// Get <img> data.
+// Set up fields.
 $image_data = get_sub_field( 'media_right' );
+$content = get_sub_field( 'content_left' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block fifty-text-media', // Container class.
+	'class'     => 'content-block fifty-fifty fifty-text-media', // The class of the container.
 ) );
 ?>
-	<div class="row">
-		<div class="column small-12 medium-6 fifty-text-wrap">
-			<?php echo force_balance_tags( get_sub_field( 'content_left' ) ); // WPCS: XSS OK. ?>
-		</div><!-- .fifty-text-wrap -->
+	<div>
+		<?php echo force_balance_tags( $content ); // WPCS XSS OK. ?>
+	</div>
 
-		<div class="column small-12 medium-6 fifty-media-wrap">
-			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['sizes']['medium'] );  ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
-		</div><!-- .fifty-media-wrap -->
-	</div><!-- .row -->
+	<div>
+		<img class="fifty-media-image" src="<?php echo esc_url( $image_data['sizes']['medium'] );  ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
+	</div>
 </section><!-- .fifty-text-media -->

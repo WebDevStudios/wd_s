@@ -5,19 +5,21 @@
  * @package _s
  */
 
+// Set up fields.
+$content_left = get_sub_field( 'content_left' );
+$content_right = get_sub_field( 'content_right' );
+
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'rcontent-block fifty-text-only', // The container class.
+	'class'     => 'content-block fifty-fifty fifty-text-text', // The class of the container.
 ) );
 ?>
-	<div class="row">
-		<div class="column small-12 medium-6 fifty-text-left">
-			<?php echo force_balance_tags( get_sub_field( 'content_left' ) ); // WPCS: XSS OK. ?>
-		</div><!-- .fifty-text-left-->
+	<div>
+		<?php echo force_balance_tags( $content_left ); // WPCS XSS OK. ?>
+	</div>
 
-		<div class="column small-12 medium-6 fifty-text-right">
-			<?php echo force_balance_tags( get_sub_field( 'content_right' ) ); // WPCS: XSS OK. ?>
-		</div><!-- .fifty-text-right-->
-	</div><!-- .row -->
-</section><!-- .fifty-text-only -->
+	<div>
+		<?php echo force_balance_tags( $content_right ); // WPCS XSS OK. ?>
+	</div>
+</section><!-- .fifty-text-media -->
