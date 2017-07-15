@@ -326,9 +326,9 @@ function _s_display_social_icons() {
  */
 function _s_get_twitter_share_url() {
 	return add_query_arg( array(
-			'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
-			'url'  => rawurlencode( get_the_permalink() ),
-		), 'https://twitter.com/share' );
+		'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+		'url'  => rawurlencode( get_the_permalink() ),
+	), 'https://twitter.com/share' );
 }
 
 /**
@@ -337,7 +337,7 @@ function _s_get_twitter_share_url() {
  * @return string The URL.
  */
 function _s_get_facebook_share_url() {
-	return add_query_arg( 'u', rawurlencode( get_the_permalink() ) ), 'https://www.facebook.com/sharer/sharer.php' );
+	return add_query_arg( 'u', rawurlencode( get_the_permalink() ), 'https://www.facebook.com/sharer/sharer.php' );
 }
 
 /**
@@ -347,9 +347,9 @@ function _s_get_facebook_share_url() {
  */
 function _s_get_linkedin_share_url() {
 	return add_query_arg( array(
-			'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
-			'url'   => rawurlencode( get_the_permalink() ),
-		), 'https://www.linkedin.com/shareArticle' );
+		'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+		'url'   => rawurlencode( get_the_permalink() ),
+	), 'https://www.linkedin.com/shareArticle' );
 }
 
 /**
