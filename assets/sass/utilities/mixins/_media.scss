@@ -33,7 +33,9 @@
 		$min: map-get($min, media);
 	}
 	@if type-of($max) == 'map' {
-		$max: map-get($max, media);
+		$max: map-get($max, media) - 1;
+	} @else if type-of($max) == 'number' {
+		$max: $max - 1;
 	}
 
 	// Create the media query.
