@@ -141,7 +141,7 @@ img {
 	max-width: calc(100% + 70px);
 	width: calc(100% + 70px);
 
-	@include grid-media($tablet-landscape-up) {
+	@include grid-media($tablet-landscape) {
 		margin-left: rem(-115);
 		max-width: calc(100% + 230px);
 		width: calc(100% + 230px);

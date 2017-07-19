@@ -19,7 +19,7 @@
 //-----------------------------------------
 // Basic 12-column grid using $neat-grid()
 //-----------------------------------------
-@include grid-media($tablet-portrait-up) {
+@include grid-media($tablet-portrait) {
 
 	.col {
 		@include grid-classes;
