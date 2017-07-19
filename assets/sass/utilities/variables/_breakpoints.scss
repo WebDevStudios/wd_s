@@ -3,31 +3,31 @@
 //--------------------------------------------------------------
 
 // Larger HD Desktops
-$desktop-large-up: (
-	media: em(1800)
+$desktop-large: (
+	media: 1800px,
 );
 
 // Standard Desktops and Larger Laptops
-$desktop-up: (
-	media: em(1200)
+$desktop: (
+	media: 1200px,
 );
 
 // Smaller Desktops and Standard iPad Tablet
-$tablet-landscape-up: (
-	media: em(900)
+$tablet-landscape: (
+	media: 900px,
 );
 
 // Breakpoint for WP Admin Bar
 $wp-admin-bar: (
-	media: em(783)
+	media: 783px,
 );
 
 // Smaller Tablets and Standard iPad Portrait
-$tablet-portrait-up: (
-	media: em(600)
+$tablet-portrait: (
+	media: 600px,
 );
 
 // Phones Smaller Than 500px in Width
-$phone-up: (
-	media: em(300)
+$phone: (
+	media: 300px
 );
