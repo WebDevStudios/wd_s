@@ -18,12 +18,12 @@ $max-width: 960px;
 //-----------------------------------------
 $mqs-phone-up: (
 	columns: 4,
-	media: $phone-up,
+	media: $phone,
 );
 
 $mqs-tablet-portrait-up: (
 	columns: 4,
-	media: $tablet-portrait-up,
+	media: $tablet-portrait,
 );
 
 $mqs-wp-admin-bar: (
@@ -33,17 +33,17 @@ $mqs-wp-admin-bar: (
 
 $mqs-tablet-landscape-up: (
 	columns: 8,
-	media: $tablet-landscape-up,
+	media: $tablet-landscape,
 );
 
 $mqs-desktop-up: (
 	columns: 12,
-	media: $desktop-up,
+	media: $desktop,
 );
 
 $mqs-large-desktop-up: (
 	columns: 12,
-	media: $desktop-large-up,
+	media: $desktop-large,
 );
 
 
