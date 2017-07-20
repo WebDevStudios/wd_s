@@ -14,14 +14,11 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-		<div class="wrap">
 
-			<div class="site-info">
-				<?php _s_display_copyright_text(); ?>
-			</div>
-
-		</div><!-- .wrap -->
-	</footer><!-- .site-footer -->
+		<div class="site-info">
+			<?php _s_display_copyright_text(); ?>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer container-->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

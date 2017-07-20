@@ -3,26 +3,16 @@
 //--------------------------------------------------------------
 
 // Structure.
-.wrap {
-	@include grid-container;
-	@include margin-auto;
-
-	max-width: 100%;
-	padding: 0 2 * $gutter;
-	width: $max-width;
-
-	@include grid-media($desktop) {
-		padding: 0;
-	}
-} // .wrap
-
 .site-header,
-.site-footer {
+.site-footer,
+.primary,
+.secondary {
+	padding: 0 $gutter;
 
 	@include grid-media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
-} // .site-header, .site-footer
+} // .site-header, .site-footer, .primary, .secondary
 
 .site-content {
 	margin: rem(20) auto;
@@ -32,20 +22,10 @@
 	}
 } // .site-content
 
-.primary {
-	@include grid-media($tablet-landscape) {
-		@include grid-column(8);
+// Keep the page content aligned with the header & footer content by default.
+.has-sidebar {
 
-		// scaffolding will never have a sidebar, and should be full-width.
-		.template-scaffolding & {
-			margin-left: 0;
-			width: 100%;
-		} // .template-scaffolding
-	}
-} // .primary
-
-.secondary {
-	@include grid-media($tablet-landscape) {
-		@include grid-column(4);
-	}
-} // .secondary
+	.primary {
+		margin-left: 0;
+	} // .primary
+} // .has-sidebar

@@ -7,7 +7,7 @@
 //-----------------------------------------
 .comments-area {
 	border-top: 1px solid $color-silver;
-	margin: rem(100) rem(24) rem(151);
+	margin: rem(100) 0 rem(151);
 
 	@include grid-media($desktop) {
 		margin-left: auto;

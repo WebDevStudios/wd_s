@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// FULL WIDTH
+//--------------------------------------------------------------
+
+
+/// Extend an element to the edge of the viewport when the parent has a fixed width.
+///
+/// @author Carrie Forde
+///
+/// @link https://css-tricks.com/full-width-containers-limited-width-parents/
+
+
+@mixin full-width {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
+}
