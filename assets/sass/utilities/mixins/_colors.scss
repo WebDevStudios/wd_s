@@ -10,7 +10,7 @@
 
 /// Quickly and easily create color presentational classes. Includes background-color, color, and fill clases.
 ///
-/// @param {map} [$theme-colors] $colors - The theme color map.
+/// @param {map} $colors [$theme-colors] - The theme color map.
 ///
 /// @example scss - Basic usage.
 ///  @include colors($theme-colors);
