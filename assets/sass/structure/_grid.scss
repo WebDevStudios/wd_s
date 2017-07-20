@@ -13,6 +13,11 @@
 	max-width: $max-width;
 } // .container
 
+// If the container isn't 100% width by default, use this class in conjunction with container to make a module full width.
+.full-width {
+	@include full-width;
+} // .full-width
+
 
 //-----------------------------------------
 // Row(s)
@@ -39,12 +44,43 @@
 	width: 100%;
 } // .col
 
-//-----------------------------------------
-// Basic 12-column grid using $neat-grid()
-//-----------------------------------------
-@include grid-media($tablet-portrait) {
 
-	.col {
+//-----------------------------------------
+// Mobile column classes.
+//
+// These classes work up to $tablet-potrait.
+//-----------------------------------------
+.col-s {
+
+	@include media(null, $tablet-portrait) {
 		@include grid-classes;
 	}
-}
+} // .col-s-1 through .col-s-12
+
+
+//-----------------------------------------
+// Tablet column classes.
+//
+// These classes work from $tablet-portrait
+// to $tablet-landscape.
+//-----------------------------------------
+.col-m {
+	
+	@include media($tablet-portrait, $tablet-landscape) {
+		@include grid-classes;
+	}
+} // .col-m-1 through .col-m-12
+
+
+//-----------------------------------------
+// Tablet Landscape column classes.
+//
+// These classes work from $tablet-landscape
+// and beyond. 👩‍🚀
+//-----------------------------------------
+.col-l {
+	
+	@include grid-media($tablet-landscape) {
+		@include grid-classes;
+	}
+} // .col-l-1 through .col-l-12
