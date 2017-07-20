@@ -58,7 +58,7 @@ function _s_body_classes( $classes ) {
 	}
 
 	// Add a `has-sidebar` class if we're using the sidebar template.
-	if ( is_page_template( 'template-sidebar-right.php' ) ) {
+	if ( is_page_template( 'template-sidebar-right.php' ) || is_singular( 'post' ) ) {
 		$classes[] = 'has-sidebar';
 	}
 
