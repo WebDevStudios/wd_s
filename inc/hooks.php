@@ -57,6 +57,11 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'template-scaffolding';
 	}
 
+	// Add a `has-sidebar` class if we're using the sidebar template.
+	if ( is_page_template( 'template-right-sidebar.php' ) ) {
+		$classes[] = 'has-sidebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
