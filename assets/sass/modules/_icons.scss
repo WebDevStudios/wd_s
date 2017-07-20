@@ -50,7 +50,7 @@
 		@include size(rem(35) rem(5));
 
 		background: $color-cod-gray;
-		border-radius: 1px;
+		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
 		display: block;
@@ -84,7 +84,7 @@
 		@include size(rem(20) rem(3));
 
 		background: $color-white;
-		border-radius: 1px;
+		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
 		display: block;
@@ -116,7 +116,7 @@
 		@include size(rem(10) rem(2));
 
 		background: $color-white;
-		border-radius: 1px;
+		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
 		display: block;
