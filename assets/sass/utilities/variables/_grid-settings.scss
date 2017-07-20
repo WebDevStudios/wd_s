@@ -10,7 +10,8 @@ $neat-grid: (
 
 // Gutter is no longer required for Neat, but is used throughout the theme.
 $gutter: gutter($neat-grid);
-$max-width: 960px;
+$max-width: 100%;
+$content-width: 960px;
 
 
 //-----------------------------------------
