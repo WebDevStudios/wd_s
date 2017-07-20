@@ -192,7 +192,7 @@ a {
 		z-index: 9999;
 
 		&:focus {
-			outline: rem(2) solid $color-white;
+			outline: 2px solid $color-white;
 		} // &:focus
 	} // .parent-indicator
 

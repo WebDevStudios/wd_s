@@ -15,40 +15,6 @@ $content-width: 960px;
 
 
 //-----------------------------------------
-// Custom Grids
-//-----------------------------------------
-$mqs-phone-up: (
-	columns: 4,
-	media: $phone,
-);
-
-$mqs-tablet-portrait-up: (
-	columns: 4,
-	media: $tablet-portrait,
-);
-
-$mqs-wp-admin-bar: (
-	columns: 6,
-	media: $wp-admin-bar,
-);
-
-$mqs-tablet-landscape-up: (
-	columns: 8,
-	media: $tablet-landscape,
-);
-
-$mqs-desktop-up: (
-	columns: 12,
-	media: $desktop,
-);
-
-$mqs-large-desktop-up: (
-	columns: 12,
-	media: $desktop-large,
-);
-
-
-//-----------------------------------------
 // Box Sizing
 //
 // Make sure all elements use box-sizing:

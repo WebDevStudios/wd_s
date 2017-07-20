@@ -32,7 +32,7 @@
 	} // &.more, .sub-menu
 
 	.sub-menu {
-		@include transition(opacity 0.5s linear);
+		transition: $transition-opacity;
 	} // .sub-menu
 
 	// Adjust padding for admin bar
@@ -81,13 +81,12 @@
 
 		// Only target top-level items
 		> li:nth-child(-n+5) {
-			@include transition(opacity 0.5s ease);
-
 			background-color: $color-white;
 			border-top: 1px solid rgba($color-black, 0.1);
 			flex-grow: 1;
 			height: rem(64);
 			text-align: center;
+			transition: $transition-opacity;
 
 			&:hover {
 				background-color: $color-gallery;
@@ -219,9 +218,9 @@
 
 	svg {
 		@include size(100%);
-		@include transition(opacity 0.5s ease);
 
 		fill: $color-white;
+		transition: $transition-opacity;
 	} // svg
 } // .close-mobile-menu
 
