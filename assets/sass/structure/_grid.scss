@@ -1,20 +1,43 @@
 //--------------------------------------------------------------
-// GRIDS 
+// GRID
 //--------------------------------------------------------------
 
+//-----------------------------------------
+// Container
+//
+// This is the outermost element for a
+// module or block.
+//-----------------------------------------
 .container {
 	margin: 0 auto;
 	max-width: $max-width;
-}
+} // .container
 
+
+//-----------------------------------------
+// Row(s)
+//
+// This is the inner container for a module
+// or block, and generally establishes the
+// inner content width. Add additional
+// content widths as `row-width` as needed.
+//-----------------------------------------
 .row {
 	@include grid-collapse;
 	@include grid-container;
-}
 
+	margin: 0 auto;
+	max-width: 100%;
+	width: $content-width;
+} // .row
+
+
+//-----------------------------------------
+// Columns
+//-----------------------------------------
 .col {
 	width: 100%;
-}
+} // .col
 
 //-----------------------------------------
 // Basic 12-column grid using $neat-grid()
