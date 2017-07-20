@@ -219,7 +219,7 @@ function _s_display_post_image( $size = 'thumbnail' ) {
 /**
  * Return an image URL, no matter what.
  *
- * @param  string $size The image size to return. Deafault is thumbnail.
+ * @param  string $size The image size to return. Default is thumbnail.
  * @return string       The image URL.
  */
 function _s_get_post_image_url( $size = 'thumbnail' ) {
@@ -242,7 +242,7 @@ function _s_get_post_image_url( $size = 'thumbnail' ) {
 /**
  * Get the URL of an image that's attached to the current post, else a placeholder image URL.
  *
- * @param  string $size The image size to return. Deafault is thumbnail.
+ * @param  string $size The image size to return. Default is thumbnail.
  * @return string       The image URL.
  */
 function _s_get_attached_image_url( $size = 'thumbnail' ) {
@@ -270,60 +270,45 @@ function _s_display_copyright_text() {
 
 	// Stop if there's nothing to display.
 	if ( ! $copyright_text ) {
-		return false;
+		return;
 	}
 
-	// Return the text.
-	echo '<span class="copyright-text">' . wp_kses_post( $copyright_text ) . '</span>';
+	?>
+	<span class="copyright-text"><?php echo wp_kses_post( $copyright_text ); ?></span>
+	<?php
 }
 
 /**
- * Display social sharing icons.
+ * Get the Twitter social sharing URL for the current page.
+ *
+ * @return string The URL.
  */
-function _s_display_social_icons() {
+function _s_get_twitter_share_url() {
+	return add_query_arg( array(
+		'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+		'url'  => rawurlencode( get_the_permalink() ),
+	), 'https://twitter.com/share' );
+}
 
-	// Build the sharing URLs.
-	$twitter_url  = 'https://twitter.com/share?text=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
-	$facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( get_the_permalink() );
-	$linkedin_url = 'https://www.linkedin.com/shareArticle?title=' . rawurlencode( html_entity_decode( get_the_title() ) ) . '&amp;url=' . rawurlencode( get_the_permalink() );
+/**
+ * Get the Facebook social sharing URL for the current page.
+ *
+ * @return string The URL.
+ */
+function _s_get_facebook_share_url() {
+	return add_query_arg( 'u', rawurlencode( get_the_permalink() ), 'https://www.facebook.com/sharer/sharer.php' );
+}
 
-	?>
-	<div class="social-share">
-		<h5 class="social-share-title"><?php esc_html_e( 'Share This', '_s' ); ?></h5>
-		<ul class="social-icons menu menu-horizontal">
-			<li class="social-icon">
-				<a href="<?php echo esc_url( $twitter_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( // WPCS: XSS ok.
-						'icon'  => 'twitter-square',
-						'title' => 'Twitter',
-						'desc'  => esc_html__( 'Share on Twitter', '_s' ),
-					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Twitter', '_s' ); ?></span>
-				</a>
-			</li>
-			<li class="social-icon">
-				<a href="<?php echo esc_url( $facebook_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=600, height=300' ); return false;">
-					<?php echo _s_get_svg( array( // WPCS: XSS ok.
-						'icon'  => 'facebook-square',
-						'title' => 'Facebook',
-						'desc'  => esc_html__( 'Share on Facebook', '_s' ),
-					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on Facebook', '_s' ); ?></span>
-				</a>
-			</li>
-			<li class="social-icon">
-				<a href="<?php echo esc_url( $linkedin_url ); ?>" onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150, left=0, width=475, height=505' ); return false;">
-					<?php echo _s_get_svg( array( // WPCS: XSS ok.
-						'icon'  => 'linkedin-square',
-						'title' => 'LinkedIn',
-						'desc'  => esc_html__( 'Share on LinkedIn', '_s' ),
-					) ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Share on LinkedIn', '_s' ); ?></span>
-				</a>
-			</li>
-		</ul>
-	</div><!-- .social-share -->
-	<?php
+/**
+ * Get the LinkedIn social sharing URL for the current page.
+ *
+ * @return string The URL.
+ */
+function _s_get_linkedin_share_url() {
+	return add_query_arg( array(
+		'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+		'url'   => rawurlencode( get_the_permalink() ),
+	), 'https://www.linkedin.com/shareArticle' );
 }
 
 /**
