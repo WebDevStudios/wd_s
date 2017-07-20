@@ -135,7 +135,6 @@ img {
 
 // Jetpack now auto wraps all oembed videos in a <div>
 // Let's make it full-width in the content cuz it looks cool.
-.full-width,
 .jetpack-video-wrapper {
 	margin-left: rem(-35);
 	max-width: calc(100% + 70px);
