@@ -50,13 +50,13 @@
 		@include size(rem(35) rem(5));
 
 		background: $color-cod-gray;
-		border-radius: rem(1);
+		border-radius: 1px;
 		content: '';
 		cursor: pointer;
 		display: block;
 		position: absolute;
 		// sass-lint:disable no-transition-all
-		transition: all 0.5s ease-in-out; // too much going on, use "all"
+		transition: $transition-all; // too much going on, use "all"
 		// sass-lint:enable no-transition-all
 	}
 
@@ -84,7 +84,7 @@
 		@include size(rem(20) rem(3));
 
 		background: $color-white;
-		border-radius: rem(1);
+		border-radius: 1px;
 		content: '';
 		cursor: pointer;
 		display: block;
@@ -109,14 +109,14 @@
 	display: block;
 	margin-left: rem(10);
 	outline: none;
-	transition: transform 0.8s ease-in-out;
+	transition: $transition-transform;
 
 	&::before,
 	&::after {
 		@include size(rem(10) rem(2));
 
 		background: $color-white;
-		border-radius: rem(1);
+		border-radius: 1px;
 		content: '';
 		cursor: pointer;
 		display: block;
@@ -143,7 +143,7 @@
 
 	background: url('assets/images/svg-icons/caret-down.svg') no-repeat transparent;
 	background-size: 100%;
-	margin-left: rem(5);
 	display: inline-block;
+	margin-left: rem(5);
 	vertical-align: middle;
 } // .angle-down
