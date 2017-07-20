@@ -12,7 +12,7 @@
 		background-color: $color-cod-gray;
 		overflow-y: auto;
 		transform: translateX(rem(-220));
-		transition: transform 0.25s linear;
+		transition: $transition-transform;
 		z-index: 9998;
 
 		&.is-visible {
@@ -45,7 +45,7 @@
 		&:focus,
 		&:hover {
 			background-color: transparent;
-			outline: rem(2) solid $color-white;
+			outline: 2px solid $color-white;
 		} // &:focus, &:hover
 
 		// When open, display the burger.
@@ -82,7 +82,7 @@
 		&:focus,
 		&:hover {
 			background: transparent;
-			outline: rem(2) solid $color-white;
+			outline: 2px solid $color-white;
 		} // &:focus, &:hover
 
 		.admin-bar & {
@@ -104,7 +104,7 @@
 
 		background: $color-black;
 		opacity: 0;
-		transition: opacity 0.2s ease-in-out;
+		transition: $transition-opacity;
 		visibility: hidden;
 		z-index: 9996;
 

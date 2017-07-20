@@ -5,7 +5,7 @@
 // I will cause FOUT, hide me by default!
 .not-ready {
 	opacity: 0;
-	transition: opacity 0.5s ease;
+	transition: $transition-opacity;
 	visibility: hidden;
 
 	// When everything has loaded, fade me in using window-ready.js.
