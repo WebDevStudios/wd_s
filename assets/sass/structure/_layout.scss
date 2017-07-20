@@ -21,25 +21,8 @@
 
 .primary {
 	padding: 0 2 * $gutter;
-
-	// Only do this when the sidebar is present.
-	.has-sidebar & {
-		@include grid-media($tablet-landscape) {
-			@include grid-column(8);
-
-			// scaffolding will never have a sidebar, and should be full-width.
-			.template-scaffolding & {
-				margin-left: 0;
-				width: 100%;
-			} // .template-scaffolding
-		}
-	} // .has-sidebar
 } // .primary
 
 .secondary {
 	padding: 0 2 * $gutter;
-
-	@include grid-media($tablet-landscape) {
-		@include grid-column(4);
-	}
 } // .secondary
