@@ -6,14 +6,16 @@
  */
 
 // Set up fields.
-$title = get_sub_field( 'title' );
+$title   = get_sub_field( 'title' );
 $content = get_sub_field( 'content' );
 
 ?>
-<section class="generic-content">
-	<?php if ( $title ) : ?>
-		<p class="generic-content-title"><?php echo esc_html( $title ); ?>
-	<?php endif; ?>
+<section class="generic-content container">
+	<div class="row">
+		<?php if ( $title ) : ?>
+			<p class="generic-content-title"><?php echo esc_html( $title ); ?>
+		<?php endif; ?>
 
-	<?php echo force_balance_tags( $content ); // WP XSS OK. ?>
+		<?php echo force_balance_tags( $content ); // WP XSS OK. ?>
+	</div><!-- .row -->
 </section><!-- .hero-area -->
