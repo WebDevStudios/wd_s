@@ -4,12 +4,15 @@
 
 // Structure.
 .site-header,
-.site-footer {
+.site-footer,
+.primary,
+.secondary {
+	padding: 0 $gutter;
 
 	@include grid-media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
-} // .site-header, .site-footer
+} // .site-header, .site-footer, .primary, .secondary
 
 .site-content {
 	margin: rem(20) auto;
@@ -19,10 +22,10 @@
 	}
 } // .site-content
 
-.primary {
-	padding: 0 2 * $gutter;
-} // .primary
+// Keep the page content aligned with the header & footer content by default.
+.has-sidebar {
 
-.secondary {
-	padding: 0 2 * $gutter;
-} // .secondary
+	.primary {
+		margin-left: 0;
+	} // .primary
+} // .has-sidebar
