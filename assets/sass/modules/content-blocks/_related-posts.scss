@@ -69,7 +69,7 @@
 	.post-content-wrap {
 		padding: rem(24);
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone) {
 			padding: rem(24) rem(44);
 		}
 	} // .post-content-wrap
