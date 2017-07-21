@@ -20,7 +20,6 @@ files:
    - './assets/sass/style.scss'
    - './assets/sass/base/_scaffolding.scss'
    - './assets/sass/plugins/_gravity-forms.scss'
-   - './assets/sass/utilities/mixins/_omega-reset.scss'
 
 # Rule Configuration
 rules:
