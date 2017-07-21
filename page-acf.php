@@ -11,10 +11,10 @@
 
 get_header(); ?>
 
-	<div class="content-area">
+	<div class="primary content-area">
 		<main id="main" class="site-main">
-			<?php _s_display_content_blocks(); ?>
+		<?php _s_display_content_blocks(); ?>
 		</main><!-- #main -->
-	</div><!-- .content-area -->
+	</div><!-- .primary -->
 
 <?php get_footer(); ?>
