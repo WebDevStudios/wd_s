@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "normalize-css": "latest",
-    "animate.css": "latest"
+    "animate.css": "latest",
+    "slick-carousel": "^1.6.0"
   }
 }

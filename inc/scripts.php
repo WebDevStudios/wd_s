@@ -67,9 +67,11 @@ function _s_scripts() {
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
+	wp_enqueue_style( 'slick-carousel', get_stylesheet_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.css', null, '1.6.0' );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
 	// Enqueue scripts.
+	wp_enqueue_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.6.0', true );
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery' ), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
