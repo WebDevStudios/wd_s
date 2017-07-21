@@ -2,31 +2,37 @@
 // GRID
 //--------------------------------------------------------------
 
-//-----------------------------------------
-// Container
-//
-// This is the outermost element for a
-// module or block.
-//-----------------------------------------
+////
+/// @group structure
+/// @author WebDevStudios
+////
+
+/// This is the outermost element for a module or block.
+///
+/// @name .container
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col ...">I am a column!</div>
+///   </div>
+/// </div>
+///
 .container {
 	margin: 0 auto;
 	max-width: $max-width;
 } // .container
 
-// If the container isn't 100% width by default, use this class in conjunction with container to make a module full width.
-.full-width {
-	@include full-width;
-} // .full-width
 
-
-//-----------------------------------------
-// Row(s)
-//
-// This is the inner container for a module
-// or block, and generally establishes the
-// inner content width. Add additional
-// content widths as `row-width` as needed.
-//-----------------------------------------
+/// This is the inner container for a module or block, and generally establishes the inner content width. Add additional content widths as `row-width` as needed.
+///
+/// @name .row
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col ...">I am a column!</div>
+///   </div>
+/// </div>
+///
 .row {
 	@include grid-collapse;
 	@include grid-container;
@@ -37,9 +43,17 @@
 } // .row
 
 
-//-----------------------------------------
-// Columns
-//-----------------------------------------
+/// Create a generic, 100% width column. Use with presentational classes (`col-6`, `col-s-6`, etc...) to build a grid.
+///
+/// @name .col
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col col-6">6 columns no matter what viewport</div>
+///     <div class="col col-6">6 columns no matter what viewport</div>
+///   </div>
+/// </div>
+///
 .col {
 	@include grid-classes;
 
@@ -47,11 +61,19 @@
 } // .col
 
 
-//-----------------------------------------
-// Mobile column classes.
-//
-// These classes work up to $tablet-potrait.
-//-----------------------------------------
+/// A small viewport. These classes work up to `$tablet-potrait`.
+///
+/// @name .col-s-*
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 1</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 2</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 3</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 4</div>
+///   </div>
+/// </div>
+///
 .col-s {
 
 	@include media(null, $tablet-portrait) {
@@ -60,12 +82,19 @@
 } // .col-s-1 through .col-s-12
 
 
-//-----------------------------------------
-// Tablet column classes.
-//
-// These classes work from $tablet-portrait
-// to $tablet-landscape.
-//-----------------------------------------
+/// A medium viewport. These classes work from `$tablet-portrait` to `$tablet-landscape`.
+///
+/// @name .col-m-*
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 1</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 2</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 3</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 4</div>
+///   </div>
+/// </div>
+///
 .col-m {
 
 	@include media($tablet-portrait, $tablet-landscape) {
@@ -74,15 +103,37 @@
 } // .col-m-1 through .col-m-12
 
 
-//-----------------------------------------
-// Tablet Landscape column classes.
-//
-// These classes work from $tablet-landscape
-// and beyond. 👩‍🚀
-//-----------------------------------------
+/// A large viewport. These classes work from `$tablet-landscape` and beyond. 👩‍🚀
+///
+/// @name .col-l-*
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 1</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 2</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 3</div>
+///     <div class="col col-s-12 col-m-6 col-l-3">Column 4</div>
+///   </div>
+/// </div>
+///
 .col-l {
 
 	@include grid-media($tablet-landscape) {
 		@include grid-classes;
 	}
 } // .col-l-1 through .col-l-12
+
+
+/// If the container isn't 100% width by default, use this class in conjunction with container to make a module full width.
+///
+/// @name .full-width
+/// @example html - Usage
+/// <div class="container">
+///   <div class="row">
+///     <div class="full-width">I have broken out of the .container!</div>
+///   </div>
+/// </div>
+///
+.full-width {
+	@include full-width;
+} // .full-width

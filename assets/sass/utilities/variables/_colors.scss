@@ -11,7 +11,10 @@
 //     - Links
 //-------------------------------------------------------------
 
-// COLORS
+////
+/// @group variables
+/// @author WebDevStudios
+////
 
 // Primary palette
 $color-blue: #20739A;
@@ -32,8 +35,7 @@ $color-alto: #ddd;
 $color-gallery: #eee;
 $color-whitesmoke: #f1f1f1;
 
-
-// Sass map used for creating color presentational classes.
+/// Sass map used for creating color presentational classes.
 $theme-colors: (
 	blue: #21759b,
 	light-yellow: #fff9c0,
@@ -61,7 +63,7 @@ $color-rss: #f90;
 $color-twitter: #00aced;
 $color-youtube: #b00;
 
-// $social-colors() map
+/// Social media `$social-colors()` map
 $social-colors: (
 	facebook: $color-facebook,
 	facebook-square: $color-facebook,

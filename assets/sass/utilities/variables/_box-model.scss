@@ -2,5 +2,18 @@
 // Box Model
 //--------------------------------------------------------------
 
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+// Make sure all elements use `box-sizing: border-box;` by default.
+* {
+	box-sizing: border-box;
+}
+
+/// Define thin border radius.
 $border-radius-thin: 1px;
+
+/// Define medium border radius.
 $border-radius-medium: 3px;
