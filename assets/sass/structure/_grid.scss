@@ -41,15 +41,11 @@
 // Columns
 //-----------------------------------------
 .col {
+	@include grid-classes;
+
 	width: 100%;
 } // .col
 
-// Loop through and create presentational grid columns.
-@for $i from 1 through 12 {
-	.col-#{$i} {
-		@include grid-column($i);
-	}
-} // .col-1, .col-12
 
 //-----------------------------------------
 // Mobile column classes.
