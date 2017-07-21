@@ -47,6 +47,8 @@ function _s_display_block_options( $args = array() ) {
 
 	$inline_style = '';
 
+	$background_video_markup = '';
+
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
 		if ( 'color' === $args['background_type'] ) {
