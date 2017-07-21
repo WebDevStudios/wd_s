@@ -17,9 +17,10 @@ files:
    - 'sass/tests/**/*.scss'
    - 'bourbon/app/**/*.scss'
    - 'bourbon-neat/app/**/*.scss'
-   - './assets/sass/style.scss'
-   - './assets/sass/base/_scaffolding.scss'
-   - './assets/sass/plugins/_gravity-forms.scss'
+   - 'assets/sass/style.scss'
+   - 'assets/sass/base/_scaffolding.scss'
+   - 'assets/sass/utilities/variables/_colors.scss'
+   - 'assets/sass/plugins/_gravity-forms.scss'
 
 # Rule Configuration
 rules:
