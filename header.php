@@ -19,6 +19,8 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
+	<?php echo force_balance_tags( get_theme_mod( '_s_header_scripts' ) ); // WPCS XSS OK. ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -38,8 +40,8 @@
 			<?php endif; ?>
 
 			<?php
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) :
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) :
 			?>
 				<p class="site-description"><?php echo esc_html( $description ); ?></p>
 			<?php endif; ?>
