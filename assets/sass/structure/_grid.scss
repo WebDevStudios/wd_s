@@ -44,6 +44,12 @@
 	width: 100%;
 } // .col
 
+// Loop through and create presentational grid columns.
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		@include grid-column($i);
+	}
+} // .col-1, .col-12
 
 //-----------------------------------------
 // Mobile column classes.
@@ -65,7 +71,7 @@
 // to $tablet-landscape.
 //-----------------------------------------
 .col-m {
-	
+
 	@include media($tablet-portrait, $tablet-landscape) {
 		@include grid-classes;
 	}
@@ -79,7 +85,7 @@
 // and beyond. 👩‍🚀
 //-----------------------------------------
 .col-l {
-	
+
 	@include grid-media($tablet-landscape) {
 		@include grid-classes;
 	}
