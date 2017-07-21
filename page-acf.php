@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page w/ ACF
+ * Template Name: Page with Content Blocks
  *
  * The template for displaying pages with ACF components.
  *
