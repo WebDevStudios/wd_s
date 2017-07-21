@@ -337,77 +337,6 @@
                     "min": "",
                     "max": ""
                 },
-                "596f8a6a7f3b5": {
-                    "key": "596f8a6a7f3b5",
-                    "name": "recent_posts_feed",
-                    "label": "Recent Posts Feed",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_596f8a727f3b6",
-                            "label": "Block Content",
-                            "name": "block_content",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_596f7b6a11ca1"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_596f8a857f3b7",
-                            "label": "Background Options",
-                            "name": "background_options",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": "",
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_596f8a8e7f3b8",
-                            "label": "Other Options",
-                            "name": "other_options",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_594168e970d85"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "596fb94c399fb": {
                     "key": "596fb94c399fb",
                     "name": "related_posts",
@@ -517,5 +446,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1500651896
+    "modified": 1500670948
 }
