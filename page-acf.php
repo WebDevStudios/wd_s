@@ -12,7 +12,7 @@
 get_header(); ?>
 
 	<div class="primary content-area">
-		<main id="main" class="site-main full-width">
+		<main id="main" class="site-main">
 		<?php _s_display_content_blocks(); ?>
 		</main><!-- #main -->
 	</div><!-- .primary -->
