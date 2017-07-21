@@ -14,7 +14,7 @@
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="post-image-container">
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>" tabindex="-1">
-				<?php the_post_thumbnail( 'recent-post' ); ?>
+				<?php the_post_thumbnail(); ?>
 			</a>
 		</div><!-- .post-image-container -->
 	<?php endif; ?>
@@ -32,13 +32,11 @@
 			</div>
 		</header>
 
-		<?php if ( has_excerpt() ) : ?>
 
-			<div class="post-excerpt">
-				<?php the_excerpt(); ?>
-			</div>
+		<div class="post-excerpt">
+			<?php the_excerpt(); ?>
+		</div>
 
-		<?php endif; ?>
 
 		<div class="post-read-more">
 
