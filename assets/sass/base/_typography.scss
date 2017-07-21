@@ -7,7 +7,7 @@ html {
 	// sass-lint:disable property-units
 	font-size: $base-context * 1px;
 	// sass-lint:enable property-units
-}
+} // html
 
 body,
 button,
@@ -107,7 +107,7 @@ kbd,
 tt,
 var {
 	font-family: $font-code;
-	font-size: em(15);
+	font-size: rem(15);
 } // code, kbd, tt, var
 
 abbr,

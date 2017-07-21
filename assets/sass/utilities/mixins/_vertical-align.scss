@@ -7,29 +7,35 @@
 /// @group wds
 ////
 
-// Usage @mixin vertical-align(middle);
+/// Vertically align elements without breaking your brain.
+///
+/// @param {string} $position [middle] - The desired vertical alignment.
+///
+/// @example scss - Basic Usage
+///  .foo {
+///    @include vertical-align(bottom);
+///  }
+///
+/// @example css - Output
+///  .foo {
+///    position: relative;
+///    top: 100%;
+///    transform: translateY(-100%);
+///  }
 
 @mixin vertical-align($position: middle) {
 	position: relative;
 
 	@if $position == none {
-		-ms-transform: translateY(0);
-		-webkit-transform: translateY(0);
 		top: auto;
 		transform: translateY(0);
 	} @else if $position == top {
-		-ms-transform: translateY(0%);
-		-webkit-transform: translateY(0%);
 		top: 0%;
 		transform: translateY(0%);
 	} @else if $position == bottom {
-		-ms-transform: translateY(-100%);
-		-webkit-transform: translateY(-100%);
 		top: 100%;
 		transform: translateY(-100%);
 	} @else {
-		-ms-transform: translateY(-50%);
-		-webkit-transform: translateY(-50%);
 		top: 50%;
 		transform: translateY(-50%);
 	}

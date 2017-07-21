@@ -1,0 +1,45 @@
+//--------------------------------------------------------------
+// GRID CLASSES 
+//--------------------------------------------------------------
+
+////
+/// @author Carrie Forde
+/// @group wds
+////
+
+/// Quickly and easily create grid classes for use with Neat 2.0.0.
+///
+/// @param  {map}  $grid  [$neat-grid] - The Sass map on which the grid is based.
+///
+/// @example - scss Basic Usage
+///  @include grid-media($tablet-portrait) {
+///    .col {
+///      @include grid-classes($neat-grid);
+///    }
+///  }
+///
+/// @example - css Output
+///  @media only screen and (min-width: 48em){
+///   .col-1{
+///     width: calc(8.33333% - 13px);
+///     float: left;
+///     margin-left: 12px;
+///  }
+///  ...
+///  .col-12{
+///    width: calc(100% - 24px);
+///    float: left;
+///    margin-left: 12px;
+///  }
+
+@mixin grid-classes($context: $neat-grid) {
+
+	$columns: map-get($context, columns);
+
+	@for $i from 1 through $columns {
+
+		&-#{$i} {
+			@include grid-column($i, $context);
+		}
+	}
+}
