@@ -1,0 +1,216 @@
+{
+    "key": "group_596e6776dab80",
+    "title": "Fifty\/Fifty Block",
+    "fields": [
+        {
+            "key": "field_59416bdbf0b0a",
+            "label": "Select Layout",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59089fd63f35f",
+            "label": "Block layout:",
+            "name": "block_layout",
+            "type": "select",
+            "instructions": "Choose which block layout you'd like to use.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "media_text": "Media\/Text",
+                "text_media": "Text\/Media",
+                "text_text": "Text\/Text"
+            },
+            "default_value": [
+                "media_text"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_59416beff0b0b",
+            "label": "Block Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5908a2874dd20",
+            "label": "Left Side Image",
+            "name": "media_left",
+            "type": "image",
+            "instructions": "Add or Upload an image. (640x480px .jpg, .png)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "media_text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png, gif"
+        },
+        {
+            "key": "field_596e6ed60914d",
+            "label": "Text (Primary)",
+            "name": "text_primary",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "media_text"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "text_media"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "text_text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5908a2174dd1d",
+            "label": "Right Side Image",
+            "name": "media_right",
+            "type": "image",
+            "instructions": "Add or Upload an image. (640x480px .jpg, .png)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "text_media"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png, gif"
+        },
+        {
+            "key": "field_596e6f4409150",
+            "label": "Text (Secondary)",
+            "name": "text_secondary",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59089fd63f35f",
+                        "operator": "==",
+                        "value": "text_text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500409701
+}

@@ -1,0 +1,383 @@
+{
+    "key": "group_595535d8ad0e9",
+    "title": "Default Quiz Options",
+    "fields": [
+        {
+            "key": "field_5956ab7f36750",
+            "label": "Quiz Image",
+            "name": "quiz_image",
+            "type": "image",
+            "instructions": "Select an image to display above the quiz description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5956b0ae1f467",
+            "label": "Quiz Title",
+            "name": "quiz_title",
+            "type": "text",
+            "instructions": "This is the title of the quiz that will appear on the quiz intro page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_595667a81763c",
+            "label": "Quiz Description",
+            "name": "quiz_description",
+            "type": "wysiwyg",
+            "instructions": "This is the text that will appear on the first page of the quiz.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_595668b08389c",
+            "label": "PDF Download link",
+            "name": "pdf_download_link",
+            "type": "file",
+            "instructions": "Select or upload a PDF version of this quiz to offer for download at the start.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_595547665aa26",
+            "label": "Questions",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_595535de4553f",
+            "label": "Questions",
+            "name": "questions",
+            "type": "repeater",
+            "instructions": "Use this to add questions to this quiz by clicking the \"Add Question\" button below.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Question",
+            "sub_fields": [
+                {
+                    "key": "field_5955364245540",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "instructions": "Enter the question text.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5956a10f0e68b",
+                    "label": "How should the answers be displayed?",
+                    "name": "how_should_the_answers_be_displayed",
+                    "type": "radio",
+                    "instructions": "Select whether the answers should be displayed horizontally as buttons (this works best for short yes\/no type answers), or vertically (more appropriate for long answers).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "horizontal": "Horizontal as buttons",
+                        "vertical": "Vertical"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "horizontal",
+                    "layout": "vertical",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_59553aed45541",
+                    "label": "Answers",
+                    "name": "answers",
+                    "type": "repeater",
+                    "instructions": "Add your answers by clicking the \"Add Answer\" button.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 1,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "Add Answer",
+                    "sub_fields": [
+                        {
+                            "key": "field_59553f3f45542",
+                            "label": "Answer text",
+                            "name": "answer_text",
+                            "type": "text",
+                            "instructions": "Enter the text for this answer.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "67",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5955407c45543",
+                            "label": "Answer score",
+                            "name": "answer_score",
+                            "type": "number",
+                            "instructions": "Enter a score for this answer.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": 0,
+                            "max": "",
+                            "step": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_595547785aa27",
+            "label": "Results",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_595547865aa28",
+            "label": "Results",
+            "name": "results",
+            "type": "repeater",
+            "instructions": "Add new result ranges by clicking the \"Add Result\" button.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Result",
+            "sub_fields": [
+                {
+                    "key": "field_595547b05aa29",
+                    "label": "Minimum Score",
+                    "name": "minimum_score",
+                    "type": "number",
+                    "instructions": "Enter the minimum score someone would need to get this result.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": 1
+                },
+                {
+                    "key": "field_595547c85aa2a",
+                    "label": "Maximum Score",
+                    "name": "maximum_score",
+                    "type": "number",
+                    "instructions": "Enter the maximum score someone would need to get this result. This is useful if you want to set up multiple result tiers for this quiz. This field is optional.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": 1
+                },
+                {
+                    "key": "field_595e77f3c8c4a",
+                    "label": "Result Color",
+                    "name": "result_color",
+                    "type": "select",
+                    "instructions": "Each result block will display a circle with the score range in it. Select what color that circle should be.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "#31CC70": "Green",
+                        "#E8D23F": "Yellow",
+                        "#E87345": "Orange",
+                        "#E25647": "Red"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_595547e25aa2b",
+                    "label": "Result Text",
+                    "name": "result_text",
+                    "type": "textarea",
+                    "instructions": "Enter the text that will describe the quiz results for this score tier.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wds_lir_quiz"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "wds_lir_quiz"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments"
+    ],
+    "active": 0,
+    "description": "This is where you can adjust the questions and results for this quiz. At least 1 question and 1 result needs to be created for this quiz to be valid.",
+    "modified": 1499365563
+}
