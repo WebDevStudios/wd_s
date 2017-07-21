@@ -11,12 +11,10 @@
 
 get_header(); ?>
 
-	<div class="wrap">
-		<div class="primary content-area">
-			<main id="main" class="site-main">
+	<div class="content-area">
+		<main id="main" class="site-main">
 			<?php _s_display_content_blocks(); ?>
-			</main><!-- #main -->
-		</div><!-- .primary -->
-	</div><!-- .wrap -->
+		</main><!-- #main -->
+	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
