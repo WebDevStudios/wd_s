@@ -25,3 +25,5 @@ switch ( $block_layout ) {
 	default :
 		get_template_part( 'template-parts/content-blocks/block', 'fifty_text_media' );
 }
+
+?>

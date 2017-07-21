@@ -1,25 +1,28 @@
 <?php
 /**
- * The template used for displaying 50/50 text only.
+ *  The template used for displaying fifty/fifty text/text.
  *
  * @package _s
+ *
  */
+// Set up our animation class for the wrap.
+$animation_class = _s_get_animation_class();
 
-// Set up fields.
-$content_left = get_sub_field( 'content_left' );
-$content_right = get_sub_field( 'content_right' );
 
 // Start a <container> with a possible media background.
-_s_display_block_options( array(
+echo _s_display_block_options( array( // WPCS: XSS OK.
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block fifty-fifty fifty-text-text', // The class of the container.
+	'class'     => 'fifty-text-only', // The container class.
 ) );
 ?>
-	<div>
-		<?php echo force_balance_tags( $content_left ); // WPCS XSS OK. ?>
-	</div>
 
-	<div>
-		<?php echo force_balance_tags( $content_right ); // WPCS XSS OK. ?>
-	</div>
-</section><!-- .fifty-text-media -->
+	<div class="fifty-wrap <?php echo esc_attr( $animation_class ) ?>">
+		<div class="fifty-text-left">
+			<?php echo force_balance_tags( get_sub_field( 'text_primary' ) ); // WPCS: XSS OK. ?>
+		</div><!-- .fifty-text-left-->
+
+		<div class="fifty-text-right">
+			<?php echo force_balance_tags( get_sub_field( 'text_secondary' ) ); // WPCS: XSS OK. ?>
+		</div><!-- .fifty-text-right-->
+	</div><!-- .fifty-wrap-->
+</section><!-- .fifty-text-only -->
