@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:18
+#: 404.php:17
 msgid "Sorry, this page doesn't exist."
 msgstr ""
 
-#: 404.php:23
+#: 404.php:22
 msgid "It seems we can’t find what you’re looking for. Perhaps searching can help."
 msgstr ""
 
@@ -48,35 +48,39 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:30
+#: footer.php:28
 msgid "Close Menu"
 msgstr ""
 
-#: functions.php:49
+#: functions.php:50
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:50
+#: functions.php:51
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:108
 msgid "Sidebar 1"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:118
 msgid "Widget area for %s"
 msgstr ""
 
-#: header.php:26
+#: header.php:28
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
+#: header.php:50
 msgid "Open Menu"
 msgstr ""
 
-#: search.php:20
+#: page-acf.php:2
+msgid "Page with Content Blocks"
+msgstr ""
+
+#: search.php:19
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -95,6 +99,10 @@ msgstr ""
 
 #: template-scaffolding.php:2
 msgid "Scaffolding"
+msgstr ""
+
+#: template-sidebar-right.php:2
+msgid "Sidebar Right"
 msgstr ""
 
 #: inc/extras.php:112, inc/extras.php:177
@@ -117,11 +125,11 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:81
+#: inc/hooks.php:86
 msgid "Read More"
 msgstr ""
 
-#: inc/hooks.php:92
+#: inc/hooks.php:97
 msgid "Read more..."
 msgstr ""
 
@@ -199,31 +207,15 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:100
+#: inc/template-tags.php:101
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:106
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:290
-msgid "Share This"
-msgstr ""
-
-#: inc/template-tags.php:297, inc/template-tags.php:299
-msgid "Share on Twitter"
-msgstr ""
-
-#: inc/template-tags.php:307, inc/template-tags.php:309
-msgid "Share on Facebook"
-msgstr ""
-
-#: inc/template-tags.php:317, inc/template-tags.php:319
-msgid "Share on LinkedIn"
-msgstr ""
-
-#: inc/template-tags.php:351, inc/template-tags.php:353
+#: inc/template-tags.php:338, inc/template-tags.php:340
 msgid "Link to %s"
 msgstr ""
 
@@ -249,6 +241,22 @@ msgstr ""
 
 #: template-parts/content.php:32
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/sharing-icons.php:11
+msgid "Share This"
+msgstr ""
+
+#: template-parts/sharing-icons.php:18, template-parts/sharing-icons.php:20
+msgid "Share on Twitter"
+msgstr ""
+
+#: template-parts/sharing-icons.php:28, template-parts/sharing-icons.php:30
+msgid "Share on Facebook"
+msgstr ""
+
+#: template-parts/sharing-icons.php:38, template-parts/sharing-icons.php:40
+msgid "Share on LinkedIn"
 msgstr ""
 
 #: inc/customizer/panels.php:18
