@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<div class="primary content-area">
+	<div class="content-area">
 		<main id="main" class="site-main">
 		<?php _s_display_content_blocks(); ?>
 		</main><!-- #main -->
