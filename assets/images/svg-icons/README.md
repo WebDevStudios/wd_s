@@ -9,7 +9,7 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
 
 ### Inline SVG helper functions
 
-[`_s_get_svg( $args = array() ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125)
+[`_s_display_svg( $args = array() ); // Return SVG markup`](../../blob/master/inc/template-tags.php#L125)
 ```
 /**
  * Return SVG markup.
@@ -26,7 +26,7 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
 ```
 
 Example usage:
-`<?php echo _s_get_svg( array( 'icon' => 'twitter' ) ); ?>`
+`<?php echo _s_display_svg( array( 'icon' => 'twitter' ) ); ?>`
 
 Output:
 ```

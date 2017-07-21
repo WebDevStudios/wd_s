@@ -14,17 +14,15 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-		<div class="wrap">
 
-			<div class="site-info">
-				<?php _s_display_copyright_text(); ?>
-			</div>
-
-		</div><!-- .wrap -->
-	</footer><!-- .site-footer -->
+		<div class="site-info">
+			<?php _s_display_copyright_text(); ?>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer container-->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<?php echo force_balance_tags( get_theme_mod( '_s_footer_scripts' ) ); // WPCS XSS OK. ?>
 
 <nav class="off-canvas-container" aria-hidden="true">
 	<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">

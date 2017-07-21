@@ -9,41 +9,9 @@ $neat-grid: (
 );
 
 // Gutter is no longer required for Neat, but is used throughout the theme.
-$gutter: 12px;
-$max-width: 960px;
-
-
-//-----------------------------------------
-// Custom Grids
-//-----------------------------------------
-$mqs-phone-portrait: (
-	columns: 2,
-	media: 359px, // $phone-portrait - 1px
-);
-$mqs-phone-landscape: (
-	columns: 4,
-	media: $phone-landscape,
-);
-$mqs-tablet-portrait: (
-	columns: 4,
-	media: $tablet-portrait,
-);
-$mqs-tablet-landscape: (
-	columns: 8,
-	media: $tablet-landscape,
-);
-$mqs-desktop: (
-	columns: 12,
-	media: $desktop,
-);
-$mqs-large-desktop: (
-	columns: 12,
-	media: $large-desktop,
-);
-$mqs-xl-desktop: (
-	columns: 12,
-	media: $large-desktop,
-);
+$gutter: gutter($neat-grid);
+$max-width: 100%;
+$content-width: 960px;
 
 
 //-----------------------------------------

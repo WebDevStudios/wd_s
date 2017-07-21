@@ -45,7 +45,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'full-width', 1920, 1080, false );
 
-		// This theme uses wp_nav_menu() in one location.
+		// Register navigation menus.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', '_s' ),
 			'mobile'  => esc_html__( 'Mobile Menu', '_s' ),

@@ -1,0 +1,37 @@
+//--------------------------------------------------------------
+// REM
+//--------------------------------------------------------------
+
+////
+/// @author Jo Murgel
+/// @group wds
+////
+
+/// Convert pixel values to rem.
+///
+/// @param {int} $pixelvalue - The value to be converted to rem.
+///
+/// @link https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-rem.scss
+///
+/// @example scss - Basic usage
+///  .foo {
+///    padding: rem(12);
+///  }
+///
+/// @example css - Output
+///  .foo {
+///    padding: 0.75rem;
+///  }
+
+@function rem($pixelvalue) {
+
+	@if not unitless($pixelvalue) {
+		$pixelvalue: strip-units($pixelvalue);
+	}
+
+	@if not unitless($base-context) {
+		$base-context: strip-units($base-context);
+	}
+
+	@return ($pixelvalue / $base-context) * 1rem;
+}

@@ -1,0 +1,55 @@
+//--------------------------------------------------------------
+// MEDIA 
+//--------------------------------------------------------------
+
+////
+/// @author Carrie Forde
+/// @group wds
+////
+
+/// Create min-width, max-width, or min-width _and_ max-width media queries.
+///
+/// @param  {map | measurement}  $min  - The value for min-width, can be pulled from a Neat 2.0.0 Sass map, or any other number.
+/// @param  {map | measurement}  $max  - The value for max-width, can be pulled from a Neat 2.0.0 Sass map, or any other number.
+///
+/// @example - scss Basic Usage
+///  .foo {
+///    @include media(null, $tablet-portrait) {
+///      width: 50%;
+///    }
+///  }
+///
+/// @example - css Output
+///  @media screen and (max-width: 767px) {
+///    .foo {
+///      width: 50%;
+///    }
+///  }
+
+@mixin media($min, $max) {
+
+	// If the user passes a grid Sass map, set the variable to the media's value.
+	@if type-of($min) == 'map' {
+		$min: map-get($min, media);
+	}
+	@if type-of($max) == 'map' {
+		$max: map-get($max, media) - 1;
+	} @else if type-of($max) == 'number' {
+		$max: $max - 1;
+	}
+
+	// Create the media query.
+	@if $min == null {
+		@media only screen and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+}

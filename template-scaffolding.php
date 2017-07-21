@@ -9,14 +9,12 @@
 // Start Template Scaffolding.
 get_header(); ?>
 
-	<div class="wrap">
-		<div class="primary content-area">
-			<main id="main" class="site-main">
+	<div class="primary content-area">
+		<main id="main" class="site-main">
 
-				<?php do_action( '_s_scaffolding_content' ); ?>
+			<?php do_action( '_s_scaffolding_content' ); ?>
 
-			</main><!-- #main -->
-		</div><!-- .primary -->
-	</div><!-- .wrap -->
+		</main><!-- #main -->
+	</div><!-- .primary -->
 
 <?php get_footer(); ?>

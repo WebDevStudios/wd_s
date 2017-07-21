@@ -7,7 +7,7 @@
 //-----------------------------------------
 .comments-area {
 	border-top: 1px solid $color-silver;
-	margin: rem(100) rem(24) rem(151);
+	margin: rem(100) 0 rem(151);
 
 	@include grid-media($desktop) {
 		margin-left: auto;
@@ -19,7 +19,7 @@
 	} // .comment-reply-title
 
 	.comments-title {
-		font-size: em(24);
+		font-size: rem(24);
 		margin-top: rem(126);
 	} // .comments-title
 
@@ -40,7 +40,7 @@
 
 	label {
 		float: left;
-		font-size: em(16);
+		font-size: rem(16);
 		text-transform: uppercase;
 		width: 100%;
 	} // label
@@ -58,7 +58,7 @@
 	// Any input (except submit button)
 	input:not(.submit) {
 		clear: both;
-		transition: border 0.2s ease-in-out;
+		transition: $transition-border;
 		width: 100%;
 
 		// Focus + active state.
@@ -67,7 +67,7 @@
 			border: 1px solid $color-mineshaft;
 		} // &:focus, &:active
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone) {
 			max-width: rem(250);
 		}
 	} // input:not(.submit)
@@ -75,7 +75,7 @@
 	// Comment text area.
 	textarea {
 		max-width: rem(870);
-		transition: border 0.2s ease-in-out;
+		transition: $transition-border;
 
 		// Focus + active state.
 		&:focus,
@@ -142,7 +142,7 @@
 		} // a
 
 		time {
-			font-size: em(12);
+			font-size: rem(12);
 		} // time
 	} // .comment-metadata
 
@@ -152,7 +152,7 @@
 		float: left;
 		margin: rem(-6) rem(26) 0 0;
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone) {
 			margin-top: rem(-12);
 		}
 	} // .avatar
@@ -189,7 +189,7 @@
 		margin: rem(40) 0;
 		padding-left: rem(20);
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone) {
 			padding-left: rem(35);
 		}
 
@@ -209,7 +209,7 @@
 			.comment-author {
 				line-height: 1.25;
 
-				@include grid-media($phone-landscape) {
+				@include grid-media($phone) {
 					line-height: 1;
 				}
 			} // .comment-author
@@ -227,7 +227,7 @@
 		background-color: $color-white;
 		padding: rem(24) 0;
 
-		@include grid-media($phone-landscape) {
+		@include grid-media($phone) {
 			padding-left: rem(36);
 			padding-right: rem(36);
 		}

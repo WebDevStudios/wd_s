@@ -14,7 +14,7 @@
 	_s_display_scaffolding_section( array(
 		'title'       => 'SVG',
 		'description' => 'Display inline SVGs.',
-		'usage'       => '<?php _s_get_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
+		'usage'       => '<?php _s_display_svg( array( \'icon\' => \'facebook-square\' ) ); ?>',
 		'parameters'  => array(
 			'$args' => '(required) Configuration arguments.',
 		),
@@ -23,6 +23,6 @@
 			'title' => '(optional) The title of the icon. Default: none',
 			'desc'  => '(optional) The description of the icon. Default: none',
 		),
-		'output'       => _s_get_svg( array( 'icon' => 'facebook-square' ) ),
+		'output'       => _s_display_svg( array( 'icon' => 'facebook-square' ) ),
 	) ); ?>
 </section>

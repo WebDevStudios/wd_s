@@ -1,0 +1,23 @@
+//--------------------------------------------------------------
+// Strip Units
+//--------------------------------------------------------------
+
+////
+/// @group wds
+/// @author Jo Murgel
+////
+
+/// Removes the unit from a number.
+///
+/// @link https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
+///
+/// @param {int} $number - The number to be processed.
+///
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
