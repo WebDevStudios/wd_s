@@ -19,25 +19,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_596d15ff3a9b8",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_58ebe1c0ceb3b",
             "label": "Generic Content",
             "name": "content",
@@ -66,7 +47,7 @@
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -74,5 +55,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500321297
+    "modified": 1500650272
 }
