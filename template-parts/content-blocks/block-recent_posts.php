@@ -11,7 +11,6 @@
 $row_index = get_row_index();
 
 // Set up fields.
-$paginated = get_sub_field( 'display_pagination' );
 $number_of_posts = get_sub_field( 'number_of_posts' );
 $categories = get_sub_field( 'categories' );
 $tags = get_sub_field( 'tags' );
@@ -32,11 +31,6 @@ $args['posts_per_page'] = is_numeric( $number_of_posts ) ? $number_of_posts : 3;
 
 // Get the index of this instance of the layout so we can set a proper transient.
 $args['row_index'] = $row_index;
-
-// If this is supposed to be paginated, we need to pass the page as well.
-if ( 'true' === $paginated[0] ) {
-	$args['paged'] = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-}
 
 // Get the recent posts.
 $recent_posts = _s_get_recent_posts( $args );
