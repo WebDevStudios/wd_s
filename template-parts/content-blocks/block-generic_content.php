@@ -4,6 +4,8 @@
  *
  * @package _s
  */
+// Set up our animation class for the wrap.
+$animation_class = _s_get_animation_class();
 
 // Set up fields.
 $title = get_sub_field( 'title' );
@@ -17,7 +19,7 @@ echo _s_display_block_options( // WPCS: XSS OK.
 	)
 );
 ?>
-	<div class="wrap">
+	<div class="wrap <?php echo esc_attr( $animation_class ) ?>">
 		<?php if ( $title ) : ?>
 			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>
