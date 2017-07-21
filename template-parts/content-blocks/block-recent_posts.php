@@ -62,13 +62,6 @@ if ( $recent_posts->have_posts() ) :
 
 		</div>
 
-		<div class="button-container">
-			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-green recent-posts-button">
-				<?php esc_html_e( 'See All Posts', '_s' ); ?>
-			</a>
-
-		</div>
-
 	</div>
 
 </section><!-- .recent-posts -->
