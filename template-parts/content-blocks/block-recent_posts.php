@@ -23,9 +23,6 @@ if ( $categories || $tags ) {
 	$args = _s_get_recent_posts_query_arguments( $categories, $tags );
 }
 
-// Adjust the button URL if we have a category
-$button_url = $categories && ! empty( $categories[0] ) ? get_category_link( $categories[0] ) : get_post_type_archive_link( 'post' );
-
 // Always merge in the number of posts.
 $args['posts_per_page'] = is_numeric( $number_of_posts ) ? $number_of_posts : 3;
 
