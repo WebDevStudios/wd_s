@@ -1,0 +1,111 @@
+//--------------------------------------------------------------
+// Recent Posts block
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Recent Post card layout
+//-----------------------------------------
+.recent-posts-cards {
+	border-top: rem(1) solid $color-oslo-gray;
+	padding: rem(50) 0;
+
+	.posts-flex-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include grid-media($tablet-portrait) {
+			flex-direction: row;
+		}
+	} // .posts-flex-wrap
+
+	.recent-post {
+		margin-bottom: rem(50);
+		width: 100%;
+
+		@include grid-media($tablet-portrait) {
+			margin-bottom: 0;
+			width: 29.333333333333332%;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		} // &:last-child
+	} // .recent-post
+
+} // .recent-posts-cards
+
+
+//-----------------------------------------
+// Post Image
+//-----------------------------------------
+.recent-post {
+
+	// Set the thumbnail and link to block to fix weird space.
+	.post-image-container {
+
+		a,
+		img {
+			display: block;
+			width: 100%;
+		} // a, img
+
+	} // .post-image-container
+
+} // .recent-post
+
+
+//-----------------------------------------
+// Post title and excerpt
+//-----------------------------------------
+.recent-post {
+
+	// post title
+	.post-title {
+		color: $color-cod-gray;
+		font-size: rem(17);
+		font-weight: 200;
+		margin: rem(25) 0 rem(15);
+		text-decoration: none;
+	} // .post-title
+
+} // .recent-post
+
+
+//-----------------------------------------
+// Post Meta
+//-----------------------------------------
+.recent-post .post-meta {
+	color: $color-gray;
+	font-size: rem(12);
+	margin-bottom: rem(11);
+
+	a {
+		color: $color-gray;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $color-burnt-orange;
+		} // &:hover, &:focus
+
+		&:focus {
+			text-decoration: underline;
+		} // &:focus
+	} // a
+
+} // .recent-post .post-meta
+
+
+//-----------------------------------------
+// Read More link
+//-----------------------------------------
+.recent-post .link-read-more {
+	color: $color-burnt-orange;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	} // &:hover, &:focus
+} // .recent-post .link-read-more
