@@ -19,6 +19,7 @@ function _s_display_content_blocks() {
 	endif;
 }
 
+
 /**
  * Associate the possible block options with the appropriate section.
  *
@@ -26,13 +27,19 @@ function _s_display_content_blocks() {
  */
 function _s_display_block_options( $args = array() ) {
 
+	// Get block background options.
+	$background_options = get_sub_field( 'background_options' );
+
+	// Get block other options.
+	$other_options = get_sub_field( 'other_options' );
+
 	// Setup defaults.
 	$defaults = array(
-		'background_type'  => get_sub_field( 'background_type' ),
-		'font_color'       => get_sub_field( 'font_color' ),
-		'container'        => 'section',
-		'class'            => 'content-block',
-		'custom_css_class' => get_sub_field( 'custom_css_class' ),
+		'background_type' 	=> $background_options['background_type']['value'],
+		'font_color'	  	=> $other_options['font_color'],
+		'container'       	=> 'section',
+		'class'           	=> 'content-block',
+		'custom_css_class'	=> $other_options['custom_css_class'],
 	);
 
 	// Parse args.
@@ -40,38 +47,44 @@ function _s_display_block_options( $args = array() ) {
 
 	$inline_style = '';
 
-	if ( '' !== $args['font_color'] ) {
-		$inline_style .= 'color: ' . $args['font_color'] . ';';
-	}
-
-	// Deal with the background settings, if available.
+	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
-		if ( 'color' === $args['background_type']['value'] ) {
-			$background_color = get_sub_field( 'background_color' );
-			$inline_style .= 'background-color: ' . $background_color . ';';
+		if ( 'color' === $args['background_type'] ) {
+			$background_color = $background_options['background_color'];
+			$inline_style .= 'background-color: ' . $background_color . '; ';
 		}
 
-		if ( 'image' === $args['background_type']['value'] ) {
-			$background_image = get_sub_field( 'background_image' );
+		if ( 'image' === $args['background_type'] ) {
+			$background_image = $background_options['background_image'];
 			$inline_style .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
 			$args['class'] .= ' image-as-background';
 		}
 
-		if ( 'video' === $args['background_type']['value'] ) {
-			$background_video = get_sub_field( 'background_video' );
+		if ( 'video' === $args['background_type'] ) {
+			$background_video = $background_options['background_video'];
 			$background_video_markup = '<video class="video-as-background" autoplay muted loop preload="auto"><source src="' . esc_url( $background_video['url'] ) . '" type="video/mp4"></video>';
 		}
 
-		if ( 'none' === $args['background_type']['value'] ) {
+		if ( 'none' === $args['background_type'] ) {
 			$args['class'] .= ' no-background';
 		}
 	}
 
-	// Print the opening container and any inline styles.
-	printf( '<%s class="%s %s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $args['custom_css_class'] ), esc_attr( $inline_style ) );
+	// Set the custom font color.
+	if ( $args['font_color'] ) {
+		$inline_style .= 'color: ' . $args['font_color'] . '; ';
+	}
 
-	// If video is chosen, add the video markup immediately below opening container.
-	if ( 'video' === $args['background_type']['value'] ) {
+	// Set the custom css class.
+	if ( $args['custom_css_class'] ) {
+		$args['class'] .= ' ' . $args['custom_css_class'];
+	}
+
+	// Print our block container with options.
+	printf( '<%s class="%s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $inline_style ) );
+
+	// If we have a background video, echo our background video markup inside the block container.
+	if ( $background_video_markup ) {
 		echo $background_video_markup; // WPCS XSS OK.
 	}
 }
