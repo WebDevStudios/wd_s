@@ -15,13 +15,12 @@ echo _s_display_block_options( array( // WPCS: XSS OK.
 	'class'     => 'fifty-text-only', // The container class.
 ) );
 ?>
-
-	<div class="fifty-wrap <?php echo esc_attr( $animation_class ) ?>">
-		<div class="fifty-text-left">
+	<div class="row <?php echo esc_attr( $animation_class ) ?>">
+		<div class="col-l-6">
 			<?php echo force_balance_tags( get_sub_field( 'text_primary' ) ); // WPCS: XSS OK. ?>
 		</div><!-- .fifty-text-left-->
 
-		<div class="fifty-text-right">
+		<div class="col-l-6">
 			<?php echo force_balance_tags( get_sub_field( 'text_secondary' ) ); // WPCS: XSS OK. ?>
 		</div><!-- .fifty-text-right-->
 	</div><!-- .fifty-wrap-->

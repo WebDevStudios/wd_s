@@ -19,7 +19,7 @@ echo _s_display_block_options( // WPCS: XSS OK.
 	)
 );
 ?>
-	<div class="wrap <?php echo esc_attr( $animation_class ) ?>">
+	<div class="row <?php echo esc_attr( $animation_class ) ?>">
 		<?php if ( $title ) : ?>
 			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>
