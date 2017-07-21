@@ -6,7 +6,7 @@
 // Recent Post card layout
 //-----------------------------------------
 .recent-posts-cards {
-	border-top: rem(1) solid $color-oslo-gray;
+	border-top: rem(1) solid $color-gray-alt;
 	padding: rem(50) 0;
 
 	.posts-flex-wrap {
@@ -62,7 +62,7 @@
 
 	// post title
 	.post-title {
-		color: $color-cod-gray;
+		color: $color-gray-alt;
 		font-size: rem(17);
 		font-weight: 200;
 		margin: rem(25) 0 rem(15);
@@ -86,7 +86,7 @@
 
 		&:hover,
 		&:focus {
-			color: $color-burnt-orange;
+			color: $color-blue;
 		} // &:hover, &:focus
 
 		&:focus {
@@ -101,7 +101,7 @@
 // Read More link
 //-----------------------------------------
 .recent-post .link-read-more {
-	color: $color-burnt-orange;
+	color: $color-blue;
 	text-decoration: none;
 
 	&:hover,
