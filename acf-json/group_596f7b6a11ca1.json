@@ -19,29 +19,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_5970b136e9fab",
-            "label": "Display Pagination",
-            "name": "display_pagination",
-            "type": "checkbox",
-            "instructions": "By checking this box, the \"Read All Posts\" link will be replaced by pagination.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "true": "Display pagination instead of a \"Read All Posts' link"
-            },
-            "allow_custom": 0,
-            "save_custom": 0,
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value"
-        },
-        {
             "key": "field_596f7b9d92384",
             "label": "Number of Posts",
             "name": "number_of_posts",
@@ -116,7 +93,7 @@
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -124,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500558362
+    "modified": 1500670363
 }
