@@ -5,14 +5,17 @@
 // Structure.
 .site-header,
 .site-footer,
-.primary,
 .secondary {
 	padding: 0 $gutter;
 
 	@include grid-media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
-} // .site-header, .site-footer, .primary, .secondary
+} // .site-header, .site-footer .secondary
+
+.primary {
+	padding: 0;
+} // .primary
 
 .site-content {
 	margin: rem(20) auto;

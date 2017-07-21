@@ -18,11 +18,11 @@ echo _s_display_block_options( array( // WPCS: XSS OK.
 ) );
 ?>
 	<div class="fifty-wrap row<?php echo esc_attr( $animation_class ) ?>">
-		<div class="fifty-text-wrap col-l-6">
+		<div class="fifty-text-wrap col col-l-6">
 			<?php echo force_balance_tags( get_sub_field( 'text_primary' ) ); // WPCS: XSS OK. ?>
 		</div><!-- .fifty-text-wrap -->
 
-		<div class="fifty-media-wrap col-l-6 ">
+		<div class="fifty-media-wrap col col-l-6 ">
 			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['url'] );  ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
 		</div><!-- .fifty-media-wrap -->
 	</div><!-- .fifty-wrap -->
