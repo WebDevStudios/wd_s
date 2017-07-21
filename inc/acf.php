@@ -88,3 +88,30 @@ function _s_display_block_options( $args = array() ) {
 		echo $background_video_markup; // WPCS XSS OK.
 	}
 }
+
+
+/**
+ * Get the animate.css classes for an element.
+ *
+ * @return string $classes Animate.css classes for our element.
+ */
+function _s_get_animation_class() {
+
+	// Get block other options for our animation data.
+	$other_options = get_sub_field( 'other_options' );
+
+	// Get out of here if we don't have other options.
+	if ( ! $other_options ) {
+		return '';
+	}
+
+	// Set up our animation class for the wrapping element.
+	$classes = '';
+
+	// If we have an animation set...
+	if ( $other_options['animation'] ) {
+		$classes = 'animated ' . $other_options['animation'];
+	}
+
+	return $classes;
+}
