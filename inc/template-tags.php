@@ -163,8 +163,8 @@ function _s_get_the_title( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'length'  => 12,
-		'more'    => '...',
+		'length' => 12,
+		'more'   => '...',
 	);
 
 	// Parse args.
@@ -333,7 +333,7 @@ function _s_display_social_network_links() {
 			if ( ! empty( $network_url ) ) : ?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?>">
 					<a href="<?php echo esc_url( $network_url ); ?>">
-						<?php echo _s_get_svg( array( // WPCS: XSS ok.
+						<?php _s_display_svg( array(
 							'icon'  => $network . '-square',
 							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
 						) ); ?>
