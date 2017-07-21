@@ -6,10 +6,6 @@
  *
  * @package _s
  */
-
- // Get the index of this instance of the layout so we can set a proper transient.
-$row_index = get_row_index();
-
 // Set up fields.
 $number_of_posts = get_sub_field( 'number_of_posts' );
 $categories = get_sub_field( 'categories' );
@@ -26,9 +22,6 @@ if ( $categories || $tags ) {
 // Always merge in the number of posts.
 $args['posts_per_page'] = is_numeric( $number_of_posts ) ? $number_of_posts : 3;
 
-// Get the index of this instance of the layout so we can set a proper transient.
-$args['row_index'] = $row_index;
-
 // Get the recent posts.
 $recent_posts = _s_get_recent_posts( $args );
 
@@ -44,7 +37,7 @@ if ( $recent_posts->have_posts() ) :
 	);
 ?>
 
-	<div class="wrap">
+	<div class="row">
 
 		<div class="posts-flex-wrap">
 
