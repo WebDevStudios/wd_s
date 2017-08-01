@@ -2,4 +2,16 @@
 // Card
 //--------------------------------------------------------------
 .card {
+	margin-bottom: $gutter * 2;
+	text-align: center;
+
+	@include grid-media($tablet-portrait) {
+		margin-bottom: 0;
+		text-align: left;
+	}
+
+	// Card images.
+	img {
+		width: 100%;
+	} // img
 } // .card

@@ -4,6 +4,12 @@
 .content-block {
 	margin-bottom: $gutter * 2;
 
+	// Content Block titles.
 	&-title {
+		text-align: center;
+
+		@include grid-media($tablet-portrait) {
+			text-align: left;
+		}
 	} // .content-block-title
 } // .content-block

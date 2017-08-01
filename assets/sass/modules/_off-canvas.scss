@@ -31,7 +31,7 @@
 
 	// The hamburger nav.
 	&-open {
-		@include position(absolute, null rem(24) null null);
+		@include position(absolute, rem(24) rem(24) null null);
 		@include size(rem(35));
 
 		background-color: transparent;
@@ -82,7 +82,6 @@
 		&:focus,
 		&:hover {
 			background: transparent;
-			outline: 2px solid $color-white;
 		} // &:focus, &:hover
 
 		.admin-bar & {
