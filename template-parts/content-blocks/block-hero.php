@@ -16,7 +16,7 @@ if ( have_rows( 'hero_slides' ) ) :
 
 	// If we have more than one slide, wrap them in a container.
 	if ( $slide_count > 1 ) {
-		echo '<div class="content-block hero-container carousel">';
+		echo '<div class="content-block container hero-container carousel">';
 	}
 
 	while ( have_rows( 'hero_slides' ) ) : the_row();
