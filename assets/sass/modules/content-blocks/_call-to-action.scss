@@ -1,14 +1,12 @@
 //--------------------------------------------------------------
-// CTA Block
+// Call To Action Block
 //--------------------------------------------------------------
+.call-to-action {
 
-// CTA Section
-.cta-block {
-
+	// Set up structure.
 	.row {
 		align-items: center;
 		display: flex;
 		justify-content: center;
-	} // .button-wrap
-
-} // .cta-block
+	} // .row
+} // .call-to-action
