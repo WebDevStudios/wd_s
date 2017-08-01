@@ -1,7 +1,6 @@
 //--------------------------------------------------------------
-// Hero
+// Hero Block
 //--------------------------------------------------------------
-
 .hero {
 	overflow-y: hidden;
 	position: relative;
@@ -33,7 +32,7 @@
 
 	// Add padding to description.
 	&-description {
-		padding-bottom: rem(24);
+		padding-bottom: $gutter * 2;
 	} // .hero-description
 } // .hero
 

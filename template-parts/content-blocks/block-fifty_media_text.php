@@ -13,7 +13,7 @@ $animation_class = _s_get_animation_class();
 // Start a <container> with a possible media background.
 _s_display_block_options( array(
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block container fifty fifty-media-text', // The class of the container.
+	'class'     => 'content-block container fifty-fifty fifty-media-text', // The class of the container.
 ) );
 ?>
 	<div class="row <?php echo esc_attr( $animation_class ) ?>">

@@ -16,7 +16,7 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block container cta-block', // Container class.
+		'class'     => 'content-block container call-to-action', // Container class.
 	)
 );
 ?>
