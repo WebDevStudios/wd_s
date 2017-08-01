@@ -1,14 +1,17 @@
 <?php
 /**
  * The template used for displaying a recent posts block.
- * This block will either display all recent posts or posts from a specific category.
- * The amount of posts can be limited through the admin.
+ *
+ * This block will either display all recent posts or posts
+ * from a specific category. The amount of posts can be
+ * limited through the admin.
  *
  * @package _s
  */
+
 // Set up fields.
 $title = get_sub_field( 'title' );
-$number_of_posts = get_sub_field( 'number_of_posts' );
+$post_count = get_sub_field( 'number_of_posts' );
 $categories = get_sub_field( 'categories' );
 $tags = get_sub_field( 'tags' );
 
@@ -21,7 +24,7 @@ if ( $categories || $tags ) {
 }
 
 // Always merge in the number of posts.
-$args['posts_per_page'] = is_numeric( $number_of_posts ) ? $number_of_posts : 3;
+$args['posts_per_page'] = is_numeric( $post_count ) ? $post_count : 3;
 
 // Get the recent posts.
 $recent_posts = _s_get_recent_posts( $args );
@@ -30,13 +33,14 @@ $recent_posts = _s_get_recent_posts( $args );
 if ( $recent_posts->have_posts() ) :
 
 	// Start a <container> with possible block options.
-	echo _s_display_block_options( // WPCS: XSS OK.
+	_s_display_block_options(
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
 			'class'     => 'content-block container recent-posts', // Container class.
 		)
 	);
-?>
+	?>
+
 	<div class="row">
 
 		<?php if ( $title ) : ?>
@@ -47,7 +51,7 @@ if ( $recent_posts->have_posts() ) :
 		// Loop through recent posts.
 		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 
-			// Display the post card.
+			// Display a card.
 			_s_display_card( array(
 					'title' => get_the_title(),
 					'image' => _s_get_post_image_url( 'medium' ),
@@ -62,7 +66,7 @@ if ( $recent_posts->have_posts() ) :
 			);
 		endwhile;
 		wp_reset_postdata();
-		?>
+	?>
 	</div><!-- .row -->
 </section><!-- .recent-posts -->
 <?php endif; ?>
