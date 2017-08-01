@@ -423,7 +423,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-acf.php"
+                "value": "template-acf.php"
             }
         ]
     ],
@@ -448,5 +448,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1501610973
+    "modified": 1501615072
 }
