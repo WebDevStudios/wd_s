@@ -4,7 +4,6 @@
  * Deal with multiple modals and their media.
  */
 window.wdsModal = {};
-
 ( function( window, $, app ) {
 
 	let $modalToggle,
