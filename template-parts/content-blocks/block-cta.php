@@ -18,7 +18,7 @@ $animation_class = _s_get_animation_class();
 echo _s_display_block_options( // WPCS: XSS OK.
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'container cta-block background-silver', // Container class.
+		'class'     => 'content-block container cta-block background-silver', // Container class.
 	)
 );
 ?>

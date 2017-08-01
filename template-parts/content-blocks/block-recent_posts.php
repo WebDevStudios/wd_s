@@ -32,7 +32,7 @@ if ( $recent_posts->have_posts() ) :
 	echo _s_display_block_options( // WPCS: XSS OK.
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-section recent-posts recent-posts-cards', // Container class.
+			'class'     => 'content-block content-section recent-posts recent-posts-cards', // Container class.
 		)
 	);
 ?>

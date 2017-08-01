@@ -13,7 +13,7 @@ $animation_class = _s_get_animation_class();
 // Start a <container> with a possible media background.
 echo _S_display_block_options( array( // WPCS: XSS ok.
 	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'container fifty-media-text', // The class of the container.
+	'class'     => 'content-block container fifty-media-text', // The class of the container.
 ) );
 ?>
 

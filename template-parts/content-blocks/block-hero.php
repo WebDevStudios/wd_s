@@ -16,7 +16,7 @@ if ( have_rows( 'hero_slides' ) ) :
 
 	// If we have more than one slide, wrap them in a container.
 	if ( $slide_count > 1 ) {
-		echo '<div class="hero-container carousel">';
+		echo '<div class="content-block hero-container carousel">';
 	}
 
 	while ( have_rows( 'hero_slides' ) ) : the_row();
@@ -39,7 +39,7 @@ if ( have_rows( 'hero_slides' ) ) :
 		// Start a <container> with possible block options.
 		$hero_container_start = _s_display_block_options( array( // WPCS: XSS OK.
 			'container' => 'div', // Any HTML5 container: section, div, etc...
-			'class'     => 'hero-area slide', // Container class.
+			'class'     => 'content-block hero-area slide', // Container class.
 			) );
 ?>
 		<?php echo $hero_container_start; // WPCS: XSS OK. ?>

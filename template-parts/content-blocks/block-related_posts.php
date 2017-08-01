@@ -11,7 +11,7 @@ $posts = get_sub_field( 'related' );
 
 if ( $posts ) : ?>
 
-	<section class="related-posts">
+	<section class="content-block related-posts">
 
 		<?php if ( $title ) : ?>
 		<h2 class="related-posts-title"><?php echo esc_html( $title ); ?></h2>
