@@ -20,7 +20,6 @@
 		z-index: 2;
 	} // &:after
 
-
 	// Content container.
 	.hero-content {
 		align-items: center;
@@ -48,19 +47,9 @@
 
 		// Style button.
 		.hero-button {
-			@include padding(rem(12) rem(40));
-
-			background: transparent;
-			border: 2px solid $color-white;
-
-			&:hover {
-				background: rgba($color-black, 0.7);
-				text-decoration: none;
-			}
 		} // .hero-button
 	} // .hero-content
 } // .hero-area
-
 
 //-----------------------------------------
 // IE Fixes
