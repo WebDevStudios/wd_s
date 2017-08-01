@@ -345,3 +345,47 @@ function _s_display_social_network_links() {
 	</ul><!-- .social-icons -->
 	<?php
 }
+
+/**
+ * Display a card.
+ *
+ * @param array $args Card defaults.
+ */
+function _s_display_card( $args = array() ) {
+
+	// Setup defaults.
+	$defaults = array(
+		'title' => '',
+		'image' => '',
+		'text'  => '',
+		'url'   => '',
+		'class' => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<div class="<?php echo esc_attr( $args['class'] ); ?> card">
+
+		<?php if ( $args['image'] ) : ?>
+			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] ); ?>"></a>
+		<?php endif; ?>
+
+		<div class="card-section">
+
+		<?php if ( $args['title'] ) : ?>
+			<h3 class="card-title"><a href="<?php echo esc_url( $args['url'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
+		<?php endif; ?>
+
+		<?php if ( $args['text'] ) : ?>
+			<p class="card-text"><?php echo esc_html( $args['text'] ); ?></p>
+		<?php endif; ?>
+
+		<?php if ( $args['url'] ) : ?>
+			<a href="<?php echo esc_url( $args['url'] ); ?>" class="card-more"><?php esc_html_e( 'Read More', '_s' ); ?>...</a>
+		<?php endif; ?>
+
+		</div><!-- .card-section -->
+	</div><!-- .card -->
+	<?php
+}
