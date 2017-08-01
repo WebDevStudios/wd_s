@@ -76,10 +76,6 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
-#: page-acf.php:2
-msgid "Page with Content Blocks"
-msgstr ""
-
 #: search.php:19
 msgid "Search Results for: %s"
 msgstr ""
@@ -95,6 +91,10 @@ msgstr ""
 
 #: searchform.php:13
 msgid "Submit"
+msgstr ""
+
+#: template-acf.php:2
+msgid "Page with Content Blocks"
 msgstr ""
 
 #: template-scaffolding.php:2
@@ -125,7 +125,7 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:86
+#: inc/hooks.php:86, inc/template-tags.php:385
 msgid "Read More"
 msgstr ""
 
