@@ -7,6 +7,7 @@
  * @package _s
  */
 // Set up fields.
+$title = get_sub_field( 'title' );
 $number_of_posts = get_sub_field( 'number_of_posts' );
 $categories = get_sub_field( 'categories' );
 $tags = get_sub_field( 'tags' );
@@ -32,31 +33,36 @@ if ( $recent_posts->have_posts() ) :
 	echo _s_display_block_options( // WPCS: XSS OK.
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block content-section recent-posts recent-posts-cards', // Container class.
+			'class'     => 'content-block container recent-posts', // Container class.
 		)
 	);
 ?>
-
 	<div class="row">
 
-		<div class="posts-flex-wrap">
+		<?php if ( $title ) : ?>
+		<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
+		<?php endif; ?>
 
-			<?php
+		<?php
+		// Loop through recent posts.
+		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 
-			while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
-
-				get_template_part( 'template-parts/content', 'recent_post' );
-
-			endwhile;
-
-			wp_reset_postdata();
-
-			?>
-
-		</div>
-
-	</div>
-
+			// Display the post card.
+			_s_display_card( array(
+					'title' => get_the_title(),
+					'image' => _s_get_post_image_url( 'medium' ),
+					'text'  => _s_get_the_excerpt( array(
+							'length' => 20,
+							'more'   => '...',
+						)
+					),
+					'url'   => get_the_permalink(),
+					'class' => 'col col-m-6 col-l-4',
+				)
+			);
+		endwhile;
+		wp_reset_postdata();
+		?>
+	</div><!-- .row -->
 </section><!-- .recent-posts -->
-
 <?php endif; ?>
