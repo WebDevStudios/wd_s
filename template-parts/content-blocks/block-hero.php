@@ -54,7 +54,7 @@ if ( have_rows( 'hero_slides' ) ) :
 			<?php endif; ?>
 
 			<?php if ( $button_url ) : ?>
-				<button type="button" class="button hero-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+				<button type="button" class="button button-hero" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
 			<?php endif; ?>
 
 		</div><!-- .hero-content -->

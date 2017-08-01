@@ -19,7 +19,6 @@ function _s_display_content_blocks() {
 	endif;
 }
 
-
 /**
  * Associate the possible block options with the appropriate section.
  *
@@ -90,7 +89,6 @@ function _s_display_block_options( $args = array() ) {
 		echo $background_video_markup; // WPCS XSS OK.
 	}
 }
-
 
 /**
  * Get the animate.css classes for an element.

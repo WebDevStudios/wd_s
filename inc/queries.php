@@ -12,12 +12,10 @@
  *
  * Depending on the categories and tags a user selects via ACF, build the query args.
  *
- * @author Eric Fuller, Jeffrey de Wit
- *
  * @param bool|array $categories Categories selected from ACF.
  * @param bool|array $tags Tags selected from ACF.
- *
  * @return array $args The query arguments.
+ * @author Eric Fuller, Jeffrey de Wit
  */
 function _s_get_recent_posts_query_arguments( $categories, $tags ) {
 
@@ -53,15 +51,14 @@ function _s_get_recent_posts_query_arguments( $categories, $tags ) {
 	return $args;
 }
 
-
 /**
- * Get recent posts
+ * Get recent posts.
  *
- * If no taxonomies are provided, the most recent posts will be displayed. Otherwise,
- * posts from specified categories and tags will be displayed.
+ * If no taxonomies are provided, the most recent posts will be displayed.
+ * Otherwise, posts from specified categories and tags will be displayed.
  *
  * @param  array $args   WP_Query arguments.
- * @return object          The related posts object.
+ * @return object        The related posts object.
  * @author Greg Rickaby, Eric Fuller, Jeffrey de Wit
  */
 function _s_get_recent_posts( $args = array() ) {
