@@ -4,15 +4,14 @@
  *
  * @package _s
  */
-// Set up our animation class for the wrap.
-$animation_class = _s_get_animation_class();
 
 // Set up fields.
 $title = get_sub_field( 'title' );
 $content = get_sub_field( 'content' );
+$animation_class = _s_get_animation_class();
 
 // Start a <container> with possible block options.
-echo _s_display_block_options( // WPCS: XSS OK.
+_s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
 		'class'     => 'content-block container generic-content', // Container class.
