@@ -1,73 +1,60 @@
 //--------------------------------------------------------------
 // Hero
-//
-// http://codepen.io/webdevstudios/pen/RRrJLP
 //--------------------------------------------------------------
 
-// Hero container.
-.hero-area {
+.hero {
 	overflow-y: hidden;
 	position: relative;
 	z-index: 1;
 
-	// Transparent overlay (optional).
+	// Transparent overlay.
 	&::after {
 		@include position(absolute, 0 0 null null);
 		@include size(100%);
 
-		background-color: rgba($color-black, 0.6);
+		background-color: rgba($color-black, 0.5);
 		content: '';
 		z-index: 2;
 	} // &:after
 
 	// Content container.
-	.hero-content {
+	&-content {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 50%;
-		min-height: rem(500); // height of hero
+		min-height: rem(500); // height of hero.
 		position: relative;
 		text-align: center;
 		z-index: 3;
-
-		// Set defaults.
-		.hero-title,
-		.hero-description,
-		.hero-button {
-			color: $color-white;
-		} // .hero-title, .hero-description, .hero-button
-
-		// Add padding to description.
-		.hero-description {
-			padding-bottom: rem(24);
-		} // .hero-description
-
-		// Style button.
-		.hero-button {
-		} // .hero-button
 	} // .hero-content
-} // .hero-area
+
+	// Add padding to description.
+	&-description {
+		padding-bottom: rem(24);
+	} // .hero-description
+} // .hero
 
 //-----------------------------------------
 // IE Fixes
 //-----------------------------------------
-.ie .hero-area {
+.ie .hero {
 
 	// IE seems to have some width issues with flexbox,
-	// the text is rendered wider than its container and doesn't wrap.
-	// This fixes that.
+	// the text is rendered wider than its container
+	// and doesn't wrap. This fixes that.
 	.hero-title,
 	.hero-description {
 		width: 100%;
 	} // .hero-title, .hero-description
 
-	// IE11 doesn't do centering with just a min-height, need to set a specific height instead.
+	// IE11 doesn't do centering with just a min-height,
+	// need to set a specific height instead.
 	.hero-content {
 		@include grid-media($tablet-portrait) {
-			height: rem(500); // height of hero
+			height: rem(500); // height of hero.
 		}
 	} // .hero-content
-} // .ie .hero-area
+} // .ie .hero
