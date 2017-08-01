@@ -1,6 +1,6 @@
 {
     "key": "group_595550c063c89",
-    "title": "Related",
+    "title": "Related Posts",
     "fields": [
         {
             "key": "field_59567736aa8d5",
@@ -19,28 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_59567743aa8d6",
-            "label": "Description",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "This quiz type can also display a number of related posts below the quiz results. \r\nSelect the posts that you'd like to display below.",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
             "key": "field_595556aed7efc",
             "label": "Title",
             "name": "title",
             "type": "text",
-            "instructions": "Enter a title for this related section.",
+            "instructions": "Optional. Give this block a title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -48,18 +31,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "You may also like",
-            "placeholder": "",
+            "default_value": "",
+            "placeholder": "Related Posts",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
             "key": "field_5955540e56b86",
-            "label": "Related Posts",
-            "name": "related",
+            "label": "Select Posts",
+            "name": "related_posts",
             "type": "relationship",
-            "instructions": "Select up to three posts to be highlighted in a \"You may also like\" section.",
+            "instructions": "Required. Choose up to three related posts.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -68,8 +51,7 @@
                 "id": ""
             },
             "post_type": [
-                "post",
-                "wds_lir_quiz"
+                "post"
             ],
             "taxonomy": [],
             "filters": [
@@ -78,7 +60,7 @@
                 "taxonomy"
             ],
             "elements": "",
-            "min": "",
+            "min": 3,
             "max": 3,
             "return_format": "object"
         }
@@ -88,11 +70,11 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "wds_lir_quiz"
+                "value": "post"
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -100,5 +82,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1500496724
+    "modified": 1501609929
 }
