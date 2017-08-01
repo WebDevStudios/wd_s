@@ -62,7 +62,7 @@ if ( have_rows( 'hero_slides' ) ) :
 					<p class="hero-description"><?php echo force_balance_tags( $blurb ); // WP XSS OK. ?></p>
 				<?php endif; ?>
 				<?php if ( $button_url ) : ?>
-					<a href="<?php echo esc_url( $button_url ); ?>" class="hero-button" title="<?php echo esc_html( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
+					<button type="button" class="button hero-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
 				<?php endif; ?>
 			</div><!-- .hero-content -->
 		</div><!-- .hero-area -->
