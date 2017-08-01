@@ -196,7 +196,7 @@
                 "596f8962ed9b7": {
                     "key": "596f8962ed9b7",
                     "name": "cta",
-                    "label": "CTA",
+                    "label": "Call To Action",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -233,7 +233,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": "",
+                            "clone": [
+                                "group_58ebcc07bfbd7"
+                            ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
@@ -446,5 +448,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1501609747
+    "modified": 1501610973
 }
