@@ -1,6 +1,6 @@
 {
     "key": "group_596f88fa8326f",
-    "title": "CTA Block",
+    "title": "Call To Action",
     "fields": [
         {
             "key": "field_596f89079ffe6",
@@ -20,11 +20,11 @@
         },
         {
             "key": "field_596f89109ffe7",
-            "label": "Headline",
-            "name": "headline",
+            "label": "Title",
+            "name": "title",
             "type": "text",
-            "instructions": "",
-            "required": 0,
+            "instructions": "Required. Write a catchy title to grab the user's attention.",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -39,10 +39,10 @@
         },
         {
             "key": "field_596f891c9ffe8",
-            "label": "Sub-heading",
-            "name": "sub_heading",
+            "label": "Text",
+            "name": "text",
             "type": "text",
-            "instructions": "",
+            "instructions": "Optional. Write a blurb to compliment the title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,8 +58,8 @@
         },
         {
             "key": "field_59725fc2beccb",
-            "label": "Button",
-            "name": "button",
+            "label": "Button Text",
+            "name": "button_text",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -95,5 +95,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1501603153
+    "modified": 1501610823
 }
