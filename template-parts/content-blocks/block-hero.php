@@ -12,12 +12,16 @@ $slide_count = count( $hero );
 // Start repeater markup...
 if ( have_rows( 'hero_slides' ) ) :
 
-	// If we have more than one slide, wrap them in a container.
+	// If there is more than one slide...
 	if ( $slide_count > 1 ) :
 		echo '<section class="content-block container hero carousel">';
+
+		// Enqueue Slick.
+		wp_enqueue_style( 'slick-carousel' );
+		wp_enqueue_script( 'slick-carousel' );
 	endif;
 
-	// Loop through heros.
+	// Loop through hero(s).
 	while ( have_rows( 'hero_slides' ) ) : the_row();
 
 		// Set up fields.
@@ -26,11 +30,6 @@ if ( have_rows( 'hero_slides' ) ) :
 		$button_text = get_sub_field( 'button_text' );
 		$button_url = get_sub_field( 'button_url' );
 		$animation_class = _s_get_animation_class();
-
-		// Use the page title, if no hero title is set and we have a static slide.
-		if ( ! $title && 1 === $slide_count ) {
-			$title = get_the_title();
-		}
 
 		// Start a <container> with possible block options.
 		_s_display_block_options( array(
@@ -49,9 +48,11 @@ if ( have_rows( 'hero_slides' ) ) :
 			<?php if ( $title ) : ?>
 				<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
 			<?php endif; ?>
+
 			<?php if ( $text ) : ?>
 				<p class="hero-description"><?php echo esc_html( $text ); ?></p>
 			<?php endif; ?>
+
 			<?php if ( $button_url ) : ?>
 				<button type="button" class="button hero-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
 			<?php endif; ?>
@@ -62,9 +63,9 @@ if ( have_rows( 'hero_slides' ) ) :
 <?php
 	endwhile;
 
-	if ( $slide_count > 1 ) {
+	if ( $slide_count > 1 ) :
 		echo '</section>';
-	}
+	endif;
 
 endif;
 ?>
