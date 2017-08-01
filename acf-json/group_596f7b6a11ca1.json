@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5980acbeef9f0",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Optional. Give this block a title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Recent Posts",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_596f7b9d92384",
             "label": "Number of Posts",
             "name": "number_of_posts",
@@ -99,7 +118,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": 0,
     "description": "",
-    "modified": 1500670363
+    "modified": 1501605088
 }
