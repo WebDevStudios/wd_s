@@ -4,6 +4,8 @@
  *
  * Template Post Type: page, scaffolding, _s_scaffolding
  *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
  * @package _s
  */
 
