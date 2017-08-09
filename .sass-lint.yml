@@ -31,7 +31,7 @@ rules:
   mixins-before-declarations:
   - 1
   -
-    exclude: ['grid-media'] # allow @include grid-media();
+    exclude: ['grid-media', 'media'] # allow @include grid-media(), @include media();
 
   # Line Spacing
   empty-line-between-blocks:
