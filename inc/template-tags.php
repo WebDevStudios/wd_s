@@ -118,10 +118,15 @@ function _s_display_svg( $args = array() ) {
 	// Set aria hidden.
 	$aria_hidden = ' aria-hidden="true"';
 
+	// Generate random IDs for the title and description.
+	$random_number = rand( 0, 99999 );
+	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
+	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;	
+
 	// Set ARIA.
 	$aria_labelledby = '';
 	if ( $args['title'] && $args['desc'] ) {
-		$aria_labelledby = ' aria-labelledby="title-ID desc-ID"';
+		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
 		$aria_hidden = '';
 	}
 
@@ -139,11 +144,11 @@ function _s_display_svg( $args = array() ) {
 	$svg = '<svg ' . force_balance_tags( $height ) . ' ' . force_balance_tags( $width ) . ' ' . force_balance_tags( $fill ) . ' class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Add title markup.
-	$svg .= '<title>' . esc_html( $title ) . '</title>';
+	$svg .= '<title id="' . esc_attr( $title_id ) . '">' . esc_html( $title ) . '</title>';
 
 	// If there is a description, display it.
 	if ( $args['desc'] ) {
-		$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
+		$svg .= '<desc id="' . esc_attr( $desc_id ) . '">' . esc_html( $args['desc'] ) . '</desc>';
 	}
 
 	// Use absolute path in the Customizer so that icons show up in there.
