@@ -84,14 +84,7 @@ endif;
 /**
  * Return SVG markup.
  *
- * @param  array  $args {
- *     Parameters needed to display an SVG.
- *
- * @param string $icon Required. Use the icon filename, e.g. "facebook-square".
- * @param string $title Optional. SVG title, e.g. "Facebook".
- * @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
- * @param string $color Optional. Pass a theme color to give the icon a color other than the default. e.g. "blue".
- * }
+ * @param array $args The parameters needed to display the SVG.
  * @return string SVG markup.
  */
 function _s_display_svg( $args = array() ) {

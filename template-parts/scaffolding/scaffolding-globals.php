@@ -4,6 +4,7 @@
  *
  * @package _s
  */
+
 ?>
 
 <section class="section-scaffolding">

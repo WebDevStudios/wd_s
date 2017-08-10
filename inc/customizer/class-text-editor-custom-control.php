@@ -14,6 +14,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 		/**
 		 * Keep track of how many editors are added.
+		 *
+		 * @var $count
 		 */
 		protected static $count = 0;
 

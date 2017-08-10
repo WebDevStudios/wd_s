@@ -48,4 +48,4 @@ window.wdsPrimaryNavigation = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.wdsPrimaryNavigation );
+}( window, jQuery, window.wdsPrimaryNavigation ) );

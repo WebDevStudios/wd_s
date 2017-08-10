@@ -84,4 +84,4 @@ window.wdsoffCanvas = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.wdsoffCanvas );
+}( window, jQuery, window.wdsoffCanvas ) );

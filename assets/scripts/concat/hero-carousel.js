@@ -115,4 +115,4 @@ window.wdsHeroCarousel = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.wdsHeroCarousel );
+}( window, jQuery, window.wdsHeroCarousel ) );

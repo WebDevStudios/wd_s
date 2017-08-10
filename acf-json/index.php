@@ -1,8 +1,12 @@
 <?php
 /**
- * Silence is golden.
+ * The sidebar containing the main widget area.
  *
- * This folder houses .json files used by ACF to sync between development environments.
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package _s
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}

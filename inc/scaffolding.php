@@ -11,7 +11,6 @@
  * Build a scaffolding section.
  *
  * @param array $args The scaffolding defaults.
- * @return string The scaffolding documentation.
  * @author Greg Rickaby Carrie Forde
  */
 function _s_display_scaffolding_section( $args = array() ) {
@@ -131,7 +130,6 @@ function _s_scaffolding_allowed_html() {
  * Build a global scaffolding element.
  *
  * @param array $args The array of colors or fonts.
- * @return string The scaffolding documentation.
  * @author Carrie Forde
  */
 function _s_display_global_scaffolding_section( $args = array() ) {

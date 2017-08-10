@@ -188,4 +188,4 @@ window.wdsModal = {};
 
 	// Engage!
 	$( app.init );
-})( window, jQuery, window.wdsModal );
+}( window, jQuery, window.wdsModal ) );

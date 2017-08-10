@@ -32,4 +32,4 @@ window.wdsWindowReady = {};
 
 	// Engage!
 	$( app.init );
-})( window, jQuery, window.wdsWindowReady );
+}( window, jQuery, window.wdsWindowReady ) );

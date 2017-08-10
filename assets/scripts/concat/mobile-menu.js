@@ -123,4 +123,4 @@ window.wdsMobileMenu = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.wdsMobileMenu );
+}( window, jQuery, window.wdsMobileMenu ) );
