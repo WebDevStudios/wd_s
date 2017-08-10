@@ -7,6 +7,11 @@
  * @package _s
  */
 
+// If ACF isn't activated, then bail.
+if ( ! class_exists( 'acf' ) ) {
+	return false;
+}
+
 /**
  * Loop through and output ACF flexible content blocks for the current page.
  */
