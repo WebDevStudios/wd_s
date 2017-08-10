@@ -82,10 +82,9 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Return SVG markup.
+ * Display SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.
- * @return string SVG markup.
  */
 function _s_display_svg( $args = array() ) {
 
@@ -121,7 +120,7 @@ function _s_display_svg( $args = array() ) {
 	// Generate random IDs for the title and description.
 	$random_number = rand( 0, 99999 );
 	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
-	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;	
+	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
 
 	// Set ARIA.
 	$aria_labelledby = '';
@@ -140,27 +139,37 @@ function _s_display_svg( $args = array() ) {
 		$width = 'width="' . $args['width'] . '"';
 	}
 
-	// Begin SVG markup.
-	$svg = '<svg ' . force_balance_tags( $height ) . ' ' . force_balance_tags( $width ) . ' ' . force_balance_tags( $fill ) . ' class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	ob_start();
+	?>
 
-	// Add title markup.
-	$svg .= '<title id="' . esc_attr( $title_id ) . '">' . esc_html( $title ) . '</title>';
+	<svg <?php echo force_balance_tags( $height ); // WPCS XSS OK. ?> <?php echo force_balance_tags( $width ); // WPCS XSS OK. ?> <?php echo force_balance_tags( $fill ); // WPCS XSS OK. ?> class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>" <?php echo esc_html( $aria_hidden ); ?> <?php echo esc_html( $aria_labelledby ); ?> role="img">
+		<title id="<?php echo esc_attr( $title_id ); ?>">
+			<?php echo esc_html( $title ); ?>
+		</title>
 
-	// If there is a description, display it.
-	if ( $args['desc'] ) {
-		$svg .= '<desc id="' . esc_attr( $desc_id ) . '">' . esc_html( $args['desc'] ) . '</desc>';
-	}
+		<?php
+		// Display description if available.
+		if ( $args['desc'] ) :
+		?>
+			<desc id="<?php echo esc_attr( $desc_id ); ?>">
+				<?php echo esc_html( $args['desc'] ); ?>
+			</desc>
+		<?php endif; ?>
 
-	// Use absolute path in the Customizer so that icons show up in there.
-	if ( is_customize_preview() ) {
-		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) . '"></use>';
-	} else {
-		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
-	}
+		<?php
+		// Use absolute path in the Customizer so that icons show up in there.
+		if ( is_customize_preview() ) :
+		?>
+			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) ); ?>"></use>
+		<?php else : ?>
+			<use xlink:href="#icon-<?php echo esc_html( $args['icon'] ); ?>"></use>
+		<?php endif; ?>
 
-	$svg .= '</svg>';
+	</svg>
 
-	echo $svg; // WPCS: XSS OK.
+	<?php
+	// Echo SVG markup.
+	echo ob_get_clean(); // WPCS XSS OK.
 }
 
 /**
