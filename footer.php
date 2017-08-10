@@ -22,7 +22,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<?php echo force_balance_tags( get_theme_mod( '_s_footer_scripts' ) ); // WPCS XSS OK. ?>
 
 <nav class="off-canvas-container" aria-hidden="true">
 	<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">

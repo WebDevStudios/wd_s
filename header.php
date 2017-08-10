@@ -19,7 +19,6 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
-	<?php echo force_balance_tags( get_theme_mod( '_s_header_scripts' ) ); // WPCS XSS OK. ?>
 
 </head>
 

@@ -115,3 +115,7 @@ add_filter( 'upload_mimes', '_s_custom_mime_types' );
  * Disable the "Cancel reply" link. It doesn't seem to work anyway, and it only makes the "Leave Reply" heading confusing.
  */
 add_filter( 'cancel_comment_reply_link', '__return_false' );
+
+// Additional scripts from Customizer.
+add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
+add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );

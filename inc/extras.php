@@ -203,3 +203,41 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 
 	return "<img src='$url' width='{$args['width']}' height='{$args['height']}' alt='$alt' />";
 }
+
+/**
+ * Display the customizer header scripts.
+ *
+ * @author Greg Rickaby
+ */
+function _s_display_customizer_header_scripts() {
+
+	// Check for header scripts.
+	$scripts = get_theme_mod( '_s_header_scripts' );
+
+	// None? Bail...
+	if ( ! $scripts ) {
+		return false;
+	}
+
+	// Otherwise, echo the scripts!
+	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+}
+
+/**
+ * Display the customizer footer scripts.
+ *
+ * @author Greg Rickaby
+ */
+function _s_display_customizer_footer_scripts() {
+
+	// Check for footer scripts.
+	$scripts = get_theme_mod( '_s_footer_scripts' );
+
+	// None? Bail...
+	if ( ! $scripts ) {
+		return false;
+	}
+
+	// Otherwise, echo the scripts!
+	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+}
