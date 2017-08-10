@@ -17,7 +17,8 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			 $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -103,7 +104,7 @@ function _s_display_svg( $args = array() ) {
 		'icon'   => '',
 		'title'  => '',
 		'desc'   => '',
-		'color'  => '',
+		'fill'   => '',
 		'height' => '',
 		'width'  => '',
 	);
@@ -114,35 +115,49 @@ function _s_display_svg( $args = array() ) {
 	// Figure out which title to use.
 	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
-	// Set aria hidden.
-	$aria_hidden = ' aria-hidden="true"';
-
 	// Generate random IDs for the title and description.
 	$random_number = rand( 0, 99999 );
 	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
 	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
 
 	// Set ARIA.
+	$aria_hidden = ' aria-hidden="true"';
 	$aria_labelledby = '';
 	if ( $args['title'] && $args['desc'] ) {
 		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
 		$aria_hidden = '';
 	}
 
+	// Check to make sure we have a fill.
+	if ( ! empty( $args['fill'] ) ) {
+		$fill = ' fill="' . $args['fill'] . '"';
+	}
+
 	// Check to make sure we have height.
 	if ( ! empty( $args['height'] ) ) {
-		$height = 'height="' . $args['height'] . '"';
+		$height = ' height="' . $args['height'] . '"';
 	}
 
 	// Check to make sure we have width.
 	if ( ! empty( $args['width'] ) ) {
-		$width = 'width="' . $args['width'] . '"';
+		$width = ' width="' . $args['width'] . '"';
 	}
 
 	ob_start();
 	?>
 
-	<svg <?php echo force_balance_tags( $height ); // WPCS XSS OK. ?> <?php echo force_balance_tags( $width ); // WPCS XSS OK. ?> <?php echo force_balance_tags( $fill ); // WPCS XSS OK. ?> class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>" <?php echo esc_html( $aria_hidden ); ?> <?php echo esc_html( $aria_labelledby ); ?> role="img">
+	<svg 
+	<?php
+		echo force_balance_tags( $height ); // WPCS XSS OK.
+		echo force_balance_tags( $width ); // WPCS XSS OK.
+		echo force_balance_tags( $fill ); // WPCS XSS OK.
+	?>
+		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
+	<?php 
+		echo force_balance_tags( $aria_hidden ); // WPCS XSS OK.
+		echo force_balance_tags( $aria_labelledby ); // WPCS XSS OK.
+	?>
+		role="img">
 		<title id="<?php echo esc_attr( $title_id ); ?>">
 			<?php echo esc_html( $title ); ?>
 		</title>
@@ -303,10 +318,12 @@ function _s_display_copyright_text() {
  * @return string The URL.
  */
 function _s_get_twitter_share_url() {
-	return add_query_arg( array(
-		'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
-		'url'  => rawurlencode( get_the_permalink() ),
-	), 'https://twitter.com/share' );
+	return add_query_arg(
+		 array(
+			 'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			 'url'  => rawurlencode( get_the_permalink() ),
+		 ), 'https://twitter.com/share'
+		);
 }
 
 /**
@@ -324,10 +341,12 @@ function _s_get_facebook_share_url() {
  * @return string The URL.
  */
 function _s_get_linkedin_share_url() {
-	return add_query_arg( array(
-		'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
-		'url'   => rawurlencode( get_the_permalink() ),
-	), 'https://www.linkedin.com/shareArticle' );
+	return add_query_arg(
+		 array(
+			 'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			 'url'   => rawurlencode( get_the_permalink() ),
+		 ), 'https://www.linkedin.com/shareArticle'
+		);
 }
 
 /**
@@ -349,18 +368,25 @@ function _s_display_social_network_links() {
 			$network_url = get_theme_mod( '_s_' . $network . '_link' );
 
 			// Only display the list item if a URL is set.
-			if ( ! empty( $network_url ) ) : ?>
+			if ( ! empty( $network_url ) ) :
+			?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?>">
 					<a href="<?php echo esc_url( $network_url ); ?>">
-						<?php _s_display_svg( array(
-							'icon'  => $network . '-square',
-							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
-						) ); ?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+						<?php
+						_s_display_svg(
+							 array(
+								 'icon'  => $network . '-square',
+								 'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
+							 )
+							);
+						?>
+						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok.                           ?></span>
 					</a>
 				</li><!-- .social-icon -->
-			<?php endif;
-		endforeach; ?>
+			<?php
+			endif;
+		endforeach;
+		?>
 	</ul><!-- .social-icons -->
 	<?php
 }
