@@ -101,10 +101,12 @@ function _s_display_svg( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'icon'  => '',
-		'title' => '',
-		'desc'  => '',
-		'color' => '',
+		'icon'   => '',
+		'title'  => '',
+		'desc'   => '',
+		'color'  => '',
+		'height' => '',
+		'width'  => '',
 	);
 
 	// Parse args.
@@ -123,8 +125,18 @@ function _s_display_svg( $args = array() ) {
 		$aria_hidden = '';
 	}
 
+	// Check to make sure we have height.
+	if ( ! empty( $args['height'] ) ) {
+		$height = 'height="' . $args['height'] . '"';
+	}
+
+	// Check to make sure we have width.
+	if ( ! empty( $args['width'] ) ) {
+		$width = 'width="' . $args['width'] . '"';
+	}
+
 	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . ' fill-' . esc_attr( $args['color'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg ' . force_balance_tags( $height ) . ' ' . force_balance_tags( $width ) . ' ' . force_balance_tags( $fill ) . ' class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// Add title markup.
 	$svg .= '<title>' . esc_html( $title ) . '</title>';
