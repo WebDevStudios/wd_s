@@ -82,6 +82,7 @@
 		&:focus,
 		&:hover {
 			background: transparent;
+			outline: 2px solid $color-white;
 		} // &:focus, &:hover
 
 		.admin-bar & {
