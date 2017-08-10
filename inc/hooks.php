@@ -119,3 +119,7 @@ add_filter( 'cancel_comment_reply_link', '__return_false' );
 // Additional scripts from Customizer.
 add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
 add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
+
+// Create shortcode for SVG.
+// Usage [svg icon="facebook-square" title="facebook" desc="like us on facebook" fill="#000000" height="20px" width="20px"].
+add_shortcode( 'svg', '_s_display_svg' );
