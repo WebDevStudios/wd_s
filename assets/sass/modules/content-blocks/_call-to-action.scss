@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// Call To Action Block
+//--------------------------------------------------------------
+.call-to-action {
+
+	// Set up structure.
+	.row {
+		padding: $gutter;
+		text-align: center;
+
+		@include grid-media($tablet-portrait) {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			text-align: left;
+		}
+	} // .row
+} // .call-to-action

@@ -43,6 +43,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'full-width', 1920, 1080, false );
 
 		// Register navigation menus.
 		register_nav_menus( array(
@@ -166,6 +167,6 @@ require get_template_directory() . '/inc/queries.php';
 require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
- * scaffolding Library.
+ * Scaffolding Library.
  */
 require get_template_directory() . '/inc/scaffolding.php';

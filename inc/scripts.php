@@ -62,8 +62,10 @@ function _s_scripts() {
 	 */
 	$suffix = ( true === $debug ) ? '' : '.min';
 
-	// Register styles.
+	// Register styles & scripts.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
+	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.css', null, '1.6.0' );
+	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.6.0', true );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );

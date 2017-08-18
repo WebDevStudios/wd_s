@@ -27,7 +27,8 @@ add_action( 'customize_preview_init', '_s_customize_scripts' );
 /**
  * Add support for the fancy new edit icons.
  *
- * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/.
  */
 function _s_selective_refresh_support( $wp_customize ) {
 
@@ -51,7 +52,8 @@ add_action( 'customize_register', '_s_selective_refresh_support' );
  *
  * Note: You will need to hook this up via livepreview.js
  *
- * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29
+ * @param object $wp_customize Instance of WP_Customize_Class.
+ * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29.
  */
 function _s_live_preview_support( $wp_customize ) {
 

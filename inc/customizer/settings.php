@@ -7,6 +7,8 @@
 
 /**
  * Register additional scripts.
+ *
+ * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_additional_scripts( $wp_customize ) {
 
@@ -54,6 +56,8 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
 
 /**
  * Register a social icons setting.
+ *
+ * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_social_icons( $wp_customize ) {
 
@@ -87,6 +91,8 @@ add_action( 'customize_register', '_s_customize_social_icons' );
 
 /**
  * Register copyright text setting.
+ *
+ * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_copyright_text( $wp_customize ) {
 

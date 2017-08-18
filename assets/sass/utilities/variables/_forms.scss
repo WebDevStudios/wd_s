@@ -2,14 +2,28 @@
 // Global Form Variables
 //--------------------------------------------------------------
 
-// Buttons
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+/// Button background.
 $color-button-background: $color-dove-gray;
+
+/// Button background on hover.
 $color-button-background-hover: $color-mineshaft;
+
+/// Button text.
 $color-button-text: $color-white;
 
-// Inputs
+/// Input border.
 $color-input-border: $color-silver;
+
+/// Input focused color.
 $color-input-focus-text: $color-cod-gray;
+
+/// Input text.
 $color-input-text: $color-dove-gray;
 
+/// Global input padding.
 $padding-input: rem(6);

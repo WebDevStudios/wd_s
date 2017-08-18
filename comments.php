@@ -83,7 +83,7 @@ if ( post_password_required() ) {
 	endif;
 
 	// Comment form args.
-	// @link https://codex.wordpress.org/Function_Reference/comment_form#Default_.24args_array
+	// @link https://codex.wordpress.org/Function_Reference/comment_form#Default_.24args_array.
 	$comment_args = array(
 		'class_submit' => 'button',
 	);

@@ -3,23 +3,22 @@
 // http://neat.bourbon.io/examples/
 // --------------------------------------------------------------
 
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+/// Define a default grid column and gutter.
 $neat-grid: (
 	columns: 12,
 	gutter: 12px,
 );
 
-// Gutter is no longer required for Neat, but is used throughout the theme.
-$gutter: gutter($neat-grid);
-$max-width: 100%;
+/// Define the content width. Used by `.row`.
 $content-width: 960px;
 
+/// Define a gutter. This is **not** used by Neat.
+$gutter: gutter($neat-grid);
 
-//-----------------------------------------
-// Box Sizing
-//
-// Make sure all elements use box-sizing:
-// border-box by default.
-//-----------------------------------------
-* {
-	box-sizing: border-box;
-}
+/// Set a max width.
+$max-width: 100%;

@@ -319,11 +319,14 @@ gulp.task( 'js:lint', () =>
 );
 
 /**
- * Generate Sass docs.
+ * Sass docs.
+ *
+ * http://sassdoc.com/getting-started/
  */
 gulp.task( 'sassdoc', function() {
-	var options = {
+	let options = {
 		dest: 'docs',
+		verbose: true
 	};
 
 	return gulp.src( 'assets/sass/**/*.scss' )

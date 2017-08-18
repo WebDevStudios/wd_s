@@ -2,7 +2,19 @@
 // TRANSITIONS
 //--------------------------------------------------------------
 
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+/// Opacity transition.
 $transition-opacity: opacity 0.5s ease;
+
+/// Border transition
 $transition-border: border 0.2s ease-in-out;
-$transition-all: all 0.5s ease-in-out; // use only in emergencies!
+
+/// All transitions. Use only in emergencies!
+$transition-all: all 0.5s ease-in-out;
+
+/// Transform transitions.
 $transition-transform: transform 0.8s ease-in-out;

@@ -17,7 +17,8 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			 $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -82,17 +83,9 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Return SVG markup.
+ * Display SVG markup.
  *
- * @param  array  $args {
- *     Parameters needed to display an SVG.
- *
- * @param string $icon Required. Use the icon filename, e.g. "facebook-square".
- * @param string $title Optional. SVG title, e.g. "Facebook".
- * @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
- * @param string $color Optional. Pass a theme color to give the icon a color other than the default. e.g. "blue".
- * }
- * @return string SVG markup.
+ * @param array $args The parameters needed to display the SVG.
  */
 function _s_display_svg( $args = array() ) {
 
@@ -108,10 +101,12 @@ function _s_display_svg( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'icon'  => '',
-		'title' => '',
-		'desc'  => '',
-		'color' => '',
+		'icon'   => '',
+		'title'  => '',
+		'desc'   => '',
+		'fill'   => '',
+		'height' => '',
+		'width'  => '',
 	);
 
 	// Parse args.
@@ -120,37 +115,76 @@ function _s_display_svg( $args = array() ) {
 	// Figure out which title to use.
 	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
-	// Set aria hidden.
-	$aria_hidden = ' aria-hidden="true"';
+	// Generate random IDs for the title and description.
+	$random_number = rand( 0, 99999 );
+	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
+	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
 
 	// Set ARIA.
+	$aria_hidden = ' aria-hidden="true"';
 	$aria_labelledby = '';
 	if ( $args['title'] && $args['desc'] ) {
-		$aria_labelledby = ' aria-labelledby="title-ID desc-ID"';
+		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
 		$aria_hidden = '';
 	}
 
-	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . ' fill-' . esc_attr( $args['color'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
-
-	// Add title markup.
-	$svg .= '<title>' . esc_html( $title ) . '</title>';
-
-	// If there is a description, display it.
-	if ( $args['desc'] ) {
-		$svg .= '<desc>' . esc_html( $args['desc'] ) . '</desc>';
+	// Check to make sure we have a fill.
+	if ( ! empty( $args['fill'] ) ) {
+		$fill = ' fill="' . $args['fill'] . '"';
 	}
 
-	// Use absolute path in the Customizer so that icons show up in there.
-	if ( is_customize_preview() ) {
-		$svg .= '<use xlink:href="' . get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) . '"></use>';
-	} else {
-		$svg .= '<use xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use>';
+	// Check to make sure we have height.
+	if ( ! empty( $args['height'] ) ) {
+		$height = ' height="' . $args['height'] . '"';
 	}
 
-	$svg .= '</svg>';
+	// Check to make sure we have width.
+	if ( ! empty( $args['width'] ) ) {
+		$width = ' width="' . $args['width'] . '"';
+	}
 
-	echo $svg; // WPCS: XSS OK.
+	ob_start();
+	?>
+
+	<svg 
+	<?php
+		echo force_balance_tags( $height ); // WPCS XSS OK.
+		echo force_balance_tags( $width ); // WPCS XSS OK.
+		echo force_balance_tags( $fill ); // WPCS XSS OK.
+	?>
+		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
+	<?php 
+		echo force_balance_tags( $aria_hidden ); // WPCS XSS OK.
+		echo force_balance_tags( $aria_labelledby ); // WPCS XSS OK.
+	?>
+		role="img">
+		<title id="<?php echo esc_attr( $title_id ); ?>">
+			<?php echo esc_html( $title ); ?>
+		</title>
+
+		<?php
+		// Display description if available.
+		if ( $args['desc'] ) :
+		?>
+			<desc id="<?php echo esc_attr( $desc_id ); ?>">
+				<?php echo esc_html( $args['desc'] ); ?>
+			</desc>
+		<?php endif; ?>
+
+		<?php
+		// Use absolute path in the Customizer so that icons show up in there.
+		if ( is_customize_preview() ) :
+		?>
+			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) ); ?>"></use>
+		<?php else : ?>
+			<use xlink:href="#icon-<?php echo esc_html( $args['icon'] ); ?>"></use>
+		<?php endif; ?>
+
+	</svg>
+
+	<?php
+	// Echo SVG markup.
+	echo ob_get_clean(); // WPCS XSS OK.
 }
 
 /**
@@ -284,10 +318,12 @@ function _s_display_copyright_text() {
  * @return string The URL.
  */
 function _s_get_twitter_share_url() {
-	return add_query_arg( array(
-		'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
-		'url'  => rawurlencode( get_the_permalink() ),
-	), 'https://twitter.com/share' );
+	return add_query_arg(
+		 array(
+			 'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			 'url'  => rawurlencode( get_the_permalink() ),
+		 ), 'https://twitter.com/share'
+		);
 }
 
 /**
@@ -305,10 +341,12 @@ function _s_get_facebook_share_url() {
  * @return string The URL.
  */
 function _s_get_linkedin_share_url() {
-	return add_query_arg( array(
-		'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
-		'url'   => rawurlencode( get_the_permalink() ),
-	), 'https://www.linkedin.com/shareArticle' );
+	return add_query_arg(
+		 array(
+			 'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			 'url'   => rawurlencode( get_the_permalink() ),
+		 ), 'https://www.linkedin.com/shareArticle'
+		);
 }
 
 /**
@@ -330,18 +368,69 @@ function _s_display_social_network_links() {
 			$network_url = get_theme_mod( '_s_' . $network . '_link' );
 
 			// Only display the list item if a URL is set.
-			if ( ! empty( $network_url ) ) : ?>
+			if ( ! empty( $network_url ) ) :
+			?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?>">
 					<a href="<?php echo esc_url( $network_url ); ?>">
-						<?php _s_display_svg( array(
-							'icon'  => $network . '-square',
-							'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
-						) ); ?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok. ?></span>
+						<?php
+						_s_display_svg(
+							 array(
+								 'icon'  => $network . '-square',
+								 'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
+							 )
+							);
+						?>
+						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok.                           ?></span>
 					</a>
 				</li><!-- .social-icon -->
-			<?php endif;
-		endforeach; ?>
+			<?php
+			endif;
+		endforeach;
+		?>
 	</ul><!-- .social-icons -->
+	<?php
+}
+
+/**
+ * Display a card.
+ *
+ * @param array $args Card defaults.
+ */
+function _s_display_card( $args = array() ) {
+
+	// Setup defaults.
+	$defaults = array(
+		'title' => '',
+		'image' => '',
+		'text'  => '',
+		'url'   => '',
+		'class' => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<div class="<?php echo esc_attr( $args['class'] ); ?> card">
+
+		<?php if ( $args['image'] ) : ?>
+			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] ); ?>"></a>
+		<?php endif; ?>
+
+		<div class="card-section">
+
+		<?php if ( $args['title'] ) : ?>
+			<h3 class="card-title"><a href="<?php echo esc_url( $args['url'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
+		<?php endif; ?>
+
+		<?php if ( $args['text'] ) : ?>
+			<p class="card-text"><?php echo esc_html( $args['text'] ); ?></p>
+		<?php endif; ?>
+
+		<?php if ( $args['url'] ) : ?>
+			<button type="button" class="button button-card" onclick="location.href='<?php echo esc_url( $args['url'] ); ?>'"><?php esc_html_e( 'Read More', '_s' ); ?></button>
+		<?php endif; ?>
+
+		</div><!-- .card-section -->
+	</div><!-- .card -->
 	<?php
 }

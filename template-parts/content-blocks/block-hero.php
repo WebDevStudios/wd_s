@@ -6,25 +6,66 @@
  */
 
 // Set up fields.
-$background_image        = get_sub_field( 'background_image' );
-$background_video        = get_sub_field( 'background_video' );
-$title                   = get_sub_field( 'title' );
-$blurb                   = get_sub_field( 'blurb' );
-$button_text             = get_sub_field( 'button_text' );
-$button_url              = get_sub_field( 'button_url' );
-$background_video_markup = '';
+$hero = get_sub_field( 'hero_slides' );
+$slide_count = count( $hero );
 
-// If a background video is uploaded.
-if ( $background_video['url'] ) {
-	$background_video_markup .= '<video class="video-as-background" autoplay muted loop preload="auto"><source src="' . esc_url( $background_video['url'] ) . '" type="video/mp4"></video>';
-}
+// Start repeater markup...
+if ( have_rows( 'hero_slides' ) ) :
 
-// Start the markup. ?>
-<section class="hero-area image-as-background container full-width" style="background-image: url( <?php echo esc_url( $background_image['url'] ); ?> );" role="dialog" aria-labelledby="hero-title" aria-describedby="hero-description">
-	<?php echo $background_video_markup; // WPCS XSS OK. ?>
-	<div class="hero-content row">
-		<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
-		<p class="hero-description"><?php echo force_balance_tags( $blurb ); // WP XSS OK. ?></p>
-		<a href="<?php echo esc_url( $button_url ); ?>" class="hero-button" title="<?php echo esc_html( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
-	</div><!-- .hero-content -->
-</section><!-- .hero-area -->
+	// If there is more than one slide...
+	if ( $slide_count > 1 ) :
+		echo '<section class="content-block container hero carousel">';
+
+		// Enqueue Slick.
+		wp_enqueue_style( 'slick-carousel' );
+		wp_enqueue_script( 'slick-carousel' );
+	endif;
+
+	// Loop through hero(s).
+	while ( have_rows( 'hero_slides' ) ) : the_row();
+
+		// Set up fields.
+		$title = get_sub_field( 'headline' );
+		$text = get_sub_field( 'text' );
+		$button_text = get_sub_field( 'button_text' );
+		$button_url = get_sub_field( 'button_url' );
+		$animation_class = _s_get_animation_class();
+
+		// Start a <container> with possible block options.
+		_s_display_block_options( array(
+			'container' => 'section', // Any HTML5 container: section, div, etc...
+			'class'     => 'content-block hero slide', // Container class.
+			)
+		);
+
+		// If we have a slider, set the animation in a data-attribute.
+		if ( $slide_count > 1 ) : ?>
+			<div class="hero-content " data-animation="<?php echo esc_attr( $animation_class ) ?>">
+		<?php else : ?>
+			<div class="hero-content <?php echo esc_attr( $animation_class ) ?>">
+		<?php endif; ?>
+
+			<?php if ( $title ) : ?>
+				<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
+			<?php endif; ?>
+
+			<?php if ( $text ) : ?>
+				<p class="hero-description"><?php echo esc_html( $text ); ?></p>
+			<?php endif; ?>
+
+			<?php if ( $button_url ) : ?>
+				<button type="button" class="button button-hero" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+			<?php endif; ?>
+
+		</div><!-- .hero-content -->
+	</section><!-- .hero -->
+
+<?php
+	endwhile;
+
+	if ( $slide_count > 1 ) :
+		echo '</section>';
+	endif;
+
+endif;
+?>

@@ -4,7 +4,6 @@
  * Deal with multiple modals and their media.
  */
 window.wdsModal = {};
-
 ( function( window, $, app ) {
 
 	let $modalToggle,
@@ -189,4 +188,4 @@ window.wdsModal = {};
 
 	// Engage!
 	$( app.init );
-})( window, jQuery, window.wdsModal );
+}( window, jQuery, window.wdsModal ) );
