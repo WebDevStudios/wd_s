@@ -13,33 +13,29 @@
 # File Options
 files:
   ignore:
-   - 'sass/vendor/**/*.scss'
-   - 'sass/tests/**/*.scss'
-   - 'bourbon/app/**/*.scss'
+   - 'assets/**/_colors.scss'
+   - 'assets/**/_gravity-forms.scss'
+   - 'assets/**/_scaffolding.scss'
+   - 'assets/**/style.scss'
    - 'bourbon-neat/app/**/*.scss'
-   - 'assets/sass/style.scss'
-   - 'assets/sass/base/_scaffolding.scss'
-   - 'assets/sass/utilities/variables/_colors.scss'
-   - 'assets/sass/plugins/_gravity-forms.scss'
+   - 'bourbon/app/**/*.scss'
+   - 'sass/tests/**/*.scss'
+   - 'sass/vendor/**/*.scss'
 
 # Rule Configuration
 rules:
- # Extends
   placeholder-in-extend: 0
 
-  # Mixins
   mixins-before-declarations:
   - 1
   -
     exclude: ['grid-media', 'media'] # allow @include grid-media(), @include media();
 
-  # Line Spacing
   empty-line-between-blocks:
   - 1
   -
     allow-single-line-rulesets: false
 
-  # Disallows
   no-color-literals:
   - 1
   -
@@ -59,12 +55,10 @@ rules:
   no-empty-rulesets:
     - 0
 
-  # Nesting
   force-attribute-nesting: 0
   force-element-nesting: 0
   force-pseudo-nesting: 0
 
-  # Name Formats
   function-name-format:
   - 1
   -
@@ -83,7 +77,6 @@ rules:
     allow-leading-underscore: false
     convention-explanation: Please use hyphenated lowercase for variable names. No leading underscore is allowed.
 
-  # Style Guide
   attribute-quotes: 1
   border-zero: 0
   brace-style:
@@ -122,7 +115,7 @@ rules:
   property-units:
     - 1
     -
-      per-property: { border: ['px'], box-shadow: ['px'], font-size: ['em'], letter-spacing: ['em'], text-shadow: ['em'], width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem', 'em'] }
+      per-property: { border: ['px'], box-shadow: ['rem'], font-size: ['rem'], letter-spacing: ['em'], text-shadow: ['em'], width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
 
   quotes:
     - 1
@@ -136,10 +129,8 @@ rules:
     - 1
     - 2
 
-  # Inner Spacing
   space-between-parens: 0
 
-  # Final Items
   final-newline: 0
 
   no-misspelled-properties:
