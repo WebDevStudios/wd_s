@@ -23,10 +23,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site container">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="site-header">
+	<header class="site-header row">
 
 		<div class="site-branding">
 

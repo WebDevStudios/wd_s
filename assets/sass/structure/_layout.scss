@@ -2,20 +2,6 @@
 // Base Layout
 //--------------------------------------------------------------
 
-// Structure.
-.site-header,
-.site-footer,
-.primary,
-.secondary {
-	padding: 0 $gutter;
-
-	@include grid-media($tablet-landscape) {
-		padding: 0 2 * $gutter;
-	}
-} // .site-header, .site-footer, .primary, .secondary
-
-
-
 .site-content {
 	margin: rem(20) auto;
 
@@ -30,4 +16,15 @@
 	.primary {
 		margin-left: 0;
 	} // .primary
+
+	.secondary {
+		float: right;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: $gutter * 5;
+
+		@include grid-media($tablet-landscape) {
+			margin-top: 0;
+		}
+	} // .secondary
 } // .has-sidebar
