@@ -28,8 +28,8 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "latest",
-    "animate.css": "latest",
-    "slick-carousel": "^1.6.0"
+    "animate.css": "^3.5.2",
+    "slick-carousel": "^1.6.0",
+    "normalize-css": "^7.0.0"
   }
 }
