@@ -48,7 +48,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:28
+#: footer.php:27
 msgid "Close Menu"
 msgstr ""
 
@@ -68,11 +68,11 @@ msgstr ""
 msgid "Widget area for %s"
 msgstr ""
 
-#: header.php:28
+#: header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:50
+#: header.php:49
 msgid "Open Menu"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:86, inc/template-tags.php:385
+#: inc/hooks.php:86, inc/template-tags.php:430
 msgid "Read More"
 msgstr ""
 
@@ -133,27 +133,27 @@ msgstr ""
 msgid "Read more..."
 msgstr ""
 
-#: inc/scaffolding.php:43
+#: inc/scaffolding.php:42
 msgid "Details"
 msgstr ""
 
-#: inc/scaffolding.php:52
+#: inc/scaffolding.php:51
 msgid "Description"
 msgstr ""
 
-#: inc/scaffolding.php:57
+#: inc/scaffolding.php:56
 msgid "Parameters"
 msgstr ""
 
-#: inc/scaffolding.php:64
+#: inc/scaffolding.php:63
 msgid "Arguments"
 msgstr ""
 
-#: inc/scaffolding.php:75
+#: inc/scaffolding.php:74
 msgid "Usage"
 msgstr ""
 
-#: inc/scaffolding.php:80
+#: inc/scaffolding.php:79
 msgid "HTML Output"
 msgstr ""
 
@@ -168,54 +168,54 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/template-tags.php:29
+#: inc/template-tags.php:30
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:35
+#: inc/template-tags.php:36
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:52, inc/template-tags.php:59
+#: inc/template-tags.php:53, inc/template-tags.php:60
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:55
+#: inc/template-tags.php:56
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:62
+#: inc/template-tags.php:63
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:69
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:69
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:69
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:75, template-parts/content-page.php:34
+#: inc/template-tags.php:76, template-parts/content-page.php:34
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:101
+#: inc/template-tags.php:94
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/template-tags.php:106
+#: inc/template-tags.php:99
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:338, inc/template-tags.php:340
+#: inc/template-tags.php:379, inc/template-tags.php:383
 msgid "Link to %s"
 msgstr ""
 
@@ -259,70 +259,70 @@ msgstr ""
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: inc/customizer/panels.php:18
+#: inc/customizer/panels.php:20
 msgid "Site Options"
 msgstr ""
 
-#: inc/customizer/panels.php:19
+#: inc/customizer/panels.php:21
 msgid "Other theme options."
 msgstr ""
 
-#: inc/customizer/sections.php:17
+#: inc/customizer/sections.php:19
 msgid "Additional Scripts"
 msgstr ""
 
-#: inc/customizer/sections.php:27
+#: inc/customizer/sections.php:29
 msgid "Footer Customizations"
 msgstr ""
 
-#: inc/customizer/settings.php:26
+#: inc/customizer/settings.php:28
 msgid "Header Scripts"
 msgstr ""
 
-#: inc/customizer/settings.php:27
+#: inc/customizer/settings.php:29
 msgid "Additional scripts to add to the header. Basic HTML tags are allowed."
 msgstr ""
 
-#: inc/customizer/settings.php:46
+#: inc/customizer/settings.php:48
 msgid "Footer Scripts"
 msgstr ""
 
-#: inc/customizer/settings.php:47
+#: inc/customizer/settings.php:49
 msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
 msgstr ""
 
-#: inc/customizer/settings.php:79
+#: inc/customizer/settings.php:83
 msgid "%s Link"
 msgstr ""
 
-#: inc/customizer/settings.php:107
+#: inc/customizer/settings.php:113
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings.php:108
+#: inc/customizer/settings.php:114
 msgid "The copyright text will be displayed in the footer. Basic HTML tags allowed."
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-blank.php:11
+#: template-parts/scaffolding/scaffolding-blank.php:12
 msgid "X"
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-buttons.php:11
+#: template-parts/scaffolding/scaffolding-buttons.php:12
 msgid "Buttons"
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-forms.php:11
+#: template-parts/scaffolding/scaffolding-forms.php:12
 msgid "Forms"
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-globals.php:11
+#: template-parts/scaffolding/scaffolding-globals.php:12
 msgid "Globals"
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-icons.php:11
+#: template-parts/scaffolding/scaffolding-icons.php:12
 msgid "Icons"
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-typography.php:11
+#: template-parts/scaffolding/scaffolding-typography.php:12
 msgid "Typography"
 msgstr ""
