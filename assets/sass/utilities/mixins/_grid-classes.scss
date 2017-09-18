@@ -45,6 +45,7 @@
 		@if $i == 12 {
 
 			&-#{$i} {
+				margin-left: 0;
 				width: 100%;
 			}
 		}
