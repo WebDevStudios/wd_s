@@ -6,7 +6,6 @@
     "slick/slick.less",
     "slick/slick.scss"
   ],
-  "version": "1.6.0",
   "homepage": "https://github.com/kenwheeler/slick",
   "authors": [
     "Ken Wheeler <ken_wheeler@me.com>"
@@ -30,14 +29,14 @@
   "dependencies": {
     "jquery": ">=1.7"
   },
-  "_release": "1.6.0",
+  "version": "1.8.0",
+  "_release": "1.8.0",
   "_resolution": {
     "type": "version",
-    "tag": "1.6.0",
-    "commit": "0aee9fe00e440cc9d72c2dc11768ad9277880603"
+    "tag": "1.8.0",
+    "commit": "f9a8733207a558bcd0ace7c0746f596660f89dbf"
   },
   "_source": "https://github.com/kenwheeler/slick.git",
   "_target": "^1.6.0",
-  "_originalSource": "slick-carousel",
-  "_direct": true
+  "_originalSource": "slick-carousel"
 }
