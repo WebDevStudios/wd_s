@@ -12,7 +12,7 @@
 get_header(); ?>
 
 	<div class="primary content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main row">
 			<?php do_action( '_s_scaffolding_content' ); ?>
 		</main><!-- #main -->
 	</div><!-- .primary -->

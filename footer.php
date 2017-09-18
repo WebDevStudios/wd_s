@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer class="site-footer">
+	<footer class="site-footer row">
 
 		<div class="site-info">
 			<?php _s_display_copyright_text(); ?>
