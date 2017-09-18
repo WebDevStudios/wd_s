@@ -41,5 +41,12 @@
 		&-#{$i} {
 			@include grid-column($i, $context);
 		}
+
+		@if $i == 12 {
+
+			&-#{$i} {
+				width: 100%;
+			}
+		}
 	}
 }
