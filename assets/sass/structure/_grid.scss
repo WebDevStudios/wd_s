@@ -34,11 +34,11 @@
 /// </div>
 ///
 .row {
-	@include grid-collapse;
 	@include grid-container;
+	@include grid-collapse;
+	@include margin(null auto);
 
-	margin: 0 auto;
-	max-width: 100%;
+	max-width: calc(100% - #{$gutter * 2});
 	width: $content-width;
 } // .row
 
