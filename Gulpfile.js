@@ -48,11 +48,11 @@ const paths = {
 function handleErrors() {
 	const args = Array.prototype.slice.call( arguments );
 
-	notify.onError({
+	notify.onError( {
 		'title': 'Task Failed [<%= error.message %>',
 		'message': 'See console.',
 		'sound': 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
-	}).apply( this, args );
+	} ).apply( this, args );
 
 	gutil.beep(); // Beep 'sosumi' again.
 
@@ -64,7 +64,7 @@ function handleErrors() {
  * Delete style.css and style.min.css before we minify and optimize
  */
 gulp.task( 'clean:styles', () =>
-	del([ 'style.css', 'style.min.css' ])
+	del( [ 'style.css', 'style.min.css' ] )
 );
 
 /**
@@ -79,27 +79,27 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 	gulp.src( 'assets/sass/*.scss', paths.css )
 
 		// Deal with errors.
-		.pipe( plumber({'errorHandler': handleErrors}) )
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
 
 		// Wrap tasks in a sourcemap.
 		.pipe( sourcemaps.init() )
 
 			// Compile Sass using LibSass.
-			.pipe( sass({
+			.pipe( sass( {
 				'includePaths': [].concat( bourbon, neat ),
 				'errLogToConsole': true,
 				'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
-			}) )
+			} ) )
 
 			// Parse with PostCSS plugins.
-			.pipe( postcss([
-				autoprefixer({
+			.pipe( postcss( [
+				autoprefixer( {
 					'browsers': [ 'last 2 version' ]
-				}),
-				mqpacker({
+				} ),
+				mqpacker( {
 					'sort': true
-				})
-			]) )
+				} )
+			] ) )
 
 		// Create sourcemap.
 		.pipe( sourcemaps.write() )
@@ -116,10 +116,10 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
  */
 gulp.task( 'cssnano', [ 'postcss' ], () =>
 	gulp.src( 'style.css' )
-		.pipe( plumber({'errorHandler': handleErrors}) )
-		.pipe( cssnano({
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
+		.pipe( cssnano( {
 			'safe': true // Use safe optimizations.
-		}) )
+		} ) )
 		.pipe( rename( 'style.min.css' ) )
 		.pipe( gulp.dest( './' ) )
 		.pipe( browserSync.stream() )
@@ -129,7 +129,7 @@ gulp.task( 'cssnano', [ 'postcss' ], () =>
  * Delete the svg-icons.svg before we minify, concat.
  */
 gulp.task( 'clean:icons', () =>
-	del([ 'assets/images/svg-icons.svg' ])
+	del( [ 'assets/images/svg-icons.svg' ] )
 );
 
 /**
@@ -143,26 +143,26 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
 	gulp.src( paths.icons )
 
 		// Deal with errors.
-		.pipe( plumber({'errorHandler': handleErrors}) )
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
 
 		// Minify SVGs.
 		.pipe( svgmin() )
 
 		// Add a prefix to SVG IDs.
-		.pipe( rename({'prefix': 'icon-'}) )
+		.pipe( rename( {'prefix': 'icon-'} ) )
 
 		// Combine all SVGs into a single <symbol>
-		.pipe( svgstore({'inlineSvg': true}) )
+		.pipe( svgstore( {'inlineSvg': true} ) )
 
 		// Clean up the <symbol> by removing the following cruft...
-		.pipe( cheerio({
+		.pipe( cheerio( {
 			'run': function( $, file ) {
 				$( 'svg' ).attr( 'style', 'display:none' );
 				$( '[fill]' ).removeAttr( 'fill' );
 				$( 'path' ).removeAttr( 'class' );
 			},
 			'parserOptions': {'xmlMode': true}
-		}) )
+		} ) )
 
 		// Save svg-icons.svg.
 		.pipe( gulp.dest( 'assets/images/' ) )
@@ -176,12 +176,12 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
  */
 gulp.task( 'imagemin', () =>
 	gulp.src( paths.images )
-		.pipe( plumber({'errorHandler': handleErrors}) )
-		.pipe( imagemin({
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
+		.pipe( imagemin( {
 			'optimizationLevel': 5,
 			'progressive': true,
 			'interlaced': true
-		}) )
+		} ) )
 		.pipe( gulp.dest( 'assets/images' ) )
 );
 
@@ -189,8 +189,8 @@ gulp.task( 'imagemin', () =>
  * Delete the sprites.png before rebuilding sprite.
  */
 gulp.task( 'clean:sprites', () => {
-	del([ 'assets/images/sprites.png' ]);
-});
+	del( [ 'assets/images/sprites.png' ] );
+} );
 
 /**
  * Concatenate images into a single PNG sprite.
@@ -199,13 +199,13 @@ gulp.task( 'clean:sprites', () => {
  */
 gulp.task( 'spritesmith', () =>
 	gulp.src( paths.sprites )
-		.pipe( plumber({'errorHandler': handleErrors}) )
-		.pipe( spritesmith({
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
+		.pipe( spritesmith( {
 			'imgName': 'sprites.png',
 			'cssName': '../../assets/sass/base/_sprites.scss',
 			'imgPath': 'assets/images/sprites.png',
 			'algorithm': 'binary-tree'
-		}) )
+		} ) )
 		.pipe( gulp.dest( 'assets/images/' ) )
 		.pipe( browserSync.stream() )
 );
@@ -229,9 +229,9 @@ gulp.task( 'concat', () =>
 		.pipe( sourcemaps.init() )
 
 		// Convert ES6+ to ES2015.
-		.pipe( babel({
+		.pipe( babel( {
 			presets: [ 'latest' ]
-		}) )
+		} ) )
 
 		// Concatenate partials into a single script.
 		.pipe( concat( 'project.js' ) )
@@ -251,15 +251,16 @@ gulp.task( 'concat', () =>
   */
 gulp.task( 'uglify', [ 'concat' ], () =>
 	gulp.src( paths.scripts )
-		.pipe( plumber({'errorHandler': handleErrors}) )
-		.pipe( rename({'suffix': '.min'}) )
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
+		.pipe( rename( {'suffix': '.min'} ) )
+
 		// Convert ES6+ to ES2015.
-		.pipe( babel({
+		.pipe( babel( {
 			presets: [ 'latest' ]
-		}) )
-		.pipe( uglify({
+		} ) )
+		.pipe( uglify( {
 			'mangle': false
-		}) )
+		} ) )
 		.pipe( gulp.dest( 'assets/scripts' ) )
 );
 
@@ -267,7 +268,7 @@ gulp.task( 'uglify', [ 'concat' ], () =>
  * Delete the theme's .pot before we create a new one.
  */
 gulp.task( 'clean:pot', () =>
-	del([ 'languages/_s.pot' ])
+	del( [ 'languages/_s.pot' ] )
 );
 
 /**
@@ -277,12 +278,12 @@ gulp.task( 'clean:pot', () =>
  */
 gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
 	gulp.src( paths.php )
-		.pipe( plumber({'errorHandler': handleErrors}) )
+		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( sort() )
-		.pipe( wpPot({
+		.pipe( wpPot( {
 			'domain': '_s',
 			'package': '_s'
-		}) )
+		} ) )
 		.pipe( gulp.dest( 'languages/_s.pot' ) )
 );
 
@@ -292,12 +293,12 @@ gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
  * https://www.npmjs.com/package/sass-lint
  */
 gulp.task( 'sass:lint', () =>
-	gulp.src([
+	gulp.src( [
 		'assets/sass/**/*.scss',
 		'!assets/sass/base/_normalize.scss',
 		'!assets/sass/base/_sprites.scss',
 		'!node_modules/**'
-	])
+	] )
 		.pipe( sassLint() )
 		.pipe( sassLint.format() )
 		.pipe( sassLint.failOnError() )
@@ -309,7 +310,7 @@ gulp.task( 'sass:lint', () =>
  * https://www.npmjs.com/package/gulp-eslint
  */
 gulp.task( 'js:lint', () =>
-	gulp.src([
+	gulp.src( [
 		'assets/scripts/concat/*.js',
 		'assets/scripts/*.js',
 		'!assets/scripts/project.js',
@@ -317,7 +318,7 @@ gulp.task( 'js:lint', () =>
 		'!Gruntfile.js',
 		'!Gulpfile.js',
 		'!node_modules/**'
-	])
+	] )
 		.pipe( eslint() )
 		.pipe( eslint.format() )
 		.pipe( eslint.failAfterError() )
@@ -336,7 +337,7 @@ gulp.task( 'sassdoc', function() {
 
 	return gulp.src( 'assets/sass/**/*.scss' )
 		.pipe( sassdoc( options ) );
-});
+} );
 
 /**
  * Process tasks and reload browsers on file changes.
@@ -346,23 +347,23 @@ gulp.task( 'sassdoc', function() {
 gulp.task( 'watch', function() {
 
 	// Kick off BrowserSync.
-	browserSync({
+	browserSync( {
 		'open': false,             // Open project in a new tab?
 		'injectChanges': true,     // Auto inject changes instead of full reload.
 		'proxy': '_s.dev',         // Use http://_s.dev:3000 to use BrowserSync.
 		'watchOptions': {
 			'debounceDelay': 1000  // Wait 1 second before injecting.
 		}
-	});
+	} );
 
 	// Run tasks when files change.
-	gulp.watch( paths.icons, [ 'icons' ]);
-	gulp.watch( paths.sass, [ 'styles' ]);
-	gulp.watch( paths.scripts, [ 'scripts' ]);
-	gulp.watch( paths.concat_scripts, [ 'scripts' ]);
-	gulp.watch( paths.sprites, [ 'sprites' ]);
-	gulp.watch( paths.php, [ 'markup' ]);
-});
+	gulp.watch( paths.icons, [ 'icons' ] );
+	gulp.watch( paths.sass, [ 'styles' ] );
+	gulp.watch( paths.scripts, [ 'scripts' ] );
+	gulp.watch( paths.concat_scripts, [ 'scripts' ] );
+	gulp.watch( paths.sprites, [ 'sprites' ] );
+	gulp.watch( paths.php, [ 'markup' ] );
+} );
 
 /**
  * Create individual tasks.
@@ -374,5 +375,5 @@ gulp.task( 'scripts', [ 'uglify' ] );
 gulp.task( 'styles', [ 'cssnano' ] );
 gulp.task( 'sprites', [ 'spritesmith' ] );
 gulp.task( 'lint', [ 'sass:lint', 'js:lint' ] );
-gulp.task( 'docs', ['sassdoc'] );
-gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin'] );
+gulp.task( 'docs', [ 'sassdoc' ] );
+gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin' ] );
