@@ -8,7 +8,7 @@
 	&-title {
 		text-align: center;
 
-		@include grid-media($tablet-portrait) {
+		@include media($tablet-portrait) {
 			text-align: left;
 		}
 	} // .content-block-title

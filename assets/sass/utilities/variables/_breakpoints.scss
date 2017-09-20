@@ -8,31 +8,19 @@
 ////
 
 /// Larger HD Desktops.
-$desktop-large: (
-	media: 1800px,
-);
+$desktop-large: 1800px;
 
 /// Standard Desktops and Larger Laptops.
-$desktop: (
-	media: 1200px,
-);
+$desktop: 1200px;
 
 /// Smaller Desktops and Standard iPad Tablet.
-$tablet-landscape: (
-	media: 900px,
-);
+$tablet-landscape: 900px;
 
 /// Breakpoint for WP Admin Bar.
-$wp-admin-bar: (
-	media: 783px,
-);
+$wp-admin-bar: 783px;
 
 /// Smaller Tablets and Standard iPad Portrait.
-$tablet-portrait: (
-	media: 600px,
-);
+$tablet-portrait: 600px;
 
 /// Phones Smaller Than 500px in Width.
-$phone: (
-	media: 300px
-);
+$phone: 300px;

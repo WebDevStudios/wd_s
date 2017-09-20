@@ -52,7 +52,7 @@
 	// IE11 doesn't do centering with just a min-height,
 	// need to set a specific height instead.
 	.hero-content {
-		@include grid-media($tablet-portrait) {
+		@include media($tablet-portrait) {
 			height: rem(500); // height of hero.
 		}
 	} // .hero-content

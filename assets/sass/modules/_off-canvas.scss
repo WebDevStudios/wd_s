@@ -23,7 +23,7 @@
 		.admin-bar & {
 			padding-top: rem(46);
 
-			@include grid-media($wp-admin-bar) {
+			@include media($wp-admin-bar) {
 				padding-top: rem(32);
 			}
 		} // .admin-bar &
@@ -38,7 +38,7 @@
 		display: block;
 		padding: 0;
 
-		@include grid-media($tablet-portrait) {
+		@include media($tablet-portrait) {
 			display: none;
 		}
 
@@ -88,7 +88,7 @@
 		.admin-bar & {
 			top: rem(60);
 
-			@include grid-media($wp-admin-bar) {
+			@include media($wp-admin-bar) {
 				top: rem(46);
 			}
 		} // .admin-bar &

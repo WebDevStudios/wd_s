@@ -9,7 +9,7 @@
 .secondary {
 	padding: 0 $gutter;
 
-	@include grid-media($tablet-landscape) {
+	@include media($tablet-landscape) {
 		padding: 0 2 * $gutter;
 	}
 } // .site-header, .site-footer, .primary, .secondary
@@ -19,7 +19,7 @@
 .site-content {
 	margin: rem(20) auto;
 
-	@include grid-media($desktop) {
+	@include media($desktop) {
 		margin: rem(40) auto rem(60);
 	}
 } // .site-content

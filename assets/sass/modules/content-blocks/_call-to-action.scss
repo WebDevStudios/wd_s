@@ -8,7 +8,7 @@
 		padding: $gutter;
 		text-align: center;
 
-		@include grid-media($tablet-portrait) {
+		@include media($tablet-portrait) {
 			align-items: center;
 			display: flex;
 			justify-content: center;
