@@ -231,7 +231,13 @@ gulp.task( 'concat', () =>
 
 		// Convert ES6+ to ES2015.
 		.pipe( babel( {
-			presets: [ 'latest' ]
+			'presets': [
+				[ 'env', {
+					'targets': {
+						'browsers': [ 'last 2 versions' ]
+					}
+				} ]
+			]
 		} ) )
 
 		// Concatenate partials into a single script.
@@ -254,10 +260,14 @@ gulp.task( 'uglify', [ 'concat' ], () =>
 	gulp.src( paths.scripts )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( rename( {'suffix': '.min'} ) )
-
-		// Convert ES6+ to ES2015.
 		.pipe( babel( {
-			presets: [ 'latest' ]
+			'presets': [
+				[ 'env', {
+					'targets': {
+						'browsers': [ 'last 2 versions' ]
+					}
+				} ]
+			]
 		} ) )
 		.pipe( uglify( {
 			'mangle': false
@@ -351,7 +361,7 @@ gulp.task( 'watch', function() {
 	browserSync( {
 		'open': false,             // Open project in a new tab?
 		'injectChanges': true,     // Auto inject changes instead of full reload.
-		'proxy': '_s.dev',         // Use http://_s.dev:3000 to use BrowserSync.
+		'proxy': 'testing.dev',         // Use http://_s.dev:3000 to use BrowserSync.
 		'watchOptions': {
 			'debounceDelay': 1000  // Wait 1 second before injecting.
 		}
