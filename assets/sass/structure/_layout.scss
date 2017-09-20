@@ -2,7 +2,9 @@
 // Base Layout
 //--------------------------------------------------------------
 
-// Structure.
+//-----------------------------------------
+// Basic structure.
+//-----------------------------------------
 .site-header,
 .site-footer,
 .primary,
@@ -13,8 +15,6 @@
 		padding: 0 2 * $gutter;
 	}
 } // .site-header, .site-footer, .primary, .secondary
-
-
 
 .site-content {
 	margin: rem(20) auto;
@@ -31,3 +31,45 @@
 		margin-left: 0;
 	} // .primary
 } // .has-sidebar
+
+/// This is the outermost element for a module or block.
+///
+/// @name .grid-container
+/// @example html - Usage
+/// <div class="grid-container">
+///   <div class="grid-x">
+///     <div class="cell ...">I am a cell!</div>
+///   </div>
+/// </div>
+///
+.grid-container {
+	@include row;
+}
+
+/// This is the inner container for a module or block, and generally establishes the inner content width.
+///
+/// @name .grid-x
+/// @example html - Usage
+/// <div class="grid-container">
+///   <div class="grid-x">
+///     <div class="cell ...">I am a cellu!</div>
+///   </div>
+/// </div>;
+///
+.grid-x {
+	@include outer-container($max-width);
+} // .grid-x
+
+/// Create a generic, 100% width cell.
+///
+/// @name .cell
+/// @example html - Usage
+/// <div class="grid-container">
+///   <div class="grid-x">
+///     <div class="cell">100% width no matter what viewport</div>
+///   </div>
+/// </div>
+///
+.cell {
+	@include fill-parent;
+} // .cell
