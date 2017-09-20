@@ -8,9 +8,9 @@
 /// @author WebDevStudios
 ////
 
-$column: em(69);       // default width of your columns
-$gutter: em(12);       // default width of the gutters
-$max-width: em(960);   // max-width of the grid/theme in pixels
+$column: rem(69);       // default width of your columns
+$gutter: rem(12);       // default width of the gutters
+$max-width: rem(960);   // max-width of the grid/theme in pixels
 $total-columns: 12;    // number of columns
 
 // To calculate grids see:
@@ -18,7 +18,6 @@ $total-columns: 12;    // number of columns
 
 // Set Bourbon's flex-grid variables to match what Neat is doing
 // http://bourbon.io/docs/#flex-grid
-
 $fg-column: $column;
 $fg-gutter: $gutter;
 
