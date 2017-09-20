@@ -37,12 +37,12 @@ if ( $recent_posts->have_posts() ) :
 	_s_display_block_options(
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block container recent-posts', // Container class.
+			'class'     => 'content-block grid-container recent-posts', // Container class.
 		)
 	);
 	?>
 
-	<div class="row <?php echo esc_attr( $animation_class ) ?>">
+	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
 
 		<?php if ( $title ) : ?>
 		<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
@@ -62,12 +62,12 @@ if ( $recent_posts->have_posts() ) :
 						)
 					),
 					'url'   => get_the_permalink(),
-					'class' => 'col col-m-6 col-l-4',
+					'class' => 'cell',
 				)
 			);
 		endwhile;
 		wp_reset_postdata();
 	?>
-	</div><!-- .row -->
+	</div><!-- .grid-x -->
 </section><!-- .recent-posts -->
 <?php endif; ?>

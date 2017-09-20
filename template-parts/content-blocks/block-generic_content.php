@@ -14,11 +14,11 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block container generic-content', // Container class.
+		'class'     => 'content-block grid-container generic-content', // Container class.
 	)
 );
 ?>
-	<div class="row <?php echo esc_attr( $animation_class ) ?>">
+	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
 
 		<?php if ( $title ) : ?>
 			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>
@@ -26,5 +26,5 @@ _s_display_block_options(
 
 		<?php echo force_balance_tags( $content ); // WP XSS OK. ?>
 
-	</div><!-- .row -->
+	</div><!-- .grid-x -->
 </section><!-- .generic-content -->

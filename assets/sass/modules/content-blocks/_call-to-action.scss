@@ -4,7 +4,7 @@
 .call-to-action {
 
 	// Set up structure.
-	.row {
+	.grid-x {
 		padding: $gutter;
 		text-align: center;
 
@@ -14,5 +14,5 @@
 			justify-content: center;
 			text-align: left;
 		}
-	} // .row
+	} // .grid-x
 } // .call-to-action

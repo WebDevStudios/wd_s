@@ -16,12 +16,12 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block container call-to-action', // Container class.
+		'class'     => 'content-block grid-container call-to-action', // Container class.
 	)
 );
 ?>
-	<div class="row <?php echo esc_attr( $animation_class ) ?>">
-		<div class="col col-l-8">
+	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
+		<div class="cell">
 			<?php if ( $title ) : ?>
 				<h3 class="cta-title"><?php echo esc_html( $title ); ?></h3>
 			<?php endif; ?>
@@ -31,10 +31,10 @@ _s_display_block_options(
 			<?php endif; ?>
 		</div>
 
-		<div class="col col-l-4">
+		<div class="cell">
 			<?php if ( $button_url ) : ?>
 				<button type="button" class="button cta-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
 			<?php endif; ?>
 		</div>
-	</div><!-- .row -->
+	</div><!-- .grid-x -->
 </section><!-- .cta-block -->
