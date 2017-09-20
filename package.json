@@ -4,7 +4,8 @@
   "description": "A theme boilerplate for WebDevStudios.",
   "main": "Gulpfile.js",
   "dependencies": {
-    "babel-preset-latest": "~6",
+    "babel-core": "~6",
+    "babel-preset-env": "~1",
     "bourbon": "4.3.4",
     "bourbon-neat": "1.9.0",
     "browser-sync": "~2",
