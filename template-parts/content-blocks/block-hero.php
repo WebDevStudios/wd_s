@@ -14,7 +14,7 @@ if ( have_rows( 'hero_slides' ) ) :
 
 	// If there is more than one slide...
 	if ( $slide_count > 1 ) :
-		echo '<section class="content-block container hero carousel">';
+		echo '<section class="content-block container carousel">';
 
 		// Enqueue Slick.
 		wp_enqueue_style( 'slick-carousel' );
