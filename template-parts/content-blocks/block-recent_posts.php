@@ -42,29 +42,30 @@ if ( $recent_posts->have_posts() ) :
 	);
 	?>
 
-	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
+	<div class="grid-x">
+	<?php if ( $title ) : ?>
+	<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
+	<?php endif; ?>
+	</div>
 
-		<?php if ( $title ) : ?>
-		<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
-		<?php endif; ?>
+	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
 
 		<?php
 		// Loop through recent posts.
-		while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+		while ( $recent_posts->have_posts() ) :
+			$recent_posts->the_post();
 
 			// Display a card.
 			_s_display_card( array(
-					'title' => get_the_title(),
-					'image' => _s_get_post_image_url( 'medium' ),
-					'text'  => _s_get_the_excerpt( array(
-							'length' => 20,
-							'more'   => '...',
-						)
-					),
-					'url'   => get_the_permalink(),
-					'class' => 'cell',
-				)
-			);
+				'title' => get_the_title(),
+				'image' => _s_get_post_image_url( 'medium' ),
+				'text'  => _s_get_the_excerpt( array(
+					'length' => 20,
+					'more'   => '...',
+				) ),
+				'url'   => get_the_permalink(),
+				'class' => 'cell',
+			) );
 		endwhile;
 		wp_reset_postdata();
 	?>

@@ -23,11 +23,13 @@ if ( $related_posts ) :
 
 	?>
 
-	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
-
-		<?php if ( $title ) : ?>
+	<div class="grid-x">
+	<?php if ( $title ) : ?>
 		<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
-		<?php endif; ?>
+	<?php endif; ?>
+	</div>
+
+	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
 
 		<?php
 		// Loop through recent posts.
@@ -38,17 +40,15 @@ if ( $related_posts ) :
 
 			// Display a card.
 			_s_display_card( array(
-					'title' => get_the_title(),
-					'image' => _s_get_post_image_url( 'medium' ),
-					'text'  => _s_get_the_excerpt( array(
-							'length' => 20,
-							'more'   => '...',
-						)
-					),
-					'url'   => get_the_permalink(),
-					'class' => 'cell',
-				)
-			);
+				'title' => get_the_title(),
+				'image' => _s_get_post_image_url( 'medium' ),
+				'text'  => _s_get_the_excerpt( array(
+					'length' => 20,
+					'more'   => '...',
+				) ),
+				'url'   => get_the_permalink(),
+				'class' => 'cell',
+			) );
 		endforeach;
 		wp_reset_postdata();
 	?>
