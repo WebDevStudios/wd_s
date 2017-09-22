@@ -446,11 +446,12 @@ function _s_display_header_button() {
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
 		if ( 'link' == $button_setting && $button_url ) : ?>
-			<a href="<?php echo esc_url( $button_url ); ?>" class="button">Link</a>
+			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link">Link</a>
 		<?php else : ?>
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">
 				<?php esc_html_e( 'Search', '_s' ); ?>
 			</button>
+			<?php get_search_form(); ?>
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
 	<?php
