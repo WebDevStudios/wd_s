@@ -33,6 +33,16 @@ function _s_customize_sections( $wp_customize ) {
 		)
 	);
 
+	// Register a header section.
+	$wp_customize->add_section(
+		'_s_header_section',
+		array(
+			'title'    => esc_html__( 'Header Customizations', '_s' ),
+			'priority' => 90,
+			'panel'    => 'site-options',
+		)
+	);
+
 	// Register a footer section.
 	$wp_customize->add_section(
 		'_s_footer_section',
