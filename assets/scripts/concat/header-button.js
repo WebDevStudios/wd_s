@@ -27,6 +27,7 @@ window.ShowHideSearchForm = {};
 	// Combine all events
 	app.bindEvents = function() {
 		app.$c.headerSearchForm.on( 'keyup touchstart click', app.showHideSearchForm );
+		app.$c.body.on( 'keyup touchstart click', app.hideSearchForm );
 	};
 
 	// Do we meet the requirements?
@@ -34,9 +35,17 @@ window.ShowHideSearchForm = {};
 		return app.$c.headerSearchForm.length;
 	};
 
-	// Some function
+	// Adds the toggle class for the search form.
 	app.showHideSearchForm = function() {
 		app.$c.body.toggleClass( 'search-form-visible' );
+	};
+
+	// Hides the search form if we click outside of its container.
+	app.hideSearchForm = function( event ) {
+
+		if ( ! $( event.target ).parents( 'div' ).hasClass( 'site-header-action' ) ) {
+			app.$c.body.removeClass( 'search-form-visible' );
+		}
 	};
 
 	// Engage
