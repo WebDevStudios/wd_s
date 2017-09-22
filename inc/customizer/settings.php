@@ -80,7 +80,7 @@ function _s_customize_social_icons( $wp_customize ) {
 		$wp_customize->add_control(
 			'_s_' . $network . '_link',
 			array(
-				'label'   => /* translators: the social network name. */ sprintf( esc_html__( '%s Link', '_s' ), ucwords( $network ) ),
+				'label'   => /* translators: the social network name. */ sprintf( esc_html__( '%s URL', '_s' ), ucwords( $network ) ),
 				'section' => '_s_social_links_section',
 				'type'    => 'text',
 			)

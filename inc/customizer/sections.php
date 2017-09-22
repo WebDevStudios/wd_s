@@ -22,6 +22,17 @@ function _s_customize_sections( $wp_customize ) {
 		)
 	);
 
+	// Register a social links section.
+	$wp_customize->add_section(
+		'_s_social_links_section',
+		array(
+			'title'       => esc_html__( 'Social Media', '_s' ),
+			'description' => esc_html__( 'Links here power the display_social_network_links() template tag.', '_s' ),
+			'priority'    => 90,
+			'panel'       => 'site-options',
+		)
+	);
+
 	// Register a footer section.
 	$wp_customize->add_section(
 		'_s_footer_section',
