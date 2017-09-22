@@ -18,7 +18,7 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 		}
 
 		$time_string = sprintf(
-			 $time_string,
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -128,32 +128,23 @@ function _s_display_svg( $args = array() ) {
 		$aria_hidden = '';
 	}
 
-	// Check to make sure we have a fill.
-	if ( ! empty( $args['fill'] ) ) {
-		$fill = ' fill="' . $args['fill'] . '"';
-	}
+	// Set SVG parameters.
+	$fill = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
+	$height = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
+	$width = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
 
-	// Check to make sure we have height.
-	if ( ! empty( $args['height'] ) ) {
-		$height = ' height="' . $args['height'] . '"';
-	}
-
-	// Check to make sure we have width.
-	if ( ! empty( $args['width'] ) ) {
-		$width = ' width="' . $args['width'] . '"';
-	}
-
+	// Start a buffer...
 	ob_start();
 	?>
 
-	<svg 
+	<svg
 	<?php
 		echo force_balance_tags( $height ); // WPCS XSS OK.
 		echo force_balance_tags( $width ); // WPCS XSS OK.
 		echo force_balance_tags( $fill ); // WPCS XSS OK.
 	?>
 		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
-	<?php 
+	<?php
 		echo force_balance_tags( $aria_hidden ); // WPCS XSS OK.
 		echo force_balance_tags( $aria_labelledby ); // WPCS XSS OK.
 	?>
@@ -183,7 +174,7 @@ function _s_display_svg( $args = array() ) {
 	</svg>
 
 	<?php
-	// Echo SVG markup.
+	// Get the buffer and echo.
 	echo ob_get_clean(); // WPCS XSS OK.
 }
 
@@ -319,11 +310,11 @@ function _s_display_copyright_text() {
  */
 function _s_get_twitter_share_url() {
 	return add_query_arg(
-		 array(
-			 'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
-			 'url'  => rawurlencode( get_the_permalink() ),
-		 ), 'https://twitter.com/share'
-		);
+		array(
+			'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			'url'  => rawurlencode( get_the_permalink() ),
+		), 'https://twitter.com/share'
+	);
 }
 
 /**
@@ -342,11 +333,11 @@ function _s_get_facebook_share_url() {
  */
 function _s_get_linkedin_share_url() {
 	return add_query_arg(
-		 array(
-			 'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
-			 'url'   => rawurlencode( get_the_permalink() ),
-		 ), 'https://www.linkedin.com/shareArticle'
-		);
+		array(
+			'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
+			'url'   => rawurlencode( get_the_permalink() ),
+		), 'https://www.linkedin.com/shareArticle'
+	);
 }
 
 /**
@@ -374,13 +365,16 @@ function _s_display_social_network_links() {
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
 						_s_display_svg(
-							 array(
-								 'icon'  => $network . '-square',
-								 'title' => /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ),
-							 )
-							);
+							array(
+								'icon' => $network . '-square',
+							)
+						);
 						?>
-						<span class="screen-reader-text"><?php echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS ok.                           ?></span>
+						<span class="screen-reader-text">
+						<?php
+							echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
+						?>
+						</span>
 					</a>
 				</li><!-- .social-icon -->
 			<?php
