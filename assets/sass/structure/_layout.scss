@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Basic structure.
+// Basic structure
 //-----------------------------------------
 .site-header,
 .site-footer,
@@ -24,12 +24,24 @@
 	}
 } // .site-content
 
-// Keep the page content aligned with the header & footer content by default.
+//-----------------------------------------
+// Create Content/Sidebary layout
+//-----------------------------------------
 .has-sidebar {
 
 	.primary {
 		margin-left: 0;
+
+		@include media($tablet-landscape) {
+			@include span-columns(8);
+		}
 	} // .primary
+
+	.secondary {
+		@include media($tablet-landscape) {
+			@include span-columns(4);
+		}
+	} // .secondary
 } // .has-sidebar
 
 /// This is the outermost element for a module or block.
