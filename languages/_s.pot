@@ -48,7 +48,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:27
+#: footer.php:28
 msgid "Close Menu"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:86, inc/template-tags.php:430
+#: inc/hooks.php:86, inc/template-tags.php:424
 msgid "Read More"
 msgstr ""
 
@@ -215,8 +215,12 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:379, inc/template-tags.php:383
+#: inc/template-tags.php:375
 msgid "Link to %s"
+msgstr ""
+
+#: inc/template-tags.php:451, inc/template-tags.php:452
+msgid "Search"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -259,11 +263,11 @@ msgstr ""
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: inc/customizer/panels.php:20
+#: inc/customizer/panels.php:21
 msgid "Site Options"
 msgstr ""
 
-#: inc/customizer/panels.php:21
+#: inc/customizer/panels.php:22
 msgid "Other theme options."
 msgstr ""
 
@@ -272,6 +276,18 @@ msgid "Additional Scripts"
 msgstr ""
 
 #: inc/customizer/sections.php:29
+msgid "Social Media"
+msgstr ""
+
+#: inc/customizer/sections.php:30
+msgid "Links here power the display_social_network_links() template tag."
+msgstr ""
+
+#: inc/customizer/sections.php:40
+msgid "Header Customizations"
+msgstr ""
+
+#: inc/customizer/sections.php:50
 msgid "Footer Customizations"
 msgstr ""
 
@@ -292,7 +308,7 @@ msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
 msgstr ""
 
 #: inc/customizer/settings.php:83
-msgid "%s Link"
+msgid "%s URL"
 msgstr ""
 
 #: inc/customizer/settings.php:113
@@ -301,6 +317,34 @@ msgstr ""
 
 #: inc/customizer/settings.php:114
 msgid "The copyright text will be displayed in the footer. Basic HTML tags allowed."
+msgstr ""
+
+#: inc/customizer/settings.php:143
+msgid "Header Button"
+msgstr ""
+
+#: inc/customizer/settings.php:144
+msgid "Display a custom button in the header."
+msgstr ""
+
+#: inc/customizer/settings.php:148
+msgid "No button"
+msgstr ""
+
+#: inc/customizer/settings.php:149
+msgid "Trigger a search field"
+msgstr ""
+
+#: inc/customizer/settings.php:150
+msgid "Link to a custom URL"
+msgstr ""
+
+#: inc/customizer/settings.php:168
+msgid "Header Button URL"
+msgstr ""
+
+#: inc/customizer/settings.php:169
+msgid "Enter the URL or email address to be used by the button in the header."
 msgstr ""
 
 #: template-parts/scaffolding/scaffolding-blank.php:12
