@@ -62,6 +62,11 @@ function _s_scripts() {
 	 */
 	$suffix = ( true === $debug ) ? '' : '.min';
 
+	/**
+	 * Global variable for IE.
+	 */
+	global $is_IE;
+
 	// Register styles & scripts.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
 	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.css', null, '1.6.0' );
@@ -72,6 +77,10 @@ function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
 	// Enqueue scripts.
+	if ( $is_IE ) {
+		wp_enqueue_script( '_s-babel-polyfill', get_template_directory_uri() . '/assets/scripts/babel-polyfill.min.js', array(), $version, true );
+	}
+
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery' ), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
