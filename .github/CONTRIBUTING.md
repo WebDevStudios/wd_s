@@ -7,6 +7,8 @@ WebDevStudios welcomes contributions and bug fixes from third-parties. Here are 
 * Create a feature/hotfix branch off [master](https://github.com/WebDevStudios/wd_s/tree/master)
 * Commit code changes to your feature/hotifx branch
 * Continue to merge master into your feature/hotifx branch so it stays current
-* Test! Test! Test!
-* Submit a [Pull Request](https://github.com/WebDevStudios/wd_s/pulls) and reference your Issue
+* Test across all major browsers
+* Accessibility testing (both WCAG 2.0AA and Section 508)
+* Must pass PHPCS, ESLint, and Sass Linting
+* Submit a [Pull Request](https://github.com/WebDevStudios/wd_s/pulls) and reference your Issue #
 * If everything tests out on our end, we may merge in your Pull Request
