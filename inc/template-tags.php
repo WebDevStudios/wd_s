@@ -428,3 +428,30 @@ function _s_display_card( $args = array() ) {
 	</div><!-- .card -->
 	<?php
 }
+
+function _s_display_header_button() {
+
+	// Get our button setting.
+	$button_setting = get_theme_mod( '_s_header_button' );
+
+	// If we have no button displayed, don't display the markup.
+	if ( 'none' == $button_setting ) {
+		return '';
+	}
+
+	// Set our empty URL value.
+	$button_url = get_theme_mod( '_s_header_button_url' );
+	?>
+	<div class="site-header-action">
+		<?php
+		// If we're doing a URL, just make this LOOK like a button but be a link.
+		if ( 'link' == $button_setting && $button_url ) : ?>
+			<a href="<?php echo esc_url( $button_url ); ?>" class="button">Link</a>
+		<?php else : ?>
+			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">
+				<?php esc_html_e( 'Search', '_s' ); ?>
+			</button>
+		<?php endif; ?>
+	</div><!-- .header-trigger -->
+	<?php
+}
