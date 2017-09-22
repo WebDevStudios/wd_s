@@ -120,11 +120,13 @@ a {
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
-	@include size(100% auto);
+	@include span-columns(7);
 
-	clear: both;
 	display: none;
-	float: left;
+
+	@include media($tablet-landscape) {
+		display: block;
+	}
 
 	// Menu area
 	ul {
@@ -138,10 +140,6 @@ a {
 	&.toggled ul {
 		display: block;
 	} // &.toggled ul
-
-	@include media($tablet-portrait) {
-		display: block;
-	}
 } // .main-navigation
 
 //-----------------------------------------

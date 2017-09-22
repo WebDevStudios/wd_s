@@ -38,7 +38,7 @@
 		display: block;
 		padding: 0;
 
-		@include media($tablet-portrait) {
+		@include media($tablet-landscape) {
 			display: none;
 		}
 
