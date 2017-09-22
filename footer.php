@@ -17,6 +17,7 @@
 
 		<div class="site-info">
 			<?php _s_display_copyright_text(); ?>
+			<?php _s_display_social_network_links(); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer container-->
 </div><!-- #page -->
