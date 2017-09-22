@@ -128,6 +128,10 @@ a {
 		display: block;
 	}
 
+	@include media($desktop-large) {
+		@include span-columns(8);
+	}
+
 	// Menu area
 	ul {
 		display: none;

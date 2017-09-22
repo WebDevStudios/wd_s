@@ -54,6 +54,10 @@
 		@include span-columns(2);
 	}
 
+	@include media($desktop-large) {
+		@include span-columns(1);
+	}
+
 	// Span the button the full width.
 	button {
 		width: 100%;
