@@ -439,14 +439,15 @@ function _s_display_header_button() {
 		return '';
 	}
 
-	// Set our empty URL value.
-	$button_url = get_theme_mod( '_s_header_button_url' );
+	// Grab our button and text values.
+	$button_url  = get_theme_mod( '_s_header_button_url' );
+	$button_text = get_theme_mod( '_s_header_button_text' );
 	?>
 	<div class="site-header-action">
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
 		if ( 'link' == $button_setting && $button_url ) : ?>
-			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link">Link</a>
+			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', '_s' ) ); ?></a>
 		<?php else : ?>
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">
 				<?php esc_html_e( 'Search', '_s' ); ?>
