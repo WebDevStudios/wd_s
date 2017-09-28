@@ -172,6 +172,27 @@ function _s_customize_header_button( $wp_customize ) {
 			'active_callback' => '_s_customizer_is_header_button_link', // Only displays if the Link option is selected above.
 		)
 	);
+
+	// Register a setting for the link text.
+	$wp_customize->add_setting(
+		'_s_header_button_text',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		)
+	);
+
+	// Display the text field... maybe!
+	$wp_customize->add_control(
+		'_s_header_button_text',
+		array(
+			'label'           => esc_html__( 'Header Button Text', '_s' ),
+			'description'     => esc_html__( 'Enter the text to be displayed in the button in the header.', '_s' ),
+			'section'         => '_s_header_section',
+			'type'            => 'text',
+			'active_callback' => '_s_customizer_is_header_button_link', // Only displays if the Link option is selected above.
+		)
+	);
 }
 add_action( 'customize_register', '_s_customize_header_button' );
 
