@@ -120,3 +120,33 @@ function _s_get_animation_class() {
 
 	return $classes;
 }
+
+/**
+ * Enqueues scripts for ACF.
+ *
+ * @author Corey Collins
+ */
+function _s_acf_admin_scripts() {
+
+	/**
+	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
+	 */
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG == true ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
+
+	/**
+	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
+	 */
+	$version = '1.0.0';
+
+	/**
+	 * Should we load minified files?
+	 */
+	$suffix = ( true === $debug ) ? '' : '.min';
+
+	// Enqueue our JS to tweak the color picker swatches.
+	wp_enqueue_script( '_s-admin-acf-scripts', get_template_directory_uri() . '/assets/scripts/admin-acf' . $suffix . '.js', array( 'jquery' ), $version, true );
+
+	// Enqueue our color picker styles.
+	wp_enqueue_style( '_s-admin-acf-styles', get_template_directory_uri() . '/admin-acf-styles.css', null, $version );
+}
+add_action( 'acf/input/admin_head', '_s_acf_admin_scripts' );
