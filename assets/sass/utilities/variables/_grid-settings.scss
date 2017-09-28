@@ -26,3 +26,9 @@ $visual-grid: false;        // true/false
 $visual-grid-color: #ffc0cb;   // color of visual grid
 $visual-grid-index: front;  // front/back
 $visual-grid-opacity: 0.2;  // opacity of visual grid
+
+// Numeric values for padding/margin helper classes.
+$spacing_options: 15, 20, 30, 35, 40, 50, 100;
+
+// Row widths.
+$row-widths: 1240, 1040, 640;
