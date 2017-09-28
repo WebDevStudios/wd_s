@@ -23,7 +23,8 @@ window.CustomizerHeaderOptions = {};
 		app.$c = {
 			window: $( window ),
 			headerButtonSelect: $( '#customize-control-_s_header_button select' ),
-			headerLinkSettings: $( '#customize-control-_s_header_button_url' )
+			headerLinkButton: $( '#customize-control-_s_header_button_url' ),
+			headerLinkText: $( '#customize-control-_s_header_button_text' )
 		};
 	};
 
@@ -42,9 +43,11 @@ window.CustomizerHeaderOptions = {};
 	app.showHideLinkField = function() {
 
 		if ( 'link' === app.$c.headerButtonSelect.val() ) {
-			app.$c.headerLinkSettings.show();
+			app.$c.headerLinkButton.show();
+			app.$c.headerLinkText.show();
 		} else {
-			app.$c.headerLinkSettings.hide();
+			app.$c.headerLinkButton.hide();
+			app.$c.headerLinkText.hide();
 		}
 	};
 
@@ -52,7 +55,8 @@ window.CustomizerHeaderOptions = {};
 	app.showLinkField = function() {
 
 		if ( 'link' === app.$c.headerButtonSelect.val() ) {
-			app.$c.headerLinkSettings.show();
+			app.$c.headerLinkButton.show();
+			app.$c.headerLinkText.show();
 		}
 	};
 
