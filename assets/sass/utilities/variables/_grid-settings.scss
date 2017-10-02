@@ -8,10 +8,10 @@
 /// @author WebDevStudios
 ////
 
-$column: rem(69);       // default width of your columns
-$gutter: rem(12);       // default width of the gutters
-$max-width: rem(960);   // max-width of the grid/theme in pixels
-$total-columns: 12;    // number of columns
+$column: rem(69); // default width of your columns
+$gutter: rem(12); // default width of the gutters
+$max-width: rem(960); // max-width of the grid/theme in pixels
+$total-columns: 12; // number of columns
 
 // To calculate grids see:
 // http://gridcalculator.dk/#/960/12/12/0
@@ -22,13 +22,13 @@ $fg-column: $column;
 $fg-gutter: $gutter;
 
 // Optional - A handy visual grid overlay
-$visual-grid: false;        // true/false
-$visual-grid-color: #ffc0cb;   // color of visual grid
-$visual-grid-index: front;  // front/back
-$visual-grid-opacity: 0.2;  // opacity of visual grid
+$visual-grid: false; // true/false
+$visual-grid-color: #ffc0cb; // color of visual grid
+$visual-grid-index: front; // front/back
+$visual-grid-opacity: 0.2; // opacity of visual grid
 
 // Numeric values for padding/margin helper classes.
-$spacing_options: 15, 20, 30, 35, 40, 50, 100;
+$spacing-options: 15, 20, 30, 35, 40, 50, 100;
 
 // Row widths.
 $row-widths: 1240, 1040, 640;
