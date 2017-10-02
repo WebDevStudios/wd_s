@@ -30,14 +30,12 @@ a {
 	} // ul
 
 	&.menu-horizontal {
-
 		li {
 			display: inline-block;
 		} // li
 	} // &.menu-horizontal
 
 	&.menu-vertical {
-
 		li {
 			margin: 0;
 		} // li
@@ -49,12 +47,11 @@ a {
 	} // &.menu-vertical
 
 	&.dropdown {
-
 		// Sub-menu
 		ul {
 			@include position(absolute, rem(24) null null -999em);
 
-			box-shadow: 0 3px 3px rgba($color-black, 0.2);
+			box-shadow: 0 rem(3) rem(3) rgba($color-black, 0.2);
 			float: left;
 			z-index: 99999;
 
@@ -66,7 +63,6 @@ a {
 
 			// Sub-menu items
 			li {
-
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -120,17 +116,23 @@ a {
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
-	@include size(100% auto);
+	@include span-columns(7);
 
-	clear: both;
 	display: none;
-	float: left;
+
+	@include media($tablet-landscape) {
+		display: block;
+	}
+
+	@include media($desktop-large) {
+		@include span-columns(8);
+	}
 
 	// Menu area
 	ul {
 		display: none;
 
-		@include grid-media($phone) {
+		@include media($phone) {
 			display: block;
 		}
 	} // ul
@@ -138,10 +140,6 @@ a {
 	&.toggled ul {
 		display: block;
 	} // &.toggled ul
-
-	@include grid-media($tablet-portrait) {
-		display: block;
-	}
 } // .main-navigation
 
 //-----------------------------------------
@@ -217,7 +215,6 @@ a {
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 rem(24) 0;
 		overflow: hidden;

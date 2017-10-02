@@ -59,6 +59,9 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+
+		<?php _s_display_header_button(); ?>
+
 	</header><!-- .site-header-->
 
 	<div id="content" class="site-content">

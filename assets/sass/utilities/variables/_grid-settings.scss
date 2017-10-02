@@ -8,17 +8,27 @@
 /// @author WebDevStudios
 ////
 
-/// Define a default grid column and gutter.
-$neat-grid: (
-	columns: 12,
-	gutter: 12px,
-);
+$column: rem(69); // default width of your columns
+$gutter: rem(12); // default width of the gutters
+$max-width: rem(960); // max-width of the grid/theme in pixels
+$total-columns: 12; // number of columns
 
-/// Define the content width. Used by `.row`.
-$content-width: 960px;
+// To calculate grids see:
+// http://gridcalculator.dk/#/960/12/12/0
 
-/// Define a gutter. This is **not** used by Neat.
-$gutter: gutter($neat-grid);
+// Set Bourbon's flex-grid variables to match what Neat is doing
+// http://bourbon.io/docs/#flex-grid
+$fg-column: $column;
+$fg-gutter: $gutter;
 
-/// Set a max width.
-$max-width: 100%;
+// Optional - A handy visual grid overlay
+$visual-grid: false; // true/false
+$visual-grid-color: #ffc0cb; // color of visual grid
+$visual-grid-index: front; // front/back
+$visual-grid-opacity: 0.2; // opacity of visual grid
+
+// Numeric values for padding/margin helper classes.
+$spacing-options: 15, 20, 30, 35, 40, 50, 100;
+
+// Row widths.
+$row-widths: 1240, 1040, 640;

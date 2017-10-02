@@ -31,7 +31,7 @@
 		background-clip: padding-box;
 		background-color: $color-white;
 		border-radius: $border-radius-medium;
-		box-shadow: 0 0 10px 3px rgba($color-black, 0.5);
+		box-shadow: 0 0 rem(10) rem(3) rgba($color-black, 0.5);
 		outline: 0;
 		padding: rem(10);
 		position: relative;
@@ -73,7 +73,6 @@
 
 	// Remove the border from embedded elements.
 	.fluid-embed {
-
 		embed,
 		object,
 		iframe {

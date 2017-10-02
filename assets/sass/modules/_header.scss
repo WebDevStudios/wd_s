@@ -5,10 +5,81 @@
 // Site Title
 .site-title {
 	font-size: rem(48);
+
+	// Align next to the logo on mid-size screens.
+	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+		float: left;
+		margin: 0;
+		padding: 0 rem(12);
+		width: 50%;
+	}
 } // .site-title
 
 // Site Description
 .site-description {
 	font-size: rem(24);
 	margin: 0 0 rem(24) 0;
+
+	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+		clear: both;
+	}
 } // .site-description
+
+// Site logo.
+.site-branding {
+	@include span-columns(10);
+
+	@include media($tablet-portrait) {
+		@include span-columns(11);
+	}
+
+	@include media($tablet-landscape) {
+		@include span-columns(3);
+	}
+
+	// Don't let the logo get out of control.
+	img {
+		@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+			float: left;
+			width: 50%;
+		}
+	} // img
+} // .site-branding
+
+// Header action container.
+.site-header-action {
+	@include span-columns(12);
+
+	@include media($tablet-landscape) {
+		@include span-columns(2);
+	}
+
+	@include media($desktop-large) {
+		@include span-columns(1);
+	}
+
+	// Span the button the full width.
+	.button-link,
+	.cta-button {
+		color: $color-white;
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		width: 100%;
+	} // .button-link, .cta-button
+
+	// The Search Form.
+	.search-form {
+		opacity: 0;
+		transition: $transition-opacity;
+		visibility: hidden;
+
+		// If the body class is there, show the form.
+		.search-form-visible & {
+			display: block;
+			opacity: 1;
+			transition: $transition-opacity;
+			visibility: visible;
+		} // .search-form-visible &
+	} // .search-form
+} // .site-header-action

@@ -5,8 +5,7 @@
 	margin-bottom: $gutter * 2;
 	text-align: center;
 
-	@include grid-media($tablet-portrait) {
-		margin-bottom: 0;
+	@include media($tablet-portrait) {
 		text-align: left;
 	}
 

@@ -4,15 +4,15 @@
 .call-to-action {
 
 	// Set up structure.
-	.row {
+	.grid-x {
 		padding: $gutter;
 		text-align: center;
 
-		@include grid-media($tablet-portrait) {
+		@include media($tablet-portrait) {
 			align-items: center;
 			display: flex;
 			justify-content: center;
 			text-align: left;
 		}
-	} // .row
+	} // .grid-x
 } // .call-to-action

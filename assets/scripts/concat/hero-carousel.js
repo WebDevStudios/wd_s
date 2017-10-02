@@ -27,7 +27,6 @@ window.wdsHeroCarousel = {};
 	app.bindEvents = function() {
 		app.$c.window.on( 'load', app.doSlick );
 		app.$c.window.on( 'load', app.doFirstAnimation );
-
 	};
 
 	// Do we meet the requirements?
@@ -48,8 +47,7 @@ window.wdsHeroCarousel = {};
 	};
 
 	// Animate the slide content.
-	app.doAnimation = function( event, slick ) {
-
+	app.doAnimation = function() {
 		let slides = $( '.slide' ),
 			activeSlide = $( '.slick-current' ),
 			activeContent = activeSlide.find( '.hero-content' ),
@@ -59,26 +57,25 @@ window.wdsHeroCarousel = {};
 			splitAnimation = animationClass.split( ' ' ),
 
 			// This is the 'animated' class.
-			animationTrigger = splitAnimation[0],
-
-		// This is the animate.css class.
-		animateCss = splitAnimation[1];
+			animationTrigger = splitAnimation[0];
 
 		// Go through each slide to see if we've already set animation classes.
-		slides.each( function( index, element ) {
-
+		slides.each( function() {
 			let slideContent = $( this ).find( '.hero-content' );
 
 			// If we've set animation classes on a slide, remove them.
 			if ( slideContent.hasClass( 'animated' ) ) {
 
 				// Get the last class, which is the animate.css class.
-				let lastClass = slideContent.attr( 'class' ).split( ' ' ).pop( );
+				let lastClass = slideContent
+					.attr( 'class' )
+					.split( ' ' )
+					.pop();
 
 				// Remove both animation classes.
 				slideContent.removeClass( lastClass ).removeClass( animationTrigger );
 			}
-		});
+		} );
 
 		// Add animation classes after slide is in view.
 		activeContent.addClass( animationClass );
@@ -92,27 +89,25 @@ window.wdsHeroCarousel = {};
 
 			// Let them autoplay. TODO: Possibly change this later to only play the visible slide video.
 			this.play();
-		});
+		} );
 	};
 
 	// Kick off Slick.
 	app.doSlick = function() {
-
 		app.$c.heroCarousel.on( 'init', app.playBackgroundVideos );
 
-		app.$c.heroCarousel.slick({
+		app.$c.heroCarousel.slick( {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: false,
 			dots: false,
 			focusOnSelect: true,
 			waitForAnimate: true
-		});
+		} );
 
 		app.$c.heroCarousel.on( 'afterChange', app.doAnimation );
 	};
 
 	// Engage!
 	$( app.init );
-
-}( window, jQuery, window.wdsHeroCarousel ) );
+} ( window, jQuery, window.wdsHeroCarousel ) );
