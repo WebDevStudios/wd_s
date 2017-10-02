@@ -64,7 +64,7 @@ window.wdsMobileMenu = {};
 				$( this ).removeClass( 'slideInLeft' ).addClass( 'slideOutLeft' );
 			}
 
-		});
+		} );
 	};
 
 	// Add the down arrow to submenu parents.

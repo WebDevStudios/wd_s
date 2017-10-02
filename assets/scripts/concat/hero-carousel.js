@@ -78,7 +78,7 @@ window.wdsHeroCarousel = {};
 				// Remove both animation classes.
 				slideContent.removeClass( lastClass ).removeClass( animationTrigger );
 			}
-		});
+		} );
 
 		// Add animation classes after slide is in view.
 		activeContent.addClass( animationClass );
@@ -92,7 +92,7 @@ window.wdsHeroCarousel = {};
 
 			// Let them autoplay. TODO: Possibly change this later to only play the visible slide video.
 			this.play();
-		});
+		} );
 	};
 
 	// Kick off Slick.
@@ -100,14 +100,14 @@ window.wdsHeroCarousel = {};
 
 		app.$c.heroCarousel.on( 'init', app.playBackgroundVideos );
 
-		app.$c.heroCarousel.slick({
+		app.$c.heroCarousel.slick( {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: false,
 			dots: false,
 			focusOnSelect: true,
 			waitForAnimate: true
-		});
+		} );
 
 		app.$c.heroCarousel.on( 'afterChange', app.doAnimation );
 	};

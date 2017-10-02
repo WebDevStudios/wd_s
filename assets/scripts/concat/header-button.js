@@ -51,4 +51,4 @@ window.ShowHideSearchForm = {};
 	// Engage
 	$( app.init );
 
-})( window, jQuery, window.ShowHideSearchForm );
+} ( window, jQuery, window.ShowHideSearchForm ) );
