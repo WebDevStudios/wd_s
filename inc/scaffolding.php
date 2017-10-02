@@ -145,7 +145,8 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Add a unique class to the wrapper.
-	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
+	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) );
+	?>
 
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 		<header class="scaffolding-document-header">
@@ -154,18 +155,22 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 
 		<div class="scaffolding-document-content">
 
-			<?php // We'll alter the output slightly depending upon the global type.
+			<?php
+			// We'll alter the output slightly depending upon the global type.
 			switch ( $args['global_type'] ) :
 
-				case 'colors' : ?>
+				case 'colors':
+				?>
 
 					<div class="swatch-container">
 
-					<?php // Grab the array of colors.
+					<?php
+					// Grab the array of colors.
 					$colors = $args['arguments'];
 
 					foreach ( $colors as $name => $hex ) :
-						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
+						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) );
+					?>
 
 						<div class="swatch" style="background-color: <?php echo esc_attr( $hex ); ?>;">
 							<header><?php echo esc_html( $name ); ?></header>
@@ -174,17 +179,20 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 
 					<?php endforeach; ?>
 					</div>
-					<?php break;
-
-				case 'fonts' : ?>
+				<?php
+					break;
+				case 'fonts':
+				?>
 
 					<div class="font-container">
 
-					<?php // Grab the array of fonts.
+					<?php
+					// Grab the array of fonts.
 					$fonts = $args['arguments'];
 
 					foreach ( $fonts as $name => $family ) :
-						$font_var = '$font-' . str_replace( ' ', '-', strtolower( $name ) ); ?>
+						$font_var = '$font-' . str_replace( ' ', '-', strtolower( $name ) );
+					?>
 
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>

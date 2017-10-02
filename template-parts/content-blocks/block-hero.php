@@ -22,7 +22,8 @@ if ( have_rows( 'hero_slides' ) ) :
 	endif;
 
 	// Loop through hero(s).
-	while ( have_rows( 'hero_slides' ) ) : the_row();
+	while ( have_rows( 'hero_slides' ) ) :
+		the_row();
 
 		// Set up fields.
 		$title = get_sub_field( 'headline' );
@@ -35,14 +36,13 @@ if ( have_rows( 'hero_slides' ) ) :
 		_s_display_block_options( array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
 			'class'     => 'content-block hero slide', // Container class.
-			)
-		);
+		) );
 
 		// If we have a slider, set the animation in a data-attribute.
 		if ( $slide_count > 1 ) : ?>
-			<div class="hero-content " data-animation="<?php echo esc_attr( $animation_class ) ?>">
+			<div class="hero-content " data-animation="<?php echo esc_attr( $animation_class ); ?>">
 		<?php else : ?>
-			<div class="hero-content <?php echo esc_attr( $animation_class ) ?>">
+			<div class="hero-content <?php echo esc_attr( $animation_class ); ?>">
 		<?php endif; ?>
 
 			<?php if ( $title ) : ?>

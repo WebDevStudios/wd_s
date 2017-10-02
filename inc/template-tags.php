@@ -429,6 +429,11 @@ function _s_display_card( $args = array() ) {
 	<?php
 }
 
+/**
+ * Display header button.
+ *
+ * @author Corey Collins
+ */
 function _s_display_header_button() {
 
 	// Get our button setting.
@@ -446,7 +451,8 @@ function _s_display_header_button() {
 	<div class="site-header-action">
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
-		if ( 'link' == $button_setting && $button_url ) : ?>
+		if ( 'link' == $button_setting && $button_url ) :
+		?>
 			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', '_s' ) ); ?></a>
 		<?php else : ?>
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">

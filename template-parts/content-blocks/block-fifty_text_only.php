@@ -16,14 +16,18 @@ _s_display_block_options( array(
 	'class'     => 'content-block grid-container fifty-fifty fifty-text-only', // The container class.
 ) );
 ?>
-	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
+	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
 
 		<div class="cell">
-			<?php echo force_balance_tags( $text_primary ); // WPCS: XSS OK. ?>
+			<?php
+				echo force_balance_tags( $text_primary ); // WPCS: XSS OK.
+			?>
 		</div>
 
 		<div class="cell">
-			<?php echo force_balance_tags( $text_secondary ); // WPCS: XSS OK. ?>
+			<?php
+				echo force_balance_tags( $text_secondary ); // WPCS: XSS OK.
+			?>
 		</div>
 
 	</div><!-- .grid-x -->

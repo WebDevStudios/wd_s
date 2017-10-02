@@ -198,9 +198,10 @@ add_action( 'customize_register', '_s_customize_header_button' );
 
 /**
  * Sanitizes the select dropdown in the customizer.
- * @param  [type] $input   [description]
- * @param  [type] $setting [description]
- * @return [type]          [description]
+ *
+ * @param string $input  The input.
+ * @param string $setting The setting.
+ * @return string
  * @author Corey Collins
  */
 function _s_sanitize_select( $input, $setting ) {
