@@ -52,27 +52,6 @@
 			background-color: transparent;
 			outline: 2px solid $color-white;
 		} // &:focus, &:hover
-
-		// When open, display the burger.
-		&.is-visible {
-
-			.hamburger {
-				background-color: transparent;
-
-				&::before,
-				&::after {
-					top: 0;
-				}
-
-				&::before {
-					transform: rotate(45deg);
-				}
-
-				&::after {
-					transform: rotate(-45deg);
-				}
-			} // .hamburger
-		} // .is-visible
 	} // .off-canvas-button
 
 	// The close "X" button.
