@@ -14,24 +14,8 @@
 		@include list-reset;
 	} // ul
 
-	&.menu-horizontal {
-		li {
-			display: inline-block;
-		} // li
-	} // &.menu-horizontal
-
-	&.menu-vertical {
-		li {
-			margin: 0;
-		} // li
-
-		a {
-			border-bottom: 1px solid $color-background-hr;
-			padding: rem(10);
-		} // a
-	} // &.menu-vertical
-
 	&.dropdown {
+
 		// Sub-menu
 		ul {
 			@include position(absolute, rem(24) null null -999em);
