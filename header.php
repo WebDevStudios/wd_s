@@ -46,6 +46,8 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<?php _s_display_header_button(); ?>
+
 		<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
 			<span class="hamburger"></span>
 		</button>
@@ -59,8 +61,6 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
-
-		<?php _s_display_header_button(); ?>
 
 	</header><!-- .site-header-->
 
