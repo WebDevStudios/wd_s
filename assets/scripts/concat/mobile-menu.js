@@ -119,13 +119,6 @@ window.wdsMobileMenu = {};
 
 		// Slide the menu in.
 		subMenu.addClass( 'is-visible animated slideInLeft' );
-
-		app.$c.body.css( 'overflow', 'hidden' );
-		app.$c.body.bind( 'touchstart', function( e ) {
-			if ( ! $( e.target ).parents( '.contact-modal' )[0] ) {
-				e.preventDefault();
-			}
-		} );
 	};
 
 	// Force close all the submenus when the main menu container is closed.
@@ -139,6 +132,14 @@ window.wdsMobileMenu = {};
 			app.$c.body.unbind( 'touchstart' );
 		}
 
+		if ( $( this ).hasClass( 'is-visible' ) ) {
+			app.$c.body.css( 'overflow', 'hidden' );
+			app.$c.body.bind( 'touchstart', function( e ) {
+				if ( ! $( e.target ).parents( '.contact-modal' )[0] ) {
+					e.preventDefault();
+				}
+			} );
+		}
 	};
 
 	// Engage!
