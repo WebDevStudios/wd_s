@@ -85,16 +85,10 @@
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
-	@include span-columns(7);
-
 	display: none;
 
 	@include media($tablet-landscape) {
 		display: block;
-	}
-
-	@include media($desktop-large) {
-		@include span-columns(8);
 	}
 
 	// Menu area
