@@ -2,29 +2,6 @@
 // Header
 //--------------------------------------------------------------
 
-// Site Title
-.site-title {
-	font-size: rem(48);
-
-	// Align next to the logo on mid-size screens.
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
-		float: left;
-		margin: 0;
-		padding: 0 rem(12);
-		width: 50%;
-	}
-} // .site-title
-
-// Site Description
-.site-description {
-	font-size: rem(24);
-	margin: 0 0 rem(24) 0;
-
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
-		clear: both;
-	}
-} // .site-description
-
 // Site logo.
 .site-branding {
 	@include span-columns(10);
@@ -34,7 +11,7 @@
 	}
 
 	@include media($tablet-landscape) {
-		@include span-columns(3);
+		@include span-columns(5);
 	}
 
 	// Don't let the logo get out of control.
@@ -44,18 +21,60 @@
 			width: 50%;
 		}
 	} // img
+
+	// Site Title
+	.site-title {
+		font-size: rem(48);
+
+		// Align next to the logo on mid-size screens.
+		@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+			float: left;
+			margin: 0;
+			padding: 0 rem(12);
+			width: 50%;
+		}
+	} // .site-title
+
+	// Site Description
+	.site-description {
+		font-size: rem(24);
+		margin: 0 0 rem(24) 0;
+
+		@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+			clear: both;
+		}
+	} // .site-description
 } // .site-branding
 
-// Header action container.
+//-----------------------------------------
+// Header action container — Form Dropdown
+//-----------------------------------------
 .site-header-action {
 	@include span-columns(12);
 
+	@include media($tablet-portrait) {
+		@include span-columns(5);
+	}
+
 	@include media($tablet-landscape) {
-		@include span-columns(2);
+		@include span-columns(4);
+
+		float: right;
+		margin-right: 0;
+	}
+
+	@include media($desktop) {
+		@include span-columns(3);
+
+		float: right;
+		margin-right: 0;
 	}
 
 	@include media($desktop-large) {
-		@include span-columns(1);
+		@include span-columns(2);
+
+		float: right;
+		margin-right: 0;
 	}
 
 	// Span the button the full width.
@@ -83,3 +102,10 @@
 		} // .search-form-visible &
 	} // .search-form
 } // .site-header-action
+
+//-----------------------------------------
+// Main Navigation Container
+//-----------------------------------------
+.main-navigation {
+	@include span-columns(12);
+} // .main-navigation
