@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-// Header
+// Header.
 //--------------------------------------------------------------
 
 // Site logo.
@@ -24,7 +24,7 @@
 } // .site-branding
 
 //-----------------------------------------
-// Site Title
+// Site Title.
 //-----------------------------------------
 .site-title {
 	font-size: rem(48);
@@ -39,7 +39,7 @@
 } // .site-title
 
 //-----------------------------------------
-// Site Description
+// Site Description.
 //-----------------------------------------
 .site-description {
 	font-size: rem(24);
@@ -51,7 +51,7 @@
 } // .site-description
 
 //-----------------------------------------
-// Header action container — Form Dropdown
+// Header action container — Form Dropdown.
 //-----------------------------------------
 .site-header-action {
 	@include span-columns(12);
@@ -83,7 +83,7 @@
 } // .site-header-action
 
 //-----------------------------------------
-// Site header action cta buttons
+// Site header action cta buttons.
 //-----------------------------------------
 .site-header-action {
 
@@ -99,7 +99,7 @@
 } // .site-header-action
 
 //-----------------------------------------
-// Site header Action Searchform
+// Site header Action Searchform.
 //-----------------------------------------
 .site-header-action {
 
@@ -119,7 +119,7 @@
 } // .site-header-action
 
 //-----------------------------------------
-// Main Navigation Container
+// Main Navigation Container.
 //-----------------------------------------
 .main-navigation {
 	@include span-columns(12);

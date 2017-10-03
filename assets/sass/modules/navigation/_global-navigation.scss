@@ -1,8 +1,8 @@
 //--------------------------------------------------------------
-// Global and Shared Navigation Styles
+// Global and Shared Navigation Styles.
 //--------------------------------------------------------------
 
-// Default menu (active after a fresh WordPress install)
+// Default menu (active after a fresh WordPress install).
 .menu {
 	@include list-reset;
 
@@ -47,7 +47,7 @@
 } // .menu
 
 //-----------------------------------------
-// Caret down
+// Caret down.
 //-----------------------------------------
 .caret-down {
 	@include size(rem(10) rem(20));

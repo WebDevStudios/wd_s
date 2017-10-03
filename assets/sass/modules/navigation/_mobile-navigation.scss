@@ -1,16 +1,16 @@
 //--------------------------------------------------------------
-// Mobile Navigation
+// Mobile Navigation.
 //
-// 1. Mobile Navigation Styles
-// 2. Parent Indicator
-// 3. Menu Item Has Children
-// 4. Hamburger Button
-// 5. Off Canvas Drawer
-// 
+// 1. Mobile Navigation Styles.
+// 2. Parent Indicator.
+// 3. Menu Item Has Children.
+// 4. Hamburger Button.
+// 5. Off Canvas Drawer.
+//
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// 1. Mobile Navigation Styles
+// 1. Mobile Navigation Styles.
 //-----------------------------------------
 .mobile-menu {
 	@include list-reset;
@@ -65,7 +65,7 @@
 } // .parent-indicator
 
 //-----------------------------------------
-// 3. Menu Item Has Children
+// 3. Menu Item Has Children.
 //-----------------------------------------
 .mobile-menu {
 
@@ -131,7 +131,7 @@
 } // .mobile-menu
 
 //-----------------------------------------
-// 4. Hamburger Button
+// 4. Hamburger Button.
 //-----------------------------------------
 .hamburger {
 	background-color: transparent;
@@ -173,7 +173,7 @@
 } // .hamburger
 
 //-----------------------------------------
-// 5. Off Canvas Drawer
+// 5. Off Canvas Drawer.
 //-----------------------------------------
 .off-canvas {
 
