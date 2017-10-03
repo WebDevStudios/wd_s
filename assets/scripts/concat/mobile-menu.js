@@ -19,8 +19,9 @@ window.wdsMobileMenu = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			subMenuContainer: $( '.mobile-menu .sub-menu' ),
-			subMenuParentItem: $( '.mobile-menu li.menu-item-has-children' ),
+			subMenuContainer: $( '.mobile-menu .sub-menu, .utility-navigation .sub-menu' ),
+			subSubMenuContainer: $( '.mobile-menu .sub-menu .sub-menu' ),
+			subMenuParentItem: $( '.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children' ),
 			offCanvasContainer: $( '.off-canvas-container' )
 		};
 	};
@@ -39,19 +40,30 @@ window.wdsMobileMenu = {};
 	};
 
 	// Reset the submenus after it's done closing.
-	app.resetSubMenu = function( e ) {
-		const $target = $( e.target );
+	app.resetSubMenu = function() {
 
 		// When the list item is done transitioning in height,
 		// remove the classes from the submenu so it is ready to toggle again.
-		if ( $target.is( 'li.menu-item-has-children' ) && ! $target.hasClass( 'is-visible' ) ) {
-			$target.find( 'ul.sub-menu' ).removeClass( 'slideOutLeft is-visible' );
+		if ( $( this ).is( 'li.menu-item-has-children' ) && ! $( this ).hasClass( 'is-visible' ) ) {
+			$( this ).find( 'ul.sub-menu' ).removeClass( 'slideOutLeft is-visible' );
 		}
 
 	};
 
 	// Slide out the submenu items.
-	app.slideOutSubMenus = function() {
+	app.slideOutSubMenus = function( el ) {
+
+		// If this item's parent is visible and this is not, bail.
+		if ( el.parent().hasClass( 'is-visible' ) && ! el.hasClass( 'is-visible' ) ) {
+			return;
+		}
+
+		// If this item's parent is visible and this item is visible, hide its submenu then bail.
+		if ( el.parent().hasClass( 'is-visible' ) && el.hasClass( 'is-visible' ) ) {
+			el.removeClass( 'is-visible' ).find( '.sub-menu' ).removeClass( 'slideInLeft' ).addClass( 'slideOutLeft' );
+			return;
+		}
+
 		app.$c.subMenuContainer.each( function() {
 
 			// Only try to close submenus that are actually open.
@@ -64,7 +76,7 @@ window.wdsMobileMenu = {};
 				$( this ).removeClass( 'slideInLeft' ).addClass( 'slideOutLeft' );
 			}
 
-		} );
+		});
 	};
 
 	// Add the down arrow to submenu parents.
@@ -84,7 +96,7 @@ window.wdsMobileMenu = {};
 		if ( $target.hasClass( 'down-arrow' ) || $target.hasClass( 'parent-indicator' ) ) {
 
 			// First, collapse any already opened submenus.
-			app.slideOutSubMenus();
+			app.slideOutSubMenus( el );
 
 			if ( ! subMenu.hasClass( 'is-visible' ) ) {
 
