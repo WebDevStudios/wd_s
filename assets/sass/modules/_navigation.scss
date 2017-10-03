@@ -159,8 +159,6 @@
 
 	// Parent menu items.
 	.menu-item-has-children {
-		max-height: rem(52);
-		overflow-y: hidden;
 		transition: max-height 0.5s;
 
 		&.is-visible {
