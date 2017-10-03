@@ -42,6 +42,11 @@
 			display: none;
 		}
 
+		// Deal with the admin bar.
+		.admin-bar & {
+			@include position(absolute, rem(56) null null null);
+		} // .admin-bar &
+
 		&:focus,
 		&:hover {
 			background-color: transparent;
