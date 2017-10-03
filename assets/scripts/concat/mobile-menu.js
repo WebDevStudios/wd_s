@@ -18,6 +18,7 @@ window.wdsMobileMenu = {};
 	// Cache all the things.
 	app.cache = function() {
 		app.$c = {
+			body: $( 'body' ),
 			window: $( window ),
 			subMenuContainer: $( '.mobile-menu .sub-menu, .utility-navigation .sub-menu' ),
 			subSubMenuContainer: $( '.mobile-menu .sub-menu .sub-menu' ),
@@ -76,7 +77,7 @@ window.wdsMobileMenu = {};
 				$( this ).removeClass( 'slideInLeft' ).addClass( 'slideOutLeft' );
 			}
 
-		});
+		} );
 	};
 
 	// Add the down arrow to submenu parents.
@@ -119,6 +120,12 @@ window.wdsMobileMenu = {};
 		// Slide the menu in.
 		subMenu.addClass( 'is-visible animated slideInLeft' );
 
+		app.$c.body.css( 'overflow', 'hidden' );
+		app.$c.body.bind( 'touchstart', function( e ) {
+			if ( ! $( e.target ).parents( '.contact-modal' )[0] ) {
+				e.preventDefault();
+			}
+		} );
 	};
 
 	// Force close all the submenus when the main menu container is closed.
@@ -128,6 +135,8 @@ window.wdsMobileMenu = {};
 		if ( ! $( this ).hasClass( 'is-visible' ) ) {
 			app.$c.subMenuParentItem.removeClass( 'is-visible' ).find( '.parent-indicator' ).attr( 'aria-expanded', false );
 			app.$c.subMenuContainer.removeClass( 'is-visible slideInLeft' );
+			app.$c.body.css( 'overflow', 'visible' );
+			app.$c.body.unbind( 'touchstart' );
 		}
 
 	};
