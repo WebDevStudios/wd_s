@@ -2,21 +2,6 @@
 // Navigation
 //--------------------------------------------------------------
 
-// Links
-a {
-	color: $color-link;
-
-	&:visited {
-		color: $color-link-visited;
-	} // &:visited
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-link-hover;
-	} // &:hover, &:focus, &:active
-} // a
-
 // Default menu (active after a fresh WordPress install)
 .menu {
 	@include list-reset;
