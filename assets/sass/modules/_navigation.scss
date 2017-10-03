@@ -194,3 +194,44 @@
 		text-align: right;
 	} // &.nav-next
 } // .comment-navigation, .posts-navigation, .post-navigation
+//-----------------------------------------
+// Hamburger icon
+//-----------------------------------------
+.hamburger {
+	background-color: transparent;
+	outline: none;
+
+	&,
+	&::before,
+	&::after {
+		@include size(rem(35) rem(5));
+
+		background: $color-cod-gray;
+		border-radius: $border-radius-thin;
+		content: '';
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		transition: $transition-hamburger;
+	}
+
+	&::before {
+		transform: translateY(rem(-10));
+	}
+
+	&::after {
+		transform: translateY(rem(10));
+	}
+
+	.is-visible & {
+		background-color: transparent;
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	} // .is-visible
+} // .hamburger

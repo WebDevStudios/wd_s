@@ -33,43 +33,6 @@
 	} // .social-icon
 } // .social-icons
 
-
-//-----------------------------------------
-// Hamburger icon
-//-----------------------------------------
-.hamburger {
-	background-color: transparent;
-	cursor: pointer;
-	display: block;
-	outline: none;
-	top: 40%;
-
-	&,
-	&::before,
-	&::after {
-		@include size(rem(35) rem(5));
-
-		background: $color-cod-gray;
-		border-radius: $border-radius-thin;
-		content: '';
-		cursor: pointer;
-		display: block;
-		position: absolute;
-		// sass-lint:disable no-transition-all
-		transition: $transition-all; // too much going on, use "all"
-		// sass-lint:enable no-transition-all
-	}
-
-	&::before {
-		top: rem(-10);
-	}
-
-	&::after {
-		bottom: rem(-10);
-	}
-} // .hamburger
-
-
 //-----------------------------------------
 // Close icon
 //-----------------------------------------
