@@ -93,19 +93,19 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  */
 function _s_get_placeholder_image( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'background_color'	=> 'dddddd',
-		'text_color'		=> '000000',
+		'width'            => '',
+		'height'           => '',
+		'background_color' => 'dddddd',
+		'text_color'       => '000000',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
 
 	// Extract the vars we want to work with.
-	$width 				= $args['width'];
-	$height			 	= $args['height'];
-	$background_color	= $args['background_color'];
-	$text_color 		= $args['text_color'];
+	$width = $args['width'];
+	$height = $args['height'];
+	$background_color = $args['background_color'];
+	$text_color = $args['text_color'];
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
@@ -150,10 +150,10 @@ function _s_get_placeholder_image( $args = array() ) {
  */
 function _s_get_placeholder_unsplash( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'category'			=> '',
-		'keywords'			=> '',
+		'width'    => '',
+		'height'   => '',
+		'category' => '',
+		'keywords' => '',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
@@ -168,7 +168,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 	);
 
 	// If there is an invalid category lets erase it.
-	if ( ! empty( $args['category'] )  && ! in_array( $args['category'], $valid_categories, true ) ) {
+	if ( ! empty( $args['category'] ) && ! in_array( $args['category'], $valid_categories, true ) ) {
 		$args['category'] = '';
 	}
 

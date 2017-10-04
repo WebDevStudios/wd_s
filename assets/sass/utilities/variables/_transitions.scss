@@ -17,4 +17,7 @@ $transition-border: border 0.2s ease-in-out;
 $transition-all: all 0.5s ease-in-out;
 
 /// Transform transitions.
-$transition-transform: transform 0.8s ease-in-out;
+$transition-transform: transform 0.5s ease-in-out;
+
+/// Transform Hamburger
+$transition-hamburger: transform 0.5s, background-color 0.3s ease-in-out;

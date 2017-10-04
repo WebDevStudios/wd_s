@@ -5,9 +5,8 @@
 //-----------------------------------------
 // Padding
 //-----------------------------------------
-@for $i from 1 through length($spacing_options) {
-
-	$number: nth($spacing_options, $i);
+@for $i from 1 through length($spacing-options) {
+	$number: nth($spacing-options, $i);
 
 	.pad-#{$number} {
 		@include padding(rem($number));
@@ -60,13 +59,11 @@
 	} // .pad-0-#{$option}
 } // end @for
 
-
 //-----------------------------------------
 // Margins
 //-----------------------------------------
-@for $i from 1 through length($spacing_options) {
-
-	$number: nth($spacing_options, $i);
+@for $i from 1 through length($spacing-options) {
+	$number: nth($spacing-options, $i);
 
 	.margin-#{$number} {
 		@include margin(rem($number));

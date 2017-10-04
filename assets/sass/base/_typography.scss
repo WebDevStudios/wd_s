@@ -16,6 +16,13 @@ textarea {
 // Headers
 //--------------------------------------------------------------
 
+// Global Header Resets.
+@for $i from 1 through 6 {
+	h#{$i} {
+		margin-top: 0;
+	} // h#{$i}
+} // end @for
+
 h1,
 .h1 {
 

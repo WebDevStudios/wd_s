@@ -1,0 +1,24 @@
+//--------------------------------------------------------------
+// Navigation on Comment, Post and Posts.
+//--------------------------------------------------------------
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	.site-main & {
+		margin: 0 0 rem(24) 0;
+		overflow: hidden;
+	} // .site-main &
+
+	.nav-previous {
+		@include size(50% auto);
+
+		float: left;
+	} // &.nav-previous
+
+	.nav-next {
+		@include size(50% auto);
+
+		float: right;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation

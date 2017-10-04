@@ -25,26 +25,26 @@ msgstr ""
 msgid "Comment section"
 msgstr ""
 
-#: comments.php:33
+#: comments.php:34
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:42, comments.php:64
+#: comments.php:45, comments.php:71
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:45, comments.php:67
+#: comments.php:48, comments.php:74
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:46, comments.php:68
+#: comments.php:49, comments.php:75
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:81
+#: comments.php:89
 msgid "Comments are closed."
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
-#: search.php:19
+#: search.php:18
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -219,7 +219,11 @@ msgstr ""
 msgid "Link to %s"
 msgstr ""
 
-#: inc/template-tags.php:451, inc/template-tags.php:452
+#: inc/template-tags.php:456
+msgid "More Information"
+msgstr ""
+
+#: inc/template-tags.php:458, inc/template-tags.php:459
 msgid "Search"
 msgstr ""
 
@@ -227,19 +231,19 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:21
+#: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:35
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:31
+#: template-parts/content-none.php:38
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22, template-parts/content.php:37
+#: template-parts/content-page.php:22, template-parts/content.php:41
 msgid "Pages:"
 msgstr ""
 
@@ -251,15 +255,15 @@ msgstr ""
 msgid "Share This"
 msgstr ""
 
-#: template-parts/sharing-icons.php:18, template-parts/sharing-icons.php:20
+#: template-parts/sharing-icons.php:19, template-parts/sharing-icons.php:22
 msgid "Share on Twitter"
 msgstr ""
 
-#: template-parts/sharing-icons.php:28, template-parts/sharing-icons.php:30
+#: template-parts/sharing-icons.php:31, template-parts/sharing-icons.php:34
 msgid "Share on Facebook"
 msgstr ""
 
-#: template-parts/sharing-icons.php:38, template-parts/sharing-icons.php:40
+#: template-parts/sharing-icons.php:43, template-parts/sharing-icons.php:46
 msgid "Share on LinkedIn"
 msgstr ""
 
@@ -347,7 +351,15 @@ msgstr ""
 msgid "Enter the URL or email address to be used by the button in the header."
 msgstr ""
 
-#: template-parts/scaffolding/scaffolding-blank.php:12
+#: inc/customizer/settings.php:189
+msgid "Header Button Text"
+msgstr ""
+
+#: inc/customizer/settings.php:190
+msgid "Enter the text to be displayed in the button in the header."
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-blank.php:11
 msgid "X"
 msgstr ""
 

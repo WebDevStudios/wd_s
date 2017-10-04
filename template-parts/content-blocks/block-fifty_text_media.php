@@ -16,10 +16,12 @@ _s_display_block_options( array(
 	'class'     => 'content-block grid-container fifty-fifty fifty-text-media', // Container class.
 ) );
 ?>
-	<div class="grid-x <?php echo esc_attr( $animation_class ) ?>">
+	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
 
 		<div class="cell">
-			<?php echo force_balance_tags( $text ); // WPCS: XSS OK. ?>
+			<?php
+				echo force_balance_tags( $text ); // WPCS: XSS OK.
+			?>
 		</div>
 
 		<div class="cell">

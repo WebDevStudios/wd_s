@@ -17,7 +17,8 @@ if ( ! class_exists( 'acf' ) ) {
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
-		while ( have_rows( 'content_blocks' ) ) : the_row();
+		while ( have_rows( 'content_blocks' ) ) :
+			the_row();
 			get_template_part( 'template-parts/content-blocks/block', get_row_layout() ); // Template part name MUST match layout ID.
 		endwhile;
 		wp_reset_postdata();
@@ -39,11 +40,11 @@ function _s_display_block_options( $args = array() ) {
 
 	// Setup defaults.
 	$defaults = array(
-		'background_type' 	=> $background_options['background_type']['value'],
-		'font_color'	  	=> $other_options['font_color'],
-		'container'       	=> 'section',
-		'class'           	=> 'content-block',
-		'custom_css_class'	=> $other_options['custom_css_class'],
+		'background_type'  => $background_options['background_type']['value'],
+		'font_color'       => $other_options['font_color'],
+		'container'        => 'section',
+		'class'            => 'content-block',
+		'custom_css_class' => $other_options['custom_css_class'],
 	);
 
 	// Parse args.
