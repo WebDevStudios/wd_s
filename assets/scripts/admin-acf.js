@@ -4,7 +4,7 @@
  * @author Corey Collins
  */
 window.ACFColorPickerOptions = {};
-( function( window, $, app ) {
+( function( window, $, app, acf ) {
 
 	// Constructor
 	app.init = function() {
@@ -51,7 +51,7 @@ window.ACFColorPickerOptions = {};
 
 			// Add a class to the parent container so we can modify the output.
 			$( this ).parents( '.acf-field' ).addClass( 'color-picker-customizations' );
-		});
+		} );
 	};
 
 	// Adjust new color pickers.
@@ -67,4 +67,4 @@ window.ACFColorPickerOptions = {};
 	// Engage
 	$( app.init );
 
-}( window, jQuery, window.ACFColorPickerOptions ) );
+}( window, jQuery, window.ACFColorPickerOptions, window.acf ) );
