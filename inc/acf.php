@@ -129,25 +129,16 @@ function _s_get_animation_class() {
  */
 function _s_acf_admin_scripts() {
 
-	/**
-	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
-	 */
-	$debug = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG == true ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
+	// If a SCRIPT_DEBUG constant is defined or there is a $_GET param of 'script_debug', load unminified files.
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || isset( $_GET['script_debug'] ) ? '' : '.min';
 
-	/**
-	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
-	 */
+	// Version assets using this value. Bump it to bust old, cached files.
 	$version = '1.0.0';
 
-	/**
-	 * Should we load minified files?
-	 */
-	$suffix = ( true === $debug ) ? '' : '.min';
-
-	// Enqueue our JS to tweak the color picker swatches.
+	// Enqueue JS to tweak the color picker swatches.
 	wp_enqueue_script( '_s-admin-acf-scripts', get_template_directory_uri() . '/assets/scripts/admin-acf' . $suffix . '.js', array( 'jquery' ), $version, true );
 
-	// Enqueue our color picker styles.
-	wp_enqueue_style( '_s-admin-acf-styles', get_template_directory_uri() . '/admin-acf-styles.css', null, $version );
+	// Enqueue color picker styles.
+	wp_enqueue_style( '_s-admin-acf-styles', get_template_directory_uri() . '/admin-acf-styles.css', array(), $version );
 }
 add_action( 'acf/input/admin_head', '_s_acf_admin_scripts' );
