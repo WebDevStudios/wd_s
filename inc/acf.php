@@ -125,7 +125,7 @@ function _s_get_animation_class() {
 /**
  * Enqueues scripts for ACF.
  *
- * @author Corey Collins
+ * @author Corey Collins, Kellen Mace
  */
 function _s_acf_admin_scripts() {
 
