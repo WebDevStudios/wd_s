@@ -81,6 +81,19 @@
 	};
 
 	/**
+	 * Close the modal by clicking outside of it.
+	 *
+	 * @param {Object} e The event.
+	 */
+	Modal.prototype.closeModalByClick = function( e ) {
+
+		// If the parent container is NOT the modal dialog container, close the modal
+		if ( ! $( e.target ).parents( 'div' ).hasClass( 'modal-dialog' ) ) {
+			this.closeModal();
+		}
+	};
+
+	/**
 	 * Bind modal events.
 	 *
 	 * @private
@@ -92,6 +105,9 @@
 
 		// Close the modal when clicking the close trigger.
 		this.$c.body.on( 'click touchstart', '.close', this.closeModal.bind( this ) );
+
+		// Allow the user to close the modal by clicking outside of the modal.
+		this.$c.body.on( 'click touchstart', 'div.modal-open', this.closeModalByClick.bind( this ) );
 
 		// Allow the user to close the modal by hitting the esc key.
 		this.$c.body.on( 'keydown', escKeyClose.bind( this ) );
