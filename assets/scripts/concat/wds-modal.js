@@ -8,6 +8,9 @@
 	 */
 	function Modal( options ) {
 
+		// Capture the target modal data attribute.
+		this.target = null;
+
 		// Set custom figuration options.
 		this.config = Object.assign({
 			trigger: '.modal-trigger',
@@ -37,12 +40,12 @@
 		const $trigger = $( e.target );
 
 		// Get a reference to the target modal
-		const target = $trigger.data( 'target' ) || $trigger.parents().data( 'target' );
+		this.target = $trigger.data( 'target' ) || $trigger.parents().data( 'target' );
 		let $targetModal;
 
 		// If there is a specified target. Otherwise default to config.
-		if ( target ) {
-			$targetModal = $( target );
+		if ( this.target ) {
+			$targetModal = $( this.target );
 		} else {
 			$targetModal = $( this.config.content );
 		}
