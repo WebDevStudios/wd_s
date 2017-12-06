@@ -52,8 +52,6 @@
 
 	/**
 	 * Close the modal.
-	 *
-	 * @param {Object} e Close modal event.
 	 */
 	Modal.prototype.closeModal = function() {
 
@@ -76,6 +74,20 @@
 
 		// Close the modal when clicking the close trigger.
 		this.$c.body.on( 'click touchstart', '.close', this.closeModal.bind( this ) );
+
+		// Allow the user to close the modal by hitting the esc key.
+		this.$c.body.on( 'keydown', escKeyClose.bind( this ) );
+	}
+
+	/**
+	 * Close if "esc" key is pressed.
+	 *
+	 * @param {Object} e The event.
+	 */
+	function escKeyClose( e ) {
+		if ( 27 === e.keyCode ) {
+			this.closeModal();
+		}
 	}
 
 	// Attach the Modal constructor to the window.
