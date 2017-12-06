@@ -55,8 +55,13 @@
 	 *
 	 * @param {Object} e Close modal event.
 	 */
-	Modal.prototype.closeModal = function( e ) {
+	Modal.prototype.closeModal = function() {
 
+		// Remove body class.
+		this.$c.body.removeClass( 'modal-open' );
+
+		// Remove class from modal.
+		this.$targetModal.removeClass( 'modal-open' );
 	};
 
 	/**
@@ -65,7 +70,12 @@
 	 * @private
 	 */
 	function bindEvents() {
+
+		// Open the modal when clicking a trigger.
 		this.$c.body.on( 'click touchstart', this.config.trigger, this.openModal.bind( this ) );
+
+		// Close the modal when clicking the close trigger.
+		this.$c.body.on( 'click touchstart', '.close', this.closeModal.bind( this ) );
 	}
 
 	// Attach the Modal constructor to the window.
