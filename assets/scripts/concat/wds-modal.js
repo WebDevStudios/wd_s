@@ -41,17 +41,12 @@
 
 		// Get a reference to the target modal
 		this.target = $trigger.data( 'target' ) || $trigger.parents().data( 'target' );
-		let $targetModal;
 
-		// If there is a specified target. Otherwise default to config.
-		if ( this.target ) {
-			$targetModal = $( this.target );
-		} else {
-			$targetModal = $( this.config.content );
-		}
+		// Get a jQuery instance of the target modal.
+		this.$targetModal = this.target ? $( this.target ) : $( this.config.content );
 
 		// Add classes to the modal and body.
-		$targetModal.addClass( 'modal-open' );
+		this.$targetModal.addClass( 'modal-open' );
 		this.$c.body.addClass( 'modal-open' );
 	};
 
