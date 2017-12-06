@@ -11,7 +11,7 @@
 
 	<h2 class="scaffolding-heading"><?php esc_html_e( 'Icons', '_s' ); ?></h2>
 
-	<?php 
+	<?php
 	// SVG Icon.
 	_s_display_scaffolding_section( array(
 		'title'       => 'SVG',
@@ -20,7 +20,7 @@
 		'parameters'  => array(
 			'$args' => '(required) Configuration arguments.',
 		),
-		'arguments'    => array(
+		'arguments' => array(
 			'icon'   => '(required) The SVG icon file name. Default none',
 			'title'  => '(optional) The title of the icon. Default: none',
 			'desc'   => '(optional) The description of the icon. Default: none',
@@ -28,6 +28,9 @@
 			'height' => '(optional) The height of the icon. Default: none',
 			'width'  => '(optional) The width of the icon. Default: none',
 		),
-		'output'       => _s_display_svg( array( 'icon' => 'facebook-square' ) ),
-	) ); ?>
+		'output' => _s_display_svg( array(
+			'icon' => 'facebook-square',
+		) ),
+	) );
+	?>
 </section>

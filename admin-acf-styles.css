@@ -1,0 +1,30 @@
+.color-picker-customizations .iris-picker {
+	height: auto !important;
+	overflow: hidden;
+	padding: 20px 20px 10px !important;
+}
+
+.color-picker-customizations .iris-border .iris-palette-container {
+	bottom: unset;
+	left: unset;
+	overflow: hidden;
+	position: relative;
+	top: unset;
+}
+
+.color-picker-customizations .iris-picker .iris-palette {
+	height: 40px !important;
+	margin-bottom: 5%;
+	margin-left: 0 !important;
+	margin-right: 10px;
+	width: calc(25% - 10px) !important;
+}
+
+.color-picker-customizations .iris-picker .iris-palette:nth-child(4n) {
+	margin-right: 0;
+}
+
+
+.color-picker-customizations .iris-picker-inner {
+	display: none;
+}

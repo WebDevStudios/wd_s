@@ -46,6 +46,8 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<?php _s_display_header_button(); ?>
+
 		<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
 			<span class="hamburger"></span>
 		</button>
@@ -60,11 +62,6 @@
 			?>
 		</nav><!-- #site-navigation -->
 
-		<div class="site-header-action">
-			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Contact Us', '_s' ); ?>">
-				<?php esc_html_e( 'Contact Us', '_s' ); ?>
-			</button>
-		</div><!-- .header-trigger -->
 	</header><!-- .site-header-->
 
 	<div id="content" class="site-content">

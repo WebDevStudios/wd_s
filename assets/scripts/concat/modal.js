@@ -171,7 +171,7 @@ window.wdsModal = {};
 				'onReady': app.onPlayerReady,
 				'onStateChange': app.onPlayerStateChange
 			}
-		});
+		} );
 	};
 
 	// Do something on player ready.

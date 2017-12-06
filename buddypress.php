@@ -15,12 +15,14 @@ get_header(); ?>
 	<div class="primary content-area">
 		<main id="main" class="site-main">
 
-			<?php while ( have_posts() ) :
-				the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-				<?php get_template_part( 'template-parts/content', 'buddypress' ); ?>
+				get_template_part( 'template-parts/content', 'buddypress' );
 
-			<?php endwhile; // end of the loop. ?>
+			endwhile; // End of the loop.
+			?>
 
 		</main><!-- #main -->
 	</div><!-- .primary -->

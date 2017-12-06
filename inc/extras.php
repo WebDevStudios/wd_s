@@ -8,36 +8,26 @@
  */
 
 /**
- * Returns true if a blog has more than 1 category.
+ * Returns true if a blog has more than 1 category, else false.
  *
- * @return bool
+ * @return bool Whether the blog has more than one category.
  */
 function _s_categorized_blog() {
 
-	// Get the categories.
-	$all_the_cool_cats = get_transient( '_s_categories' );
-	if ( false === $all_the_cool_cats ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
+	$category_count = get_transient( '_s_categories' );
+
+	if ( false === $category_count ) {
+
+		$category_count_query = get_categories( array(
+			'fields' => 'count',
 		) );
 
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$category_count = (int) $category_count_query[0];
 
-		set_transient( '_s_categories', $all_the_cool_cats );
+		set_transient( '_s_categories', $category_count );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false.
-		return false;
-	}
+	return $category_count > 1;
 }
 
 /**
@@ -93,19 +83,19 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  */
 function _s_get_placeholder_image( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'background_color'	=> 'dddddd',
-		'text_color'		=> '000000',
+		'width'            => '',
+		'height'           => '',
+		'background_color' => 'dddddd',
+		'text_color'       => '000000',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
 
 	// Extract the vars we want to work with.
-	$width 				= $args['width'];
-	$height			 	= $args['height'];
-	$background_color	= $args['background_color'];
-	$text_color 		= $args['text_color'];
+	$width = $args['width'];
+	$height = $args['height'];
+	$background_color = $args['background_color'];
+	$text_color = $args['text_color'];
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
@@ -150,10 +140,10 @@ function _s_get_placeholder_image( $args = array() ) {
  */
 function _s_get_placeholder_unsplash( $args = array() ) {
 	$default_args = array(
-		'width'				=> '',
-		'height'			=> '',
-		'category'			=> '',
-		'keywords'			=> '',
+		'width'    => '',
+		'height'   => '',
+		'category' => '',
+		'keywords' => '',
 	);
 
 	$args = wp_parse_args( $args, $default_args );
@@ -168,7 +158,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 	);
 
 	// If there is an invalid category lets erase it.
-	if ( ! empty( $args['category'] )  && ! in_array( $args['category'], $valid_categories, true ) ) {
+	if ( ! empty( $args['category'] ) && ! in_array( $args['category'], $valid_categories, true ) ) {
 		$args['category'] = '';
 	}
 

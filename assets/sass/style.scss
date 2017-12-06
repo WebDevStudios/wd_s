@@ -22,6 +22,7 @@ $output-bourbon-deprecation-warnings: false;
 @import 'utilities/variables/index';
 @import 'neat';
 @import 'utilities/mixins/index';
+@import 'utilities/helpers/index';
 @import 'assets/bower_components/normalize-css/normalize.css';
 @import 'assets/bower_components/animate.css/animate.css';
 
