@@ -55,6 +55,24 @@
 	 */
 	Modal.prototype.closeModal = function() {
 
+		// Find the iframe in the $modal object.
+		const $iframe = this.$targetModal.find( 'iframe' );
+
+		// Only do this if there are any iframes.
+		if ( $iframe.length ) {
+
+			// Get the iframe src URL.
+			let url = $iframe.attr( 'src' );
+
+			// Removing/Readding the URL will effectively break the YouTube API.
+			// So let's not do that when the iframe URL contains the enablejsapi parameter.
+			if ( ! url.includes( 'enablejsapi=1' ) ) {
+
+				// Remove the source URL, then add it back, so the video can be played again later.
+				$iframe.attr( 'src', '' ).attr( 'src', url );
+			}
+		}
+
 		// Remove body class.
 		this.$c.body.removeClass( 'modal-open' );
 
