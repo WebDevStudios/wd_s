@@ -1,0 +1,16 @@
+{
+    "name": "webdevstudios/wd_s",
+    "description": "A theme boilerplate for WebDevStudios.",
+    "type": "project",
+    "require": {
+        "webdevstudios/wds-coding-standards": "^1.1"
+    },
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "WebDevStudios",
+            "email": "contact@webdevstudios.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
