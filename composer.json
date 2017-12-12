@@ -1,7 +1,7 @@
 {
     "name": "webdevstudios/wd_s",
     "description": "A theme boilerplate for WebDevStudios.",
-    "type": "project",
+    "type": "wordpress-theme",
     "require": {
         "webdevstudios/wds-coding-standards": "^1.1"
     },
