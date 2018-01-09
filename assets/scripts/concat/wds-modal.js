@@ -10,6 +10,10 @@
 
 		// Capture the target modal data attribute.
 		this.target = null;
+		this.focusableItems = `a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled])
+		button:not([disabled]), iframe, object, embed, [tabindex="0"]`;
+		this.firstStop = null;
+		this.lastStop = null;
 
 		// Set custom figuration options.
 		this.config = Object.assign({
@@ -30,6 +34,7 @@
 
 	/**
 	 * Opens the modal.
+	 * Keyboard trapping ideas. https://www.youtube.com/watch?v=BoAsayPVogE.
 	 *
 	 * @param {Object} e Open modal event.
 	 */
@@ -45,9 +50,21 @@
 		// Get a jQuery instance of the target modal.
 		this.$targetModal = this.target ? $( this.target ) : $( this.config.content );
 
+		this.$targetModal.on( 'keydown', trapKeys.bind( this ) );
+
 		// Add classes to the modal and body.
 		this.$targetModal.addClass( 'modal-open' );
 		this.$c.body.addClass( 'modal-open' );
+
+		// Find all focusable elements inside the modal.
+		this.$c.focusElements = this.$targetModal.find( this.focusableItems );
+
+		// Set first and last elements.
+		this.firstStop = this.$c.focusElements[0];
+		this.lastStop = this.$c.focusElements[this.$c.focusElements.length - 1];
+
+		// Focus first element.
+		this.firstStop.focus();
 	};
 
 	/**
@@ -121,6 +138,30 @@
 	function escKeyClose( e ) {
 		if ( 27 === e.keyCode ) {
 			this.closeModal();
+		}
+	}
+
+	/**
+	 * Trap the focus inside an open modal.
+	 *
+	 * @param {Object} e The event.
+	 */
+	function trapKeys( e ) {
+		// If pressing the Tab key.
+		if ( 9 === e.keyCode ) {
+
+			// If pressing Shift + Tab.
+			if ( e.shiftKey ) {
+				if ( this.firstStop === document.activeElement ) {
+					e.preventDefault();
+					this.lastStop.focus();
+				}
+			} else {
+				if ( this.lastStop === document.activeElement ) {
+					e.preventDefault();
+					this.firstStop.focus();
+				}
+			}
 		}
 	}
 
