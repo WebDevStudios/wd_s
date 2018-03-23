@@ -210,11 +210,36 @@ add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_
  */
 function _s_return_flexible_content_layout_value( $type ) {
 
-	// $type = 'image' or 'video' or 'color'
-
 	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
 	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
 
 	return $background_type ? $background_type : $background_type_repeater;
 }
 
+if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
+
+	/**
+	 * Set Admin Styles for Flexible Content Layout Image/Title in _s_acf_flexible_content_layout_title().
+	 */
+	function _s_flexible_content_layout_title_acf_admin_head() {
+	?>
+	<style type="text/css">
+		.acf-flexible-content .layout .acf-fc-layout-handle {
+			display: flex;
+			align-items: center;
+		}
+
+		.acf-flexible-title-image,
+		.acf-flexible-content .layout .acf-fc-layout-order {
+			margin-right: 10px;
+		}
+
+		.acf-flexible-content-headline-title {
+			display: inline-block;
+			margin-left: 8px;
+		}
+	</style>
+	<?php
+	}
+	add_action( 'acf/input/admin_head', '_s_flexible_content_layout_title_acf_admin_head' );
+}
