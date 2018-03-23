@@ -210,6 +210,10 @@ add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_
  */
 function _s_return_flexible_content_layout_value( $type ) {
 
+	if ( empty( $type ) ) {
+		return;
+	}
+
 	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
 	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
 
