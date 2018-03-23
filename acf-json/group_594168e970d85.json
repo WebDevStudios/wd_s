@@ -34,53 +34,33 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "ID": 5831,
-                    "key": "field_594168fa457bd",
+                    "key": "field_5ab3e485ab634",
                     "label": "Font Color",
                     "name": "font_color",
-                    "prefix": "acf",
                     "type": "color_picker",
-                    "value": null,
-                    "menu_order": 0,
                     "instructions": "Change the text color of this block.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 6037,
                     "wrapper": {
                         "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "font_color",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "default_value": ""
                 },
                 {
-                    "ID": 5832,
-                    "key": "field_5941ea778fe87",
+                    "key": "field_5ab3e4afab635",
                     "label": "Custom CSS Class",
                     "name": "custom_css_class",
-                    "prefix": "acf",
                     "type": "text",
-                    "value": null,
-                    "menu_order": 1,
                     "instructions": "Add a custom CSS class to this block.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 6037,
                     "wrapper": {
                         "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "custom_css_class",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "default_value": "",
                     "placeholder": "custom-class",
                     "prepend": "",
@@ -88,28 +68,18 @@
                     "maxlength": ""
                 },
                 {
-                    "ID": 6030,
-                    "key": "field_596cf9b68538d",
+                    "key": "field_5ab3e4c7ab636",
                     "label": "Animation",
                     "name": "animation",
-                    "prefix": "acf",
                     "type": "select",
-                    "value": null,
-                    "menu_order": 2,
                     "instructions": "Select the animation for this block. Animations can only be applied to the entire block, not to individual elements.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 6037,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "animation",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "choices": {
                         "null": "None",
                         "bounce": "bounce",
@@ -192,7 +162,7 @@
                     "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
-                    "ui": 1,
+                    "ui": 0,
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
@@ -209,7 +179,7 @@
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -217,5 +187,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1500323207
+    "modified": 1521739116
 }
