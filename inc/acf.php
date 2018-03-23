@@ -200,3 +200,21 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	return $title;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
+
+/**
+ * Return flexible content field value by type
+ *
+ * @param string $type field type.
+ *
+ * @return string field value.
+ */
+function _s_return_flexible_content_layout_value( $type ) {
+
+	// $type = 'image' or 'video' or 'color'
+
+	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
+	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
+
+	return $background_type ? $background_type : $background_type_repeater;
+}
+
