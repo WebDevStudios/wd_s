@@ -34,7 +34,7 @@
             "collapsed": "field_59416dec934f9",
             "min": 1,
             "max": 0,
-            "layout": "row",
+            "layout": "block",
             "button_label": "Add Slide",
             "sub_fields": [
                 {
@@ -62,7 +62,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -81,7 +81,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -174,5 +174,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1501603119
+    "modified": 1521823290
 }
