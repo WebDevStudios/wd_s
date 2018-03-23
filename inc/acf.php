@@ -58,17 +58,17 @@ function _s_display_block_options( $args = array() ) {
 	if ( $args['background_type'] ) {
 		if ( 'color' === $args['background_type'] ) {
 			$background_color = $background_options['background_color'];
-			$inline_style .= 'background-color: ' . $background_color . '; ';
+			$inline_style    .= 'background-color: ' . $background_color . '; ';
 		}
 
 		if ( 'image' === $args['background_type'] ) {
 			$background_image = $background_options['background_image'];
-			$inline_style .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
-			$args['class'] .= ' image-as-background';
+			$inline_style    .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
+			$args['class']   .= ' image-as-background';
 		}
 
 		if ( 'video' === $args['background_type'] ) {
-			$background_video = $background_options['background_video'];
+			$background_video        = $background_options['background_video'];
 			$background_video_markup = '<video class="video-as-background" autoplay muted loop preload="auto"><source src="' . esc_url( $background_video['url'] ) . '" type="video/mp4"></video>';
 		}
 
