@@ -34,28 +34,18 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "ID": 6035,
-                    "key": "field_596d119808099",
+                    "key": "field_5ab3e6937bb9d",
                     "label": "Background Type",
                     "name": "background_type",
-                    "prefix": "acf",
                     "type": "select",
-                    "value": null,
-                    "menu_order": 0,
                     "instructions": "Choose a type of background.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 6034,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "background_type",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "choices": {
                         "null": "None",
                         "color": "Color",
@@ -65,75 +55,55 @@
                     "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
-                    "ui": 1,
+                    "ui": 0,
                     "ajax": 0,
                     "return_format": "array",
                     "placeholder": ""
                 },
                 {
-                    "ID": 5827,
-                    "key": "field_58ebcd698512e",
+                    "key": "field_5ab3e6cc7bb9e",
                     "label": "Background Color",
                     "name": "background_color",
-                    "prefix": "acf",
                     "type": "color_picker",
-                    "value": null,
-                    "menu_order": 1,
                     "instructions": "Select a background color.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_596d119808099",
+                                "field": "field_5ab3e6937bb9d",
                                 "operator": "==",
                                 "value": "color"
                             }
                         ]
                     ],
-                    "parent": 6034,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "background_color",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "default_value": ""
                 },
                 {
-                    "ID": 5828,
-                    "key": "field_58ebcda08512f",
+                    "key": "field_5ab3e6e67bb9f",
                     "label": "Background Image",
                     "name": "background_image",
-                    "prefix": "acf",
                     "type": "image",
-                    "value": null,
-                    "menu_order": 2,
                     "instructions": "Add\/Upload an image file. (1920x1080px .jpg, .png)",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_596d119808099",
+                                "field": "field_5ab3e6937bb9d",
                                 "operator": "==",
                                 "value": "image"
                             }
                         ]
                     ],
-                    "parent": 6034,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "background_image",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "return_format": "array",
                     "preview_size": "medium",
                     "library": "all",
@@ -146,36 +116,26 @@
                     "mime_types": "jpg, png"
                 },
                 {
-                    "ID": 5829,
-                    "key": "field_59416a7edea96",
+                    "key": "field_5ab3e72e7bba0",
                     "label": "Background Video",
                     "name": "background_video",
-                    "prefix": "acf",
                     "type": "file",
-                    "value": null,
-                    "menu_order": 3,
-                    "instructions": "Add\/Upload a 1920x1080 .mp4 video file. Note: background videos are only supported on hero's.",
+                    "instructions": "Add\/Upload a 1920x1080 .mp4 video file. Note: background videos are only supported on Hero blocks.",
                     "required": 0,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_596d119808099",
+                                "field": "field_5ab3e6937bb9d",
                                 "operator": "==",
                                 "value": "video"
                             }
                         ]
                     ],
-                    "parent": 6034,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "background_video",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "return_format": "array",
                     "library": "all",
                     "min_size": "",
@@ -194,7 +154,7 @@
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -202,5 +162,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1500321726
+    "modified": 1521739612
 }
