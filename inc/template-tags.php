@@ -117,21 +117,22 @@ function _s_display_svg( $args = array() ) {
 
 	// Generate random IDs for the title and description.
 	$random_number = rand( 0, 99999 );
-	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
-	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
+	$title_id      = 'title-' . sanitize_title( $title ) . '-' . $random_number;
+	$desc_id       = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
 
 	// Set ARIA.
-	$aria_hidden = ' aria-hidden="true"';
+	$aria_hidden     = ' aria-hidden="true"';
 	$aria_labelledby = '';
+
 	if ( $args['title'] && $args['desc'] ) {
 		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
-		$aria_hidden = '';
+		$aria_hidden     = '';
 	}
 
 	// Set SVG parameters.
-	$fill = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
+	$fill   = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
 	$height = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
-	$width = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
+	$width  = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
 
 	// Start a buffer...
 	ob_start();
@@ -440,7 +441,7 @@ function _s_display_header_button() {
 	$button_setting = get_theme_mod( '_s_header_button' );
 
 	// If we have no button displayed, don't display the markup.
-	if ( 'none' == $button_setting ) {
+	if ( 'none' === $button_setting ) {
 		return '';
 	}
 
@@ -451,7 +452,7 @@ function _s_display_header_button() {
 	<div class="site-header-action">
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
-		if ( 'link' == $button_setting && $button_url ) :
+		if ( 'link' === $button_setting && $button_url ) :
 		?>
 			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', '_s' ) ); ?></a>
 		<?php else : ?>

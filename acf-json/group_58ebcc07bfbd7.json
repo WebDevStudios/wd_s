@@ -47,12 +47,14 @@
                         "id": ""
                     },
                     "choices": {
-                        "null": "None",
+                        "none": "None",
                         "color": "Color",
                         "image": "Image",
                         "video": "Video"
                     },
-                    "default_value": [],
+                    "default_value": [
+                        "none"
+                    ],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -162,5 +164,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521823730
+    "modified": 1621823730
 }
