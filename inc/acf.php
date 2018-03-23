@@ -142,3 +142,108 @@ function _s_acf_admin_scripts() {
 	wp_enqueue_style( '_s-admin-acf-styles', get_template_directory_uri() . '/admin-acf-styles.css', array(), $version );
 }
 add_action( 'acf/input/admin_head', '_s_acf_admin_scripts' );
+
+/**
+ * Update Layout Titles with Subfield Image and Text Fields
+ *
+ * @param string $title Default Field Title.
+ * @param array  $field Field array.
+ * @param string $layout Layout type.
+ * @param int    $i number.
+ *
+ * @url https://support.advancedcustomfields.com/forums/topic/flexible-content-blocks-friendlycustom-collapsed-name/
+ *
+ * @return string new ACF title.
+ */
+function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
+
+	// Current ACF field name.
+	$current_title = $title;
+
+	// Remove layout title from text.
+	$title = '';
+
+	// Get Background Type.
+	$background          = get_sub_field( 'background_options' )['background_type']['value'];
+	$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
+	$background_type     = $background ? $background : $background_repeater;
+
+	$type = _s_return_flexible_content_layout_value( $background_type );
+
+	// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
+	if ( 'image' === $background_type ) {
+		$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
+	}
+
+	if ( 'color' === $background_type ) {
+		$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
+	}
+
+	if ( 'video' === $background_type ) {
+		$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+	}
+
+	// Set default field title. Don't want to lose this.
+	$title .= '<strong>' . esc_html( $current_title ) . '</strong>';
+
+	// ACF Flexible Content Title Fields.
+	$block_title = get_sub_field( 'title' );
+	$headline    = get_sub_field( 'hero_slides' )[0]['headline'];
+	$text        = $block_title ? $block_title : $headline;
+
+	// Load title field text else Load headline text — Hero.
+	if ( $text ) { // WPCS: XSS ok.
+		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
+	}
+
+	// Return New Title.
+	return $title;
+}
+add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
+
+/**
+ * Return flexible content field value by type
+ *
+ * @param string $type field type.
+ *
+ * @return string field value.
+ */
+function _s_return_flexible_content_layout_value( $type ) {
+
+	if ( empty( $type ) ) {
+		return;
+	}
+
+	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
+	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
+
+	return $background_type ? $background_type : $background_type_repeater;
+}
+
+if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
+
+	/**
+	 * Set Admin Styles for Flexible Content Layout Image/Title in _s_acf_flexible_content_layout_title().
+	 */
+	function _s_flexible_content_layout_title_acf_admin_head() {
+	?>
+	<style type="text/css">
+		.acf-flexible-content .layout .acf-fc-layout-handle {
+			display: flex;
+			align-items: center;
+		}
+
+		.acf-flexible-title-image,
+		.acf-flexible-content .layout .acf-fc-layout-order {
+			margin-right: 10px;
+		}
+
+		.acf-flexible-content-headline-title {
+			display: inline-block;
+			margin-left: 8px;
+		}
+	</style>
+	<?php
+	}
+	add_action( 'acf/input/admin_head', '_s_flexible_content_layout_title_acf_admin_head' );
+}
