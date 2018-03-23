@@ -255,11 +255,11 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
 	// Load title field text else Load headline text — Hero.
 	if ( $text ) {
-		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span> ' . $expired;
+		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
 	}
 
 	// Return New Title.
-	return $title;
+	return $title . $expired;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
 
