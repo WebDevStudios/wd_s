@@ -17,12 +17,12 @@ function _s_display_scaffolding_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'title'        => '',       // The scaffolding title.
-		'description'  => '',       // The scaffolding description.
-		'usage'        => '',       // The template tag or markup needed to display the scaffolding.
-		'parameters'   => array(),  // Does the scaffolding have params? Like $args?
-		'arguments'    => array(),  // If the scaffolding has params, what are the $args?
-		'output'       => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
+		'title'       => '',       // The scaffolding title.
+		'description' => '',       // The scaffolding description.
+		'usage'       => '',       // The template tag or markup needed to display the scaffolding.
+		'parameters'  => array(),  // Does the scaffolding have params? Like $args?
+		'arguments'   => array(),  // If the scaffolding has params, what are the $args?
+		'output'      => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
 	);
 
 	// Parse arguments.
@@ -105,14 +105,14 @@ function _s_scaffolding_allowed_html() {
 
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'svg' => array(
+		'svg'   => array(
 			'aria-hidden' => true,
 			'class'       => true,
 			'id'          => true,
 			'role'        => true,
 			'title'       => true,
 		),
-		'use' => array(
+		'use'   => array(
 			'xlink:href' => true,
 		),
 		'input' => array(
@@ -197,11 +197,10 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
 					</div>
-					<?php break; ?>
+				<?php break; ?>
 			<?php endswitch; ?>
 		</div>
 	</div>
-
 	<?php
 }
 

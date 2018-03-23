@@ -92,10 +92,10 @@ function _s_get_placeholder_image( $args = array() ) {
 	$args = wp_parse_args( $args, $default_args );
 
 	// Extract the vars we want to work with.
-	$width = $args['width'];
-	$height = $args['height'];
+	$width            = $args['width'];
+	$height           = $args['height'];
 	$background_color = $args['background_color'];
-	$text_color = $args['text_color'];
+	$text_color       = $args['text_color'];
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
@@ -177,7 +177,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 	// Apply a category if desired.
 	if ( ! empty( $args['category'] ) ) {
 		$category = rawurlencode( $args['category'] );
-		$url .= "category/$category/";
+		$url     .= "category/$category/";
 	}
 
 	// Dimensions go after category but before search keywords.
@@ -185,7 +185,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 
 	if ( ! empty( $args['keywords'] ) ) {
 		$keywords = rawurlencode( $args['keywords'] );
-		$url .= "?$keywords";
+		$url     .= "?$keywords";
 	}
 
 	// Text that will be utilized by screen readers.

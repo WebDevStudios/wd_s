@@ -77,7 +77,7 @@ function _s_category_transient_flusher() {
 	delete_transient( '_s_categories' );
 }
 add_action( 'delete_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
+add_action( 'save_post', '_s_category_transient_flusher' );
 
 /**
  * Customize "Read More" string on <!-- more --> with the_content();
@@ -105,7 +105,7 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
  * @return array Updated allowed mime types.
  */
 function _s_custom_mime_types( $mimes ) {
-	$mimes['svg'] = 'image/svg+xml';
+	$mimes['svg']  = 'image/svg+xml';
 	$mimes['svgz'] = 'image/svg+xml';
 	return $mimes;
 }
