@@ -33,10 +33,10 @@ function _s_display_content_blocks() {
 function _s_display_block_options( $args = array() ) {
 
 	// Get block background options.
-	$background_options = get_sub_field( 'background_options' );
+	$background_options = get_sub_field( 'background_options' ) ? get_sub_field( 'background_options' ) : get_field( 'background_options' )['background_options'];
 
 	// Get block other options.
-	$other_options = get_sub_field( 'other_options' );
+	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 	// Setup defaults.
 	$defaults = array(
