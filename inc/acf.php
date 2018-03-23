@@ -171,15 +171,15 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	$type = _s_return_flexible_content_layout_value( $background_type );
 
 	// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
-	if ( 'image' === $background && $type ) {
+	if ( 'image' === $background_type ) {
 		$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
 	}
 
-	if ( 'color' === $background && $type ) {
+	if ( 'color' === $background_type ) {
 		$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
 	}
 
-	if ( 'video' === $background && $type ) {
+	if ( 'video' === $background_type ) {
 		$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
 	}
 
