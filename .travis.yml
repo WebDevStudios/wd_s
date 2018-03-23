@@ -13,28 +13,30 @@ matrix:
         - php: '5.6'
         - php: '7.0'
         - php: '7.1'
+        - php: '7.2'
     allow_failures:
-        - php: '7.1'
+        - php: '7.2'
 
 install:
-    - export PHPCS_DIR=~/.composer/vendor/bin/
+    - export COMPOSER_DIR=~/.composer/
     - export SNIFFS_DIR=/tmp/sniffs
-    - nvm install node; nvm use node
+    - nvm install node
+    - nvm use node
     - npm install --global eslint eslint-config-wordpress sass-lint
-    - composer global require "squizlabs/php_codesniffer=2.9.1"
-    - git clone --branch master --depth=50 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR
+    - composer global require webdevstudios/wds-coding-standards
     - git clone --branch master --depth=50 https://github.com/wimg/PHPCompatibility.git $SNIFFS_DIR/PHPCompatibility
 
 before_script:
-    - cd $SNIFFS_DIR; git checkout tags/0.12.0; cd $TRAVIS_BUILD_DIR
-    - $PHPCS_DIR/phpcs --config-set installed_paths $SNIFFS_DIR; $PHPCS_DIR/phpcs -i
+    - cd $TRAVIS_BUILD_DIR
+    - $COMPOSER_DIR/vendor/bin/phpcs --config-set installed_paths $COMPOSER_DIR/vendor/wp-coding-standards/wpcs,$COMPOSER_DIR/vendor/webdevstudios/wds-coding-standards/WebDevStudios
+    - $COMPOSER_DIR/vendor/bin/phpcs -i
     - phpenv rehash
 
 script:
     - find -L ./ -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-    - $PHPCS_DIR/phpcs -p -s -v -n . --standard=./phpcs.xml --extensions=php
-    - eslint --config ./.eslintrc.js './assets/scripts/concat' --quiet
-    - sass-lint --config ./.sass-lint.yml './assets/sass/**/*.scss' --verbose --no-exit
+    - $COMPOSER_DIR/vendor/bin/phpcs -p -s -v -n . --standard=WebDevStudios --extensions=php
+    - eslint --config $COMPOSER_DIR/vendor/webdevstudios/wds-coding-standards/WebDevStudios/.eslintrc.js './assets/scripts/concat'
+    - sass-lint --config $COMPOSER_DIR/vendor/webdevstudios/wds-coding-standards/WebDevStudios/.sass-lint.yml './assets/sass/**/*.scss' --verbose --no-exit
 
 notifications:
   email: false
