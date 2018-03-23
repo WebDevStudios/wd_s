@@ -1,6 +1,6 @@
 {
     "key": "group_58ebcc07bfbd7",
-    "title": "Group: Background Options - To Clone",
+    "title": "Group: Background Options — To Clone",
     "fields": [
         {
             "key": "field_596d115a08097",
@@ -42,17 +42,19 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "null": "None",
+                        "none": "None",
                         "color": "Color",
                         "image": "Image",
                         "video": "Video"
                     },
-                    "default_value": [],
+                    "default_value": [
+                        "none"
+                    ],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -77,7 +79,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "66",
                         "class": "",
                         "id": ""
                     },
@@ -100,7 +102,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "66",
                         "class": "",
                         "id": ""
                     },
@@ -132,7 +134,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "66",
                         "class": "",
                         "id": ""
                     },
@@ -162,5 +164,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521739612
+    "modified": 1521824780
 }
