@@ -19,6 +19,18 @@ function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
 		while ( have_rows( 'content_blocks' ) ) :
 			the_row();
+
+			// Get block other options.
+			$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+
+			// If the block has expired,then bail!
+			if ( _s_has_block_expired( array(
+				'start_date' => $other_options['start_date'],
+				'end_date'   => $other_options['end_date'],
+			) ) ) {
+				return false;
+			}
+
 			get_template_part( 'template-parts/content-blocks/block', get_row_layout() ); // Template part name MUST match layout ID.
 		endwhile;
 		wp_reset_postdata();
@@ -123,6 +135,43 @@ function _s_get_animation_class() {
 }
 
 /**
+ * Decide whether or not a block has expired.
+ *
+ * @param array $args start and end dates.
+ *
+ * @return bool
+ */
+function _s_has_block_expired( $args = array() ) {
+
+	// Setup defaults.
+	$defaults = array(
+		'start_date' => '',
+		'end_date'   => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Get (Unix) times and convert to integer.
+	$now = (int) date( 'U' );
+	$start = (int) $args['start_date'];
+	$end = (int) $args['end_date'];
+
+	// No dates? Cool, they're optional.
+	if ( empty( $start ) || empty( $end ) ) {
+		return false;
+	}
+
+	// The block has started, but hasn't expired yet.
+	if ( $start <= $now && $end >= $now ) {
+		return false;
+	}
+
+	// Yes, the block has expired.
+	return true;
+}
+
+/**
  * Enqueues scripts for ACF.
  *
  * @author Corey Collins, Kellen Mace
@@ -163,6 +212,12 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	// Remove layout title from text.
 	$title = '';
 
+	// Set an expired var.
+	$expired = '';
+
+	// Get other options.
+	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+
 	// Get Background Type.
 	$background          = get_sub_field( 'background_options' )['background_type']['value'];
 	$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
@@ -190,14 +245,21 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	$block_title = get_sub_field( 'title' );
 	$headline    = get_sub_field( 'hero_slides' )[0]['headline'];
 	$text        = $block_title ? $block_title : $headline;
+	$start_date  = $other_options['start_date'];
+	$end_date    = $other_options['end_date'];
+
+	// If the block has expired, add "(expired)" to the title.
+	if ( _s_has_block_expired( array( 'start_date' => $start_date, 'end_date' => $end_date ) ) ) {
+		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__( 'expired', '_s' ) . ')</span>';
+	}
 
 	// Load title field text else Load headline text — Hero.
-	if ( $text ) { // WPCS: XSS ok.
+	if ( $text ) {
 		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
 	}
 
 	// Return New Title.
-	return $title;
+	return $title . $expired;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
 

@@ -166,6 +166,40 @@
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5ab53deb4fbc4",
+                    "label": "Start Date",
+                    "name": "start_date",
+                    "type": "date_time_picker",
+                    "instructions": "Chose a start date for this block. This block will be hidden on the frontend, until the date and time selected.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y g:i a",
+                    "return_format": "U",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5ab53ec34fbc5",
+                    "label": "End Date",
+                    "name": "end_date",
+                    "type": "date_time_picker",
+                    "instructions": "Chose an end date for this block. This block will be display on the frontend, until the date and time selected.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y g:i a",
+                    "return_format": "U",
+                    "first_day": 1
                 }
             ]
         }
@@ -187,5 +221,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521823715
+    "modified": 1521827639
 }
