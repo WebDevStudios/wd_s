@@ -6,7 +6,7 @@
  */
 
 // Set up fields.
-$hero = get_sub_field( 'hero_slides' );
+$hero        = get_sub_field( 'hero_slides' );
 $slide_count = count( $hero );
 
 // Start repeater markup...
@@ -26,10 +26,10 @@ if ( have_rows( 'hero_slides' ) ) :
 		the_row();
 
 		// Set up fields.
-		$title = get_sub_field( 'headline' );
-		$text = get_sub_field( 'text' );
-		$button_text = get_sub_field( 'button_text' );
-		$button_url = get_sub_field( 'button_url' );
+		$title           = get_sub_field( 'headline' );
+		$text            = get_sub_field( 'text' );
+		$button_text     = get_sub_field( 'button_text' );
+		$button_url      = get_sub_field( 'button_url' );
 		$animation_class = _s_get_animation_class();
 
 		// Start a <container> with possible block options.

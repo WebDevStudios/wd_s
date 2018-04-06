@@ -68,6 +68,8 @@ add_filter( 'body_class', '_s_body_classes' );
 
 /**
  * Flush out the transients used in _s_categorized_blog.
+ *
+ * @return string
  */
 function _s_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -81,6 +83,8 @@ add_action( 'save_post', '_s_category_transient_flusher' );
 
 /**
  * Customize "Read More" string on <!-- more --> with the_content();
+ *
+ * @return string
  */
 function _s_content_more_link() {
 	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
@@ -91,7 +95,7 @@ add_filter( 'the_content_more_link', '_s_content_more_link' );
  * Customize the [...] on the_excerpt();
  *
  * @param string $more The current $more string.
- * @return string Replace with "Read More..."
+ * @return string
  */
 function _s_excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
@@ -102,7 +106,7 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
  * Enable custom mime types.
  *
  * @param array $mimes Current allowed mime types.
- * @return array Updated allowed mime types.
+ * @return array
  */
 function _s_custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';

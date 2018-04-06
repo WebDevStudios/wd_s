@@ -86,6 +86,7 @@ endif;
  * Display SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.
+ * @return string
  */
 function _s_display_svg( $args = array() ) {
 
@@ -183,7 +184,7 @@ function _s_display_svg( $args = array() ) {
  * Trim the title length.
  *
  * @param array $args Parameters include length and more.
- * @return string        The shortened excerpt.
+ * @return string
  */
 function _s_get_the_title( $args = array() ) {
 
@@ -204,7 +205,7 @@ function _s_get_the_title( $args = array() ) {
  * Limit the excerpt length.
  *
  * @param array $args Parameters include length and more.
- * @return string The shortened excerpt.
+ * @return string
  */
 function _s_get_the_excerpt( $args = array() ) {
 
@@ -225,13 +226,14 @@ function _s_get_the_excerpt( $args = array() ) {
  * Echo an image, no matter what.
  *
  * @param string $size The image size to display. Default is thumbnail.
+ * @return string
  */
 function _s_display_post_image( $size = 'thumbnail' ) {
 
 	// If post has a featured image, display it.
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( $size );
-		return;
+		return false;
 	}
 
 	$attached_image_url = _s_get_attached_image_url( $size );
@@ -246,7 +248,7 @@ function _s_display_post_image( $size = 'thumbnail' ) {
  * Return an image URL, no matter what.
  *
  * @param  string $size The image size to return. Default is thumbnail.
- * @return string       The image URL.
+ * @return string
  */
 function _s_get_post_image_url( $size = 'thumbnail' ) {
 
@@ -269,7 +271,7 @@ function _s_get_post_image_url( $size = 'thumbnail' ) {
  * Get the URL of an image that's attached to the current post, else a placeholder image URL.
  *
  * @param  string $size The image size to return. Default is thumbnail.
- * @return string       The image URL.
+ * @return string
  */
 function _s_get_attached_image_url( $size = 'thumbnail' ) {
 
@@ -288,6 +290,8 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 
 /**
  * Echo the copyright text saved in the Customizer.
+ *
+ * @return bool
  */
 function _s_display_copyright_text() {
 
@@ -296,7 +300,7 @@ function _s_display_copyright_text() {
 
 	// Stop if there's nothing to display.
 	if ( ! $copyright_text ) {
-		return;
+		return false;
 	}
 
 	?>
@@ -307,7 +311,7 @@ function _s_display_copyright_text() {
 /**
  * Get the Twitter social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_twitter_share_url() {
 	return add_query_arg(
@@ -321,7 +325,7 @@ function _s_get_twitter_share_url() {
 /**
  * Get the Facebook social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_facebook_share_url() {
 	return add_query_arg( 'u', rawurlencode( get_the_permalink() ), 'https://www.facebook.com/sharer/sharer.php' );
@@ -330,7 +334,7 @@ function _s_get_facebook_share_url() {
 /**
  * Get the LinkedIn social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_linkedin_share_url() {
 	return add_query_arg(
@@ -434,6 +438,7 @@ function _s_display_card( $args = array() ) {
  * Display header button.
  *
  * @author Corey Collins
+ * @return string
  */
 function _s_display_header_button() {
 

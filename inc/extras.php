@@ -60,7 +60,7 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
 
 		// Do something with $result.
-		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS: db call ok , cache ok.
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = %s AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS db call ok, cache ok, placeholder ok.
 	}
 
 	return $attachment_id;
@@ -198,6 +198,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
  * Display the customizer header scripts.
  *
  * @author Greg Rickaby
+ * @return string
  */
 function _s_display_customizer_header_scripts() {
 
@@ -217,6 +218,7 @@ function _s_display_customizer_header_scripts() {
  * Display the customizer footer scripts.
  *
  * @author Greg Rickaby
+ * @return string
  */
 function _s_display_customizer_footer_scripts() {
 

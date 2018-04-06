@@ -71,7 +71,7 @@ function _s_customize_social_icons( $wp_customize ) {
 		$wp_customize->add_setting(
 			'_s_' . $network . '_link',
 			array(
-				'default' => '',
+				'default'           => '',
 				'sanitize_callback' => 'esc_url',
 			)
 		);

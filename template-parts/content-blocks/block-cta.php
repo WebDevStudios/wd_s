@@ -6,10 +6,10 @@
  */
 
 // Set up fields.
-$title = get_sub_field( 'title' );
-$text = get_sub_field( 'text' );
-$button_url = get_sub_field( 'button_url' );
-$button_text = get_sub_field( 'button_text' );
+$title           = get_sub_field( 'title' );
+$text            = get_sub_field( 'text' );
+$button_url      = get_sub_field( 'button_url' );
+$button_text     = get_sub_field( 'button_text' );
 $animation_class = _s_get_animation_class();
 
 // Start a <container> with possible block options.

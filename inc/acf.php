@@ -14,6 +14,8 @@ if ( ! class_exists( 'acf' ) ) {
 
 /**
  * Loop through and output ACF flexible content blocks for the current page.
+ *
+ * @return bool
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
@@ -249,7 +251,12 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	$end_date    = $other_options['end_date'];
 
 	// If the block has expired, add "(expired)" to the title.
-	if ( _s_has_block_expired( array( 'start_date' => $start_date, 'end_date' => $end_date ) ) ) {
+	if ( _s_has_block_expired(
+			array(
+				'start_date' => $start_date,
+				'end_date'   => $end_date,
+			) )
+	) {
 		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__( 'expired', '_s' ) . ')</span>';
 	}
 

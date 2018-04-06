@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$image_data = get_sub_field( 'media_left' );
-$text = get_sub_field( 'text_primary' );
+$image_data      = get_sub_field( 'media_left' );
+$text            = get_sub_field( 'text_primary' );
 $animation_class = _s_get_animation_class();
 
 // Start a <container> with a possible media background.

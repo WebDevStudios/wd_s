@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$title = get_sub_field( 'title' );
-$content = get_sub_field( 'content' );
+$title           = get_sub_field( 'title' );
+$content         = get_sub_field( 'content' );
 $animation_class = _s_get_animation_class();
 
 // Start a <container> with possible block options.

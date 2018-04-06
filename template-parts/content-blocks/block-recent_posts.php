@@ -10,10 +10,10 @@
  */
 
 // Set up fields.
-$title = get_sub_field( 'title' );
-$post_count = get_sub_field( 'number_of_posts' );
-$categories = get_sub_field( 'categories' );
-$tags = get_sub_field( 'tags' );
+$title           = get_sub_field( 'title' );
+$post_count      = get_sub_field( 'number_of_posts' );
+$categories      = get_sub_field( 'categories' );
+$tags            = get_sub_field( 'tags' );
 $animation_class = _s_get_animation_class();
 
 // Variable to hold query args.
