@@ -37,7 +37,9 @@
     "gulp.spritesmith": "~6",
     "sassdoc": "~2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  },
   "scripts": {
     "test": "echo \"No test specified\""
   },
