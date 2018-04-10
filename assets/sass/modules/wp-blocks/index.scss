@@ -1,7 +1,9 @@
-@import 'wp-block-button';
-@import 'wp-block-gallery';
-@import 'wp-block-pullquote';
-@import 'wp-block-separator';
-@import 'wp-block-quote';
-@import 'wp-block-table';
-@import 'wp-block-video';
+@import 'default-blocks/wp-block-button';
+@import 'default-blocks/wp-block-gallery';
+@import 'default-blocks/wp-block-pullquote';
+@import 'default-blocks/wp-block-separator';
+@import 'default-blocks/wp-block-quote';
+@import 'default-blocks/wp-block-table';
+@import 'default-blocks/wp-block-video';
+@import 'wds-blocks/wds-hero';
+@import 'wds-blocks/wds-cta';
