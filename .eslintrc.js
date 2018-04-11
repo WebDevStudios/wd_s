@@ -6,17 +6,8 @@ module.exports = {
 	env: {
 		browser: true,
 		jquery: true,
-		es6: true,
-		node: true,
-		mocha: true
+		es6: true
 	},
-
-    'parserOptions': {
-        'ecmaFeatures': {
-            'jsx': true
-        },
-        'sourceType': 'module'
-    },
 
 	/**
 	 * Default globals.
