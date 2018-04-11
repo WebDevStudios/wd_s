@@ -16,7 +16,10 @@ charset = utf-8
 # 4 space indentation
 [*.{html,js,php,css,scss}]
 indent_style = tab
+indent_size = 4
 
 # Matches the exact files
 [{package.json,bower.json,.bowerrc,.eslintrc.js,.travis.yml,.sass-lint.yml,phpcs.xml}]
+quote_type = single
 indent_style = space
+indent_size = 2
