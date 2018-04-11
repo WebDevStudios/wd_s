@@ -1,11 +1,22 @@
+'use strict';
+
 /* globals module */
-export default {
+module.exports = {
 	plugins: [],
 	env: {
 		browser: true,
 		jquery: true,
-		es6: true
+		es6: true,
+		node: true,
+		mocha: true
 	},
+
+    'parserOptions': {
+        'ecmaFeatures': {
+            'jsx': true
+        },
+        'sourceType': 'module'
+    },
 
 	/**
 	 * Default globals.
