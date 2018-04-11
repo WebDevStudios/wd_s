@@ -1,7 +1,5 @@
-'use strict';
-
 /* globals module */
-module.exports = {
+export default {
 	plugins: [],
 	env: {
 		browser: true,
