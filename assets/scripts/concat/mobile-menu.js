@@ -5,6 +5,7 @@
  */
 window.wdsMobileMenu = {};
 ( function( window, $, app ) {
+
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -26,7 +27,7 @@ window.wdsMobileMenu = {};
 			subMenuParentItem: $(
 				".mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children"
 			),
-			offCanvasContainer: $( ".off-canvas-container" ),
+			offCanvasContainer: $( ".off-canvas-container" )
 		};
 	};
 
@@ -45,6 +46,7 @@ window.wdsMobileMenu = {};
 
 	// Reset the submenus after it's done closing.
 	app.resetSubMenu = function() {
+
 		// When the list item is done transitioning in height,
 		// remove the classes from the submenu so it is ready to toggle again.
 		if (
@@ -59,6 +61,7 @@ window.wdsMobileMenu = {};
 
 	// Slide out the submenu items.
 	app.slideOutSubMenus = function( el ) {
+
 		// If this item's parent is visible and this is not, bail.
 		if ( el.parent().hasClass( "is-visible" ) && ! el.hasClass( "is-visible" ) ) {
 			return;
@@ -75,8 +78,10 @@ window.wdsMobileMenu = {};
 		}
 
 		app.$c.subMenuContainer.each( function() {
+
 			// Only try to close submenus that are actually open.
 			if ( $( this ).hasClass( "slideInLeft" ) ) {
+
 				// Close the parent list item, and set the corresponding button aria to false.
 				$( this )
 					.parent()
@@ -111,10 +116,12 @@ window.wdsMobileMenu = {};
 			$target.hasClass( "down-arrow" ) ||
 			$target.hasClass( "parent-indicator" )
 		) {
+
 			// First, collapse any already opened submenus.
 			app.slideOutSubMenus( el );
 
 			if ( ! subMenu.hasClass( "is-visible" ) ) {
+
 				// Open the submenu.
 				app.openSubmenu( el, subMenu );
 			}
@@ -125,6 +132,7 @@ window.wdsMobileMenu = {};
 
 	// Open a submenu.
 	app.openSubmenu = function( parent, subMenu ) {
+
 		// Expand the list menu item, and set the corresponding button aria to true.
 		parent
 			.addClass( "is-visible" )
@@ -137,6 +145,7 @@ window.wdsMobileMenu = {};
 
 	// Force close all the submenus when the main menu container is closed.
 	app.forceCloseSubmenus = function() {
+
 		// The transitionend event triggers on open and on close, need to make sure we only do this on close.
 		if ( ! $( this ).hasClass( "is-visible" ) ) {
 			app.$c.subMenuParentItem
@@ -151,7 +160,7 @@ window.wdsMobileMenu = {};
 		if ( $( this ).hasClass( "is-visible" ) ) {
 			app.$c.body.css( "overflow", "hidden" );
 			app.$c.body.bind( "touchstart", function( e ) {
-				if ( ! $( e.target ).parents( ".contact-modal" )[ 0 ] ) {
+				if ( ! $( e.target ).parents( ".contact-modal" )[0] ) {
 					e.preventDefault();
 				}
 			} );
