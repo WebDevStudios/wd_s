@@ -1,0 +1,9 @@
+{
+  "eslint.options": {
+    "configFile": ".eslintrc.js",
+    "maxWarnings": "500",
+    "ignorePattern": ["/node_modules/*", "*.min.js"]
+  },
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true
+}
