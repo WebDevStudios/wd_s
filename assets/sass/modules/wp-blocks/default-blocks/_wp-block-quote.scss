@@ -1,0 +1,12 @@
+//--------------------------------------------------------------
+// WordPress Default Blockquote Block
+//--------------------------------------------------------------
+
+// Match block quotes to current defaults.
+.wp-block-quote {
+
+	// Match our defaults current state.
+	cite {
+		font-style: italic;
+	} // cite
+} // .wp-block-quote
