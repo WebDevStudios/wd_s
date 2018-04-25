@@ -1,9 +1,13 @@
 {
   "eslint.options": {
-    "configFile": ".eslintrc.js",
+    "configFile": ".eslintrc.json",
     "maxWarnings": "500",
     "ignorePattern": ["/node_modules/*", "*.min.js"]
   },
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "javascript.format.enable": false
 }
