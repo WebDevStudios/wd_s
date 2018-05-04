@@ -126,6 +126,15 @@ function _s_scaffolding_allowed_html() {
 		'desc'  => array(
 			'id' => true,
 		),
+		'select' => array(
+			'class'    => true,
+		),
+		'option' => array(
+			'option'   => true,
+			'value'    => true,
+			'selected' => true,
+			'disabled' => true,
+		),
 		'input' => array(
 			'type'        => true,
 			'name'        => true,
