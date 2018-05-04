@@ -221,23 +221,27 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 	// Get Background Type.
-	$background          = get_sub_field( 'background_options' )['background_type']['value'];
-	$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
-	$background_type     = $background ? $background : $background_repeater;
+	$background = get_sub_field( 'background_options' )['background_type']['value'];
 
-	$type = _s_return_flexible_content_layout_value( $background_type );
+	// If there's no background, just move along...
+	if ( ! 'none' === $background ) {
+		$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
+		$background_type     = $background ? $background : $background_repeater;
 
-	// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
-	if ( 'image' === $background_type ) {
-		$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
-	}
+		$type = _s_return_flexible_content_layout_value( $background_type );
 
-	if ( 'color' === $background_type ) {
-		$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
-	}
+		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
+		if ( 'image' === $background_type ) {
+			$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
+		}
 
-	if ( 'video' === $background_type ) {
-		$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+		if ( 'color' === $background_type ) {
+			$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
+		}
+
+		if ( 'video' === $background_type ) {
+			$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+		}
 	}
 
 	// Set default field title. Don't want to lose this.
