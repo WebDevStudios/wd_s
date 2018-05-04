@@ -38,7 +38,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 
 		<?php if ( $args['title'] ) : ?>
 		<header class="scaffolding-document-header">
-			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .scaffolding-document-header -->
 		<?php endif; ?>
@@ -150,7 +150,7 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 		<header class="scaffolding-document-header">
-			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 		</header>
 
 		<div class="scaffolding-document-content">
