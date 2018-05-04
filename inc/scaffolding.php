@@ -38,7 +38,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 
 		<?php if ( $args['title'] ) : ?>
 		<header class="scaffolding-document-header">
-			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
+			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
 			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .scaffolding-document-header -->
 		<?php endif; ?>
@@ -111,29 +111,9 @@ function _s_scaffolding_allowed_html() {
 			'id'          => true,
 			'role'        => true,
 			'title'       => true,
-			'fill'        => true,
-			'height'      => true,
-			'width'       => true,
-			'use'         => true,
-			'path'        => true,
 		),
 		'use'   => array(
 			'xlink:href' => true,
-		),
-		'title' => array(
-			'id' => true,
-		),
-		'desc'  => array(
-			'id' => true,
-		),
-		'select' => array(
-			'class'    => true,
-		),
-		'option' => array(
-			'option'   => true,
-			'value'    => true,
-			'selected' => true,
-			'disabled' => true,
 		),
 		'input' => array(
 			'type'        => true,
@@ -170,7 +150,7 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 		<header class="scaffolding-document-header">
-			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
+			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
 		</header>
 
 		<div class="scaffolding-document-content">

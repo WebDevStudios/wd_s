@@ -83,21 +83,6 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Return Output Buffered SVG markup.
- *
- * @param array $args The parameters needed to get the SVG.
- * @return string
- */
-function _s_get_svg( $args = array() ) {
-
-	ob_start();
-
-	_s_display_svg( $args );
-
-	return ob_get_clean();
-}
-
-/**
  * Display SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.

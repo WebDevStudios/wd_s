@@ -21,24 +21,4 @@
 			'output'      => get_search_form( $echo ),
 		) );
 	?>
-
-	<?php
-	// Input.
-	_s_display_scaffolding_section( array(
-		'title'       => 'Input',
-		'description' => 'Display a normal input.',
-		'usage'       => '<input type="text">',
-		'output'      => '<input type="text">',
-	) );
-	?>
-
-		<?php
-	// Default Select.
-	_s_display_scaffolding_section( array(
-		'title'       => 'Default Select',
-		'description' => 'Display default select.',
-		'usage'       => '<select><option value="option1">Option 1</option><option value="option2">Option 2</option></select>',
-		'output'      => '<select><option value="option1">Option 1</option><option value="option2">Option 2</option></select>',
-	) );
-	?>
 </section>
