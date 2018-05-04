@@ -111,9 +111,20 @@ function _s_scaffolding_allowed_html() {
 			'id'          => true,
 			'role'        => true,
 			'title'       => true,
+			'fill'        => true,
+			'height'      => true,
+			'width'       => true,
+			'use'         => true,
+			'path'        => true,
 		),
 		'use'   => array(
 			'xlink:href' => true,
+		),
+		'title' => array(
+			'id' => true,
+		),
+		'desc'  => array(
+			'id' => true,
 		),
 		'input' => array(
 			'type'        => true,
