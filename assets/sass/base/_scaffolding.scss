@@ -3,6 +3,14 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
+// IE11 Tweak
+//-----------------------------------------
+.page-template-template-scaffolding .primary {
+	float: none;
+	width: 100%;
+}
+
+//-----------------------------------------
 // Scaffolding defaults
 //-----------------------------------------
 .scaffolding-document {
@@ -10,7 +18,7 @@
 
 	// The section <header>
 	&-header {
-		border-bottom: rem(1) solid gray;
+		border-bottom: rem(1) solid $color-alto;
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: $gutter;
@@ -40,16 +48,16 @@
 
 		// The <pre> container.
 		pre {
-			background-color: white;
-			border: rem(1) solid lightgray;
-			color: gray;
+			background-color: $color-white;
+			border: rem(1) solid $color-alto;
+			color: $color-silver-chalice;
 			margin: 0 0 $gutter;
 			padding: $gutter;
 		} // pre
 
 		// The <code> container.
 		code {
-			background-color: lightgray;
+			background-color: $color-alto;
 			font-size: rem(13);
 			padding: rem(5);
 		} // code
@@ -72,32 +80,44 @@
 .swatch-container {
 	@include clearfix;
 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	position: relative;
 
 	// Each swatch.
 	.swatch {
-		@include size(100% rem(125));
-		@include span-columns(3);
-
-		border: 1px solid black;
+		border: 1px solid $color-alto;
 		border-radius: rem(5);
+		flex: 0 1 23.875%;
+		height: rem(125);
 		margin-bottom: $gutter;
+		margin-right: 1.5%;
 		position: relative;
 		text-align: center;
 
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+
 		// The swatch <header>
 		& header {
-			color: black;
-			padding-top: rem(25);
+			align-content: center;
+			color: $color-alto;
+			display: flex;
+			flex-direction: column;
+			height: calc(100% - 39px);
+			justify-content: center;
 		} // header
 
 		// The swatch <footer>
 		& footer {
 			@include position(absolute, null null 0 null);
 
-			background-color: white;
-			border-bottom-left-radius: rem(5);
-			border-bottom-right-radius: rem(5);
+			background-color: $color-white;
+			border-top: 1px solid $color-alto;
+			border-bottom-left-radius: rem(4);
+			border-bottom-right-radius: rem(4);
 			font-size: rem(12);
 			padding: rem(10);
 			width: 100%;

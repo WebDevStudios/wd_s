@@ -83,12 +83,21 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Display SVG markup.
+ * Display SVG Markup.
+ *
+ * @param array $args The parameters needed to get the SVG.
+ */
+function _s_display_svg( $args = array() ) {
+	echo _s_get_svg( $args ); // WPCS XSS Ok.
+}
+
+/**
+ * Return SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.
  * @return string
  */
-function _s_display_svg( $args = array() ) {
+function _s_get_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
@@ -176,8 +185,8 @@ function _s_display_svg( $args = array() ) {
 	</svg>
 
 	<?php
-	// Get the buffer and echo.
-	echo ob_get_clean(); // WPCS XSS OK.
+	// Get the buffer and return.
+	return ob_get_clean();
 }
 
 /**
