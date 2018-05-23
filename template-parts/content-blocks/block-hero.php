@@ -31,6 +31,15 @@ if ( have_rows( 'hero_slides' ) ) :
 		$button_text     = get_sub_field( 'button_text' );
 		$button_url      = get_sub_field( 'button_url' );
 		$animation_class = _s_get_animation_class();
+		$other_options   = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+
+		// If the block has expired, then bail!
+		if ( _s_has_block_expired( array(
+			'start_date' => $other_options['start_date'],
+			'end_date'   => $other_options['end_date'],
+		) ) ) {
+			return false;
+		}
 
 		// Start a <container> with possible block options.
 		_s_display_block_options( array(
