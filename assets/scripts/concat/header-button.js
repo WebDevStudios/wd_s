@@ -38,6 +38,8 @@ window.ShowHideSearchForm = {};
 	// Adds the toggle class for the search form.
 	app.showHideSearchForm = function() {
 		app.$c.body.toggleClass( 'search-form-visible' );
+
+		return false;
 	};
 
 	// Hides the search form if we click outside of its container.
