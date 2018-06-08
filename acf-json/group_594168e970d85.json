@@ -42,41 +42,22 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "default_value": ""
                 },
                 {
-                    "key": "field_5ab3e4afab635",
-                    "label": "Custom CSS Class",
-                    "name": "custom_css_class",
-                    "type": "text",
-                    "instructions": "Add a custom CSS class to this block.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "custom-class",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_5ab3e4c7ab636",
                     "label": "Animation",
                     "name": "animation",
                     "type": "select",
-                    "instructions": "Select the animation for this block. Animations can only be applied to the entire block, not to individual elements.",
+                    "instructions": "Select the animation for this block.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -168,6 +149,25 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_5ab3e4afab635",
+                    "label": "Custom CSS Class",
+                    "name": "custom_css_class",
+                    "type": "text",
+                    "instructions": "Add a custom CSS class to this block.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "custom-class",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5ab53deb4fbc4",
                     "label": "Start Date",
                     "name": "start_date",
@@ -221,5 +221,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521827639
+    "modified": 1528472702
 }

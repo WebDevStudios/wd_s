@@ -7,7 +7,7 @@
             "label": "Button Text",
             "name": "button_text",
             "type": "text",
-            "instructions": "Write a short call to action.",
+            "instructions": "Optional. Write a short call to action.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,7 +26,7 @@
             "label": "Button URL",
             "name": "button_url",
             "type": "url",
-            "instructions": "Where will this button link to?",
+            "instructions": "Optional. Where will this button link to?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521823723
+    "modified": 1528475212
 }
