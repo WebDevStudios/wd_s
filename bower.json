@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "animate.css": "^3.5.2",
-    "slick-carousel": "^1.6.0",
-    "normalize-css": "^7.0.0"
+    "slick-carousel": "^1.8.1",
+    "normalize-css": "^8.0.0"
   }
 }
