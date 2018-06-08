@@ -359,11 +359,11 @@ gulp.task( 'watch', function() {
 
 	// Kick off BrowserSync.
 	browserSync( {
-		'open': false,             // Open project in a new tab?
-		'injectChanges': true,     // Auto inject changes instead of full reload.
-		'proxy': 'testing.test',   // Use http://_s.test:3000 to use BrowserSync.
+		'open': false, // Open project in a new tab?
+		'injectChanges': true,  // Auto inject changes instead of full reload.
+		'proxy': 'https://testing.test', // Use https://_s.test:3000 to use BrowserSync.
 		'watchOptions': {
-			'debounceDelay': 500   // Wait 500ms second before injecting.
+			'debounceDelay': 500 // Wait 500ms second before injecting.
 		}
 	} );
 
