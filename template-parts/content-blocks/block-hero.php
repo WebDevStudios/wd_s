@@ -20,7 +20,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="hero-content">
+	<div class="hero-content <?php echo esc_attr( $animation_class ); ?>">
 		<?php if ( $title ) : ?>
 			<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>
