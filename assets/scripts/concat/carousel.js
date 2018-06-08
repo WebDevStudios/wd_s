@@ -1,9 +1,9 @@
 /**
- * File hero-carousel.js
+ * File carousel.js
  *
- * Create a carousel if we have more than one hero slide.
+ * Deal with the Slick carousel.
  */
-window.wdsHeroCarousel = {};
+window.wdsCarousel = {};
 ( function( window, $, app ) {
 
 	// Constructor.
@@ -19,7 +19,7 @@ window.wdsHeroCarousel = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			heroCarousel: $( '.carousel' )
+			theCarousel: $( '.carousel' )
 		};
 	};
 
@@ -31,15 +31,15 @@ window.wdsHeroCarousel = {};
 
 	// Do we meet the requirements?
 	app.meetsRequirements = function() {
-		return app.$c.heroCarousel.length;
+		return app.$c.theCarousel.length;
 	};
 
 	// Animate the first slide on window load.
 	app.doFirstAnimation = function() {
 
 		// Get the first slide content area and animation attribute.
-		let firstSlide = app.$c.heroCarousel.find( '[data-slick-index=0]' ),
-			firstSlideContent = firstSlide.find( '.hero-content' ),
+		let firstSlide = app.$c.theCarousel.find( '[data-slick-index=0]' ),
+			firstSlideContent = firstSlide.find( '.slide-content' ),
 			firstAnimation = firstSlideContent.attr( 'data-animation' );
 
 		// Add the animation class to the first slide.
@@ -50,7 +50,7 @@ window.wdsHeroCarousel = {};
 	app.doAnimation = function() {
 		let slides = $( '.slide' ),
 			activeSlide = $( '.slick-current' ),
-			activeContent = activeSlide.find( '.hero-content' ),
+			activeContent = activeSlide.find( '.slide-content' ),
 
 			// This is a string like so: 'animated someCssClass'.
 			animationClass = activeContent.attr( 'data-animation' ),
@@ -61,7 +61,7 @@ window.wdsHeroCarousel = {};
 
 		// Go through each slide to see if we've already set animation classes.
 		slides.each( function() {
-			let slideContent = $( this ).find( '.hero-content' );
+			let slideContent = $( this ).find( '.slide-content' );
 
 			// If we've set animation classes on a slide, remove them.
 			if ( slideContent.hasClass( 'animated' ) ) {
@@ -94,9 +94,9 @@ window.wdsHeroCarousel = {};
 
 	// Kick off Slick.
 	app.doSlick = function() {
-		app.$c.heroCarousel.on( 'init', app.playBackgroundVideos );
+		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
-		app.$c.heroCarousel.slick( {
+		app.$c.theCarousel.slick( {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: false,
@@ -105,9 +105,9 @@ window.wdsHeroCarousel = {};
 			waitForAnimate: true
 		} );
 
-		app.$c.heroCarousel.on( 'afterChange', app.doAnimation );
+		app.$c.theCarousel.on( 'afterChange', app.doAnimation );
 	};
 
 	// Engage!
 	$( app.init );
-} ( window, jQuery, window.wdsHeroCarousel ) );
+} ( window, jQuery, window.wdsCarousel ) );
