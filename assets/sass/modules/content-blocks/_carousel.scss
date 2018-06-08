@@ -1,0 +1,60 @@
+//--------------------------------------------------------------
+// slide Block
+//--------------------------------------------------------------
+.slide {
+	margin-bottom: 0;
+	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
+
+	// Transparent overlay.
+	&::after {
+		@include position(absolute, 0 0 null null);
+		@include size(100%);
+
+		background-color: rgba($color-black, 0.3);
+		content: '';
+		z-index: 2;
+	} // &:after
+
+	// Content container.
+	&-content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 50%;
+		min-height: rem(500); // height of slide.
+		position: relative;
+		text-align: center;
+		z-index: 3;
+	} // .slide-content
+
+	// Add padding to description.
+	&-description {
+		padding-bottom: $gutter * 2;
+	} // .slide-description
+} // .slide
+
+//-----------------------------------------
+// IE Fixes
+//-----------------------------------------
+.ie .slide {
+
+	// IE seems to have some width issues with flexbox,
+	// the text is rendered wider than its container
+	// and doesn't wrap. This fixes that.
+	.slide-title,
+	.slide-description {
+		width: 100%;
+	} // .slide-title, .slide-description
+
+	// IE11 doesn't do centering with just a min-height,
+	// need to set a specific height instead.
+	.slide-content {
+		@include media($tablet-portrait) {
+			height: rem(500); // height of slide.
+		}
+	} // .slide-content
+} // .ie .slide
