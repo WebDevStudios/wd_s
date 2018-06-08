@@ -25,7 +25,7 @@
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 50%;
-		min-height: rem(500); // height of hero.
+		min-height: rem(700); // height of hero.
 		position: relative;
 		text-align: center;
 		z-index: 3;
@@ -54,7 +54,7 @@
 	// need to set a specific height instead.
 	.hero-content {
 		@include media($tablet-portrait) {
-			height: rem(500); // height of hero.
+			height: rem(700); // height of hero.
 		}
 	} // .hero-content
 } // .ie .hero
