@@ -96,24 +96,12 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: template-acf.php:3
-msgid "Page with Content Blocks"
-msgstr ""
-
 #: template-scaffolding.php:3
 msgid "Scaffolding"
 msgstr ""
 
 #: template-sidebar-right.php:3
 msgid "Sidebar Right"
-msgstr ""
-
-#: inc/acf.php:243
-msgid "Video"
-msgstr ""
-
-#: inc/acf.php:264
-msgid "expired"
 msgstr ""
 
 #: inc/extras.php:102, inc/extras.php:167

@@ -147,11 +147,6 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/scripts.php';
 
 /**
- * Load custom ACF features.
- */
-require get_template_directory() . '/inc/acf.php';
-
-/**
  * Load custom filters and hooks.
  */
 require get_template_directory() . '/inc/hooks.php';
