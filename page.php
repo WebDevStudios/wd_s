@@ -18,6 +18,8 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
+			do_action( '_s_before_content' );
+
 			while ( have_posts() ) :
 				the_post();
 
@@ -29,6 +31,8 @@ get_header(); ?>
 				endif;
 
 			endwhile; // End of the loop.
+
+			do_action( '_s_after_content' );
 			?>
 
 		</main><!-- #main -->

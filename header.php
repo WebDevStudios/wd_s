@@ -27,41 +27,17 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header class="site-header">
+		<?php
+			do_action( '_s_before_header' );
 
-		<div class="site-branding">
+			if ( class_exists( 'FLThemeBuilder' ) && ! empty( FLThemeBuilderLayoutData::get_current_page_header_ids() ) ) :
+				FLThemeBuilderLayoutRenderer::render_header();
+			else :
+				_s_display_site_header();
+			endif;
 
-			<?php the_custom_logo(); ?>
-
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
-
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) :
-			?>
-				<p class="site-description"><?php echo esc_html( $description ); ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<?php _s_display_header_button(); ?>
-
-		<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
-			<span class="hamburger"></span>
-		</button>
-
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-
+			do_action( '_s_before_header' );
+		?>
 	</header><!-- .site-header-->
 
 	<div id="content" class="site-content">

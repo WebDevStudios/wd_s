@@ -18,6 +18,8 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
+		do_action( '_s_before_content' );
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
@@ -49,6 +51,8 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
+		do_action( '_s_after_content' );
 		?>
 
 		</main><!-- #main -->

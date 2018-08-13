@@ -14,12 +14,16 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer">
-
-		<div class="site-info">
-			<?php _s_display_copyright_text(); ?>
-			<?php _s_display_social_network_links(); ?>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer container-->
+		<?php
+			do_action( '_s_before_footer' );
+			if ( class_exists( 'FLThemeBuilder' ) && ! empty( FLThemeBuilderLayoutData::get_current_page_footer_ids() ) ) :
+				FLThemeBuilderLayoutRenderer::render_footer();
+			else :
+				_s_display_site_footer();
+			endif;
+			do_action( '_s_after_footer' );
+		?>
+	</footer><!-- .site-footer-->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

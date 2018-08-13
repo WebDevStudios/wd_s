@@ -12,7 +12,11 @@ get_header(); ?>
 	<div class="primary content-area">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+		do_action( '_s_before_content' );
+
+		if ( have_posts() ) :
+		?>
 
 			<header class="page-header">
 				<?php
@@ -42,6 +46,8 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
+		do_action( '_s_after_content' );
 		?>
 
 		</main><!-- #main -->
