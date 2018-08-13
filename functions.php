@@ -80,6 +80,11 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add theme support for Beaver Themer.
+		add_theme_support( 'fl-theme-builder-headers' );
+		add_theme_support( 'fl-theme-builder-footers' );
+		add_theme_support( 'fl-theme-builder-parts' );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
