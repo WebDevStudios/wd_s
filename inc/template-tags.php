@@ -444,6 +444,49 @@ function _s_display_card( $args = array() ) {
 }
 
 /**
+ * Display the theme header.
+ *
+ * @author Greg Rickaby
+ * @return void
+ */
+function _s_display_site_header() {
+	?>
+	<div class="site-branding">
+	<?php the_custom_logo(); ?>
+
+	<?php if ( is_front_page() && is_home() ) : ?>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php else : ?>
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	<?php endif; ?>
+
+	<?php
+	$description = get_bloginfo( 'description', 'display' );
+	if ( $description || is_customize_preview() ) :
+	?>
+		<p class="site-description"><?php echo esc_html( $description ); ?></p>
+	<?php endif; ?>
+	</div><!-- .site-branding -->
+
+	<?php _s_display_header_button(); ?>
+
+	<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
+	<span class="hamburger"></span>
+	</button>
+
+	<nav id="site-navigation" class="main-navigation">
+	<?php
+		wp_nav_menu( array(
+			'theme_location' => 'primary',
+			'menu_id'        => 'primary-menu',
+			'menu_class'     => 'menu dropdown',
+		) );
+	?>
+	</nav><!-- #site-navigation -->
+	<?php
+}
+
+/**
  * Display header button.
  *
  * @author Corey Collins
@@ -476,5 +519,20 @@ function _s_display_header_button() {
 			<?php get_search_form(); ?>
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
+	<?php
+}
+
+/**
+ * Display site footer.
+ *
+ * @author Greg Rickaby
+ * @return void
+ */
+function _s_display_site_footer() {
+	?>
+	<div class="site-info">
+		<?php _s_display_copyright_text(); ?>
+		<?php _s_display_social_network_links(); ?>
+	</div><!-- .site-info -->
 	<?php
 }
