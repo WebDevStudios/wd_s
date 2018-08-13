@@ -127,3 +127,36 @@ add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 // Create shortcode for SVG.
 // Usage [svg icon="facebook-square" title="facebook" desc="like us on facebook" fill="#000000" height="20px" width="20px"].
 add_shortcode( 'svg', '_s_display_svg' );
+
+/**
+ * Register Beaver Themer template parts.
+ *
+ * @author Greg Rickaby
+ * @return void
+ */
+function _s_register_part_hooks() {
+	return array(
+		array(
+			'label' => 'Header',
+			'hooks' => array(
+				'_s_before_header' => 'Before Header',
+				'_s_after_header'  => 'After Header',
+			),
+		),
+		array(
+			'label' => 'Content',
+			'hooks' => array(
+				'_s_before_content' => 'Before Content',
+				'_s_after_content'  => 'After Content',
+			),
+		),
+		array(
+			'label' => 'Footer',
+			'hooks' => array(
+				'_s_before_footer' => 'Before Footer',
+				'_s_after_footer'  => 'After Footer',
+			),
+		),
+	);
+}
+add_filter( 'fl_theme_builder_part_hooks', '_s_register_part_hooks' );
