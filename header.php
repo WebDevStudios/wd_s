@@ -36,7 +36,7 @@
 				_s_display_site_header();
 			endif;
 
-			do_action( '_s_before_header' );
+			do_action( '_s_after_header' );
 		?>
 	</header><!-- .site-header-->
 
