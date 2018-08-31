@@ -233,3 +233,30 @@ function _s_display_customizer_footer_scripts() {
 	// Otherwise, echo the scripts!
 	echo force_balance_tags( $scripts ); // WPCS XSS OK.
 }
+
+
+/**
+ * Shortcode to display copyright year.
+ *
+ * @author Haris Zulfiqar
+ * @param array $atts {.
+ * @type string $starting_year Optional. Define starting year to show starting year and current year e.g. 2015 - 2018
+ * @type string $separator Optional. Separator between starting year and current year.
+ * }
+ * @return string
+ */
+function _s_copyright_year( $atts ) {
+	// Setup defaults.
+	$args = shortcode_atts( array(
+		'starting_year' => '',
+		'separator'     => ' - ',
+	), $atts );
+
+	// Return current year if starting year is empty.
+	if ( ! $args['starting_year'] ) {
+		return date( 'Y' );
+	}
+
+	return $args['starting_year'] . $args['separator'] . date( 'Y' );
+}
+add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
