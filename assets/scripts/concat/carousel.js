@@ -97,7 +97,6 @@ window.wdsCarousel = {};
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
 		app.$c.theCarousel.slick( {
-			adaptiveHeight: true,
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: true,
