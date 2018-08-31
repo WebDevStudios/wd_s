@@ -313,7 +313,7 @@ function _s_display_copyright_text() {
 	}
 
 	?>
-	<span class="copyright-text"><?php echo wp_kses_post( $copyright_text ); ?></span>
+	<span class="copyright-text"><?php echo wp_kses_post( do_shortcode( $copyright_text ) ); ?></span>
 	<?php
 }
 
