@@ -1,8 +1,41 @@
 //--------------------------------------------------------------
 // Carousel Block
 //--------------------------------------------------------------
+$slide-height: rem(500);
+
 .carousel {
 	margin-bottom: 0;
+
+	// Arbitrary <div> inserted by Slick.
+	.slick-slide div {
+		height: $slide-height; // force slick to set a height.
+	} // .slick-slide div
+
+	// Navigation buttons.
+	.slick-arrow {
+		@include position(absolute, 45% null null null);
+
+		z-index: 10;
+	} // .sick-arrow
+
+	// Previous button.
+	.slick-prev {
+		right: 0;
+	} // .slick-prev
+
+	// Navigation dots/numbers.
+	.slick-dots {
+		@include list-reset;
+		@include position(absolute, null null 0 47%);
+
+		display: flex;
+
+		// Each dot.
+		li {
+			flex-direction: row;
+			justify-content: center;
+		} // li
+	} // .slick-dots
 } // .carousel
 
 .slide {
@@ -26,10 +59,10 @@
 		align-items: center;
 		display: flex;
 		flex-direction: column;
+		height: $slide-height;
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 50%;
-		min-height: rem(500); // height of slide.
 		position: relative;
 		text-align: center;
 		z-index: 3;
@@ -58,7 +91,7 @@
 	// need to set a specific height instead.
 	.slide-content {
 		@include media($tablet-portrait) {
-			height: rem(500); // height of slide.
+			height: $slide-height;
 		}
 	} // .slide-content
 } // .ie .slide
