@@ -72,6 +72,11 @@ $slide-height: rem(500);
 	&-description {
 		padding-bottom: $gutter * 2;
 	} // .slide-description
+
+	// Remove any text decoration.
+	.button-slide {
+		text-decoration: none;
+	} // a.button-slide
 } // .slide
 
 //-----------------------------------------

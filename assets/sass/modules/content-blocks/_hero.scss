@@ -35,6 +35,11 @@
 	&-description {
 		padding-bottom: $gutter * 2;
 	} // .hero-description
+
+	// Remove any text decoration.
+	.button-hero {
+		text-decoration: none;
+	} // a.button-hero
 } // .hero
 
 //-----------------------------------------

@@ -30,7 +30,7 @@ _s_display_block_options(
 		<?php endif; ?>
 
 		<?php if ( $button_url ) : ?>
-			<button type="button" class="button button-hero" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+			<a class="button button-hero" href=<?php echo esc_url( $button_url ); ?>><?php echo esc_html( $button_text ); ?></a>
 		<?php endif; ?>
 	</div><!-- .hero-content-->
 </section><!-- .hero -->

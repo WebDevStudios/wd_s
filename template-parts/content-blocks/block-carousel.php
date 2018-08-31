@@ -51,7 +51,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 				<?php endif; ?>
 
 				<?php if ( $button_url ) : ?>
-					<button type="button" class="button button-slide" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+					<a class="button button-slide" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 				<?php endif; ?>
 
 			</div><!-- .slide-content -->
