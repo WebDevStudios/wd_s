@@ -86,12 +86,4 @@ $slide-height: rem(500);
 	.slide-description {
 		width: 100%;
 	} // .slide-title, .slide-description
-
-	// IE11 doesn't do centering with just a min-height,
-	// need to set a specific height instead.
-	.slide-content {
-		@include media($tablet-portrait) {
-			height: $slide-height;
-		}
-	} // .slide-content
 } // .ie .slide
