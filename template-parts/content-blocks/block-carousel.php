@@ -30,7 +30,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 			'start_date' => $other_options['start_date'],
 			'end_date'   => $other_options['end_date'],
 		) ) ) {
-			return false;
+			continue;
 		}
 
 		// Start a <container> with possible block options.
