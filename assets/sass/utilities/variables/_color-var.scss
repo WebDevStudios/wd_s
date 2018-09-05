@@ -4,11 +4,6 @@
 //    - Grayscale
 //    - Social Media Colors
 //       - $social-colors() map
-//
-//   ELEMENTS & SKINNING
-//     - General
-//     - Accessibility
-//     - Links
 //-------------------------------------------------------------
 
 ////
@@ -82,20 +77,3 @@ $social-colors: (
 	youtube: $color-youtube,
 	youtube-square: $color-youtube,
 );
-
-// ELEMENTS & SKINNING
-
-// General
-$color-background-body: $color-white;
-$color-text-main: $color-cod-gray;
-$color-background-hr: $color-silver;
-$color-border-abbr: $color-dove-gray;
-
-// Accessibility
-$color-background-screen-reader: $color-whitesmoke;
-$color-text-screen-reader: $color-blue;
-
-// Links
-$color-link: $color-blue;
-$color-link-visited: $color-blue;
-$color-link-hover: $color-blue;
