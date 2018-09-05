@@ -1,0 +1,86 @@
+//--------------------------------------------------------------
+//   ELEMENTS & SKINNING
+//     - General
+//     - Accessibility
+//     - Links
+//--------------------------------------------------------------
+
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+//-----------------------------------------
+// General
+//-----------------------------------------
+
+/// Background color.
+$color-background-body: $color-white;
+
+/// Main text color.
+$color-text-main: $color-cod-gray;
+
+/// Horizontal Rule.
+$color-background-hr: $color-silver;
+
+/// Abbreviations.
+$color-border-abbr: $color-dove-gray;
+
+
+//-----------------------------------------
+// Accessibility
+//-----------------------------------------
+
+/// Screen reader background color.
+$color-background-screen-reader: $color-whitesmoke;
+
+/// Screen reader text color.
+$color-text-screen-reader: $color-blue;
+
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+
+/// Links.
+$color-link: $color-blue;
+
+/// Visited Links.
+$color-link-visited: $color-blue;
+
+/// Hovered Links.
+$color-link-hover: $color-blue;
+
+/// Focus LInks.
+$color-link-focus: $color-blue;
+
+
+//-----------------------------------------
+// Forms
+//-----------------------------------------
+
+/// Button background.
+$color-button-background: $color-dove-gray;
+
+/// Button background on hover.
+$color-button-background-hover: $color-mineshaft;
+
+/// Button text.
+$color-button-text: $color-white;
+
+/// Input border.
+$color-input-border: $color-silver;
+
+/// Input focused color.
+$color-input-focus-text: $color-cod-gray;
+
+/// Input text.
+$color-input-text: $color-dove-gray;
+
+/// Global input padding.
+$padding-input: rem(6);
+
+
+//-----------------------------------------
+// Element Comment
+//-----------------------------------------
