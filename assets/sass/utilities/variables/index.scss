@@ -2,10 +2,12 @@
 // Global Variables
 //--------------------------------------------------------------
 
-@import 'modal-var';
 @import 'breakpoint-var';
 @import 'color-var';
-@import 'form-var';
 @import 'grid-var';
+@import 'modal-var';
 @import 'transition-var';
 @import 'type-var';
+
+// Globally assigned variables.
+@import 'color-assigments';
