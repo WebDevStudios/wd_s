@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
 const babel = require( 'gulp-babel' );
