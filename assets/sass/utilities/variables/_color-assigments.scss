@@ -26,6 +26,12 @@ $color-background-hr: $color-silver;
 /// Abbreviations.
 $color-border-abbr: $color-dove-gray;
 
+/// Box shadows.
+$color-box-shadow: rgba($color-black, 0.5);
+
+/// Overlays.
+$color-overlay: rgba($color-black, 0.3);
+
 
 //-----------------------------------------
 // Accessibility
@@ -84,8 +90,22 @@ $padding-input: rem(6);
 //-----------------------------------------
 // Tables
 //-----------------------------------------
-$table-border: $color-silver;
+
+/// Table borders.
+$color-table-border: $color-silver;
 
 
+//-----------------------------------------
+// Modals
+//-----------------------------------------
+
+/// Modal Content Background.
+$color-modal-background: $color-white;
+
+/// Modal Close Background.
+$color-modal-close-background: $color-black;
+
+/// Modal Close Colors.
+$color-modal-close-color: $color-white;
 
 
