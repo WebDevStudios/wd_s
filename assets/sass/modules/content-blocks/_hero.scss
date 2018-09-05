@@ -12,7 +12,7 @@
 		@include position(absolute, 0 0 null null);
 		@include size(100%);
 
-		background-color: rgba($color-black, 0.5);
+		background-color: $color-overlay;
 		content: '';
 		z-index: 2;
 	} // &:after
