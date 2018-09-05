@@ -9,6 +9,7 @@
 //     - Modals
 //     - Icons
 //     - Comments
+//     - WP/Gutenberg Blocks
 //--------------------------------------------------------------
 
 ////
@@ -155,3 +156,16 @@ $color-meta-links: $color-tundora;
 
 /// Comment post author background.
 $color-author-background: $color-light-yellow;
+
+
+//-----------------------------------------
+// WP/Gutenberg Blocks
+//-----------------------------------------
+
+/// Block button background.
+$color-block-button-background: $color-mineshaft;
+
+/// BLock pullquote.
+$color-block-border: $color-silver;
+
+
