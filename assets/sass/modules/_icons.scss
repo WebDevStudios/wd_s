@@ -46,7 +46,7 @@
 	&::after {
 		@include size(rem(20) rem(3));
 
-		background: $color-white;
+		background: $color-icon-close-background;
 		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
@@ -78,7 +78,7 @@
 	&::after {
 		@include size(rem(10) rem(2));
 
-		background: $color-white;
+		background: $color-down-arrow-background;
 		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
