@@ -36,7 +36,7 @@
 	ul {
 		@include position(absolute, rem(24) null null -999em);
 
-		box-shadow: 0 rem(3) rem(3) rgba($color-black, 0.2);
+		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
 		float: left;
 		z-index: 99999;
 
