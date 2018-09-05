@@ -3,6 +3,12 @@
 //     - General
 //     - Accessibility
 //     - Links
+//     - Forms
+//     - Buttons
+//     - Tables
+//     - Modals
+//     - Icons
+//     - Comments
 //--------------------------------------------------------------
 
 ////
@@ -88,6 +94,14 @@ $padding-input: rem(6);
 
 
 //-----------------------------------------
+// Buttons
+//-----------------------------------------
+
+/// CTA Link Color.
+$color-cta-link-color: $color-white;
+
+
+//-----------------------------------------
 // Tables
 //-----------------------------------------
 
@@ -109,3 +123,35 @@ $color-modal-close-background: $color-black;
 $color-modal-close-color: $color-white;
 
 
+//-----------------------------------------
+// Icons
+//-----------------------------------------
+
+/// Close Icon Background.
+$color-icon-close-background: $color-white;
+
+/// Down Arrow Background Color.
+$color-down-arrow-background: $color-white;
+
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+
+/// Comment border.
+$color-comment-border: $color-silver;
+
+/// Comment focus border.
+$color-comment-focus-border: $color-mineshaft;
+
+/// Comment even background.
+$color-even-background: $color-gallery;
+
+/// Comment response background.
+$color-comment-response: $color-white;
+
+/// Comment meta links.
+$color-meta-links: $color-tundora;
+
+/// Comment post author background.
+$color-author-background: $color-light-yellow;
