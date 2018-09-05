@@ -6,28 +6,34 @@
 //       - $social-colors() map
 //-------------------------------------------------------------
 
+// sass-lint:disable no-color-keywords
+
 ////
 /// @group variables
 /// @author WebDevStudios
 ////
 
+//-----------------------------------------
+// Colors
+//-----------------------------------------
+
 // Primary palette
+$color-black: #000;
 $color-blue: #20739A;
 $color-light-yellow: #fff9c0;
-$color-black: #000;
 $color-white: #fff;
 
 // Grayscale
-$color-gray: #808080;
+$color-alto: #ddd;
 $color-cod-gray: #111;
-$color-mineshaft: #333;
-$color-tundora: #454545;
 $color-dove-gray: #666;
+$color-gallery: #eee;
 $color-gray-alt: #929292;
+$color-gray: #808080;
+$color-mineshaft: #333;
 $color-silver-chalice: #aaa;
 $color-silver: #ccc;
-$color-alto: #ddd;
-$color-gallery: #eee;
+$color-tundora: #454545;
 $color-whitesmoke: #f1f1f1;
 
 // Social Media Colors
@@ -61,20 +67,20 @@ $theme-colors: (
 
 /// Social media `$social-colors()` map
 $social-colors: (
-	facebook: $color-facebook,
 	facebook-square: $color-facebook,
-	googleplus: $color-googleplus,
+	facebook: $color-facebook,
 	googleplus-square: $color-googleplus,
-	instagram: $color-instagram,
+	googleplus: $color-googleplus,
 	instagram-square: $color-instagram,
-	linkedin: $color-linkedin,
+	instagram: $color-instagram,
 	linkedin-square: $color-linkedin,
-	pinterest: $color-pinterest,
+	linkedin: $color-linkedin,
 	pinterest-square: $color-pinterest,
-	rss: $color-rss,
+	pinterest: $color-pinterest,
 	rss-square: $color-rss,
-	twitter: $color-twitter,
+	rss: $color-rss,
 	twitter-square: $color-twitter,
-	youtube: $color-youtube,
+	twitter: $color-twitter,
 	youtube-square: $color-youtube,
+	youtube: $color-youtube,
 );
