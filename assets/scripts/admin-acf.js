@@ -19,7 +19,6 @@ window.ACFColorPickerOptions = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			acfFieldsContainer: $( '.acf-fields' ),
 			acfColorPicker: $( '.acf-color-picker' ),
 			colorPalette: [ '#21759b', '#fff9c0', '#000', '#fff', '#808080', '#111', '#333', '#666', '#929292', '#aaa', '#ccc', '#ddd', '#eee', '#f1f1f1' ]
 		};
