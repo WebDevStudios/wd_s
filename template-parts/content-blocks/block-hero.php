@@ -62,7 +62,7 @@ if ( have_rows( 'hero_slides' ) ) :
 				<p class="hero-description"><?php echo esc_html( $text ); ?></p>
 			<?php endif; ?>
 
-			<?php if ( $button_url ) : ?>
+			<?php if ( $button_text && $button_url ) : ?>
 				<button type="button" class="button button-hero" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
 			<?php endif; ?>
 
