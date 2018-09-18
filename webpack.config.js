@@ -107,7 +107,7 @@ let webpackConfig = {
 				files: [
 					{
 						match: [
-							'**/*.hbs',
+							'**/*.php',
 							'./assets/*.*'
 						],
 						options: {
