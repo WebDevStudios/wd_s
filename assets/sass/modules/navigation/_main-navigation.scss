@@ -62,18 +62,6 @@
 
 			min-width: rem(200);
 		} // a
-
-		// sass-lint:disable no-qualifying-elements
-		&:hover > a,
-		.focus > a {
-
-		} // &:hover > a, .focus > a
-
-		a:hover,
-		a.focus {
-
-		} // a:hover, a.focus
-		// sass-lint:enable no-qualifying-elements
 	} // ul
 
 	// Display sub-menu on hover
@@ -86,10 +74,5 @@
 	li {
 		float: left;
 		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-			
-		} // &:hover > a, &.focus > a
 	} // li
 } // &.dropdown
