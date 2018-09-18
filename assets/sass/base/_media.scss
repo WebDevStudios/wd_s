@@ -154,16 +154,22 @@ img {
 	background-size: cover;
 } // .image-as-background
 
-/// Video as background
+// Video as background
 .video-as-background {
+	@include size(100% 100%);
+
 	display: block;
-	height: auto; // IE/Edge browsers need this to set the video to full-width.
 	object-fit: cover;
 	object-position: center top;
 	position: absolute;
-	width: 100%;
 	z-index: 1;
 } // .video-as-background
+
+// IE/Edge hacks.
+.ie .video-as-background,
+.edge .video-as-background {
+	height: auto;
+} // .ie .video-as-background
 
 // svg defs
 .svg-defs {

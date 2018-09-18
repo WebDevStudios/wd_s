@@ -82,8 +82,21 @@ function _s_display_block_options( $args = array() ) {
 		}
 
 		if ( 'video' === $args['background_type'] ) {
-			$background_video        = $background_options['background_video'];
-			$background_video_markup = '<video class="video-as-background" autoplay muted loop preload="auto"><source src="' . esc_url( $background_video['url'] ) . '" type="video/mp4"></video>';
+			$background_video      = $background_options['background_video'];
+			$background_video_webm = $background_options['background_video_webm'];
+			ob_start();
+			?>
+				<video class="video-as-background" autoplay muted loop playsinline preload="auto">
+				<?php if ( $background_video_webm['url'] ) : ?>
+					<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
+				<?php endif; ?>
+
+				<?php if ( $background_video['url'] ) : ?>
+					<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
+				<?php endif; ?>
+				</video>
+			<?php
+			$background_video_markup = ob_get_clean();
 		}
 
 		if ( 'none' === $args['background_type'] ) {

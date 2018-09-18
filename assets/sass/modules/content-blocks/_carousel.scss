@@ -1,0 +1,101 @@
+//--------------------------------------------------------------
+// Carousel Block
+//--------------------------------------------------------------
+$slide-height: rem(500);
+
+.carousel {
+	margin-bottom: 0;
+
+	// Arbitrary <div> inserted by Slick.
+	.slick-slide div {
+		height: $slide-height; // force slick to set a height.
+	} // .slick-slide div
+
+	// Navigation buttons.
+	.slick-arrow {
+		@include position(absolute, 45% null null null);
+
+		z-index: 10;
+	} // .sick-arrow
+
+	// Next button.
+	.slick-next {
+		right: 0;
+	} // .slick-next
+
+	// Previous button.
+	.slick-prev {
+		left: 0;
+	} // .slick-prev
+
+	// Navigation dots/numbers.
+	.slick-dots {
+		@include list-reset;
+		@include position(absolute, null null 0);
+
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		// Each dot.
+		li {
+			flex-direction: row;
+			justify-content: center;
+		} // li
+	} // .slick-dots
+} // .carousel
+
+.slide {
+	margin-bottom: 0;
+	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
+
+	// Transparent overlay.
+	&::after {
+		@include position(absolute, 0 0 null null);
+		@include size(100%);
+
+		background-color: rgba($color-black, 0.3);
+		content: '';
+		z-index: 2;
+	} // &:after
+
+	// Content container.
+	&-content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: $slide-height;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 50%;
+		position: relative;
+		text-align: center;
+		z-index: 3;
+	} // .slide-content
+
+	// Add padding to description.
+	&-description {
+		padding-bottom: $gutter * 2;
+	} // .slide-description
+
+	// Remove any text decoration.
+	.button-slide {
+		text-decoration: none;
+	} // a.button-slide
+} // .slide
+
+//-----------------------------------------
+// IE Fixes
+//-----------------------------------------
+.ie .slide {
+
+	// IE seems to have some width issues with flexbox,
+	// the text is rendered wider than its container
+	// and doesn't wrap. This fixes that.
+	.slide-title,
+	.slide-description {
+		width: 100%;
+	} // .slide-title, .slide-description
+} // .ie .slide

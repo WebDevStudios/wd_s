@@ -23,7 +23,7 @@
             "label": "Background Options",
             "name": "background_options",
             "type": "group",
-            "instructions": "",
+            "instructions": "Remember: image and video files should be compressed and optimized with tools like ImageOptim (https:\/\/imageoptim.com\/online) and Handbrake (https:\/\/handbrake.fr\/) prior to upload. For best results, background media should be at least 1280x720.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -35,14 +35,14 @@
             "sub_fields": [
                 {
                     "key": "field_5ab3e6937bb9d",
-                    "label": "Background Type",
+                    "label": "Media Type",
                     "name": "background_type",
                     "type": "select",
                     "instructions": "Choose a type of background.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "40",
                         "class": "",
                         "id": ""
                     },
@@ -64,7 +64,7 @@
                 },
                 {
                     "key": "field_5ab3e6cc7bb9e",
-                    "label": "Background Color",
+                    "label": "Color",
                     "name": "background_color",
                     "type": "color_picker",
                     "instructions": "Select a background color.",
@@ -79,7 +79,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "66",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
@@ -87,10 +87,10 @@
                 },
                 {
                     "key": "field_5ab3e6e67bb9f",
-                    "label": "Background Image",
+                    "label": "Image",
                     "name": "background_image",
                     "type": "image",
-                    "instructions": "Add\/Upload an image file. (1920x1080px .jpg, .png)",
+                    "instructions": "Add\/Upload an image file. (jpg, .png)",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -102,7 +102,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "66",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
@@ -115,14 +115,14 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": "jpg, png"
+                    "mime_types": "jpg, jpeg, png"
                 },
                 {
                     "key": "field_5ab3e72e7bba0",
-                    "label": "Background Video",
+                    "label": "Video (mp4)",
                     "name": "background_video",
                     "type": "file",
-                    "instructions": "Add\/Upload a 1920x1080 .mp4 video file. Note: background videos are only supported on Hero blocks.",
+                    "instructions": "Required. Add\/Upload an .mp4 video file.",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -134,7 +134,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "66",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -143,6 +143,33 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": "mp4"
+                },
+                {
+                    "key": "field_5b1aa171e3f50",
+                    "label": "Video (webm)",
+                    "name": "background_video_webm",
+                    "type": "file",
+                    "instructions": "Optional. Add\/Upload an .webm video file. Note: .webm has better compression than .mp4, resulting in much smaller file size.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "webm"
                 }
             ]
         }
@@ -164,5 +191,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1621823730
+    "modified": 1528473065
 }
