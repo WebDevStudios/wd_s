@@ -4,8 +4,11 @@
   "description": "A theme boilerplate for WebDevStudios.",
   "main": "webpack.config.js",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "bourbon": "^4.3.4",
-    "bourbon-neat": "^1.9.0"
+    "bourbon-neat": "^1.9.0",
+    "normalize.css": "^8.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
