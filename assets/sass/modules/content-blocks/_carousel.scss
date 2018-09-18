@@ -18,9 +18,14 @@ $slide-height: rem(500);
 		z-index: 10;
 	} // .sick-arrow
 
+	// Next button.
+	.slick-next {
+		right: 0;
+	} // .slick-next
+
 	// Previous button.
 	.slick-prev {
-		right: 0;
+		left: 0;
 	} // .slick-prev
 
 	// Navigation dots/numbers.
