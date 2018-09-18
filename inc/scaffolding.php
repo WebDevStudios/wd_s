@@ -105,7 +105,7 @@ function _s_scaffolding_allowed_html() {
 
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'svg'   => array(
+		'svg'    => array(
 			'aria-hidden' => true,
 			'class'       => true,
 			'id'          => true,
@@ -117,17 +117,17 @@ function _s_scaffolding_allowed_html() {
 			'use'         => true,
 			'path'        => true,
 		),
-		'use'   => array(
+		'use'    => array(
 			'xlink:href' => true,
 		),
-		'title' => array(
+		'title'  => array(
 			'id' => true,
 		),
-		'desc'  => array(
+		'desc'   => array(
 			'id' => true,
 		),
 		'select' => array(
-			'class'    => true,
+			'class' => true,
 		),
 		'option' => array(
 			'option'   => true,
@@ -135,7 +135,7 @@ function _s_scaffolding_allowed_html() {
 			'selected' => true,
 			'disabled' => true,
 		),
-		'input' => array(
+		'input'  => array(
 			'type'        => true,
 			'name'        => true,
 			'value'       => true,
@@ -217,7 +217,10 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
 					</div>
-				<?php break; ?>
+				<?php
+					break;
+				default:
+				?>
 			<?php endswitch; ?>
 		</div>
 	</div>

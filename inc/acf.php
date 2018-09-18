@@ -155,9 +155,9 @@ function _s_has_block_expired( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Get (Unix) times and convert to integer.
-	$now = (int) date( 'U' );
+	$now   = (int) date( 'U' );
 	$start = (int) $args['start_date'];
-	$end = (int) $args['end_date'];
+	$end   = (int) $args['end_date'];
 
 	// No dates? Cool, they're optional.
 	if ( empty( $start ) || empty( $end ) ) {
@@ -181,7 +181,7 @@ function _s_has_block_expired( $args = array() ) {
 function _s_acf_admin_scripts() {
 
 	// If a SCRIPT_DEBUG constant is defined or there is a $_GET param of 'script_debug', load unminified files.
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || isset( $_GET['script_debug'] ) ? '' : '.min';
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || isset( $_GET['script_debug'] ) ? '' : '.min'; // phpcs:ignore
 
 	// Version assets using this value. Bump it to bust old, cached files.
 	$version = '1.0.0';
