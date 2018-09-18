@@ -31,9 +31,11 @@ $slide-height: rem(500);
 	// Navigation dots/numbers.
 	.slick-dots {
 		@include list-reset;
-		@include position(absolute, null null 0 47%);
+		@include position(absolute, null null 0);
 
 		display: flex;
+		justify-content: center;
+		width: 100%;
 
 		// Each dot.
 		li {
