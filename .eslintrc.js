@@ -6,7 +6,8 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'jquery': true,
-		'es6': true
+        'es6': true,
+        'commonjs': true,
 	},
 
 	/**
@@ -24,6 +25,15 @@ module.exports = {
 		'wp': false
 	},
 
+	/**
+	 * Support for importing and exporting components
+     * 
+	 * @@since 1.1
+	 */
+    'parserOptions': {
+        'sourceType': 'module'
+    },
+    
 	/**
 	 * Make sure you have eslint-config-wordpress installed.
 	 *
