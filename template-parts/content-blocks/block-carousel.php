@@ -50,7 +50,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 					<p class="slide-description"><?php echo esc_html( $text ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( $button_url ) : ?>
+				<?php if ( $button_text && $button_url ) : ?>
 					<a class="button button-slide" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 				<?php endif; ?>
 

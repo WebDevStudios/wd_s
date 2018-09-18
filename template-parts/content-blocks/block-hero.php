@@ -29,7 +29,7 @@ _s_display_block_options(
 			<p class="hero-description"><?php echo esc_html( $text ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( $button_url ) : ?>
+		<?php if ( $button_text && $button_url ) : ?>
 			<a class="button button-hero" href=<?php echo esc_url( $button_url ); ?>><?php echo esc_html( $button_text ); ?></a>
 		<?php endif; ?>
 	</div><!-- .hero-content-->
