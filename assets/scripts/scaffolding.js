@@ -35,7 +35,6 @@ window.wdsScaffolding = {};
 	/**
 	 * Toggle the display of the scaffolding documentation content.
 	 *
-	 * @return
 	 * @author Carrie Forde
 	 */
 	app.toggleScaffoldingContent = function() {
@@ -46,4 +45,4 @@ window.wdsScaffolding = {};
 	// Engage!
 	$( app.init );
 
-})( window, jQuery, window.wdsScaffolding );
+} ( window, jQuery, window.wdsScaffolding ) );
