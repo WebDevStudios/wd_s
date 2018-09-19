@@ -15,8 +15,8 @@ let webpackConfig = {
 	},
 
 	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve( __dirname, './assets/dist' )
+		filename: '[name].js',
+		path: path.resolve( __dirname, './dist' )
 	},
 
 	module: {
@@ -60,6 +60,7 @@ let webpackConfig = {
 							sourceMap: true
 						}
 					},
+					{ loader: 'resolve-url-loader' },
 					{
 						loader: 'sass-loader',
 						options: {
@@ -73,10 +74,10 @@ let webpackConfig = {
 				test: /\.(jpg|png|gif|svg)$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: 'url-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: './assets/images/'
+							outputPath: path.resolve( __dirname, './dist/images' )
 						}
 					}
 				]
@@ -85,10 +86,10 @@ let webpackConfig = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: 'url-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: './assets/fonts/'
+							outputPath: path.resolve( __dirname, './dist/fonts' )
 						}
 					}
 				]
@@ -99,14 +100,14 @@ let webpackConfig = {
 	plugins: [
 		new CleanPlugin( [ 'dist' ] ),
 		new MiniCssExtractPlugin( {
-			filename: '[name].css',
-			chunkFilename: '[id].css'
+			filename: 'style.css',
+			chunkFilename: 'style.css'
 		} ),
 		new BrowserSyncPlugin(
 			{
 				host: 'localhost',
 				port: 3000,
-				proxy: 'http://localhost:2368',
+				proxy: 'http://wdunderscores.test/',
 				files: [
 					{
 						match: [
