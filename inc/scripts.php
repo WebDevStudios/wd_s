@@ -77,7 +77,7 @@ function _s_scripts() {
 
 	// Enqueue scripts.
 	if ( $is_IE ) {
-		wp_enqueue_script( '_s-babel-polyfill', get_template_directory_uri() . '/assets/scripts/babel-polyfill.min.js', array(), $version, true );
+		wp_enqueue_script( '_s-babel-polyfill', get_template_directory_uri() . '/assets/scripts/lib/babel-polyfill.min.js', array(), $version, true );
 	}
 
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/dist/main' . $suffix . '.js', $version, true );
@@ -88,34 +88,16 @@ function _s_scripts() {
 
 	// Enqueue the scaffolding Library script.
 	if ( is_page_template( 'template-scaffolding.php' ) ) {
-		wp_enqueue_script( '_s-scaffolding', get_template_directory_uri() . '/assets/scripts/scaffolding' . $suffix . '.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( '_s-scaffolding', get_template_directory_uri() . '/assets/scripts/admin/scaffolding.js', array( 'jquery' ), $version, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
  * Enqueue scripts for the customizer.
- *
- * @author Corey Collins
  */
 function _s_customizer_scripts() {
-
-	/**
-	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
-	 */
-	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
-
-	/**
-	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
-	 */
-	$version = '1.0.0';
-
-	/**
-	 * Should we load minified files?
-	 */
-	$suffix = ( true === $debug ) ? '' : '.min';
-
-	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/assets/scripts/customizer' . $suffix . '.js', array( 'jquery' ), $version, true );
+	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/assets/scripts/admin/customizer.js', array( 'jquery' ), $version, true );
 }
 add_action( 'customize_controls_enqueue_scripts', '_s_customizer_scripts' );
 
