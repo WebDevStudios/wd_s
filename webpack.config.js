@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack = require( 'webpack' );
 const path = require( 'path' );
 const CleanPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
@@ -98,6 +99,10 @@ let webpackConfig = {
 	},
 
 	plugins: [
+		new webpack.ProvidePlugin( {
+			$: 'jquery',
+			jQuery: 'jquery'
+		} ),
 		new CleanPlugin( [ 'dist' ] ),
 		new MiniCssExtractPlugin( {
 			filename: 'style.css',
@@ -107,7 +112,7 @@ let webpackConfig = {
 			{
 				host: 'localhost',
 				port: 3000,
-				proxy: 'http://wdunderscores.test/',
+				proxy: 'https://testing.test/',
 				files: [
 					{
 						match: [
