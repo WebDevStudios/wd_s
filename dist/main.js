@@ -97,10 +97,10 @@
 
 /***/ }),
 
-/***/ "./assets/scripts/concat/carousel.js":
-/*!*******************************************!*\
-  !*** ./assets/scripts/concat/carousel.js ***!
-  \*******************************************/
+/***/ "./assets/scripts/components/carousel.js":
+/*!***********************************************!*\
+  !*** ./assets/scripts/components/carousel.js ***!
+  \***********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -214,10 +214,10 @@ $(app.init);
 
 /***/ }),
 
-/***/ "./assets/scripts/concat/header-button.js":
-/*!************************************************!*\
-  !*** ./assets/scripts/concat/header-button.js ***!
-  \************************************************/
+/***/ "./assets/scripts/components/header-button.js":
+/*!****************************************************!*\
+  !*** ./assets/scripts/components/header-button.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -276,6 +276,547 @@ $(app.init);
 
 /***/ }),
 
+/***/ "./assets/scripts/components/mobile-menu.js":
+/*!**************************************************!*\
+  !*** ./assets/scripts/components/mobile-menu.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * File: mobile-menu.js
+ *
+ * Create an accordion style dropdown.
+ */
+var app = {}; // Constructor.
+
+app.init = function () {
+  app.cache();
+
+  if (app.meetsRequirements()) {
+    app.bindEvents();
+  }
+}; // Cache all the things.
+
+
+app.cache = function () {
+  app.$c = {
+    body: $('body'),
+    window: $(window),
+    subMenuContainer: $('.mobile-menu .sub-menu, .utility-navigation .sub-menu'),
+    subSubMenuContainer: $('.mobile-menu .sub-menu .sub-menu'),
+    subMenuParentItem: $('.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children'),
+    offCanvasContainer: $('.off-canvas-container')
+  };
+}; // Combine all events.
+
+
+app.bindEvents = function () {
+  app.$c.window.on('load', app.addDownArrow);
+  app.$c.subMenuParentItem.on('click', app.toggleSubmenu);
+  app.$c.subMenuParentItem.on('transitionend', app.resetSubMenu);
+  app.$c.offCanvasContainer.on('transitionend', app.forceCloseSubmenus);
+}; // Do we meet the requirements?
+
+
+app.meetsRequirements = function () {
+  return app.$c.subMenuContainer.length;
+}; // Reset the submenus after it's done closing.
+
+
+app.resetSubMenu = function () {
+  // When the list item is done transitioning in height,
+  // remove the classes from the submenu so it is ready to toggle again.
+  if ($(this).is('li.menu-item-has-children') && !$(this).hasClass('is-visible')) {
+    $(this).find('ul.sub-menu').removeClass('slideOutLeft is-visible');
+  }
+}; // Slide out the submenu items.
+
+
+app.slideOutSubMenus = function (el) {
+  // If this item's parent is visible and this is not, bail.
+  if (el.parent().hasClass('is-visible') && !el.hasClass('is-visible')) {
+    return;
+  } // If this item's parent is visible and this item is visible, hide its submenu then bail.
+
+
+  if (el.parent().hasClass('is-visible') && el.hasClass('is-visible')) {
+    el.removeClass('is-visible').find('.sub-menu').removeClass('slideInLeft').addClass('slideOutLeft');
+    return;
+  }
+
+  app.$c.subMenuContainer.each(function () {
+    // Only try to close submenus that are actually open.
+    if ($(this).hasClass('slideInLeft')) {
+      // Close the parent list item, and set the corresponding button aria to false.
+      $(this).parent().removeClass('is-visible').find('.parent-indicator').attr('aria-expanded', false); // Slide out the submenu.
+
+      $(this).removeClass('slideInLeft').addClass('slideOutLeft');
+    }
+  });
+}; // Add the down arrow to submenu parents.
+
+
+app.addDownArrow = function () {
+  app.$c.subMenuParentItem.prepend('<button type="button" aria-expanded="false" class="parent-indicator" aria-label="Open submenu"><span class="down-arrow"></span></button>');
+}; // Deal with the submenu.
+
+
+app.toggleSubmenu = function (e) {
+  var el = $(this),
+      // The menu element which was clicked on.
+  subMenu = el.children('ul.sub-menu'),
+      // The nearest submenu.
+  $target = $(e.target); // the element that's actually being clicked (child of the li that triggered the click event).
+  // Figure out if we're clicking the button or its arrow child,
+  // if so, we can just open or close the menu and bail.
+
+  if ($target.hasClass('down-arrow') || $target.hasClass('parent-indicator')) {
+    // First, collapse any already opened submenus.
+    app.slideOutSubMenus(el);
+
+    if (!subMenu.hasClass('is-visible')) {
+      // Open the submenu.
+      app.openSubmenu(el, subMenu);
+    }
+
+    return false;
+  }
+}; // Open a submenu.
+
+
+app.openSubmenu = function (parent, subMenu) {
+  // Expand the list menu item, and set the corresponding button aria to true.
+  parent.addClass('is-visible').find('.parent-indicator').attr('aria-expanded', true); // Slide the menu in.
+
+  subMenu.addClass('is-visible animated slideInLeft');
+}; // Force close all the submenus when the main menu container is closed.
+
+
+app.forceCloseSubmenus = function () {
+  // The transitionend event triggers on open and on close, need to make sure we only do this on close.
+  if (!$(this).hasClass('is-visible')) {
+    app.$c.subMenuParentItem.removeClass('is-visible').find('.parent-indicator').attr('aria-expanded', false);
+    app.$c.subMenuContainer.removeClass('is-visible slideInLeft');
+    app.$c.body.css('overflow', 'visible');
+    app.$c.body.unbind('touchstart');
+  }
+
+  if ($(this).hasClass('is-visible')) {
+    app.$c.body.css('overflow', 'hidden');
+    app.$c.body.bind('touchstart', function (e) {
+      if (!$(e.target).parents('.contact-modal')[0]) {
+        e.preventDefault();
+      }
+    });
+  }
+}; // Engage!
+
+
+$(app.init);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./assets/scripts/components/modal.js":
+/*!********************************************!*\
+  !*** ./assets/scripts/components/modal.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * File modal.js
+ *
+ * Deal with multiple modals and their media.
+ */
+var app = {};
+var $modalToggle,
+    $focusableChildren,
+    $player,
+    $tag = document.createElement('script'),
+    $firstScriptTag = document.getElementsByTagName('script')[0],
+    YT; // Constructor.
+
+app.init = function () {
+  app.cache();
+
+  if (app.meetsRequirements()) {
+    $firstScriptTag.parentNode.insertBefore($tag, $firstScriptTag);
+    app.bindEvents();
+  }
+}; // Cache all the things.
+
+
+app.cache = function () {
+  app.$c = {
+    'body': $('body')
+  };
+}; // Do we meet the requirements?
+
+
+app.meetsRequirements = function () {
+  return $('.modal-trigger').length;
+}; // Combine all events.
+
+
+app.bindEvents = function () {
+  // Trigger a modal to open.
+  app.$c.body.on('click touchstart', '.modal-trigger', app.openModal); // Trigger the close button to close the modal.
+
+  app.$c.body.on('click touchstart', '.close', app.closeModal); // Allow the user to close the modal by hitting the esc key.
+
+  app.$c.body.on('keydown', app.escKeyClose); // Allow the user to close the modal by clicking outside of the modal.
+
+  app.$c.body.on('click touchstart', 'div.modal-open', app.closeModalByClick); // Listen to tabs, trap keyboard if we need to
+
+  app.$c.body.on('keydown', app.trapKeyboardMaybe);
+}; // Open the modal.
+
+
+app.openModal = function () {
+  // Store the modal toggle element
+  $modalToggle = $(this); // Figure out which modal we're opening and store the object.
+
+  var $modal = $($(this).data('target')); // Display the modal.
+
+  $modal.addClass('modal-open'); // Add body class.
+
+  app.$c.body.addClass('modal-open'); // Find the focusable children of the modal.
+  // This list may be incomplete, really wish jQuery had the :focusable pseudo like jQuery UI does.
+  // For more about :input see: https://api.jquery.com/input-selector/
+
+  $focusableChildren = $modal.find('a, :input, [tabindex]'); // Ideally, there is always one (the close button), but you never know.
+
+  if (0 < $focusableChildren.length) {
+    // Shift focus to the first focusable element.
+    $focusableChildren[0].focus();
+  }
+}; // Close the modal.
+
+
+app.closeModal = function () {
+  // Figure the opened modal we're closing and store the object.
+  var $modal = $($('div.modal-open .close').data('target')),
+      // Find the iframe in the $modal object.
+  $iframe = $modal.find('iframe'); // Only do this if there are any iframes.
+
+  if ($iframe.length) {
+    // Get the iframe src URL.
+    var url = $iframe.attr('src'); // Removing/Readding the URL will effectively break the YouTube API.
+    // So let's not do that when the iframe URL contains the enablejsapi parameter.
+
+    if (!url.includes('enablejsapi=1')) {
+      // Remove the source URL, then add it back, so the video can be played again later.
+      $iframe.attr('src', '').attr('src', url);
+    } else {
+      // Use the YouTube API to stop the video.
+      $player.stopVideo();
+    }
+  } // Finally, hide the modal.
+
+
+  $modal.removeClass('modal-open'); // Remove the body class.
+
+  app.$c.body.removeClass('modal-open'); // Revert focus back to toggle element
+
+  $modalToggle.focus();
+}; // Close if "esc" key is pressed.
+
+
+app.escKeyClose = function (event) {
+  if (27 === event.keyCode) {
+    app.closeModal();
+  }
+}; // Close if the user clicks outside of the modal
+
+
+app.closeModalByClick = function (event) {
+  // If the parent container is NOT the modal dialog container, close the modal
+  if (!$(event.target).parents('div').hasClass('modal-dialog')) {
+    app.closeModal();
+  }
+}; // Trap the keyboard into a modal when one is active.
+
+
+app.trapKeyboardMaybe = function (event) {
+  // We only need to do stuff when the modal is open and tab is pressed.
+  if (9 === event.which && 0 < $('.modal-open').length) {
+    var $focused = $(':focus'),
+        focusIndex = $focusableChildren.index($focused);
+
+    if (0 === focusIndex && event.shiftKey) {
+      // If this is the first focusable element, and shift is held when pressing tab, go back to last focusable element.
+      $focusableChildren[$focusableChildren.length - 1].focus();
+      event.preventDefault();
+    } else if (!event.shiftKey && focusIndex === $focusableChildren.length - 1) {
+      // If this is the last focusable element, and shift is not held, go back to the first focusable element.
+      $focusableChildren[0].focus();
+      event.preventDefault();
+    }
+  }
+}; // Hook into YouTube <iframe>.
+
+
+app.onYouTubeIframeAPIReady = function () {
+  var $modal = $('div.modal'),
+      $iframeid = $modal.find('iframe').attr('id');
+  $player = new YT.Player($iframeid, {
+    events: {
+      'onReady': app.onPlayerReady,
+      'onStateChange': app.onPlayerStateChange
+    }
+  });
+}; // Do something on player ready.
+
+
+app.onPlayerReady = function () {}; // Do something on player state change.
+
+
+app.onPlayerStateChange = function () {
+  // Set focus to the first focusable element inside of the modal the player is in.
+  $(event.target.a).parents('.modal').find('a, :input, [tabindex]').first().focus();
+}; // Engage!
+
+
+$(app.init);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./assets/scripts/components/navigation-primary.js":
+/*!*********************************************************!*\
+  !*** ./assets/scripts/components/navigation-primary.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * File: navigation-primary.js
+ *
+ * Helpers for the primary navigation.
+ */
+var app = {}; // Constructor.
+
+app.init = function () {
+  app.cache();
+
+  if (app.meetsRequirements()) {
+    app.bindEvents();
+  }
+}; // Cache all the things.
+
+
+app.cache = function () {
+  app.$c = {
+    window: $(window),
+    subMenuContainer: $('.main-navigation .sub-menu'),
+    subMenuParentItem: $('.main-navigation li.menu-item-has-children')
+  };
+}; // Combine all events.
+
+
+app.bindEvents = function () {
+  app.$c.window.on('load', app.addDownArrow);
+  app.$c.subMenuParentItem.find('a').on('focusin focusout', app.toggleFocus);
+}; // Do we meet the requirements?
+
+
+app.meetsRequirements = function () {
+  return app.$c.subMenuContainer.length;
+}; // Add the down arrow to submenu parents.
+
+
+app.addDownArrow = function () {
+  app.$c.subMenuParentItem.find('> a').append('<span class="caret-down" aria-hidden="true"></span>');
+}; // Toggle the focus class on the link parent.
+
+
+app.toggleFocus = function () {
+  $(this).parents('li.menu-item-has-children').toggleClass('focus');
+}; // Engage!
+
+
+$(app.init);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./assets/scripts/components/off-canvas.js":
+/*!*************************************************!*\
+  !*** ./assets/scripts/components/off-canvas.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * File: off-canvas.js
+ *
+ * Help deal with the off-canvas mobile menu.
+ */
+var app = {}; // Constructor.
+
+app.init = function () {
+  app.cache();
+
+  if (app.meetsRequirements()) {
+    app.bindEvents();
+  }
+}; // Cache all the things.
+
+
+app.cache = function () {
+  app.$c = {
+    body: $('body'),
+    offCanvasClose: $('.off-canvas-close'),
+    offCanvasContainer: $('.off-canvas-container'),
+    offCanvasOpen: $('.off-canvas-open'),
+    offCanvasScreen: $('.off-canvas-screen')
+  };
+}; // Combine all events.
+
+
+app.bindEvents = function () {
+  app.$c.body.on('keydown', app.escKeyClose);
+  app.$c.offCanvasClose.on('click', app.closeoffCanvas);
+  app.$c.offCanvasOpen.on('click', app.toggleoffCanvas);
+  app.$c.offCanvasScreen.on('click', app.closeoffCanvas);
+}; // Do we meet the requirements?
+
+
+app.meetsRequirements = function () {
+  return app.$c.offCanvasContainer.length;
+}; // To show or not to show?
+
+
+app.toggleoffCanvas = function () {
+  if ('true' === $(this).attr('aria-expanded')) {
+    app.closeoffCanvas();
+  } else {
+    app.openoffCanvas();
+  }
+}; // Show that drawer!
+
+
+app.openoffCanvas = function () {
+  app.$c.offCanvasContainer.addClass('is-visible');
+  app.$c.offCanvasOpen.addClass('is-visible');
+  app.$c.offCanvasScreen.addClass('is-visible');
+  app.$c.offCanvasOpen.attr('aria-expanded', true);
+  app.$c.offCanvasContainer.attr('aria-hidden', false);
+  app.$c.offCanvasContainer.find('button').first().focus();
+}; // Close that drawer!
+
+
+app.closeoffCanvas = function () {
+  app.$c.offCanvasContainer.removeClass('is-visible');
+  app.$c.offCanvasOpen.removeClass('is-visible');
+  app.$c.offCanvasScreen.removeClass('is-visible');
+  app.$c.offCanvasOpen.attr('aria-expanded', false);
+  app.$c.offCanvasContainer.attr('aria-hidden', true);
+  app.$c.offCanvasOpen.focus();
+}; // Close drawer if "esc" key is pressed.
+
+
+app.escKeyClose = function (event) {
+  if (27 === event.keyCode) {
+    app.closeoffCanvas();
+  }
+}; // Engage!
+
+
+$(app.init);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./assets/scripts/components/skip-link-focus-fix.js":
+/*!**********************************************************!*\
+  !*** ./assets/scripts/components/skip-link-focus-fix.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * File skip-link-focus-fix.js.
+ *
+ * Helps with accessibility for keyboard only users.
+ *
+ * Learn more: https://git.io/vWdr2
+ */
+(function () {
+  var isWebkit = -1 < navigator.userAgent.toLowerCase().indexOf('webkit'),
+      isOpera = -1 < navigator.userAgent.toLowerCase().indexOf('opera'),
+      isIe = -1 < navigator.userAgent.toLowerCase().indexOf('msie');
+
+  if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventListener) {
+    window.addEventListener('hashchange', function () {
+      var id = location.hash.substring(1),
+          element;
+
+      if (!/^[A-z0-9_-]+$/.test(id)) {
+        return;
+      }
+
+      element = document.getElementById(id);
+
+      if (element) {
+        if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+          element.tabIndex = -1;
+        }
+
+        element.focus();
+      }
+    }, false);
+  }
+})();
+
+/***/ }),
+
+/***/ "./assets/scripts/components/window-ready.js":
+/*!***************************************************!*\
+  !*** ./assets/scripts/components/window-ready.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * File window-ready.js
+ *
+ * Add a "ready" class to <body> when window is ready.
+ */
+var app = {}; // Constructor.
+
+app.init = function () {
+  app.cache();
+  app.bindEvents();
+}; // Cache document elements.
+
+
+app.cache = function () {
+  app.$c = {
+    'window': $(window),
+    'body': $(document.body)
+  };
+}; // Combine all events.
+
+
+app.bindEvents = function () {
+  app.$c.window.on('load', app.addBodyClass);
+}; // Add a class to <body>.
+
+
+app.addBodyClass = function () {
+  app.$c.body.addClass('ready js');
+  app.$c.body.removeClass('no-js');
+}; // Engage!
+
+
+$(app.init);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./assets/scripts/index.js":
 /*!*********************************!*\
   !*** ./assets/scripts/index.js ***!
@@ -291,9 +832,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var animate_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(animate_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sass/style.scss */ "./assets/sass/style.scss");
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _concat_header_button_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./concat/header-button.js */ "./assets/scripts/concat/header-button.js");
-/* harmony import */ var _concat_header_button_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_concat_header_button_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _concat_carousel_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./concat/carousel.js */ "./assets/scripts/concat/carousel.js");
+/* harmony import */ var _components_header_button_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header-button.js */ "./assets/scripts/components/header-button.js");
+/* harmony import */ var _components_header_button_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_header_button_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_carousel_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/carousel.js */ "./assets/scripts/components/carousel.js");
+/* harmony import */ var _components_mobile_menu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/mobile-menu.js */ "./assets/scripts/components/mobile-menu.js");
+/* harmony import */ var _components_mobile_menu_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_mobile_menu_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/modal.js */ "./assets/scripts/components/modal.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_modal_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_navigation_primary_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/navigation-primary.js */ "./assets/scripts/components/navigation-primary.js");
+/* harmony import */ var _components_navigation_primary_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_navigation_primary_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_off_canvas_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/off-canvas.js */ "./assets/scripts/components/off-canvas.js");
+/* harmony import */ var _components_off_canvas_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_off_canvas_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/skip-link-focus-fix.js */ "./assets/scripts/components/skip-link-focus-fix.js");
+/* harmony import */ var _components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/window-ready.js */ "./assets/scripts/components/window-ready.js");
+/* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__);
+
+
+
+
+
+
 
 
 
