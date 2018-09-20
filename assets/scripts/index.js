@@ -2,7 +2,6 @@ import 'normalize.css';
 import 'animate.css';
 import '../sass/style.scss';
 
-import './components/js-enabled.js';
 import './components/header-button.js';
 import './components/carousel.js';
 import './components/mobile-menu.js';
