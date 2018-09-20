@@ -4,8 +4,6 @@
  * @author Corey Collins
  */
 
-import $ from 'jQuery';
-
 // App Object
 const app = {};
 
