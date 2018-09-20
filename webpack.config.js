@@ -131,7 +131,7 @@ let webpackConfig = {
 		),
 		new StyleLintPlugin( {
 			configFile: './stylelint.config.js',
-			files: './assets/styles/*.scss',
+			files: './assets/sass/*.scss',
 			syntax: 'scss'
 		} )
 	],
