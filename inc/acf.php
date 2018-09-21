@@ -73,17 +73,19 @@ function _s_display_block_options( $args = array() ) {
 		if ( 'color' === $args['background_type'] ) {
 			$background_color = $background_options['background_color'];
 			$inline_style    .= 'background-color: ' . $background_color . '; ';
+			$args['class']   .= ' has-background color-as-background';
 		}
 
 		if ( 'image' === $args['background_type'] ) {
 			$background_image = $background_options['background_image'];
 			$inline_style    .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
-			$args['class']   .= ' image-as-background';
+			$args['class']   .= ' has-background image-as-background';
 		}
 
 		if ( 'video' === $args['background_type'] ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
+			$args['class']        .= ' has-background video-background';
 			ob_start();
 			?>
 				<video class="video-as-background" autoplay muted loop playsinline preload="auto">
