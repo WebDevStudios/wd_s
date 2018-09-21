@@ -162,7 +162,7 @@ img {
 	object-fit: cover;
 	object-position: center top;
 	position: absolute;
-	z-index: 1;
+	z-index: -1;
 } // .video-background
 
 // IE/Edge hacks.
