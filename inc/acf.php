@@ -85,10 +85,10 @@ function _s_display_block_options( $args = array() ) {
 		if ( 'video' === $args['background_type'] ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
-			$args['class']        .= ' has-background video-background';
+			$args['class']        .= ' has-background video-as-background';
 			ob_start();
 			?>
-				<video class="video-as-background" autoplay muted loop playsinline preload="auto">
+				<video class="video-background" autoplay muted loop playsinline preload="auto">
 				<?php if ( $background_video_webm['url'] ) : ?>
 					<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
 				<?php endif; ?>
