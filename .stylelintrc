@@ -1,0 +1,33 @@
+{
+	"plugins": [
+		"stylelint-declaration-block-order",
+		"stylelint-scss",
+		"stylelint-declaration-use-variable"
+	],
+	"rules": {
+		"scss/at-extend-no-missing-placeholder": true,
+		"plugin/declaration-block-order": [
+			"dollar-variables",
+			{
+				"type": "at-rule",
+				"name": "extend"
+			},
+			{
+				"type": "at-rule",
+				"name": "include"
+			},
+			"declarations",
+			{
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true
+			},
+			"at-rules",
+			"rules"
+		],
+		"block-no-empty": true,
+		"declaration-block-single-line-max-declarations": 0,
+		"color-no-invalid-hex": true,
+		"sh-waqar/declaration-use-variable": [["/color/", "font-family"]]
+	}
+}

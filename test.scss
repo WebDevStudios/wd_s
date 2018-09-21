@@ -1,0 +1,32 @@
+$black: #000;
+
+// Failing Rules
+p {
+	@extend .some-class;
+}
+
+.test-rule {
+	color: #000;
+
+	@include media;
+
+}
+
+.test-rule-2 {
+	color: rgba(#000, 0.08);
+}
+
+
+// Passing Rules
+p {
+	@extend %placeholder;
+
+	@include media() {
+		color: $black;
+	}
+}
+
+
+.test-rule {
+	color: $black;
+}
