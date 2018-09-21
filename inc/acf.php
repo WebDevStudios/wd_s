@@ -52,13 +52,17 @@ function _s_display_block_options( $args = array() ) {
 	// Get block other options.
 	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
+	// Get a default ID.
+	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
+
 	// Setup defaults.
 	$defaults = array(
 		'background_type'  => $background_options['background_type']['value'],
-		'font_color'       => $other_options['font_color'],
 		'container'        => 'section',
 		'class'            => 'content-block',
 		'custom_css_class' => $other_options['custom_css_class'],
+		'font_color'       => $other_options['font_color'],
+		'id'               => $default_id,
 	);
 
 	// Parse args.
@@ -111,13 +115,24 @@ function _s_display_block_options( $args = array() ) {
 		$inline_style .= 'color: ' . $args['font_color'] . '; ';
 	}
 
+	// Set the custom ID.
+	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
+		$args['id'] = $other_options['custom_id'];
+	}
+
 	// Set the custom css class.
 	if ( $args['custom_css_class'] ) {
 		$args['class'] .= ' ' . $args['custom_css_class'];
 	}
 
 	// Print our block container with options.
-	printf( '<%s class="%s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $inline_style ) );
+	printf(
+		'<%s id="%s" class="%s" style="%s">',
+		esc_attr( $args['container'] ),
+		esc_attr( $args['id'] ),
+		esc_attr( $args['class'] ),
+		esc_attr( $inline_style )
+	);
 
 	// If we have a background video, echo our background video markup inside the block container.
 	if ( $background_video_markup ) {
