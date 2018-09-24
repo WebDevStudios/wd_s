@@ -29,6 +29,7 @@
 		"declaration-block-single-line-max-declarations": 0,
 		"color-no-invalid-hex": true,
 		"sh-waqar/declaration-use-variable": [["/color/", "font-family"]],
-		"at-rule-blacklist": ["debug", { "message": "@debug rule is not allowed."}],
+		"at-rule-blacklist": ["debug", { "message": "@debug rule is not allowed." }],
+		"selector-no-id": true
 	}
 }
