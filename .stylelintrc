@@ -30,6 +30,6 @@
 		"color-no-invalid-hex": true,
 		"sh-waqar/declaration-use-variable": [["/color/", "font-family"]],
 		"at-rule-blacklist": ["debug", { "message": "@debug rule is not allowed." }],
-		"selector-no-id": true
+		"selector-max-id": 0
 	}
 }
