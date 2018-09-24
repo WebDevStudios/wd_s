@@ -2,6 +2,7 @@ $black: #000;
 
 // Failing Rules
 p {
+	@debug;
 	@extend .some-class;
 }
 
