@@ -2,7 +2,8 @@
 	"plugins": [
 		"stylelint-declaration-block-order",
 		"stylelint-scss",
-		"stylelint-declaration-use-variable"
+		"stylelint-declaration-use-variable",
+		"stylelint-selector-no-mergeable"
 	],
 	"rules": {
 		"scss/at-extend-no-missing-placeholder": true,
@@ -30,6 +31,7 @@
 		"color-no-invalid-hex": true,
 		"sh-waqar/declaration-use-variable": [["/color/", "font-family"]],
 		"at-rule-blacklist": ["debug", { "message": "@debug rule is not allowed." }],
-		"selector-max-id": 0
+		"selector-max-id": 0,
+		"selector-no-mergeable": [true, { "allowVanityNesting": false }]
 	}
 }
