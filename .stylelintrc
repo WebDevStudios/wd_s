@@ -68,6 +68,7 @@
 			"margin": ["rem"],
 			"padding": ["rem"]
 		},
-		"string-quotes": "single"
+		"string-quotes": "single",
+		"shorthand-property-no-redundant-values": true,
 	}
 }
