@@ -50,7 +50,8 @@
 		"block-opening-brace-space-before": "always",
 		"block-closing-brace-space-before": "always-single-line",
 		"selector-class-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*|(current_page_item)|(widget_search)$", { "message": "Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option." }],
+		"selector-id-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hypenated lowercase for ID name format, and without a leading underscore. If overriding a plugin that does not use this format then please ignore or extend the list of ignore option." }],
 		"color-hex-length": "short",
-		"color-hex-case": "lower",
+		"color-hex-case": "lower"
 	}
 }

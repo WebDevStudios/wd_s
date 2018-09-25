@@ -38,6 +38,11 @@ a.foo {
 	color: $black;
 }
 
+#this_should-pass {
+
+}
+
+
 // Passing Rules
 p[title="flower"] {
 	@extend %placeholder;
@@ -67,4 +72,8 @@ p[title="flower"] {
 
 .widget_search {
 	color: $black;
+}
+
+#this-should-pass {
+
 }
