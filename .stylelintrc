@@ -1,20 +1,19 @@
 {
 	"plugins": [
-		"stylelint-declaration-block-order",
+		"stylelint-order",
 		"stylelint-scss",
-		"stylelint-declaration-use-variable",
-		"stylelint-selector-no-mergeable"
+		"stylelint-declaration-use-variable"
 	],
 	"rules": {
 		"indentation": "tab",
 		"no-missing-end-of-source-newline": null,
-		"scss/at-extend-no-missing-placeholder": true,
+		"scss/at-extend-no-missing-placeholder": null,
 		"scss/at-function-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for function names. Also, you may use a leading underscore if you prefer." }],
 		"scss/at-mixin-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for mixin names. Also, you may use a leading underscore if you prefer." }],
 		"scss/dollar-variable-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for variable names. No leading underscore is allowed." }],
 		"scss/percent-placeholder-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for placeholder names. Also, you may use a leading underscore if you prefer." }],
 		"scss/at-mixin-argumentless-call-parentheses": "never",
-		"plugin/declaration-block-order": [
+		"order/order": [
 			"dollar-variables",
 			{
 				"type": "at-rule",
@@ -29,23 +28,21 @@
 				"type": "at-rule",
 				"name": "include",
 				"hasBlock": true
-			},
-			"at-rules",
-			"rules"
+			}
 		],
+		"order/properties-alphabetical-order": true,
 		"block-no-empty": true,
 		"declaration-block-single-line-max-declarations": 0,
 		"color-no-invalid-hex": true,
-		"sh-waqar/declaration-use-variable": [["/color/", "font-family"]],
+		"sh-waqar/declaration-use-variable": [["/color/", "font-family", { "ignoreValues": [ "/^darken/", "/^lighten/", "/^rgb/", "transparent" ] }]],
 		"at-rule-blacklist": ["debug", "warn"],
 		"selector-max-id": 0,
-		"selector-no-mergeable/selector-no-mergeable": [true, { "allowVanityNesting": false }],
 		"selector-no-qualifying-type": [true, { "ignore": ["attribute", "class", "id"] }],
-		"value-no-vendor-prefix": true,
-		"property-no-vendor-prefix": true,
-		"selector-no-vendor-prefix": true,
-		"media-feature-name-no-vendor-prefix": true,
-		"at-rule-no-vendor-prefix": true,
+		"value-no-vendor-prefix": null,
+		"property-no-vendor-prefix": null,
+		"selector-no-vendor-prefix": null,
+		"media-feature-name-no-vendor-prefix": null,
+		"at-rule-no-vendor-prefix": null,
 		"selector-attribute-quotes": "always",
 		"block-opening-brace-space-before": "always",
 		"block-closing-brace-space-before": "always-single-line",
@@ -54,7 +51,7 @@
 		"color-hex-length": "short",
 		"color-hex-case": "lower",
 		"number-leading-zero": "always",
-		"max-nesting-depth": 4,
+		"max-nesting-depth": 5,
 		"declaration-property-unit-whitelist": {
 			"border": ["px"],
 			"box-shadow": ["rem"],
@@ -72,6 +69,7 @@
 		"string-quotes": "single",
 		"shorthand-property-no-redundant-values": true,
 		"function-parentheses-space-inside": "never",
-		"property-no-unknown": true
+		"property-no-unknown": true,
+		"no-eol-whitespace": true
 	}
 }

@@ -76,7 +76,7 @@
 		// Force menu link to accomodate down button.
 		a {
 			display: inline-block;
-			max-width: calc(100% - 40px);
+			max-width: calc(100% - 40px); // stylelint-disable-line
 		} // a
 
 		&.is-visible {
@@ -182,8 +182,8 @@
 		@include position(fixed, 0 auto 0 0);
 		@include size(rem(220) 100%);
 
-		-webkit-overflow-scrolling: touch;
 		background-color: $color-cod-gray;
+		-webkit-overflow-scrolling: touch;
 		overflow-y: auto;
 		transform: translateX(rem(-220));
 		transition: $transition-transform;

@@ -137,13 +137,13 @@ img {
 // Let's make it full-width in the content cuz it looks cool.
 .jetpack-video-wrapper {
 	margin-left: rem(-35);
-	max-width: calc(100% + 70px);
-	width: calc(100% + 70px);
+	max-width: calc(100% + 70px); /* stylelint-disable-line */
+	width: calc(100% + 70px); /* stylelint-disable-line */
 
 	@include media($tablet-landscape) {
 		margin-left: rem(-115);
-		max-width: calc(100% + 230px);
-		width: calc(100% + 230px);
+		max-width: calc(100% + 230px); /* stylelint-disable-line */
+		width: calc(100% + 230px); /* stylelint-disable-line */
 	}
 } // .jetpack-video-wrapper
 
