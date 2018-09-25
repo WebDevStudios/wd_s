@@ -152,6 +152,11 @@ require get_template_directory() . '/inc/scripts.php';
 require get_template_directory() . '/inc/acf.php';
 
 /**
+ * Load custom ACF search functionality.
+ */
+require get_template_directory() . '/inc/acf-search.php';
+
+/**
  * Load custom filters and hooks.
  */
 require get_template_directory() . '/inc/hooks.php';
