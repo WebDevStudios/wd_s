@@ -70,5 +70,6 @@
 		},
 		"string-quotes": "single",
 		"shorthand-property-no-redundant-values": true,
+		"function-parentheses-space-inside": "never",
 	}
 }
