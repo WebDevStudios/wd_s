@@ -55,5 +55,6 @@
 		"color-hex-length": "short",
 		"color-hex-case": "lower",
 		"number-leading-zero": "always",
+		"max-nesting-depth": 4
 	}
 }
