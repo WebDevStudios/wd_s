@@ -155,21 +155,21 @@ img {
 } // .image-as-background
 
 // Video as background
-.video-as-background {
+.video-background {
 	@include size(100% 100%);
 
 	display: block;
 	object-fit: cover;
 	object-position: center top;
 	position: absolute;
-	z-index: 1;
-} // .video-as-background
+	z-index: -1;
+} // .video-background
 
 // IE/Edge hacks.
-.ie .video-as-background,
-.edge .video-as-background {
+.ie .video-background,
+.edge .video-background {
 	height: auto;
-} // .ie .video-as-background
+} // .ie .video-background
 
 // svg defs
 .svg-defs {

@@ -52,13 +52,17 @@ function _s_display_block_options( $args = array() ) {
 	// Get block other options.
 	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
+	// Get a default ID.
+	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
+
 	// Setup defaults.
 	$defaults = array(
 		'background_type'  => $background_options['background_type']['value'],
-		'font_color'       => $other_options['font_color'],
 		'container'        => 'section',
 		'class'            => 'content-block',
 		'custom_css_class' => $other_options['custom_css_class'],
+		'font_color'       => $other_options['font_color'],
+		'id'               => $default_id,
 	);
 
 	// Parse args.
@@ -73,20 +77,22 @@ function _s_display_block_options( $args = array() ) {
 		if ( 'color' === $args['background_type'] ) {
 			$background_color = $background_options['background_color'];
 			$inline_style    .= 'background-color: ' . $background_color . '; ';
+			$args['class']   .= ' has-background color-as-background';
 		}
 
 		if ( 'image' === $args['background_type'] ) {
 			$background_image = $background_options['background_image'];
 			$inline_style    .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
-			$args['class']   .= ' image-as-background';
+			$args['class']   .= ' has-background image-as-background';
 		}
 
 		if ( 'video' === $args['background_type'] ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
+			$args['class']        .= ' has-background video-as-background';
 			ob_start();
 			?>
-				<video class="video-as-background" autoplay muted loop playsinline preload="auto">
+				<video class="video-background" autoplay muted loop playsinline preload="auto">
 				<?php if ( $background_video_webm['url'] ) : ?>
 					<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
 				<?php endif; ?>
@@ -109,13 +115,24 @@ function _s_display_block_options( $args = array() ) {
 		$inline_style .= 'color: ' . $args['font_color'] . '; ';
 	}
 
+	// Set the custom ID.
+	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
+		$args['id'] = $other_options['custom_id'];
+	}
+
 	// Set the custom css class.
 	if ( $args['custom_css_class'] ) {
 		$args['class'] .= ' ' . $args['custom_css_class'];
 	}
 
 	// Print our block container with options.
-	printf( '<%s class="%s" style="%s">', esc_html( $args['container'] ), esc_attr( $args['class'] ), esc_attr( $inline_style ) );
+	printf(
+		'<%s id="%s" class="%s" style="%s">',
+		esc_attr( $args['container'] ),
+		esc_attr( $args['id'] ),
+		esc_attr( $args['class'] ),
+		esc_attr( $inline_style )
+	);
 
 	// If we have a background video, echo our background video markup inside the block container.
 	if ( $background_video_markup ) {
