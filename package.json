@@ -35,7 +35,7 @@
     "stylelint-declaration-block-order": "^0.2.0",
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-scss": "^3.3.0",
-    "stylelint-selector-no-mergeable": "^1.0.4",
+    "stylelint-selector-no-mergeable": "git+https://github.com/nkingsy/stylelint-selector-no-mergeable.git",
     "stylelint-webpack-plugin": "^0.10.5",
     "url-loader": "^1.1.1",
     "webpack": "^4.19.1",

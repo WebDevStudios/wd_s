@@ -17,6 +17,10 @@ p {
 	color: rgba(#000, 0.08);
 }
 
+a.foo {
+	color: $black;
+}
+
 // Passing Rules
 p {
 	@extend %placeholder;
@@ -25,7 +29,6 @@ p {
 		color: $black;
 	}
 }
-
 
 .test-rule {
 	color: $black;
