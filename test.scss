@@ -8,13 +8,15 @@ p[title=flower] {
 	@extend .some-class;
 }
 
-.test-rule {
+.test-rule{
 	color: #000;
 	border: none;
 	-webkit-box-sizing: border-box;
 
 	@include media;
 }
+
+.test-rule-2{ color: $black; }
 
 .empty-block {
 }

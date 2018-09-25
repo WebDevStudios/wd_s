@@ -45,6 +45,8 @@
 		"media-feature-name-no-vendor-prefix": true,
 		"at-rule-no-vendor-prefix": true,
 		"selector-attribute-quotes": "always",
-		"plugin/value-border-zero": { "convention": "0" }
+		"plugin/value-border-zero": { "convention": "0" },
+		"block-opening-brace-space-before": "always",
+		"block-closing-brace-space-before": "always-single-line",
 	}
 }
