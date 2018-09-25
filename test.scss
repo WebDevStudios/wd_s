@@ -1,4 +1,5 @@
 $black: #000;
+$_color_red: red;
 
 // Failing Rules
 p {
@@ -25,6 +26,10 @@ a.foo {
 	color: $black;
 }
 
+@function GRID_WIDTH_UPPER() {
+	color: $black;
+}
+
 // Passing Rules
 p {
 	@extend %placeholder;
@@ -37,3 +42,13 @@ p {
 .test-rule {
 	color: $black;
 }
+
+
+@function grid-width() {
+	color: $black;
+}
+
+@function _grid-width-2() {
+	color: $black;
+}
+
