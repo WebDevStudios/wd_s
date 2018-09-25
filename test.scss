@@ -9,9 +9,12 @@ p {
 
 .test-rule {
 	color: #000;
+	-webkit-box-sizing: border-box;
 
 	@include media;
+}
 
+.empty-block {
 }
 
 #id_not_allowed {
