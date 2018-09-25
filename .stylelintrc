@@ -67,6 +67,7 @@
 			"height": ["rem", "vh"],
 			"margin": ["rem"],
 			"padding": ["rem"]
-		}
+		},
+		"string-quotes": "single"
 	}
 }
