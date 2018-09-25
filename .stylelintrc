@@ -12,6 +12,7 @@
 		"scss/at-mixin-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for mixin names. Also, you may use a leading underscore if you prefer." }],
 		"scss/dollar-variable-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for variable names. No leading underscore is allowed." }],
 		"scss/percent-placeholder-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for placeholder names. Also, you may use a leading underscore if you prefer." }],
+		"scss/at-mixin-argumentless-call-parentheses": "never",
 		"plugin/declaration-block-order": [
 			"dollar-variables",
 			{
@@ -48,7 +49,6 @@
 		"plugin/value-border-zero": { "convention": "0" },
 		"block-opening-brace-space-before": "always",
 		"block-closing-brace-space-before": "always-single-line",
-		"selector-class-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*|(current_page_item)|(widget_search)$", { "message": "Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option." }],
-
+		"selector-class-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*|(current_page_item)|(widget_search)$", { "message": "Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option." }]
 	}
 }

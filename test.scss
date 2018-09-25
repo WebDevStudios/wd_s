@@ -13,7 +13,7 @@ p[title=flower] {
 	border: none;
 	-webkit-box-sizing: border-box;
 
-	@include media;
+	@include media();
 }
 
 .test-rule-2{ color: $black; }
@@ -41,7 +41,7 @@ a.foo {
 p[title="flower"] {
 	@extend %placeholder;
 
-	@include media() {
+	@include media {
 		color: $black;
 	}
 }
