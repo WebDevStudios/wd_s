@@ -3,6 +3,7 @@ $black: #000;
 // Failing Rules
 p {
 	@debug;
+	@warn;
 	@extend .some-class;
 }
 
