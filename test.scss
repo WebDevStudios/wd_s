@@ -3,7 +3,7 @@ $_color_red: red;
 
 // Failing Rules
 p[title=flower] {
-	@debug;
+		@debug;
 	@warn;
 	@extend .some-class;
 }

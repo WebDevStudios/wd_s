@@ -7,6 +7,7 @@
 		"stylelint-value-border-zero"
 	],
 	"rules": {
+		"indentation": "tab",
 		"scss/at-extend-no-missing-placeholder": true,
 		"scss/at-function-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for function names. Also, you may use a leading underscore if you prefer." }],
 		"scss/at-mixin-pattern": ["^([_]?[a-z][a-z0-9]*)(-[a-z0-9]+)*$", { "message": "Please use hyphenated lowercase for mixin names. Also, you may use a leading underscore if you prefer." }],
