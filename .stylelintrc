@@ -47,7 +47,7 @@
 		"media-feature-name-no-vendor-prefix": true,
 		"at-rule-no-vendor-prefix": true,
 		"selector-attribute-quotes": "always",
-		"plugin/value-border-zero": { "convention": "0" },
+		"plugin/value-border-zero": { "convention": "none" },
 		"block-opening-brace-space-before": "always",
 		"block-closing-brace-space-before": "always-single-line",
 		"selector-class-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*|(current_page_item)|(widget_search)$", { "message": "Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option." }],
@@ -55,6 +55,18 @@
 		"color-hex-length": "short",
 		"color-hex-case": "lower",
 		"number-leading-zero": "always",
-		"max-nesting-depth": 4
+		"max-nesting-depth": 4,
+		"declaration-property-unit-whitelist": {
+			"/^border/": ["px"],
+			"box-shadow": ["rem"],
+			"font-size": ["rem"],
+			"letter-spacing": ["rem"],
+			"line-height": [],
+			"text-shadow": ["em"],
+			"width": ["rem", "vw"],
+			"height": ["rem", "vh"],
+			"margin": ["rem"],
+			"padding": ["rem"]
+		}
 	}
 }
