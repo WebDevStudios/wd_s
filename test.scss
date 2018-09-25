@@ -21,6 +21,10 @@ p[title=flower] {
 .empty-block {
 }
 
+._bad_rule {
+	color: yellow;
+}
+
 #id_not_allowed {
 	color: rgba(#000, 0.08);
 }
@@ -56,3 +60,10 @@ p[title="flower"] {
 	color: $black;
 }
 
+.current_page_item {
+	color: $black;
+}
+
+.widget_search {
+	color: $black;
+}
