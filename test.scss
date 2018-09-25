@@ -10,6 +10,7 @@ p[title=flower] {
 
 .test-rule {
 	color: #000;
+	border: none;
 	-webkit-box-sizing: border-box;
 
 	@include media;
@@ -40,6 +41,7 @@ p[title="flower"] {
 }
 
 .test-rule {
+	border: 0;
 	color: $black;
 }
 

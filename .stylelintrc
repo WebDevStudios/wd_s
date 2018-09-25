@@ -3,7 +3,8 @@
 		"stylelint-declaration-block-order",
 		"stylelint-scss",
 		"stylelint-declaration-use-variable",
-		"stylelint-selector-no-mergeable"
+		"stylelint-selector-no-mergeable",
+		"stylelint-value-border-zero"
 	],
 	"rules": {
 		"scss/at-extend-no-missing-placeholder": true,
@@ -43,6 +44,7 @@
 		"selector-no-vendor-prefix": true,
 		"media-feature-name-no-vendor-prefix": true,
 		"at-rule-no-vendor-prefix": true,
-		"selector-attribute-quotes": "always"
+		"selector-attribute-quotes": "always",
+		"plugin/value-border-zero": { "convention": "0" }
 	}
 }
