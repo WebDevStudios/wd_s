@@ -2,7 +2,7 @@ $black: #000;
 $_color_red: red;
 
 // Failing Rules
-p {
+p[title=flower] {
 	@debug;
 	@warn;
 	@extend .some-class;
@@ -31,7 +31,7 @@ a.foo {
 }
 
 // Passing Rules
-p {
+p[title="flower"] {
 	@extend %placeholder;
 
 	@include media() {
