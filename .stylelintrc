@@ -33,6 +33,8 @@
 		"at-rule-blacklist": ["debug", { "message": "@debug rule is not allowed." }],
 		"selector-max-id": 0,
 		"selector-no-mergeable/selector-no-mergeable": [true, { "allowVanityNesting": false }],
-		"selector-no-qualifying-type": [true, { "ignore": ["attribute", "class", "id"] }]
+		"selector-no-qualifying-type": [true, { "ignore": ["attribute", "class", "id"] }],
+		"value-no-vendor-prefix": true,
+		
 	}
 }
