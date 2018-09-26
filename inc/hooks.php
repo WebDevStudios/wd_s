@@ -223,10 +223,19 @@ function _s_add_og_tags() {
 		$long_description = $card_description = sprintf( __( 'Search results for %s.', '_s' ), $search_term );
 	}
 
+	if ( is_home() ) {
+
+		$posts_page = get_option( 'page_for_posts' );
+		$card_title = get_the_title( $posts_page ) . ' - ' . $default_title;
+		$card_url   = get_permalink( $posts_page );
+		$card_type  = 'website';
+	}
+
 	// Front page.
 	if ( is_front_page() ) {
 
-		$card_title = $default_title;
+		$front_page = get_option( 'page_on_front' );
+		$card_title = $front_page ? get_the_title( $front_page ) . ' - ' . $default_title : $default_title;
 		$card_url   = get_home_url();
 		$card_type  = 'website';
 	}
