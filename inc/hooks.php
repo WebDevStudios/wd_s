@@ -133,3 +133,121 @@ add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 // Create shortcode for SVG.
 // Usage [svg icon="facebook-square" title="facebook" desc="like us on facebook" fill="#000000" height="20px" width="20px"].
 add_shortcode( 'svg', '_s_display_svg' );
+
+/**
+ * Adds OG tags to the head for better social sharing.
+ *
+ * @return string Just an empty string if Yoast is found.
+ * @author Corey Collins
+ */
+function _s_add_og_tags() {
+
+	// Bail if Yoast is installed, since it will handle things.
+	if ( class_exists( 'WPSEO_Options' ) ) {
+		return '';
+	}
+
+	global $post;
+
+	// Get the post content.
+	$post_content = $post ? $post->post_content : '';
+
+	// Strip all tags from the post content we just grabbed.
+	$default_content = wp_strip_all_tags( $post_content );
+
+	// Set our default title.
+	$default_title = get_bloginfo( 'name' );
+
+	// Set our default URL.
+	$default_url = get_permalink();
+
+	// Set our base description.
+	$default_base_description = get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : __( 'Visit our website to learn more.', '_s' );
+
+	// Set the card type.
+	$default_type = 'article';
+
+	// Get our custom logo URL. We'll use this on archives and when no featured image is found.
+	$logo_id    = get_theme_mod( 'custom_logo' );
+	$logo_image = $logo_id ? wp_get_attachment_image_src( $logo_id, 'full' ) : '';
+	$logo_url   = $logo_id ? $logo_image[0] : '';
+
+	// Set our final defaults.
+	$card_title            = $default_title;
+	$card_description      = $default_base_description;
+	$card_long_description = $default_base_description;
+	$card_url              = $default_url;
+	$card_image            = $logo_url;
+	$card_type             = $default_type;
+
+	// Let's start overriding!
+	// All singles.
+	if ( is_singular() ) {
+
+		if ( has_post_thumbnail() ) {
+			$card_image = get_the_post_thumbnail_url();
+		}
+	}
+
+	// Single posts/pages that aren't the front page.
+	if ( is_singular() && ! is_front_page() ) {
+
+		$card_title            = get_the_title() . ' - ' . $default_title;
+		$card_description      = $default_content ? wp_trim_words( $default_content, 53, '...' ) : $default_base_description;
+		$card_long_description = $default_content ? wp_trim_words( $default_content, 140, '...' ) : $default_base_description;
+	}
+
+	// Categories, Tags, and Custom Taxonomies.
+	if ( is_category() || is_tag() || is_tax() ) {
+
+		$term_name      = single_term_title( '', false );
+		$card_title     = $term_name . ' - ' . $default_title;
+		$specify        = is_category() ? __( 'categorized in', '_s' ) : __( 'tagged with', '_s' );
+		$queried_object = get_queried_object();
+		$card_url       = get_term_link( $queried_object );
+		$card_type      = 'website';
+
+		// Translators: get the term name.
+		$long_description = $card_description = sprintf( __( 'Posts %1$s %2$s.', '_s' ), $specify, $term_name );
+	}
+
+	// Search results.
+	if ( is_search() ) {
+
+		$search_term = get_search_query();
+		$card_title  = $search_term . ' - ' . $default_title;
+		$card_url    = get_search_link( $search_term );
+		$card_type   = 'website';
+
+		// Translators: get the search term.
+		$long_description = $card_description = sprintf( __( 'Search results for %s.', '_s' ), $search_term );
+	}
+
+	// Front page.
+	if ( is_front_page() ) {
+
+		$card_title = $default_title;
+		$card_url   = get_home_url();
+		$card_type  = 'website';
+	}
+
+	// Post type archives.
+	if ( is_post_type_archive() ) {
+
+		$post_type_name = get_post_type();
+		$card_title     = $post_type_name . ' - ' . $default_title;
+		$card_url       = get_post_type_archive_link( $post_type_name );
+		$card_type      = 'website';
+	}
+
+	?>
+	<meta property="og:title" content="<?php echo esc_attr( $card_title ); ?>" />
+	<meta property="og:description" content="<?php echo esc_attr( $card_description ); ?>" />
+	<meta property="og:url" content="<?php echo esc_url( $card_url ); ?>" />
+	<meta property="og:image" content="<?php echo esc_url( $card_image ); ?>" />
+	<meta property="og:site_name" content="<?php echo esc_attr( $default_title ); ?>" />
+	<meta property="og:type" content="<?php echo esc_attr( $card_type ); ?>" />
+	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
+	<?php
+}
+add_action( 'wp_head', '_s_add_og_tags' );
