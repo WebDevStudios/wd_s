@@ -153,7 +153,7 @@ function _s_add_og_tags() {
 	$post_content = $post ? $post->post_content : '';
 
 	// Strip all tags from the post content we just grabbed.
-	$default_content = wp_strip_all_tags( $post_content );
+	$default_content = wp_strip_all_tags( strip_shortcodes( $post_content ) );
 
 	// Set our default title.
 	$default_title = get_bloginfo( 'name' );
