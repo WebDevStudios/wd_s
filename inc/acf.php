@@ -160,7 +160,7 @@ function _s_get_animation_class() {
 
 	// If we have an animation set...
 	if ( $other_options['animation'] ) {
-		$classes = 'animated ' . $other_options['animation'];
+		$classes = ' animated ' . $other_options['animation'];
 	}
 
 	return $classes;
