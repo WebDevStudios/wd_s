@@ -76,7 +76,7 @@ function _s_display_block_options( $args = array() ) {
 	if ( $args['background_type'] ) {
 		if ( 'color' === $args['background_type'] ) {
 			$background_color = $background_options['background_color'];
-			$inline_style    .= 'background-color: ' . $background_color . '; ';
+			$inline_style    .= 'background-color: ' . $background_color . ';';
 			$args['class']   .= ' has-background color-as-background';
 		}
 
@@ -112,7 +112,7 @@ function _s_display_block_options( $args = array() ) {
 
 	// Set the custom font color.
 	if ( $args['font_color'] ) {
-		$inline_style .= 'color: ' . $args['font_color'] . '; ';
+		$inline_style .= 'color: ' . $args['font_color'] . ';';
 	}
 
 	// Set the custom ID.
