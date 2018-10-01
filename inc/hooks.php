@@ -252,6 +252,13 @@ function _s_add_og_tags() {
 		$card_type      = 'website';
 	}
 
+	// Media page.
+	if ( is_attachment() ) {
+		$attachment_id        = get_the_ID();
+		$attachment_image_url = ( wp_attachment_is_image( $attachment_id ) ) ? wp_get_attachment_image_url( $attachment_id, 'full' ) : $card_image;
+		$card_image           = $attachment_image_url;
+	}
+
 	?>
 	<meta property="og:title" content="<?php echo esc_attr( $card_title ); ?>" />
 	<meta property="og:description" content="<?php echo esc_attr( $card_description ); ?>" />
