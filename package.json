@@ -39,11 +39,13 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "url-loader": "^1.1.1",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "wp-pot-cli": "^1.2.1"
   },
   "scripts": {
-    "build": "webpack --progress --config webpack.config.js --mode production",
-    "start": "webpack --hide-modules --watch --config webpack.config.js --mode development"
+    "build": "webpack --progress --config webpack.config.js --mode production && npm run il8n",
+    "start": "webpack --hide-modules --watch --config webpack.config.js --mode development",
+    "il8n": "wp-pot --domain _s --package _s --dest-file languages/_s.pot"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
   "keywords": [
