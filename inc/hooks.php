@@ -162,7 +162,7 @@ function _s_add_og_tags() {
 	$default_url = get_permalink();
 
 	// Set our base description.
-	$default_base_description = get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : __( 'Visit our website to learn more.', '_s' );
+	$default_base_description = get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : esc_html( 'Visit our website to learn more.', '_s' );
 
 	// Set the card type.
 	$default_type = 'article';
@@ -202,13 +202,13 @@ function _s_add_og_tags() {
 
 		$term_name      = single_term_title( '', false );
 		$card_title     = $term_name . ' - ' . $default_title;
-		$specify        = is_category() ? __( 'categorized in', '_s' ) : __( 'tagged with', '_s' );
+		$specify        = is_category() ? esc_html( 'categorized in', '_s' ) : esc_html( 'tagged with', '_s' );
 		$queried_object = get_queried_object();
 		$card_url       = get_term_link( $queried_object );
 		$card_type      = 'website';
 
 		// Translators: get the term name.
-		$long_description = $card_description = sprintf( __( 'Posts %1$s %2$s.', '_s' ), $specify, $term_name );
+		$long_description = $card_description = sprintf( esc_html( 'Posts %1$s %2$s.', '_s' ), $specify, $term_name );
 	}
 
 	// Search results.
@@ -220,7 +220,7 @@ function _s_add_og_tags() {
 		$card_type   = 'website';
 
 		// Translators: get the search term.
-		$long_description = $card_description = sprintf( __( 'Search results for %s.', '_s' ), $search_term );
+		$long_description = $card_description = sprintf( esc_html( 'Search results for %s.', '_s' ), $search_term );
 	}
 
 	if ( is_home() ) {
