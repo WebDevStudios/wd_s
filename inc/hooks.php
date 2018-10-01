@@ -147,10 +147,13 @@ function _s_add_og_tags() {
 		return '';
 	}
 
-	global $post;
+	// Set a post global on single posts. This avoids grabbing content from the first post on an archive page.
+	if ( is_singular() ) {
+		global $post;
+	}
 
 	// Get the post content.
-	$post_content = ( $post ) ? $post->post_content : '';
+	$post_content = ! empty( $post ) ? $post->post_content : '';
 
 	// Strip all tags from the post content we just grabbed.
 	$default_content = ( $post_content ) ? wp_strip_all_tags( strip_shortcodes( $post_content ) ) : $post_content;
