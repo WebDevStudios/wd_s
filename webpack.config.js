@@ -6,6 +6,7 @@ const CleanPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
+const SpritesmithPlugin = require('webpack-spritesmith');
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
 
@@ -99,6 +100,21 @@ let webpackConfig = {
 	},
 
 	plugins: [
+        new SpritesmithPlugin(
+			{
+				src: {
+					cwd: path.resolve( __dirname, 'assets/images/sprites' ),
+					glob: '*.png'
+				},
+				target: {
+					image: path.resolve( __dirname, 'assets/images/sprites.png' ),
+					css: path.resolve( __dirname, 'assets/sass/base/_sprites.scss' )
+				},
+				apiOptions: {
+					cssImageRef: 'sprites.png'
+				}
+			}
+		),
 		new webpack.ProvidePlugin( {
 			$: 'jquery',
 			jQuery: 'jquery'
