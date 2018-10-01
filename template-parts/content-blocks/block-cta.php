@@ -20,7 +20,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
+	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
 		<div class="cell">
 			<?php if ( $title ) : ?>
 				<h3 class="cta-title"><?php echo esc_html( $title ); ?></h3>

@@ -48,7 +48,7 @@ if ( $recent_posts->have_posts() ) :
 	<?php endif; ?>
 	</div>
 
-	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
+	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
 
 		<?php
 		// Loop through recent posts.
