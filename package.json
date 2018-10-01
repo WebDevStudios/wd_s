@@ -54,5 +54,9 @@
   "bugs": {
     "url": "https://github.com/WebDevStudios/wd_s/issues"
   },
-  "homepage": "https://github.com/WebDevStudios/wd_s#readme"
+  "homepage": "https://github.com/WebDevStudios/wd_s#readme",
+  "browserslist": [
+    "> 5%",
+    "last 2 versions"
+  ]
 }
