@@ -211,7 +211,7 @@ function _s_add_og_tags() {
 		$card_type      = 'website';
 
 		// Translators: get the term name.
-		$long_description = $card_description = sprintf( esc_html__( 'Posts %1$s %2$s.', '_s' ), $specify, $term_name );
+		$card_long_description = $card_description = sprintf( esc_html__( 'Posts %1$s %2$s.', '_s' ), $specify, $term_name );
 	}
 
 	// Search results.
@@ -223,7 +223,7 @@ function _s_add_og_tags() {
 		$card_type   = 'website';
 
 		// Translators: get the search term.
-		$long_description = $card_description = sprintf( esc_html__( 'Search results for %s.', '_s' ), $search_term );
+		$card_long_description = $card_description = sprintf( esc_html__( 'Search results for %s.', '_s' ), $search_term );
 	}
 
 	if ( is_home() ) {
