@@ -14,8 +14,6 @@ if ( ! class_exists( 'acf' ) ) {
 
 /**
  * Loop through and output ACF flexible content blocks for the current page.
- *
- * @return bool
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
