@@ -150,10 +150,10 @@ function _s_add_og_tags() {
 	global $post;
 
 	// Get the post content.
-	$post_content = $post ? $post->post_content : '';
+	$post_content = ( $post ) ? $post->post_content : '';
 
 	// Strip all tags from the post content we just grabbed.
-	$default_content = $post_content ? wp_strip_all_tags( strip_shortcodes( $post_content ) ) : $post_content;
+	$default_content = ( $post_content ) ? wp_strip_all_tags( strip_shortcodes( $post_content ) ) : $post_content;
 
 	// Set our default title.
 	$default_title = get_bloginfo( 'name' );
@@ -162,15 +162,15 @@ function _s_add_og_tags() {
 	$default_url = get_permalink();
 
 	// Set our base description.
-	$default_base_description = get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : esc_html( 'Visit our website to learn more.', '_s' );
+	$default_base_description = ( get_bloginfo( 'description' ) ) ? get_bloginfo( 'description' ) : esc_html( 'Visit our website to learn more.', '_s' );
 
 	// Set the card type.
 	$default_type = 'article';
 
 	// Get our custom logo URL. We'll use this on archives and when no featured image is found.
 	$logo_id    = get_theme_mod( 'custom_logo' );
-	$logo_image = $logo_id ? wp_get_attachment_image_src( $logo_id, 'full' ) : '';
-	$logo_url   = $logo_id ? $logo_image[0] : '';
+	$logo_image = ( $logo_id ) ? wp_get_attachment_image_src( $logo_id, 'full' ) : '';
+	$logo_url   = ( $logo_id ) ? $logo_image[0] : '';
 
 	// Set our final defaults.
 	$card_title            = $default_title;
@@ -193,8 +193,8 @@ function _s_add_og_tags() {
 	if ( is_singular() && ! is_front_page() ) {
 
 		$card_title            = get_the_title() . ' - ' . $default_title;
-		$card_description      = $default_content ? wp_trim_words( $default_content, 53, '...' ) : $default_base_description;
-		$card_long_description = $default_content ? wp_trim_words( $default_content, 140, '...' ) : $default_base_description;
+		$card_description      = ( $default_content ) ? wp_trim_words( $default_content, 53, '...' ) : $default_base_description;
+		$card_long_description = ( $default_content ) ? wp_trim_words( $default_content, 140, '...' ) : $default_base_description;
 	}
 
 	// Categories, Tags, and Custom Taxonomies.
@@ -202,7 +202,7 @@ function _s_add_og_tags() {
 
 		$term_name      = single_term_title( '', false );
 		$card_title     = $term_name . ' - ' . $default_title;
-		$specify        = is_category() ? esc_html( 'categorized in', '_s' ) : esc_html( 'tagged with', '_s' );
+		$specify        = ( is_category() ) ? esc_html( 'categorized in', '_s' ) : esc_html( 'tagged with', '_s' );
 		$queried_object = get_queried_object();
 		$card_url       = get_term_link( $queried_object );
 		$card_type      = 'website';
@@ -235,7 +235,7 @@ function _s_add_og_tags() {
 	if ( is_front_page() ) {
 
 		$front_page = get_option( 'page_on_front' );
-		$card_title = $front_page ? get_the_title( $front_page ) . ' - ' . $default_title : $default_title;
+		$card_title = ( $front_page ) ? get_the_title( $front_page ) . ' - ' . $default_title : $default_title;
 		$card_url   = get_home_url();
 		$card_type  = 'website';
 	}
