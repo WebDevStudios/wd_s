@@ -6,6 +6,26 @@
  */
 
 /**
+ * Removes default customizer fields that we generally don't use.
+ *
+ * @param object $wp_customize The default Customizer settings.
+ * @author Corey Collins
+ */
+function _s_remove_default_customizer_sections( $wp_customize ) {
+
+	// Remove sections.
+	$wp_customize->remove_section( 'custom_css' );
+	$wp_customize->remove_section( 'static_front_page' );
+	$wp_customize->remove_section( 'background_image' );
+	$wp_customize->remove_section( 'colors' );
+
+	// Remove panels.
+	$wp_customize->remove_panel( 'nav_menus' );
+	$wp_customize->remove_panel( 'widgets' );
+}
+add_action( 'customize_register', '_s_remove_default_customizer_sections', 15 );
+
+/**
  * Include other customizer files.
  */
 function _s_include_custom_controls() {

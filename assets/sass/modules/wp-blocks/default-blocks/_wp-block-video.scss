@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// WordPress Default Video Block
+//--------------------------------------------------------------
+
+.wp-block-video {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+	position: relative;
+
+	video {
+		@include position(absolute, 0 null null 0);
+		@include size(100%);
+
+	} // video
+} // .wp-block-video

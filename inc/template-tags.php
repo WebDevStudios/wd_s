@@ -83,11 +83,21 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 endif;
 
 /**
- * Display SVG markup.
+ * Display SVG Markup.
  *
- * @param array $args The parameters needed to display the SVG.
+ * @param array $args The parameters needed to get the SVG.
  */
 function _s_display_svg( $args = array() ) {
+	echo _s_get_svg( $args ); // WPCS XSS Ok.
+}
+
+/**
+ * Return SVG markup.
+ *
+ * @param array $args The parameters needed to display the SVG.
+ * @return string
+ */
+function _s_get_svg( $args = array() ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
@@ -117,21 +127,22 @@ function _s_display_svg( $args = array() ) {
 
 	// Generate random IDs for the title and description.
 	$random_number = rand( 0, 99999 );
-	$title_id = 'title-' . sanitize_title( $title ) . '-' . $random_number;
-	$desc_id = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
+	$title_id      = 'title-' . sanitize_title( $title ) . '-' . $random_number;
+	$desc_id       = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
 
 	// Set ARIA.
-	$aria_hidden = ' aria-hidden="true"';
+	$aria_hidden     = ' aria-hidden="true"';
 	$aria_labelledby = '';
+
 	if ( $args['title'] && $args['desc'] ) {
 		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
-		$aria_hidden = '';
+		$aria_hidden     = '';
 	}
 
 	// Set SVG parameters.
-	$fill = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
+	$fill   = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
 	$height = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
-	$width = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
+	$width  = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
 
 	// Start a buffer...
 	ob_start();
@@ -174,15 +185,15 @@ function _s_display_svg( $args = array() ) {
 	</svg>
 
 	<?php
-	// Get the buffer and echo.
-	echo ob_get_clean(); // WPCS XSS OK.
+	// Get the buffer and return.
+	return ob_get_clean();
 }
 
 /**
  * Trim the title length.
  *
  * @param array $args Parameters include length and more.
- * @return string        The shortened excerpt.
+ * @return string
  */
 function _s_get_the_title( $args = array() ) {
 
@@ -203,7 +214,7 @@ function _s_get_the_title( $args = array() ) {
  * Limit the excerpt length.
  *
  * @param array $args Parameters include length and more.
- * @return string The shortened excerpt.
+ * @return string
  */
 function _s_get_the_excerpt( $args = array() ) {
 
@@ -224,13 +235,14 @@ function _s_get_the_excerpt( $args = array() ) {
  * Echo an image, no matter what.
  *
  * @param string $size The image size to display. Default is thumbnail.
+ * @return string
  */
 function _s_display_post_image( $size = 'thumbnail' ) {
 
 	// If post has a featured image, display it.
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( $size );
-		return;
+		return false;
 	}
 
 	$attached_image_url = _s_get_attached_image_url( $size );
@@ -245,7 +257,7 @@ function _s_display_post_image( $size = 'thumbnail' ) {
  * Return an image URL, no matter what.
  *
  * @param  string $size The image size to return. Default is thumbnail.
- * @return string       The image URL.
+ * @return string
  */
 function _s_get_post_image_url( $size = 'thumbnail' ) {
 
@@ -268,7 +280,7 @@ function _s_get_post_image_url( $size = 'thumbnail' ) {
  * Get the URL of an image that's attached to the current post, else a placeholder image URL.
  *
  * @param  string $size The image size to return. Default is thumbnail.
- * @return string       The image URL.
+ * @return string
  */
 function _s_get_attached_image_url( $size = 'thumbnail' ) {
 
@@ -287,6 +299,8 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 
 /**
  * Echo the copyright text saved in the Customizer.
+ *
+ * @return bool
  */
 function _s_display_copyright_text() {
 
@@ -295,18 +309,18 @@ function _s_display_copyright_text() {
 
 	// Stop if there's nothing to display.
 	if ( ! $copyright_text ) {
-		return;
+		return false;
 	}
 
 	?>
-	<span class="copyright-text"><?php echo wp_kses_post( $copyright_text ); ?></span>
+	<span class="copyright-text"><?php echo wp_kses_post( do_shortcode( $copyright_text ) ); ?></span>
 	<?php
 }
 
 /**
  * Get the Twitter social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_twitter_share_url() {
 	return add_query_arg(
@@ -320,7 +334,7 @@ function _s_get_twitter_share_url() {
 /**
  * Get the Facebook social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_facebook_share_url() {
 	return add_query_arg( 'u', rawurlencode( get_the_permalink() ), 'https://www.facebook.com/sharer/sharer.php' );
@@ -329,7 +343,7 @@ function _s_get_facebook_share_url() {
 /**
  * Get the LinkedIn social sharing URL for the current page.
  *
- * @return string The URL.
+ * @return string
  */
 function _s_get_linkedin_share_url() {
 	return add_query_arg(
@@ -433,6 +447,7 @@ function _s_display_card( $args = array() ) {
  * Display header button.
  *
  * @author Corey Collins
+ * @return string
  */
 function _s_display_header_button() {
 
@@ -440,7 +455,7 @@ function _s_display_header_button() {
 	$button_setting = get_theme_mod( '_s_header_button' );
 
 	// If we have no button displayed, don't display the markup.
-	if ( 'none' == $button_setting ) {
+	if ( 'none' === $button_setting ) {
 		return '';
 	}
 
@@ -451,7 +466,7 @@ function _s_display_header_button() {
 	<div class="site-header-action">
 		<?php
 		// If we're doing a URL, just make this LOOK like a button but be a link.
-		if ( 'link' == $button_setting && $button_url ) :
+		if ( 'link' === $button_setting && $button_url ) :
 		?>
 			<a href="<?php echo esc_url( $button_url ); ?>" class="button button-link"><?php echo esc_html( $button_text ?: __( 'More Information', '_s' ) ); ?></a>
 		<?php else : ?>

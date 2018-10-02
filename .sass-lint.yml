@@ -89,7 +89,7 @@ rules:
   -
     allow-leading-underscore: false
     convention-explanation: Please use hypenated lowercase for class names, and without a leading underscore. If you find a WordPress core condition that conflicts with this convention feel free to modify and extend the ignore option.
-    ignore: ['current_page_item', 'widget_search'] # ignore selectors declared by WordPress
+    ignore: ['current_page_item', 'widget_search', 'wp-block-button__link'] # ignore selectors declared by WordPress
 
   empty-args: 0
   hex-length: 1

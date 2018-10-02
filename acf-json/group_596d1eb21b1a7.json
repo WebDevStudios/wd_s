@@ -1,6 +1,6 @@
 {
     "key": "group_596d1eb21b1a7",
-    "title": "Hero",
+    "title": "Group: Hero — To Clone",
     "fields": [
         {
             "key": "field_59416d6104f5e",
@@ -19,11 +19,49 @@
             "endpoint": 0
         },
         {
-            "key": "field_596e79a0bc4ef",
-            "label": "Hero Slides",
-            "name": "hero_slides",
-            "type": "repeater",
-            "instructions": "If the hero only has one slide, it will be static. If more than one slide is added, the hero will become a carousel.",
+            "key": "field_59416dec934f9",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Write a catchy headline!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59416dfa934fa",
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "instructions": "Write a short blurb to compliment the headline.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59416e35934fb",
+            "label": "Button",
+            "name": "button",
+            "type": "clone",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -31,130 +69,13 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_59416dec934f9",
-            "min": 1,
-            "max": 0,
-            "layout": "row",
-            "button_label": "Add Slide",
-            "sub_fields": [
-                {
-                    "key": "field_5970da1547f31",
-                    "label": "Slide Content",
-                    "name": "",
-                    "type": "tab",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "placement": "top",
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_59416dec934f9",
-                    "label": "Headline",
-                    "name": "headline",
-                    "type": "text",
-                    "instructions": "Write a catchy headline!",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59416dfa934fa",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "text",
-                    "instructions": "Write a short blurb to compliment the headline.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59416e35934fb",
-                    "label": "Button",
-                    "name": "button",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_59416d894b7c7"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_5970d9c008f01",
-                    "label": "Slide Background Options",
-                    "name": "background_options",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_58ebcc07bfbd7"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_5970d9e408f02",
-                    "label": "Slide Other Options",
-                    "name": "other_options",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_594168e970d85"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                }
-            ]
+            "clone": [
+                "group_59416d894b7c7"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -174,5 +95,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1501603119
+    "modified": 1528470458
 }

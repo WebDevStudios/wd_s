@@ -17,12 +17,12 @@ function _s_display_scaffolding_section( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'title'        => '',       // The scaffolding title.
-		'description'  => '',       // The scaffolding description.
-		'usage'        => '',       // The template tag or markup needed to display the scaffolding.
-		'parameters'   => array(),  // Does the scaffolding have params? Like $args?
-		'arguments'    => array(),  // If the scaffolding has params, what are the $args?
-		'output'       => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
+		'title'       => '',       // The scaffolding title.
+		'description' => '',       // The scaffolding description.
+		'usage'       => '',       // The template tag or markup needed to display the scaffolding.
+		'parameters'  => array(),  // Does the scaffolding have params? Like $args?
+		'arguments'   => array(),  // If the scaffolding has params, what are the $args?
+		'output'      => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
 	);
 
 	// Parse arguments.
@@ -38,7 +38,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 
 		<?php if ( $args['title'] ) : ?>
 		<header class="scaffolding-document-header">
-			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .scaffolding-document-header -->
 		<?php endif; ?>
@@ -105,17 +105,37 @@ function _s_scaffolding_allowed_html() {
 
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'svg' => array(
+		'svg'    => array(
 			'aria-hidden' => true,
 			'class'       => true,
 			'id'          => true,
 			'role'        => true,
 			'title'       => true,
+			'fill'        => true,
+			'height'      => true,
+			'width'       => true,
+			'use'         => true,
+			'path'        => true,
 		),
-		'use' => array(
+		'use'    => array(
 			'xlink:href' => true,
 		),
-		'input' => array(
+		'title'  => array(
+			'id' => true,
+		),
+		'desc'   => array(
+			'id' => true,
+		),
+		'select' => array(
+			'class' => true,
+		),
+		'option' => array(
+			'option'   => true,
+			'value'    => true,
+			'selected' => true,
+			'disabled' => true,
+		),
+		'input'  => array(
 			'type'        => true,
 			'name'        => true,
 			'value'       => true,
@@ -150,7 +170,7 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 		<header class="scaffolding-document-header">
-			<h2 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h2>
+			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 		</header>
 
 		<div class="scaffolding-document-content">
@@ -197,11 +217,13 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
 					</div>
-					<?php break; ?>
+				<?php
+					break;
+				default:
+				?>
 			<?php endswitch; ?>
 		</div>
 	</div>
-
 	<?php
 }
 

@@ -60,7 +60,7 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
 
 		// Do something with $result.
-		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS: db call ok , cache ok.
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = %s AND wposts.post_type = 'attachment'", $attachment_url ) ); // WPCS db call ok, cache ok, placeholder ok.
 	}
 
 	return $attachment_id;
@@ -92,10 +92,10 @@ function _s_get_placeholder_image( $args = array() ) {
 	$args = wp_parse_args( $args, $default_args );
 
 	// Extract the vars we want to work with.
-	$width = $args['width'];
-	$height = $args['height'];
+	$width            = $args['width'];
+	$height           = $args['height'];
 	$background_color = $args['background_color'];
-	$text_color = $args['text_color'];
+	$text_color       = $args['text_color'];
 
 	// Perform some quick data validation.
 	if ( ! is_numeric( $width ) ) {
@@ -177,7 +177,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 	// Apply a category if desired.
 	if ( ! empty( $args['category'] ) ) {
 		$category = rawurlencode( $args['category'] );
-		$url .= "category/$category/";
+		$url     .= "category/$category/";
 	}
 
 	// Dimensions go after category but before search keywords.
@@ -185,7 +185,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 
 	if ( ! empty( $args['keywords'] ) ) {
 		$keywords = rawurlencode( $args['keywords'] );
-		$url .= "?$keywords";
+		$url     .= "?$keywords";
 	}
 
 	// Text that will be utilized by screen readers.
@@ -198,6 +198,7 @@ function _s_get_placeholder_unsplash( $args = array() ) {
  * Display the customizer header scripts.
  *
  * @author Greg Rickaby
+ * @return string
  */
 function _s_display_customizer_header_scripts() {
 
@@ -217,6 +218,7 @@ function _s_display_customizer_header_scripts() {
  * Display the customizer footer scripts.
  *
  * @author Greg Rickaby
+ * @return string
  */
 function _s_display_customizer_footer_scripts() {
 
@@ -231,3 +233,33 @@ function _s_display_customizer_footer_scripts() {
 	// Otherwise, echo the scripts!
 	echo force_balance_tags( $scripts ); // WPCS XSS OK.
 }
+
+
+/**
+ * Shortcode to display copyright year.
+ *
+ * @author Haris Zulfiqar
+ * @param array $atts {.
+ * @type string $starting_year Optional. Define starting year to show starting year and current year e.g. 2015 - 2018.
+ * @type string $separator Optional. Separator between starting year and current year.
+ * }
+ * @return string
+ */
+function _s_copyright_year( $atts ) {
+
+	// Setup defaults.
+	$args = shortcode_atts( array(
+		'starting_year' => '',
+		'separator'     => ' - ',
+	), $atts );
+
+	$current_year = date( 'Y' );
+
+	// Return current year if starting year is empty.
+	if ( ! $args['starting_year'] ) {
+		return $current_year;
+	}
+
+	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
+}
+add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );

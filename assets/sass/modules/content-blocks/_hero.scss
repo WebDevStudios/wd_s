@@ -22,10 +22,10 @@
 		align-items: center;
 		display: flex;
 		flex-direction: column;
+		height: rem(500);
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 50%;
-		min-height: rem(500); // height of hero.
 		position: relative;
 		text-align: center;
 		z-index: 3;
@@ -35,6 +35,11 @@
 	&-description {
 		padding-bottom: $gutter * 2;
 	} // .hero-description
+
+	// Remove any text decoration.
+	.button-hero {
+		text-decoration: none;
+	} // a.button-hero
 } // .hero
 
 //-----------------------------------------
@@ -49,12 +54,4 @@
 	.hero-description {
 		width: 100%;
 	} // .hero-title, .hero-description
-
-	// IE11 doesn't do centering with just a min-height,
-	// need to set a specific height instead.
-	.hero-content {
-		@include media($tablet-portrait) {
-			height: rem(500); // height of hero.
-		}
-	} // .hero-content
 } // .ie .hero

@@ -59,5 +59,13 @@
 		'usage'       => '<h6>This is a headline</h6> or <div class="h6">This is a headline</div>',
 		'output'      => '<h6>This is a headline six</h6>',
 	) );
+
+	// Body.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Paragraph',
+		'description' => 'Display a paragraph',
+		'usage'       => '<p>Elementum faucibus vehicula id neque magnis scelerisque quam conubia torquent, auctor nisl quis aliquet venenatis sem sagittis morbi eu, fermentum ipsum congue ultrices non dui lectus pulvinar. Sapien etiam convallis urna suscipit euismod pharetra tellus himenaeos, dignissim consectetur cum suspendisse sem ornare eros enim egestas, cubilia venenatis mauris vivamus elit fringilla duis.</p>',
+		'output'      => '<p>Elementum faucibus vehicula id neque magnis scelerisque quam conubia torquent, auctor nisl quis aliquet venenatis sem sagittis morbi eu, fermentum ipsum congue ultrices non dui lectus pulvinar. Sapien etiam convallis urna suscipit euismod pharetra tellus himenaeos, dignissim consectetur cum suspendisse sem ornare eros enim egestas, cubilia venenatis mauris vivamus elit fringilla duis.</p>',
+	) );
 	?>
 </section>

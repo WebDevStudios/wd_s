@@ -1,17 +1,17 @@
 {
     "key": "group_59416d894b7c7",
-    "title": "Fields: Button - To Clone",
+    "title": "Fields: Button — To Clone",
     "fields": [
         {
             "key": "field_59416d96077a8",
             "label": "Button Text",
             "name": "button_text",
             "type": "text",
-            "instructions": "Write a short call to action.",
+            "instructions": "Optional. Write a short call to action.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -26,11 +26,11 @@
             "label": "Button URL",
             "name": "button_url",
             "type": "url",
-            "instructions": "Where will this button link to?",
+            "instructions": "Optional. Where will this button link to?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -47,7 +47,7 @@
             }
         ]
     ],
-    "menu_order": "",
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1500412595
+    "modified": 1528475212
 }

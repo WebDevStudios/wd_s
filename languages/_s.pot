@@ -1,4 +1,4 @@
-# Copyright (C) 2017 _s
+# Copyright (C) 2018 _s
 # This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
@@ -25,6 +25,7 @@ msgstr ""
 msgid "Comment section"
 msgstr ""
 
+#. translators: the number of comments
 #: comments.php:34
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -64,6 +65,7 @@ msgstr ""
 msgid "Sidebar 1"
 msgstr ""
 
+#. translators: the sidebar name
 #: functions.php:118
 msgid "Widget area for %s"
 msgstr ""
@@ -72,10 +74,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
+#: header.php:51
 msgid "Open Menu"
 msgstr ""
 
+#. translators: the term(s) searched
 #: search.php:18
 msgid "Search Results for: %s"
 msgstr ""
@@ -93,43 +96,51 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: template-acf.php:2
+#: template-acf.php:3
 msgid "Page with Content Blocks"
 msgstr ""
 
-#: template-scaffolding.php:2
+#: template-scaffolding.php:3
 msgid "Scaffolding"
 msgstr ""
 
-#: template-sidebar-right.php:2
+#: template-sidebar-right.php:3
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/extras.php:112, inc/extras.php:177
+#: inc/acf.php:243
+msgid "Video"
+msgstr ""
+
+#: inc/acf.php:264
+msgid "expired"
+msgstr ""
+
+#: inc/extras.php:102, inc/extras.php:167
 msgid "Width must be an integer"
 msgstr ""
 
-#: inc/extras.php:116, inc/extras.php:181
+#: inc/extras.php:106, inc/extras.php:171
 msgid "Height must be an integer"
 msgstr ""
 
-#: inc/extras.php:120
+#: inc/extras.php:110
 msgid "Please provide a valid hex color value for background_color"
 msgstr ""
 
-#: inc/extras.php:124
+#: inc/extras.php:114
 msgid "Please provide a valid hex color value for text_color"
 msgstr ""
 
-#: inc/extras.php:131, inc/extras.php:202
+#: inc/extras.php:121, inc/extras.php:192
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:86, inc/template-tags.php:424
+#: inc/hooks.php:90, inc/template-tags.php:438
 msgid "Read More"
 msgstr ""
 
-#: inc/hooks.php:97
+#: inc/hooks.php:101
 msgid "Read more..."
 msgstr ""
 
@@ -157,36 +168,40 @@ msgstr ""
 msgid "HTML Output"
 msgstr ""
 
-#. translators: If there are characters in your language that are not
-#: inc/scripts.php:22
+#: inc/scripts.php:23
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/scripts.php:23
+#: inc/scripts.php:24
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
+#. translators: the date the post was published
 #: inc/template-tags.php:30
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
+#. translators: the post author
 #: inc/template-tags.php:36
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:53, inc/template-tags.php:60
 msgid ", "
 msgstr ""
 
+#. translators: the post category
 #: inc/template-tags.php:56
 msgid "Posted in %1$s"
 msgstr ""
 
+#. translators: the post tags
 #: inc/template-tags.php:63
 msgid "Tagged %1$s"
 msgstr ""
@@ -203,27 +218,30 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
 #: inc/template-tags.php:76, template-parts/content-page.php:34
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:104
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/template-tags.php:99
+#: inc/template-tags.php:109
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:375
+#. translators: the social network name
+#: inc/template-tags.php:389
 msgid "Link to %s"
 msgstr ""
 
-#: inc/template-tags.php:456
+#: inc/template-tags.php:471
 msgid "More Information"
 msgstr ""
 
-#: inc/template-tags.php:458, inc/template-tags.php:459
+#: inc/template-tags.php:473, inc/template-tags.php:474
 msgid "Search"
 msgstr ""
 
@@ -231,6 +249,7 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
+#. translators: the edit post url
 #: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -247,6 +266,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#. translators: %s: Name of current post.
 #: template-parts/content.php:32
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -311,6 +331,7 @@ msgstr ""
 msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
 msgstr ""
 
+#. translators: the social network name.
 #: inc/customizer/settings.php:83
 msgid "%s URL"
 msgstr ""

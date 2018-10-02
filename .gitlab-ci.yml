@@ -1,0 +1,10 @@
+image: protechig/phpcs-docker:alpine
+stages:
+  - linting
+phpcs:
+    stage: linting
+    script:
+    - find -L ./ -name '*.php' -print0 | xargs -0 -n 1 php -l
+    - ~/.composer/vendor/bin/phpcs -p -s -v -n . --standard=WebDevStudios --extensions=php -d memory_limit=256m
+    - eslint --config .eslintrc.js './assets/scripts/concat'
+    - sass-lint --config .sass-lint.yml './assets/sass/**/*.scss' --verbose --no-exit

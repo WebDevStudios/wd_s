@@ -1,0 +1,9 @@
+//--------------------------------------------------------------
+// WordPress Default Gallery Block
+//--------------------------------------------------------------
+
+// Remove the left margin/padding.
+.wp-block-gallery {
+	@include margin-padding-reset;
+
+} // .wp-block-gallery

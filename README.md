@@ -9,6 +9,10 @@ I feature some of the web's most proven technologies like: [Gulp](http://gulpjs.
 
 If that weren't enough, I also support [synchronized JSON](https://www.advancedcustomfields.com/resources/synchronized-json/) for [Advanced Custom Fields](https://www.advancedcustomfields.com/) and support both [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
 
+If you have the latest version of [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/), then you can take advantage of our [ACF Content Blocks](https://github.com/WebDevStudios/wd_s/wiki/ACF-Content-Blocks) system. Content Blocks are great way to "visually manage blocks of content" throughout your website.
+
+<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
+
 ## Getting Started
 
 ### Prerequisites
@@ -83,4 +87,4 @@ From the command line, type any of the following to perform an action:
 
 ## Contributing and Support
 
-Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/CONTRIBUTING.md) before submitting a pull request.
+Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
