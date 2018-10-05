@@ -347,13 +347,13 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
  */
 function _s_acf_load_icon_field_choices( $field ) {
 
-	// reset choices.
+	// Reset choices.
 	$field['choices'] = array();
 
-	// Get filenames that match .svg.
+	// Grab our colors array.
 	$colors = _s_get_theme_colors();
 
-	// Loop through filenames.
+	// Loop through colors.
 	foreach ( $colors as $key => $color ) {
 
 		// Create display markup.
