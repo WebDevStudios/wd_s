@@ -63,10 +63,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5ab3e6cc7bb9e",
+                    "key": "field_5bb79386c24c1",
                     "label": "Color",
-                    "name": "background_color",
-                    "type": "color_picker",
+                    "name": "color",
+                    "type": "clone",
                     "instructions": "Select a background color.",
                     "required": 0,
                     "conditional_logic": [
@@ -83,7 +83,13 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": ""
+                    "clone": [
+                        "group_5bb7934b61627"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 },
                 {
                     "key": "field_5ab3e6e67bb9f",
@@ -191,5 +197,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1528473065
+    "modified": 1538759178
 }
