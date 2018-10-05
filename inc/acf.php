@@ -82,7 +82,7 @@ function _s_display_block_options( $args = array() ) {
 			$args['class']   .= ' has-background image-as-background';
 			ob_start();
 			?>
-			<figure class="image-background">
+			<figure class="image-background" aria-hidden="true">
 				<?php echo wp_get_attachment_image( $background_image['id'], 'full' ); ?>
 			</figure>
 			<?php
@@ -95,14 +95,14 @@ function _s_display_block_options( $args = array() ) {
 			$args['class']        .= ' has-background video-as-background';
 			ob_start();
 			?>
-				<video class="video-background" autoplay muted loop preload="auto">
-				<?php if ( $background_video_webm['url'] ) : ?>
-					<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
-				<?php endif; ?>
+				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true">
+					<?php if ( $background_video_webm['url'] ) : ?>
+						<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
+					<?php endif; ?>
 
-				<?php if ( $background_video['url'] ) : ?>
-					<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
-				<?php endif; ?>
+					<?php if ( $background_video['url'] ) : ?>
+						<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
+					<?php endif; ?>
 				</video>
 			<?php
 			$background_video_markup = ob_get_clean();
