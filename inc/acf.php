@@ -68,8 +68,6 @@ function _s_display_block_options( $args = array() ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
-	$inline_style = '';
-
 	$background_video_markup = $background_image_markup = '';
 
 	// Only try to get the rest of the settings if the background type is set to anything.
@@ -132,11 +130,10 @@ function _s_display_block_options( $args = array() ) {
 
 	// Print our block container with options.
 	printf(
-		'<%s id="%s" class="%s" style="%s">',
+		'<%s id="%s" class="%s">',
 		esc_attr( $args['container'] ),
 		esc_attr( $args['id'] ),
-		esc_attr( $args['class'] ),
-		esc_attr( $inline_style )
+		esc_attr( $args['class'] )
 	);
 
 	// If we have a background video, echo our background video markup inside the block container.
