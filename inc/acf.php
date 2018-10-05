@@ -70,19 +70,25 @@ function _s_display_block_options( $args = array() ) {
 
 	$inline_style = '';
 
-	$background_video_markup = '';
+	$background_video_markup = $background_image_markup = '';
 
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
-		if ( 'color' === $args['background_type'] ) {
+		if ( 'color' === $args['background_type'] && $background_options['color']['color_picker'] ) {
 			$background_color = $background_options['color']['color_picker'];
 			$args['class']   .= ' has-background color-as-background background-' . esc_attr( $background_color );
 		}
 
-		if ( 'image' === $args['background_type'] ) {
+		if ( 'image' === $args['background_type'] && $background_options['background_image'] ) {
 			$background_image = $background_options['background_image'];
-			$inline_style    .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
 			$args['class']   .= ' has-background image-as-background';
+			ob_start();
+			?>
+			<figure class="image-background">
+				<?php echo wp_get_attachment_image( $background_image['id'], 'full' ); ?>
+			</figure>
+			<?php
+			$background_image_markup = ob_get_clean();
 		}
 
 		if ( 'video' === $args['background_type'] ) {
@@ -136,6 +142,11 @@ function _s_display_block_options( $args = array() ) {
 	// If we have a background video, echo our background video markup inside the block container.
 	if ( $background_video_markup ) {
 		echo $background_video_markup; // WPCS XSS OK.
+	}
+
+	// If we have a background image, echo our background image markup inside the block container.
+	if ( $background_image_markup ) {
+		echo $background_image_markup; // WPCS XSS OK.
 	}
 }
 
