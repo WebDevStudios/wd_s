@@ -1,13 +1,13 @@
 {
     "key": "group_5bb7934b61627",
-    "title": "Group: Color Picker – To Clone",
+    "title": "Group: Color Picker — To Clone",
     "fields": [
         {
             "key": "field_5bb7935bde7ea",
             "label": "Color Picker",
             "name": "color_picker",
             "type": "select",
-            "instructions": "Select the color you wish to use.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -57,5 +57,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1538759177
+    "modified": 1538767089
 }
