@@ -149,21 +149,36 @@ img {
 
 // Center image background
 .image-as-background {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	overflow: hidden;
+	position: relative;
 } // .image-as-background
 
-// Video as background
-.video-background {
+// Video and Image as background.
+.video-background,
+.image-background {
 	@include size(100% 100%);
 
 	display: block;
 	object-fit: cover;
-	object-position: center top;
 	position: absolute;
 	z-index: -1;
+}
+
+// Video as background
+.video-background {
+	object-position: center top;
 } // .video-background
+
+// Image as background
+.image-background {
+	object-position: center center;
+
+	img {
+		@include size(100% 100%);
+
+		object-fit: cover;
+	}
+} // .image-background
 
 // IE/Edge hacks.
 .ie .video-background,
