@@ -263,3 +263,28 @@ function _s_copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
+
+/**
+ * Get the theme colors for this project. Set these first in the Sass partial then migrate them over here.
+ *
+ * @return array The array of our color names and hex values.
+ * @author Corey Collins
+ */
+function _s_get_theme_colors() {
+	return array(
+		__( 'Alto', '_s' )           => '#ddd',
+		__( 'Black', '_s' )          => '#000',
+		__( 'Blue', '_s' )           => '#21759b',
+		__( 'Cod Gray', '_s' )       => '#111',
+		__( 'Dove Gray', '_s' )      => '#666',
+		__( 'Gallery', '_s' )        => '#eee',
+		__( 'Gray', '_s' )           => '#808080',
+		__( 'Gray Alt', '_s' )       => '#929292',
+		__( 'Light Yellow', '_s' )   => '#fff9c0',
+		__( 'Mineshaft', '_s' )      => '#333',
+		__( 'Silver', '_s' )         => '#ccc',
+		__( 'Silver Chalice', '_s' ) => '#aaa',
+		__( 'White', '_s' )          => '#fff',
+		__( 'Whitesmoke', '_s' )     => '#f1f1f1',
+	);
+}
