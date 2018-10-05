@@ -75,9 +75,8 @@ function _s_display_block_options( $args = array() ) {
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
 		if ( 'color' === $args['background_type'] ) {
-			$background_color = $background_options['background_color'];
-			$inline_style    .= 'background-color: ' . $background_color . ';';
-			$args['class']   .= ' has-background color-as-background';
+			$background_color = $background_options['color']['color_picker'];
+			$args['class']   .= ' has-background color-as-background background-' . esc_attr( $background_color );
 		}
 
 		if ( 'image' === $args['background_type'] ) {
@@ -111,8 +110,8 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Set the custom font color.
-	if ( $args['font_color'] ) {
-		$inline_style .= 'color: ' . $args['font_color'] . ';';
+	if ( $args['font_color']['color_picker'] ) {
+		$args['class'] .= ' has-font-color color-' . esc_attr( $args['font_color']['color_picker'] );
 	}
 
 	// Set the custom ID.
@@ -350,3 +349,34 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 	}
 	add_action( 'acf/input/admin_head', '_s_flexible_content_layout_title_acf_admin_head' );
 }
+
+/**
+ * Load Icons dynamically from svg-icons folder
+ *
+ * @param array $field fiueld options.
+ * @return array new field choices.
+ *
+ * @author jomurgel <dev@jomurgel.com>
+ */
+function _s_acf_load_icon_field_choices( $field ) {
+
+	// reset choices.
+	$field['choices'] = array();
+
+	// Get filenames that match .svg.
+	$colors = _s_get_theme_colors();
+
+	// Loop through filenames.
+	foreach ( $colors as $key => $color ) {
+
+		// Create display markup.
+		$color_output = '<div style="display: flex;align-items: center;"><span style="background-color:' . esc_attr( $color ) . ';border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;"></span>' . esc_html( $key ) . '</div>';
+
+		// Set values.
+		$field['choices'][ sanitize_title( $key ) ] = $color_output;
+	}
+
+	// Return the field.
+	return $field;
+}
+add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_icon_field_choices' );
