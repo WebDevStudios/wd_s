@@ -478,3 +478,27 @@ function _s_display_header_button() {
 	</div><!-- .header-trigger -->
 	<?php
 }
+
+/**
+ * Displays numeric pagination on archive pages.
+ *
+ * @param array $args Array of params to customize output.
+ * @author Corey Collins
+ */
+function _s_display_numeric_pagination( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'prev_text' => '&laquo;',
+		'next_text' => '&raquo;',
+		'mid_size'  => 4,
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<nav class="pagination-container">
+		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
+	</nav>
+	<?php
+}
