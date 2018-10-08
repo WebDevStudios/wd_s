@@ -42,7 +42,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			_s_display_numeric_pagination();
 
 		else :
 
