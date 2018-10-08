@@ -33,7 +33,7 @@ _s_display_block_options(
 
 		<div class="cell">
 			<?php if ( $button_url ) : ?>
-				<button type="button" class="button cta-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+				<a class="button cta-button" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 			<?php endif; ?>
 		</div>
 	</div><!-- .grid-x -->
