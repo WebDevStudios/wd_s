@@ -254,8 +254,8 @@ function _s_add_og_tags() {
 
 	// Media page.
 	if ( is_attachment() ) {
-		$attachment_id  = get_the_ID();
-		$card_image     = ( wp_attachment_is_image( $attachment_id ) ) ? wp_get_attachment_image_url( $attachment_id, 'full' ) : $card_image;
+		$attachment_id = get_the_ID();
+		$card_image    = ( wp_attachment_is_image( $attachment_id ) ) ? wp_get_attachment_image_url( $attachment_id, 'full' ) : $card_image;
 	}
 
 	?>
