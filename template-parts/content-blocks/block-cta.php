@@ -32,7 +32,7 @@ _s_display_block_options(
 		</div>
 
 		<div class="cell">
-			<?php if ( $button_url ) : ?>
+			<?php if ( $button_url && $button_text ) : ?>
 				<a class="button cta-button" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 			<?php endif; ?>
 		</div>
