@@ -16,6 +16,7 @@ input[type='submit'] {
 	line-height: 1.5;
 	margin: 0;
 	padding: $padding-input;
+	transition: $transition-bg-color;
 
 	// IE 11 helper.
 	.ie & {
