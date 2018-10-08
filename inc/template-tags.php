@@ -435,7 +435,7 @@ function _s_display_card( $args = array() ) {
 		<?php endif; ?>
 
 		<?php if ( $args['url'] ) : ?>
-			<button type="button" class="button button-card" onclick="location.href='<?php echo esc_url( $args['url'] ); ?>'"><?php esc_html_e( 'Read More', '_s' ); ?></button>
+			<a class="button button-card" href="<?php echo esc_url( $args['url'] ); ?>"><?php esc_html_e( 'Read More', '_s' ); ?></a>
 		<?php endif; ?>
 
 		</div><!-- .card-section -->
