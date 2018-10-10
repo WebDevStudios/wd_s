@@ -39,7 +39,7 @@ You'll need to change all instances of the names: `_s`.
 * Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 * Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 * Search for `_s.com` and replace with: `project-name.dev` to match your local development URL
-* Edit the theme information in the header of style.scss to meet your needs
+* Edit the theme information in the header of style.css to meet your needs
 
 ## Development
 
