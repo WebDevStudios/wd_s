@@ -6,7 +6,7 @@ const CleanPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
-const SpritesmithPlugin = require('webpack-spritesmith');
+const SpritesmithPlugin = require( 'webpack-spritesmith' );
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
 
