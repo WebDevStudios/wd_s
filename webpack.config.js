@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const SpritesmithPlugin = require( 'webpack-spritesmith' );
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
+const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
 
@@ -149,7 +151,22 @@ let webpackConfig = {
 			configFile: './.stylelintrc',
 			files: './assets/sass/**',
 			syntax: 'scss'
-		} )
+		} ),
+		new CopyWebpackPlugin(
+			[
+				{
+					from: path.resolve( __dirname, 'assets/images/' ),
+					to: path.resolve( __dirname, 'assets/images/' )
+				}
+			]
+		),
+		new ImageminPlugin(
+			{
+				pngquant: {
+					optimizationLevel: 5
+				}
+			}
+		)
 	],
 
 	devtool: 'source-map'
