@@ -66,22 +66,25 @@ function _s_display_block_options( $args = array() ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
-	$inline_style = '';
-
-	$background_video_markup = '';
+	$background_video_markup = $background_image_markup = '';
 
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
-		if ( 'color' === $args['background_type'] ) {
-			$background_color = $background_options['background_color'];
-			$inline_style    .= 'background-color: ' . $background_color . ';';
-			$args['class']   .= ' has-background color-as-background';
+		if ( 'color' === $args['background_type'] && $background_options['color']['color_picker'] ) {
+			$background_color = $background_options['color']['color_picker'];
+			$args['class']   .= ' has-background color-as-background background-' . esc_attr( $background_color );
 		}
 
-		if ( 'image' === $args['background_type'] ) {
+		if ( 'image' === $args['background_type'] && $background_options['background_image'] ) {
 			$background_image = $background_options['background_image'];
-			$inline_style    .= 'background-image: url(' . esc_url( $background_image['sizes']['full-width'] ) . ');';
 			$args['class']   .= ' has-background image-as-background';
+			ob_start();
+			?>
+			<figure class="image-background" aria-hidden="true">
+				<?php echo wp_get_attachment_image( $background_image['id'], 'full' ); ?>
+			</figure>
+			<?php
+			$background_image_markup = ob_get_clean();
 		}
 
 		if ( 'video' === $args['background_type'] ) {
@@ -90,14 +93,14 @@ function _s_display_block_options( $args = array() ) {
 			$args['class']        .= ' has-background video-as-background';
 			ob_start();
 			?>
-				<video class="video-background" autoplay muted loop playsinline preload="auto">
-				<?php if ( $background_video_webm['url'] ) : ?>
-					<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
-				<?php endif; ?>
+				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true">
+					<?php if ( $background_video_webm['url'] ) : ?>
+						<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
+					<?php endif; ?>
 
-				<?php if ( $background_video['url'] ) : ?>
-					<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
-				<?php endif; ?>
+					<?php if ( $background_video['url'] ) : ?>
+						<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
+					<?php endif; ?>
 				</video>
 			<?php
 			$background_video_markup = ob_get_clean();
@@ -109,8 +112,8 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Set the custom font color.
-	if ( $args['font_color'] ) {
-		$inline_style .= 'color: ' . $args['font_color'] . ';';
+	if ( $args['font_color']['color_picker'] ) {
+		$args['class'] .= ' has-font-color color-' . esc_attr( $args['font_color']['color_picker'] );
 	}
 
 	// Set the custom ID.
@@ -125,16 +128,20 @@ function _s_display_block_options( $args = array() ) {
 
 	// Print our block container with options.
 	printf(
-		'<%s id="%s" class="%s" style="%s">',
+		'<%s id="%s" class="%s">',
 		esc_attr( $args['container'] ),
 		esc_attr( $args['id'] ),
-		esc_attr( $args['class'] ),
-		esc_attr( $inline_style )
+		esc_attr( $args['class'] )
 	);
 
 	// If we have a background video, echo our background video markup inside the block container.
 	if ( $background_video_markup ) {
 		echo $background_video_markup; // WPCS XSS OK.
+	}
+
+	// If we have a background image, echo our background image markup inside the block container.
+	if ( $background_image_markup ) {
+		echo $background_image_markup; // WPCS XSS OK.
 	}
 }
 
@@ -200,27 +207,6 @@ function _s_has_block_expired( $args = array() ) {
 	// Yes, the block has expired.
 	return true;
 }
-
-/**
- * Enqueues scripts for ACF.
- *
- * @author Corey Collins, Kellen Mace
- */
-function _s_acf_admin_scripts() {
-
-	// If a SCRIPT_DEBUG constant is defined or there is a $_GET param of 'script_debug', load unminified files.
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || isset( $_GET['script_debug'] ) ? '' : '.min'; // phpcs:ignore
-
-	// Version assets using this value. Bump it to bust old, cached files.
-	$version = '1.0.0';
-
-	// Enqueue JS to tweak the color picker swatches.
-	wp_enqueue_script( '_s-admin-acf-scripts', get_template_directory_uri() . '/assets/scripts/admin-acf' . $suffix . '.js', array( 'jquery' ), $version, true );
-
-	// Enqueue color picker styles.
-	wp_enqueue_style( '_s-admin-acf-styles', get_template_directory_uri() . '/admin-acf-styles.css', array(), $version );
-}
-add_action( 'acf/input/admin_head', '_s_acf_admin_scripts' );
 
 /**
  * Update Layout Titles with Subfield Image and Text Fields
@@ -348,3 +334,34 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 	}
 	add_action( 'acf/input/admin_head', '_s_flexible_content_layout_title_acf_admin_head' );
 }
+
+/**
+ * Load Icons dynamically from svg-icons folder
+ *
+ * @param array $field fiueld options.
+ * @return array new field choices.
+ *
+ * @author jomurgel <dev@jomurgel.com>
+ */
+function _s_acf_load_icon_field_choices( $field ) {
+
+	// Reset choices.
+	$field['choices'] = array();
+
+	// Grab our colors array.
+	$colors = _s_get_theme_colors();
+
+	// Loop through colors.
+	foreach ( $colors as $key => $color ) {
+
+		// Create display markup.
+		$color_output = '<div style="display: flex;align-items: center;"><span style="background-color:' . esc_attr( $color ) . ';border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;"></span>' . esc_html( $key ) . '</div>';
+
+		// Set values.
+		$field['choices'][ sanitize_title( $key ) ] = $color_output;
+	}
+
+	// Return the field.
+	return $field;
+}
+add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_icon_field_choices' );
