@@ -48,20 +48,23 @@
 
 		<?php _s_display_header_button(); ?>
 
-		<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
-			<span class="hamburger"></span>
-		</button>
+		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
+				<span class="hamburger"></span>
+			</button>
+		<?php endif; ?>
 
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-
+		<?php
+		wp_nav_menu( array(
+			'fallback_cb'     => false,
+			'theme_location'  => 'primary',
+			'menu_id'         => 'primary-menu',
+			'menu_class'      => 'menu dropdown',
+			'container'       => 'nav',
+			'container_class' => 'main-navigation',
+			'container_id'    => 'site-navigation',
+		) );
+		?>
 	</header><!-- .site-header-->
 
 	<div id="content" class="site-content">
