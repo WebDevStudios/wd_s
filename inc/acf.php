@@ -14,8 +14,6 @@ if ( ! class_exists( 'acf' ) ) {
 
 /**
  * Loop through and output ACF flexible content blocks for the current page.
- *
- * @return bool
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
@@ -30,7 +28,7 @@ function _s_display_content_blocks() {
 				'start_date' => $other_options['start_date'],
 				'end_date'   => $other_options['end_date'],
 			) ) ) {
-				return false;
+				continue;
 			}
 
 			get_template_part( 'template-parts/content-blocks/block', get_row_layout() ); // Template part name MUST match layout ID.
