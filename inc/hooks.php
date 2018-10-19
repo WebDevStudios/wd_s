@@ -254,8 +254,8 @@ function _s_add_og_tags() {
 
 	// Media page.
 	if ( is_attachment() ) {
-		$attachment_id  = get_the_ID();
-		$card_image     = ( wp_attachment_is_image( $attachment_id ) ) ? wp_get_attachment_image_url( $attachment_id, 'full' ) : $card_image;
+		$attachment_id = get_the_ID();
+		$card_image    = ( wp_attachment_is_image( $attachment_id ) ) ? wp_get_attachment_image_url( $attachment_id, 'full' ) : $card_image;
 	}
 
 	?>
@@ -269,3 +269,23 @@ function _s_add_og_tags() {
 	<?php
 }
 add_action( 'wp_head', '_s_add_og_tags' );
+
+/**
+ * Removes or Adjusts the prefix on category archive page titles.
+ *
+ * @param string $title The default $title of the page.
+ * @return string The updated $title.
+ * @author Corey Collins
+ */
+function _s_remove_archive_title_prefix( $title ) {
+
+	// Get the single category title with no prefix.
+	$single_cat_title = single_term_title( '', false );
+
+	if ( is_category() || is_tag() || is_tax() ) {
+		return esc_html( $single_cat_title );
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );

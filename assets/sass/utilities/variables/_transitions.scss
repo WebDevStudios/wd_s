@@ -7,17 +7,20 @@
 /// @author WebDevStudios
 ////
 
-/// Opacity transition.
+// Opacity transition.
 $transition-opacity: opacity 0.5s ease;
 
-/// Border transition
+// Border transition
 $transition-border: border 0.2s ease-in-out;
 
-/// All transitions. Use only in emergencies!
+// All transitions. Use only in emergencies!
 $transition-all: all 0.5s ease-in-out;
 
-/// Transform transitions.
+// Transform transitions.
 $transition-transform: transform 0.5s ease-in-out;
 
-/// Transform Hamburger
+// Transform Hamburger
 $transition-hamburger: transform 0.5s, background-color 0.3s ease-in-out;
+
+// Transform Background Color
+$transition-bg-color: background-color 0.3s ease-in-out;
