@@ -435,7 +435,7 @@ function _s_display_card( $args = array() ) {
 		<?php endif; ?>
 
 		<?php if ( $args['url'] ) : ?>
-			<button type="button" class="button button-card" onclick="location.href='<?php echo esc_url( $args['url'] ); ?>'"><?php esc_html_e( 'Read More', '_s' ); ?></button>
+			<a class="button button-card" href="<?php echo esc_url( $args['url'] ); ?>"><?php esc_html_e( 'Read More', '_s' ); ?></a>
 		<?php endif; ?>
 
 		</div><!-- .card-section -->
@@ -476,6 +476,30 @@ function _s_display_header_button() {
 			<?php get_search_form(); ?>
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
+	<?php
+}
+
+/**
+ * Displays numeric pagination on archive pages.
+ *
+ * @param array $args Array of params to customize output.
+ * @author Corey Collins
+ */
+function _s_display_numeric_pagination( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'prev_text' => '&laquo;',
+		'next_text' => '&raquo;',
+		'mid_size'  => 4,
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<nav class="pagination-container">
+		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
+	</nav>
 	<?php
 }
 
