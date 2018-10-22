@@ -45,7 +45,10 @@ _s_display_block_options(
 					<div class="accordion-item">
 						<div class="item-header">
 							<h3 class="item-title"><?php echo esc_html( $item_title ); ?></h3>
-							<button class="item-toggle"><span>+</span></button>
+							<button class="item-toggle">
+								<span class="screen-reader-text"><?php esc_html_e( 'Show or Hide Accordion Item Content', '_s' ); ?></span>
+								<span aria-hidden="true">+</span>
+							</button>
 						</div><!-- .item-header-->
 						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . $count ); ?>" class="item-content">
 							<div class="item-content-inner">
