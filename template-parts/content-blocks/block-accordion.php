@@ -51,9 +51,7 @@ _s_display_block_options(
 							</button>
 						</div><!-- .item-header-->
 						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . $count ); ?>" class="item-content">
-							<div class="item-content-inner">
-								<?php echo wp_kses_post( $item_content ); ?>
-							</div><!-- .item-content-inner -->
+							<?php echo wp_kses_post( $item_content ); ?>
 						</div><!-- .item-content -->
 					</div>
 				<?php endwhile; ?>
