@@ -50,7 +50,7 @@ _s_display_block_options(
 								<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 							</button>
 						</div><!-- .accordion-item-header-->
-						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . $count ); ?>" class="accordion-item-content">
+						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . intval( $count ) ); ?>" class="accordion-item-content">
 							<?php echo wp_kses_post( $item_content ); ?>
 						</div><!-- .accordion-item-content -->
 					</div>
