@@ -15,7 +15,7 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container accordion', // Container class.
+		'class'     => 'content-block grid-container accordion-block', // Container class.
 	)
 );
 ?>
@@ -31,7 +31,7 @@ _s_display_block_options(
 		</div>
 
 		<?php if ( $accordion_items ) : ?>
-			<div class="cell">
+			<div class="cell accordion">
 				<?php
 				$count = 0;
 				while ( have_rows( 'accordion_items' ) ) :
@@ -56,4 +56,4 @@ _s_display_block_options(
 			</div>
 		<?php endif; ?>
 	</div><!-- .grid-x -->
-</section><!-- .accordion -->
+</section><!-- .accordion-block -->
