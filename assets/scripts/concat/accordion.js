@@ -46,12 +46,8 @@ window.accordionBlockToggle = {};
 		// Add the open class to the item.
 		$( this ).parents( '.accordion-item' ).toggleClass( 'open' );
 
-		// Open the clicked content panel.
-		$( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ).slideToggle( 'fast' );
-
 		// Hide the other panels.
-		app.$c.items.not( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
-		app.$c.contents.not( $( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ) ).slideUp( 'fast' );
+		$( this ).parents( '.accordion-block' ).find( '.accordion-item' ).not ( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
 
 		return false;
 	};
