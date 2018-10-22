@@ -112,8 +112,8 @@
                 },
                 {
                     "key": "field_5bce03f2a010f",
-                    "label": "Accordion  Text",
-                    "name": "accordion__text",
+                    "label": "Accordion Text",
+                    "name": "accordion_text",
                     "type": "wysiwyg",
                     "instructions": "Set the text of the individual accordion. Clicking\/Tapping the title this show\/hide this content.",
                     "required": 1,
@@ -149,5 +149,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1540228614
+    "modified": 1540228967
 }
