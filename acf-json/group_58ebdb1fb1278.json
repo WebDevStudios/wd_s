@@ -16,14 +16,14 @@
                 "id": ""
             },
             "layouts": {
-                "58ebe820e12b2": {
-                    "key": "58ebe820e12b2",
-                    "name": "hero",
-                    "label": "Hero",
+                "596f8962ed9b7": {
+                    "key": "596f8962ed9b7",
+                    "name": "accordion",
+                    "label": "Accordion",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_596d1efee7147",
+                            "key": "field_596f8967ed9b8",
                             "label": "Block Content",
                             "name": "block_content",
                             "type": "clone",
@@ -36,15 +36,15 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_596d1eb21b1a7"
+                                "group_5bce0357bebd7"
                             ],
                             "display": "seamless",
-                            "layout": "block",
+                            "layout": "",
                             "prefix_label": 0,
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_5b1a9c235a1d3",
+                            "key": "field_596f8977ed9b9",
                             "label": "Background Options",
                             "name": "background_options",
                             "type": "clone",
@@ -65,7 +65,80 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_5b1a9c565a1d4",
+                            "key": "field_596f8981ed9ba",
+                            "label": "Other Options",
+                            "name": "other_options",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_594168e970d85"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5bce049073039": {
+                    "key": "layout_5bce049073039",
+                    "name": "cta",
+                    "label": "Call To Action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5bce04907303a",
+                            "label": "Block Content",
+                            "name": "block_content",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_596f88fa8326f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5bce04907303b",
+                            "label": "Background Options",
+                            "name": "background_options",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_58ebcc07bfbd7"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5bce04907303c",
                             "label": "Other Options",
                             "name": "other_options",
                             "type": "clone",
@@ -266,14 +339,14 @@
                     "min": "",
                     "max": ""
                 },
-                "596f8962ed9b7": {
-                    "key": "596f8962ed9b7",
-                    "name": "cta",
-                    "label": "Call To Action",
+                "58ebe820e12b2": {
+                    "key": "58ebe820e12b2",
+                    "name": "hero",
+                    "label": "Hero",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_596f8967ed9b8",
+                            "key": "field_596d1efee7147",
                             "label": "Block Content",
                             "name": "block_content",
                             "type": "clone",
@@ -286,7 +359,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_596f88fa8326f"
+                                "group_596d1eb21b1a7"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -294,7 +367,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_596f8977ed9b9",
+                            "key": "field_5b1a9c235a1d3",
                             "label": "Background Options",
                             "name": "background_options",
                             "type": "clone",
@@ -315,7 +388,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_596f8981ed9ba",
+                            "key": "field_5b1a9c565a1d4",
                             "label": "Other Options",
                             "name": "other_options",
                             "type": "clone",
@@ -508,7 +581,6 @@
     "hide_on_screen": [
         "the_content",
         "excerpt",
-        "custom_fields",
         "discussion",
         "comments",
         "revisions",
@@ -521,5 +593,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528471548
+    "modified": 1540228262
 }
