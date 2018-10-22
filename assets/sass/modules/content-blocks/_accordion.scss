@@ -46,7 +46,8 @@
 			} // p:last-of-type
 		} // &-content
 
-		&.open {
+		&.open,
+		.no-js & {
 
 			.accordion-item-content {
 				max-height: rem(10000);
@@ -69,6 +70,10 @@
 			justify-content: center;
 			min-width: unset;
 			padding: unset;
+
+			.no-js & {
+				display: none;
+			} // .no-js &
 
 			&-icon {
 				transition: all 0.2s ease-in-out;
