@@ -43,16 +43,16 @@ _s_display_block_options(
 					$item_content = get_sub_field( 'accordion_text' );
 					?>
 					<div class="accordion-item">
-						<div class="item-header">
-							<h3 class="item-title"><?php echo esc_html( $item_title ); ?></h3>
-							<button class="item-toggle">
+						<div class="accordion-item-header">
+							<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?></h3>
+							<button class="accordion-item-toggle">
 								<span class="screen-reader-text"><?php esc_html_e( 'Show or Hide Accordion Item Content', '_s' ); ?></span>
-								<span aria-hidden="true">+</span>
+								<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 							</button>
-						</div><!-- .item-header-->
-						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . $count ); ?>" class="item-content">
+						</div><!-- .accordion-item-header-->
+						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . $count ); ?>" class="accordion-item-content">
 							<?php echo wp_kses_post( $item_content ); ?>
-						</div><!-- .item-content -->
+						</div><!-- .accordion-item-content -->
 					</div>
 				<?php endwhile; ?>
 			</div>

@@ -22,9 +22,9 @@ window.accordionBlockToggle = {};
 			html: $( 'html' ),
 			accordion: $( '.accordion' ),
 			items: $( '.accordion-item' ),
-			headers: $( '.item-header' ),
-			contents: $( '.item-content' ),
-			button: $( '.item-toggle' ),
+			headers: $( '.accordion-item-header' ),
+			contents: $( '.accordion-item-content' ),
+			button: $( '.accordion-item-toggle' ),
 			anchorID: $( window.location.hash )
 		};
 	};
@@ -47,11 +47,11 @@ window.accordionBlockToggle = {};
 		$( this ).parents( '.accordion-item' ).toggleClass( 'open' );
 
 		// Open the clicked content panel.
-		$( this ).parents( '.accordion-item' ).find( '.item-content' ).slideToggle( 'fast' );
+		$( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ).slideToggle( 'fast' );
 
 		// Hide the other panels.
 		app.$c.items.not( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
-		app.$c.contents.not( $( this ).parents( '.accordion-item' ).find( '.item-content' ) ).slideUp( 'fast' );
+		app.$c.contents.not( $( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ) ).slideUp( 'fast' );
 
 		return false;
 	};
@@ -63,7 +63,7 @@ window.accordionBlockToggle = {};
 		}
 
 		// Trigger a click on the button closest to this accordion.
-		app.$c.anchorID.parents( '.accordion-item' ).find( '.item-toggle' ).trigger( 'click' );
+		app.$c.anchorID.parents( '.accordion-item' ).find( '.accordion-item-toggle' ).trigger( 'click' );
 
 		// Not setting a cached variable as it doesn't seem to grab the height properly.
 		const adminBarHeight = $( '#wpadminbar' ).length ? $( '#wpadminbar' ).height() : 0;
