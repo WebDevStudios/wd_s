@@ -23,7 +23,7 @@ _s_display_block_options(
 	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
 		<div class="cell">
 			<?php if ( $title ) : ?>
-				<h2 class="cta-title"><?php echo esc_html( $title ); ?></h2>
+				<h2 class="block-title"><?php echo esc_html( $title ); ?></h2>
 			<?php endif; ?>
 
 			<?php if ( $text ) : ?>
