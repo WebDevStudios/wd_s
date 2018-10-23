@@ -45,7 +45,7 @@ _s_display_block_options(
 					<div class="accordion-item">
 						<div class="accordion-item-header">
 							<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?></h3>
-							<button class="accordion-item-toggle">
+							<button class="accordion-item-toggle" aria-expanded="false">
 								<span class="screen-reader-text"><?php esc_html_e( 'Toggle Accordion Item Content', '_s' ); ?></span>
 								<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 							</button>

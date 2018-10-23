@@ -46,8 +46,14 @@ window.accordionBlockToggle = {};
 		// Add the open class to the item.
 		$( this ).parents( '.accordion-item' ).toggleClass( 'open' );
 
+		// Is this one expanded?
+		let isExpanded = $( this ).parents( '.accordion-item' ).hasClass( 'open' );
+
+		$( this ).parents( '.accordion-item' ).find( '.accordion-item-toggle' ).attr( 'aria-expanded', isExpanded ? 'true' : 'false' );
+
 		// Hide the other panels.
-		$( this ).parents( '.accordion-block' ).find( '.accordion-item' ).not ( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
+		$( this ).parents( '.accordion-block' ).find( '.accordion-item' ).not( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
+		$( this ).parents( '.accordion-block' ).find( '.accordion-item-toggle' ).not( $( this ) ).attr( 'aria-expanded', false );
 
 		return false;
 	};
