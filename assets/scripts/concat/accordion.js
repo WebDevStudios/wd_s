@@ -49,11 +49,18 @@ window.accordionBlockToggle = {};
 		// Is this one expanded?
 		let isExpanded = $( this ).parents( '.accordion-item' ).hasClass( 'open' );
 
+		// Set this button's aria-expanded value.
 		$( this ).parents( '.accordion-item' ).find( '.accordion-item-toggle' ).attr( 'aria-expanded', isExpanded ? 'true' : 'false' );
+
+		// Set all other items in this block to aria-hidden=true.
+		$( this ).parents( '.accordion-block' ).find( '.accordion-item-content' ).not( $( this ).parents( '.accordion-item' ) ).attr( 'aria-hidden', 'true' );
+
+		// Set this item to aria-hidden=false.
+		$( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ).attr( 'aria-hidden', isExpanded ? 'false' : 'true' );
 
 		// Hide the other panels.
 		$( this ).parents( '.accordion-block' ).find( '.accordion-item' ).not( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
-		$( this ).parents( '.accordion-block' ).find( '.accordion-item-toggle' ).not( $( this ) ).attr( 'aria-expanded', false );
+		$( this ).parents( '.accordion-block' ).find( '.accordion-item-toggle' ).not( $( this ) ).attr( 'aria-expanded', 'false' );
 
 		return false;
 	};
