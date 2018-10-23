@@ -10,6 +10,7 @@ const SpritesmithPlugin = require( 'webpack-spritesmith' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const SpriteLoaderPlugin = require( 'svg-sprite-loader/plugin' );
+const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
 
@@ -127,7 +128,9 @@ let webpackConfig = {
 			}
 		]
 	},
-
+	optimization: {
+		minimizer: [ new UglifyJsPlugin() ]
+	},
 	plugins: [
 		new CleanPlugin( [ 'dist' ] ),
         new SpritesmithPlugin(
