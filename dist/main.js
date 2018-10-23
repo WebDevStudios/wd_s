@@ -86,6 +86,165 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./assets/images/svg-icons sync recursive \\.svg$":
+/*!*********************************************!*\
+  !*** ./assets/images/svg-icons sync \.svg$ ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./caret-down.svg": "./assets/images/svg-icons/caret-down.svg",
+	"./facebook-square.svg": "./assets/images/svg-icons/facebook-square.svg",
+	"./googleplus-square.svg": "./assets/images/svg-icons/googleplus-square.svg",
+	"./instagram-square.svg": "./assets/images/svg-icons/instagram-square.svg",
+	"./linkedin-square.svg": "./assets/images/svg-icons/linkedin-square.svg",
+	"./twitter-square.svg": "./assets/images/svg-icons/twitter-square.svg"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./assets/images/svg-icons sync recursive \\.svg$";
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/caret-down.svg":
+/*!************************************************!*\
+  !*** ./assets/images/svg-icons/caret-down.svg ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-caret-down-usage",
+      viewBox: "0 0 16 28",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-caret-down",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/facebook-square.svg":
+/*!*****************************************************!*\
+  !*** ./assets/images/svg-icons/facebook-square.svg ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-facebook-square-usage",
+      viewBox: "0 0 24 28",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-facebook-square",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/googleplus-square.svg":
+/*!*******************************************************!*\
+  !*** ./assets/images/svg-icons/googleplus-square.svg ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-googleplus-square-usage",
+      viewBox: "0 0 27 32",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-googleplus-square",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/instagram-square.svg":
+/*!******************************************************!*\
+  !*** ./assets/images/svg-icons/instagram-square.svg ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-instagram-square-usage",
+      viewBox: "0 0 27 32",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-instagram-square",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/linkedin-square.svg":
+/*!*****************************************************!*\
+  !*** ./assets/images/svg-icons/linkedin-square.svg ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-linkedin-square-usage",
+      viewBox: "0 0 24 28",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-linkedin-square",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./assets/images/svg-icons/twitter-square.svg":
+/*!****************************************************!*\
+  !*** ./assets/images/svg-icons/twitter-square.svg ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-twitter-square-usage",
+      viewBox: "0 0 24 28",
+      url: __webpack_require__.p + "../assets/images/svg-icons.svg#icon-twitter-square",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./assets/sass/style.scss":
 /*!********************************!*\
   !*** ./assets/sass/style.scss ***!
@@ -847,6 +1006,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/window-ready.js */ "./assets/scripts/components/window-ready.js");
 /* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/svg-icons */ "./assets/scripts/lib/svg-icons.js");
+/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_lib_svg_icons__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -857,7 +1018,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Importing SVG icons to combine and minify
 
+
+
+/***/ }),
+
+/***/ "./assets/scripts/lib/svg-icons.js":
+/*!*****************************************!*\
+  !*** ./assets/scripts/lib/svg-icons.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Fetch all icons from svg-icons directory
+ * @param {string} resource SVG icon
+ */
+function requireAll(resource) {
+  resource.keys().forEach(resource);
+}
+
+requireAll(__webpack_require__("./assets/images/svg-icons sync recursive \\.svg$"));
 
 /***/ }),
 

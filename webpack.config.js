@@ -9,8 +9,10 @@ const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const SpritesmithPlugin = require( 'webpack-spritesmith' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
+const SpriteLoaderPlugin = require( 'svg-sprite-loader/plugin' );
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
+
 
 let webpackConfig = {
 
@@ -76,6 +78,9 @@ let webpackConfig = {
 			},
 			{
 				test: /\.(jpg|png|gif|svg)$/,
+				exclude: [
+					/assets\/images\/svg-icons\/.*\.svg$/
+				],
 				use: [
 					{
 						loader: 'url-loader',
@@ -97,11 +102,34 @@ let webpackConfig = {
 						}
 					}
 				]
+			},
+			{
+				test: /assets\/images\/svg-icons\/.*\.svg$/,
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+						options: {
+							symbolId: 'icon-[name]',
+							extract: true,
+							spriteFilename: '../assets/images/svg-icons.svg',
+						},
+					},
+					{
+						loader: 'svgo-loader',
+						options: {
+							plugins: [
+								{ removeTitle: true },
+								{ removeAttrs: { attrs: [ 'path:fill', 'path:class' ] } }
+							]
+						}
+					}
+				]
 			}
 		]
 	},
 
 	plugins: [
+		new CleanPlugin( [ 'dist' ] ),
         new SpritesmithPlugin(
 			{
 				src: {
@@ -121,11 +149,11 @@ let webpackConfig = {
 			$: 'jquery',
 			jQuery: 'jquery'
 		} ),
-		new CleanPlugin( [ 'dist' ] ),
 		new MiniCssExtractPlugin( {
 			filename: 'style.css',
 			chunkFilename: 'style.css'
 		} ),
+		new SpriteLoaderPlugin( { plainSprite: true } ),
 		new BrowserSyncPlugin(
 			{
 				host: 'localhost',
