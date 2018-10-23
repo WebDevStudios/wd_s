@@ -66,9 +66,6 @@
 			min-width: unset;
 			padding: unset;
 
-			.no-js & {
-				display: none;
-			} // .no-js &
 
 			&-icon {
 				@include position(absolute, 0 0 null null);
@@ -78,6 +75,10 @@
 				border-radius: 100%;
 				color: $color-white;
 				transition: $transition-transform;
+
+				.no-js & {
+					display: none;
+				} // .no-js &
 			} // &-icon
 		} // &-toggle
 
