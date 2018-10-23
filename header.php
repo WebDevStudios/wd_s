@@ -54,17 +54,19 @@
 			</button>
 		<?php endif; ?>
 
-		<?php
-		wp_nav_menu( array(
-			'fallback_cb'     => false,
-			'theme_location'  => 'primary',
-			'menu_id'         => 'primary-menu',
-			'menu_class'      => 'menu dropdown',
-			'container'       => 'nav',
-			'container_class' => 'main-navigation',
-			'container_id'    => 'site-navigation',
-		) );
-		?>
+		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Main Menu', '_s' ); ?>">
+			<?php
+			wp_nav_menu( array(
+				'fallback_cb'     => false,
+				'theme_location'  => 'primary',
+				'menu_id'         => 'primary-menu',
+				'menu_class'      => 'menu dropdown',
+				'container'       => false,
+				'container_class' => '',
+				'container_id'    => '',
+			) );
+			?>
+		</nav>
 	</header><!-- .site-header-->
 
 	<div id="content" class="site-content">
