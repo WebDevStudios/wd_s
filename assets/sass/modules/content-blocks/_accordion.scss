@@ -58,14 +58,10 @@
 		} // &.open
 
 		&-toggle {
-			@include position(absolute, 0 0 null null);
-			@include size(rem(24));
-
 			align-items: center;
-			background-color: $color-button-background;
+			background-color: transparent;
+			color: inherit;
 			border: none;
-			border-radius: 100%;
-			color: $color-white;
 			display: flex;
 			justify-content: center;
 			min-width: unset;
@@ -76,6 +72,12 @@
 			} // .no-js &
 
 			&-icon {
+				@include position(absolute, 0 0 null null);
+				@include size(rem(24));
+
+				background-color: $color-button-background;
+				border-radius: 100%;
+				color: $color-white;
 				transition: all 0.2s ease-in-out;
 			} // &-icon
 		} // &-toggle
