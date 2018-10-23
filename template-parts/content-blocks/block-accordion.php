@@ -32,25 +32,26 @@ _s_display_block_options(
 		</div>
 
 		<?php if ( $accordion_items ) : ?>
-			<div class="cell accordion">
+			<div class="cell accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
 				<?php
 				$count = 0;
 				while ( have_rows( 'accordion_items' ) ) :
 					the_row();
 
 					$count++;
-					$item_title   = get_sub_field( 'accordion_title' );
-					$item_content = get_sub_field( 'accordion_text' );
+					$item_title      = get_sub_field( 'accordion_title' );
+					$item_content    = get_sub_field( 'accordion_text' );
+					$item_content_id = 'accordion-' . intval( $row_index ) . '-item-' . intval( $count );
 					?>
 					<div class="accordion-item">
 						<div class="accordion-item-header">
-							<button class="accordion-item-toggle" aria-expanded="false">
+							<button class="accordion-item-toggle" aria-expanded="false" aria-controls="<?php echo esc_attr( $item_content_id ); ?>">
 								<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?></h3>
 								<span class="screen-reader-text"><?php esc_html_e( 'Toggle', '_s' ); ?></span>
 								<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 							</button>
 						</div><!-- .accordion-item-header-->
-						<div id="<?php echo esc_attr( 'accordion-' . intval( $row_index ) . '-item-' . intval( $count ) ); ?>" class="accordion-item-content" aria-hidden="true">
+						<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
 							<?php echo wp_kses_post( $item_content ); ?>
 						</div><!-- .accordion-item-content -->
 					</div>
