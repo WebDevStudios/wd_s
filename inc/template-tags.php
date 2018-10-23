@@ -539,6 +539,7 @@ function _s_display_mobile_menu() {
 			'menu_id'         => 'site-mobile-menu',
 			'menu_class'      => 'mobile-menu',
 			'fallback_cb'     => false,
+			'items_wrap'      => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
 		);
 
 		// Display the mobile menu.
