@@ -49,10 +49,6 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:28
-msgid "Close Menu"
-msgstr ""
-
 #: functions.php:50
 msgid "Primary Menu"
 msgstr ""
@@ -74,7 +70,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:51
+#: header.php:52
 msgid "Open Menu"
 msgstr ""
 
@@ -87,8 +83,7 @@ msgstr ""
 msgid "To search this site, enter a search term"
 msgstr ""
 
-#: searchform.php:12
-msgctxt "_s"
+#: searchform.php:12, inc/template-tags.php:473, inc/template-tags.php:474
 msgid "Search"
 msgstr ""
 
@@ -108,11 +103,11 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/acf.php:243
+#: inc/acf.php:257
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:264
+#: inc/acf.php:278
 msgid "expired"
 msgstr ""
 
@@ -136,12 +131,90 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:90, inc/template-tags.php:438
+#: inc/extras.php:275
+msgid "Alto"
+msgstr ""
+
+#: inc/extras.php:276
+msgid "Black"
+msgstr ""
+
+#: inc/extras.php:277
+msgid "Blue"
+msgstr ""
+
+#: inc/extras.php:278
+msgid "Cod Gray"
+msgstr ""
+
+#: inc/extras.php:279
+msgid "Dove Gray"
+msgstr ""
+
+#: inc/extras.php:280
+msgid "Gallery"
+msgstr ""
+
+#: inc/extras.php:281
+msgid "Gray"
+msgstr ""
+
+#: inc/extras.php:282
+msgid "Gray Alt"
+msgstr ""
+
+#: inc/extras.php:283
+msgid "Light Yellow"
+msgstr ""
+
+#: inc/extras.php:284
+msgid "Mineshaft"
+msgstr ""
+
+#: inc/extras.php:285
+msgid "Silver"
+msgstr ""
+
+#: inc/extras.php:286
+msgid "Silver Chalice"
+msgstr ""
+
+#: inc/extras.php:287
+msgid "White"
+msgstr ""
+
+#: inc/extras.php:288
+msgid "Whitesmoke"
+msgstr ""
+
+#: inc/hooks.php:96, inc/template-tags.php:438
 msgid "Read More"
 msgstr ""
 
-#: inc/hooks.php:101
+#: inc/hooks.php:107
 msgid "Read more..."
+msgstr ""
+
+#: inc/hooks.php:168
+msgid "Visit our website to learn more."
+msgstr ""
+
+#: inc/hooks.php:208
+msgid "categorized in"
+msgstr ""
+
+#: inc/hooks.php:208
+msgid "tagged with"
+msgstr ""
+
+#. translators: get the term name.
+#: inc/hooks.php:214
+msgid "Posts %1$s %2$s."
+msgstr ""
+
+#. translators: get the search term.
+#: inc/hooks.php:226
+msgid "Search results for %s."
 msgstr ""
 
 #: inc/scaffolding.php:42
@@ -241,8 +314,8 @@ msgstr ""
 msgid "More Information"
 msgstr ""
 
-#: inc/template-tags.php:473, inc/template-tags.php:474
-msgid "Search"
+#: inc/template-tags.php:529
+msgid "Close Menu"
 msgstr ""
 
 #: template-parts/content-none.php:14
