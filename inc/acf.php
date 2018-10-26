@@ -24,10 +24,12 @@ function _s_display_content_blocks() {
 			$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 			// If the block has expired,then bail!
-			if ( _s_has_block_expired( array(
-				'start_date' => $other_options['start_date'],
-				'end_date'   => $other_options['end_date'],
-			) ) ) {
+			if ( _s_has_block_expired(
+				 array(
+					 'start_date' => $other_options['start_date'],
+					 'end_date'   => $other_options['end_date'],
+				 )
+				) ) {
 				continue;
 			}
 
@@ -273,7 +275,8 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 			array(
 				'start_date' => $start_date,
 				'end_date'   => $end_date,
-			) )
+			)
+		)
 	) {
 		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__( 'expired', '_s' ) . ')</span>';
 	}
@@ -336,12 +339,12 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 }
 
 /**
- * Load Icons dynamically from svg-icons folder
+ * Load colors dynamically into select field from _s_get_theme_colors()
  *
  * @param array $field fiueld options.
  * @return array new field choices.
  *
- * @author jomurgel <dev@jomurgel.com>
+ * @author Corey Colins <corey@webdevstudios.com>
  */
 function _s_acf_load_icon_field_choices( $field ) {
 
@@ -355,7 +358,7 @@ function _s_acf_load_icon_field_choices( $field ) {
 	foreach ( $colors as $key => $color ) {
 
 		// Create display markup.
-		$color_output = '<div style="display: flex;align-items: center;"><span style="background-color:' . esc_attr( $color ) . ';border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;"></span>' . esc_html( $key ) . '</div>';
+		$color_output = '<div style="display: flex; align-items: center;"><span style="background-color:' . esc_attr( $color ) . '; border: 1px solid #ccc;display:inline-block; height: 15px; margin-right: 10px; width: 15px;"></span>' . esc_html( $key ) . '</div>';
 
 		// Set values.
 		$field['choices'][ sanitize_title( $key ) ] = $color_output;
