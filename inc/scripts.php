@@ -51,7 +51,7 @@ function _s_scripts() {
 	/**
 	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
 	 */
-	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // phpcs:ignore
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // WPCS: CSRF OK.
 
 	/**
 	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
@@ -105,7 +105,7 @@ function _s_customizer_scripts() {
 	/**
 	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
 	 */
-	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // phpcs:ignore
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // WPCS: CSRF OK.
 
 	/**
 	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.

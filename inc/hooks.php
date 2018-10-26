@@ -126,13 +126,51 @@ add_filter( 'upload_mimes', '_s_custom_mime_types' );
  */
 add_filter( 'cancel_comment_reply_link', '__return_false' );
 
-// Additional scripts from Customizer.
-add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
-add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
-
 // Create shortcode for SVG.
 // Usage [svg icon="facebook-square" title="facebook" desc="like us on facebook" fill="#000000" height="20px" width="20px"].
 add_shortcode( 'svg', '_s_display_svg' );
+
+/**
+ * Display the customizer header scripts.
+ *
+ * @author Greg Rickaby
+ * @return string
+ */
+function _s_display_customizer_header_scripts() {
+
+	// Check for header scripts.
+	$scripts = get_theme_mod( '_s_header_scripts' );
+
+	// None? Bail...
+	if ( ! $scripts ) {
+		return false;
+	}
+
+	// Otherwise, echo the scripts!
+	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+}
+add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
+
+/**
+ * Display the customizer footer scripts.
+ *
+ * @author Greg Rickaby
+ * @return string
+ */
+function _s_display_customizer_footer_scripts() {
+
+	// Check for footer scripts.
+	$scripts = get_theme_mod( '_s_footer_scripts' );
+
+	// None? Bail...
+	if ( ! $scripts ) {
+		return false;
+	}
+
+	// Otherwise, echo the scripts!
+	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+}
+add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 
 /**
  * Adds OG tags to the head for better social sharing.
