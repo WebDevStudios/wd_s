@@ -16,7 +16,7 @@ _s_display_block_options( array(
 	'class'     => 'content-block grid-container fifty-fifty fifty-text-only', // The container class.
 ) );
 ?>
-	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
+	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
 
 		<div class="cell">
 			<?php

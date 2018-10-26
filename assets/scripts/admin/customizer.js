@@ -6,9 +6,6 @@
 window.CustomizerHeaderOptions = {};
 ( function( window, $, app ) {
 
-	// Private variable
-	var fooVariable = 'foo';
-
 	// Constructor
 	app.init = function() {
 		app.cache();
@@ -63,4 +60,4 @@ window.CustomizerHeaderOptions = {};
 	// Engage
 	$( app.init );
 
-})( window, jQuery, window.CustomizerHeaderOptions );
+} ( window, jQuery, window.CustomizerHeaderOptions ) );

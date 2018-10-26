@@ -51,7 +51,7 @@ function _s_scripts() {
 	/**
 	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
 	 */
-	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // WPCS: CSRF OK.
 
 	/**
 	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
@@ -97,6 +97,22 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
  * Enqueue scripts for the customizer.
  */
 function _s_customizer_scripts() {
+
+	/**
+	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
+	 */
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) || ( isset( $_GET['script_debug'] ) ) ? true : false; // WPCS: CSRF OK.
+
+	/**
+	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
+	 */
+	$version = '1.0.0';
+
+	/**
+	 * Should we load minified files?
+	 */
+	$suffix = ( true === $debug ) ? '' : '.min';
+
 	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/assets/scripts/admin/customizer.js', array( 'jquery' ), $version, true );
 }
 add_action( 'customize_controls_enqueue_scripts', '_s_customizer_scripts' );

@@ -1,0 +1,61 @@
+{
+    "key": "group_5bb7934b61627",
+    "title": "Group: Color Picker — To Clone",
+    "fields": [
+        {
+            "key": "field_5bb7935bde7ea",
+            "label": "Color Picker",
+            "name": "color_picker",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "alto": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#ddd;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Alto<\/div>",
+                "black": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#000;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Black<\/div>",
+                "blue": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#21759b;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Blue<\/div>",
+                "cod-gray": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#111;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Cod Gray<\/div>",
+                "dove-gray": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#666;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Dove Gray<\/div>",
+                "gallery": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#eee;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Gallery<\/div>",
+                "gray": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#808080;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Gray<\/div>",
+                "gray-alt": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#929292;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Gray Alt<\/div>",
+                "light-yellow": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#fff9c0;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Light Yellow<\/div>",
+                "mineshaft": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#333;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Mineshaft<\/div>",
+                "silver": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#ccc;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Silver<\/div>",
+                "silver-chalice": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#aaa;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Silver Chalice<\/div>",
+                "white": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#fff;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>White<\/div>",
+                "whitesmoke": "<div style=\"display: flex;align-items: center;\"><span style=\"background-color:#f1f1f1;border: 1px solid #ccc;display:inline-block;height: 15px;margin-right: 10px;width: 15px;\"><\/span>Whitesmoke<\/div>"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1538767089
+}

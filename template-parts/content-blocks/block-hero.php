@@ -20,7 +20,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="hero-content <?php echo esc_attr( $animation_class ); ?>">
+	<div class="hero-content<?php echo esc_attr( $animation_class ); ?>">
 		<?php if ( $title ) : ?>
 			<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>
@@ -30,7 +30,7 @@ _s_display_block_options(
 		<?php endif; ?>
 
 		<?php if ( $button_text && $button_url ) : ?>
-			<a class="button button-hero" href=<?php echo esc_url( $button_url ); ?>><?php echo esc_html( $button_text ); ?></a>
+			<a class="button button-hero" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 		<?php endif; ?>
 	</div><!-- .hero-content-->
 </section><!-- .hero -->
