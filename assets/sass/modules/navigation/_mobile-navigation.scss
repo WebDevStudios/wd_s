@@ -142,7 +142,7 @@
 	&::after {
 		@include size(rem(35) rem(5));
 
-		background: $color-hamburger-background;
+		background: $color-background-hamburger;
 		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
@@ -183,7 +183,7 @@
 		@include size(rem(220) 100%);
 
 		-webkit-overflow-scrolling: touch;
-		background-color: $color-off-canvas-background;
+		background-color: $color-background-off-canvas;
 		overflow-y: auto;
 		transform: translateX(rem(-220));
 		transition: $transition-transform;
@@ -260,7 +260,7 @@
 	&-screen {
 		@include position(fixed, 0);
 
-		background: $color-off-canvas-screen-background;
+		background: $color-background-off-canvas-screen;
 		opacity: 0;
 		transition: $transition-opacity;
 		visibility: hidden;

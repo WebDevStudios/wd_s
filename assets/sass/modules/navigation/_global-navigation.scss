@@ -13,7 +13,7 @@
 		&.sub-menu {
 			@include padding(rem(10));
 
-			background: $color-submenu-background;
+			background: $color-background-submenu;
 
 			li {
 				@include margin(0);

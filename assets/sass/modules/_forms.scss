@@ -58,14 +58,14 @@ input[type='datetime-local'],
 input[type='color'],
 textarea {
 	appearance: none;
-	border: 1px solid $color-input-border;
+	border: 1px solid $color-border-input;
 	border-radius: 0;
-	color: $color-input-text;
+	color: $color-text-input;
 	line-height: 1.5;
 	padding: $padding-input;
 
 	&:focus {
-		color: $color-input-focus-text;
+		color: $color-focus-text-input;
 	} // &:focus
 } // input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea
 

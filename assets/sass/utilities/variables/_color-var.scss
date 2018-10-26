@@ -81,16 +81,16 @@ $color-background-body: $color-white;
 $color-text-main: $color-cod-gray;
 
 /// Pre Background color.
-$color-pre-background: $color-gallery;
+$color-background-pre: $color-gallery;
 
 /// Pre Border color.
-$color-pre-border: $color-alto;
+$color-border-pre: $color-alto;
 
 /// Pre text color.
-$color-pre-text: $color-cod-gray;
+$color-text-pre: $color-cod-gray;
 
 /// Code background color.
-$color-code-background: $color-alto;
+$color-background-code: $color-alto;
 
 /// Horizontal Rule.
 $color-background-hr: $color-silver;
@@ -138,22 +138,22 @@ $color-link-focus: $color-blue;
 //-----------------------------------------
 
 /// Button background.
-$color-button-background: $color-dove-gray;
+$color-background-button: $color-dove-gray;
 
 /// Button background on hover.
-$color-button-background-hover: $color-mineshaft;
+$color-background-button-hover: $color-mineshaft;
 
 /// Button text.
-$color-button-text: $color-white;
+$color-text-button: $color-white;
 
 /// Input border.
-$color-input-border: $color-silver;
+$color-border-input: $color-silver;
 
 /// Input focused color.
-$color-input-focus-text: $color-cod-gray;
+$color-focus-text-input: $color-cod-gray;
 
 /// Input text.
-$color-input-text: $color-dove-gray;
+$color-text-input: $color-dove-gray;
 
 /// Global input padding.
 $padding-input: rem(6);
@@ -164,7 +164,7 @@ $padding-input: rem(6);
 //-----------------------------------------
 
 /// CTA Link Color.
-$color-cta-link-color: $color-white;
+$color-cta-link: $color-white;
 
 
 //-----------------------------------------
@@ -172,7 +172,7 @@ $color-cta-link-color: $color-white;
 //-----------------------------------------
 
 /// Table borders.
-$color-table-border: $color-silver;
+$color-border-table: $color-silver;
 
 
 //-----------------------------------------
@@ -180,13 +180,13 @@ $color-table-border: $color-silver;
 //-----------------------------------------
 
 /// Modal Content Background.
-$color-modal-background: $color-white;
+$color-background-modal: $color-white;
 
 /// Modal Close Background.
-$color-modal-close-background: $color-black;
+$color-background-modal-close: $color-black;
 
 /// Modal Close Colors.
-$color-modal-close-color: $color-white;
+$color-modal-close: $color-white;
 
 
 //-----------------------------------------
@@ -194,10 +194,10 @@ $color-modal-close-color: $color-white;
 //-----------------------------------------
 
 /// Close Icon Background.
-$color-icon-close-background: $color-white;
+$color-background-icon-close: $color-white;
 
 /// Down Arrow Background Color.
-$color-down-arrow-background: $color-white;
+$color-background-down-arrow: $color-white;
 
 
 //-----------------------------------------
@@ -205,13 +205,13 @@ $color-down-arrow-background: $color-white;
 //-----------------------------------------
 
 /// Comment border.
-$color-comment-border: $color-silver;
+$color-border-comment: $color-silver;
 
 /// Comment focus border.
-$color-comment-focus-border: $color-mineshaft;
+$color-border-comment-focus: $color-mineshaft;
 
 /// Comment even background.
-$color-even-background: $color-gallery;
+$color-background-even: $color-gallery;
 
 /// Comment response background.
 $color-comment-response: $color-white;
@@ -220,7 +220,7 @@ $color-comment-response: $color-white;
 $color-meta-links: $color-tundora;
 
 /// Comment post author background.
-$color-author-background: $color-light-yellow;
+$color-background-author: $color-light-yellow;
 
 
 //-----------------------------------------
@@ -228,10 +228,10 @@ $color-author-background: $color-light-yellow;
 //-----------------------------------------
 
 /// Block button background.
-$color-block-button-background: $color-mineshaft;
+$color-background-block-button: $color-mineshaft;
 
 /// BLock pullquote.
-$color-block-border: $color-silver;
+$color-border-block: $color-silver;
 
 
 //-----------------------------------------
@@ -242,16 +242,16 @@ $color-block-border: $color-silver;
 $color-mobile-menu-link: $color-white;
 
 /// Hamburger background.
-$color-hamburger-background: $color-cod-gray;
+$color-background-hamburger: $color-cod-gray;
 
 /// Off-canvas Container Background.
-$color-off-canvas-background: $color-cod-gray;
+$color-background-off-canvas: $color-cod-gray;
 
 /// Off-canvas Screen Background.
-$color-off-canvas-screen-background: $color-black;
+$color-background-off-canvas-screen: $color-black;
 
 /// Submenu Background.
-$color-submenu-background: $color-white;
+$color-background-submenu: $color-white;
 
 
 //-----------------------------------------
@@ -259,16 +259,16 @@ $color-submenu-background: $color-white;
 //-----------------------------------------
 
 /// Scaffolding header border.
-$color-scaffolding-border: $color-alto;
+$color-border-scaffolding: $color-alto;
 
 /// Scaffolding swatch border.
-$color-scaffolding-swatch-border: $color-alto;
+$color-border-scaffolding-swatch: $color-alto;
 
 /// Scaffolding color.
-$color-scaffolding-color: $color-alto;
+$color-scaffolding: $color-alto;
 
 /// Scaffolding background color.
-$color-scaffolding-background: $color-white;
+$color-background-scaffolding: $color-white;
 
 //-----------------------------------------
 // Sass Map for Theme Colors
