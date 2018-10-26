@@ -1,0 +1,153 @@
+{
+    "key": "group_5bce0357bebd7",
+    "title": "Group: Accordion Block – To Clone",
+    "fields": [
+        {
+            "key": "field_5bce036da010a",
+            "label": "Block Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bce0374a010b",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Required. Write a catchy title to grab the user's attention.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bce03aca010c",
+            "label": "Text",
+            "name": "text",
+            "type": "wysiwyg",
+            "instructions": "Enter text to be displayed above the accordions.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5bce04c238171",
+            "label": "Accordion Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5bce03bfa010d",
+            "label": "Accordion Items",
+            "name": "accordion_items",
+            "type": "repeater",
+            "instructions": "Add accordion items to your block. Each accordion requires Title and Text.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5bce03d6a010e",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Accordion Item",
+            "sub_fields": [
+                {
+                    "key": "field_5bce03d6a010e",
+                    "label": "Accordion Title",
+                    "name": "accordion_title",
+                    "type": "text",
+                    "instructions": "Set the title of the individual accordion. Clicking\/Tapping on this will expand and collapse the accordion.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5bce03f2a010f",
+                    "label": "Accordion Text",
+                    "name": "accordion_text",
+                    "type": "wysiwyg",
+                    "instructions": "Set the text of the individual accordion. Clicking\/Tapping the title this show\/hide this content.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1540228967
+}
