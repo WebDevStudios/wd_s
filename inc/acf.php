@@ -25,11 +25,11 @@ function _s_display_content_blocks() {
 
 			// If the block has expired,then bail!
 			if ( _s_has_block_expired(
-				 array(
-					 'start_date' => $other_options['start_date'],
-					 'end_date'   => $other_options['end_date'],
-				 )
-				) ) {
+				array(
+					'start_date' => $other_options['start_date'],
+					'end_date'   => $other_options['end_date'],
+				)
+			) ) {
 				continue;
 			}
 
