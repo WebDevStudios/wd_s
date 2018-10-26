@@ -133,7 +133,7 @@ let webpackConfig = {
 	},
 	plugins: [
 		new CleanPlugin( [ 'dist' ] ),
-        new SpritesmithPlugin(
+		new SpritesmithPlugin(
 			{
 				src: {
 					cwd: path.resolve( __dirname, 'assets/images/sprites' ),
