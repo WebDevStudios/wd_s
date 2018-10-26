@@ -82,9 +82,10 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  * @return string
  */
 function _s_get_placeholder_unsplash( $args = array() ) {
+
 	$default_args = array(
-		'width'    => '',
-		'height'   => '',
+		'width'    => 200,
+		'height'   => 200,
 		'category' => '',
 		'keywords' => '',
 	);
