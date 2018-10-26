@@ -1,6 +1,6 @@
 {
     "key": "group_594168e970d85",
-    "title": "Group: Block Options — To Clone",
+    "title": "Group: Other Options — To Clone",
     "fields": [
         {
             "key": "field_596d121bd7ea2",
@@ -34,49 +34,36 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5ab3e485ab634",
+                    "key": "field_5bb798ea8c57e",
                     "label": "Font Color",
                     "name": "font_color",
-                    "type": "color_picker",
+                    "type": "clone",
                     "instructions": "Change the text color of this block.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": ""
-                },
-                {
-                    "key": "field_5ab3e4afab635",
-                    "label": "Custom CSS Class",
-                    "name": "custom_css_class",
-                    "type": "text",
-                    "instructions": "Add a custom CSS class to this block.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "custom-class",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "clone": [
+                        "group_5bb7934b61627"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 },
                 {
                     "key": "field_5ab3e4c7ab636",
                     "label": "Animation",
                     "name": "animation",
                     "type": "select",
-                    "instructions": "Select the animation for this block. Animations can only be applied to the entire block, not to individual elements.",
+                    "instructions": "Select the animation for this block.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -168,6 +155,44 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_5ba51914757eb",
+                    "label": "Custom ID",
+                    "name": "custom_id",
+                    "type": "text",
+                    "instructions": "Add a custom ID to this block.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "custom-id",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ab3e4afab635",
+                    "label": "Custom CSS Class",
+                    "name": "custom_css_class",
+                    "type": "text",
+                    "instructions": "Add a custom CSS class to this block.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "custom-class",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5ab53deb4fbc4",
                     "label": "Start Date",
                     "name": "start_date",
@@ -221,5 +246,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521827639
+    "modified": 1538759344
 }

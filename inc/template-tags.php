@@ -313,7 +313,7 @@ function _s_display_copyright_text() {
 	}
 
 	?>
-	<span class="copyright-text"><?php echo wp_kses_post( $copyright_text ); ?></span>
+	<span class="copyright-text"><?php echo wp_kses_post( do_shortcode( $copyright_text ) ); ?></span>
 	<?php
 }
 
@@ -361,7 +361,7 @@ function _s_display_social_network_links() {
 
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
-	$social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
+	$social_networks = array( 'facebook', 'instagram', 'linkedin', 'twitter' );
 
 	?>
 	<ul class="social-icons">
@@ -435,7 +435,7 @@ function _s_display_card( $args = array() ) {
 		<?php endif; ?>
 
 		<?php if ( $args['url'] ) : ?>
-			<button type="button" class="button button-card" onclick="location.href='<?php echo esc_url( $args['url'] ); ?>'"><?php esc_html_e( 'Read More', '_s' ); ?></button>
+			<a class="button button-card" href="<?php echo esc_url( $args['url'] ); ?>"><?php esc_html_e( 'Read More', '_s' ); ?></a>
 		<?php endif; ?>
 
 		</div><!-- .card-section -->
@@ -476,5 +476,74 @@ function _s_display_header_button() {
 			<?php get_search_form(); ?>
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
+	<?php
+}
+
+/**
+ * Displays numeric pagination on archive pages.
+ *
+ * @param array $args Array of params to customize output.
+ * @author Corey Collins
+ */
+function _s_display_numeric_pagination( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'prev_text' => '&laquo;',
+		'next_text' => '&raquo;',
+		'mid_size'  => 4,
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<nav class="pagination-container">
+		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
+	</nav>
+	<?php
+}
+
+/**
+ * Displays the mobile menu with off-canvas background layer.
+ *
+ * @return string An empty string if no menus are found at all.
+ * @author Corey Collins
+ */
+function _s_display_mobile_menu() {
+
+	// Bail if no mobile or primary menus are set.
+	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
+		return '';
+	}
+
+	// Set a default menu location.
+	$menu_location = 'primary';
+
+	// If we have a mobile menu explicitly set, use it.
+	if ( has_nav_menu( 'mobile' ) ) {
+		$menu_location = 'mobile';
+	}
+	?>
+	<div class="off-canvas-screen"></div>
+	<nav class="off-canvas-container" aria-hidden="true">
+		<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">
+			<span class="close"></span>
+		</button>
+		<?php
+		// Mobile menu args.
+		$mobile_args = array(
+			'theme_location'  => $menu_location,
+			'container'       => 'div',
+			'container_class' => 'off-canvas-content',
+			'container_id'    => '',
+			'menu_id'         => 'site-mobile-menu',
+			'menu_class'      => 'mobile-menu',
+			'fallback_cb'     => false,
+		);
+
+		// Display the mobile menu.
+		wp_nav_menu( $mobile_args );
+		?>
+	</nav>
 	<?php
 }

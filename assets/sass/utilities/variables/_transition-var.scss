@@ -25,3 +25,6 @@ $transition-transform: transform  $speed $ease;
 
 /// Transform Hamburger
 $transition-hamburger: transform $speed, background-color $speed $ease;
+
+/// Transform Background Color
+$transition-bg-color: background-color $speed $ease;

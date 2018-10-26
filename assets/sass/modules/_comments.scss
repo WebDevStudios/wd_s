@@ -56,7 +56,7 @@
 	width: 100%;
 
 	// Any input (except submit button)
-	input:not(.submit) {
+	input:not(.button) {
 		clear: both;
 		transition: $transition-border;
 		width: 100%;

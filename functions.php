@@ -105,7 +105,7 @@ function _s_widgets_init() {
 
 	// Define sidebars.
 	$sidebars = array(
-		'sidebar-1'  => esc_html__( 'Sidebar 1', '_s' ),
+		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
 		// 'sidebar-2'  => esc_html__( 'Sidebar 2', '_s' ),
 		// 'sidebar-3'  => esc_html__( 'Sidebar 3', '_s' ),
 	);
@@ -150,6 +150,11 @@ require get_template_directory() . '/inc/scripts.php';
  * Load custom ACF features.
  */
 require get_template_directory() . '/inc/acf.php';
+
+/**
+ * Load custom ACF search functionality.
+ */
+require get_template_directory() . '/inc/acf-search.php';
 
 /**
  * Load custom filters and hooks.

@@ -20,7 +20,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="grid-x <?php echo esc_attr( $animation_class ); ?>">
+	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
 		<div class="cell">
 			<?php if ( $title ) : ?>
 				<h3 class="cta-title"><?php echo esc_html( $title ); ?></h3>
@@ -32,8 +32,8 @@ _s_display_block_options(
 		</div>
 
 		<div class="cell">
-			<?php if ( $button_url ) : ?>
-				<button type="button" class="button cta-button" onclick="location.href='<?php echo esc_url( $button_url ); ?>'"><?php echo esc_html( $button_text ); ?></button>
+			<?php if ( $button_url && $button_text ) : ?>
+				<a class="button cta-button" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 			<?php endif; ?>
 		</div>
 	</div><!-- .grid-x -->

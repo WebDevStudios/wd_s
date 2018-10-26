@@ -27,9 +27,9 @@
 
 		// Theme fonts.
 		_s_display_global_scaffolding_section( array( // WPCS: XSS OK.
-			'global_type'  => 'fonts',
-			'title'        => 'Fonts',
-			'arguments'    => array(
+			'global_type' => 'fonts',
+			'title'       => 'Fonts',
+			'arguments'   => array(
 				'Sans'  => '"Open Sans", sans-serif',
 				'Serif' => 'Roboto, Georgia, Times, "Times New Roman", serif',
 				'Code'  => 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',

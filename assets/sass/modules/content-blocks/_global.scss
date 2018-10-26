@@ -12,4 +12,10 @@
 			text-align: left;
 		}
 	} // .content-block-title
+
+	// Make sure videos stay in their containers.
+	&.video-as-background {
+		overflow: hidden;
+		position: relative;
+	} // &.video-as-background
 } // .content-block

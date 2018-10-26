@@ -149,21 +149,42 @@ img {
 
 // Center image background
 .image-as-background {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	overflow: hidden;
+	position: relative;
 } // .image-as-background
 
-/// Video as background
-.video-as-background {
+// Video and Image as background.
+.video-background,
+.image-background {
+	@include size(100% 100%);
+
 	display: block;
-	height: auto; // IE/Edge browsers need this to set the video to full-width.
 	object-fit: cover;
-	object-position: center top;
 	position: absolute;
-	width: 100%;
-	z-index: 1;
-} // .video-as-background
+	z-index: -1;
+}
+
+// Video as background
+.video-background {
+	object-position: center top;
+} // .video-background
+
+// Image as background
+.image-background {
+	object-position: center center;
+
+	img {
+		@include size(100% 100%);
+
+		object-fit: cover;
+	}
+} // .image-background
+
+// IE/Edge hacks.
+.ie .video-background,
+.edge .video-background {
+	height: auto;
+} // .ie .video-background
 
 // svg defs
 .svg-defs {

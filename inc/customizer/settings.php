@@ -62,7 +62,7 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
 function _s_customize_social_icons( $wp_customize ) {
 
 	// Create an array of our social links for ease of setup.
-	$social_networks = array( 'facebook', 'googleplus', 'instagram', 'linkedin', 'twitter' );
+	$social_networks = array( 'facebook', 'instagram', 'linkedin', 'twitter' );
 
 	// Loop through our networks to setup our fields.
 	foreach ( $social_networks as $network ) {

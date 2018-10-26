@@ -4,6 +4,7 @@
 
 a {
 	color: $color-link;
+	opacity: 1;
 	transition: $transition-opacity;
 
 	&:visited {
@@ -13,6 +14,7 @@ a {
 	&:hover,
 	&:active {
 		color: $color-link-hover;
+		opacity: 0.6;
 	} // &:hover, &:active
 
 	&:focus {
