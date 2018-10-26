@@ -1,29 +1,47 @@
 //--------------------------------------------------------------
-//   COLORS
-//    - Primary palette
-//    - Grayscale
-//    - Social Media Colors
-//       - $social-colors() map
-//-------------------------------------------------------------
-
-// sass-lint:disable no-color-keywords
+//   COLOR VARIABLES
+//     - Primary Colors
+//     - Grayscale Colors
+//     - Social Meida Colors
+//   ELEMENTS & SKINNING
+//     - General
+//     - Accessibility
+//     - Links
+//     - Forms
+//     - Buttons
+//     - Tables
+//     - Modals
+//     - Icons
+//     - Comments
+//     - WP/Gutenberg Blocks
+//     - Navigation
+//     - Scaffolding
+//     - Sass Map for Theme Colors
+//     - Sass Map for Social Media Colors
+//--------------------------------------------------------------
 
 ////
 /// @group variables
 /// @author WebDevStudios
 ////
 
-//-----------------------------------------
-// Colors
-//-----------------------------------------
+// sass-lint:disable no-color-keywords
 
-// Primary palette
+//--------------------------------------------------------------
+// COLOR VARIABLES
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Primary Colors
+//-----------------------------------------
 $color-black: #000;
 $color-blue: #20739a;
 $color-light-yellow: #fff9c0;
 $color-white: #fff;
 
-// Grayscale
+//-----------------------------------------
+// Grayscale Colors
+//-----------------------------------------
 $color-alto: #ddd;
 $color-cod-gray: #111;
 $color-dove-gray: #666;
@@ -36,7 +54,9 @@ $color-silver: #ccc;
 $color-tundora: #454545;
 $color-whitesmoke: #f1f1f1;
 
+//-----------------------------------------
 // Social Media Colors
+//-----------------------------------------
 $color-facebook: #3b5998;
 $color-instagram: #517fa4;
 $color-linkedin: #007bb6;
@@ -44,6 +64,215 @@ $color-pinterest: #cb2027;
 $color-rss: #f90;
 $color-twitter: #00aced;
 $color-youtube: #b00;
+
+
+//--------------------------------------------------------------
+// ELEMENTS & SKINNING
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// General
+//-----------------------------------------
+
+/// Background color.
+$color-background-body: $color-white;
+
+/// Main text color.
+$color-text-main: $color-cod-gray;
+
+/// Pre Background color.
+$color-pre-background: $color-gallery;
+
+/// Pre Border color.
+$color-pre-border: $color-alto;
+
+/// Pre text color.
+$color-pre-text: $color-cod-gray;
+
+/// Code background color.
+$color-code-background: $color-alto;
+
+/// Horizontal Rule.
+$color-background-hr: $color-silver;
+
+/// Abbreviations.
+$color-border-abbr: $color-dove-gray;
+
+/// Box shadows.
+$color-box-shadow: rgba($color-black, 0.5);
+
+/// Overlays.
+$color-overlay: rgba($color-black, 0.3);
+
+
+//-----------------------------------------
+// Accessibility
+//-----------------------------------------
+
+/// Screen reader background color.
+$color-background-screen-reader: $color-whitesmoke;
+
+/// Screen reader text color.
+$color-text-screen-reader: $color-blue;
+
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+
+/// Links.
+$color-link: $color-blue;
+
+/// Visited Links.
+$color-link-visited: $color-blue;
+
+/// Hovered Links.
+$color-link-hover: $color-blue;
+
+/// Focus LInks.
+$color-link-focus: $color-blue;
+
+
+//-----------------------------------------
+// Forms
+//-----------------------------------------
+
+/// Button background.
+$color-button-background: $color-dove-gray;
+
+/// Button background on hover.
+$color-button-background-hover: $color-mineshaft;
+
+/// Button text.
+$color-button-text: $color-white;
+
+/// Input border.
+$color-input-border: $color-silver;
+
+/// Input focused color.
+$color-input-focus-text: $color-cod-gray;
+
+/// Input text.
+$color-input-text: $color-dove-gray;
+
+/// Global input padding.
+$padding-input: rem(6);
+
+
+//-----------------------------------------
+// Buttons
+//-----------------------------------------
+
+/// CTA Link Color.
+$color-cta-link-color: $color-white;
+
+
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+
+/// Table borders.
+$color-table-border: $color-silver;
+
+
+//-----------------------------------------
+// Modals
+//-----------------------------------------
+
+/// Modal Content Background.
+$color-modal-background: $color-white;
+
+/// Modal Close Background.
+$color-modal-close-background: $color-black;
+
+/// Modal Close Colors.
+$color-modal-close-color: $color-white;
+
+
+//-----------------------------------------
+// Icons
+//-----------------------------------------
+
+/// Close Icon Background.
+$color-icon-close-background: $color-white;
+
+/// Down Arrow Background Color.
+$color-down-arrow-background: $color-white;
+
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+
+/// Comment border.
+$color-comment-border: $color-silver;
+
+/// Comment focus border.
+$color-comment-focus-border: $color-mineshaft;
+
+/// Comment even background.
+$color-even-background: $color-gallery;
+
+/// Comment response background.
+$color-comment-response: $color-white;
+
+/// Comment meta links.
+$color-meta-links: $color-tundora;
+
+/// Comment post author background.
+$color-author-background: $color-light-yellow;
+
+
+//-----------------------------------------
+// WP/Gutenberg Blocks
+//-----------------------------------------
+
+/// Block button background.
+$color-block-button-background: $color-mineshaft;
+
+/// BLock pullquote.
+$color-block-border: $color-silver;
+
+
+//-----------------------------------------
+// Navigation Variables
+//-----------------------------------------
+
+/// Mobile menu link.
+$color-mobile-menu-link: $color-white;
+
+/// Hamburger background.
+$color-hamburger-background: $color-cod-gray;
+
+/// Off-canvas Container Background.
+$color-off-canvas-background: $color-cod-gray;
+
+/// Off-canvas Screen Background.
+$color-off-canvas-screen-background: $color-black;
+
+/// Submenu Background.
+$color-submenu-background: $color-white;
+
+
+//-----------------------------------------
+// Scaffolding
+//-----------------------------------------
+
+/// Scaffolding header border.
+$color-scaffolding-border: $color-alto;
+
+/// Scaffolding swatch border.
+$color-scaffolding-swatch-border: $color-alto;
+
+/// Scaffolding color.
+$color-scaffolding-color: $color-alto;
+
+/// Scaffolding background color.
+$color-scaffolding-background: $color-white;
+
+//-----------------------------------------
+// Sass Map for Theme Colors
+//-----------------------------------------
 
 /// Sass map used for creating color presentational classes.
 $theme-colors: (
@@ -63,6 +292,10 @@ $theme-colors: (
 	white: $color-white,
 	whitesmoke: $color-whitesmoke,
 );
+
+//-----------------------------------------
+// Sass Map for Social Media Colors
+//-----------------------------------------
 
 /// Social media `$social-colors()` map
 $social-colors: (
