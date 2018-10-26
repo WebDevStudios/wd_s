@@ -346,7 +346,7 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
  *
  * @author Corey Colins <corey@webdevstudios.com>
  */
-function _s_acf_load_icon_field_choices( $field ) {
+function _s_acf_load_color_picker_field_choices( $field ) {
 
 	// Reset choices.
 	$field['choices'] = array();
@@ -367,4 +367,4 @@ function _s_acf_load_icon_field_choices( $field ) {
 	// Return the field.
 	return $field;
 }
-add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_icon_field_choices' );
+add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_color_picker_field_choices' );
