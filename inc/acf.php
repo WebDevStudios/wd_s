@@ -341,7 +341,7 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 /**
  * Load colors dynamically into select field from _s_get_theme_colors()
  *
- * @param array $field fiueld options.
+ * @param array $field field options.
  * @return array new field choices.
  *
  * @author Corey Colins <corey@webdevstudios.com>
