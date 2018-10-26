@@ -67,63 +67,6 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 }
 
 /**
- * Returns an <img> that can be used anywhere a placeholder image is needed
- * in a theme. The image is a simple colored block with the image dimensions
- * displayed in the middle.
- *
- * @author Ben Lobaugh
- * @throws Exception Details of missing parameters.
- * @param array $args {.
- * @type int $width
- * @type int $height
- * @type string $background_color
- * @type string $text_color
- * }
- * @return string
- */
-function _s_get_placeholder_image( $args = array() ) {
-	$default_args = array(
-		'width'            => '',
-		'height'           => '',
-		'background_color' => 'dddddd',
-		'text_color'       => '000000',
-	);
-
-	$args = wp_parse_args( $args, $default_args );
-
-	// Extract the vars we want to work with.
-	$width            = $args['width'];
-	$height           = $args['height'];
-	$background_color = $args['background_color'];
-	$text_color       = $args['text_color'];
-
-	// Perform some quick data validation.
-	if ( ! is_numeric( $width ) ) {
-		throw new Exception( esc_html__( 'Width must be an integer', '_s' ) );
-	}
-
-	if ( ! is_numeric( $height ) ) {
-		throw new Exception( esc_html__( 'Height must be an integer', '_s' ) );
-	}
-
-	if ( ! ctype_xdigit( $background_color ) ) {
-		throw new Exception( esc_html__( 'Please provide a valid hex color value for background_color', '_s' ) );
-	}
-
-	if ( ! ctype_xdigit( $text_color ) ) {
-		throw new Exception( esc_html__( 'Please provide a valid hex color value for text_color', '_s' ) );
-	}
-
-	// Set up the url to the image.
-	$url = "http://placeholder.wdslab.com/i/{$width}x$height/$background_color/$text_color";
-
-	// Text that will be utilized by screen readers.
-	$alt = apply_filters( '_s_placeholder_image_alt', esc_html__( 'WebDevStudios Placeholder Image', '_s' ) );
-
-	return "<img src='$url' width='$width' height='$height' alt='$alt' />";
-}
-
-/**
  * Returns an photo from Unsplash.com wrapped in an <img> that can be used
  * in a theme. There are limited category and search capabilities to attempt
  * matching the site subject.
