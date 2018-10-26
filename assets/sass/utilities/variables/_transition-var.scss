@@ -33,13 +33,13 @@ $transition-border: $border $ease;
 $transition-all: all $speed $ease;
 
 /// Transform height.
-$transition-all: $height, $max-height $ease;
+$transition-all: $height $ease, $max-height $ease;
 
 /// Transform transitions.
 $transition-transform: $transform $ease;
 
 /// Transform Hamburger
-$transition-hamburger: $transform, $bg-color $ease;
+$transition-hamburger: $transform $ease, $bg-color $ease;
 
 /// Transform Background Color
 $transition-bg-color: $bg-color $ease;
