@@ -12,34 +12,34 @@ $speed: 0.3s;
 $ease: ease-in-out;
 
 /// Transition types.
-$bg-color: background-color;
-$border: border;
-$color: color;
-$height: height $speed $ease;
-$max-height: max-height $speed $ease;
-$opacity: opacity;
-$transform: transform;
+$bg-color: background-color $speed;
+$border: border $speed;
+$color: color $speed;
+$height: height $speed;
+$max-height: max-height $speed;
+$opacity: opacity $speed;
+$transform: transform $speed;
 
 /// Color transition
-$transition-color: $color $speed $ease;
+$transition-color: $color $ease;
 
 /// Opacity transition.
-$transition-opacity: $opacity $speed $ease;
+$transition-opacity: $opacity $ease;
 
 /// Border transition
-$transition-border: $border  $speed $ease;
+$transition-border: $border $ease;
 
 /// All transitions. Use only in emergencies!
-$transition-all: all  $speed $ease;
+$transition-all: all $speed $ease;
 
 /// Transform height.
-$transition-all: $height, $max-height;
+$transition-all: $height, $max-height $ease;
 
 /// Transform transitions.
-$transition-transform: $transform  $speed $ease;
+$transition-transform: $transform $ease;
 
 /// Transform Hamburger
-$transition-hamburger: $transform $speed, $bg-color $speed $ease;
+$transition-hamburger: $transform, $bg-color $ease;
 
 /// Transform Background Color
-$transition-bg-color: $bg-color $speed $ease;
+$transition-bg-color: $bg-color $ease;
