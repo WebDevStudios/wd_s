@@ -30,7 +30,7 @@
 		font-size: rem(14);
 
 		&:focus {
-			outline: rem(2) solid $color-mobile-menu-link;
+			outline: 2px solid $color-mobile-menu-link;
 		} // &:focus
 	} // a
 

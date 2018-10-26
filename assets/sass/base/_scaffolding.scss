@@ -18,7 +18,7 @@
 
 	// The section <header>
 	&-header {
-		border-bottom: rem(1) solid $color-scaffolding-border;
+		border-bottom: 1px solid $color-scaffolding-border;
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: $gutter;
@@ -49,7 +49,7 @@
 		// The <pre> container.
 		pre {
 			background-color: $color-pre-background;
-			border: rem(1) solid $color-pre-border;
+			border: 1px solid $color-pre-border;
 			color: $color-pre-text;
 			margin: 0 0 $gutter;
 			padding: $gutter;
