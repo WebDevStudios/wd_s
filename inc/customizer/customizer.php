@@ -18,10 +18,6 @@ function _s_remove_default_customizer_sections( $wp_customize ) {
 	$wp_customize->remove_section( 'static_front_page' );
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'colors' );
-
-	// Remove panels.
-	$wp_customize->remove_panel( 'nav_menus' );
-	$wp_customize->remove_panel( 'widgets' );
 }
 add_action( 'customize_register', '_s_remove_default_customizer_sections', 15 );
 
