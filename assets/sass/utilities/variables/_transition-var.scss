@@ -19,6 +19,7 @@ $height: height $speed;
 $max-height: max-height $speed;
 $opacity: opacity $speed;
 $transform: transform $speed;
+$visibility: visiblity $speed;
 
 /// Color transition
 $transition-color: $color $ease;
@@ -40,6 +41,9 @@ $transition-transform: $transform $ease;
 
 /// Transform Hamburger
 $transition-hamburger: $transform $ease, $bg-color $ease;
+
+/// Transform Visibility
+$transition-visibility: $visibility $ease;
 
 /// Transform Background Color
 $transition-bg-color: $bg-color $ease;
