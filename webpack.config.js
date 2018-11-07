@@ -159,8 +159,10 @@ let webpackConfig = {
 		new SpriteLoaderPlugin( { plainSprite: true } ),
 		new BrowserSyncPlugin(
 			{
+				open: false,
 				host: 'localhost',
 				port: 3000,
+				injectChanges: true,
 				proxy: 'https://testing.test/',
 				files: [
 					{
