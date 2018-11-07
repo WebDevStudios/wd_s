@@ -71,7 +71,7 @@
 				@include position(absolute, 0 0 null null);
 				@include size(rem(24));
 
-				background-color: $color-button-background;
+				background-color: $color-background-button;
 				border-radius: 100%;
 				color: $color-white;
 				transition: $transition-transform;
