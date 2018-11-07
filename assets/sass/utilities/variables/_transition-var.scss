@@ -34,7 +34,7 @@ $transition-border: $border $ease;
 $transition-all: all $speed $ease;
 
 /// Transform height.
-$transition-all: $height $ease, $max-height $ease;
+$transition-height: $height $ease, $max-height $ease;
 
 /// Transform transitions.
 $transition-transform: $transform $ease;
