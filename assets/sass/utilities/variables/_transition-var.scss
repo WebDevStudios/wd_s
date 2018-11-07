@@ -24,6 +24,9 @@ $visibility: visiblity $speed;
 /// Color transition
 $transition-color: $color $ease;
 
+/// Accordion transition
+$trasition-accordion: $visibility, $max-height, $opacity;
+
 /// Opacity transition.
 $transition-opacity: $opacity $ease;
 
