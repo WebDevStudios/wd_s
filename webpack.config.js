@@ -35,7 +35,7 @@ let webpackConfig = {
 				use: {
 					loader: 'eslint-loader',
 					options: {
-						fix: true,
+						fix: false,
 						failOnWarning: false,
 						failonError: true
 					}
