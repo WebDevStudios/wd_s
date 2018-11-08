@@ -157,29 +157,6 @@ let webpackConfig = {
 			chunkFilename: 'style.css'
 		} ),
 		new SpriteLoaderPlugin( { plainSprite: true } ),
-		new BrowserSyncPlugin(
-			{
-				open: false,
-				host: 'localhost',
-				port: 3000,
-				injectChanges: true,
-				proxy: 'https://testing.test/',
-				files: [
-					{
-						match: [
-							'**/*.php',
-							'./assets/*.*'
-						],
-						options: {
-							ignored: './assets/bundles/*.*'
-						}
-					}
-				]
-			},
-			{
-				reload: true
-			}
-		),
 		new StyleLintPlugin( {
 			configFile: './.stylelintrc',
 			files: './assets/sass/**',
@@ -199,7 +176,14 @@ let webpackConfig = {
 					optimizationLevel: 5
 				}
 			}
-		)
+		),
+		new BrowserSyncPlugin( {
+			open: false,
+			host: 'localhost',
+			port: 3000,
+			injectChanges: true,
+			proxy: 'http://wdunderscores.test/'
+		}, { reload: false } )
 	],
 
 	devtool: 'source-map'
