@@ -16,6 +16,8 @@ textarea {
 // Headers
 //--------------------------------------------------------------
 
+// stylelint-disable block-no-empty
+
 // Global Header Resets.
 @for $i from 1 through 6 {
 	h#{$i} {
