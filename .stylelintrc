@@ -34,7 +34,7 @@
 		"block-no-empty": true,
 		"declaration-block-single-line-max-declarations": 0,
 		"color-no-invalid-hex": true,
-		"sh-waqar/declaration-use-variable": [["/color/", "font-family", { "ignoreValues": [ "/^darken/", "/^lighten/", "/^rgb/", "transparent" ] }]],
+		"sh-waqar/declaration-use-variable": [["/color/", "font-family", { "ignoreValues": [ "/^darken/", "/^lighten/", "/^rgb/", "transparent", "inherit" ] }]],
 		"at-rule-blacklist": ["debug", "warn"],
 		"selector-max-id": 0,
 		"selector-no-qualifying-type": [true, { "ignore": ["attribute", "class", "id"] }],
