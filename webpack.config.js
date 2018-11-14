@@ -112,8 +112,8 @@ let webpackConfig = {
 						options: {
 							symbolId: 'icon-[name]',
 							extract: true,
-							spriteFilename: '../assets/images/svg-icons.svg',
-						},
+							spriteFilename: '../assets/images/svg-icons.svg'
+						}
 					},
 					{
 						loader: 'svgo-loader',
@@ -163,7 +163,8 @@ let webpackConfig = {
 				host: 'localhost',
 				port: 3000,
 				injectChanges: true,
-				proxy: 'https://testing.test/',
+				proxy: 'https://wds.test/',
+				reloadDebounce: 2000,
 				files: [
 					{
 						match: [
