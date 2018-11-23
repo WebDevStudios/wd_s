@@ -112,8 +112,8 @@ let webpackConfig = {
 						options: {
 							symbolId: 'icon-[name]',
 							extract: true,
-							spriteFilename: '../assets/images/svg-icons.svg',
-						},
+							spriteFilename: '../assets/images/svg-icons.svg'
+						}
 					},
 					{
 						loader: 'svgo-loader',
@@ -157,6 +157,30 @@ let webpackConfig = {
 			chunkFilename: 'style.css'
 		} ),
 		new SpriteLoaderPlugin( { plainSprite: true } ),
+		new BrowserSyncPlugin(
+			{
+				open: false,
+				host: 'localhost',
+				port: 3000,
+				injectChanges: true,
+				proxy: 'https://wds.test/',
+				reloadDebounce: 2000,
+				files: [
+					{
+						match: [
+							'**/*.php',
+							'./assets/*.*'
+						],
+						options: {
+							ignored: './assets/bundles/*.*'
+						}
+					}
+				]
+			},
+			{
+				reload: true
+			}
+		),
 		new StyleLintPlugin( {
 			configFile: './.stylelintrc',
 			files: './assets/sass/**',

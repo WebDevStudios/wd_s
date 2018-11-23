@@ -2,6 +2,8 @@
 // Modal
 //--------------------------------------------------------------
 
+// stylelint-disable block-no-empty
+
 .modal {
 	@include clearfix;
 	@include position(fixed, 0 0 0 0);
