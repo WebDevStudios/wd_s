@@ -46,12 +46,15 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-hot-middleware": "^2.24.3",
     "webpack-spritesmith": "^0.5.3",
     "wp-pot-cli": "^1.2.1"
   },
   "scripts": {
     "build": "webpack --progress --config webpack.config.js --mode production && npm run il8n",
-    "start": "webpack --hide-modules --watch --config webpack.config.js --mode development",
+    "start": "webpack-dev-server --hide-modules --config webpack.config.js --mode development",
     "il8n": "wp-pot --domain _s --package _s --dest-file languages/_s.pot"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",

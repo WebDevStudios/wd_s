@@ -4,7 +4,6 @@ const webpack = require( 'webpack' );
 const path = require( 'path' );
 const CleanPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const SpritesmithPlugin = require( 'webpack-spritesmith' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
@@ -13,7 +12,6 @@ const SpriteLoaderPlugin = require( 'svg-sprite-loader/plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
-
 
 let webpackConfig = {
 
@@ -24,6 +22,18 @@ let webpackConfig = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve( __dirname, './dist' )
+	},
+
+	devServer: {
+		port: 3000,
+		proxy: {
+			'*': {
+				changeOrigin: true,
+				target: 'http://wdunderscores.test/'
+			}
+		},
+		open: true,
+		hot: true
 	},
 
 	module: {
@@ -157,30 +167,6 @@ let webpackConfig = {
 			chunkFilename: 'style.css'
 		} ),
 		new SpriteLoaderPlugin( { plainSprite: true } ),
-		new BrowserSyncPlugin(
-			{
-				open: false,
-				host: 'localhost',
-				port: 3000,
-				injectChanges: true,
-				proxy: 'https://wds.test/',
-				reloadDebounce: 2000,
-				files: [
-					{
-						match: [
-							'**/*.php',
-							'./assets/*.*'
-						],
-						options: {
-							ignored: './assets/bundles/*.*'
-						}
-					}
-				]
-			},
-			{
-				reload: true
-			}
-		),
 		new StyleLintPlugin( {
 			configFile: './.stylelintrc',
 			files: './assets/sass/**',
@@ -201,13 +187,7 @@ let webpackConfig = {
 				}
 			}
 		),
-		new BrowserSyncPlugin( {
-			open: false,
-			host: 'localhost',
-			port: 3000,
-			injectChanges: true,
-			proxy: 'http://wdunderscores.test/'
-		}, { reload: false } )
+		new webpack.HotModuleReplacementPlugin()
 	],
 
 	devtool: 'source-map'
