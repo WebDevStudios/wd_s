@@ -3,13 +3,14 @@
 const webpack = require( 'webpack' );
 const path = require( 'path' );
 const CleanPlugin = require( 'clean-webpack-plugin' );
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const SpritesmithPlugin = require( 'webpack-spritesmith' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const SpriteLoaderPlugin = require( 'svg-sprite-loader/plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+const ExtractCssChunks = require( 'extract-css-chunks-webpack-plugin' );
+const WriteFilePlugin = require( 'write-file-webpack-plugin' );
 const bourbon = require( 'bourbon' ).includePaths;
 const neat = require( 'bourbon-neat' ).includePaths;
 
@@ -21,7 +22,8 @@ let webpackConfig = {
 
 	output: {
 		filename: '[name].js',
-		path: path.resolve( __dirname, './dist' )
+		path: path.resolve( __dirname, './dist' ),
+		publicPath: '/dist'
 	},
 
 	devServer: {
@@ -64,7 +66,7 @@ let webpackConfig = {
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					ExtractCssChunks.loader,
 					{
 						loader: 'css-loader',
 						options: {
@@ -162,9 +164,10 @@ let webpackConfig = {
 			$: 'jquery',
 			jQuery: 'jquery'
 		} ),
-		new MiniCssExtractPlugin( {
+		new ExtractCssChunks( {
 			filename: 'style.css',
-			chunkFilename: 'style.css'
+			chunkFilename: 'style.css',
+			hot: true
 		} ),
 		new SpriteLoaderPlugin( { plainSprite: true } ),
 		new StyleLintPlugin( {
@@ -187,7 +190,10 @@ let webpackConfig = {
 				}
 			}
 		),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new WriteFilePlugin( {
+			test: /^(?!.*(hot)).*/,
+		} )
 	],
 
 	devtool: 'source-map'
