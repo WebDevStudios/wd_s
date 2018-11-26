@@ -25,6 +25,7 @@ msgstr ""
 msgid "Comment section"
 msgstr ""
 
+#. translators: the number of comments
 #: comments.php:34
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -60,6 +61,7 @@ msgstr ""
 msgid "Sidebar 1"
 msgstr ""
 
+#. translators: the sidebar name
 #: functions.php:116
 msgid "Widget area for %s"
 msgstr ""
@@ -72,6 +74,7 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
+#. translators: the term(s) searched
 #: search.php:18
 msgid "Search Results for: %s"
 msgstr ""
@@ -88,15 +91,15 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: template-acf.php:2
+#: template-acf.php:3
 msgid "Page with Content Blocks"
 msgstr ""
 
-#: template-scaffolding.php:2
+#: template-scaffolding.php:3
 msgid "Scaffolding"
 msgstr ""
 
-#: template-sidebar-right.php:2
+#: template-sidebar-right.php:3
 msgid "Sidebar Right"
 msgstr ""
 
@@ -230,7 +233,6 @@ msgstr ""
 msgid "HTML Output"
 msgstr ""
 
-#. translators: If there are characters in your language that are not
 #: inc/scripts.php:23
 msgctxt "Roboto font: on or off"
 msgid "on"
@@ -241,25 +243,30 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
+#. translators: the date the post was published
 #: inc/template-tags.php:30
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
+#. translators: the post author
 #: inc/template-tags.php:36
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:53, inc/template-tags.php:60
 msgid ", "
 msgstr ""
 
+#. translators: the post category
 #: inc/template-tags.php:56
 msgid "Posted in %1$s"
 msgstr ""
 
+#. translators: the post tags
 #: inc/template-tags.php:63
 msgid "Tagged %1$s"
 msgstr ""
@@ -276,6 +283,8 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
 #: inc/template-tags.php:76, template-parts/content-page.php:34
 msgid "Edit %s"
 msgstr ""
@@ -288,6 +297,7 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
+#. translators: the social network name
 #: inc/template-tags.php:389
 msgid "Link to %s"
 msgstr ""
@@ -304,6 +314,7 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
+#. translators: the edit post url
 #: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -320,6 +331,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#. translators: %s: Name of current post.
 #: template-parts/content.php:32
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -384,6 +396,7 @@ msgstr ""
 msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
 msgstr ""
 
+#. translators: the social network name.
 #: inc/customizer/settings.php:83
 msgid "%s URL"
 msgstr ""
