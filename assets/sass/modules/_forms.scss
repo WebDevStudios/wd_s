@@ -62,7 +62,7 @@ textarea {
 	border-radius: 0;
 	color: $color-text-input;
 	line-height: 1.5;
-	padding: $padding-input;
+	padding: rem(6);
 
 	&:focus {
 		color: $color-focus-text-input;
