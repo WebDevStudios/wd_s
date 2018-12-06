@@ -106,8 +106,6 @@ function _s_widgets_init() {
 	// Define sidebars.
 	$sidebars = array(
 		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
-		// 'sidebar-2'  => esc_html__( 'Sidebar 2', '_s' ),
-		// 'sidebar-3'  => esc_html__( 'Sidebar 3', '_s' ),
 	);
 
 	// Loop through each sidebar and register.
