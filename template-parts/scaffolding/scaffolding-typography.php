@@ -67,5 +67,91 @@
 		'usage'       => '<p>Elementum faucibus vehicula id neque magnis scelerisque quam conubia torquent, auctor nisl quis aliquet venenatis sem sagittis morbi eu, fermentum ipsum congue ultrices non dui lectus pulvinar. Sapien etiam convallis urna suscipit euismod pharetra tellus himenaeos, dignissim consectetur cum suspendisse sem ornare eros enim egestas, cubilia venenatis mauris vivamus elit fringilla duis.</p>',
 		'output'      => '<p>Elementum faucibus vehicula id neque magnis scelerisque quam conubia torquent, auctor nisl quis aliquet venenatis sem sagittis morbi eu, fermentum ipsum congue ultrices non dui lectus pulvinar. Sapien etiam convallis urna suscipit euismod pharetra tellus himenaeos, dignissim consectetur cum suspendisse sem ornare eros enim egestas, cubilia venenatis mauris vivamus elit fringilla duis.</p>',
 	) );
+
+	// HTML table.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Table',
+		'description' => 'Display a table',
+		'usage'       => '
+			<table cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th>Table Header 1</th>
+						<th>Table Header 2</th>
+						<th>Table Header 3</th>
+						<th>Table Header 4</th>
+						<th>Table Header 5</th>
+						<th>Table Header 6</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+				</tbody>
+			</table>
+		',
+		'output'      => '
+			<table cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						<th>Table Header 1</th>
+						<th>Table Header 2</th>
+						<th>Table Header 3</th>
+						<th>Table Header 4</th>
+						<th>Table Header 5</th>
+						<th>Table Header 6</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+					<tr>
+						<td>Division 1</td>
+						<td>Division 2</td>
+						<td>Division 3</td>
+						<td>Division 4</td>
+						<td>Division 5</td>
+						<td>Division 6</td>
+					</tr>
+				</tbody>
+			</table>
+		',
+	) );
 	?>
 </section>
