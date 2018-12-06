@@ -525,7 +525,7 @@ function _s_display_mobile_menu() {
 	}
 	?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_html_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true">
+	<nav class="off-canvas-container" aria-label="<?php esc_html_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
 		<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">
 			<span class="close"></span>
 		</button>

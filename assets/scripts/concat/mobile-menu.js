@@ -82,6 +82,7 @@ window.wdsMobileMenu = {};
 
 	// Add the down arrow to submenu parents.
 	app.addDownArrow = function() {
+
 		app.$c.subMenuParentItem.prepend( '<button type="button" aria-expanded="false" class="parent-indicator" aria-label="Open submenu"><span class="down-arrow"></span></button>' );
 	};
 
@@ -122,23 +123,28 @@ window.wdsMobileMenu = {};
 	};
 
 	// Force close all the submenus when the main menu container is closed.
-	app.forceCloseSubmenus = function() {
+	app.forceCloseSubmenus = function( event ) {
+		if ( $( event.target ).hasClass( 'off-canvas-container' ) ) {
 
-		// The transitionend event triggers on open and on close, need to make sure we only do this on close.
-		if ( ! $( this ).hasClass( 'is-visible' ) ) {
-			app.$c.subMenuParentItem.removeClass( 'is-visible' ).find( '.parent-indicator' ).attr( 'aria-expanded', false );
-			app.$c.subMenuContainer.removeClass( 'is-visible slideInLeft' );
-			app.$c.body.css( 'overflow', 'visible' );
-			app.$c.body.unbind( 'touchstart' );
-		}
+			// Focus offcanvas menu for a11y.
+			app.$c.offCanvasContainer.focus();
 
-		if ( $( this ).hasClass( 'is-visible' ) ) {
-			app.$c.body.css( 'overflow', 'hidden' );
-			app.$c.body.bind( 'touchstart', function( e ) {
-				if ( ! $( e.target ).parents( '.contact-modal' )[0] ) {
-					e.preventDefault();
-				}
-			} );
+			// The transitionend event triggers on open and on close, need to make sure we only do this on close.
+			if ( ! $( this ).hasClass( 'is-visible' ) ) {
+				app.$c.subMenuParentItem.removeClass( 'is-visible' ).find( '.parent-indicator' ).attr( 'aria-expanded', false );
+				app.$c.subMenuContainer.removeClass( 'is-visible slideInLeft' );
+				app.$c.body.css( 'overflow', 'visible' );
+				app.$c.body.unbind( 'touchstart' );
+			}
+
+			if ( $( this ).hasClass( 'is-visible' ) ) {
+				app.$c.body.css( 'overflow', 'hidden' );
+				app.$c.body.bind( 'touchstart', function( e ) {
+					if ( ! $( e.target ).parents( '.contact-modal' )[0] ) {
+						e.preventDefault();
+					}
+				} );
+			}
 		}
 	};
 
