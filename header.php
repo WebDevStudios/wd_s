@@ -54,7 +54,7 @@
 			</button>
 		<?php endif; ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Main Menu', '_s' ); ?>">
+		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_html_e( 'Main Menu', '_s' ); ?>">
 			<?php
 			wp_nav_menu( array(
 				'fallback_cb'     => false,
