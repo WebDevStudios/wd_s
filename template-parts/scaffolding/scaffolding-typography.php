@@ -68,6 +68,14 @@
 		'output'      => '<p>Elementum faucibus vehicula id neque magnis scelerisque quam conubia torquent, auctor nisl quis aliquet venenatis sem sagittis morbi eu, fermentum ipsum congue ultrices non dui lectus pulvinar. Sapien etiam convallis urna suscipit euismod pharetra tellus himenaeos, dignissim consectetur cum suspendisse sem ornare eros enim egestas, cubilia venenatis mauris vivamus elit fringilla duis.</p>',
 	) );
 
+	// Link.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Link',
+		'description' => 'Displays a link.',
+		'usage'       => '<a href="#">Link</a>',
+		'output'      => '<a href="#">Link</a>',
+	) );
+
 	// HTML table.
 	_s_display_scaffolding_section( array(
 		'title'       => 'Table',
