@@ -84,6 +84,18 @@ q {
 	}  // &::before, &::after
 } // blockquote, q
 
+blockquote {
+	border-left: 4px solid $color-cod-gray;
+	font-style: italic;
+	margin-left: 0;
+	padding-left: rem(20);
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
 address {
 	margin: 0 0 rem(24) 0;
 } // address
@@ -109,6 +121,11 @@ var {
 	font-family: $font-code;
 	font-size: rem(15);
 } // code, kbd, tt, var
+
+code {
+	background-color: $color-silver;
+	padding: rem(2) rem(4);
+}
 
 abbr,
 acronym {

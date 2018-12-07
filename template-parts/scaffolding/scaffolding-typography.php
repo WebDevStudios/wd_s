@@ -210,5 +210,29 @@
 		'usage'       => '<blockquote><p>Stay hungry. Stay foolish.</p></blockquote>',
 		'output'      => '<blockquote><p>Stay hungry. Stay foolish.</p></blockquote>',
 	) );
+
+	// Code tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Code Tag',
+		'description' => 'Display a code tag.',
+		'usage'       => '<code>word-wrap: break-word;</code>',
+		'output'      => '<p>You will learn later on in these tests that <code>word-wrap: break-word;</code> will be your best friend.</p>',
+	) );
+
+	// Em tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Emphasize Tag',
+		'description' => 'Display an <em> tag.',
+		'usage'       => '<em>italicize</em>',
+		'output'      => 'The emphasize tag should <em>italicize</em> text.',
+	) );
+
+	// Strong tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Strong Tag',
+		'description' => 'Display bold text.',
+		'usage'       => '<strong>bold<strong>',
+		'output'      => '<p>This tag shows <strong>bold<strong> text.</strong></strong></p>',
+	) );
 	?>
 </section>
