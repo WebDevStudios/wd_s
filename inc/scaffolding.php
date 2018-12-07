@@ -86,7 +86,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 		<div class="scaffolding-document-live">
 
 		<?php if ( $args['output'] ) : ?>
-			<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
+			<?php echo do_shortcode( wp_kses( $args['output'], $allowed_tags ) ); ?>
 		<?php endif; ?>
 
 		</div><!-- .scaffolding-document-live -->
@@ -238,6 +238,7 @@ function _s_hook_theme_scaffolding() {
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
+	get_template_part( $template_dir, 'image-alignments' );
 	get_template_part( $template_dir, 'icons' );
 	get_template_part( $template_dir, 'buttons' );
 	get_template_part( $template_dir, 'forms' );
