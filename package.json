@@ -1,6 +1,3 @@
-// 20181207094714
-// https://raw.githubusercontent.com/WebDevStudios/wd_s/master/package.json
-
 {
   "name": "wd_s",
   "version": "1.0.0",
@@ -40,9 +37,7 @@
     "gulp.spritesmith": "^6.9.0",
     "sassdoc": "^2.5.0"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"No test specified\""
   },
