@@ -202,5 +202,13 @@
 			</ul>
 		',
 	) );
+
+	// Blockquote.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Blockquote',
+		'description' => 'Display a blockquote.',
+		'usage'       => '<blockquote><p>Stay hungry. Stay foolish.</p></blockquote>',
+		'output'      => '<blockquote><p>Stay hungry. Stay foolish.</p></blockquote>',
+	) );
 	?>
 </section>
