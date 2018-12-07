@@ -161,5 +161,46 @@
 			</table>
 		',
 	) );
+
+
+	// Ordered List.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Ordered List',
+		'description' => 'Display an ordered list.',
+		'usage'       => '
+			<ol>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ol>
+		',
+		'output'      => '
+			<ol>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ol>
+		',
+	) );
+
+	// Unordered List.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Unordered List',
+		'description' => 'Display an unordered list.',
+		'usage'       => '
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ul>
+		',
+		'output'      => '
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ul>
+		',
+	) );
 	?>
 </section>
