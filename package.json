@@ -35,7 +35,7 @@
     "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.3.1",
     "gulp.spritesmith": "^6.9.0",
-    "sassdoc": "^2.5.0"
+    "sassdoc": "^2.5.1"
   },
   "devDependencies": {},
   "scripts": {
