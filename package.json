@@ -51,8 +51,8 @@
     "write-file-webpack-plugin": "^4.5.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hide-modules --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js --mode production",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hide-modules --config webpack.config.js --mode development",
     "il8n": "wp-pot --domain _s --package _s --dest-file languages/_s.pot"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",

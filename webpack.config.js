@@ -25,7 +25,7 @@ let webpackConfig = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve( __dirname, './dist' ),
-		publicPath: '/dist'
+		publicPath: '/'
 	},
 
 	devServer: {
@@ -98,10 +98,12 @@ let webpackConfig = {
 				],
 				use: [
 					{
-						loader: 'url-loader',
+						loader: 'file-loader',
 						options: {
-							name: '[name].[ext]',
-							outputPath: path.resolve( __dirname, './dist/images' )
+							emitFile: false,
+							name: '[path][name].[ext]',
+							outputPath: '',
+							publicPath: ''
 						}
 					}
 				]
@@ -110,10 +112,12 @@ let webpackConfig = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: [
 					{
-						loader: 'url-loader',
+						loader: 'file-loader',
 						options: {
-							name: '[name].[ext]',
-							outputPath: path.resolve( __dirname, './dist/fonts' )
+							emitFile: false,
+							name: '[path][name].[ext]',
+							outputPath: '',
+							publicPath: ''
 						}
 					}
 				]
