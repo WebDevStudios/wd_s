@@ -15,16 +15,6 @@
 	// Right-aligned Image.
 	_s_display_scaffolding_section( array(
 		'title'       => 'Right-aligned Image',
-		'description' => 'Display a right-algined image.',
-		'usage'       => '
-		',
-		'output'      => '
-		',
-	) );
-
-	// Right-aligned Image.
-	_s_display_scaffolding_section( array(
-		'title'       => 'Right-aligned Image',
 		'description' => 'Display a right-aligned image.',
 		'usage'       => '
 			<p><img class="alignright size-medium" src="https://via.placeholder.com/250x250.png" width="250" height="250" /></p>
