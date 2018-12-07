@@ -288,5 +288,13 @@
 			}</pre>
 		',
 	) );
+
+	// Keyboard Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Keyboard Tag',
+		'description' => 'To display a key.',
+		'usage'       => '<kbd>Shift/kbd>',
+		'output'      => '<p>To paste copied text content stripped of formatting, use <kbd>⌘</kbd>+<kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.</p>',
+	) );
 	?>
 </section>

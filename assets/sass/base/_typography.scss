@@ -123,6 +123,16 @@ var {
 	font-size: rem(15);
 } // code, kbd, tt, var
 
+kbd {
+	background-color: $color-whitesmoke;
+	border: 1px solid $color-silver;
+	border-radius: rem(4);
+	box-shadow: 0 rem(1) 0 rgba($color-black, 0.2), 0 0 0 rem(2) $color-white inset;
+	display: inline-block;
+	margin: 0 rem(3);
+    padding: rem(2) rem(8);
+}
+
 code {
 	background-color: $color-silver;
 	padding: rem(2) rem(4);
