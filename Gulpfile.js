@@ -21,9 +21,10 @@ const plumber = require( 'gulp-plumber' );
 const postcss = require( 'gulp-postcss' );
 const reload = browserSync.reload;
 const rename = require( 'gulp-rename' );
+const replace = require("gulp-replace");
 const sass = require( 'gulp-sass' );
-const sassdoc = require( 'sassdoc' );
 const sassLint = require( 'gulp-sass-lint' );
+const sassdoc = require( 'sassdoc' );
 const sort = require( 'gulp-sort' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const spritesmith = require( 'gulp.spritesmith' );
@@ -247,6 +248,8 @@ gulp.task( 'concat', () =>
 
 		// Append the sourcemap to project.js.
 		.pipe( sourcemaps.write() )
+
+		.pipe( replace( '    ', '\t' ) )
 
 		// Save project.js
 		.pipe( gulp.dest( 'assets/scripts' ) )
