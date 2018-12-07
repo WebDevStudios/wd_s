@@ -156,7 +156,7 @@ let webpackConfig = {
 					css: path.resolve( __dirname, 'assets/sass/base/_sprites.scss' )
 				},
 				apiOptions: {
-					cssImageRef: 'sprites.png'
+					cssImageRef: '~sprites.png'
 				}
 			}
 		),
