@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "9e25c894f5b8d89a141e";
+/******/ 	var hotCurrentHash = "af41bec8c56608e740dd";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -941,12 +941,98 @@ __webpack_require__.r(__webpack_exports__);
 
 // extracted by extract-css-chunks-webpack-plugin
     if(true) {
-      // 1543009867372
+      // 1544185857575
       var cssReload = __webpack_require__(/*! ../../node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js */ "./node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
     }
   
+
+/***/ }),
+
+/***/ "./assets/scripts/components/accordion.js":
+/*!************************************************!*\
+  !*** ./assets/scripts/components/accordion.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {/**
+ * Accordion block functionality
+ *
+ * @author Shannon MacMillan, Corey Collins
+ */
+var app = {}; // Constructor
+
+app.init = function () {
+  app.cache();
+
+  if (app.meetsRequirements()) {
+    app.bindEvents();
+  }
+}; // Cache all the things
+
+
+app.cache = function () {
+  app.$c = {
+    window: $(window),
+    html: $('html'),
+    accordion: $('.accordion'),
+    items: $('.accordion-item'),
+    headers: $('.accordion-item-header'),
+    contents: $('.accordion-item-content'),
+    button: $('.accordion-item-toggle'),
+    anchorID: $(window.location.hash)
+  };
+}; // Combine all events
+
+
+app.bindEvents = function () {
+  app.$c.headers.on('click touchstart', app.toggleAccordion);
+  app.$c.button.on('click touchstart', app.toggleAccordion);
+  app.$c.window.on('load', app.openHashAccordion);
+}; // Do we meet the requirements?
+
+
+app.meetsRequirements = function () {
+  return app.$c.accordion.length;
+};
+
+app.toggleAccordion = function () {
+  // Add the open class to the item.
+  $(this).parents('.accordion-item').toggleClass('open'); // Is this one expanded?
+
+  var isExpanded = $(this).parents('.accordion-item').hasClass('open'); // Set this button's aria-expanded value.
+
+  $(this).parents('.accordion-item').find('.accordion-item-toggle').attr('aria-expanded', isExpanded ? 'true' : 'false'); // Set all other items in this block to aria-hidden=true.
+
+  $(this).parents('.accordion-block').find('.accordion-item-content').not($(this).parents('.accordion-item')).attr('aria-hidden', 'true'); // Set this item to aria-hidden=false.
+
+  $(this).parents('.accordion-item').find('.accordion-item-content').attr('aria-hidden', isExpanded ? 'false' : 'true'); // Hide the other panels.
+
+  $(this).parents('.accordion-block').find('.accordion-item').not($(this).parents('.accordion-item')).removeClass('open');
+  $(this).parents('.accordion-block').find('.accordion-item-toggle').not($(this)).attr('aria-expanded', 'false');
+  return false;
+};
+
+app.openHashAccordion = function () {
+  if (!app.$c.anchorID.selector) {
+    return;
+  } // Trigger a click on the button closest to this accordion.
+
+
+  app.$c.anchorID.parents('.accordion-item').find('.accordion-item-toggle').trigger('click'); // Not setting a cached variable as it doesn't seem to grab the height properly.
+
+  var adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').height() : 0; // Animate to the div for a nicer experience.
+
+  app.$c.html.animate({
+    scrollTop: app.$c.anchorID.offset().top - adminBarHeight
+  }, 'slow');
+}; // Engage
+
+
+app.init();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -1700,8 +1786,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_skip_link_focus_fix_js__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/window-ready.js */ "./assets/scripts/components/window-ready.js");
 /* harmony import */ var _components_window_ready_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_window_ready_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/svg-icons */ "./assets/scripts/lib/svg-icons.js");
-/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_lib_svg_icons__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/accordion.js */ "./assets/scripts/components/accordion.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_components_accordion_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lib/svg-icons */ "./assets/scripts/lib/svg-icons.js");
+/* harmony import */ var _lib_svg_icons__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_lib_svg_icons__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 
@@ -1746,7 +1835,7 @@ requireAll(__webpack_require__("./assets/images/svg-icons sync recursive \\.svg$
 
 // extracted by extract-css-chunks-webpack-plugin
     if(true) {
-      // 1543009861145
+      // 1544185855059
       var cssReload = __webpack_require__(/*! ../extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js */ "./node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -15179,7 +15268,7 @@ module.exports = {
 
 // extracted by extract-css-chunks-webpack-plugin
     if(true) {
-      // 1543009861158
+      // 1544185854064
       var cssReload = __webpack_require__(/*! ../extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js */ "./node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -16282,7 +16371,7 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 // extracted by extract-css-chunks-webpack-plugin
     if(true) {
-      // 1543009861375
+      // 1544185855512
       var cssReload = __webpack_require__(/*! ../../extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js */ "./node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -16300,7 +16389,7 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 // extracted by extract-css-chunks-webpack-plugin
     if(true) {
-      // 1543009861154
+      // 1544185854075
       var cssReload = __webpack_require__(/*! ../../extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js */ "./node_modules/extract-css-chunks-webpack-plugin/dist/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;

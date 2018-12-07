@@ -10,6 +10,7 @@ import './components/navigation-primary.js';
 import './components/off-canvas.js';
 import './components/skip-link-focus-fix.js';
 import './components/window-ready.js';
+import './components/accordion.js';
 
 // Importing SVG icons to combine and minify
 import './lib/svg-icons';
