@@ -234,5 +234,59 @@
 		'usage'       => '<strong>bold<strong>',
 		'output'      => '<p>This tag shows <strong>bold<strong> text.</strong></strong></p>',
 	) );
+
+	// Abbreviation Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Abbreviation Tag',
+		'description' => 'Display an abbreviation.',
+		'usage'       => '<abbr title="Seriously">srsly</abbr>',
+		'output'      => '<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for “seriously”.</p>',
+	) );
+
+	// Acronym Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Acronym Tag',
+		'description' => 'Display an acronym.',
+		'usage'       => '<acronym title="For The Win">ftw</acronym>',
+		'output'      => '<p>The acronym <acronym title="For The Win">ftw</acronym> stands for “for the win”.</p>',
+	) );
+
+	// Cite Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Cite Tag',
+		'description' => 'Display a citation.',
+		'usage'       => '<cite>Automattic</cite>',
+		'output'      => '<p>“Code is poetry.” —<cite>Automattic</cite></p>',
+	) );
+
+	// Stirkeout Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Strikeout Text',
+		'description' => 'Display strikeout text.',
+		'usage'       => '<strike>Automattic</strike>',
+		'output'      => '<p>This tag will let you <strike>strikeout text</strike></p>.',
+	) );
+
+	// Preformatted Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Preformatted tag.',
+		'description' => 'This tag styles large blocks of code.',
+		'usage'       => '
+			<pre>.post-title {
+				margin: 0 0 5px;
+				font-weight: bold;
+				font-size: 38px;
+				line-height: 1.2;
+			}</pre>
+		',
+		'output'      => '
+			<pre>.post-title {
+				margin: 0 0 5px;
+				font-weight: bold;
+				font-size: 38px;
+				line-height: 1.2;
+			}</pre>
+		',
+	) );
 	?>
 </section>
