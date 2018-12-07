@@ -18,6 +18,7 @@
     "babel-loader": "^8.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.3",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^4.1.0",
@@ -50,8 +51,8 @@
     "write-file-webpack-plugin": "^4.5.0"
   },
   "scripts": {
-    "build": "webpack --progress --config webpack.config.js --mode production && npm run il8n",
-    "start": "webpack-dev-server --hide-modules --config webpack.config.js --mode development",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hide-modules --config webpack.config.js",
     "il8n": "wp-pot --domain _s --package _s --dest-file languages/_s.pot"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",

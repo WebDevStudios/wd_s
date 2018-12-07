@@ -1,5 +1,7 @@
 'use strict';
 
+const devMode = process.env.NODE_ENV !== 'production';
+
 const webpack = require( 'webpack' );
 const path = require( 'path' );
 const CleanPlugin = require( 'clean-webpack-plugin' );
@@ -167,7 +169,7 @@ let webpackConfig = {
 		new ExtractCssChunks( {
 			filename: 'style.css',
 			chunkFilename: 'style.css',
-			hot: true
+			hot: devMode ? true : false
 		} ),
 		new SpriteLoaderPlugin( { plainSprite: true } ),
 		new StyleLintPlugin( {
@@ -189,14 +191,15 @@ let webpackConfig = {
 					optimizationLevel: 5
 				}
 			}
-		),
-		new webpack.HotModuleReplacementPlugin(),
-		new WriteFilePlugin( {
-			test: /^(?!.*(hot)).*/,
-		} )
+		)
 	],
 
 	devtool: 'source-map'
 };
+
+if ( devMode ) {
+	webpackConfig.plugins.push( new webpack.HotModuleReplacementPlugin() );
+	webpackConfig.plugins.push( new WriteFilePlugin( { test: /^(?!.*(hot)).*/ } ) );
+}
 
 module.exports = webpackConfig;
