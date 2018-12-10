@@ -304,5 +304,67 @@
 		'usage'       => '<sub>2</sub>',
 		'output'      => '<p>Getting our science styling on with H<sub>2</sub>O, which should push the “2” down.</p>',
 	) );
+
+	// Superscript Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Superscript Tag',
+		'description' => 'To display a superscript.',
+		'usage'       => '<sup>2</sup>',
+		'output'      => '<p>Still sticking with science and Albert Einstein’s&nbsp;E = MC<sup>2</sup>, which should lift the “2” up.</p>',
+	) );
+
+	// Variable Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Variable Tag',
+		'description' => 'The HTML Variable element (<var>) represents the name of a variable in a mathematical expression or a programming context.',
+		'usage'       => '<var>x</var>',
+		'output'      => '<p>A simple equation: <var>x</var> = <var>y</var> + 2 </p>',
+	) );
+
+	// Address Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Address Tag',
+		'description' => 'To display an address.',
+		'usage'       => '
+			<address>
+				1 Infinite Loop<br>
+				Cupertino, CA 95014<br>
+				United States
+			</address>
+		',
+		'output'      => '
+			<address>
+				1 Infinite Loop<br>
+				Cupertino, CA 95014<br>
+				United States
+			</address>
+		',
+	) );
+
+	// Address Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Definition Lists',
+		'description' => 'To display defintion lists.',
+		'usage'       => '
+			<dl>
+				<dt>Definition List Title</dt>
+				<dd>Definition list division.</dd>
+				<dt>Startup</dt>
+				<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
+				<dt>#dowork</dt>
+				<dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
+			</dl>
+		',
+		'output'      => '
+			<dl>
+				<dt>Definition List Title</dt>
+				<dd>Definition list division.</dd>
+				<dt>Startup</dt>
+				<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
+				<dt>#dowork</dt>
+				<dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
+			</dl>
+		',
+	) );
 	?>
 </section>
