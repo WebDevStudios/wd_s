@@ -249,5 +249,6 @@ function _s_hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'icons' );
 	get_template_part( $template_dir, 'buttons' );
 	get_template_part( $template_dir, 'forms' );
+	get_template_part( $template_dir, 'elements' );
 }
 add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );
