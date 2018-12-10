@@ -142,6 +142,13 @@ function _s_scaffolding_allowed_html() {
 			'placeholder' => true,
 			'class'       => true,
 		),
+		'iframe' => array(
+			'src'             => array(),
+			'height'          => array(),
+			'width'           => array(),
+			'frameborder'     => array(),
+			'allowfullscreen' => array(),
+		),
 	) );
 	return $allowed_tags;
 }
@@ -238,7 +245,7 @@ function _s_hook_theme_scaffolding() {
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
-	get_template_part( $template_dir, 'image-alignments' );
+	get_template_part( $template_dir, 'media' );
 	get_template_part( $template_dir, 'icons' );
 	get_template_part( $template_dir, 'buttons' );
 	get_template_part( $template_dir, 'forms' );
