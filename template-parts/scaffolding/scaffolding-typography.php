@@ -341,7 +341,7 @@
 		',
 	) );
 
-	// Address Tag.
+	// Definition lists.
 	_s_display_scaffolding_section( array(
 		'title'       => 'Definition Lists',
 		'description' => 'To display defintion lists.',
