@@ -23,7 +23,7 @@ $output-bourbon-deprecation-warnings: false;
 @import 'neat';
 @import 'utilities/mixins/index';
 @import 'utilities/helpers/index';
-@import 'vendor/normalize/normalize';
+@import 'utilities/sanitize.css';
 @import 'vendor/animate/animate';
 
 @import 'base/index';
