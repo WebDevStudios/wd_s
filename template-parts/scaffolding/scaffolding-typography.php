@@ -296,5 +296,13 @@
 		'usage'       => '<kbd>Shift/kbd>',
 		'output'      => '<p>To paste copied text content stripped of formatting, use <kbd>⌘</kbd>+<kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.</p>',
 	) );
+
+	// Subscript Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Subscript Tag',
+		'description' => 'To display a subscript.',
+		'usage'       => '<sub>2</sub>',
+		'output'      => '<p>Getting our science styling on with H<sub>2</sub>O, which should push the “2” down.</p>',
+	) );
 	?>
 </section>
