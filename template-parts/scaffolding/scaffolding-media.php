@@ -76,5 +76,13 @@ global $wp_embed;
 		'usage'       => '[embed]https://www.youtube.com/watch?v=72xdCU__XCk[/embed]',
 		'output'      => $wp_embed->run_shortcode( '[embed]https://www.youtube.com/watch?v=72xdCU__XCk[/embed]' ),
 	) );
+
+	// Youtube embed.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Vimeo Embed',
+		'description' => 'Display a vimeo video.',
+		'usage'       => '[embed]https://vimeo.com/259411563[/embed]',
+		'output'      => $wp_embed->run_shortcode( '[embed]https://vimeo.com/259411563[/embed]' ),
+	) );
 	?>
 </section>
