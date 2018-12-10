@@ -169,16 +169,38 @@
 		'description' => 'Display an ordered list.',
 		'usage'       => '
 			<ol>
-				<li>List Item 1</li>
-				<li>List Item 2</li>
-				<li>List Item 3</li>
+				<li>ordered item</li>
+				<li>ordered item
+					<ul>
+						<li><strong>unordered</strong></li>
+						<li><strong>unordered</strong>
+							<ol>
+								<li>ordered item</li>
+								<li>ordered item</li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+				<li>ordered item</li>
+				<li>ordered item</li>
 			</ol>
 		',
 		'output'      => '
 			<ol>
-				<li>List Item 1</li>
-				<li>List Item 2</li>
-				<li>List Item 3</li>
+				<li>ordered item</li>
+				<li>ordered item
+					<ul>
+						<li><strong>unordered</strong></li>
+						<li><strong>unordered</strong>
+							<ol>
+								<li>ordered item</li>
+								<li>ordered item</li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+				<li>ordered item</li>
+				<li>ordered item</li>
 			</ol>
 		',
 	) );
@@ -189,16 +211,38 @@
 		'description' => 'Display an unordered list.',
 		'usage'       => '
 			<ul>
-				<li>List Item 1</li>
-				<li>List Item 2</li>
-				<li>List Item 3</li>
+				<li>unordered item</li>
+				<li>unordered item
+					<ul>
+						<li>unordered</li>
+						<li>unordered
+							<ol>
+								<li><strong>ordered item</strong></li>
+								<li><strong>ordered item</strong></li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+				<li>unordered item</li>
+				<li>unordered item</li>
 			</ul>
 		',
 		'output'      => '
 			<ul>
-				<li>List Item 1</li>
-				<li>List Item 2</li>
-				<li>List Item 3</li>
+				<li>unordered item</li>
+				<li>unordered item
+					<ul>
+						<li>unordered</li>
+						<li>unordered
+							<ol>
+								<li><strong>ordered item</strong></li>
+								<li><strong>ordered item</strong></li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+				<li>unordered item</li>
+				<li>unordered item</li>
 			</ul>
 		',
 	) );
