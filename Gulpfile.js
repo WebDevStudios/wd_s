@@ -29,6 +29,7 @@ const svgmin = require( 'gulp-svgmin' );
 const svgstore = require( 'gulp-svgstore' );
 const uglify = require( 'gulp-uglify' );
 const wpPot = require( 'gulp-wp-pot' );
+const replace = require( 'gulp-rename' );
 
 // Set assets paths.
 const paths = {
@@ -249,6 +250,7 @@ gulp.task( 'concat', () =>
 		// Save project.js
 		.pipe( gulp.dest( 'assets/scripts' ) )
 		.pipe( browserSync.stream() )
+		.pipe( replace( '    ', '\t' ) )
 );
 
 /**
