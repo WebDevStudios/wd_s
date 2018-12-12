@@ -12,9 +12,12 @@ a {
 	} // &:visited
 
 	&:hover,
-	&:focus,
 	&:active {
 		color: $color-link-hover;
 		opacity: 0.6;
-	} // &:hover, &:focus, &:active
+	} // &:hover, &:active
+
+	&:focus {
+		color: $color-link-focus;
+	} //  &:focus
 } // a

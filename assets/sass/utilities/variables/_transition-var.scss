@@ -1,0 +1,52 @@
+//--------------------------------------------------------------
+// TRANSITIONS
+//--------------------------------------------------------------
+
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+/// Speed.
+$speed: 0.3s;
+$ease: ease-in-out;
+
+/// Transition types.
+$bg-color: background-color $speed;
+$border: border $speed;
+$color: color $speed;
+$height: height $speed;
+$max-height: max-height $speed;
+$opacity: opacity $speed;
+$transform: transform $speed;
+$visibility: visiblity $speed;
+
+/// Color transition
+$transition-color: $color $ease;
+
+/// Accordion transition
+$trasition-accordion: $visibility, $max-height, $opacity;
+
+/// Opacity transition.
+$transition-opacity: $opacity $ease;
+
+/// Border transition
+$transition-border: $border $ease;
+
+/// All transitions. Use only in emergencies!
+$transition-all: all $speed $ease;
+
+/// Transform height.
+$transition-height: $height $ease, $max-height $ease;
+
+/// Transform transitions.
+$transition-transform: $transform $ease;
+
+/// Transform Hamburger
+$transition-hamburger: $transform $ease, $bg-color $ease;
+
+/// Transform Visibility
+$transition-visibility: $visibility $ease;
+
+/// Transform Background Color
+$transition-bg-color: $bg-color $ease;

@@ -1,13 +1,23 @@
+//--------------------------------------------------------------
+// Modules
+//--------------------------------------------------------------
+
 @import 'buttons';
 @import 'card';
 @import 'comments';
 @import 'content';
-@import 'content-blocks/index';
 @import 'footer';
 @import 'forms';
 @import 'header';
 @import 'icons';
 @import 'modal';
-@import 'navigation/index';
 @import 'tables';
+
+// ACF Blocks.
+@import 'content-blocks/index';
+
+// Navigation.
+@import 'navigation/index';
+
+// WP/Gutenberg blocks.
 @import 'wp-blocks/index';

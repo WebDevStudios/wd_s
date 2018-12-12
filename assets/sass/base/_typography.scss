@@ -101,9 +101,9 @@ address {
 } // address
 
 pre {
-	background-color: $color-whitesmoke;
-	border: 1px solid $color-silver;
-	color: $color-gray;
+	background-color: $color-background-pre;
+	border: 1px solid $color-border-pre;
+	color: $color-text-pre;
 	font-family: $font-pre;
 	font-size: rem(13);
 	line-height: $line-height-pre;

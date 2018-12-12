@@ -54,7 +54,7 @@ table {
 
 	// td
 	td {
-		border: 1px solid $color-silver;
+		border: 1px solid $color-border-table;
 		border-bottom: 0;
 		display: block;
 		font-size: rem(13);
@@ -66,7 +66,7 @@ table {
 
 		// last-child
 		&:last-child {
-			border-bottom: 1px solid $color-silver;
+			border-bottom: 1px solid $color-border-table;
 		} // &:last-child
 
 
@@ -84,6 +84,6 @@ table {
 	} // td
 
 	@include media($wp-admin-bar) {
-		border: 1px solid $color-silver;
+		border: 1px solid $color-border-table;
 	}
 } // table
