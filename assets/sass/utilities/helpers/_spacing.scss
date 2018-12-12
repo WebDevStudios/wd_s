@@ -12,7 +12,7 @@
 		@include padding(rem($number));
 
 		@if $number > 75 {
-			@include media(max-width $tablet-portrait) {
+			@include media(null, max-width $tablet-portrait) {
 				@include padding(rem($number / 2));
 			}
 		}
@@ -22,7 +22,7 @@
 		@include padding(rem($number) null);
 
 		@if $number > 75 {
-			@include media(max-width $tablet-portrait) {
+			@include media(null, max-width $tablet-portrait) {
 				@include padding(rem($number / 2) null);
 			}
 		}
@@ -32,7 +32,7 @@
 		padding-top: rem($number);
 
 		@if $number > 75 {
-			@include media(max-width $tablet-portrait) {
+			@include media(null, max-width $tablet-portrait) {
 				padding-top: rem($number / 2);
 			}
 		}
@@ -42,7 +42,7 @@
 		padding-bottom: rem($number);
 
 		@if $number > 75 {
-			@include media(max-width $tablet-portrait) {
+			@include media(null, max-width $tablet-portrait) {
 				padding-bottom: rem($number / 2);
 			}
 		}
@@ -52,7 +52,7 @@
 		@include padding(null rem($number));
 
 		@if $number > 75 {
-			@include media(max-width $tablet-portrait) {
+			@include media(null, max-width $tablet-portrait) {
 				@include padding(null rem($number / 2));
 			}
 		}

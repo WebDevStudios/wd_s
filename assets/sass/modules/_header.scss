@@ -16,7 +16,7 @@
 
 	// Don't let the logo get out of control.
 	img {
-		@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+		@include media($tablet-portrait, $tablet-landscape) {
 			float: left;
 			width: 50%;
 		}
@@ -30,7 +30,7 @@
 	font-size: rem(48);
 
 	// Align next to the logo on mid-size screens.
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+	@include media($tablet-portrait, $tablet-landscape) {
 		float: left;
 		margin: 0;
 		padding: 0 rem(12);
@@ -45,7 +45,7 @@
 	font-size: rem(24);
 	margin: 0 0 rem(24) 0;
 
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
+	@include media($tablet-portrait, $tablet-landscape) {
 		clear: both;
 	}
 } // .site-description
