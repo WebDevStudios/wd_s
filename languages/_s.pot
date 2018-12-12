@@ -62,7 +62,7 @@ msgid "Sidebar 1"
 msgstr ""
 
 #. translators: the sidebar name
-#: functions.php:118
+#: functions.php:116
 msgid "Widget area for %s"
 msgstr ""
 
@@ -103,88 +103,80 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/acf.php:257
+#: inc/acf.php:259
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:278
+#: inc/acf.php:281
 msgid "expired"
 msgstr ""
 
-#: inc/extras.php:102, inc/extras.php:167
-msgid "Width must be an integer"
-msgstr ""
-
-#: inc/extras.php:106, inc/extras.php:171
-msgid "Height must be an integer"
-msgstr ""
-
-#: inc/extras.php:110
-msgid "Please provide a valid hex color value for background_color"
-msgstr ""
-
-#: inc/extras.php:114
-msgid "Please provide a valid hex color value for text_color"
-msgstr ""
-
-#: inc/extras.php:121, inc/extras.php:192
-msgid "WebDevStudios Placeholder Image"
-msgstr ""
-
-#: inc/extras.php:275
+#: inc/acf.php:380
 msgid "Alto"
 msgstr ""
 
-#: inc/extras.php:276
+#: inc/acf.php:381
 msgid "Black"
 msgstr ""
 
-#: inc/extras.php:277
+#: inc/acf.php:382
 msgid "Blue"
 msgstr ""
 
-#: inc/extras.php:278
+#: inc/acf.php:383
 msgid "Cod Gray"
 msgstr ""
 
-#: inc/extras.php:279
+#: inc/acf.php:384
 msgid "Dove Gray"
 msgstr ""
 
-#: inc/extras.php:280
+#: inc/acf.php:385
 msgid "Gallery"
 msgstr ""
 
-#: inc/extras.php:281
+#: inc/acf.php:386
 msgid "Gray"
 msgstr ""
 
-#: inc/extras.php:282
+#: inc/acf.php:387
 msgid "Gray Alt"
 msgstr ""
 
-#: inc/extras.php:283
+#: inc/acf.php:388
 msgid "Light Yellow"
 msgstr ""
 
-#: inc/extras.php:284
+#: inc/acf.php:389
 msgid "Mineshaft"
 msgstr ""
 
-#: inc/extras.php:285
+#: inc/acf.php:390
 msgid "Silver"
 msgstr ""
 
-#: inc/extras.php:286
+#: inc/acf.php:391
 msgid "Silver Chalice"
 msgstr ""
 
-#: inc/extras.php:287
+#: inc/acf.php:392
 msgid "White"
 msgstr ""
 
-#: inc/extras.php:288
+#: inc/acf.php:393
 msgid "Whitesmoke"
+msgstr ""
+
+#: inc/extras.php:111
+msgid "Width must be an integer"
+msgstr ""
+
+#: inc/extras.php:115
+msgid "Height must be an integer"
+msgstr ""
+
+#: inc/extras.php:136
+msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
 #: inc/hooks.php:96, inc/template-tags.php:438
@@ -195,25 +187,25 @@ msgstr ""
 msgid "Read more..."
 msgstr ""
 
-#: inc/hooks.php:168
+#: inc/hooks.php:206
 msgid "Visit our website to learn more."
 msgstr ""
 
-#: inc/hooks.php:208
+#: inc/hooks.php:246
 msgid "categorized in"
 msgstr ""
 
-#: inc/hooks.php:208
+#: inc/hooks.php:246
 msgid "tagged with"
 msgstr ""
 
 #. translators: get the term name.
-#: inc/hooks.php:214
+#: inc/hooks.php:252
 msgid "Posts %1$s %2$s."
 msgstr ""
 
 #. translators: get the search term.
-#: inc/hooks.php:226
+#: inc/hooks.php:264
 msgid "Search results for %s."
 msgstr ""
 
@@ -451,6 +443,14 @@ msgstr ""
 
 #: inc/customizer/settings.php:190
 msgid "Enter the text to be displayed in the button in the header."
+msgstr ""
+
+#: template-parts/content-blocks/block-accordion.php:35
+msgid "Accordion Content Block"
+msgstr ""
+
+#: template-parts/content-blocks/block-accordion.php:50
+msgid "Toggle"
 msgstr ""
 
 #: template-parts/scaffolding/scaffolding-blank.php:11

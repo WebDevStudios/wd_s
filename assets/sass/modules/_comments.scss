@@ -6,7 +6,7 @@
 // Comment area scaffolding
 //-----------------------------------------
 .comments-area {
-	border-top: 1px solid $color-silver;
+	border-top: 1px solid $color-border-comment;
 	margin: rem(100) 0 rem(151);
 
 	@include media($desktop) {
@@ -64,7 +64,7 @@
 		// Focus + active state.
 		&:focus,
 		&:active {
-			border: 1px solid $color-mineshaft;
+			border: 1px solid $color-border-comment-focus;
 		} // &:focus, &:active
 
 		@include media($phone) {
@@ -80,7 +80,7 @@
 		// Focus + active state.
 		&:focus,
 		&:active {
-			border: 1px solid $color-mineshaft;
+			border: 1px solid $color-border-comment-focus;
 		} // &:focus, &:active
 	} // textara
 
@@ -105,7 +105,7 @@
 
 	// Even comments get nice gray background.
 	.even:not(.bypostauthor) > .comment-body {
-		background-color: $color-gallery;
+		background-color: $color-background-even;
 	} // .even > .comment-body
 
 	// Each comment body.
@@ -137,7 +137,7 @@
 		margin-top: rem(5);
 
 		a {
-			color: $color-tundora;
+			color: $color-meta-links;
 			text-decoration: none;
 		} // a
 
@@ -159,7 +159,7 @@
 
 	// By post author.
 	.bypostauthor {
-		background-color: $color-light-yellow;
+		background-color: $color-background-author;
 		display: block;
 	} // .bypostauthor
 
@@ -224,7 +224,7 @@
 .comment-list {
 
 	.comment-respond {
-		background-color: $color-white;
+		background-color: $color-comment-response;
 		padding: rem(24) 0;
 
 		@include media($phone) {

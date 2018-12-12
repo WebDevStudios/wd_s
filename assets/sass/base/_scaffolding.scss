@@ -18,7 +18,7 @@
 
 	// The section <header>
 	&-header {
-		border-bottom: rem(1) solid $color-alto;
+		border-bottom: 1px solid $color-border-scaffolding;
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: $gutter;
@@ -48,16 +48,16 @@
 
 		// The <pre> container.
 		pre {
-			background-color: $color-white;
-			border: rem(1) solid $color-alto;
-			color: $color-silver-chalice;
+			background-color: $color-background-pre;
+			border: 1px solid $color-border-pre;
+			color: $color-text-pre;
 			margin: 0 0 $gutter;
 			padding: $gutter;
 		} // pre
 
 		// The <code> container.
 		code {
-			background-color: $color-alto;
+			background-color: $color-background-code;
 			font-size: rem(13);
 			padding: rem(5);
 		} // code
@@ -87,7 +87,7 @@
 
 	// Each swatch.
 	.swatch {
-		border: 1px solid $color-alto;
+		border: 1px solid $color-border-scaffolding-swatch;
 		border-radius: rem(5);
 		flex: 0 1 23.875%;
 		height: rem(125);
@@ -103,7 +103,7 @@
 		// The swatch <header>
 		& header {
 			align-content: center;
-			color: $color-alto;
+			color: $color-scaffolding;
 			display: flex;
 			flex-direction: column;
 			height: calc(100% - 39px);
@@ -114,8 +114,8 @@
 		& footer {
 			@include position(absolute, null null 0 null);
 
-			background-color: $color-white;
-			border-top: 1px solid $color-alto;
+			background-color: $color-background-scaffolding;
+			border-top: 1px solid $color-scaffolding;
 			border-bottom-left-radius: rem(4);
 			border-bottom-right-radius: rem(4);
 			font-size: rem(12);

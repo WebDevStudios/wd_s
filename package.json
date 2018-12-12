@@ -25,6 +25,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.3",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^3.2.1",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sort": "^2.0.0",
