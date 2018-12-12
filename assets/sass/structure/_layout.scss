@@ -3,26 +3,32 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Basic structure
+// Site Layout Wrapper
+// and Grid Layout Wrapper
 //-----------------------------------------
-.site-header,
-.site-footer,
-.primary,
-.secondary {
-	padding: 0 $gutter;
+.site-wrapper,
+.grid-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center; // Allows center elements without margin: 0 auto;
+} // .site-wrapper
 
-	@include media($tablet-landscape) {
-		padding: 0 2 * $gutter;
+//-----------------------------------------
+// Full-width Helper
+//-----------------------------------------
+.site-main {
+
+	// Styles internal elements to max-width unless it's full-width.
+	> *:not(.full-width) {
+		max-width: $container;
 	}
-} // .site-header, .site-footer, .primary, .secondary
 
-.site-content {
-	margin: rem(20) auto;
-
-	@include media($desktop) {
-		margin: rem(40) auto rem(60);
-	}
-} // .site-content
+	// Full-screen elements. Ignores sidebar issues.
+	.full-width {
+		max-width: 100%;
+		width: 100%;
+	} // .full-width
+} // .site-main
 
 //-----------------------------------------
 // Create Content/Sidebary layout
