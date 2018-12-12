@@ -31,21 +31,14 @@
 } // .site-main
 
 //-----------------------------------------
-// Create Content/Sidebary layout
+// Bound Container at $container width
 //-----------------------------------------
-.has-sidebar {
+.container {
+	@include padding(null #{$gutter});
 
-	.primary {
-		margin-left: 0;
+	max-width: $container;
 
-		@include media($tablet-landscape) {
-			@include span-columns(8);
-		}
-	} // .primary
-
-	.secondary {
-		@include media($tablet-landscape) {
-			@include span-columns(4);
-		}
-	} // .secondary
-} // .has-sidebar
+	@include media($container) {
+		@include padding(0);
+	}
+} // .container
