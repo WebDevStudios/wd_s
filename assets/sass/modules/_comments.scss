@@ -80,7 +80,7 @@
 		// Focus + active state.
 		&:focus,
 		&:active {
-			border: 1px solid $color-border-comment-focus
+			border: 1px solid $color-border-comment-focus;
 		} // &:focus, &:active
 	} // textara
 
