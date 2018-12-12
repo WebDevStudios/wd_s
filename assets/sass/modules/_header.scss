@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 
 .site-header {
+	@extend .grid-wrapper;
+
 	flex: 0 0 100%;
 	width: 100%;
 
@@ -12,6 +14,7 @@
 		width: 85%;
 
 		@include media($tablet-portrait) {
+			margin-right: auto;
 			width: 90%;
 		}
 
@@ -61,31 +64,20 @@
 	// Header action container — Form Dropdown.
 	//-----------------------------------------
 	.site-header-action {
-		// @include span-columns(12);
-
-		@include media($tablet-portrait) {
-			// @include span-columns(5);
-		}
+		flex: 0 0 auto;
+		width: 100%;
 
 		@include media($tablet-landscape) {
-			// @include span-columns(4);
-
-			float: right;
-			margin-right: 0;
+			margin-left: auto;
+			width: 35%;
 		}
 
 		@include media($desktop) {
-			// @include span-columns(3);
-
-			float: right;
-			margin-right: 0;
+			width: 25%;
 		}
 
 		@include media($desktop-large) {
-			// @include span-columns(2);
-
-			float: right;
-			margin-right: 0;
+			width: 12.5%;
 		}
 	} // .site-header-action
 
