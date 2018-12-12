@@ -7,6 +7,8 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
+	@include margin(0);
+
 	appearance: none;
 	background-color: $color-background-button;
 	border: none;
@@ -14,7 +16,6 @@ input[type='submit'] {
 	border-width: 0;
 	color: $color-text-button;
 	line-height: 1.5;
-	margin: 0;
 	padding: rem(10) rem(20);
 	transition: $transition-bg-color;
 

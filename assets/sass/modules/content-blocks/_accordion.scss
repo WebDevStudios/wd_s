@@ -30,7 +30,8 @@
 		} // &-header
 
 		&-title {
-			margin: 0;
+			@include margin(0);
+
 			padding-right: rem(30); // Space for toggle.
 		} // &-title
 

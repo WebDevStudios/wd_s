@@ -29,32 +29,34 @@ img {
 
 // Image captions
 .wp-caption {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 rem(24));
+
 	max-width: 100%;
 
 	img[class*='wp-image-'] {
+		@include margin(0 auto);
+
 		display: block;
-		margin: 0 auto;
 	} // img[class*="wp-image-"]
 
 	// Add auto margins so image is centered
 	&.aligncenter {
-		margin: 0 auto rem(24) auto;
+		@include margin(0 auto rem(24) auto);
 	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
-		margin-right: rem(24);
+		@include margin(null rem(24) null null);
 	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
-		margin-left: rem(24);
+		@include margin(null null null rem(24));
 	} // &.alignright
 
 	// Add top and bottom margin to caption text
 	.wp-caption-text {
-		margin: rem(12) 0;
+		@include margin(rem(12) 0);
 	} // .wp-caption-text
 } // .wp-caption
 
@@ -69,7 +71,7 @@ img {
 
 // Gallery
 .gallery {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 rem(24));
 } // .gallery
 
 // Gallery items

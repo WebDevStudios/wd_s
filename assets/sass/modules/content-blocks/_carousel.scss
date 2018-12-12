@@ -63,12 +63,13 @@ $slide-height: rem(500);
 
 	// Content container.
 	&-content {
+		@include margin(0 auto);
+
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		height: $slide-height;
 		justify-content: center;
-		margin: 0 auto;
 		max-width: 50%;
 		position: relative;
 		text-align: center;

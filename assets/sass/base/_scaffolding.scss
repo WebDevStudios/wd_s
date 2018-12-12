@@ -43,15 +43,16 @@
 		// Reset.
 		h4,
 		p {
-			margin: $gutter 0;
+			@include margin($gutter 0);
 		} // h4, p
 
 		// The <pre> container.
 		pre {
+			@include margin(0 0 $gutter);
+
 			background-color: $color-background-pre;
 			border: 1px solid $color-border-pre;
 			color: $color-text-pre;
-			margin: 0 0 $gutter;
 			padding: $gutter;
 		} // pre
 

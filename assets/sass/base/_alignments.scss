@@ -4,16 +4,18 @@
 
 // Left Align
 .alignleft {
+	@include margin(0 rem(24) 0 0);
+
 	display: inline;
 	float: left;
-	margin: 0 rem(24) 0 0;
 } // .alignleft
 
 // Right Align
 .alignright {
+	@include margin(0 0 0 rem(24));
+
 	display: inline;
 	float: right;
-	margin: 0 0 0 rem(24);
 } // .alignright
 
 // Center Align

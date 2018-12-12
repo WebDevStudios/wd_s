@@ -17,7 +17,7 @@
 		}
 
 		li {
-			margin: 0 rem(10) 0 0;
+			@include margin(0 rem(10) 0 0);
 		}
 	} // ul
 

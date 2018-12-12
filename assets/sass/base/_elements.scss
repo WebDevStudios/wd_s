@@ -13,15 +13,15 @@ object {
 } // embed, iframe, object
 
 hr {
+	@include margin(0 0 rem(24));
 	@include size(auto 1px);
 
 	background-color: $color-background-hr;
 	border: 0;
-	margin: 0 0 rem(24) 0;
 } // hr
 
 figure {
-	margin: 0;
+	@include margin(0);
 } // figure
 
 //--------------------------------------------------------------
@@ -30,7 +30,7 @@ figure {
 
 ul,
 ol {
-	margin: 0 0 rem(48) rem(24);
+	@include margin(0 0 rem(48) rem(24));
 } // ul, ol
 
 ul {
@@ -43,7 +43,7 @@ ol {
 
 li > ul,
 li > ol {
-	margin: 0 0 0 rem(24);
+	@include margin(0 0 0 rem(24));
 } // li > ul, li > ol
 
 dt {
@@ -51,7 +51,7 @@ dt {
 } // dt
 
 dd {
-	margin: 0 rem(24) rem(24) 0;
+	@include margin(0 rem(24) rem(24) 0);
 } // dd
 
 //--------------------------------------------------------------
@@ -59,9 +59,8 @@ dd {
 //--------------------------------------------------------------
 
 table {
+	@include margin(0 0 rem(24));
 	@include size(100% auto);
-
-	margin: 0 0 rem(24) 0;
 } // table
 
 th {
