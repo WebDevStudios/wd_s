@@ -42,13 +42,13 @@ if ( $recent_posts->have_posts() ) :
 	);
 	?>
 
-	<div class="grid-x">
+	<div class="">
 	<?php if ( $title ) : ?>
 	<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
 	<?php endif; ?>
 	</div>
 
-	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
+	<div class="<?php echo esc_attr( $animation_class ); ?>">
 
 		<?php
 		// Loop through recent posts.

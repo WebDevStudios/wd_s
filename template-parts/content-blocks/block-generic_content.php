@@ -18,7 +18,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
+	<div class="<?php echo esc_attr( $animation_class ); ?>">
 
 		<?php if ( $title ) : ?>
 			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>
