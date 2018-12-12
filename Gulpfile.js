@@ -15,7 +15,6 @@ const gulp = require( 'gulp' );
 const gutil = require( 'gulp-util' );
 const imagemin = require( 'gulp-imagemin' );
 const mqpacker = require( 'css-mqpacker' );
-const neat = require( 'bourbon-neat' ).includePaths;
 const notify = require( 'gulp-notify' );
 const plumber = require( 'gulp-plumber' );
 const postcss = require( 'gulp-postcss' );
@@ -89,7 +88,7 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 
 			// Compile Sass using LibSass.
 			.pipe( sass( {
-				'includePaths': [].concat( bourbon, neat ),
+				'includePaths': [].concat( bourbon ),
 				'errLogToConsole': true,
 				'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
 			} ) )
