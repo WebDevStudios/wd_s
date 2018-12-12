@@ -340,7 +340,7 @@ legend {
 	color: inherit; // 2
 	display: table; // 1
 	max-width: 100%; // 1
-	$color-white-space: normal; // 1
+	white-space: normal; // 1
 }
 
 //-----------------------------------------
@@ -452,7 +452,7 @@ details {
 dialog {
 	background-color: $color-white;
 	border: solid;
-	color: $color-$color-black;
+	color: $color-black;
 	display: block;
 	height: -moz-fit-content;
 	height: -webkit-fit-content;
