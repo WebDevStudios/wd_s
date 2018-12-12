@@ -58,6 +58,8 @@
 		} // &.open
 
 		&-toggle {
+			@include padding(unset);
+
 			align-items: center;
 			background-color: transparent;
 			border: none;
@@ -65,7 +67,6 @@
 			display: flex;
 			justify-content: center;
 			min-width: unset;
-			padding: unset;
 
 
 			&-icon {

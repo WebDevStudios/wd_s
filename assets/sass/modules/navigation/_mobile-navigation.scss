@@ -20,8 +20,9 @@
 	} // ul
 
 	li {
+		@include padding(rem(12));
+
 		list-style: none;
-		padding: rem(12);
 		position: relative;
 	} // li
 
@@ -51,12 +52,12 @@
 // 2. Create a down arrow on parent items.
 //-----------------------------------------
 .parent-indicator {
+	@include padding(rem(5));
 	@include position(absolute, rem(10) rem(10) null null);
 	@include size(rem(35));
 
 	background-color: transparent;
 	display: inline-block;
-	padding: rem(5);
 	z-index: 9999;
 
 	&:focus {
@@ -205,12 +206,12 @@
 
 	// The hamburger nav.
 	&-open {
+		@include padding(0);
 		@include position(absolute, rem(24) rem(24) null null);
 		@include size(rem(35));
 
 		background-color: transparent;
 		display: block;
-		padding: 0;
 
 		@include media($tablet-landscape) {
 			display: none;
@@ -230,11 +231,11 @@
 
 	// The close "X" button.
 	&-close {
+		@include padding(rem(12) rem(5));
 		@include position(absolute, rem(10) rem(10) null null);
 
 		background-color: transparent;
 		display: none;
-		padding: rem(12) rem(5);
 		z-index: 9999;
 
 		&:focus,

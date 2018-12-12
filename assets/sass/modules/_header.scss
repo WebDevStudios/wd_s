@@ -2,125 +2,134 @@
 // Header.
 //--------------------------------------------------------------
 
-// Site logo.
-.site-branding {
-	@include span-columns(10);
+.site-header {
+	flex: 0 0 100%;
+	width: 100%;
 
-	@include media($tablet-portrait) {
-		@include span-columns(11);
-	}
+	// Site logo.
+	.site-branding {
+		flex: 0 0 auto;
+		width: 85%;
 
-	@include media($tablet-landscape) {
-		@include span-columns(5);
-	}
+		@include media($tablet-portrait) {
+			width: 90%;
+		}
 
-	// Don't let the logo get out of control.
-	img {
+		@include media($tablet-landscape) {
+			width: 45%;
+		}
+
+		// Don't let the logo get out of control.
+		img {
+			@include media($tablet-portrait, $tablet-landscape) {
+				float: left;
+				width: 50%;
+			}
+		} // img
+	} // .site-branding
+
+	//-----------------------------------------
+	// Site Title.
+	//-----------------------------------------
+	.site-title {
+		font-size: rem(48);
+
+		// Align next to the logo on mid-size screens.
 		@include media($tablet-portrait, $tablet-landscape) {
+			@include margin(0);
+			@include padding(0 rem(12));
+
 			float: left;
 			width: 50%;
 		}
-	} // img
-} // .site-branding
+	} // .site-title
 
-//-----------------------------------------
-// Site Title.
-//-----------------------------------------
-.site-title {
-	font-size: rem(48);
+	//-----------------------------------------
+	// Site Description.
+	//-----------------------------------------
+	.site-description {
+		@include margin(0 0 rem(24) 0);
 
-	// Align next to the logo on mid-size screens.
-	@include media($tablet-portrait, $tablet-landscape) {
-		float: left;
-		margin: 0;
-		padding: 0 rem(12);
-		width: 50%;
-	}
-} // .site-title
+		font-size: rem(24);
 
-//-----------------------------------------
-// Site Description.
-//-----------------------------------------
-.site-description {
-	font-size: rem(24);
-	margin: 0 0 rem(24) 0;
+		@include media($tablet-portrait, $tablet-landscape) {
+			clear: both;
+		}
+	} // .site-description
 
-	@include media($tablet-portrait, $tablet-landscape) {
-		clear: both;
-	}
-} // .site-description
+	//-----------------------------------------
+	// Header action container — Form Dropdown.
+	//-----------------------------------------
+	.site-header-action {
+		// @include span-columns(12);
 
-//-----------------------------------------
-// Header action container — Form Dropdown.
-//-----------------------------------------
-.site-header-action {
-	@include span-columns(12);
+		@include media($tablet-portrait) {
+			// @include span-columns(5);
+		}
 
-	@include media($tablet-portrait) {
-		@include span-columns(5);
-	}
+		@include media($tablet-landscape) {
+			// @include span-columns(4);
 
-	@include media($tablet-landscape) {
-		@include span-columns(4);
+			float: right;
+			margin-right: 0;
+		}
 
-		float: right;
-		margin-right: 0;
-	}
+		@include media($desktop) {
+			// @include span-columns(3);
 
-	@include media($desktop) {
-		@include span-columns(3);
+			float: right;
+			margin-right: 0;
+		}
 
-		float: right;
-		margin-right: 0;
-	}
+		@include media($desktop-large) {
+			// @include span-columns(2);
 
-	@include media($desktop-large) {
-		@include span-columns(2);
+			float: right;
+			margin-right: 0;
+		}
+	} // .site-header-action
 
-		float: right;
-		margin-right: 0;
-	}
-} // .site-header-action
+	//-----------------------------------------
+	// Site header action cta buttons.
+	//-----------------------------------------
+	.site-header-action {
 
-//-----------------------------------------
-// Site header action cta buttons.
-//-----------------------------------------
-.site-header-action {
-
-	// Span the button the full width.
-	.button-link,
-	.cta-button {
-		color: $color-cta-link;
-		display: block;
-		text-align: center;
-		text-decoration: none;
-		width: 100%;
-	} // .button-link, .cta-button
-} // .site-header-action
-
-//-----------------------------------------
-// Site header Action Searchform.
-//-----------------------------------------
-.site-header-action {
-
-	.search-form {
-		opacity: 0;
-		transition: $transition-opacity;
-		visibility: hidden;
-
-		// If the body class is there, show the form.
-		.search-form-visible & {
+		// Span the button the full width.
+		.button-link,
+		.cta-button {
+			color: $color-cta-link;
 			display: block;
-			opacity: 1;
-			transition: $transition-opacity;
-			visibility: visible;
-		} // .search-form-visible &
-	} // .search-form
-} // .site-header-action
+			text-align: center;
+			text-decoration: none;
+			width: 100%;
+		} // .button-link, .cta-button
+	} // .site-header-action
 
-//-----------------------------------------
-// Main Navigation Container.
-//-----------------------------------------
-.main-navigation {
-	@include span-columns(12);
-} // .main-navigation
+	//-----------------------------------------
+	// Site header Action Searchform.
+	//-----------------------------------------
+	.site-header-action {
+
+		.search-form {
+			opacity: 0;
+			transition: $transition-opacity;
+			visibility: hidden;
+
+			// If the body class is there, show the form.
+			.search-form-visible & {
+				display: block;
+				opacity: 1;
+				transition: $transition-opacity;
+				visibility: visible;
+			} // .search-form-visible &
+		} // .search-form
+	} // .site-header-action
+
+	//-----------------------------------------
+	// Main Navigation Container.
+	//-----------------------------------------
+	.main-navigation {
+		flex: 0 0 auto;
+		width: 100%;
+	} // .main-navigation
+} // .site-header

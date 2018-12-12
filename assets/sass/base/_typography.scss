@@ -91,6 +91,7 @@ address {
 
 pre {
 	@include margin(0 0 rem(24) rem(-24));
+	@include padding(rem(24));
 
 	background-color: $color-background-pre;
 	color: $color-text-pre;
@@ -98,7 +99,6 @@ pre {
 	font-size: rem(13);
 	line-height: $line-height-pre;
 	overflow: auto;
-	padding: rem(24);
 	white-space: pre;
 	word-break: normal;
 	word-wrap: normal;

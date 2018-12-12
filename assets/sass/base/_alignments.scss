@@ -6,7 +6,7 @@
 .alignleft {
 	@include margin(0 rem(24) 0 0);
 
-	display: inline;
+	display: block;
 	float: left;
 } // .alignleft
 
@@ -14,7 +14,7 @@
 .alignright {
 	@include margin(0 0 0 rem(24));
 
-	display: inline;
+	display: block;
 	float: right;
 } // .alignright
 

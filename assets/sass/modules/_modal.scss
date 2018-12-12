@@ -28,12 +28,13 @@
 
 	// The modal content container.
 	.modal-content {
+		@include padding(rem(10));
+
 		background-clip: padding-box;
 		background-color: $color-background-modal;
 		border-radius: $border-radius-medium;
 		box-shadow: 0 0 rem(10) rem(3) $color-box-shadow;
 		outline: 0;
-		padding: rem(10);
 		position: relative;
 
 		// The modal header container.

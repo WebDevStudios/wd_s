@@ -5,7 +5,8 @@
 
 	// Set up structure.
 	.grid-x {
-		padding: $gutter;
+		@include padding($gutter);
+
 		text-align: center;
 
 		@include media($tablet-portrait) {

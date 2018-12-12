@@ -3,10 +3,11 @@
 //--------------------------------------------------------------
 
 table {
+	@include padding(0);
+
 	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	padding: 0;
 	width: 100%;
 
 	// thead
@@ -21,7 +22,8 @@ table {
 	// th, td
 	th,
 	td {
-		padding: rem(10);
+		@include padding(rem(10));
+
 		text-align: center;
 
 		@include media($phone) {

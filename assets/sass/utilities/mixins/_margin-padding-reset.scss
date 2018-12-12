@@ -22,5 +22,5 @@
 
 @mixin margin-padding-reset {
 	@include margin(0);
-	padding: 0;
+	@include padding(0);
 }

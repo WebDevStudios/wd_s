@@ -113,7 +113,7 @@
 
 	// Each comment body.
 	.comment-body {
-		padding: rem(36);
+		@include padding(rem(36));
 	} // .comment-body
 
 	// Comment content.
@@ -231,8 +231,9 @@
 .comment-list {
 
 	.comment-respond {
+		@include padding(rem(24));
+
 		background-color: $color-comment-response;
-		padding: rem(24) 0;
 
 		@include media($phone) {
 			padding-left: rem(36);

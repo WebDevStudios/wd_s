@@ -15,7 +15,7 @@ textarea {
 // Addresses excess padding in IE8/9
 input[type='checkbox'],
 input[type='radio'] {
-	padding: 0;
+	@include padding(0);
 } // input[type="checkbox"], input[type="radio"]
 
 // Remove the clear x icon in IE
@@ -38,8 +38,9 @@ input[type='search'] {
 // www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 button::-moz-focus-inner,
 input::-moz-focus-inner {
+	@include padding(0);
+
 	border: 0;
-	padding: 0;
 } // button::-moz-focus-inner, input::-moz-focus-inner
 
 input[type='text'],
@@ -58,12 +59,13 @@ input[type='datetime'],
 input[type='datetime-local'],
 input[type='color'],
 textarea {
+	@include padding(rem(6));
+
 	appearance: none;
 	border: 1px solid $color-border-input;
 	border-radius: 0;
 	color: $color-text-input;
 	line-height: 1.5;
-	padding: rem(6);
 
 	&:focus {
 		color: $color-focus-text-input;

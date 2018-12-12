@@ -49,18 +49,19 @@
 		// The <pre> container.
 		pre {
 			@include margin(0 0 $gutter);
+			@include padding($gutter);
 
 			background-color: $color-background-pre;
 			border: 1px solid $color-border-pre;
 			color: $color-text-pre;
-			padding: $gutter;
 		} // pre
 
 		// The <code> container.
 		code {
+			@include padding(rem(5));
+
 			background-color: $color-background-code;
 			font-size: rem(13);
-			padding: rem(5);
 		} // code
 	} // &-content
 
@@ -113,6 +114,7 @@
 
 		// The swatch <footer>
 		& footer {
+			@include padding(rem(10));
 			@include position(absolute, null null 0 null);
 
 			background-color: $color-background-scaffolding;
@@ -120,7 +122,6 @@
 			border-bottom-left-radius: rem(4);
 			border-bottom-right-radius: rem(4);
 			font-size: rem(12);
-			padding: rem(10);
 			width: 100%;
 		} // footer
 	} // .swatch
