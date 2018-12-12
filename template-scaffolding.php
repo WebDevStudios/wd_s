@@ -11,10 +11,10 @@
 
 get_header(); ?>
 
-	<div class="primary content-area">
-		<main id="main" class="site-main">
-			<?php do_action( '_s_scaffolding_content' ); ?>
-		</main><!-- #main -->
-	</div><!-- .primary -->
+	<main id="main" class="site-main">
+
+		<?php do_action( '_s_scaffolding_content' ); ?>
+
+	</main><!-- #main -->
 
 <?php get_footer(); ?>

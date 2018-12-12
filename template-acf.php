@@ -11,8 +11,8 @@
 
 get_header(); ?>
 
-	<div class="content-area">
-		<main id="main" class="site-main">
+	<main id="main" class="site-main">
+
 		<?php
 			// If the page is password protected...
 			if ( post_password_required() ) :
@@ -21,7 +21,7 @@ get_header(); ?>
 				_s_display_content_blocks();
 			endif;
 		?>
-		</main><!-- #main -->
-	</div><!-- .primary -->
+
+	</main><!-- #main -->
 
 <?php get_footer(); ?>
