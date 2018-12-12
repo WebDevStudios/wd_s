@@ -166,3 +166,15 @@ function _s_copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
+
+/**
+ * Move Yoast to bottom, below all elements
+ *
+ * @return string 'low' set value.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since  NEXT
+ */
+function _s_move_yoast_to_bottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', '_s_move_yoast_to_bottom' );
