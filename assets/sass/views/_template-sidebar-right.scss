@@ -1,0 +1,40 @@
+//--------------------------------------------------------------
+// Tempalte Sidebar Right
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Create Content/Sidebary layout
+//-----------------------------------------
+.has-sidebar {
+
+	.grid-wrapper {
+		max-width: $container;
+	} // .grid-wrapper
+
+	// Default to full width on mobile
+	.site-main,
+	.sidebar {
+		width: 100%;
+	} // .site-main, .sidebar
+
+	.site-main {
+
+		@include media($tablet-landscape) {
+			flex: 0 0 auto;
+			width: calc(66.66% - #{$gutter * 3});
+		}
+	} // .site-main
+
+	.sidebar {
+
+		@include media($tablet-landscape) {
+			flex: 0 0 auto;
+			margin-left: auto;
+			width: 33%;
+		}
+	} // .sidebar
+} // .has-sidebar
+
+//-----------------------------------------
+// Sidebar Styles
+//-----------------------------------------
