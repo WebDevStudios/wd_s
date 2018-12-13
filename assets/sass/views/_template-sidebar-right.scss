@@ -8,6 +8,8 @@
 .has-sidebar {
 
 	.grid-wrapper {
+		@include margin($gutter * 2 null );
+
 		max-width: $container;
 	} // .grid-wrapper
 
@@ -18,6 +20,7 @@
 	} // .site-main, .sidebar
 
 	.site-main {
+		@include margin(0 null);
 
 		@include media($tablet-landscape) {
 			flex: 0 0 auto;

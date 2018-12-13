@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-main acf-content-blocks">
 
 		<?php
 			// If the page is password protected...
