@@ -17,6 +17,11 @@
 // Full-width Helper
 //-----------------------------------------
 .site-main {
+	@include margin($gutter * 2 null);
+
+	&.acf-content-blocks {
+		@include margin(0 null);
+	} // &.acf-content-blocks
 
 	// Styles internal elements to max-width unless it's full-width.
 	> *:not(.full-width) {
