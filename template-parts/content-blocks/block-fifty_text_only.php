@@ -17,15 +17,15 @@ _s_display_block_options(array(
 	'class' => 'content-block grid-container fifty-fifty fifty-text-only', // The container class.
 ));
 ?>
-	<div class="<?php echo esc_attr($animation_class); ?>">
+	<div class="display-flex container <?php echo esc_attr($animation_class); ?>">
 
-		<div class="container">
+		<div class="half">
 			<?php
 		echo force_balance_tags($text_primary); // WPCS: XSS OK.
 		?>
 		</div>
 
-		<div class="container">
+		<div class="half">
 			<?php
 		echo force_balance_tags($text_secondary); // WPCS: XSS OK.
 		?>

@@ -17,13 +17,13 @@ _s_display_block_options(array(
 	'class' => 'content-block fifty-fifty-block fifty-media-text', // The class of the container.
 ));
 ?>
-	<div class="<?php echo esc_attr($animation_class); ?>">
+	<div class="display-flex container <?php echo esc_attr($animation_class); ?>">
 
-		<div class="container">
+		<div class="half">
 			<img class="fifty-image" src="<?php echo esc_url($image_data['url']); ?>" alt="<?php echo esc_html($image_data['alt']); ?>">
 		</div>
 
-		<div class="container">
+		<div class="half">
 			<?php
 		echo force_balance_tags($text); // WPCS XSS OK.
 		?>
