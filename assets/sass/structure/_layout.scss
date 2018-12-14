@@ -10,7 +10,14 @@
 .display-flex {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center; // Allows center elements without margin: 0 auto;
+
+	&.justify-center {
+		justify-content: center; // Allows center elements without margin: 0 auto;
+	} // &.justify-center
+
+	&.align-center {
+		align-items: center;
+	} // &.align-center
 } // .site-wrapper
 
 //-----------------------------------------
