@@ -17,7 +17,7 @@ $row_index = get_row_index();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class' => 'content-block grid-container accordion-block', // Container class.
+		'class' => 'content-block accordion-block', // Container class.
 	)
 );
 ?>
