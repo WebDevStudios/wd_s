@@ -43,6 +43,7 @@
 // Bound Container at $container width
 //-----------------------------------------
 .container {
+	@include margin(null auto);
 	@include padding(null #{$gutter});
 
 	max-width: $container;
