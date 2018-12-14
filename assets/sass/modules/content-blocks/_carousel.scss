@@ -20,12 +20,20 @@ $slide-height: rem(500);
 
 	// Next button.
 	.slick-next {
-		right: 0;
+		right: $gutter;
+
+		@include media($desktop) {
+			right: 0;
+		}
 	} // .slick-next
 
 	// Previous button.
 	.slick-prev {
-		left: 0;
+		left: $gutter;
+
+		@include media($desktop) {
+			left: 0;
+		}
 	} // .slick-prev
 
 	// Navigation dots/numbers.
@@ -70,7 +78,6 @@ $slide-height: rem(500);
 		flex-direction: column;
 		height: $slide-height;
 		justify-content: center;
-		max-width: 50%;
 		position: relative;
 		text-align: center;
 		z-index: 3;
