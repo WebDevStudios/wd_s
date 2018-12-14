@@ -1,0 +1,49 @@
+//--------------------------------------------------------------
+// Grid-related mixins
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Half or 50% grid element.
+//-----------------------------------------
+@mixin half {
+	flex: 0 0 100%;
+	width: 100%; // For IE11.
+
+	@include media($tablet-landscape) {
+		flex: 0 0 calc(50% - #{rem(25)});
+		width: calc(50% - #{rem(25)}); // For IE11.
+	}
+
+	&:nth-child(odd) {
+		@include margin(0 0 rem(25) 0);
+
+		@include media($tablet-landscape) {
+			@include margin(0 rem(50) 0 0);
+		}
+	} // &:first-child
+}
+
+//-----------------------------------------
+// Third
+//-----------------------------------------
+@mixin third {
+	@include margin(0 0 rem(25) 0);
+
+	flex: 0 0 100%;
+	width: 100%; // For IE11.
+
+	@include media($tablet-landscape) {
+		@include margin(0 rem(50) 0 0);
+
+		flex: 0 0 calc(33.33% - #{rem(33.33)});
+		width: calc(33.33% - #{rem(33.33)}); // For IE11.
+	}
+
+	&:nth-child(3n + 3) {
+		@include margin(0);
+
+		@include media($tablet-landscape) {
+			@include margin(0);
+		}
+	} // &:first-child
+}
