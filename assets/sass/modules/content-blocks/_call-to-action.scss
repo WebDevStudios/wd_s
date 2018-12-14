@@ -12,6 +12,10 @@
 		width: 100%;
 	} // .cta-title
 
+	.cta-text {
+		font-weight: 400;
+	} // .cta-text
+
 	.cta-button {
 		@include margin(0 auto);
 
