@@ -3,24 +3,6 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Site Layout Wrapper
-// and Grid Layout Wrapper
-//-----------------------------------------
-.site-wrapper,
-.display-flex {
-	display: flex;
-	flex-flow: row wrap;
-
-	&.justify-center {
-		justify-content: center; // Allows center elements without margin: 0 auto;
-	} // &.justify-center
-
-	&.align-center {
-		align-items: center;
-	} // &.align-center
-} // .site-wrapper
-
-//-----------------------------------------
 // Full-width Helper
 //-----------------------------------------
 .site-main {
@@ -59,3 +41,34 @@
 		@include padding(0);
 	}
 } // .container
+
+//-----------------------------------------
+// Site Layout Wrapper and Grid Elements
+// and Grid Layout Wrapper
+//-----------------------------------------
+.site-wrapper,
+.display-flex {
+	display: flex;
+	flex-flow: row wrap;
+
+	&.justify-center {
+		justify-content: center; // Allows center elements without margin: 0 auto;
+	} // &.justify-center
+
+	&.align-center {
+		align-items: center;
+	} // &.align-center
+
+	//-----------------------------------------
+	// Grid Elements
+	//-----------------------------------------
+	// 50%.
+	.half {
+		@include half();
+	} // .half
+
+	// 33%.
+	.third {
+		@include third();
+	} // .third
+} // .site-wrapper
