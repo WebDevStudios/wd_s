@@ -8,7 +8,7 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'] {
 	@include margin(0);
-	@include padding(rem(10) rem(20));
+	@include padding(rem(7) rem(20));
 
 	appearance: none;
 	background-color: $color-background-button;
