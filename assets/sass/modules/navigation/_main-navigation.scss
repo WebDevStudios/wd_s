@@ -34,7 +34,7 @@
 
 	// Sub-menu
 	ul {
-		@include position(absolute, rem(24) null null -999em);
+		@include position(absolute, $space null null -999em);
 
 		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
 		float: left;

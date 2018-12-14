@@ -58,7 +58,7 @@ h6,
 //--------------------------------------------------------------
 
 p {
-	@include margin(0 0 rem(24));
+	@include margin(0 0 $space);
 } // p
 
 b,
@@ -75,7 +75,7 @@ i {
 
 blockquote,
 q {
-	@include margin(0 rem(24));
+	@include margin(0 $space);
 
 	quotes: '" "';
 
@@ -86,12 +86,12 @@ q {
 } // blockquote, q
 
 address {
-	@include margin(0 0 rem(24));
+	@include margin(0 0 $space);
 } // address
 
 pre {
-	@include margin(0 0 rem(24) rem(-24));
-	@include padding(rem(24));
+	@include margin(0 0 $space rem(-24));
+	@include padding($space);
 
 	background-color: $color-background-pre;
 	color: $color-text-pre;

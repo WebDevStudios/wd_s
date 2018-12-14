@@ -6,7 +6,7 @@
 .post-navigation {
 
 	.site-main & {
-		@include margin(0 0 rem(24));
+		@include margin(0 0 $space);
 
 		overflow: hidden;
 	} // .site-main &

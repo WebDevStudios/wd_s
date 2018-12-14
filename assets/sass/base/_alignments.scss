@@ -4,7 +4,7 @@
 
 // Left Align
 .alignleft {
-	@include margin(0 rem(24) 0 0);
+	@include margin(0 $space 0 0);
 
 	display: block;
 	float: left;
@@ -12,7 +12,7 @@
 
 // Right Align
 .alignright {
-	@include margin(0 0 0 rem(24));
+	@include margin(0 0 0 $space);
 
 	display: block;
 	float: right;

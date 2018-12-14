@@ -207,7 +207,7 @@
 	// The hamburger nav.
 	&-open {
 		@include padding(0);
-		@include position(absolute, rem(24) rem(24) null null);
+		@include position(absolute, $space $space null null);
 		@include size(rem(35));
 
 		background-color: transparent;

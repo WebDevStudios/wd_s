@@ -29,7 +29,7 @@ img {
 
 // Image captions
 .wp-caption {
-	@include margin(0 0 rem(24));
+	@include margin(0 0 $space);
 
 	max-width: 100%;
 
@@ -41,17 +41,17 @@ img {
 
 	// Add auto margins so image is centered
 	&.aligncenter {
-		@include margin(0 auto rem(24) auto);
+		@include margin(0 auto $space auto);
 	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
-		@include margin(null rem(24) null null);
+		@include margin(null $space null null);
 	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
-		@include margin(null null null rem(24));
+		@include margin(null null null $space);
 	} // &.alignright
 
 	// Add top and bottom margin to caption text
@@ -71,7 +71,7 @@ img {
 
 // Gallery
 .gallery {
-	@include margin(0 0 rem(24));
+	@include margin(0 0 $space);
 } // .gallery
 
 // Gallery items

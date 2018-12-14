@@ -11,7 +11,7 @@
 		.accordion-item {
 
 			.item-toggle {
-				@include size(rem(24) rem(24));
+				@include size($space $space);
 			} // .item-toggle
 		} // .accordion-item
 	} // .accordion
@@ -71,7 +71,7 @@
 
 			&-icon {
 				@include position(absolute, 0 0 null null);
-				@include size(rem(24));
+				@include size($space);
 
 				background-color: $color-background-button;
 				border-radius: 100%;

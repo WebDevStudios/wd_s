@@ -22,7 +22,7 @@
 	.comments-title {
 		@include margin(rem(126) null null null);
 
-		font-size: rem(24);
+		font-size: $space;
 	} // .comments-title
 
 	.comment-notes {
@@ -231,7 +231,7 @@
 .comment-list {
 
 	.comment-respond {
-		@include padding(rem(24));
+		@include padding($space);
 
 		background-color: $color-comment-response;
 

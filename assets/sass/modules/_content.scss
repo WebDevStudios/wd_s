@@ -19,7 +19,7 @@
 
 // hentry
 .hentry {
-	@include margin(0 0 rem(24) 0);
+	@include margin(0 0 $space 0);
 } // .hentry
 
 // Byline and update post date
@@ -38,19 +38,19 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	@include margin(rem(24) 0 0);
+	@include margin($space 0 0);
 } // .page-content, .entry-content, .entry-summary
 
 // Page links
 .page-links {
-	@include margin(0 0 rem(24) 0);
+	@include margin(0 0 $space 0);
 
 	clear: both;
 } // .page-links
 
 // Tags links
 .tags-links {
-	margin-left: rem(24);
+	margin-left: $space;
 } // .tags-links
 
 // Edit link

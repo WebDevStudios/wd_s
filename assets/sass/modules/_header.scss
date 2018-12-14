@@ -49,9 +49,9 @@
 	// Site Description.
 	//-----------------------------------------
 	.site-description {
-		@include margin(0 0 rem(24) 0);
+		@include margin(0 0 $space 0);
 
-		font-size: rem(24);
+		font-size: $space;
 
 		@include media($tablet-portrait, $tablet-landscape) {
 			clear: both;
