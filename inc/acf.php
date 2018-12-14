@@ -123,6 +123,11 @@ function _s_display_block_options( $args = array() ) {
 		$args['id'] = $other_options['custom_id'];
 	}
 
+	// Set the Container width
+	if ( isset( $other_options['block_width'] ) && ! empty( $other_options['block_width'] ) ) {
+		$args['class'] .= ' ' . $other_options['block_width'];
+	}
+
 	// Set the custom css class.
 	if ( $args['custom_css_class'] ) {
 		$args['class'] .= ' ' . $args['custom_css_class'];
