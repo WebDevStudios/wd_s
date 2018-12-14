@@ -8,7 +8,7 @@
 .has-sidebar {
 
 	.grid-wrapper {
-		@include margin($gutter * 2 null );
+		@include margin($gutter * 2 auto );
 
 		max-width: $container;
 	} // .grid-wrapper
