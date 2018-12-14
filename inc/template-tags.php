@@ -483,6 +483,7 @@ function _s_display_header_button() {
  * Displays numeric pagination on archive pages.
  *
  * @param array $args Array of params to customize output.
+ * @return void.
  * @author Corey Collins
  */
 function _s_display_numeric_pagination( $args = array() ) {
