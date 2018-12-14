@@ -7,7 +7,7 @@
 
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
-	echo '<section class="content-block container carousel">';
+	echo '<div class="content-block full-width carousel">';
 
 	// Enqueue Slick carousel.
 	wp_enqueue_style( 'slick-carousel' );
@@ -36,11 +36,11 @@ if ( have_rows( 'carousel_slides' ) ) :
 		// Start a <container> with possible block options.
 		_s_display_block_options( array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block slide', // Container class.
+			'class'     => 'slide', // Container class.
 		) );
 
 		?>
-			<div class="slide-content " data-animation="<?php echo esc_attr( $animation_class ); ?>">
+			<div class="slide-content container" data-animation="<?php echo esc_attr( $animation_class ); ?>">
 
 				<?php if ( $title ) : ?>
 					<h2 class="slide-title"><?php echo esc_html( $title ); ?></h2>
@@ -59,5 +59,5 @@ if ( have_rows( 'carousel_slides' ) ) :
 
 <?php
 	endwhile;
-	echo '</section><!-- .carousel -->';
+	echo '</div><!-- .carousel -->';
 endif;
