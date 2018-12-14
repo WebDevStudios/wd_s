@@ -78,3 +78,18 @@ textarea {
 	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
 	vertical-align: top; // Improves readability and alignment in all browsers
 } // textarea
+
+//-----------------------------------------
+// Search Form Input + Button
+//-----------------------------------------
+.search-form {
+
+	// Input.
+	.search-field {
+		width: calc(100% - #{rem(98)});
+	} // .search-field
+
+	.search-submit {
+		width: rem(100);
+	} // .search-submit
+} // .search-form
