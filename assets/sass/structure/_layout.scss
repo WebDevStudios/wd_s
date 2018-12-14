@@ -19,12 +19,16 @@
 .site-main {
 	@include margin($gutter * 2 null);
 
+	width: 100%;
+
 	&.acf-content-blocks {
 		@include margin(0 null);
 	} // &.acf-content-blocks
 
 	// Styles internal elements to max-width unless it's full-width.
 	> *:not(.full-width) {
+		@include margin($gutter * 2 auto);
+
 		max-width: $container;
 	}
 
