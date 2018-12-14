@@ -3,10 +3,4 @@
 //--------------------------------------------------------------
 .fifty-fifty {
 
-	.cell {
-		@include media($tablet-portrait) {
-			@include span-columns(6);
-		}
-	}
-
 } // .fifty-fifty

@@ -3,18 +3,4 @@
 //--------------------------------------------------------------
 .recent-posts {
 
-	.cell {
-		margin-bottom: $gutter * 2;
-
-		@include media($tablet-portrait) {
-			@include span-columns(6);
-			@include omega(2n);
-		}
-
-		@include media($tablet-landscape) {
-			@include omega-reset(2n);
-			@include span-columns(4);
-			@include omega(3n);
-		}
-	} // .cell
 } // .recent-posts
