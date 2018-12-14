@@ -52,6 +52,8 @@ function _s_display_block_options( $args = array() ) {
 	// Get block other options.
 	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
+	$display_options = get_sub_field( 'display_options' ) ? get_sub_field( 'display_options' ) : get_field( 'display_options' )['display_options'];
+
 	// Get a default ID.
 	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
 
@@ -124,8 +126,8 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Set the Container width
-	if ( isset( $other_options['block_width'] ) && ! empty( $other_options['block_width'] ) ) {
-		$args['class'] .= ' ' . $other_options['block_width'];
+	if ( isset( $display_options['block_width'] ) && ! empty( $display_options['block_width'] ) ) {
+		$args['class'] .= ' ' . $display_options['block_width'];
 	}
 
 	// Set the custom css class.
