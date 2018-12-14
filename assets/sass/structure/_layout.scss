@@ -19,7 +19,18 @@
 		@include margin($gutter * 2 auto);
 
 		max-width: $container;
-	}
+	} // > *:not(.full-width)
+
+	// Post elements.
+	.hentry {
+		@include margin(0 auto $space * 2);
+
+		max-width: $container;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		} // &:last-child
+	} // .hentry
 
 	// Full-screen elements. Ignores sidebar issues.
 	.full-width {
