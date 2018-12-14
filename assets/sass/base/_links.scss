@@ -2,7 +2,7 @@
 // Global Link Styles
 //--------------------------------------------------------------
 
-a {
+a:not(.button) {
 	color: $color-link;
 	opacity: 1;
 	transition: $transition-opacity;
