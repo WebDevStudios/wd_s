@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template used for displaying related posts.
  *
@@ -49,7 +48,7 @@ if ( $related_posts ) :
 						) ),
 						'url'   => get_the_permalink(),
 						'class' => 'third',
-					) 
+					)
 				);
 
 			endforeach;

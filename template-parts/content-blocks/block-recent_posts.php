@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template used for displaying a recent posts block.
  *
@@ -35,12 +34,10 @@ $recent_posts = _s_get_recent_posts( $args );
 if ( $recent_posts->have_posts() ) :
 
 	// Start a <container> with possible block options.
-	_s_display_block_options(
-		array(
-			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block recent-posts-block', // Container class.
-		)
-	);
+	_s_display_block_options( array(
+		'container' => 'section', // Any HTML5 container: section, div, etc...
+		'class'     => 'content-block recent-posts-block', // Container class.
+	) );
 	?>
 
 		<div class="container">
