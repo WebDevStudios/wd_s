@@ -158,11 +158,11 @@ img {
 // Video and Image as background.
 .video-background,
 .image-background {
+	@include position(absolute, 0 null null 0);
 	@include size(100% 100%);
 
 	display: block;
 	object-fit: cover;
-	position: absolute;
 	z-index: -1;
 }
 
