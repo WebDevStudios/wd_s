@@ -2,8 +2,8 @@
 // Buttons
 //--------------------------------------------------------------
 
-button,
 .button,
+button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
@@ -16,9 +16,25 @@ input[type='submit'] {
 	border-radius: 0;
 	border-width: 0;
 	color: $color-text-button;
+	display: inline-block;
 	line-height: 1.5;
 	text-decoration: none;
-	transition: $transition-bg-color;
+	transition: $transition-bg-color, $transition-opacity, $transition-color;
+
+	// Visited.
+	&:visited {
+		color: $color-link-visited;
+
+		&:hover,
+		&:active {
+			color: $color-link-hover;
+			opacity: 0.6;
+		} // &:hover, &:active
+
+		&:focus {
+			color: $color-link-focus;
+		} //  &:focus
+	} // &:visited
 
 	// IE 11 helper.
 	.ie & {
@@ -26,8 +42,12 @@ input[type='submit'] {
 	} // .ie &
 
 	&:hover,
-	&:active,
+	&:active {
+		color: $color-link-hover;
+		opacity: 0.6;
+	} // &:hover, &:active
+
 	&:focus {
-		background-color: $color-background-button-hover;
-	} // &:active, &:focus
+		color: $color-link-focus;
+	} //  &:focus
 } // button, input[type="button"], input[type="reset"], input[type="submit"]
