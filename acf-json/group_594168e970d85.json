@@ -240,12 +240,12 @@
                         "id": ""
                     },
                     "choices": {
-                        "full": "Full",
-                        "container": "Container"
+                        "full-width": "Full",
+                        "container-width": "Container"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
-                    "default_value": "container",
+                    "default_value": "container-width",
                     "layout": "horizontal",
                     "return_format": "value",
                     "save_other_choice": 0
@@ -270,5 +270,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1544813382
+    "modified": 1544814061
 }
