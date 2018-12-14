@@ -150,14 +150,14 @@ function _s_get_svg( $args = array() ) {
 
 	<svg
 	<?php
-		echo force_balance_tags( $height ); // WPCS XSS OK.
-		echo force_balance_tags( $width ); // WPCS XSS OK.
-		echo force_balance_tags( $fill ); // WPCS XSS OK.
+		echo _s_get_the_content( $height ); // WPCS XSS OK.
+		echo _s_get_the_content( $width ); // WPCS XSS OK.
+		echo _s_get_the_content( $fill ); // WPCS XSS OK.
 	?>
 		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
-		echo force_balance_tags( $aria_hidden ); // WPCS XSS OK.
-		echo force_balance_tags( $aria_labelledby ); // WPCS XSS OK.
+		echo _s_get_the_content( $aria_hidden ); // WPCS XSS OK.
+		echo _s_get_the_content( $aria_labelledby ); // WPCS XSS OK.
 	?>
 		role="img">
 		<title id="<?php echo esc_attr( $title_id ); ?>">

@@ -178,3 +178,20 @@ function _s_move_yoast_to_bottom() {
 	return 'low';
 }
 add_filter( 'wpseo_metabox_prio', '_s_move_yoast_to_bottom' );
+
+/**
+ * Filters WYSIWYG content with the_content filter.
+ *
+ * @param string $content content dump from WYSIWYG.
+ * @author jomurgel
+ */
+function _s_get_the_content( $content ) {
+
+	// Bail if no content exists.
+	if ( empty( $content ) ) {
+		return;
+	}
+	// Returns the content.
+	return $content;
+}
+add_filter( 'the_content', '_s_get_the_content', 20 );

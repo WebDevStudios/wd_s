@@ -19,7 +19,7 @@ _s_display_block_options( array(
 	<div class="display-flex container <?php echo esc_attr( $animation_class ); ?>">
 
 		<div class="half">
-			<?php echo force_balance_tags( $text ); // WPCS: XSS OK. ?>
+			<?php echo _s_get_the_content( $text ); // WPCS: XSS OK. ?>
 		</div>
 
 		<div class="half">

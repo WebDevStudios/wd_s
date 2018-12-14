@@ -25,7 +25,7 @@ _s_display_block_options(
 		<?php endif; ?>
 
 		<?php
-			echo force_balance_tags( $content ); // WP XSS OK.
+			echo _s_get_the_content( $content ); // WP XSS OK.
 		?>
 
 	</div><!-- .grid-x -->
