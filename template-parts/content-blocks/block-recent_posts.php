@@ -38,7 +38,7 @@ if ($recent_posts->have_posts()) :
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class' => 'content-block grid-container recent-posts', // Container class.
+		'class' => 'content-block recent-posts-block', // Container class.
 	)
 );
 ?>

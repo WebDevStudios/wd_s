@@ -1,7 +1,7 @@
 //--------------------------------------------------------------
 // Call To Action Block
 //--------------------------------------------------------------
-.call-to-action {
+.cta-block {
 	text-align: center;
 
 	@include media($tablet-portrait) {
@@ -23,4 +23,4 @@
 			@include margin(0);
 		}
 	} // .cta-button
-} // .call-to-action
+} // .cta-block

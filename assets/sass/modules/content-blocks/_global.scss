@@ -4,6 +4,10 @@
 .content-block {
 	@include margin(null null $gutter * 2 null);
 
+	&:last-child {
+		margin-bottom: 0;
+	} // &:last-of-type
+
 	// Content Block titles.
 	&-title {
 		text-align: center;

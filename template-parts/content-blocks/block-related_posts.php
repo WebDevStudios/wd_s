@@ -18,7 +18,7 @@ if ($related_posts) :
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class' => 'content-block grid-container related-posts', // Container class.
+		'class' => 'content-block related-posts-block', // Container class.
 	)
 );
 

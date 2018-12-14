@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 $slide-height: rem(500);
 
-.carousel {
+.carousel-block {
 
 	// Arbitrary <div> inserted by Slick.
 	.slick-slide div {
@@ -50,7 +50,7 @@ $slide-height: rem(500);
 			justify-content: center;
 		} // li
 	} // .slick-dots
-} // .carousel
+} // .carousel-block
 
 .slide {
 	margin-bottom: 0;

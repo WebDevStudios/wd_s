@@ -14,11 +14,11 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container generic-content', // Container class.
+		'class'     => 'content-block generic-block', // Container class.
 	)
 );
 ?>
-	<div class="<?php echo esc_attr( $animation_class ); ?>">
+	<div class="container <?php echo esc_attr( $animation_class ); ?>">
 
 		<?php if ( $title ) : ?>
 			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>

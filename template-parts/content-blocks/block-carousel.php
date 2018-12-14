@@ -7,7 +7,7 @@
 
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
-	echo '<div class="content-block full-width carousel">';
+	echo '<div class="content-block full-width carousel-block">';
 
 	// Enqueue Slick carousel.
 	wp_enqueue_style( 'slick-carousel' );
