@@ -83,15 +83,14 @@
 	// Site header action cta buttons.
 	//-----------------------------------------
 	.site-header-action {
+		text-align: right;
 
 		// Span the button the full width.
 		.button-link,
 		.cta-button {
 			color: $color-cta-link;
-			display: block;
 			text-align: center;
 			text-decoration: none;
-			width: 100%;
 		} // .button-link, .cta-button
 	} // .site-header-action
 
