@@ -225,6 +225,30 @@
                     "display_format": "F j, Y g:i a",
                     "return_format": "U",
                     "first_day": 1
+                },
+                {
+                    "key": "field_5c13fb0c720d7",
+                    "label": "Block Width",
+                    "name": "block_width",
+                    "type": "radio",
+                    "instructions": "Select whether this block should display at container width or full width.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "full": "Full",
+                        "container": "Container"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "container",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
                 }
             ]
         }
@@ -246,5 +270,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1538759344
+    "modified": 1544813382
 }
