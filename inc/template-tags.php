@@ -496,10 +496,16 @@ function _s_display_numeric_pagination( $args = array() ) {
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
+
+	if ( is_null( paginate_links( $args ) ) ) {
+		return;
+	}
 	?>
+
 	<nav class="pagination-container">
 		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
 	</nav>
+
 	<?php
 }
 
