@@ -2,18 +2,21 @@
 // Call To Action Block
 //--------------------------------------------------------------
 .call-to-action {
+	text-align: center;
 
-	// Set up structure.
-	.grid-x {
-		@include padding($gutter);
+	@include media($tablet-portrait) {
+		text-align: left;
+	}
 
-		text-align: center;
+	.cta-title {
+		width: 100%;
+	} // .cta-title
+
+	.cta-button {
+		@include margin(0 auto);
 
 		@include media($tablet-portrait) {
-			align-items: center;
-			display: flex;
-			justify-content: center;
-			text-align: left;
+			@include margin(0);
 		}
-	} // .grid-x
+	} // .cta-button
 } // .call-to-action

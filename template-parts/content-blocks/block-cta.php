@@ -16,26 +16,24 @@ $animation_class = _s_get_animation_class();
 // Start a <container> with possible block options.
 _s_display_block_options(
 	array(
-		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class' => 'content-block grid-container call-to-action', // Container class.
+		'container' => 'aside', // Any HTML5 container: section, div, etc...
+		'class' => 'content-block call-to-action', // Container class.
 	)
 );
 ?>
-	<div class="<?php echo esc_attr($animation_class); ?>">
-		<div class="container">
+	<div class="container display-flex align-center <?php echo esc_attr($animation_class); ?>">
+		<header>
 			<?php if ($title) : ?>
-				<h3 class="cta-title"><?php echo esc_html($title); ?></h3>
+				<h2 class="cta-title"><?php echo esc_html($title); ?></h2>
 			<?php endif; ?>
 
 			<?php if ($text) : ?>
-				<h4 class="cta-text"><?php echo esc_html($text); ?></h4>
+				<h3 class="h4 cta-text"><?php echo esc_html($text); ?></h3>
 			<?php endif; ?>
-		</div>
+		</header>
 
-		<div class="container">
-			<?php if ($button_url && $button_text) : ?>
-				<a class="button cta-button" href="<?php echo esc_url($button_url); ?>"><?php echo esc_html($button_text); ?></a>
-			<?php endif; ?>
-		</div>
-	</div><!-- .grid-x -->
-</section><!-- .cta-block -->
+		<?php if ($button_url && $button_text) : ?>
+			<a class="button cta-button" href="<?php echo esc_url($button_url); ?>"><?php echo esc_html($button_text); ?></a>
+		<?php endif; ?>
+	</div><!-- .container -->
+</aside><!-- .cta-block -->
