@@ -24,11 +24,11 @@ _s_display_block_options(
 	<div class="container display-flex align-center <?php echo esc_attr($animation_class); ?>">
 		<header>
 			<?php if ($title) : ?>
-				<h2 class="cta-title"><?php echo esc_html($title); ?></h2>
+				<h1 class="cta-title"><?php echo esc_html($title); ?></h1>
 			<?php endif; ?>
 
 			<?php if ($text) : ?>
-				<h3 class="h4 cta-text"><?php echo esc_html($text); ?></h3>
+				<h2 class="cta-text"><?php echo esc_html($text); ?></h2>
 			<?php endif; ?>
 		</header>
 
