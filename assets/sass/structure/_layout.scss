@@ -7,7 +7,7 @@
 // and Grid Layout Wrapper
 //-----------------------------------------
 .site-wrapper,
-.grid-wrapper {
+.display-flex {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center; // Allows center elements without margin: 0 auto;
