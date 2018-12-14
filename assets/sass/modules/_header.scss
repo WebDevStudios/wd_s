@@ -38,7 +38,6 @@
 		// Align next to the logo on mid-size screens.
 		@include media($tablet-portrait, $tablet-landscape) {
 			@include margin(0);
-			@include padding(0 rem(12));
 
 			float: left;
 			width: 50%;
