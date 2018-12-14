@@ -17,6 +17,7 @@ input[type='submit'] {
 	border-width: 0;
 	color: $color-text-button;
 	line-height: 1.5;
+	text-decoration: none;
 	transition: $transition-bg-color;
 
 	// IE 11 helper.
