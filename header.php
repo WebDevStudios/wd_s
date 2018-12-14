@@ -25,7 +25,7 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="site-header container grid-container">
+	<header class="site-header container display-flex">
 
 		<div class="site-branding">
 
