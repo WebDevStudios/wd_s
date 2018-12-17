@@ -80,7 +80,7 @@ i {
 
 blockquote,
 q {
-	@include margin(0 $space);
+	@include margin(0 $space $space);
 
 	quotes: '" "';
 
