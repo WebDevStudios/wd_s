@@ -80,8 +80,10 @@ i {
 
 blockquote,
 q {
+	@extend h3;
 	@include margin(0 $space $space);
 
+	font-style: italic;
 	quotes: '" "';
 
 	&::before,
