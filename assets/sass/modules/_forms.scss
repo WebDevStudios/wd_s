@@ -118,21 +118,6 @@ select {
 } // select
 
 //-----------------------------------------
-// Search Form Input + Button
-//-----------------------------------------
-.search-form {
-
-	// Input.
-	.search-field {
-		width: calc(100% - #{rem(98)});
-	} // .search-field
-
-	.search-submit {
-		width: rem(100);
-	} // .search-submit
-} // .search-form
-
-//-----------------------------------------
 // Radio/Checkbox
 //-----------------------------------------
 input[type='checkbox'],
@@ -178,3 +163,19 @@ input[type='checkbox']:checked::after {
 	// Rotate the L 45 degrees to turn it into a checkmark.
 	transform: rotate(45deg);
 }
+
+//-----------------------------------------
+// Search Form Input + Button
+//-----------------------------------------
+.search-form {
+
+	// Input.
+	.search-field {
+		min-width: 0;
+		width: calc(100% - #{rem(98)});
+	} // .search-field
+
+	.search-submit {
+		width: rem(100);
+	} // .search-submit
+} // .search-form
