@@ -34,8 +34,7 @@
 
 	// Full-screen elements. Ignores sidebar issues.
 	.full-width {
-		max-width: 100%;
-		width: 100%;
+		@include full-width;
 	} // .full-width
 } // .site-main
 
