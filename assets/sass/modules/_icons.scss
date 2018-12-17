@@ -44,7 +44,7 @@
 
 	&::before,
 	&::after {
-		@include size(rem(20) rem(3));
+		@include size(rem(25) rem(3));
 
 		background: $color-background-icon-close;
 		border-radius: $border-radius-thin;

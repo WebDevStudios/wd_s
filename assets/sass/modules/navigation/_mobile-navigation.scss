@@ -141,6 +141,7 @@
 	&,
 	&::before,
 	&::after {
+		@include position(absolute, null null null 0);
 		@include size(rem(35) rem(5));
 
 		background: $color-background-hamburger;
@@ -148,16 +149,22 @@
 		content: '';
 		cursor: pointer;
 		display: block;
-		position: absolute;
+		transform-origin: center center;
 		transition: $transition-hamburger;
 	}
 
+	& {
+		@include position(absolute, 50% null null 0);
+
+		transform: translateY(-50%);
+	}
+
 	&::before {
-		transform: translateY(rem(-10));
+		transform: translateY(-200%);
 	}
 
 	&::after {
-		transform: translateY(rem(10));
+		transform: translateY(200%);
 	}
 
 	.is-visible & {
@@ -233,6 +240,7 @@
 	&-close {
 		@include padding(rem(12) rem(5));
 		@include position(absolute, rem(10) rem(10) null null);
+		@include size(rem(35));
 
 		background-color: transparent;
 		display: none;
@@ -278,6 +286,8 @@
 		display: none;
 
 		.is-visible & {
+			@include margin($gutter * 2 null null);
+
 			display: block;
 		}
 	} // .off-canvas-content
