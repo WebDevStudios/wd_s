@@ -19,38 +19,43 @@ textarea {
 // Global Header Resets.
 @for $i from 1 through 6 {
 	h#{$i} {
+		font-weight: bold;
 		margin-top: 0;
 	} // h#{$i}
 } // end @for
 
 h1,
 .h1 {
-
+	font-size: rem(32); // HTML5 Default.
 } // h1, .h1
 
 h2,
 .h2 {
-
+	font-size: rem(24); // HTML5 Default.
 } // h2, .h2
 
 h3,
 .h3 {
-
+	font-size: rem(18.72); // HTML5 Default.
 } // h3, .h3
 
 h4,
 .h4 {
-
+	font-size: rem(18); // HTML5 Default.
 } // h4, .h4
 
 h5,
 .h5 {
+	@extend h4; // Typically h5 isn't used, default to h4.
 
+	font-style: italic;
 }  // h5, .h5
 
 h6,
 .h6 {
+	@extend h4; // Typically h6 isn't used, default to h4.
 
+	font-style: italic;
 } // h6, .h6
 
 //--------------------------------------------------------------
