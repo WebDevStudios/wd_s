@@ -30,7 +30,8 @@ figure {
 
 ul,
 ol {
-	@include margin(0 0 rem(48) $space);
+	@include margin(0);
+	@include padding(0 0 $space rem(30));
 } // ul, ol
 
 ul {
