@@ -73,31 +73,42 @@
 	//-----------------------------------------
 	// Grid Elements
 	//-----------------------------------------
+
 	// 50%.
 	.half {
-		@include half();
+		@include half;
 	} // .half
 
 	// 33%.
 	.third {
-		@include third();
+		@include third;
 	} // .third
+
+	// 25%
+	.quarter {
+		@include quarter;
+	} // .quarter
 
 	//-----------------------------------------
 	// Sidebar Elements
 	//-----------------------------------------
+
+	// Left @ ~66% with ~50px gutter.
 	.left-two-thirds {
 		@include left-two-thirds;
 	} // .left-two-thirds
 
+	// 33%.
 	.right-third {
 		@include right-third;
 	} // .right-third
 
+	// 33%.
 	.left-third {
 		@include left-third;
 	} // .left-third
 
+	// Right @ ~66% with ~50px gutter.
 	.right-two-thirds {
 		@include right-two-thirds;
 	} // .right-two-thirds
