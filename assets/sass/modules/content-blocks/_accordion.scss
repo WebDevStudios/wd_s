@@ -59,19 +59,19 @@
 		} // &.open
 
 		&-toggle {
-			@include padding(unset);
+			@include padding(0);
 
 			align-items: center;
 			background-color: transparent;
 			border: none;
 			color: inherit;
 			display: flex;
-			justify-content: center;
 			min-width: unset;
-
+			position: relative;
+			width: 100%;
 
 			&-icon {
-				@include position(absolute, 0 0 null null);
+				@include position(absolute, calc(50% - #{rem(12)}) 0 null null);
 				@include size($space);
 
 				background-color: $color-background-button;

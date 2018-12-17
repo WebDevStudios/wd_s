@@ -1,16 +1,17 @@
 //--------------------------------------------------------------
 // Grid-related mixins
+// Flex grow, shrink, and basis required separate for IE11.
 //--------------------------------------------------------------
 
 //-----------------------------------------
 // Half or 50% grid element.
 //-----------------------------------------
 @mixin half {
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
-		flex: 0 0 calc(50% - #{rem(25)});
+		flex-basis: calc(50% - #{rem(25)});
+		flex-grow: 0;
+		flex-shrink: 0;
 		width: calc(50% - #{rem(25)}); // For IE11.
 	}
 
@@ -28,9 +29,6 @@
 //-----------------------------------------
 @mixin third {
 	@include margin(0 0 rem(25) 0);
-
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
 		@include margin(0 rem(50) rem(50) 0);
@@ -54,9 +52,6 @@
 @mixin quarter {
 	@include margin(0 0 rem(25) 0);
 
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
-
 	@include media($tablet-landscape) {
 		@include margin(0 rem(50) rem(50) 0);
 
@@ -77,21 +72,21 @@
 // With Sidebar Right
 //-----------------------------------------
 @mixin left-two-thirds {
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
-		flex: 0 0 calc(66.66% - #{$gutter * 3});
+		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-grow: 0;
+		flex-shrink: 0;
 		width: calc(66.66% - #{$gutter * 3}); // For IE11.
 	}
 }
 
 @mixin right-third {
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
-		flex: 0 0 33%;
+		flex-basis: 33%;
+		flex-grow: 0;
+		flex-shrink: 0;
 		margin-left: auto;
 		margin-right: 0;
 		width: 33%; // For IE11.
@@ -102,22 +97,22 @@
 // With Sidebar Left
 //-----------------------------------------
 @mixin left-third {
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
-		flex: 0 0 33%;
+		flex-basis: 33%;
+		flex-grow: 0;
+		flex-shrink: 0;
 		margin-left: 0;
 		width: 33%; // For IE11.
 	}
 }
 
 @mixin right-two-thirds {
-	flex: 0 0 100%;
-	width: 100%; // For IE11.
 
 	@include media($tablet-landscape) {
-		flex: 0 0 calc(66.66% - #{$gutter * 3});
+		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-grow: 0;
+		flex-shrink: 0;
 		margin-left: auto;
 		width: calc(66.66% - #{$gutter * 3}); // For IE11.
 	}

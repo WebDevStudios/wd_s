@@ -80,25 +80,17 @@
 .swatch-container {
 	@include clearfix;
 
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	position: relative;
 
 	// Each swatch.
 	.swatch {
 		border: 1px solid $color-border-scaffolding-swatch;
-		border-radius: rem(5);
-		flex: 0 1 23.875%;
-		height: rem(125);
+		height: rem(150);
 		margin-bottom: $gutter;
 		margin-right: 1.5%;
+		overflow: hidden;
 		position: relative;
 		text-align: center;
-
-		&:nth-child(4n) {
-			margin-right: 0;
-		}
 
 		// The swatch <header>
 		& header {
@@ -117,8 +109,6 @@
 
 			background-color: $color-background-scaffolding;
 			border-top: 1px solid $color-scaffolding;
-			border-bottom-left-radius: rem(4);
-			border-bottom-right-radius: rem(4);
 			font-size: rem(12);
 			width: 100%;
 		} // footer

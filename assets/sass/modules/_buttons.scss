@@ -8,7 +8,7 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'] {
 	@include margin(0);
-	@include padding(rem(7) rem(20));
+	@include padding(rem(8) rem(20));
 
 	appearance: none;
 	background-color: $color-background-button;
@@ -16,14 +16,29 @@ input[type='submit'] {
 	border-radius: 0;
 	border-width: 0;
 	color: $color-text-button;
+	cursor: pointer;
 	display: inline-block;
-	line-height: 1.5;
+	font-size: inherit;
+	line-height: normal;
+	overflow: visible; // removes padding in IE.
 	text-decoration: none;
 	transition: $transition-bg-color, $transition-opacity, $transition-color;
+	user-select: none;
+	vertical-align: bottom;
+
+	.ie & {
+		@include padding(rem(7) rem(20));
+	} // .ie &
+
+	// removes padding in Firefox.
+	&::-moz-focus-inner {
+		border: none;
+		padding: 0;
+	} // &::-moz-focus-inner
 
 	// Visited.
 	&:visited {
-		color: $color-link-visited;
+		color: $color-text-button;
 
 		&:hover,
 		&:active {
@@ -35,11 +50,6 @@ input[type='submit'] {
 			color: $color-link-focus;
 		} //  &:focus
 	} // &:visited
-
-	// IE 11 helper.
-	.ie & {
-		height: rem(35);
-	} // .ie &
 
 	&:hover,
 	&:active {

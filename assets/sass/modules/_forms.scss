@@ -63,6 +63,7 @@ textarea {
 	@include padding(rem(6) rem(10));
 
 	appearance: none;
+	background-color: $color-white;
 	border: 1px solid $color-border-input;
 	border-radius: 0;
 	color: $color-text-input;
@@ -108,7 +109,12 @@ select {
 	background-image: url('assets/images/svg-icons/caret-down.svg');
 	background-position: calc(100% - #{rem(20)}) 50%;
 	background-repeat: no-repeat;
-	background-size: 12px 16px;
+	background-size: 10px 16px;
+
+	// for IE11;
+	&::-ms-expand {
+		display: none;
+	} // &::-ms-expand
 } // select
 
 //-----------------------------------------

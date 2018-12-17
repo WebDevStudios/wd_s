@@ -60,7 +60,9 @@
 .site-wrapper,
 .display-flex {
 	display: flex;
+	flex: 0 0 100%;
 	flex-flow: row wrap;
+	width: 100%; // For IE11.
 
 	//-----------------------------------------
 	// Justification
