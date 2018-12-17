@@ -12,7 +12,7 @@
 get_header(); ?>
 
 	<div class="display-flex grid-wrapper">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main left-two-thirds">
 
 			<?php
 			while ( have_posts() ) :
@@ -31,6 +31,6 @@ get_header(); ?>
 		</main><!-- #main -->
 
 		<?php get_sidebar(); ?>
-	</div><!-- .sidebar-right container -->
+	</div><!-- .display-flex -->
 
 <?php get_footer(); ?>
