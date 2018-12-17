@@ -13,12 +13,15 @@
 		display: none;
 
 		@include media($phone) {
+			@include margin(null auto);
+
 			display: block;
+			max-width: $container;
 		}
 
 		li {
 			@include margin(0 rem(10) 0 0);
-		}
+		} // li
 	} // ul
 
 	&.toggled ul {
