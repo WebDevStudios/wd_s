@@ -23,11 +23,7 @@
 .accordion {
 
 	.accordion-item {
-		@include margin(null null rem(15));
-
-		&:last-of-type {
-			margin-bottom: 0;
-		} // &:last-of-type
+		@include margin($space null null null);
 
 		&-header {
 			cursor: pointer;
