@@ -59,6 +59,11 @@ h6,
 
 p {
 	@include margin(0 0 $space);
+
+	// Remove margin from last paragraph in element.
+	&:last-child {
+		@include margin(0);
+	} // &:last-child
 } // p
 
 b,
