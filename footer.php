@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer class="site-footer">
+	<footer class="site-footer background-gallery">
 
 		<div class="site-info">
 			<?php _s_display_copyright_text(); ?>

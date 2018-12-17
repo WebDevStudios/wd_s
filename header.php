@@ -25,7 +25,8 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="site-header container display-flex">
+	<header class="site-header background-gallery">
+		<div class="display-flex container">
 
 		<div class="site-branding">
 
@@ -52,6 +53,7 @@
 				<span class="hamburger"></span>
 			</button>
 		<?php endif; ?>
+		</div><!-- .container -->
 
 		<?php
 		wp_nav_menu( array(
