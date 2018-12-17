@@ -82,4 +82,39 @@
 	.third {
 		@include third();
 	} // .third
+
+	//-----------------------------------------
+	// Sidebar Elements
+	//-----------------------------------------
+	.left-two-thirds {
+		@include left-two-thirds;
+	} // .left-two-thirds
+
+	.right-third {
+		@include right-third;
+	} // .right-third
+
+	.left-third {
+		@include left-third;
+	} // .left-third
+
+	.right-two-thirds {
+		@include right-two-thirds;
+	} // .right-two-thirds
 } // .site-wrapper
+
+//-----------------------------------------
+// Create Content/Sidebar layout
+//-----------------------------------------
+.has-sidebar {
+
+	.grid-wrapper {
+		@include margin($gutter * 2 auto );
+
+		max-width: $container;
+	} // .grid-wrapper
+
+	.site-main {
+		@include margin(0 null);
+	} // .site-main
+} // .has-sidebar
