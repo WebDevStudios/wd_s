@@ -58,14 +58,36 @@ input[type='time'],
 input[type='datetime'],
 input[type='datetime-local'],
 input[type='color'],
+select,
 textarea {
-	@include padding(rem(6));
+	@include padding(rem(6) rem(10));
 
 	appearance: none;
 	border: 1px solid $color-border-input;
 	border-radius: 0;
 	color: $color-text-input;
 	line-height: 1.5;
+	max-width: 100%;
+	min-width: rem(250);
+
+	&::-webkit-input-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&:-moz-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&::-moz-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-text-input;
+	}
 
 	&:focus {
 		color: $color-focus-text-input;
@@ -78,6 +100,16 @@ textarea {
 	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
 	vertical-align: top; // Improves readability and alignment in all browsers
 } // textarea
+
+//-----------------------------------------
+// Select Form Default
+//-----------------------------------------
+select {
+	background-image: url('assets/images/svg-icons/caret-down.svg');
+	background-position: calc(100% - #{rem(20)}) 50%;
+	background-repeat: no-repeat;
+	background-size: 12px 16px;
+} // select
 
 //-----------------------------------------
 // Search Form Input + Button
@@ -93,3 +125,50 @@ textarea {
 		width: rem(100);
 	} // .search-submit
 } // .search-form
+
+//-----------------------------------------
+// Radio/Checkbox
+//-----------------------------------------
+input[type='checkbox'],
+input[type='radio'] {
+	@include size(rem(20));
+
+	appearance: none;
+	border: 1px solid $color-silver-chalice;
+	border-radius: rem(3);
+	margin: 0 rem(3) 0 0;
+	outline: 0;
+	padding: rem(9);
+	position: relative;
+	vertical-align: sub;
+}
+
+input[type='radio'] {
+	border-radius: rem(75);
+}
+
+input[type='radio']:checked::after {
+	@include position(relative, rem(-6) rem(6) null null);
+	@include size(rem(12));
+
+	background-color: $color-black;
+	border-radius: 50%;
+	content: '';
+	display: block;
+}
+
+input[type='checkbox']:checked::after {
+	@include position(relative, rem(-8) rem(4) null null);
+	@include size(rem(4) rem(9)); // Make it a small rectangle so the border will create an L-shape.
+
+	// Add a white border on the bottom and left, creating that 'L'.
+	border: solid $color-black;
+	border-width: 0 4px 4px 0;
+
+	// Add another block-level blank space.
+	content: '';
+	display: block;
+
+	// Rotate the L 45 degrees to turn it into a checkmark.
+	transform: rotate(45deg);
+}
