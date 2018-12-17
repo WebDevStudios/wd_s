@@ -37,7 +37,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 
 		<?php if ( $args['title'] ) : ?>
-		<header class="scaffolding-document-header">
+		<header class="scaffolding-document-header display-flex flex-start space-between">
 			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .scaffolding-document-header -->

@@ -19,13 +19,11 @@
 	// The section <header>
 	&-header {
 		border-bottom: 1px solid $color-border-scaffolding;
-		display: flex;
-		justify-content: space-between;
 		margin-bottom: $gutter;
 		padding-bottom: $gutter;
 
 		// The title.
-		h2 {
+		h3 {
 			@include margin-padding-reset;
 		} // h2
 
