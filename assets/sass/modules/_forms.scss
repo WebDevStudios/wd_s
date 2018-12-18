@@ -125,7 +125,7 @@ input[type='radio'] {
 	@include size(rem(20));
 
 	appearance: none;
-	border: 1px solid $color-silver-chalice;
+	border: 1px solid $color-border-input;
 	border-radius: rem(3);
 	margin: 0 rem(3) 0 0;
 	outline: 0;
@@ -142,7 +142,7 @@ input[type='radio']:checked::after {
 	@include position(relative, rem(-6) rem(6) null null);
 	@include size(rem(12));
 
-	background-color: $color-black;
+	background-color: $color-focus-text-input;
 	border-radius: 50%;
 	content: '';
 	display: block;
@@ -153,7 +153,7 @@ input[type='checkbox']:checked::after {
 	@include size(rem(4) rem(9)); // Make it a small rectangle so the border will create an L-shape.
 
 	// Add a white border on the bottom and left, creating that 'L'.
-	border: solid $color-black;
+	border: solid $color-focus-text-input;
 	border-width: 0 4px 4px 0;
 
 	// Add another block-level blank space.
