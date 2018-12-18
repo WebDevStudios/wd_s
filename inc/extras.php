@@ -167,17 +167,19 @@ function _s_copyright_year( $atts ) {
 }
 add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
 
-/**
- * Move Yoast to bottom, below all elements
- *
- * @return string 'low' set value.
- * @author jomurgel <jo@webdevstudios.com>
- * @since  NEXT
- */
-function _s_move_yoast_to_bottom() {
-	return 'low';
+if ( defined( 'WPSEO_VERSION' ) ) {
+	/**
+	 * Move Yoast to bottom, below all elements
+	 *
+	 * @return string 'low' set value.
+	 * @author jomurgel <jo@webdevstudios.com>
+	 * @since  NEXT
+	 */
+	function _s_move_yoast_to_bottom() {
+		return 'low';
+	}
+	add_filter( 'wpseo_metabox_prio', '_s_move_yoast_to_bottom' );
 }
-add_filter( 'wpseo_metabox_prio', '_s_move_yoast_to_bottom' );
 
 /**
  * Filters WYSIWYG content with the_content filter.
