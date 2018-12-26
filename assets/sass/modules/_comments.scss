@@ -42,7 +42,6 @@
 .comment-form-url {
 
 	label {
-		float: left;
 		font-size: rem(16);
 		text-transform: uppercase;
 		width: 100%;
@@ -54,8 +53,6 @@
 // The comment form.
 //-----------------------------------------
 .comment-form {
-	@include clearfix;
-
 	width: 100%;
 
 	// Any input (except submit button)
@@ -106,10 +103,19 @@
 
 	@include margin(0);
 
+	li > .comment-body {
+		@include margin(rem(2) null);
+	} // li
+
 	// Even comments get nice gray background.
 	.even:not(.bypostauthor) > .comment-body {
 		background-color: $color-background-even;
 	} // .even > .comment-body
+
+	// Even comments get nice gray background.
+	.odd:not(.bypostauthor) > .comment-body {
+		background-color: $color-background-odd;
+	} // .odd > .comment-body
 
 	// Each comment body.
 	.comment-body {
@@ -118,15 +124,24 @@
 
 	// Comment content.
 	.comment-content {
-		@include margin(rem(32) 0 rem(28));
+		@include margin($space 0);
 
 		max-width: rem(936);
 	} // .comment-content
 
 	// Comment meta.
 	.comment-meta {
-		@include clearfix;
 		@include margin(0 0 rem(14));
+
+		.comment-author {
+			align-items: center;
+			display: flex;
+
+			.says {
+				display: inline-block;
+				margin-left: rem(5);
+			} // .says
+		} // .comment-author
 	} // .comment-meta
 
 	// The comment author name.
@@ -136,7 +151,7 @@
 
 	// The date/time.
 	.comment-metadata {
-		@include margin(rem(5) null null);
+		@include margin(rem(25) null null);
 
 		line-height: 1;
 
@@ -152,21 +167,16 @@
 
 	// Comments avatar.
 	.avatar {
-		@include margin(rem(-6) rem(26) 0 0);
+		@include margin(0 $space 0 0);
 
 		border-radius: 50%;
-		float: left;
-
-		@include media($phone) {
-			margin-top: rem(-12);
-		}
 	} // .avatar
 
 	// By post author.
-	.bypostauthor {
+	.bypostauthor > .comment-body {
 		background-color: $color-background-author;
 		display: block;
-	} // .bypostauthor
+	} // .bypostauthor > .comment-body
 
 	// The reply link/button thingy.
 	.comment-reply-link {
@@ -191,17 +201,11 @@
 
 	// Comment children.
 	.children {
-		@include margin(rem(40) 0);
-
 		list-style: none;
 		padding-left: rem(20);
 
 		@include media($phone) {
-			padding-left: rem(35);
-		}
-
-		@include media($tablet-portrait) {
-			padding-left: rem(60);
+			padding-left: $space * 2;
 		}
 
 		.depth-4,
