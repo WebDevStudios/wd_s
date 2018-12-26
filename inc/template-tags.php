@@ -503,7 +503,7 @@ function _s_display_numeric_pagination( $args = array() ) {
 	}
 	?>
 
-	<nav class="pagination-container">
+	<nav class="pagination-container container">
 		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
 	</nav>
 
