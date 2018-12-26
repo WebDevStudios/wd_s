@@ -2,6 +2,8 @@
 // Mixins
 //--------------------------------------------------------------
 
+@import 'directional-property';
+@import 'unpack-shorthand';
 @import 'color-classes';
 @import 'font-legibility';
 @import 'font-smoothing';
@@ -12,6 +14,10 @@
 @import 'margin-padding-reset';
 @import 'media';
 @import 'sprites';
+@import 'padding';
 @import 'vertical-align';
 @import 'word-break';
 @import 'z-index';
+@import 'margin';
+@import 'size';
+@import 'position';
