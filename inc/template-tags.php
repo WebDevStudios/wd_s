@@ -473,7 +473,9 @@ function _s_display_header_button() {
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">
 				<?php esc_html_e( 'Search', '_s' ); ?>
 			</button>
-			<?php get_search_form(); ?>
+			<div class="form-container">
+				<?php get_search_form(); ?>
+			</div><!-- .form-container -->
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
 	<?php
