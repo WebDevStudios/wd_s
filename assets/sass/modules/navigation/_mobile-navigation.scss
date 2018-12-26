@@ -26,11 +26,11 @@
 	} // li
 
 	a {
-		color: $color-white;
+		color: $color-mobile-menu-link;
 		font-size: rem(14);
 
 		&:focus {
-			outline: rem(2) solid $color-white;
+			outline: 2px solid $color-mobile-menu-link;
 		} // &:focus
 	} // a
 
@@ -60,7 +60,7 @@
 	z-index: 9999;
 
 	&:focus {
-		outline: 2px solid $color-white;
+		outline: 2px solid $color-mobile-menu-link;
 	} // &:focus
 } // .parent-indicator
 
@@ -142,7 +142,7 @@
 	&::after {
 		@include size(rem(35) rem(5));
 
-		background: $color-cod-gray;
+		background: $color-background-hamburger;
 		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
@@ -183,7 +183,7 @@
 		@include size(rem(220) 100%);
 
 		-webkit-overflow-scrolling: touch;
-		background-color: $color-cod-gray;
+		background-color: $color-background-off-canvas;
 		overflow-y: auto;
 		transform: translateX(rem(-220));
 		transition: $transition-transform;
@@ -224,7 +224,7 @@
 		&:focus,
 		&:hover {
 			background-color: transparent;
-			outline: 2px solid $color-white;
+			outline: 2px solid $color-mobile-menu-link;
 		} // &:focus, &:hover
 	} // .off-canvas-button
 
@@ -240,7 +240,7 @@
 		&:focus,
 		&:hover {
 			background: transparent;
-			outline: 2px solid $color-white;
+			outline: 2px solid $color-mobile-menu-link;
 		} // &:focus, &:hover
 
 		.admin-bar & {
@@ -260,7 +260,7 @@
 	&-screen {
 		@include position(fixed, 0);
 
-		background: $color-black;
+		background: $color-background-off-canvas-screen;
 		opacity: 0;
 		transition: $transition-opacity;
 		visibility: hidden;

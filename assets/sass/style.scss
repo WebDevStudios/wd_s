@@ -13,22 +13,56 @@ Tags: custom
 This theme, like WordPress, is licensed under the GPL.
 
 Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
-
 */
 
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
 $output-bourbon-deprecation-warnings: false;
+
 @import 'bourbon';
-@import 'utilities/functions/index';
-@import 'utilities/variables/index';
 @import 'neat';
-@import 'utilities/mixins/index';
-@import 'utilities/helpers/index';
+
+//-----------------------------------------
+// Extras
+//-----------------------------------------
 @import 'vendor/sanitize/sanitize.scss';
 @import 'vendor/animate/animate';
 
+//-----------------------------------------
+// Utilities
+//-----------------------------------------
+
+// Helper functions.
+@import 'utilities/functions/index';
+
+// Global variables.
+@import 'utilities/variables/index';
+
+// Mixins.
+@import 'utilities/mixins/index';
+
+// Quick Helpers.
+@import 'utilities/helpers/index';
+
+//-----------------------------------------
+// Theme Styles
+//-----------------------------------------
+
+// Global elements.
 @import 'base/index';
+
+// Layout.
 @import 'structure/index';
+
+// Modules.
 @import 'modules/index';
+
+// Plugin overrides.
 @import 'plugins/index';
+
+// Views/Pages.
 @import 'views/index';
+
+// WP Widgets.
 @import 'widgets/index';

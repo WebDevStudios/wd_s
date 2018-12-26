@@ -131,8 +131,8 @@ window.wdsCarousel = {};
 
 		// Get the first slide content area and animation attribute.
 		var firstSlide = app.$c.theCarousel.find('[data-slick-index=0]'),
-		    firstSlideContent = firstSlide.find('.slide-content'),
-		    firstAnimation = firstSlideContent.attr('data-animation');
+			firstSlideContent = firstSlide.find('.slide-content'),
+			firstAnimation = firstSlideContent.attr('data-animation');
 
 		// Add the animation class to the first slide.
 		firstSlideContent.addClass(firstAnimation);
@@ -141,13 +141,13 @@ window.wdsCarousel = {};
 	// Animate the slide content.
 	app.doAnimation = function () {
 		var slides = $('.slide'),
-		    activeSlide = $('.slick-current'),
-		    activeContent = activeSlide.find('.slide-content'),
+			activeSlide = $('.slick-current'),
+			activeContent = activeSlide.find('.slide-content'),
 
 
 		// This is a string like so: 'animated someCssClass'.
 		animationClass = activeContent.attr('data-animation'),
-		    splitAnimation = animationClass.split(' '),
+			splitAnimation = animationClass.split(' '),
 
 
 		// This is the 'animated' class.
@@ -358,9 +358,9 @@ window.wdsMobileMenu = {};
 	app.toggleSubmenu = function (e) {
 
 		var el = $(this),
-		    // The menu element which was clicked on.
+			// The menu element which was clicked on.
 		subMenu = el.children('ul.sub-menu'),
-		    // The nearest submenu.
+			// The nearest submenu.
 		$target = $(e.target); // the element that's actually being clicked (child of the li that triggered the click event).
 
 		// Figure out if we're clicking the button or its arrow child,
@@ -425,11 +425,11 @@ window.wdsModal = {};
 (function (window, $, app) {
 
 	var $modalToggle = void 0,
-	    $focusableChildren = void 0,
-	    $player = void 0,
-	    $tag = document.createElement('script'),
-	    $firstScriptTag = document.getElementsByTagName('script')[0],
-	    YT = void 0;
+		$focusableChildren = void 0,
+		$player = void 0,
+		$tag = document.createElement('script'),
+		$firstScriptTag = document.getElementsByTagName('script')[0],
+		YT = void 0;
 
 	// Constructor.
 	app.init = function () {
@@ -561,7 +561,7 @@ window.wdsModal = {};
 		// We only need to do stuff when the modal is open and tab is pressed.
 		if (9 === event.which && 0 < $('.modal-open').length) {
 			var $focused = $(':focus'),
-			    focusIndex = $focusableChildren.index($focused);
+				focusIndex = $focusableChildren.index($focused);
 
 			if (0 === focusIndex && event.shiftKey) {
 
@@ -580,7 +580,7 @@ window.wdsModal = {};
 	// Hook into YouTube <iframe>.
 	app.onYouTubeIframeAPIReady = function () {
 		var $modal = $('div.modal'),
-		    $iframeid = $modal.find('iframe').attr('id');
+			$iframeid = $modal.find('iframe').attr('id');
 
 		$player = new YT.Player($iframeid, {
 			events: {
@@ -753,13 +753,13 @@ window.wdsoffCanvas = {};
  */
 (function () {
 	var isWebkit = -1 < navigator.userAgent.toLowerCase().indexOf('webkit'),
-	    isOpera = -1 < navigator.userAgent.toLowerCase().indexOf('opera'),
-	    isIe = -1 < navigator.userAgent.toLowerCase().indexOf('msie');
+		isOpera = -1 < navigator.userAgent.toLowerCase().indexOf('opera'),
+		isIe = -1 < navigator.userAgent.toLowerCase().indexOf('msie');
 
 	if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventListener) {
 		window.addEventListener('hashchange', function () {
 			var id = location.hash.substring(1),
-			    element;
+				element;
 
 			if (!/^[A-z0-9_-]+$/.test(id)) {
 				return;
