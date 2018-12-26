@@ -25,8 +25,8 @@ $output-bourbon-deprecation-warnings: false;
 //-----------------------------------------
 // Extras
 //-----------------------------------------
-@import 'assets/bower_components/normalize-css/normalize.css';
-@import 'assets/bower_components/animate.css/animate.css';
+@import 'vendor/sanitize/sanitize.scss';
+@import 'vendor/animate/animate';
 
 //-----------------------------------------
 // Utilities
