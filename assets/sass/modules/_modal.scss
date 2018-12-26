@@ -46,7 +46,7 @@
 				@include margin(0);
 				@include padding(0);
 				@include position(absolute, rem(-15) rem(-15) null null);
-				@include size(rem(30) rem(30));
+				@include size(rem(30));
 
 				background: $color-background-modal-close;
 				border: 3px solid $color-modal-close;

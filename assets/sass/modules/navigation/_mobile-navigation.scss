@@ -142,7 +142,7 @@
 	&::before,
 	&::after {
 		@include position(absolute, null null null 0);
-		@include size(rem(35) rem(5));
+		@include size(rem(35), rem(5));
 
 		background: $color-background-hamburger;
 		border-radius: $border-radius-thin;
@@ -188,7 +188,7 @@
 	// The container.
 	&-container {
 		@include position(fixed, 0 auto 0 0);
-		@include size(rem(220) 100%);
+		@include size(rem(220), 100%);
 
 		-webkit-overflow-scrolling: touch;
 		background-color: $color-background-off-canvas;

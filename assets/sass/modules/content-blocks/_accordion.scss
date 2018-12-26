@@ -11,7 +11,7 @@
 		.accordion-item {
 
 			.item-toggle {
-				@include size($space $space);
+				@include size($space);
 			} // .item-toggle
 		} // .accordion-item
 	} // .accordion

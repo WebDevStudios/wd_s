@@ -13,7 +13,7 @@ object {
 
 hr {
 	@include margin(0 0 $space);
-	@include size(auto 1px);
+	@include size(auto, 1px);
 
 	background-color: $color-background-hr;
 	border: 0;
@@ -58,7 +58,7 @@ dd {
 //-----------------------------------------
 table {
 	@include margin(0 0 $space);
-	@include size(100% auto);
+	@include size(100%, auto);
 } // table
 
 th {

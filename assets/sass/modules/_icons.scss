@@ -16,7 +16,7 @@
 
 			// Set styles on those social icons!
 			.icon-#{$social-color} {
-				@include size(rem(30) rem(30));
+				@include size(rem(30));
 
 				fill: $color;
 
@@ -44,7 +44,7 @@
 
 	&::before,
 	&::after {
-		@include size(rem(25) rem(3));
+		@include size(rem(25), rem(3));
 
 		background: $color-background-icon-close;
 		border-radius: $border-radius-thin;
@@ -76,7 +76,7 @@
 
 	&::before,
 	&::after {
-		@include size(rem(10) rem(2));
+		@include size(rem(10), rem(2));
 
 		background: $color-background-down-arrow;
 		border-radius: $border-radius-thin;

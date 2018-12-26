@@ -66,7 +66,7 @@
 
 		// Sub-menu links
 		a {
-			@include size(100% auto);
+			@include size(100%, auto);
 
 			min-width: rem(200);
 		} // a
