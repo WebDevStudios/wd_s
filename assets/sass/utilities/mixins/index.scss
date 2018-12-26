@@ -2,8 +2,9 @@
 // Mixins
 //--------------------------------------------------------------
 
-@import 'directional-property';
-@import 'unpack-shorthand';
+@import 'utilities/index';
+
+@import 'clearfix';
 @import 'color-classes';
 @import 'font-legibility';
 @import 'font-smoothing';

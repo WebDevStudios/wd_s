@@ -20,11 +20,11 @@
 
 @function _unpack-shorthand($shorthand) {
 	@if length($shorthand) == 1 {
-		@return nth($shorthand, 1px nth($shorthand, 1px nth($shorthand, 1px nth($shorthand, 1);
+		@return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
 	} @else if length($shorthand) == 2 {
-		@return nth($shorthand, 1px nth($shorthand, 2px nth($shorthand, 1px nth($shorthand, 2);
-	} @else if length($shorthand) == 3 {
-		@return nth($shorthand, 1px nth($shorthand, 2px nth($shorthand, 3px nth($shorthand, 2);
+		@return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 1) nth($shorthand, 2);
+	}	@else if length($shorthand) == 3 {
+		@return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 3) nth($shorthand, 2);
 	} @else {
 		@return $shorthand;
 	}
