@@ -3,7 +3,6 @@
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
 const babel = require( 'gulp-babel' );
-const bourbon = require( 'bourbon' ).includePaths;
 const browserSync = require( 'browser-sync' );
 const cheerio = require( 'gulp-cheerio' );
 const concat = require( 'gulp-concat' );
@@ -88,7 +87,6 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 
 			// Compile Sass using LibSass.
 			.pipe( sass( {
-				'includePaths': [].concat( bourbon ),
 				'errLogToConsole': true,
 				'outputStyle': 'expanded' // Options: nested, expanded, compact, compressed
 			} ) )
