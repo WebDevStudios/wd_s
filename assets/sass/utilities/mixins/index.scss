@@ -2,15 +2,16 @@
 // Mixins
 //--------------------------------------------------------------
 
-@import 'utilities/index';
-
 @import 'clearfix';
 @import 'color-classes';
+@import 'directional-property';
 @import 'grid';
 @import 'list-reset';
-@import 'media';
-@import 'sprites';
-@import 'padding';
 @import 'margin';
-@import 'size';
+@import 'media';
+@import 'padding';
 @import 'position';
+@import 'pxtoem';
+@import 'pxtorem';
+@import 'size';
+@import 'sprites';

@@ -2,22 +2,19 @@
 // Strip Units
 //--------------------------------------------------------------
 
-////
-/// @group functions
-/// @author Jo Murgel
-////
-
-/// Removes the unit from a number.
+/// Strips the unit from a number.
 ///
-/// @link https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
+/// @param {Number (With Unit)} $value
 ///
-/// @param {int} $number - The number to be processed.
+/// @example scss - Usage
+///   $dimension: strip-units(10em);
 ///
+/// @example css - CSS Output
+///   $dimension: 10;
+///
+/// @return {Number (Unitless)}
 
-@function strip-unit($number) {
-	@if type-of($number) == 'number' and not unitless($number) {
-		@return $number / ($number * 0 + 1);
-	}
+@function strip-units($value) {
 
-	@return $number;
+	@return ($value / ($value * 0 + 1));
 }
