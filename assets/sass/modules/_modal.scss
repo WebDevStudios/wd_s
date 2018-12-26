@@ -43,7 +43,8 @@
 
 			// Close "X" button.
 			.close {
-				@include margin-padding-reset;
+				@include margin(0);
+				@include padding(0);
 				@include position(absolute, rem(-15) rem(-15) null null);
 				@include size(rem(30) rem(30));
 

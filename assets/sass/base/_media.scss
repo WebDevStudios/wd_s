@@ -8,7 +8,8 @@
 .comment-content {
 	// WP smiley
 	.wp-smiley {
-		@include margin-padding-reset;
+		@include margin(0);
+		@include padding(0);
 
 		border: none;
 	} // img.wp-smiley

@@ -24,7 +24,8 @@
 
 		// The title.
 		h3 {
-			@include margin-padding-reset;
+			@include margin(0);
+			@include padding(0);
 		} // h2
 
 		// The text.

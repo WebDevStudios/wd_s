@@ -26,7 +26,8 @@
 
 @mixin list-reset {
 	@include clearfix;
-	@include margin-padding-reset;
+	@include margin(0);
+	@include padding(0);
 
 	list-style: none;
 }
