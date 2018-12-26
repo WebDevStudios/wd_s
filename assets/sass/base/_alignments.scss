@@ -20,5 +20,7 @@
 
 // Center Align
 .aligncenter {
-	@include margin-auto;
+	@include margin(null auto);
+
+	display: block;
 } // .aligncenter
