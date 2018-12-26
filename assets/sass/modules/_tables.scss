@@ -73,7 +73,6 @@ table {
 		// before
 		&::before {
 			content: '';
-			float: left;
 			font-weight: bold;
 			text-transform: uppercase;
 		} // &::before

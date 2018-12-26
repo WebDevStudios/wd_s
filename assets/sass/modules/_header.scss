@@ -23,7 +23,6 @@
 		// Don't let the logo get out of control.
 		img {
 			@include media($tablet-portrait, $tablet-landscape) {
-				float: left;
 				width: 50%;
 			}
 		} // img
@@ -39,7 +38,6 @@
 		@include media($tablet-portrait, $tablet-landscape) {
 			@include margin(0);
 
-			float: left;
 			width: 50%;
 		}
 	} // .site-title

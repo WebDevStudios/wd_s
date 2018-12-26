@@ -26,6 +26,8 @@
 
 		li {
 			@include margin(0 rem(10) 0 0);
+
+			display: inline-block;
 		} // li
 	} // ul
 
@@ -45,7 +47,6 @@
 		@include position(absolute, $space null null -999em);
 
 		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
-		float: left;
 		z-index: 99999;
 
 		// Sub-sub menu
@@ -80,7 +81,6 @@
 
 	// Menu items
 	li {
-		float: left;
 		position: relative;
 	} // li
 } // &.dropdown
