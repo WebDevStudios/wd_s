@@ -78,8 +78,6 @@
 // Color swatch defaults
 //-----------------------------------------
 .swatch-container {
-	@include clearfix;
-
 	position: relative;
 
 	// Each swatch.
