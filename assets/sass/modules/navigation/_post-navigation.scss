@@ -29,3 +29,20 @@
 		text-align: right;
 	} // &.nav-next
 } // .comment-navigation, .posts-navigation, .post-navigation
+
+//-----------------------------------------
+// Numbered Pagination
+//-----------------------------------------
+.pagination-container {
+
+	.page-numbers {
+
+		&.current {
+			font-weight: 700;
+		} // &.current
+
+		&.next,
+		&.previous {
+		} // &.next, &.previous
+	} // .page-numbers
+} // .pagination-container
