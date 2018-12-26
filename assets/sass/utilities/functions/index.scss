@@ -2,6 +2,15 @@
 // Utility Functions.
 //--------------------------------------------------------------
 
+//-----------------------------------------
+// Validators
+//-----------------------------------------
+@import 'validators/index';
+
+//-----------------------------------------
+// Functions
+//-----------------------------------------
+@import 'compact-shorthand';
 @import 'line-height';
 @import 'reverse-list';
 @import 'strip-units';
