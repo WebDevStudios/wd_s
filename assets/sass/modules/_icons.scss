@@ -10,6 +10,10 @@
 	.social-icon {
 		display: inline-block;
 
+		a {
+			display: block;
+		} // a
+
 		// Loop through all social icons
 		@each $social-color, $color in $social-colors {
 
