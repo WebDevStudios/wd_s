@@ -172,5 +172,6 @@ big {
 .comment-content,
 .widget-title,
 .widget {
-	@include word-break;
+	word-break: keep-all;
+	word-wrap: break-word;
 } // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget
