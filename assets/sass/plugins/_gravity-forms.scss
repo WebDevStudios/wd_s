@@ -166,9 +166,18 @@ $gf-input-padding: rem(6);
 	// Default state of icon for select
 	.chosen-single div b {
 		@include position(absolute, 40% rem(11) null null);
-		@include triangle(12px, $color-silver, down); // adjust size and color
 
 		background: none; // hide the default chosen background
+
+		// adjust size and color for active icon
+		&::before {
+			border-color: $color-silver transparent transparent;
+			border-style: solid;
+			border-width: 12px (12px / 2) 0;
+			content: '';
+			height: 0;
+			width: 0;
+		} // &::before
 	} // .chosen-single div b
 
 	// Selections drop-down
@@ -193,9 +202,18 @@ $gf-input-padding: rem(6);
 		} // .chosen-single
 
 		.chosen-single div b {
-			@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-
 			border: none; // hiding the previous triangle (border)
+
+			// adjust size and color for active icon
+			&::before {
+				border-color: transparent transparent $color-silver;
+				border-width: 0 1rem 1rem;
+				border-style: solid;
+				border-width: 0 (12px / 2) 12px;
+				content: '';
+				height: 0;
+				width: 0;
+			} // &::before
 		} // .chosen-single div b
 	} // &.chosen-container-single.chosen-with-drop
 } // .gform_wrapper .gfield .chosen-container-single
