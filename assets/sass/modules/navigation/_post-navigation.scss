@@ -5,6 +5,11 @@
 .posts-navigation,
 .post-navigation {
 
+	.nav-links {
+		@extend .display-flex;
+		@include margin($space null null);
+	} // .nav-links
+
 	.site-main & {
 		@include margin(0 0 $space);
 
@@ -13,11 +18,14 @@
 
 	.nav-previous {
 		@include size(50%, auto);
+
+		margin-right: auto;
 	} // &.nav-previous
 
 	.nav-next {
 		@include size(50%, auto);
 
+		margin-left: auto;
 		text-align: right;
 	} // &.nav-next
 } // .comment-navigation, .posts-navigation, .post-navigation
