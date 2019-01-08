@@ -3,11 +3,31 @@
  *
  * @package wd_s
  */
+const webpack = require( 'webpack' );
+const isDev = (process.env.NODE_ENV !== 'production');
 
-module.exports = {
-	mode: 'development',
+const devEntry = {
+	main: [
+		'./assets/scripts/src/index.js',
+		'webpack/hot/dev-server',
+		'webpack-hot-middleware/client'
+	]
+};
+
+const prodEntry = {
+	main: './assets/scripts/src/index.js'
+};
+
+const config = {
+	mode: isDev ? 'development' : 'production',
+	entry: isDev ? devEntry : prodEntry,
 	output: {
-		filename: 'project.js',
+		filename: isDev ? 'project.js' : 'project.min.js',
+	},
+	devServer: {
+
+		hot: true,
+
 	},
 	module: {
 		rules: [
@@ -22,5 +42,13 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [],
+	devtool: isDev ? 'cheap-module-eval-source-map' : 'source-map'
 };
+
+if ( isDev ) {
+	config.plugins.push( new webpack.HotModuleReplacementPlugin() );
+}
+
+module.exports = config;
