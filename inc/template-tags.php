@@ -312,9 +312,7 @@ function _s_display_copyright_text() {
 		return false;
 	}
 
-	?>
-	<span class="copyright-text"><?php echo wp_kses_post( do_shortcode( $copyright_text ) ); ?></span>
-	<?php
+	echo _s_get_the_content( do_shortcode( $copyright_text ) );
 }
 
 /**
