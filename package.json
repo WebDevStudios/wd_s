@@ -48,7 +48,11 @@
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
-    "test": "echo \"No test specified\""
+    "start": "gulp watch",
+    "js": "gulp js",
+    "styles": "gulp styles",
+    "build": "NODE_ENV=production gulp",
+    "build-js": "NODE_ENV=production gulp js"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
   "keywords": [
