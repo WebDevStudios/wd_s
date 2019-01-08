@@ -4,9 +4,10 @@
  * @package wd_s
  */
 const webpack = require( 'webpack' );
-const isDev = (process.env.NODE_ENV !== 'production');
+const isProduction = (process.env.NODE_ENV === 'production');
+const isWatch = ( process.env.NODE_ENV === 'watch' );
 
-const devEntry = {
+const watchEntry = {
 	main: [
 		'./assets/scripts/src/index.js',
 		'webpack/hot/dev-server',
@@ -19,10 +20,10 @@ const prodEntry = {
 };
 
 const config = {
-	mode: isDev ? 'development' : 'production',
-	entry: isDev ? devEntry : prodEntry,
+	mode: isProduction ? 'production' : 'development',
+	entry: isWatch ? watchEntry : prodEntry,
 	output: {
-		filename: isDev ? 'project.js' : 'project.min.js',
+		filename: isProduction ? 'project.min.js' : 'project.js',
 	},
 	devServer: {
 
@@ -44,10 +45,10 @@ const config = {
 		]
 	},
 	plugins: [],
-	devtool: isDev ? 'cheap-module-eval-source-map' : 'source-map'
+	devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map'
 };
 
-if ( isDev ) {
+if ( isWatch ) {
 	config.plugins.push( new webpack.HotModuleReplacementPlugin() );
 }
 

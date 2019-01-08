@@ -48,7 +48,7 @@
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
-    "start": "gulp watch",
+    "start": "NODE_ENV=watch gulp watch",
     "js": "gulp js",
     "styles": "gulp styles",
     "build": "NODE_ENV=production gulp",
