@@ -38,7 +38,13 @@
     "gulp.spritesmith": "^6.9.0",
     "sassdoc": "^2.5.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.3",
+    "webpack-stream": "^5.2.1"
+  },
   "scripts": {
     "test": "echo \"No test specified\""
   },
