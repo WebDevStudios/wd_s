@@ -2,15 +2,11 @@
 
 // Require our dependencies
 const autoprefixer = require( 'autoprefixer' );
-const babel = require( 'gulp-babel' );
 const bourbon = require( 'bourbon' ).includePaths;
 const browserSync = require( 'browser-sync' );
 const cheerio = require( 'gulp-cheerio' );
-const concat = require( 'gulp-concat' );
 const cssnano = require( 'gulp-cssnano' );
 const del = require( 'del' );
-const eslint = require( 'gulp-eslint' );
-const fs = require( 'fs' );
 const gulp = require( 'gulp' );
 const gutil = require( 'gulp-util' );
 const imagemin = require( 'gulp-imagemin' );
@@ -30,8 +26,11 @@ const sourcemaps = require( 'gulp-sourcemaps' );
 const spritesmith = require( 'gulp.spritesmith' );
 const svgmin = require( 'gulp-svgmin' );
 const svgstore = require( 'gulp-svgstore' );
-const uglify = require( 'gulp-uglify' );
 const wpPot = require( 'gulp-wp-pot' );
+
+const webpack = require( 'webpack' );
+const webpackStream = require( 'webpack-stream' );
+const webpackConfig = require( './webpack.config' );
 
 // Set assets paths.
 const paths = {
@@ -40,8 +39,6 @@ const paths = {
 	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 	'php': [ './*.php', './**/*.php' ],
 	'sass': 'assets/sass/**/*.scss',
-	'concat_scripts': 'assets/scripts/concat/*.js',
-	'scripts': [ 'assets/scripts/*.js', '!assets/scripts/*.min.js' ],
 	'sprites': 'assets/images/sprites/*.png'
 };
 
@@ -215,72 +212,6 @@ gulp.task( 'spritesmith', () =>
 );
 
 /**
- * Concatenate and transform JavaScript.
- *
- * https://www.npmjs.com/package/gulp-concat
- * https://github.com/babel/gulp-babel
- * https://www.npmjs.com/package/gulp-sourcemaps
- */
-gulp.task( 'concat', () =>
-	gulp.src( paths.concat_scripts )
-
-		// Deal with errors.
-		.pipe( plumber(
-			{'errorHandler': handleErrors}
-		) )
-
-		// Start a sourcemap.
-		.pipe( sourcemaps.init() )
-
-		// Convert ES6+ to ES2015.
-		.pipe( babel( {
-			'presets': [
-				[ 'env', {
-					'targets': {
-						'browsers': [ 'last 2 versions' ]
-					}
-				} ]
-			]
-		} ) )
-
-		// Concatenate partials into a single script.
-		.pipe( concat( 'project.js' ) )
-
-		// Append the sourcemap to project.js.
-		.pipe( sourcemaps.write() )
-
-		.pipe( replace( '    ', '\t' ) )
-
-		// Save project.js
-		.pipe( gulp.dest( 'assets/scripts' ) )
-		.pipe( browserSync.stream() )
-);
-
-/**
-  * Minify compiled JavaScript.
-  *
-  * https://www.npmjs.com/package/gulp-uglify
-  */
-gulp.task( 'uglify', [ 'concat' ], () =>
-	gulp.src( paths.scripts )
-		.pipe( plumber( {'errorHandler': handleErrors} ) )
-		.pipe( rename( {'suffix': '.min'} ) )
-		.pipe( babel( {
-			'presets': [
-				[ 'env', {
-					'targets': {
-						'browsers': [ 'last 2 versions' ]
-					}
-				} ]
-			]
-		} ) )
-		.pipe( uglify( {
-			'mangle': false
-		} ) )
-		.pipe( gulp.dest( 'assets/scripts' ) )
-);
-
-/**
  * Delete the theme's .pot before we create a new one.
  */
 gulp.task( 'clean:pot', () =>
@@ -321,26 +252,6 @@ gulp.task( 'sass:lint', () =>
 );
 
 /**
- * JavaScript linting.
- *
- * https://www.npmjs.com/package/gulp-eslint
- */
-gulp.task( 'js:lint', () =>
-	gulp.src( [
-		'assets/scripts/concat/*.js',
-		'assets/scripts/*.js',
-		'!assets/scripts/project.js',
-		'!assets/scripts/*.min.js',
-		'!Gruntfile.js',
-		'!Gulpfile.js',
-		'!node_modules/**'
-	] )
-		.pipe( eslint() )
-		.pipe( eslint.format() )
-		.pipe( eslint.failAfterError() )
-);
-
-/**
  * Sass docs.
  *
  * http://sassdoc.com/getting-started/
@@ -353,6 +264,15 @@ gulp.task( 'sassdoc', function() {
 
 	return gulp.src( 'assets/sass/**/*.scss' )
 		.pipe( sassdoc( options ) );
+} );
+
+/**
+ * Let Webpack transpile the JavaScript.
+ */
+gulp.task( 'scripts', function() {
+	gulp.src('./assets/scripts/src/index.js')
+		.pipe(webpackStream(webpackConfig), webpack)
+		.pipe(gulp.dest('./assets/scripts'));
 } );
 
 /**
@@ -375,8 +295,6 @@ gulp.task( 'watch', function() {
 	// Run tasks when files change.
 	gulp.watch( paths.icons, [ 'icons' ] );
 	gulp.watch( paths.sass, [ 'styles' ] );
-	gulp.watch( paths.scripts, [ 'scripts' ] );
-	gulp.watch( paths.concat_scripts, [ 'scripts' ] );
 	gulp.watch( paths.sprites, [ 'sprites' ] );
 	gulp.watch( paths.php, [ 'markup' ] );
 } );
@@ -387,9 +305,9 @@ gulp.task( 'watch', function() {
 gulp.task( 'markup', browserSync.reload );
 gulp.task( 'i18n', [ 'wp-pot' ] );
 gulp.task( 'icons', [ 'svg' ] );
-gulp.task( 'scripts', [ 'uglify' ] );
 gulp.task( 'styles', [ 'cssnano' ] );
 gulp.task( 'sprites', [ 'spritesmith' ] );
-gulp.task( 'lint', [ 'sass:lint', 'js:lint' ] );
+gulp.task( 'lint', [ 'sass:lint' ] );
 gulp.task( 'docs', [ 'sassdoc' ] );
-gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin' ] );
+gulp.task( 'js', [ 'scripts' ] );
+gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'imagemin' ] );
