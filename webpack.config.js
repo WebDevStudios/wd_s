@@ -16,7 +16,7 @@ const watchEntry = {
 };
 
 const prodEntry = {
-	main: './assets/scripts/src/index.js'
+	main: [ 'babel-polyfill', './assets/scripts/src/index.js' ]
 };
 
 const config = {
