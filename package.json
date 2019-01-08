@@ -43,6 +43,8 @@
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
     "webpack": "^4.28.3",
+    "webpack-dev-middleware": "^3.5.0",
+    "webpack-hot-middleware": "^2.24.3",
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
