@@ -29,8 +29,11 @@ const svgstore = require( 'gulp-svgstore' );
 const wpPot = require( 'gulp-wp-pot' );
 
 const webpack = require( 'webpack' );
+const webpackDevMiddleware = require( 'webpack-dev-middleware' );
+const webpackHotMiddleware = require( 'webpack-hot-middleware' );
 const webpackStream = require( 'webpack-stream' );
 const webpackConfig = require( './webpack.config' );
+const bundle = webpack( webpackConfig );
 
 // Set assets paths.
 const paths = {
@@ -38,6 +41,7 @@ const paths = {
 	'icons': 'assets/images/svg-icons/*.svg',
 	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 	'php': [ './*.php', './**/*.php' ],
+	'js': 'assets/scripts/src/**/*.js',
 	'sass': 'assets/sass/**/*.scss',
 	'sprites': 'assets/images/sprites/*.png'
 };
@@ -286,10 +290,14 @@ gulp.task( 'watch', function() {
 	browserSync( {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
-		'proxy': 'https://testing.test', // Use https://_s.test:3000 to use BrowserSync.
+		'proxy': 'http://hacker.local', // Use https://_s.test:3000 to use BrowserSync.
 		'watchOptions': {
 			'debounceDelay': 500 // Wait 500ms second before injecting.
-		}
+		},
+		middleware: [
+			webpackDevMiddleware( bundle, {} ),
+			webpackHotMiddleware( bundle, {} )
+		]
 	} );
 
 	// Run tasks when files change.
@@ -297,6 +305,7 @@ gulp.task( 'watch', function() {
 	gulp.watch( paths.sass, [ 'styles' ] );
 	gulp.watch( paths.sprites, [ 'sprites' ] );
 	gulp.watch( paths.php, [ 'markup' ] );
+	gulp.watch( paths.js, [ 'scripts' ] );
 } );
 
 /**
