@@ -16,7 +16,7 @@ const watchEntry = {
 };
 
 const prodEntry = {
-	main: [ 'babel-polyfill', './assets/scripts/src/index.js' ]
+	main: [ '@babel/polyfill', './assets/scripts/src/index.js' ]
 };
 
 const config = {
@@ -38,7 +38,16 @@ const config = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: [ '@babel/preset-env' ]
+						presets: [
+							[
+								"@babel/preset-env",
+								{
+									"targets": {
+										"browsers": ["last 2 versions", "ie 11"]
+									}
+								}
+							]
+						]
 					}
 				}
 			}
