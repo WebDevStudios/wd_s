@@ -291,11 +291,10 @@ gulp.task( 'watch', function() {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
 		'proxy': 'http://hacker.local', // Use https://_s.test:3000 to use BrowserSync.
-		'watchOptions': {
-			'debounceDelay': 500 // Wait 500ms second before injecting.
-		},
 		middleware: [
-			webpackDevMiddleware( bundle, {} ),
+			webpackDevMiddleware( bundle, {
+				publicPath: 'http://localhost:3000/wp-content/themes/wd_s/assets/scripts/'
+			} ),
 			webpackHotMiddleware( bundle, {} )
 		]
 	} );

@@ -9,9 +9,9 @@ const isWatch = ( process.env.NODE_ENV === 'watch' );
 
 const watchEntry = {
 	main: [
-		'./assets/scripts/src/index.js',
 		'webpack/hot/dev-server',
-		'webpack-hot-middleware/client'
+		'webpack-hot-middleware/client',
+		'./assets/scripts/src/index.js'
 	]
 };
 
@@ -24,6 +24,7 @@ const config = {
 	entry: isWatch ? watchEntry : prodEntry,
 	output: {
 		filename: isProduction ? 'project.min.js' : 'project.js',
+		publicPath: 'http://localhost:3000/wp-content/themes/wd_s/assets/scripts/'
 	},
 	module: {
 		rules: [
