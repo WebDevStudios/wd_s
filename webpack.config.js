@@ -25,11 +25,6 @@ const config = {
 	output: {
 		filename: isProduction ? 'project.min.js' : 'project.js',
 	},
-	devServer: {
-
-		hot: true,
-
-	},
 	module: {
 		rules: [
 			{
