@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main container">
+	<main id="main" class="site-main container" role="main">
 
 		<?php do_action( '_s_scaffolding_content' ); ?>
 
