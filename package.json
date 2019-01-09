@@ -42,17 +42,20 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
+    "eslint-loader": "^2.1.1",
     "webpack": "^4.28.3",
     "webpack-dev-middleware": "^3.5.0",
     "webpack-hot-middleware": "^2.24.3",
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
-    "start": "NODE_ENV=watch gulp watch",
-    "js": "gulp js",
-    "styles": "gulp styles",
     "build": "NODE_ENV=production gulp",
-    "build-js": "NODE_ENV=production gulp js"
+    "build-js": "NODE_ENV=production gulp js",
+    "eslint": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --quiet",
+    "eslint:fix": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --fix --quiet",
+    "js": "gulp js",
+    "start": "NODE_ENV=watch gulp watch",
+    "styles": "gulp styles"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
   "keywords": [

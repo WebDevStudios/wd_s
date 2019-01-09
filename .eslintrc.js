@@ -6,7 +6,8 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'jquery': true,
-		'es6': true
+		'es6': true,
+		'node': true
 	},
 
 	/**
@@ -34,6 +35,10 @@ module.exports = {
 	 * @@since 1.1
 	 */
 	'extends': 'wordpress',
+
+	"parserOptions": {
+		"sourceType": "module"
+	},
 
 	/**
 	 * WDS & WordPress Coding Standards for JavaScript.
