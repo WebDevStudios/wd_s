@@ -10,7 +10,7 @@ const isWatch = ( process.env.NODE_ENV === 'watch' );
 const watchEntry = {
 	main: [
 		'webpack/hot/dev-server',
-		'webpack-hot-middleware/client',
+		'webpack-hot-middleware/client?reload=true',
 		'./assets/scripts/src/index.js'
 	]
 };
@@ -50,7 +50,11 @@ const config = {
 		]
 	},
 	plugins: [],
-	devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map'
+	devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+	externals: {
+		$: 'jQuery',
+		jQuery: 'jQuery'
+	}
 };
 
 if ( isWatch ) {
