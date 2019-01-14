@@ -29,3 +29,8 @@ gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
 		} ) )
 		.pipe( gulp.dest( 'languages/_s.pot' ) )
 );
+
+/**
+  * Individual tasks.
+ */
+gulp.task( 'i18n', [ 'wp-pot' ] );

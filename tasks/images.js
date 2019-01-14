@@ -48,3 +48,5 @@ gulp.task( 'spritesmith', () =>
 		.pipe( gulp.dest( 'assets/images/' ) )
 		.pipe( browserSync.stream() )
 );
+
+gulp.task( 'sprites', [ 'spritesmith' ] );

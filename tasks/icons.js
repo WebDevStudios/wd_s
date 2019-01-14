@@ -54,3 +54,8 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
 		.pipe( gulp.dest( 'assets/images/' ) )
 		.pipe( browserSync.stream() )
 );
+
+/**
+ * Individual tasks.
+ */
+gulp.task( 'icons', [ 'svg' ] );
