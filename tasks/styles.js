@@ -113,3 +113,10 @@ gulp.task( 'sassdoc', function() {
 	return gulp.src( 'assets/sass/**/*.scss' )
 		.pipe( sassdoc( options ) );
 } );
+
+/**
+ * Individual tasks.
+ */
+gulp.task( 'styles', [ 'cssnano' ] );
+gulp.task( 'lint', [ 'sass:lint' ] );
+gulp.task( 'docs', [ 'sassdoc' ] );
