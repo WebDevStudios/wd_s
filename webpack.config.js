@@ -4,10 +4,9 @@
  * @package wd_s
  */
 const webpack = require( 'webpack' );
-const isProduction = (process.env.NODE_ENV === 'production');
-const isWatch = ( process.env.NODE_ENV === 'watch' );
+const isProduction = 'production' === process.env.NODE_ENV;
 
-const watchEntry = {
+const devEntry = {
 	main: [
 		'webpack/hot/dev-server',
 		'webpack-hot-middleware/client?reload=true',
@@ -21,7 +20,7 @@ const prodEntry = {
 
 const config = {
 	mode: isProduction ? 'production' : 'development',
-	entry: isWatch ? watchEntry : prodEntry,
+	entry: isProduction ? prodEntry : devEntry,
 	output: {
 		filename: isProduction ? 'project.min.js' : 'project.js',
 		publicPath: 'http://localhost:3000/wp-content/themes/wd_s/assets/scripts/'
@@ -57,7 +56,7 @@ const config = {
 	}
 };
 
-if ( isWatch ) {
+if ( ! isProduction ) {
 	config.plugins.push( new webpack.HotModuleReplacementPlugin() );
 }
 
