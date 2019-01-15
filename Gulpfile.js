@@ -22,6 +22,14 @@ require( './tasks/watch' );
 require( './tasks/scripts' );
 
 /**
- * Default Gulp task.
+ * Individual Gulp tasks.
  */
+gulp.task( 'icons', [ 'svg' ] );
+gulp.task( 'sprites', [ 'spritesmith' ] );
+gulp.task( 'js', [ 'scripts' ] );
+gulp.task( 'styles', [ 'cssnano' ] );
+gulp.task( 'lint', [ 'sass:lint' ] );
+gulp.task( 'docs', [ 'sassdoc' ] );
+gulp.task( 'i18n', [ 'wp-pot' ] );
+gulp.task( 'watch', [ 'watch-files' ] );
 gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'imagemin' ] );
