@@ -13,7 +13,7 @@ const paths = require( './config' ).paths;
  *
  * https://www.npmjs.com/package/browser-sync
  */
-gulp.task( 'watch', function() {
+gulp.task( 'watch-files', function() {
 
 	// Kick off BrowserSync.
 	browserSync( {

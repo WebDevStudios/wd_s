@@ -12,8 +12,3 @@ gulp.task( 'scripts', function() {
 		.pipe(webpackStream(webpackConfig), webpack)
 		.pipe(gulp.dest('./assets/scripts'));
 } );
-
-/**
- * Individual tasks.
- */
-gulp.task( 'js', [ 'scripts' ] );
