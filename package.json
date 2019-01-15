@@ -41,11 +41,11 @@
   },
   "scripts": {
     "build": "NODE_ENV=production gulp",
-    "build-js": "NODE_ENV=production gulp js",
+    "build:js": "NODE_ENV=production gulp js",
     "eslint": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --quiet",
     "eslint:fix": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --fix --quiet",
     "js": "gulp js",
-    "start": "NODE_ENV=watch gulp watch",
+    "watch": "NODE_ENV=watch gulp watch",
     "styles": "gulp styles"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
