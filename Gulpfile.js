@@ -32,4 +32,4 @@ gulp.task( 'lint', [ 'sass:lint' ] );
 gulp.task( 'docs', [ 'sassdoc' ] );
 gulp.task( 'i18n', [ 'wp-pot' ] );
 gulp.task( 'watch', [ 'watch-files' ] );
-gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'imagemin' ] );
+gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'js', 'imagemin' ] );
