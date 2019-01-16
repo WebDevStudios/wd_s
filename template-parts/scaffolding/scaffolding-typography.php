@@ -295,12 +295,20 @@
 		'output'      => '<p>“Code is poetry.” —<cite>Automattic</cite></p>',
 	) );
 
-	// Stirkeout Tag.
+	// Strikeout Tag.
 	_s_display_scaffolding_section( array(
 		'title'       => 'Strikeout Text',
 		'description' => 'Display strikeout text.',
-		'usage'       => '<s>Automattic</s>',
+		'usage'       => '<s>strikeout text</s>',
 		'output'      => '<p>This tag will let you <s>strikeout text</s>.</p>',
+	) );
+
+	// Delete Tag.
+	_s_display_scaffolding_section( array(
+		'title'       => 'Delete Text',
+		'description' => 'Display the edited content of a text string.',
+		'usage'       => '<del>_s</del>',
+		'output'      => '<p>We use <del>_s</del> wd_s to build themes.</p>',
 	) );
 
 	// Preformatted Tag.
