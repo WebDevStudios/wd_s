@@ -9,7 +9,7 @@ function handleErrors() {
 	notify.onError( {
 		'title': 'Task Failed [<%= error.message %>',
 		'message': 'See console.',
-		'sound': 'Purr' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+		'sound': 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
 	} ).apply( this, args );
 
 	gutil.beep(); // Beep 'sosumi' again.
