@@ -4,7 +4,7 @@ const plumber = require( 'gulp-plumber' );
 const wpPot = require( 'gulp-wp-pot' );
 const sort = require( 'gulp-sort' );
 
-const paths = require( './config' ).paths;
+const config = require( './config' );
 const handleErrors = require( './handle-errors' );
 
 /**
@@ -20,7 +20,7 @@ gulp.task( 'clean:pot', () =>
  * https://www.npmjs.com/package/gulp-wp-pot
  */
 gulp.task( 'wp-pot', [ 'clean:pot' ], () =>
-	gulp.src( paths.php )
+	gulp.src( config.paths.php )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( sort() )
 		.pipe( wpPot( {

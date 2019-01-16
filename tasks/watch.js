@@ -6,7 +6,7 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware' );
 
 const webpackConfig = require( '../webpack.config' );
 const bundle = webpack( webpackConfig );
-const paths = require( './config' ).paths;
+const themeConfig = require('./config' );
 
 /**
  * Process tasks and reload browsers on file changes.
@@ -19,10 +19,10 @@ gulp.task( 'watch-files', function() {
 	browserSync( {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
-		'proxy': 'http://hacker.local', // Use https://_s.test:3000 to use BrowserSync.
+		'proxy': themeConfig.localURL, // Use https://_s.test:3000 to use BrowserSync.
 		middleware: [
 			webpackDevMiddleware( bundle, {
-				publicPath: 'http://localhost:3000/wp-content/themes/wd_s/assets/scripts/'
+				publicPath: 'https://localhost:3000/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
 			} ),
 			webpackHotMiddleware( bundle, {} )
 		]

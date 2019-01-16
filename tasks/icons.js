@@ -7,7 +7,7 @@ const rename = require( 'gulp-rename' );
 const svgmin = require( 'gulp-svgmin' );
 const svgstore = require( 'gulp-svgstore' );
 
-const paths = require( './config' ).paths;
+const config = require( './config' );
 const handleErrors = require( './handle-errors' );
 
 /**
@@ -25,7 +25,7 @@ gulp.task( 'clean:icons', () =>
  * https://www.npmjs.com/package/gulp-cheerio
  */
 gulp.task( 'svg', [ 'clean:icons' ], () =>
-	gulp.src( paths.icons )
+	gulp.src( config.paths.icons )
 
 	// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
