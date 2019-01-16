@@ -6,7 +6,7 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware' );
 
 const webpackConfig = require( '../webpack.config' );
 const bundle = webpack( webpackConfig );
-const themeConfig = require('./config' );
+const themeConfig = require('./theme-config' );
 
 /**
  * Process tasks and reload browsers on file changes.

@@ -14,7 +14,7 @@ const sassdoc = require( 'sassdoc' );
 const sassLint = require( 'gulp-sass-lint' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 
-const config = require( './config' );
+const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
 
 /**
@@ -33,7 +33,7 @@ gulp.task( 'clean:styles', () =>
  * https://www.npmjs.com/package/css-mqpacker
  */
 gulp.task( 'postcss', [ 'clean:styles' ], () =>
-	gulp.src( 'assets/sass/*.scss', config.paths.css )
+	gulp.src( 'assets/sass/*.scss', themeConfig.paths.css )
 
 	// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )

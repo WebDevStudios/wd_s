@@ -1,5 +1,5 @@
 /**
- * File paths.
+ * Theme Configuration.
  */
 module.exports = {
 	localURL: 'https://testing.test',

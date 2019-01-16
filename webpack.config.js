@@ -5,7 +5,7 @@
  */
 const webpack = require( 'webpack' );
 
-const themeConfig = require( './tasks/config' );
+const themeConfig = require( './tasks/theme-config' );
 const isProduction = 'production' === process.env.NODE_ENV;
 const host = isProduction ? themeConfig.localURL : 'https://localhost:3000';
 

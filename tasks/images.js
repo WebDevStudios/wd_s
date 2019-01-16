@@ -5,7 +5,7 @@ const imagemin = require( 'gulp-imagemin' );
 const plumber = require( 'gulp-plumber' );
 const spritesmith = require( 'gulp.spritesmith' );
 
-const config = require( './config' );
+const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
 
 /**
@@ -14,7 +14,7 @@ const handleErrors = require( './handle-errors' );
  * https://www.npmjs.com/package/gulp-imagemin
  */
 gulp.task( 'imagemin', () =>
-	gulp.src( config.paths.images )
+	gulp.src( themeConfig.paths.images )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( imagemin( {
 			'optimizationLevel': 5,
@@ -37,7 +37,7 @@ gulp.task( 'clean:sprites', () => {
  * https://www.npmjs.com/package/gulp.spritesmith
  */
 gulp.task( 'spritesmith', () =>
-	gulp.src( config.paths.sprites )
+	gulp.src( themeConfig.paths.sprites )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( spritesmith( {
 			'imgName': 'sprites.png',
