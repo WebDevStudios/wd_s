@@ -63,24 +63,12 @@ function _s_scripts() {
 	 */
 	$suffix = ( true === $debug ) ? '' : '.min';
 
-	/**
-	 * Global variable for IE.
-	 */
-	global $is_IE;
-
 	// Register styles & scripts.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
-	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
-	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
-
-	// Enqueue scripts.
-	if ( $is_IE ) {
-		wp_enqueue_script( '_s-babel-polyfill', get_template_directory_uri() . '/assets/scripts/babel-polyfill.min.js', array(), $version, true );
-	}
 
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery' ), $version, true );
 
