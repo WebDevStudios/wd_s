@@ -3,8 +3,6 @@
  *
  * @package wd_s
  */
-const webpack = require( 'webpack' );
-
 const themeConfig = require( './tasks/theme-config' );
 const isProduction = 'production' === process.env.NODE_ENV;
 const host = isProduction ? themeConfig.localURL : themeConfig.watchURL;
@@ -47,9 +45,5 @@ const config = {
 		jquery: 'jQuery'
 	}
 };
-
-if ( ! isProduction ) {
-	config.plugins.push( new webpack.HotModuleReplacementPlugin() );
-}
 
 module.exports = config;
