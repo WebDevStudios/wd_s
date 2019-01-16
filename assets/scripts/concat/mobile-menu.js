@@ -83,7 +83,7 @@ window.wdsMobileMenu = {};
 	// Add the down arrow to submenu parents.
 	app.addDownArrow = function() {
 
-		app.$c.subMenuParentItem.prepend( '<button type="button" aria-expanded="false" class="parent-indicator" aria-label="Open submenu"><span class="down-arrow"></span></button>' );
+		app.$c.subMenuParentItem.find( 'a:first' ).after( '<button type="button" aria-expanded="false" class="parent-indicator" aria-label="Open submenu"><span class="down-arrow"></span></button>' );
 	};
 
 	// Deal with the submenu.
