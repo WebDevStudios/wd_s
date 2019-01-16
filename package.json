@@ -36,8 +36,6 @@
     "sassdoc": "^2.5.0",
     "slick-carousel": "^1.8.1",
     "webpack": "^4.28.3",
-    "webpack-dev-middleware": "^3.5.0",
-    "webpack-hot-middleware": "^2.24.3",
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
