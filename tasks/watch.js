@@ -1,11 +1,6 @@
 const browserSync = require( 'browser-sync' );
 const gulp = require( 'gulp' );
-const webpack = require( 'webpack' );
-const webpackDevMiddleware = require( 'webpack-dev-middleware' );
-const webpackHotMiddleware = require( 'webpack-hot-middleware' );
 
-const webpackConfig = require( '../webpack.config' );
-const bundle = webpack( webpackConfig );
 const themeConfig = require( './theme-config' );
 
 /**
@@ -19,13 +14,7 @@ gulp.task( 'watch-files', function() {
 	browserSync( {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
-		'proxy': themeConfig.localURL, // Use https://localhost.test:3000 to use BrowserSync.
-		middleware: [
-			webpackDevMiddleware( bundle, {
-				publicPath: themeConfig.watchURL + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
-			} ),
-			webpackHotMiddleware( bundle, {} )
-		]
+		'proxy': themeConfig.localURL // Use https://localhost.test:3000 to use BrowserSync.
 	} );
 
 	// Run tasks when files change.
@@ -34,4 +23,5 @@ gulp.task( 'watch-files', function() {
 	gulp.watch( themeConfig.paths.sprites, [ 'sprites' ] );
 	gulp.watch( themeConfig.paths.php, [ 'markup' ] );
 	gulp.watch( themeConfig.paths.js, [ 'scripts' ] );
+	gulp.watch( themeConfig.paths.js ).on( 'change', browserSync.reload );
 } );
