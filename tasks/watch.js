@@ -19,7 +19,7 @@ gulp.task( 'watch-files', function() {
 	browserSync( {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
-		'proxy': themeConfig.localURL, // Use https://_s.test:3000 to use BrowserSync.
+		'proxy': themeConfig.localURL, // Use https://localhost.test:3000 to use BrowserSync.
 		middleware: [
 			webpackDevMiddleware( bundle, {
 				publicPath: themeConfig.watchURL + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
