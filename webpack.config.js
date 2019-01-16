@@ -52,7 +52,8 @@ const config = {
 	devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
 	externals: {
 		$: 'jQuery',
-		jQuery: 'jQuery'
+		jQuery: 'jQuery',
+		jquery: 'jQuery'
 	}
 };
 
