@@ -8,14 +8,14 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'] {
 	appearance: none;
-	background-color: $color-button-background;
+	background-color: $color-background-button;
 	border: none;
 	border-radius: 0;
 	border-width: 0;
-	color: $color-button-text;
+	color: $color-text-button;
 	line-height: 1.5;
 	margin: 0;
-	padding: $padding-input;
+	padding: rem(10) rem(20);
 	transition: $transition-bg-color;
 
 	// IE 11 helper.
@@ -26,6 +26,6 @@ input[type='submit'] {
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $color-button-background-hover;
+		background-color: $color-background-button-hover;
 	} // &:active, &:focus
 } // button, input[type="button"], input[type="reset"], input[type="submit"]

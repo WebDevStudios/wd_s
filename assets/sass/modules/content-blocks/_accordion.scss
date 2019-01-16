@@ -37,7 +37,7 @@
 		&-content {
 			max-height: 0;
 			opacity: 0;
-			transition: $transition-visibility, $transition-max-height, $transition-opacity;
+			transition: $trasition-accordion;
 			transition-delay: 0.4s, 0s, 0.2s;
 			visibility: hidden;
 
@@ -71,7 +71,7 @@
 				@include position(absolute, 0 0 null null);
 				@include size(rem(24));
 
-				background-color: $color-button-background;
+				background-color: $color-background-button;
 				border-radius: 100%;
 				color: $color-white;
 				transition: $transition-transform;
