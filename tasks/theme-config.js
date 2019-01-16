@@ -2,7 +2,7 @@
  * Theme Configuration.
  */
 module.exports = {
-	localURL: 'https://hacker.local',
+	localURL: 'https://testing.test',
 	paths: {
 		'css': [ './*.css', '!*.min.css' ],
 		'icons': 'assets/images/svg-icons/*.svg',
