@@ -1,3 +1,5 @@
+import 'slick-carousel';
+
 /**
  * File carousel.js
  *
