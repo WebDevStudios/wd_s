@@ -32,7 +32,6 @@ const svgmin = require( 'gulp-svgmin' );
 const svgstore = require( 'gulp-svgstore' );
 const uglify = require( 'gulp-uglify' );
 const wpPot = require( 'gulp-wp-pot' );
-const replace = require( 'gulp-replace' );
 
 // Set assets paths.
 const paths = {
