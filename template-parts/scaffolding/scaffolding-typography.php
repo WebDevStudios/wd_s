@@ -299,8 +299,8 @@
 	_s_display_scaffolding_section( array(
 		'title'       => 'Strikeout Text',
 		'description' => 'Display strikeout text.',
-		'usage'       => '<strike>Automattic</strike>',
-		'output'      => '<p>This tag will let you <strike>strikeout text</strike></p>.',
+		'usage'       => '<s>Automattic</s>',
+		'output'      => '<p>This tag will let you <s>strikeout text</s>.</p>',
 	) );
 
 	// Preformatted Tag.
