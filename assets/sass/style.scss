@@ -28,6 +28,7 @@ $output-bourbon-deprecation-warnings: false;
 //-----------------------------------------
 @import 'assets/bower_components/normalize-css/normalize.css';
 @import 'assets/bower_components/animate.css/animate.css';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
 
 //-----------------------------------------
 // Utilities
