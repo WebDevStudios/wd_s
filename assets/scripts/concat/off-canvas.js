@@ -58,8 +58,6 @@ window.wdsoffCanvas = {};
 
 		app.$c.offCanvasOpen.attr( 'aria-expanded', true );
 		app.$c.offCanvasContainer.attr( 'aria-hidden', false );
-
-		app.$c.offCanvasContainer.find( 'button' ).first().focus();
 	};
 
 	// Close that drawer!
