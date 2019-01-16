@@ -1,4 +1,4 @@
-# Copyright (C) 2018 _s
+# Copyright (C) 2019 _s
 # This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
