@@ -22,7 +22,7 @@ gulp.task( 'watch-files', function() {
 		'proxy': themeConfig.localURL, // Use https://_s.test:3000 to use BrowserSync.
 		middleware: [
 			webpackDevMiddleware( bundle, {
-				publicPath: 'https://localhost:3000/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
+				publicPath: themeConfig.watchURL + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
 			} ),
 			webpackHotMiddleware( bundle, {} )
 		]

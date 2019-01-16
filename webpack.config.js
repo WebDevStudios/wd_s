@@ -7,7 +7,7 @@ const webpack = require( 'webpack' );
 
 const themeConfig = require( './tasks/theme-config' );
 const isProduction = 'production' === process.env.NODE_ENV;
-const host = isProduction ? themeConfig.localURL : 'https://localhost:3000';
+const host = isProduction ? themeConfig.localURL : themeConfig.watchURL;
 
 const devEntry = {
 	main: [
