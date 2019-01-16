@@ -254,6 +254,7 @@ gulp.task( 'concat', () =>
 		// Save project.js
 		.pipe( gulp.dest( 'assets/scripts' ) )
 		.pipe( browserSync.stream() )
+		.pipe( replace( '    ', '\t' ) )
 );
 
 /**
