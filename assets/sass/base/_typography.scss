@@ -84,17 +84,30 @@ q {
 	}  // &::before, &::after
 } // blockquote, q
 
+blockquote {
+	border-left: 4px solid $color-cod-gray;
+	font-style: italic;
+	margin-left: 0;
+	padding-left: rem(20);
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
 address {
 	margin: 0 0 rem(24) 0;
 } // address
 
 pre {
 	background-color: $color-background-pre;
+	border: 1px solid $color-border-pre;
 	color: $color-text-pre;
 	font-family: $font-pre;
 	font-size: rem(13);
 	line-height: $line-height-pre;
-	margin: 0 0 rem(24) rem(-24);
+	margin: 0 0 rem(24);
 	overflow: auto;
 	padding: rem(24);
 	white-space: pre;
@@ -110,11 +123,26 @@ var {
 	font-size: rem(15);
 } // code, kbd, tt, var
 
-abbr,
-acronym {
+kbd {
+	background-color: $color-whitesmoke;
+	border: 1px solid $color-silver;
+	border-radius: rem(4);
+	box-shadow: 0 rem(1) 0 rgba($color-black, 0.2), 0 0 0 rem(2) $color-white inset;
+	display: inline-block;
+	margin: 0 rem(3);
+	padding: rem(2) rem(8);
+}
+
+code {
+	background-color: $color-gallery;
+	color: $color-tundora;
+	padding: rem(2) rem(4);
+}
+
+abbr {
 	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
-} // abbr, acronym
+} // abbr
 
 mark,
 ins {
