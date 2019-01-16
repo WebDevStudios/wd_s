@@ -64,7 +64,7 @@
 				'container'       => false,
 				'container_class' => '',
 				'container_id'    => '',
-				'items_wrap'      => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			) );
 			?>
 		</nav>
