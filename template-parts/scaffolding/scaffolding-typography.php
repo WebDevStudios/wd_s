@@ -81,15 +81,15 @@
 		'title'       => 'Table',
 		'description' => 'Display a table',
 		'usage'       => '
-			<table cellspacing="0" cellpadding="0">
+			<table title="A simple data table" aria-label="A simple data table">
 				<thead>
 					<tr>
-						<th>Table Header 1</th>
-						<th>Table Header 2</th>
-						<th>Table Header 3</th>
-						<th>Table Header 4</th>
-						<th>Table Header 5</th>
-						<th>Table Header 6</th>
+						<th scope="col">Table Header 1</th>
+						<th scope="col">Table Header 2</th>
+						<th scope="col">Table Header 3</th>
+						<th scope="col">Table Header 4</th>
+						<th scope="col">Table Header 5</th>
+						<th scope="col">Table Header 6</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -121,15 +121,15 @@
 			</table>
 		',
 		'output'      => '
-			<table cellspacing="0" cellpadding="0">
+			<table title="A simple data table" aria-label="A simple data table">
 				<thead>
 					<tr>
-						<th>Table Header 1</th>
-						<th>Table Header 2</th>
-						<th>Table Header 3</th>
-						<th>Table Header 4</th>
-						<th>Table Header 5</th>
-						<th>Table Header 6</th>
+						<th scope="col">Table Header 1</th>
+						<th scope="col">Table Header 2</th>
+						<th scope="col">Table Header 3</th>
+						<th scope="col">Table Header 4</th>
+						<th scope="col">Table Header 5</th>
+						<th scope="col">Table Header 6</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -285,14 +285,6 @@
 		'description' => 'Display an abbreviation.',
 		'usage'       => '<abbr title="Seriously">srsly</abbr>',
 		'output'      => '<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for “seriously”.</p>',
-	) );
-
-	// Acronym Tag.
-	_s_display_scaffolding_section( array(
-		'title'       => 'Acronym Tag',
-		'description' => 'Display an acronym.',
-		'usage'       => '<acronym title="For The Win">ftw</acronym>',
-		'output'      => '<p>The acronym <acronym title="For The Win">ftw</acronym> stands for “for the win”.</p>',
 	) );
 
 	// Cite Tag.

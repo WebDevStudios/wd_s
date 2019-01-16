@@ -139,11 +139,10 @@ code {
 	padding: rem(2) rem(4);
 }
 
-abbr,
-acronym {
+abbr {
 	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
-} // abbr, acronym
+} // abbr
 
 mark,
 ins {
