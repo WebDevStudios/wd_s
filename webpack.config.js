@@ -4,7 +4,10 @@
  * @package wd_s
  */
 const webpack = require( 'webpack' );
+
+const themeConfig = require( './tasks/config' );
 const isProduction = 'production' === process.env.NODE_ENV;
+const host = isProduction ? themeConfig.localURL : 'https://localhost:3000';
 
 const devEntry = {
 	main: [
@@ -23,7 +26,7 @@ const config = {
 	entry: isProduction ? prodEntry : devEntry,
 	output: {
 		filename: isProduction ? 'project.min.js' : 'project.js',
-		publicPath: 'http://localhost:3000/wp-content/themes/wd_s/assets/scripts/'
+		publicPath: host + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
 	},
 	module: {
 		rules: [
