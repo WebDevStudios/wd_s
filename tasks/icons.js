@@ -41,7 +41,7 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
 
 		// Clean up the <symbol> by removing the following cruft...
 		.pipe( cheerio( {
-			'run': function( $, file ) {
+			'run': function( $ ) {
 				$( 'svg' ).attr( 'style', 'display:none' );
 				$( '[fill]' ).removeAttr( 'fill' );
 				$( 'path' ).removeAttr( 'class' );
