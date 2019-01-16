@@ -9,21 +9,9 @@ const themeConfig = require( './tasks/theme-config' );
 const isProduction = 'production' === process.env.NODE_ENV;
 const host = isProduction ? themeConfig.localURL : themeConfig.watchURL;
 
-const devEntry = {
-	main: [
-		'webpack/hot/dev-server',
-		'webpack-hot-middleware/client?reload=true',
-		'./assets/scripts/src/index.js'
-	]
-};
-
-const prodEntry = {
-	main: [ './assets/scripts/src/index.js' ]
-};
-
 const config = {
 	mode: isProduction ? 'production' : 'development',
-	entry: isProduction ? prodEntry : devEntry,
+	entry: './assets/scripts/src/index.js',
 	output: {
 		filename: isProduction ? 'project.min.js' : 'project.js',
 		publicPath: host + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
