@@ -2,6 +2,7 @@
 
 // Require our dependencies
 const gulp = require( 'gulp' );
+const browserSync = require( 'browser-sync' );
 
 // Tasks for compiling, linting, and documenting styles.
 require( './tasks/styles' );
@@ -24,6 +25,7 @@ require( './tasks/scripts' );
 /**
  * Individual Gulp tasks.
  */
+gulp.task( 'markup', browserSync.reload );
 gulp.task( 'icons', [ 'svg' ] );
 gulp.task( 'sprites', [ 'spritesmith' ] );
 gulp.task( 'js', [ 'scripts' ] );
