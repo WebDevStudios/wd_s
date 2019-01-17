@@ -86,7 +86,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 		<div class="scaffolding-document-live">
 
 		<?php if ( $args['output'] ) : ?>
-			<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
+			<?php echo do_shortcode( wp_kses( $args['output'], $allowed_tags ) ); ?>
 		<?php endif; ?>
 
 		</div><!-- .scaffolding-document-live -->
@@ -141,6 +141,13 @@ function _s_scaffolding_allowed_html() {
 			'value'       => true,
 			'placeholder' => true,
 			'class'       => true,
+		),
+		'iframe' => array(
+			'src'             => array(),
+			'height'          => array(),
+			'width'           => array(),
+			'frameborder'     => array(),
+			'allowfullscreen' => array(),
 		),
 	) );
 	return $allowed_tags;
@@ -238,8 +245,10 @@ function _s_hook_theme_scaffolding() {
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
+	get_template_part( $template_dir, 'media' );
 	get_template_part( $template_dir, 'icons' );
 	get_template_part( $template_dir, 'buttons' );
 	get_template_part( $template_dir, 'forms' );
+	get_template_part( $template_dir, 'elements' );
 }
 add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );

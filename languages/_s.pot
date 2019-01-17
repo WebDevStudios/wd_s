@@ -1,4 +1,4 @@
-# Copyright (C) 2018 _s
+# Copyright (C) 2019 _s
 # This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:51
+#: functions.php:51, inc/template-tags.php:528
 msgid "Mobile Menu"
 msgstr ""
 
@@ -72,6 +72,10 @@ msgstr ""
 
 #: header.php:52
 msgid "Open Menu"
+msgstr ""
+
+#: header.php:57
+msgid "Main Menu"
 msgstr ""
 
 #. translators: the term(s) searched
@@ -461,6 +465,10 @@ msgstr ""
 msgid "Buttons"
 msgstr ""
 
+#: template-parts/scaffolding/scaffolding-elements.php:12
+msgid "Generic Elements"
+msgstr ""
+
 #: template-parts/scaffolding/scaffolding-forms.php:12
 msgid "Forms"
 msgstr ""
@@ -471,6 +479,10 @@ msgstr ""
 
 #: template-parts/scaffolding/scaffolding-icons.php:12
 msgid "Icons"
+msgstr ""
+
+#: template-parts/scaffolding/scaffolding-media.php:13
+msgid "Media"
 msgstr ""
 
 #: template-parts/scaffolding/scaffolding-typography.php:12

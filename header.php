@@ -37,6 +37,13 @@
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
+
+				<?php
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) :
+				?>
+					<p class="site-description"><?php echo esc_html( $description ); ?></p>
+				<?php endif; ?>
 			</div><!-- .site-branding -->
 
 			<?php _s_display_header_button(); ?>
@@ -50,13 +57,14 @@
 
 			<?php
 			wp_nav_menu( array(
+				'container'       => false,
+				'container_class' => '',
+				'container_id'    => '',
 				'fallback_cb'     => false,
-				'theme_location'  => 'primary',
-				'menu_id'         => 'primary-menu',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				'menu_class'      => 'menu dropdown',
-				'container'       => 'nav',
-				'container_class' => 'main-navigation background-alto',
-				'container_id'    => 'site-navigation',
+				'menu_id'         => 'primary-menu',
+				'theme_location'  => 'primary',
 			) );
 			?>
 	</header><!-- .site-header-->

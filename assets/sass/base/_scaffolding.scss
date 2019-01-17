@@ -63,6 +63,11 @@
 		} // code
 	} // &-content
 
+	// Live preview.
+	&-live {
+		@include clearfix();
+	} // &-live
+
 	// Always display the global scaffolding.
 	&.scaffolding-colors,
 	&.scaffolding-fonts {
