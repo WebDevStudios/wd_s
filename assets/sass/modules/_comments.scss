@@ -201,12 +201,10 @@
 
 	// Comment children.
 	.children {
-		list-style: none;
-		padding-left: rem(20);
+		@include padding(null null 0 $space / 2);
 
-		@include media($phone) {
-			padding-left: $space * 2;
-		}
+		list-style: none;
+		margin-left: 0;
 
 		.depth-4,
 		.depth-5,
