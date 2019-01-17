@@ -3,13 +3,6 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// IE11 Tweak
-//-----------------------------------------
-.page-template-template-scaffolding .primary {
-	width: 100%;
-}
-
-//-----------------------------------------
 // Scaffolding defaults
 //-----------------------------------------
 .scaffolding-document {
@@ -62,11 +55,6 @@
 			font-size: rem(13);
 		} // code
 	} // &-content
-
-	// Live preview.
-	&-live {
-		@include clearfix();
-	} // &-live
 
 	// Always display the global scaffolding.
 	&.scaffolding-colors,
