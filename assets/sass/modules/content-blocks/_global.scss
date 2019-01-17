@@ -15,6 +15,10 @@
 
 	&.has-background {
 		@include padding($gutter * 2 null);
+
+		&.container-width {
+			@include padding($gutter * 2 $gutter);
+		} // &.container-width.
 	} // &.has-background
 
 	// Make sure videos stay in their containers.
