@@ -47,7 +47,7 @@
 
 	max-width: $container;
 
-	@include media($container) {
+	@include media($container-offset) {
 		@include padding(0);
 	}
 } // .container
