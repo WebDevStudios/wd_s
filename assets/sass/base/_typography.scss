@@ -23,10 +23,11 @@ textarea {
 
 // Global Header Resets.
 @for $i from 1 through 6 {
-	h#{$i} {
+	h#{$i},
+	.h#{$i} {
 		font-weight: bold;
 		margin-top: 0;
-	} // h#{$i}
+	} // h#{$i}, .h#{$i}
 } // end @for
 
 h1,
