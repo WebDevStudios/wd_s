@@ -503,7 +503,7 @@ function _s_display_numeric_pagination( $args = array() ) {
 	}
 	?>
 
-	<nav class="pagination-container container">
+	<nav class="pagination-container container" aria-label="<?php esc_html_e( 'numeric pagination', '_s' ); ?>">
 		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
 	</nav>
 
