@@ -52,9 +52,9 @@
 // 2. Create a down arrow on parent items.
 //-----------------------------------------
 .parent-indicator {
-	@include padding(rem(5));
+	@include padding(0 rem(5));
 	@include position(absolute, rem(10) rem(10) null null);
-	@include size(rem(35));
+	@include size(rem(35), rem(25));
 
 	background-color: transparent;
 	display: inline-block;

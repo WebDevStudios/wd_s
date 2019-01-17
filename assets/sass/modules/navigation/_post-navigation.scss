@@ -4,6 +4,7 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+	@extend .container;
 
 	.nav-links {
 		@extend .display-flex;
