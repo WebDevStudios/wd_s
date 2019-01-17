@@ -42,22 +42,22 @@ input[type='submit'] {
 
 		&:hover,
 		&:active {
-			color: $color-link-hover;
+			color: $color-text-button;
 			opacity: 0.6;
 		} // &:hover, &:active
 
 		&:focus {
-			color: $color-link-focus;
+			color: $color-text-button;
 		} //  &:focus
 	} // &:visited
 
 	&:hover,
 	&:active {
-		color: $color-link-hover;
+		color: $color-text-button;
 		opacity: 0.6;
 	} // &:hover, &:active
 
 	&:focus {
-		color: $color-link-focus;
+		color: $color-text-button;
 	} //  &:focus
 } // button, input[type="button"], input[type="reset"], input[type="submit"]
