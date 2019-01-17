@@ -50,7 +50,7 @@ _s_display_block_options( array(
 								</button>
 							</div><!-- .accordion-item-header-->
 							<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
-								<?php echo wp_kses_post( $item_content ); ?>
+								<?php echo _s_get_the_content( $item_content ); // phpcs: xss: ok. ?>
 							</div><!-- .accordion-item-content -->
 						</div>
 				<?php endwhile; ?>
