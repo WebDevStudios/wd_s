@@ -12,7 +12,7 @@
 get_header(); ?>
 
 	<div class="display-flex grid-wrapper">
-		<main id="main" class="site-main left-two-thirds" role="main">
+		<main id="main" class="site-main left-two-thirds">
 
 			<?php
 			while ( have_posts() ) :
