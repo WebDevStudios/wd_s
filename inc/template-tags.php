@@ -312,7 +312,7 @@ function _s_display_copyright_text() {
 		return false;
 	}
 
-	echo _s_get_the_content( do_shortcode( $copyright_text ) );
+	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
 }
 
 /**
