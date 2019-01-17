@@ -170,7 +170,7 @@ function _s_get_animation_class() {
 	}
 
 	// Set up our animation class for the wrapping element.
-	$classes = '';
+	$classes = 'not-animated';
 
 	// If we have an animation set...
 	if ( $other_options['animation'] ) {
