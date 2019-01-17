@@ -57,11 +57,6 @@ $gf-input-padding: rem(6);
 		color: $gf-label-font-color;
 		font-size: $gf-label-font-size;
 		font-weight: $gf-label-font-weight;
-
-		// Require field Indicator (Asterisk)
-		.gfield_required {
-
-		} // .gfield_required
 	} // .gfield_label
 
 	// Standard fields
@@ -107,25 +102,6 @@ $gf-input-padding: rem(6);
 		background: $gf-input-color-background;
 	} // select[multiple="multiple"]
 } // .gform_wrapper
-
-//--------------------------------------------------------------
-// 	FORM HEADER
-//--------------------------------------------------------------
-.gform_wrapper .gform_heading {
-	// .gform_title - form title
-	// .gform_description - form description
-} // .gform_wrapper .gform_heading
-
-//--------------------------------------------------------------
-// 	FORM FOOTER
-//--------------------------------------------------------------
-.gform_wrapper .gform_footer {
-
-	input.button,
-	input[type='submit'] {
-		// This will target submit buttons
-	} // input.button, input[type="submit"]
-} // .gform_wrapper .gform_footer
 
 //--------------------------------------------------------------
 //	CONFIRMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
@@ -246,17 +222,6 @@ $gf-input-padding: rem(6);
 	textarea {
 		width: 100%;
 	} // .chosen-search input[type="text"], textarea
-
-	// Validation error message (displays at top of form)
-	.validation_error {
-
-	} // .validation_error
-
-	// Error labels (required fields)
-	.gfield_error {
-		// .gfield_label - error label
-		// .validation_message - required error text
-	} // .gfield_error
 
 	// Two-column fields
 	.gf_left_half,
