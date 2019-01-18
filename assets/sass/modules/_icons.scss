@@ -36,6 +36,34 @@
 	} // .social-icon
 } // .social-icons
 
+//--------------------------------------------------------------
+// Replace Text With Icons
+//--------------------------------------------------------------
+$social-sites: facebook instagram linkedin twitter;
+
+.menu {
+
+	a {
+		// Set the background image for each social network.
+		@each $network in $social-sites {
+			&[href*='#{$network}'] {
+				@include size(rem(30));
+
+				background: url('assets/images/svg-icons/#{$network}-square.svg') no-repeat center center transparent;
+				background-size: rem(30);
+				display: block;
+				text-indent: rem(-999999);
+
+				@include media($tablet-portrait) {
+					@include size(rem(19));
+
+					background-size: rem(19);
+				}
+			}
+		}
+	}
+} // .menu
+
 //-----------------------------------------
 // Close icon
 //-----------------------------------------
