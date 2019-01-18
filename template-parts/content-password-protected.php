@@ -15,9 +15,7 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php
-				echo get_the_password_form(); // WPCS XSS OK.
-			?>
+			<?php echo get_the_password_form(); // WPCS XSS OK. ?>
 		</div><!-- .entry-content -->
 
 	</article><!-- #post-## -->
