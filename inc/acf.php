@@ -110,7 +110,7 @@ function _s_display_block_options( $args = array() ) {
 						<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
 						<?php endif; ?>
 				</video>
-				<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Stop video playback', '_s' ); ?></span></button>
+				<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Toggle video playback', '_s' ); ?></span></button>
 			<?php
 			$background_video_markup = ob_get_clean();
 		}
