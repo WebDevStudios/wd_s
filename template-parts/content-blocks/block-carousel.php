@@ -40,8 +40,8 @@ if ( have_rows( 'carousel_slides' ) ) :
 		_s_display_block_options( array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
 			'class'     => 'slide', // Container class.
+			'id'        => esc_attr( 'carousel-' . get_row_index() ),
 		) );
-
 		?>
 			<div class="slide-content container" data-animation="<?php echo esc_attr( $animation_class ); ?>">
 
