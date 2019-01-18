@@ -57,14 +57,13 @@
 
 			<?php
 			wp_nav_menu( array(
-				'container'       => false,
-				'container_class' => '',
-				'container_id'    => '',
 				'fallback_cb'     => false,
-				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				'menu_class'      => 'menu dropdown',
-				'menu_id'         => 'primary-menu',
 				'theme_location'  => 'primary',
+				'menu_id'         => 'primary-menu',
+				'menu_class'      => 'menu dropdown',
+				'container'       => 'nav',
+				'container_class' => 'main-navigation',
+				'container_id'    => 'site-navigation',
 			) );
 			?>
 	</header><!-- .site-header-->
