@@ -17,7 +17,11 @@
 		@include padding($gutter * 2 null);
 
 		&.container-width {
-			@include padding($gutter * 2 $gutter);
+			@include padding($gutter * 2 0);
+
+			@include media($container-offset) {
+				@include padding($gutter * 2 $gutter);
+			}
 		} // &.container-width.
 	} // &.has-background
 
