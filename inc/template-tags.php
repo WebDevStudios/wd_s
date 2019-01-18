@@ -384,7 +384,7 @@ function _s_display_social_network_links() {
 						?>
 						<span class="screen-reader-text">
 						<?php
-							echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
+							echo /* translators: the social network name */ sprintf( esc_html( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
 						?>
 						</span>
 					</a>
