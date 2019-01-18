@@ -14,14 +14,14 @@
 
 		@include media($phone) {
 			@include margin(null auto);
-			@include padding(null #{$gutter});
+			@include padding(null $gutter);
 
 			display: block;
 			max-width: $container;
 		}
 
 		@include media($container) {
-			@include padding(0);
+			@include padding(null null);
 		}
 
 		li {

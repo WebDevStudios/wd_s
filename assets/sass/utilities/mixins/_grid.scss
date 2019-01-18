@@ -82,10 +82,10 @@
 @mixin left-two-thirds {
 
 	@include media($tablet-landscape) {
-		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-basis: calc(66.66% - $gutter * 3);
 		flex-grow: 0;
 		flex-shrink: 0;
-		width: calc(66.66% - #{$gutter * 3}); // For IE11.
+		width: calc(66.66% - $gutter * 3); // For IE11.
 	}
 }
 
@@ -118,10 +118,10 @@
 @mixin right-two-thirds {
 
 	@include media($tablet-landscape) {
-		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-basis: calc(66.66% - $gutter * 3);
 		flex-grow: 0;
 		flex-shrink: 0;
 		margin-left: auto;
-		width: calc(66.66% - #{$gutter * 3}); // For IE11.
+		width: calc(66.66% - $gutter * 3); // For IE11.
 	}
 }

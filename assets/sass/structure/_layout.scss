@@ -43,7 +43,7 @@
 //-----------------------------------------
 .container {
 	@include margin(null auto);
-	@include padding(null #{$gutter});
+	@include padding(null $gutter);
 
 	max-width: $container;
 
