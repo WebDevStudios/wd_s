@@ -102,14 +102,15 @@ function _s_display_block_options( $args = array() ) {
 			ob_start();
 			?>
 				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true"<?php echo $background_title ? ' title="' . esc_attr( $background_title ) . '"' : ''; ?>>
-					<?php if ( $background_video_webm['url'] ) : ?>
+						<?php if ( $background_video_webm['url'] ) : ?>
 						<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
-					<?php endif; ?>
+						<?php endif; ?>
 
-					<?php if ( $background_video['url'] ) : ?>
+						<?php if ( $background_video['url'] ) : ?>
 						<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
-					<?php endif; ?>
+						<?php endif; ?>
 				</video>
+				<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Stop video playback', '_s' ); ?></span></button>
 			<?php
 			$background_video_markup = ob_get_clean();
 		}
