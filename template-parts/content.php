@@ -15,10 +15,7 @@
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			// Get the post format.
-			$post_format         = get_post_format();
-			$screen_reader_class = 'aside' === $post_format ? ' screen-reader-text' : '';
-			the_title( '<h2 class="entry-title' . esc_attr( $screen_reader_class ) . '"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		if ( 'post' === get_post_type() ) :
 		?>
