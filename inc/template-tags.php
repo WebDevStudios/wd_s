@@ -419,7 +419,7 @@ function _s_display_card( $args = array() ) {
 	<div class="<?php echo esc_attr( $args['class'] ); ?> card">
 
 		<?php if ( $args['image'] ) : ?>
-			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] ); ?>"></a>
+			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] . '-image' ); ?>"></a>
 		<?php endif; ?>
 
 		<div class="card-section">
