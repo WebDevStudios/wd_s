@@ -55,7 +55,7 @@
 			<?php endif; ?>
 		</div><!-- .container -->
 
-		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_html_e( 'Main Navigation', '_s' ); ?>">
+		<nav id="site-navigation" class="main-navigation container" aria-label="<?php esc_html_e( 'Main Navigation', '_s' ); ?>">
 			<?php
 			wp_nav_menu( array(
 				'fallback_cb'     => false,
