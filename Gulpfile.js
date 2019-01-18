@@ -22,6 +22,9 @@ require( './tasks/watch' );
 // Tasks for bundling JavaScript.
 require( './tasks/scripts' );
 
+// Tasks for handling PHPCS.
+require( './tasks/phpcs' );
+
 /**
  * Individual Gulp tasks.
  */
