@@ -19,7 +19,7 @@ gulp.task( 'watch-files', function() {
 
 	// Run tasks when files change.
 	gulp.watch( themeConfig.paths.icons, [ 'icons' ] );
-	gulp.watch( themeConfig.paths.sass, [ 'styles' ] );
+	gulp.watch( themeConfig.paths.sass, [ 'sass:lint', 'styles' ] );
 	gulp.watch( themeConfig.paths.sprites, [ 'sprites' ] );
 	gulp.watch( themeConfig.paths.php, [ 'markup' ] );
 	gulp.watch( themeConfig.paths.js, [ 'scripts' ] );
