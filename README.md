@@ -4,7 +4,7 @@ wd_s
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
-I feature some of the web's most proven technologies like: [Gulp](http://gulpjs.com/), [LibSass](http://sass-lang.com/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss), [Bourbon 4.3](http://bourbon.io/), [Neat v1.9](http://neat.bourbon.io/docs/1.9.0/), and [BrowserSync](https://www.browsersync.io/). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), I'm also bundled with a [Sass Lint](https://github.com/sasstools/sass-lint), [ESLint](https://eslint.org/), and [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) linting rulesets. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.0AA and Section 508 standards out of the box.
+I feature some of the web's most proven technologies like: [Gulp](http://gulpjs.com/), [Webpack](https://webpack.js.org/), [LibSass](http://sass-lang.com/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss), [Bourbon 4.3](http://bourbon.io/), [Neat v1.9](http://neat.bourbon.io/docs/1.9.0/), and [BrowserSync](https://www.browsersync.io/). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), I'm also bundled with a [Sass Lint](https://github.com/sasstools/sass-lint), [ESLint](https://eslint.org/), and [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) linting rulesets. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.0AA and Section 508 standards out of the box.
 
 
 If that weren't enough, I also support [synchronized JSON](https://www.advancedcustomfields.com/resources/synchronized-json/) for [Advanced Custom Fields](https://www.advancedcustomfields.com/) and support both [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
@@ -20,7 +20,9 @@ If you have the latest version of [Advanced Custom Fields Pro](https://www.advan
 Because I'm bundled with Gulp, basic knowledge of the command line and the following dependencies are required: either [Yarn](https://yarnpkg.com) or [Node](https://nodejs.org), [Gulp CLI](https://github.com/gulpjs/gulp-cli) (`npm install -g gulp-cli`), and [Bower](https://bower.io/) (`npm install -g bower`).
 
 ### Quick Start
-If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+1) Head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+
+2) Set the [theme configuration settings.](#theme-configuration)
 
 ### Advanced
 
@@ -38,8 +40,36 @@ You'll need to change all instances of the names: `_s`.
 * Search for (and include the leading space): <code>&nbsp;_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
 * Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 * Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
-* Search for `_s.com` and replace with: `project-name.dev` to match your local development URL
 * Edit the theme information in the header of style.scss to meet your needs
+
+## Theme Configuration
+Whether you used the **quick start** or **advanced option**, to get the best development experience, you will need to configure the [tasks/theme-config.js](tasks/theme-config.js) settings to match your local development environment.
+
+Here is what a sample configuration looks like:
+
+```
+localURL: 'https://testing.test',
+paths: {
+	'css': [ './*.css', '!*.min.css' ],
+	'icons': 'assets/images/svg-icons/*.svg',
+	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
+	'php': [ './*.php', './**/*.php' ],
+	'js': 'assets/scripts/src/**/*.js',
+	'sass': 'assets/sass/**/*.scss'
+},
+themeName: 'wd_s',
+watchURL: 'https://localhost:3000'
+```
+
+**Options:**
+
+`localURL` - The URL for your local development server.
+
+`paths` - File locations by type.
+
+`themeName` - The active theme name.
+
+`watchURL` - The URL you want browsersync to run on.
 
 ## Development
 
@@ -63,27 +93,35 @@ npm install && bower install
 ```
 ![Install and Gulp](https://dl.dropboxusercontent.com/s/cj1p6xjz51cpckq/wd_s-install.gif?dl=0)
 
-### Gulp Tasks
+### Scripts
 
 From the command line, type any of the following to perform an action:
 
-`gulp watch` - Automatically handle changes to CSS, JS, SVGs, and image sprites. Also kicks off BrowserSync.
+`npm run build` - Build all files for production.
 
-`gulp icons` - Minify, concatenate, and clean SVG icons.
+`npm run build:js` - Build JavaScript files for production.
 
-`gulp i18n` - Scan the theme and create a POT file.
+`npm run dev` - Build all files in development mode.
 
-`gulp sass:lint` - Run Sass against WordPress code standards.
+`npm run dev:js` Build JavaScript files in development mode.
 
-`gulp js:lint` - Run Javascript against WordPress code standards.
+`npm run eslint` - Run Javascript against WordPress code standards.
 
-`gulp scripts` - Concatenate and minify javascript files.
+`npm run eslint:fix` - Run Javascript against WordPress code standards and fix errors.
 
-`gulp sprites` - Generate an image sprite and the associated Sass (sprite.png).
+`npm run icons` - Minify, concatenate, and clean SVG icons.
 
-`gulp styles` - Compile, prefix, combine media queries, and minify CSS files.
+`npm run i18n` - Scan the theme and create a POT file.
 
-`gulp` - Runs the following tasks at the same time: i18n, icons, scripts, styles, sprites.
+`npm run phpcs` - Run PHP files against WebDevStudios code standards.
+
+`npm run sasslint` - Run Sass files against WordPress code standards.
+
+`npm run sasslint:fix` - Run Sass files against Wordpress code standards and fix errors.
+
+`npm run styles` - Compile, prefix, combine media queries, and minify CSS files.
+
+`npm run watch` - Automatically handle changes to CSS, JS, and SVGs. Also kicks off BrowserSync.
 
 ## Contributing and Support
 
