@@ -20,8 +20,8 @@
 			max-width: $container;
 		}
 
-		@include media($container) {
-			@include padding(null null);
+		@include media($container-offset) {
+			@include padding(null 0);
 		}
 
 		li {
