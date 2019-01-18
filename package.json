@@ -34,7 +34,6 @@
     "gulp-svgstore": "^6.1.1",
     "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.3.1",
-    "gulp.spritesmith": "^6.9.0",
     "sass-lint-auto-fix": "^0.15.1",
     "sassdoc": "^2.5.0",
     "slick-carousel": "^1.8.1",
