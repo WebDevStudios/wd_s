@@ -10,7 +10,7 @@ require( './tasks/styles' );
 // Tasks for SVG icons.
 require( './tasks/icons' );
 
-// Tasks for optimizing images and creating sprites.
+// Tasks for optimizing images.
 require( './tasks/images' );
 
 // Tasks for creating POT files.
@@ -30,11 +30,10 @@ require( './tasks/phpcs' );
  */
 gulp.task( 'markup', browserSync.reload );
 gulp.task( 'icons', [ 'svg' ] );
-gulp.task( 'sprites', [ 'spritesmith' ] );
 gulp.task( 'js', [ 'scripts' ] );
 gulp.task( 'styles', [ 'cssnano' ] );
 gulp.task( 'lint', [ 'sass:lint' ] );
 gulp.task( 'docs', [ 'sassdoc' ] );
 gulp.task( 'i18n', [ 'wp-pot' ] );
 gulp.task( 'watch', [ 'watch-files' ] );
-gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'js', 'imagemin' ] );
+gulp.task( 'default', [ 'i18n', 'icons', 'styles', 'js', 'imagemin' ] );

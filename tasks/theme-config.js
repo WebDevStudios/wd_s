@@ -9,8 +9,7 @@ module.exports = {
 		'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 		'php': [ './*.php', './**/*.php' ],
 		'js': 'assets/scripts/src/**/*.js',
-		'sass': 'assets/sass/**/*.scss',
-		'sprites': 'assets/images/sprites/*.png'
+		'sass': 'assets/sass/**/*.scss'
 	},
 	themeName: 'wd_s',
 	watchURL: 'https://localhost:3000'

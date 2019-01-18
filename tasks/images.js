@@ -1,9 +1,7 @@
-const browserSync = require( 'browser-sync' );
 const del = require( 'del' );
 const gulp = require( 'gulp' );
 const imagemin = require( 'gulp-imagemin' );
 const plumber = require( 'gulp-plumber' );
-const spritesmith = require( 'gulp.spritesmith' );
 
 const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
@@ -22,29 +20,4 @@ gulp.task( 'imagemin', () =>
 			'interlaced': true
 		} ) )
 		.pipe( gulp.dest( 'assets/images' ) )
-);
-
-/**
- * Delete the sprites.png before rebuilding sprite.
- */
-gulp.task( 'clean:sprites', () => {
-	del( [ 'assets/images/sprites.png' ] );
-} );
-
-/**
- * Concatenate images into a single PNG sprite.
- *
- * https://www.npmjs.com/package/gulp.spritesmith
- */
-gulp.task( 'spritesmith', () =>
-	gulp.src( themeConfig.paths.sprites )
-		.pipe( plumber( {'errorHandler': handleErrors} ) )
-		.pipe( spritesmith( {
-			'imgName': 'sprites.png',
-			'cssName': '../../assets/sass/base/_sprites.scss',
-			'imgPath': 'assets/images/sprites.png',
-			'algorithm': 'binary-tree'
-		} ) )
-		.pipe( gulp.dest( 'assets/images/' ) )
-		.pipe( browserSync.stream() )
 );

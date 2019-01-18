@@ -91,7 +91,6 @@ gulp.task( 'sass:lint', () =>
 	gulp.src( [
 		'assets/sass/**/*.scss',
 		'!assets/sass/vendor/**/*.scss',
-		'!assets/sass/base/_sprites.scss',
 		'!node_modules/**'
 	] )
 		.pipe( sassLint() )
