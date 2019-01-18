@@ -33,6 +33,7 @@
     "gulp-util": "^3.0.8",
     "gulp-wp-pot": "^2.3.1",
     "gulp.spritesmith": "^6.9.0",
+    "sass-lint-auto-fix": "^0.15.1",
     "sassdoc": "^2.5.0",
     "slick-carousel": "^1.8.1",
     "webpack": "^4.28.3",
@@ -46,6 +47,8 @@
     "dev:styles": "gulp styles",
     "eslint": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --quiet",
     "eslint:fix": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --fix --quiet",
+    "sasslint": "gulp sass:lint",
+    "sasslint:fix": "sass-lint-auto-fix -c tasks/sass-lint-fix-config.yml",
     "watch": "gulp watch"
   },
   "repository": "git+https://github.com/WebDevStudios/wd_s.git",
