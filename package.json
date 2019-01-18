@@ -48,6 +48,8 @@
     "dev:styles": "gulp styles",
     "eslint": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --quiet",
     "eslint:fix": "eslint assets/scripts/src --ext \".js\" --ext \".jsx\" --fix --quiet",
+    "icons": "gulp icons",
+    "i18n": "gulp wp-pot",
     "phpcs": "gulp phpcs",
     "sasslint": "gulp sass:lint",
     "sasslint:fix": "sass-lint-auto-fix -c tasks/sass-lint-fix-config.yml",
