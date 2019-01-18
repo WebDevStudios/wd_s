@@ -176,6 +176,25 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": "webm"
+                },
+                {
+                    "key": "field_5c4202c73e2e8",
+                    "label": "Video Description",
+                    "name": "background_video_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -197,5 +216,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1538759178
+    "modified": 1547830062
 }

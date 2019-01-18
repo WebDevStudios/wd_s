@@ -94,10 +94,12 @@ function _s_display_block_options( $args = array() ) {
 		if ( 'video' === $args['background_type'] ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
+			$background_title      = $background_options['background_video_title'];
 			$args['class']        .= ' has-background video-as-background';
+
 			ob_start();
 			?>
-				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true">
+				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true" title="<?php echo esc_html( $background_title ); ?>">
 					<?php if ( $background_video_webm['url'] ) : ?>
 						<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
 					<?php endif; ?>
