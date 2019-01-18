@@ -300,7 +300,9 @@ function _s_add_og_tags() {
 	<meta property="og:title" content="<?php echo esc_attr( $card_title ); ?>" />
 	<meta property="og:description" content="<?php echo esc_attr( $card_description ); ?>" />
 	<meta property="og:url" content="<?php echo esc_url( $card_url ); ?>" />
-	<meta property="og:image" content="<?php echo esc_url( $card_image ); ?>" />
+	<?php if ( $card_image ) : ?>
+		<meta property="og:image" content="<?php echo esc_url( $card_image ); ?>" />
+	<?php endif; ?>
 	<meta property="og:site_name" content="<?php echo esc_attr( $default_title ); ?>" />
 	<meta property="og:type" content="<?php echo esc_attr( $card_type ); ?>" />
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
