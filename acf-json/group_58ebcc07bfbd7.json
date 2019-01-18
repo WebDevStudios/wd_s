@@ -184,7 +184,15 @@
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -216,5 +224,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1547830062
+    "modified": 1547830147
 }
