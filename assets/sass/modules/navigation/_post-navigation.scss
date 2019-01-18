@@ -4,11 +4,22 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	@extend .container;
+	@include margin(null auto);
+	@include padding(null #{$gutter});
+
+	max-width: $container;
+
+	@include media($container-offset) {
+		@include padding(0);
+	}
 
 	.nav-links {
-		@extend .display-flex;
 		@include margin($space null null);
+
+		display: flex;
+		flex: 0 0 100%;
+		flex-flow: row wrap;
+		width: 100%; // For IE11.
 	} // .nav-links
 
 	.site-main & {
