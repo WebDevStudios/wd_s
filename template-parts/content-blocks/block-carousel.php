@@ -5,7 +5,7 @@
  * @package _s
  */
 
-$classnames = 'content-block carousel-block';
+$classnames  = 'content-block carousel-block';
 $classnames .= ' ' . get_sub_field( 'display_options' )['block_width'];
 
 // Start repeater markup...
@@ -13,8 +13,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 	echo '<div class="content-block carousel-block' . esc_attr( $classnames ) . '">';
 
 	// Enqueue Slick carousel.
-	wp_enqueue_style( 'slick-carousel' );
-	wp_enqueue_script( 'slick-carousel' );
+	_s_enqueue_slick_scripts();
 
 	// Loop through slide slides.
 	while ( have_rows( 'carousel_slides' ) ) :
