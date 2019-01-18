@@ -9,9 +9,12 @@
  * @package _s
  */
 
+// Omit class if password protected and content is hidden.
+$acf_classname = ! post_password_required() ? ' acf-content-blocks' : '';
+
 get_header(); ?>
 
-	<main id="main" class="site-main acf-content-blocks">
+	<main id="main" class="site-main container<?php echo esc_attr( $acf_classname ); ?>">
 
 		<?php
 			// If the page is password protected...
