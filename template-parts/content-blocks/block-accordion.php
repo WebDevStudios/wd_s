@@ -43,11 +43,12 @@ _s_display_block_options( array(
 						?>
 						<div class="accordion-item">
 							<div class="accordion-item-header">
-								<button class="accordion-item-toggle" aria-expanded="false" aria-controls="<?php echo esc_attr( $item_content_id ); ?>">
-									<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?></h3>
-									<span class="screen-reader-text"><?php esc_html_e( 'Toggle', '_s' ); ?></span>
-									<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
-								</button>
+								<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?>
+									<button class="accordion-item-toggle" aria-expanded="false" aria-controls="<?php echo esc_attr( $item_content_id ); ?>">
+										<span class="screen-reader-text"><?php echo sprintf( esc_html( 'Toggle %s', '_s' ), esc_html( $item_title ) ); ?></span>
+										<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
+									</button>
+								</h3>
 							</div><!-- .accordion-item-header-->
 							<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
 								<?php echo _s_get_the_content( $item_content ); // phpcs: xss: ok. ?>

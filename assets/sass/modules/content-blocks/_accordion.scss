@@ -34,6 +34,7 @@
 			@include margin(0);
 
 			padding-right: rem(30); // Space for toggle.
+			position: relative;
 		} // &-title
 
 		&-content {
@@ -60,6 +61,7 @@
 
 		&-toggle {
 			@include padding(0);
+			@include position(absolute, rem(12) 0 null null);
 
 			align-items: center;
 			background-color: transparent;
@@ -67,7 +69,6 @@
 			color: inherit;
 			display: flex;
 			min-width: unset;
-			position: relative;
 			width: 100%;
 
 			&-icon {
