@@ -55,13 +55,13 @@
 			<?php endif; ?>
 		</div><!-- .container -->
 
-		<nav id="site-navigation" class="main-navigation container" aria-label="<?php esc_html_e( 'Main Navigation', '_s' ); ?>">
+		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', '_s' ); ?>">
 			<?php
 			wp_nav_menu( array(
 				'fallback_cb'     => false,
 				'theme_location'  => 'primary',
 				'menu_id'         => 'primary-menu',
-				'menu_class'      => 'menu dropdown',
+				'menu_class'      => 'menu dropdown container',
 				'container'       => false,
 			) );
 			?>
