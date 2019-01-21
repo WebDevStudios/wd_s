@@ -4,8 +4,15 @@ wd_s
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
-I feature some of the web's most proven technologies like: [Gulp](http://gulpjs.com/), [Webpack](https://webpack.js.org/), [LibSass](http://sass-lang.com/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss), [Bourbon 4.3](http://bourbon.io/), [Neat v1.9](http://neat.bourbon.io/docs/1.9.0/), and [BrowserSync](https://www.browsersync.io/). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), I'm also bundled with a [Sass Lint](https://github.com/sasstools/sass-lint), [ESLint](https://eslint.org/), and [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) linting rulesets. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.0AA and Section 508 standards out of the box.
-
+## Features
+- [Gulp](http://gulpjs.com/) + [Webpack](https://webpack.js.org/)
+- [LibSass](http://sass-lang.com/) & [PostCSS](https://github.com/postcss/postcss)
+- `ES6` & [React](https://reactjs.org/) compatible
+- [Bourbon 4.3](http://bourbon.io/) & [Neat v1.9](http://neat.bourbon.io/docs/1.9.0/)
+- [BrowserSync](https://www.browsersync.io/)
+- [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)
+- [Sass Lint](https://github.com/sasstools/sass-lint), [ESLint](https://eslint.org/), and [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) linting
+- Accessible - WCAG 2.0AA & Section 508
 
 If that weren't enough, I also support [synchronized JSON](https://www.advancedcustomfields.com/resources/synchronized-json/) for [Advanced Custom Fields](https://www.advancedcustomfields.com/) and support both [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
 
