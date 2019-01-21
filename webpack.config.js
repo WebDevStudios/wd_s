@@ -30,7 +30,8 @@ const config = {
 										'browsers': [ 'last 2 versions' ]
 									}
 								}
-							]
+							],
+							'@babel/preset-react'
 						]
 					}
 				}
