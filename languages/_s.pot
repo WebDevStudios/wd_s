@@ -74,6 +74,10 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
+#: header.php:58
+msgid "Main Navigation"
+msgstr ""
+
 #. translators: the term(s) searched
 #: search.php:17
 msgid "Search Results for: %s"
@@ -107,71 +111,76 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/acf.php:98
-msgid "Video Background of "
+#. translators: get the title of the video.
+#: inc/acf.php:100
+msgid "Video Background"
 msgstr ""
 
-#: inc/acf.php:269
+#: inc/acf.php:113
+msgid "Toggle video playback"
+msgstr ""
+
+#: inc/acf.php:271
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:291
+#: inc/acf.php:293
 msgid "expired"
 msgstr ""
 
-#: inc/acf.php:390
+#: inc/acf.php:392
 msgid "Alto"
 msgstr ""
 
-#: inc/acf.php:391
+#: inc/acf.php:393
 msgid "Black"
 msgstr ""
 
-#: inc/acf.php:392
+#: inc/acf.php:394
 msgid "Blue"
 msgstr ""
 
-#: inc/acf.php:393
+#: inc/acf.php:395
 msgid "Cod Gray"
 msgstr ""
 
-#: inc/acf.php:394
+#: inc/acf.php:396
 msgid "Dove Gray"
 msgstr ""
 
-#: inc/acf.php:395
+#: inc/acf.php:397
 msgid "Gallery"
 msgstr ""
 
-#: inc/acf.php:396
+#: inc/acf.php:398
 msgid "Gray"
 msgstr ""
 
-#: inc/acf.php:397
+#: inc/acf.php:399
 msgid "Gray Alt"
 msgstr ""
 
-#: inc/acf.php:398
+#: inc/acf.php:400
 msgid "Light Yellow"
 msgstr ""
 
-#: inc/acf.php:399
+#: inc/acf.php:401
 msgid "Mineshaft"
 msgstr ""
 
-#: inc/acf.php:400
+#: inc/acf.php:402
 msgid "Silver"
 msgstr ""
 
-#: inc/acf.php:401
+#: inc/acf.php:403
 msgid "Silver Chalice"
 msgstr ""
 
-#: inc/acf.php:402
+#: inc/acf.php:404
 msgid "White"
 msgstr ""
 
-#: inc/acf.php:403
+#: inc/acf.php:405
 msgid "Whitesmoke"
 msgstr ""
 
@@ -303,11 +312,6 @@ msgstr ""
 
 #: inc/template-tags.php:109
 msgid "Please define an SVG icon filename."
-msgstr ""
-
-#. translators: the social network name
-#: inc/template-tags.php:387
-msgid "Link to %s"
 msgstr ""
 
 #: inc/template-tags.php:469
@@ -459,10 +463,6 @@ msgstr ""
 
 #: template-parts/content-blocks/block-accordion.php:33
 msgid "Accordion Content Block"
-msgstr ""
-
-#: template-parts/content-blocks/block-accordion.php:48
-msgid "Toggle"
 msgstr ""
 
 #: template-parts/scaffolding/scaffolding-blank.php:11
