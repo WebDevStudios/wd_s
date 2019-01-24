@@ -63,7 +63,7 @@ function _s_display_block_options( $args = array() ) {
 		'container'        => 'section',
 		'class'            => 'content-block',
 		'custom_css_class' => $other_options['custom_css_class'],
-		'font_color'       => $other_options['font_color'],
+		'font_color'       => $display_options['font_color'],
 		'id'               => $default_id,
 	);
 
@@ -167,10 +167,10 @@ function _s_display_block_options( $args = array() ) {
 function _s_get_animation_class() {
 
 	// Get block other options for our animation data.
-	$other_options = get_sub_field( 'other_options' );
+	$display_options = get_sub_field( 'display_options' );
 
 	// Get out of here if we don't have other options.
-	if ( ! $other_options ) {
+	if ( ! $display_options ) {
 		return '';
 	}
 
@@ -178,8 +178,8 @@ function _s_get_animation_class() {
 	$classes = 'not-animated';
 
 	// If we have an animation set...
-	if ( $other_options['animation'] ) {
-		$classes = ' animated ' . $other_options['animation'];
+	if ( $display_options['animation'] ) {
+		$classes = 'animated ' . $display_options['animation'];
 	}
 
 	return $classes;
