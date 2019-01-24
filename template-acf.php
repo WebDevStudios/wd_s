@@ -10,11 +10,11 @@
  */
 
 // Omit class if password protected and content is hidden.
-$acf_classname = ! post_password_required() ? ' acf-content-blocks' : '';
+$acf_classname = post_password_required() ? ' container' : ' acf-content-blocks';
 
 get_header(); ?>
 
-	<main id="main" class="site-main container<?php echo esc_attr( $acf_classname ); ?>">
+	<main id="main" class="site-main <?php echo esc_attr( $acf_classname ); ?>">
 
 		<?php
 			the_title( '<h1 class="entry-title screen-reader-text">', '</h1>' );
