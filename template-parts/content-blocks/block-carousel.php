@@ -5,7 +5,7 @@
  * @package _s
  */
 
-$classnames  = 'content-block carousel-block';
+$classnames  = ' content-block carousel-block';
 $classnames .= ' ' . get_sub_field( 'display_options' )['block_width'];
 
 // Start repeater markup...
