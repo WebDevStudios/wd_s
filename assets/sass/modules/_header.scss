@@ -70,10 +70,6 @@
 		@include media($desktop) {
 			width: 25%;
 		}
-
-		@include media($desktop-large) {
-			width: 12.5%;
-		}
 	} // .site-header-action
 
 	//-----------------------------------------
