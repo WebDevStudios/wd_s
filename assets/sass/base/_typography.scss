@@ -24,7 +24,8 @@ textarea {
 } // end @for
 
 h1,
-.h1 {
+.h1,
+.has-large-font-size {
 
 } // h1, .h1
 
@@ -57,9 +58,18 @@ h6,
 // Copy
 //--------------------------------------------------------------
 
-p {
+p,
+.has-normal-font-size {
 	margin: 0 0 rem(24) 0;
 } // p
+
+.has-small-font-size {
+	font-size: rem(12);
+}
+
+.has-huge-font-size {
+	font-size: rem(50);
+}
 
 b,
 strong {
