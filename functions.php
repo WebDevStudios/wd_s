@@ -86,6 +86,30 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Gutenberg support for full-width/wide alignment of supported blocks.
 		add_theme_support( 'align-wide' );
+
+		// Gutenberg defaults for font sizes.
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+				'name' => __( 'Small', '_s' ),
+				'size' => 12,
+				'slug' => 'small',
+			),
+			array(
+				'name' => __( 'Normal', '_s' ),
+				'size' => 16,
+				'slug' => 'normal',
+			),
+			array(
+				'name' => __( 'Large', '_s' ),
+				'size' => 36,
+				'slug' => 'large',
+			),
+			array(
+				'name' => __( 'Huge', '_s' ),
+				'size' => 50,
+				'slug' => 'huge',
+			),
+		) );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
