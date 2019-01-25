@@ -110,6 +110,10 @@ if ( ! function_exists( '_s_setup' ) ) :
 				'slug' => 'huge',
 			),
 		) );
+
+		// Gutenberg editor styles support.
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'style-editor.css' );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
