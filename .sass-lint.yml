@@ -17,8 +17,6 @@ files:
    - 'assets/**/_gravity-forms.scss'
    - 'assets/**/_scaffolding.scss'
    - 'assets/**/style.scss'
-   - 'bourbon-neat/app/**/*.scss'
-   - 'bourbon/app/**/*.scss'
    - 'sass/tests/**/*.scss'
    - 'sass/vendor/**/*.scss'
 
