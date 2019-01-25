@@ -166,3 +166,29 @@ function _s_copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
+
+/**
+ * Copies our ACF color settings into an array readable by Gutenberg's color picker.
+ *
+ * @return array $gutenberg_colors The Gutenberg-ready array
+ * @author Corey Collins
+ */
+function _s_get_theme_colors_gutenberg() {
+
+	// Grab our ACF theme colors.
+	$colors = _s_get_theme_colors();
+
+	if ( ! $colors ) {
+		return array();
+	}
+
+	foreach ( $colors as $key => $color ) {
+		$gutenberg_colors[] = array(
+			'name'  => esc_html( $key ),
+			'slug'  => sanitize_title( $key ),
+			'color' => esc_attr( $color ),
+		);
+	}
+
+	return $gutenberg_colors;
+}
