@@ -83,6 +83,9 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Gutenberg color palette support.
 		add_theme_support( 'editor-color-palette', _s_get_theme_colors_gutenberg() );
+
+		// Gutenberg support for full-width/wide alignment of supported blocks.
+		add_theme_support( 'align-wide' );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
