@@ -80,6 +80,9 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Gutenberg color palette support.
+		add_theme_support( 'editor-color-palette', _s_get_theme_colors_gutenberg() );
 	}
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
