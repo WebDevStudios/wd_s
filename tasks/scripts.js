@@ -9,7 +9,7 @@ const webpackConfig = require( '../webpack.config' );
  * Let Webpack transpile the JavaScript.
  */
 gulp.task( 'scripts', function() {
-	gulp.src( './assets/src/js/src/index.js' )
+	gulp.src( './assets/src/js/index.js' )
 		.pipe( webpackStream( webpackConfig ), webpack )
 		.pipe( gulp.dest( './assets/dist/js/' ) );
 } );

@@ -10,7 +10,7 @@ const host = isProduction ? themeConfig.localURL : themeConfig.watchURL;
 const config = {
 	mode: isProduction ? 'production' : 'development',
 	entry: {
-		project: './assets/src/js/src/index.js',
+		project: './assets/src/js/index.js',
 		scaffolding: './assets/src/js/scaffolding.js',
 		customizer: './assets/src/js/customizer.js'
 	},
