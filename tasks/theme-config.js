@@ -2,7 +2,7 @@
  * Theme Configuration.
  */
 module.exports = {
-	localURL: 'https://wdunderscores.test',
+	localURL: 'https://testing.test',
 	paths: {
 		'css': [ './assets/dist/css/*.css', '!/assets/dist/css/*.min.css' ],
 		'icons': 'assets/images/svg-icons/*.svg',
