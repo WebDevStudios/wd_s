@@ -90,15 +90,17 @@ add_action( 'after_setup_theme', '_s_setup' );
  * This is needed since ./style.css only contains the required theme data.
  */
 function _s_enqueue_main_styles() {
+	$filename = WP_DEBUG ? 'main.css' : 'main.min.css';
+
 	wp_enqueue_style(
 		'_s-main',
-		get_template_directory_uri() . '/assets/dist/css/main.css',
+		get_template_directory_uri() . "/assets/dist/css/$filename",
 		[],
 		false,
 		'all'
 	);
 }
-add_action( 'wp_enqueue_scripts', '_s_enqueue_main_styles' );
+//add_action( 'wp_enqueue_scripts', '_s_enqueue_main_styles' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

@@ -68,7 +68,13 @@ function _s_scripts() {
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
-	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
+	wp_enqueue_style(
+		'_s-style',
+		get_template_directory_uri() . "/assets/dist/css/main{$suffix}.css",
+		[],
+		false,
+		'all'
+	);
 
 	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery' ), $version, true );
 
