@@ -11,20 +11,13 @@ const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
 
 /**
- * Delete the svg-icons.svg before we minify, concat.
- */
-gulp.task( 'clean:icons', () =>
-	del( [ 'assets/images/svg-icons.svg' ] )
-);
-
-/**
  * Minify, concatenate, and clean SVG icons.
  *
  * https://www.npmjs.com/package/gulp-svgmin
  * https://www.npmjs.com/package/gulp-svgstore
  * https://www.npmjs.com/package/gulp-cheerio
  */
-gulp.task( 'svg', [ 'clean:icons' ], () =>
+gulp.task( 'svg', () =>
 	gulp.src( themeConfig.paths.icons )
 
 	// Deal with errors.
@@ -51,6 +44,6 @@ gulp.task( 'svg', [ 'clean:icons' ], () =>
 		} ) )
 
 		// Save svg-icons.svg.
-		.pipe( gulp.dest( 'assets/images/' ) )
+		.pipe( gulp.dest( 'assets/dist/images/' ) )
 		.pipe( browserSync.stream() )
 );
