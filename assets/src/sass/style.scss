@@ -11,7 +11,7 @@ $output-bourbon-deprecation-warnings: false;
 //-----------------------------------------
 @import 'vendor/sanitize/sanitize';
 @import 'vendor/animate/animate';
-@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
 
 //-----------------------------------------
 // Utilities

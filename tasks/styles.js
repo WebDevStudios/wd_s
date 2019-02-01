@@ -26,7 +26,7 @@ const handleErrors = require( './handle-errors' );
  * https://www.npmjs.com/package/css-mqpacker
  */
 gulp.task( 'postcss', () =>
-	gulp.src( 'assets/sass/*.scss', themeConfig.paths.css )
+	gulp.src( 'assets/src/sass/*.scss', themeConfig.paths.css )
 
 	// Deal with errors.
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
@@ -85,8 +85,8 @@ gulp.task( 'cssnano', [ 'postcss' ], () =>
  */
 gulp.task( 'sass:lint', () =>
 	gulp.src( [
-		'assets/sass/**/*.scss',
-		'!assets/sass/vendor/**/*.scss',
+		'assets/src/sass/**/*.scss',
+		'!assets/src/sass/vendor/**/*.scss',
 		'!node_modules/**'
 	] )
 		.pipe( sassLint() )
@@ -105,6 +105,6 @@ gulp.task( 'sassdoc', function() {
 		verbose: true
 	};
 
-	return gulp.src( 'assets/sass/**/*.scss' )
+	return gulp.src( 'assets/src/sass/**/*.scss' )
 		.pipe( sassdoc( options ) );
 } );
