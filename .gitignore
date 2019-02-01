@@ -12,3 +12,5 @@ compass_app_log.txt
 .LSOverride
 /vendor/
 /.vscode/
+assets/dist/*
+!.gitkeep
