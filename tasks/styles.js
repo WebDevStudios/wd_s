@@ -18,13 +18,6 @@ const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
 
 /**
- * Delete style.css and style.min.css before we minify and optimize
- */
-gulp.task( 'clean:styles', () =>
-	del( [ 'style.css', 'style.min.css' ] )
-);
-
-/**
  * Compile Sass and run stylesheet through PostCSS.
  *
  * https://www.npmjs.com/package/gulp-sass
@@ -32,7 +25,7 @@ gulp.task( 'clean:styles', () =>
  * https://www.npmjs.com/package/gulp-autoprefixer
  * https://www.npmjs.com/package/css-mqpacker
  */
-gulp.task( 'postcss', [ 'clean:styles' ], () =>
+gulp.task( 'postcss', () =>
 	gulp.src( 'assets/sass/*.scss', themeConfig.paths.css )
 
 	// Deal with errors.
@@ -58,11 +51,14 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
 			} )
 		] ) )
 
+		// Rename to main.css to prevent confusion with root style.css
+		.pipe( rename( 'main.css') )
+
 		// Create sourcemap.
 		.pipe( sourcemaps.write() )
 
 		// Create style.css.
-		.pipe( gulp.dest( './' ) )
+		.pipe( gulp.dest( './assets/dist/css/' ) )
 		.pipe( browserSync.stream() )
 );
 
@@ -72,13 +68,13 @@ gulp.task( 'postcss', [ 'clean:styles' ], () =>
  * https://www.npmjs.com/package/gulp-cssnano
  */
 gulp.task( 'cssnano', [ 'postcss' ], () =>
-	gulp.src( 'style.css' )
+	gulp.src( 'assets/dist/css/main.css' )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( cssnano( {
 			'safe': true // Use safe optimizations.
 		} ) )
-		.pipe( rename( 'style.min.css' ) )
-		.pipe( gulp.dest( './' ) )
+		.pipe( rename( 'main.min.css' ) )
+		.pipe( gulp.dest( './assets/dist/css/' ) )
 		.pipe( browserSync.stream() )
 );
 

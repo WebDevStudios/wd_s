@@ -57,7 +57,7 @@ Here is what a sample configuration looks like:
 ```
 localURL: 'https://testing.test',
 paths: {
-	'css': [ './*.css', '!*.min.css' ],
+    'css': [ './assets/dist/css/*.css', '!/assets/dist/css/*.min.css' ],
 	'icons': 'assets/images/svg-icons/*.svg',
 	'images': [ 'assets/images/*', '!assets/images/*.svg' ],
 	'php': [ './*.php', './**/*.php' ],
