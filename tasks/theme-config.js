@@ -8,7 +8,7 @@ module.exports = {
 		'icons': 'assets/src/images/svg-icons/*.svg',
 		'images': [ 'assets/src/images/*', '!assets/src/images/*.svg' ],
 		'php': [ './*.php', './**/*.php' ],
-		'js': 'assets/scripts/src/**/*.js',
+		'js': 'assets/src/js/src/**/*.js',
 		'sass': 'assets/src/sass/**/*.scss'
 	},
 	themeName: 'wd_s',
