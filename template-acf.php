@@ -9,11 +9,16 @@
  * @package _s
  */
 
+// Omit class if password protected and content is hidden.
+$acf_classname = post_password_required() ? ' container' : ' acf-content-blocks';
+
 get_header(); ?>
 
-	<div class="content-area">
-		<main id="main" class="site-main">
+	<main id="main" class="site-main<?php echo esc_attr( $acf_classname ); ?>">
+
 		<?php
+			the_title( '<h1 class="entry-title screen-reader-text">', '</h1>' );
+
 			// If the page is password protected...
 			if ( post_password_required() ) :
 				get_template_part( 'template-parts/content', 'password-protected' );
@@ -21,7 +26,7 @@ get_header(); ?>
 				_s_display_content_blocks();
 			endif;
 		?>
-		</main><!-- #main -->
-	</div><!-- .primary -->
+
+	</main><!-- #main -->
 
 <?php get_footer(); ?>

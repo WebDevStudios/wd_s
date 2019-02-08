@@ -1,6 +1,14 @@
 //--------------------------------------------------------------
 // Footer
 //--------------------------------------------------------------
-.site-info {
-	text-align: center;
-} // .site-info
+
+.site-footer {
+	@include padding($space null);
+
+	flex: 0 0 100%;
+	width: 100%;
+
+	.site-info {
+		text-align: center;
+	} // .site-info
+}

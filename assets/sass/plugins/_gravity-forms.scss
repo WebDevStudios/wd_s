@@ -57,11 +57,6 @@ $gf-input-padding: rem(6);
 		color: $gf-label-font-color;
 		font-size: $gf-label-font-size;
 		font-weight: $gf-label-font-weight;
-
-		// Require field Indicator (Asterisk)
-		.gfield_required {
-
-		} // .gfield_required
 	} // .gfield_label
 
 	// Standard fields
@@ -109,33 +104,6 @@ $gf-input-padding: rem(6);
 } // .gform_wrapper
 
 //--------------------------------------------------------------
-// 	FORM HEADER
-//--------------------------------------------------------------
-.gform_wrapper .gform_heading {
-	// .gform_title - form title
-	// .gform_description - form description
-} // .gform_wrapper .gform_heading
-
-//--------------------------------------------------------------
-// 	FORM FOOTER
-//--------------------------------------------------------------
-.gform_wrapper .gform_footer {
-
-	input.button,
-	input[type='submit'] {
-		// This will target submit buttons
-	} // input.button, input[type="submit"]
-} // .gform_wrapper .gform_footer
-
-//--------------------------------------------------------------
-//	CONFIRMATION MESSAGE (SUCCESSFUL AJAX SUBMISSION)
-//--------------------------------------------------------------
-.gforms_confirmation_message { // container element
-	// .gform_confirmation_wrapper - the message wrapper
-	// .gform_confirmation_message - message div
-} // .gforms_confirmation_message
-
-//--------------------------------------------------------------
 //	SELECTS
 //--------------------------------------------------------------
 .gform_wrapper .gform_body .gform_fields .gfield select,
@@ -166,9 +134,18 @@ $gf-input-padding: rem(6);
 	// Default state of icon for select
 	.chosen-single div b {
 		@include position(absolute, 40% rem(11) null null);
-		@include triangle(12px, $color-silver, down); // adjust size and color
 
 		background: none; // hide the default chosen background
+
+		// adjust size and color for active icon
+		&::before {
+			border-color: $color-silver transparent transparent;
+			border-style: solid;
+			border-width: 12px (12px / 2) 0;
+			content: '';
+			height: 0;
+			width: 0;
+		} // &::before
 	} // .chosen-single div b
 
 	// Selections drop-down
@@ -193,9 +170,18 @@ $gf-input-padding: rem(6);
 		} // .chosen-single
 
 		.chosen-single div b {
-			@include triangle(12px, $color-silver, up); // adjust size and color for active icon
-
 			border: none; // hiding the previous triangle (border)
+
+			// adjust size and color for active icon
+			&::before {
+				border-color: transparent transparent $color-silver;
+				border-width: 0 1rem 1rem;
+				border-style: solid;
+				border-width: 0 (12px / 2) 12px;
+				content: '';
+				height: 0;
+				width: 0;
+			} // &::before
 		} // .chosen-single div b
 	} // &.chosen-container-single.chosen-with-drop
 } // .gform_wrapper .gfield .chosen-container-single
@@ -228,17 +214,6 @@ $gf-input-padding: rem(6);
 	textarea {
 		width: 100%;
 	} // .chosen-search input[type="text"], textarea
-
-	// Validation error message (displays at top of form)
-	.validation_error {
-
-	} // .validation_error
-
-	// Error labels (required fields)
-	.gfield_error {
-		// .gfield_label - error label
-		// .validation_message - required error text
-	} // .gfield_error
 
 	// Two-column fields
 	.gf_left_half,

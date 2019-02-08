@@ -2,7 +2,7 @@
 // Global Content Block Styles
 //--------------------------------------------------------------
 .content-block {
-	margin-bottom: $gutter * 2;
+	@include margin(null null $gutter * 2 null);
 
 	// Content Block titles.
 	&-title {
@@ -13,9 +13,46 @@
 		}
 	} // .content-block-title
 
+	&.has-background {
+		@include padding($gutter * 2 null);
+
+		&.container-width {
+			@include padding($gutter * 2 0);
+
+			@include media($container-offset) {
+				@include padding($gutter * 2 $gutter);
+			}
+		} // &.container-width.
+	} // &.has-background
+
 	// Make sure videos stay in their containers.
 	&.video-as-background {
 		overflow: hidden;
 		position: relative;
 	} // &.video-as-background
 } // .content-block
+
+
+//-----------------------------------------
+// Video Controls
+//-----------------------------------------
+.video-toggle {
+	@include position(absolute, null 1% 2% null);
+	@include size(rem(22));
+
+	background: url('assets/images/svg-icons/pause.svg') center center no-repeat transparent;
+	background-size: rem(16);
+	opacity: 0.2;
+	padding: 0;
+	transition: $transition-opacity;
+
+	&:active,
+	&:focus,
+	&:hover {
+		opacity: 1;
+	}
+
+	.video-toggled & {
+		background-image: url('assets/images/svg-icons/play.svg');
+	}
+} // .video-toggle

@@ -96,6 +96,17 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Enqueue Slick scripts. This is done to avoid enqueueing scripts in the wrong spot by enqueuing them directly.
+ *
+ * @author Corey Collins
+ */
+function _s_enqueue_slick_scripts() {
+	wp_enqueue_style( 'slick-carousel' );
+	wp_enqueue_script( 'slick-carousel' );
+}
+add_action( 'wp_enqueue_scripts', '_s_enqueue_slick_scripts' );
+
+/**
  * Enqueue scripts for the customizer.
  *
  * @author Corey Collins

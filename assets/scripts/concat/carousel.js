@@ -19,7 +19,7 @@ window.wdsCarousel = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			theCarousel: $( '.carousel' )
+			theCarousel: $( '.carousel-block' )
 		};
 	};
 

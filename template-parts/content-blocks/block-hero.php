@@ -16,11 +16,11 @@ $animation_class = _s_get_animation_class();
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container hero', // Container class.
+		'class'     => 'content-block hero-block', // Container class.
 	)
 );
 ?>
-	<div class="hero-content<?php echo esc_attr( $animation_class ); ?>">
+	<div class="container hero-content<?php echo esc_attr( $animation_class ); ?>">
 		<?php if ( $title ) : ?>
 			<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>

@@ -3,14 +3,6 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// IE11 Tweak
-//-----------------------------------------
-.page-template-template-scaffolding .primary {
-	float: none;
-	width: 100%;
-}
-
-//-----------------------------------------
 // Scaffolding defaults
 //-----------------------------------------
 .scaffolding-document {
@@ -19,14 +11,13 @@
 	// The section <header>
 	&-header {
 		border-bottom: 1px solid $color-border-scaffolding;
-		display: flex;
-		justify-content: space-between;
 		margin-bottom: $gutter;
 		padding-bottom: $gutter;
 
 		// The title.
-		h2 {
-			@include margin-padding-reset;
+		h3 {
+			@include margin(0);
+			@include padding(0);
 		} // h2
 
 		// The text.
@@ -43,30 +34,27 @@
 		// Reset.
 		h4,
 		p {
-			margin: $gutter 0;
+			@include margin($gutter 0);
 		} // h4, p
 
 		// The <pre> container.
 		pre {
+			@include margin(0 0 $gutter);
+			@include padding($gutter);
+
 			background-color: $color-background-pre;
 			border: 1px solid $color-border-pre;
 			color: $color-text-pre;
-			margin: 0 0 $gutter;
-			padding: $gutter;
 		} // pre
 
 		// The <code> container.
 		code {
+			@include padding(rem(5));
+
 			background-color: $color-background-code;
 			font-size: rem(13);
-			padding: rem(5);
 		} // code
 	} // &-content
-
-	// Live preview.
-	&-live {
-		@include clearfix();
-	} // &-live
 
 	// Always display the global scaffolding.
 	&.scaffolding-colors,
@@ -83,27 +71,17 @@
 // Color swatch defaults
 //-----------------------------------------
 .swatch-container {
-	@include clearfix;
-
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	position: relative;
 
 	// Each swatch.
 	.swatch {
 		border: 1px solid $color-border-scaffolding-swatch;
-		border-radius: rem(5);
-		flex: 0 1 23.875%;
-		height: rem(125);
+		height: rem(150);
 		margin-bottom: $gutter;
 		margin-right: 1.5%;
+		overflow: hidden;
 		position: relative;
 		text-align: center;
-
-		&:nth-child(4n) {
-			margin-right: 0;
-		}
 
 		// The swatch <header>
 		& header {
@@ -117,14 +95,12 @@
 
 		// The swatch <footer>
 		& footer {
+			@include padding(rem(10));
 			@include position(absolute, null null 0 null);
 
 			background-color: $color-background-scaffolding;
 			border-top: 1px solid $color-scaffolding;
-			border-bottom-left-radius: rem(4);
-			border-bottom-right-radius: rem(4);
 			font-size: rem(12);
-			padding: rem(10);
 			width: 100%;
 		} // footer
 	} // .swatch

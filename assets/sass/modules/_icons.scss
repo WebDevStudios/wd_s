@@ -4,19 +4,22 @@
 
 // Social icons <ul>
 .social-icons {
-	@include clearfix;
 	@include list-reset;
 
 	// Each icon <li>
 	.social-icon {
 		display: inline-block;
 
+		a {
+			display: block;
+		} // a
+
 		// Loop through all social icons
 		@each $social-color, $color in $social-colors {
 
 			// Set styles on those social icons!
 			.icon-#{$social-color} {
-				@include size(rem(30) rem(30));
+				@include size(rem(30));
 
 				fill: $color;
 
@@ -72,7 +75,7 @@ $social-sites: facebook instagram linkedin twitter;
 
 	&::before,
 	&::after {
-		@include size(rem(20) rem(3));
+		@include size(rem(25), rem(3));
 
 		background: $color-background-icon-close;
 		border-radius: $border-radius-thin;
@@ -104,7 +107,7 @@ $social-sites: facebook instagram linkedin twitter;
 
 	&::before,
 	&::after {
-		@include size(rem(10) rem(2));
+		@include size(rem(10), rem(2));
 
 		background: $color-background-down-arrow;
 		border-radius: $border-radius-thin;

@@ -52,6 +52,8 @@ function _s_display_block_options( $args = array() ) {
 	// Get block other options.
 	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
+	$display_options = get_sub_field( 'display_options' ) ? get_sub_field( 'display_options' ) : get_field( 'display_options' )['display_options'];
+
 	// Get a default ID.
 	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
 
@@ -61,7 +63,7 @@ function _s_display_block_options( $args = array() ) {
 		'container'        => 'section',
 		'class'            => 'content-block',
 		'custom_css_class' => $other_options['custom_css_class'],
-		'font_color'       => $other_options['font_color'],
+		'font_color'       => $display_options['font_color'],
 		'id'               => $default_id,
 	);
 
@@ -92,18 +94,23 @@ function _s_display_block_options( $args = array() ) {
 		if ( 'video' === $args['background_type'] ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
+			$background_title      = $background_options['background_video_title'];
 			$args['class']        .= ' has-background video-as-background';
+			// Translators: get the title of the video.
+			$background_alt = $background_title ? sprintf( esc_attr( 'Video Background of %s', '_s' ), esc_attr( $background_options['background_video_title'] ) ) : __( 'Video Background', '_s' );
+
 			ob_start();
 			?>
-				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true">
-					<?php if ( $background_video_webm['url'] ) : ?>
+				<video class="video-background" autoplay muted loop preload="auto" aria-hidden="true"<?php echo $background_title ? ' title="' . esc_attr( $background_title ) . '"' : ''; ?>>
+						<?php if ( $background_video_webm['url'] ) : ?>
 						<source src="<?php echo esc_url( $background_video_webm['url'] ); ?>" type="video/webm">
-					<?php endif; ?>
+						<?php endif; ?>
 
-					<?php if ( $background_video['url'] ) : ?>
+						<?php if ( $background_video['url'] ) : ?>
 						<source src="<?php echo esc_url( $background_video['url'] ); ?>" type="video/mp4">
-					<?php endif; ?>
+						<?php endif; ?>
 				</video>
+				<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Toggle video playback', '_s' ); ?></span></button>
 			<?php
 			$background_video_markup = ob_get_clean();
 		}
@@ -121,6 +128,11 @@ function _s_display_block_options( $args = array() ) {
 	// Set the custom ID.
 	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
 		$args['id'] = $other_options['custom_id'];
+	}
+
+	// Set the Container width.
+	if ( isset( $display_options['block_width'] ) && ! empty( $display_options['block_width'] ) ) {
+		$args['class'] .= ' ' . $display_options['block_width'];
 	}
 
 	// Set the custom css class.
@@ -155,19 +167,19 @@ function _s_display_block_options( $args = array() ) {
 function _s_get_animation_class() {
 
 	// Get block other options for our animation data.
-	$other_options = get_sub_field( 'other_options' );
+	$display_options = get_sub_field( 'display_options' );
 
 	// Get out of here if we don't have other options.
-	if ( ! $other_options ) {
+	if ( ! $display_options ) {
 		return '';
 	}
 
 	// Set up our animation class for the wrapping element.
-	$classes = '';
+	$classes = 'not-animated';
 
 	// If we have an animation set...
-	if ( $other_options['animation'] ) {
-		$classes = ' animated ' . $other_options['animation'];
+	if ( $display_options['animation'] ) {
+		$classes = 'animated ' . $display_options['animation'];
 	}
 
 	return $classes;
