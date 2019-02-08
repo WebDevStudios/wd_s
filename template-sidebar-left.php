@@ -15,7 +15,7 @@ get_header(); ?>
 
 		<?php get_sidebar(); ?>
 
-		<main id="main" class="site-main">
+		<main id="main" class="site-main right-two-thirds">
 
 			<?php
 			while ( have_posts() ) :
