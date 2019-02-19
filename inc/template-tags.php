@@ -177,7 +177,7 @@ function _s_get_svg( $args = array() ) {
 		// Use absolute path in the Customizer so that icons show up in there.
 		if ( is_customize_preview() ) :
 		?>
-			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) ); ?>"></use>
+			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/assets/dist/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) ); ?>"></use>
 		<?php else : ?>
 			<use xlink:href="#icon-<?php echo esc_html( $args['icon'] ); ?>"></use>
 		<?php endif; ?>
