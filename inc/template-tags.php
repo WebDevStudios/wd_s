@@ -294,7 +294,7 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 	}
 
 	// Return URL to a placeholder image as a fallback.
-	return get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+	return get_stylesheet_directory_uri() . '/assets/dist/images/placeholder.png';
 }
 
 /**
