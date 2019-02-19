@@ -10,9 +10,9 @@ const handleErrors = require( './handle-errors' );
  * Copy SVGs that shouldn't be processed.
  */
 gulp.task( 'copy:svg', () => {
-	gulp.src(['assets/src/images/svg/**/*.svg'])
-		.pipe(gulp.dest('assets/dist/images/svg/'));
-})
+	gulp.src( [ 'assets/src/images/svg/**/*.svg' ] )
+		.pipe( gulp.dest( 'assets/dist/images/svg/' ) );
+} );
 
 /**
  * Optimize images.
