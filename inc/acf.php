@@ -433,25 +433,25 @@ function _s_display_hero_heading( $title ) {
 }
 
 /**
-* Echo link function
-*
-* @param array $args defaults args - link array and whether or not to append button class.
-* @author jomurgel <jo@webdevstudios.com>
-* @since NEXT
-*/
+ * Echo link function
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ */
 function _s_display_link( $args = array() ) {
 	echo _s_get_link( $args ); // WPCS: XSS Ok.
 }
 
 /**
-* Get link markup from button/link array.
-*
-* @param array $args defaults args - link array and whether or not to append button class.
-* @author jomurgel <jo@webdevstudios.com>
-* @since NEXT
-*
-* @return string button markup.
-*/
+ * Get link markup from button/link array.
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ *
+ * @return string button markup.
+ */
 function _s_get_link( $args = array() ) {
 
 	// Defaults.
