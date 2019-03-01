@@ -57,12 +57,28 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
+#: functions.php:93
+msgid "Small"
+msgstr ""
+
+#: functions.php:98
+msgid "Normal"
+msgstr ""
+
+#: functions.php:103
+msgid "Large"
+msgstr ""
+
 #: functions.php:108
+msgid "Huge"
+msgstr ""
+
+#: functions.php:145
 msgid "Sidebar 1"
 msgstr ""
 
 #. translators: the sidebar name
-#: functions.php:116
+#: functions.php:153
 msgid "Widget area for %s"
 msgstr ""
 
