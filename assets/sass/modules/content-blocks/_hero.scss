@@ -2,23 +2,25 @@
 // Hero Block
 //--------------------------------------------------------------
 .hero {
-	margin-bottom: 0;
-	overflow-y: hidden;
-	position: relative;
-	z-index: 1;
 
-	&.has-overlay {
+	&-block {
+		overflow-y: hidden;
+		position: relative;
+		z-index: 1;
 
-		// Transparent overlay.
-		&::after {
-			@include position(absolute, 0 0 null null);
-			@include size(100%);
+		&.has-overlay {
 
-			background-color: $color-overlay;
-			content: '';
-			z-index: 2;
-		} // &:after
-	}
+			// Transparent overlay.
+			&::after {
+				@include position(absolute, 0 0 null null);
+				@include size(100%);
+
+				background-color: $color-overlay;
+				content: '';
+				z-index: 2;
+			} // &:after
+		} // &.has-overlay
+	} // &-block
 
 	// Content container.
 	&-content {
