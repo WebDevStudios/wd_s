@@ -180,11 +180,11 @@ function _s_get_animation_class() {
 	}
 
 	// Set up our animation class for the wrapping element.
-	$classes = 'not-animated';
+	$classes = ' not-animated';
 
 	// If we have an animation set...
 	if ( $display_options['animation'] ) {
-		$classes = 'animated ' . $display_options['animation'];
+		$classes = ' animated ' . $display_options['animation'];
 	}
 
 	return $classes;
