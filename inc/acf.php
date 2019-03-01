@@ -435,8 +435,9 @@ function _s_get_link( $args = array() ) {
 
 	// Defaults.
 	$defaults = array(
-		'link'      => get_sub_field( 'button_link' ),
-		'button'    => false, // display as button?
+		'button' => false, // display as button?
+		'class'  => '',
+		'link'   => get_sub_field( 'button_link' ),
 	);
 
 	// Parse those args.
@@ -454,7 +455,8 @@ function _s_get_link( $args = array() ) {
 	}
 
 	// Append button class if button exists.
-	$classes = $args['button'] ? ' button' : '';
+	$classes  = $args['button'] ? ' button' : '';
+	$classes .= ' ' . $args['class'];
 
 	// Get title else default to "Read More".
 	$title = _s_has_array_key( 'title', $button_array ) ? $button_array['title'] : esc_html__( 'Read More', 'firemon' );
