@@ -17,7 +17,7 @@
 
 				background-color: $color-overlay;
 				content: '';
-				z-index: 2;
+				z-index: 0;
 			} // &:after
 		} // &.has-overlay
 	} // &-block
