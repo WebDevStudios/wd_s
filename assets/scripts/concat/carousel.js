@@ -92,9 +92,34 @@ window.wdsCarousel = {};
 		} );
 	};
 
+	// Append a pause button to the carousel.
+	app.addPausebutton = function() {
+		let $pauseButton = $( '<button>', { 'class': 'pause-slick', 'type': 'button' } ).text( 'Pause' ),
+			$carousel = $( this );
+
+		$pauseButton.on( 'click', function() {
+
+			if ( ( $carousel ).hasClass( 'paused' ) ) {
+				$carousel.slick( 'play' ).removeClass( 'paused' );
+				$pauseButton.text( 'Pause' );
+				wp.a11y.speak( 'Carousel resumed.' );
+			} else {
+				$carousel.slick( 'pause' ).addClass( 'paused' );
+				$pauseButton.text( 'Play' );
+				wp.a11y.speak( 'Carousel paused.' );
+			}
+
+		} );
+
+		$pauseButton.appendTo( $carousel );
+	};
+
 	// Kick off Slick.
 	app.doSlick = function() {
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
+
+		// This is only necessary when autoplay is enabled. If you disable autoplay, you can safely remove this too.
+		app.$c.theCarousel.on( 'init', app.addPausebutton );
 
 		app.$c.theCarousel.slick( {
 			autoplay: true,
