@@ -461,7 +461,7 @@ function _s_get_link( $args = array() ) {
 	$classes .= ' ' . $args['class'];
 
 	// Get title else default to "Read More".
-	$title = _s_has_array_key( 'title', $button_array ) ? $button_array['title'] : esc_html__( 'Read More', 'firemon' );
+	$title = _s_has_array_key( 'title', $button_array ) ? $button_array['title'] : esc_html__( 'Read More', '_s' );
 
 	// Get url.
 	$url = _s_has_array_key( 'url', $button_array ) ? $button_array['url'] : '';
