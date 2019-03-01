@@ -1,3 +1,4 @@
+/* global wdsi18n: true */
 /**
  * File carousel.js
  *
@@ -94,19 +95,19 @@ window.wdsCarousel = {};
 
 	// Append a pause button to the carousel.
 	app.addPausebutton = function() {
-		let $pauseButton = $( '<button>', { 'class': 'pause-slick', 'type': 'button' } ).text( 'Pause' ),
+		const $pauseButton = $( '<button>', { 'class': 'slick-pause', 'type': 'button' } ).text( 'Pause' ),
 			$carousel = $( this );
 
 		$pauseButton.on( 'click', function() {
 
 			if ( ( $carousel ).hasClass( 'paused' ) ) {
 				$carousel.slick( 'play' ).removeClass( 'paused' );
-				$pauseButton.text( 'Pause' );
-				wp.a11y.speak( 'Carousel resumed.' );
+				$pauseButton.text( wdsi18n.pauseButtonTextPause );
+				wp.a11y.speak( wdsi18n.pauseButtonSpeakResumed );
 			} else {
 				$carousel.slick( 'pause' ).addClass( 'paused' );
-				$pauseButton.text( 'Play' );
-				wp.a11y.speak( 'Carousel paused.' );
+				$pauseButton.text( wdsi18n.pauseButtonTextPlay );
+				wp.a11y.speak( wdsi18n.pauseButtonSpeakPaused );
 			}
 
 		} );
