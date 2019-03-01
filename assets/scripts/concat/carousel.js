@@ -7,6 +7,15 @@
 window.wdsCarousel = {};
 ( function( window, $, app ) {
 
+	const carouselOptions = {
+		autoplay: true,
+		autoplaySpeed: 5000,
+		arrows: true,
+		dots: true,
+		focusOnSelect: true,
+		waitForAnimate: true
+	};
+
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -119,17 +128,12 @@ window.wdsCarousel = {};
 	app.doSlick = function() {
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
-		// This is only necessary when autoplay is enabled. If you disable autoplay, you can safely remove this too.
-		app.$c.theCarousel.on( 'init', app.addPausebutton );
+		// We only need a pause button when autoplay is enabled above.
+		if ( carouselOptions.autoplay ) {
+			app.$c.theCarousel.on( 'init', app.addPausebutton );
+		}
 
-		app.$c.theCarousel.slick( {
-			autoplay: true,
-			autoplaySpeed: 5000,
-			arrows: true,
-			dots: true,
-			focusOnSelect: true,
-			waitForAnimate: true
-		} );
+		app.$c.theCarousel.slick( carouselOptions );
 
 		app.$c.theCarousel.on( 'afterChange', app.doAnimation );
 	};
