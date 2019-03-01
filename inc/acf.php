@@ -455,7 +455,9 @@ function _s_get_link( $args = array() ) {
 	}
 
 	// Append button class if button exists.
-	$classes  = $args['button'] ? ' button' : '';
+	$classes = $args['button'] ? ' button' : '';
+
+	// Append class.
 	$classes .= ' ' . $args['class'];
 
 	// Get title else default to "Read More".
