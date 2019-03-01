@@ -41,7 +41,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 			'id'        => esc_attr( 'carousel-' . get_row_index() ),
 		) );
 		?>
-			<div class="slide-content container">
+			<div class="slide-content container" data-animation="<?php echo esc_attr( _s_get_animation_class() ); ?>">
 
 				<?php if ( $title ) : ?>
 					<h2 class="slide-title"><?php echo esc_html( $title ); ?></h2>
