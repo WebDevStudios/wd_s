@@ -162,6 +162,8 @@ function _s_get_script_translations() {
 		'pauseButtonTextPlay'     => esc_html__( 'Play', '_s' ),
 		'pauseButtonSpeakPaused'  => esc_html__( 'Carousel paused.', '_s' ),
 		'pauseButtonSpeakResumed' => esc_html__( 'Carousel resumed.', '_s' ),
+		/* translators: the placeholders are for the current slide and total slide count. */
+		'activeSlideButton'       => esc_html__( 'Slide %1$s of %2$s active.', '_s' ),
 	);
 
 }
