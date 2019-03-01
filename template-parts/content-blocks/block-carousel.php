@@ -6,7 +6,6 @@
  */
 
 $classnames[] = 'content-block carousel-block';
-$classnames[] = _s_get_animation_class();
 $classnames[] = get_sub_field( 'display_options' )['block_width'];
 $classnames[] = get_sub_field( 'display_options' )['font_color']['color_picker'] ? 'has-font-color color-' . get_sub_field( 'display_options' )['font_color']['color_picker'] : '';
 
