@@ -4,6 +4,7 @@
 $slide-height: rem(500);
 
 .carousel-block {
+	@include padding(0 null);
 
 	// Arbitrary <div> inserted by Slick.
 	.slick-slide div {
