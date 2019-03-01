@@ -30,7 +30,7 @@ _s_display_block_options( array(
 		_s_display_link(
 			array(
 				'button' => true,
-				'class'  => 'cta-button',
+				'class'  => 'button-cta',
 			)
 		);
 		?>
