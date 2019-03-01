@@ -28,16 +28,7 @@
 
 	// Remove the extra padding on nested no-background blocks.
 	&.no-background,
-	&.no-background.container-width {
-
-		// Remove padding from nth no-background block.
-		& + .no-background,
-		& + .no-background.container-width {
-			padding-top: 0;
-		} // & + .no-background
-	} // &.no-background
-
-	// Remove the extra padding on nested no-background against has-background blocks.
+	&.no-background.container-width,
 	&.has-background.container-width {
 
 		// Remove padding from nth no-background block.
