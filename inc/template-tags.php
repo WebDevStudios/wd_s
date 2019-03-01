@@ -566,11 +566,11 @@ function _s_display_mobile_menu() {
  *
  * @return bool
  */
-function _s_has_array_key( $key, $array = [] ) {
+function _s_has_array_key( $key, $array = array() ) {
 
 	if ( ! is_array( $array ) || ( ! $array || ! $key ) ) {
 		return false;
 	}
 
-	return is_array( $array ) && array_key_exists( $key, $array ) && ! empty( $array[ $key ] ); // @codingStandardsIgnoreLine.
+	return is_array( $array ) && array_key_exists( $key, $array ) && ! empty( $array[ $key ] );
 }
