@@ -31,7 +31,8 @@ textarea {
 } // end @for
 
 h1,
-.h1 {
+.h1,
+.has-large-font-size {
 	font-size: rem(32); // HTML5 Default.
 } // h1, .h1
 
@@ -76,6 +77,14 @@ p {
 		@include margin(0);
 	} // &:last-child
 } // p
+
+.has-small-font-size {
+	font-size: rem(12);
+}
+
+.has-huge-font-size {
+	font-size: rem(50);
+}
 
 b,
 strong {
