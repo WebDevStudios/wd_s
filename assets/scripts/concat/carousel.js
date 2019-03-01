@@ -53,8 +53,13 @@ window.wdsCarousel = {};
 			activeContent = activeSlide.find( '.slide-content' ),
 
 			// This is a string like so: 'animated someCssClass'.
-			animationClass = activeContent.attr( 'data-animation' ),
-			splitAnimation = animationClass.split( ' ' ),
+			animationClass = activeContent.attr( 'data-animation' );
+
+			if ( undefined === animationClass ) {
+				return;
+			}
+
+			let splitAnimation = animationClass.split( ' ' ),
 
 			// This is the 'animated' class.
 			animationTrigger = splitAnimation[0];
