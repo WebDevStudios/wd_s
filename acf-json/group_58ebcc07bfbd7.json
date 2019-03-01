@@ -124,33 +124,6 @@
                     "mime_types": "jpg, jpeg, png"
                 },
                 {
-                    "key": "field_5c794cdf8de38",
-                    "label": "Show Overlay?",
-                    "name": "show_overlay",
-                    "type": "true_false",
-                    "instructions": "Show darker overlay between image and content",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5ab3e6937bb9d",
-                                "operator": "==",
-                                "value": "image"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 1,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
                     "key": "field_5c4202c73e2e8",
                     "label": "Video Description",
                     "name": "background_video_title",
@@ -167,7 +140,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "80",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
@@ -176,6 +149,40 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5c794cdf8de38",
+                    "label": "Show Overlay?",
+                    "name": "show_overlay",
+                    "type": "true_false",
+                    "instructions": "Show darker overlay between image and content",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_5ab3e72e7bba0",
@@ -251,5 +258,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1551453569
+    "modified": 1551462016
 }
