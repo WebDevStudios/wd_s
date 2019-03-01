@@ -1,6 +1,6 @@
 {
     "key": "group_596d1eb21b1a7",
-    "title": "Group: Hero — To Clone",
+    "title": "Block: Hero — To Clone",
     "fields": [
         {
             "key": "field_59416d6104f5e",
@@ -17,65 +17,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_59416dec934f9",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "instructions": "Write a catchy headline!",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_59416dfa934fa",
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "instructions": "Write a short blurb to compliment the headline.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_59416e35934fb",
-            "label": "Button",
-            "name": "button",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_59416d894b7c7"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
         }
     ],
     "location": [
@@ -95,5 +36,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1528470458
+    "modified": 1551452510
 }

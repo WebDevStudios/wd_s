@@ -1,6 +1,6 @@
 {
     "key": "group_5b1a9b50754c3",
-    "title": "Group: Carousel — To Clone",
+    "title": "Block: Carousel — To Clone",
     "fields": [
         {
             "key": "field_5b1a9b5079593",
@@ -174,5 +174,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1528475166
+    "modified": 1551452499
 }

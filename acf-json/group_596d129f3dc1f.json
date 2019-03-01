@@ -1,6 +1,6 @@
 {
     "key": "group_596d129f3dc1f",
-    "title": "Group: Generic Content — To Clone",
+    "title": "Block: Generic Content — To Clone",
     "fields": [
         {
             "key": "field_596d12a684a9a",
@@ -55,5 +55,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521823689
+    "modified": 1551452507
 }
