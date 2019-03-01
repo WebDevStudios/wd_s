@@ -405,3 +405,31 @@ function _s_get_theme_colors() {
 		esc_html__( 'Whitesmoke', '_s' )     => '#f1f1f1',
 	);
 }
+/**
+ * Get the overlay class.
+ *
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ * @return string $classes Animate.css classes for our element.
+ */
+function _s_get_overlay_class() {
+
+	// Get block other options for our animation data.
+	$background_options = get_sub_field( 'background_options' );
+
+	// Get out of here if we don't have other options.
+	if ( ! $background_options ) {
+		return false;
+	}
+
+	// Has overlay.
+	$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'];
+
+	// Is image background set?
+	$is_bg_image = _s_has_array_key( 'background_type', $background_options ) && 'image' === $background_options['background_type']['value'];
+
+	// Set up our animation class for the wrapping element.
+	$classes = $has_show_overlay && $is_bg_image ? ' has-overlay' : '';
+
+	return $classes;
+}
