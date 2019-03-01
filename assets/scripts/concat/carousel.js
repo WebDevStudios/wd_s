@@ -124,9 +124,28 @@ window.wdsCarousel = {};
 		$pauseButton.appendTo( $carousel );
 	};
 
+	// Bind click events to buttons after Slick initializes.
+	app.bindButtonClickEvents = function() {
+		const $buttons = $( this ).find( '.slick-arrow' );
+
+		$buttons.on( 'click', app.notifySlideChange );
+	};
+
+	// Use wp.a11y.speak to notify screen readers of active slides.
+	app.notifySlideChange = function() {
+		const $slick = $( this ).parents( '.slick-slider' ).slick( 'getSlick' );
+
+		// currentSlide is 0 based, so we need to add 1 to make it human.
+		let currentSlide = $slick.currentSlide + 1;
+
+		// String replace the things.
+		wp.a11y.speak( wdsi18n.activeSlideButton.replace( '%1$s', currentSlide ).replace( '%2$s', $slick.slideCount ) );
+	};
+
 	// Kick off Slick.
 	app.doSlick = function() {
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
+		app.$c.theCarousel.on( 'init', app.bindButtonClickEvents );
 
 		// We only need a pause button when autoplay is enabled above.
 		if ( carouselOptions.autoplay ) {
