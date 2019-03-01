@@ -48,8 +48,8 @@ window.wdsCarousel = {};
 
 	// Animate the slide content.
 	app.doAnimation = function() {
-		let slides = $( '.slide' ),
-			activeSlide = $( '.slick-current' ),
+		let slides = $( this ).find( '.slide' ),
+			activeSlide = $( this ).find( '.slick-current' ),
 			activeContent = activeSlide.find( '.slide-content' ),
 
 			// This is a string like so: 'animated someCssClass'.
