@@ -17,6 +17,7 @@
 		@include margin(0 auto);
 
 		&.container-width {
+			@include margin($gutter * 2 auto);
 			@include padding($gutter * 2 0);
 
 			@include media($container-offset) {
@@ -26,10 +27,12 @@
 	} // &.has-background
 
 	// Remove the extra padding on nested no-background blocks.
-	&.no-background {
+	&.no-background,
+	&.no-background.container-width {
 
 		// Remove padding from nth no-background block.
-		& + .no-background {
+		& + .no-background,
+		&.no-background.container-width {
 			padding-top: 0;
 		} // & + .no-background
 	} // &.no-background
