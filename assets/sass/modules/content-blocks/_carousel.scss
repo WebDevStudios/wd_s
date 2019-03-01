@@ -81,7 +81,7 @@ $slide-height: rem(500);
 		text-align: center;
 		z-index: 3;
 
-		&[data-animation*='animated'] {
+		&[data-animation~='animated'] {
 			opacity: 0;
 			transition: $transition-opacity;
 
