@@ -24,8 +24,6 @@ if ( have_rows( 'carousel_slides' ) ) :
 		// Set up fields.
 		$title           = get_sub_field( 'title' );
 		$text            = get_sub_field( 'text' );
-		$button_text     = get_sub_field( 'button_text' );
-		$button_url      = get_sub_field( 'button_url' );
 		$other_options   = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 		// If the block has expired, then bail!
@@ -53,9 +51,14 @@ if ( have_rows( 'carousel_slides' ) ) :
 					<p class="slide-description"><?php echo esc_html( $text ); ?></p>
 				<?php endif; ?>
 
-				<?php if ( $button_text && $button_url ) : ?>
-					<a class="button button-slide" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
-				<?php endif; ?>
+				<?php
+				_s_display_link(
+					array(
+						'button' => true,
+						'class'  => 'button-slide',
+					)
+				);
+				?>
 
 			</div><!-- .slide-content -->
 		</section><!-- .slide -->

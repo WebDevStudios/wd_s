@@ -29,8 +29,13 @@ _s_display_block_options( array(
 			<?php endif; ?>
 		</header>
 
-		<?php if ( $button_url && $button_text ) : ?>
-			<a class="button cta-button" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
-		<?php endif; ?>
+		<?php
+		_s_display_link(
+			array(
+				'button' => true,
+				'class'  => 'cta-button',
+			)
+		);
+		?>
 	</div><!-- .container -->
 </aside><!-- .cta-block -->
