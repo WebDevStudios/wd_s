@@ -18,9 +18,7 @@ _s_display_block_options(
 );
 ?>
 	<div class="container hero-content<?php echo esc_attr( _s_get_animation_class() ); ?>">
-		<?php if ( $title ) : ?>
-			<h2 class="hero-title"><?php echo esc_html( $title ); ?></h2>
-		<?php endif; ?>
+		<?php _s_display_hero_heading( $title ); ?>
 
 		<?php if ( $text ) : ?>
 			<p class="hero-description"><?php echo esc_html( $text ); ?></p>

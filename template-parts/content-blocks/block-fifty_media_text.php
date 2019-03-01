@@ -25,5 +25,5 @@ _s_display_block_options(array(
 			<?php echo _s_get_the_content( $text ); // WPCS XSS OK. ?>
 		</div>
 
-	</div><!-- .grid-x -->
+	</div><!-- .container -->
 </section><!-- .fifty-media-text -->

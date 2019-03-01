@@ -53,6 +53,6 @@ if ( $related_posts ) :
 			endforeach;
 			wp_reset_postdata();
 		?>
-		</div><!-- .grid-x -->
+		</div><!-- .container -->
 	</section><!-- .recent-posts -->
 <?php endif; ?>
