@@ -8,7 +8,8 @@
 .comment-content {
 	// WP smiley
 	.wp-smiley {
-		@include margin-padding-reset;
+		@include margin(0);
+		@include padding(0);
 
 		border: none;
 	} // img.wp-smiley
@@ -29,32 +30,34 @@ img {
 
 // Image captions
 .wp-caption {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 $space);
+
 	max-width: 100%;
 
 	img[class*='wp-image-'] {
+		@include margin(0 auto);
+
 		display: block;
-		margin: 0 auto;
 	} // img[class*="wp-image-"]
 
 	// Add auto margins so image is centered
 	&.aligncenter {
-		margin: 0 auto rem(24) auto;
+		@include margin(0 auto $space auto);
 	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
-		margin-right: rem(24);
+		@include margin(null $space null null);
 	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
-		margin-left: rem(24);
+		@include margin(null null null $space);
 	} // &.alignright
 
 	// Add top and bottom margin to caption text
 	.wp-caption-text {
-		margin: rem(12) 0;
+		@include margin(rem(12) 0);
 	} // .wp-caption-text
 } // .wp-caption
 
@@ -69,12 +72,12 @@ img {
 
 // Gallery
 .gallery {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 $space);
 } // .gallery
 
 // Gallery items
 .gallery-item {
-	@include size(100% auto);
+	@include size(100%, auto);
 
 	display: inline-block;
 	text-align: center;
@@ -156,12 +159,18 @@ img {
 // Video and Image as background.
 .video-background,
 .image-background {
-	@include size(100% 100%);
+	@include position(absolute, 50% null null 0);
+	@include size(100%, auto);
 
 	display: block;
-	object-fit: cover;
-	position: absolute;
+	transform: translateY(-50%);
 	z-index: -1;
+
+	@supports (object-fit: cover) {
+		@include size(100%);
+
+		object-fit: cover;
+	}
 }
 
 // Video as background
@@ -174,7 +183,7 @@ img {
 	object-position: center center;
 
 	img {
-		@include size(100% 100%);
+		@include size(100%);
 
 		object-fit: cover;
 	}

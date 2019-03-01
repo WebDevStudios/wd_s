@@ -13,12 +13,22 @@
 		display: none;
 
 		@include media($phone) {
+			@include margin(null auto);
+			@include padding(null $gutter);
+
 			display: block;
+			max-width: $container;
+		}
+
+		@include media($container-offset) {
+			@include padding(null 0);
 		}
 
 		li {
-			margin: 0 rem(10) 0 0;
-		}
+			@include margin(0 rem(10) 0 0);
+
+			display: inline-block;
+		} // li
 	} // ul
 
 	&.toggled ul {
@@ -34,10 +44,9 @@
 
 	// Sub-menu
 	ul {
-		@include position(absolute, rem(24) null null -999em);
+		@include position(absolute, $space null null -999em);
 
 		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
-		float: left;
 		z-index: 99999;
 
 		// Sub-sub menu
@@ -58,7 +67,7 @@
 
 		// Sub-menu links
 		a {
-			@include size(100% auto);
+			@include size(100%, auto);
 
 			min-width: rem(200);
 		} // a
@@ -72,7 +81,6 @@
 
 	// Menu items
 	li {
-		float: left;
 		position: relative;
 	} // li
 } // &.dropdown

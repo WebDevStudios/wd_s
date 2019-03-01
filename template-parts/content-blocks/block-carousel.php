@@ -5,13 +5,17 @@
  * @package _s
  */
 
+$classnames[] = 'content-block carousel-block';
+$classnames[] = _s_get_animation_class();
+$classnames[] = get_sub_field( 'display_options' )['block_width'];
+$classnames[] = get_sub_field( 'display_options' )['font_color']['color_picker'] ? 'has-font-color color-' . get_sub_field( 'display_options' )['font_color']['color_picker'] : '';
+
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
-	echo '<section class="content-block container carousel">';
+	echo '<div class="' . esc_attr( implode( ' ', array_filter( $classnames ) ) ) . '">';
 
 	// Enqueue Slick carousel.
-	wp_enqueue_style( 'slick-carousel' );
-	wp_enqueue_script( 'slick-carousel' );
+	_s_enqueue_slick_scripts();
 
 	// Loop through slide slides.
 	while ( have_rows( 'carousel_slides' ) ) :
@@ -22,7 +26,6 @@ if ( have_rows( 'carousel_slides' ) ) :
 		$text            = get_sub_field( 'text' );
 		$button_text     = get_sub_field( 'button_text' );
 		$button_url      = get_sub_field( 'button_url' );
-		$animation_class = _s_get_animation_class();
 		$other_options   = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 		// If the block has expired, then bail!
@@ -36,11 +39,11 @@ if ( have_rows( 'carousel_slides' ) ) :
 		// Start a <container> with possible block options.
 		_s_display_block_options( array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block slide', // Container class.
+			'class'     => 'slide', // Container class.
+			'id'        => esc_attr( 'carousel-' . get_row_index() ),
 		) );
-
 		?>
-			<div class="slide-content " data-animation="<?php echo esc_attr( $animation_class ); ?>">
+			<div class="slide-content container">
 
 				<?php if ( $title ) : ?>
 					<h2 class="slide-title"><?php echo esc_html( $title ); ?></h2>
@@ -59,5 +62,5 @@ if ( have_rows( 'carousel_slides' ) ) :
 
 <?php
 	endwhile;
-	echo '</section><!-- .carousel -->';
+	echo '</div><!-- .carousel -->';
 endif;

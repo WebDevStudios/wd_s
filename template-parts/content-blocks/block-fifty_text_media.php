@@ -16,17 +16,15 @@ _s_display_block_options( array(
 	'class'     => 'content-block grid-container fifty-fifty fifty-text-media', // Container class.
 ) );
 ?>
-	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
+	<div class="display-flex container <?php echo esc_attr( $animation_class ); ?>">
 
-		<div class="cell">
-			<?php
-				echo force_balance_tags( $text ); // WPCS: XSS OK.
-			?>
+		<div class="half">
+			<?php echo _s_get_the_content( $text ); // WPCS: XSS OK. ?>
 		</div>
 
-		<div class="cell">
+		<div class="half">
 			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['url'] ); ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
 		</div>
 
-	</div><!-- .grid-x -->
+	</div><!-- .container -->
 </section><!-- .fifty-text-media -->

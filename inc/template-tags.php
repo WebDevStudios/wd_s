@@ -150,14 +150,14 @@ function _s_get_svg( $args = array() ) {
 
 	<svg
 	<?php
-		echo force_balance_tags( $height ); // WPCS XSS OK.
-		echo force_balance_tags( $width ); // WPCS XSS OK.
-		echo force_balance_tags( $fill ); // WPCS XSS OK.
+		echo _s_get_the_content( $height ); // WPCS XSS OK.
+		echo _s_get_the_content( $width ); // WPCS XSS OK.
+		echo _s_get_the_content( $fill ); // WPCS XSS OK.
 	?>
 		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
-		echo force_balance_tags( $aria_hidden ); // WPCS XSS OK.
-		echo force_balance_tags( $aria_labelledby ); // WPCS XSS OK.
+		echo _s_get_the_content( $aria_hidden ); // WPCS XSS OK.
+		echo _s_get_the_content( $aria_labelledby ); // WPCS XSS OK.
 	?>
 		role="img">
 		<title id="<?php echo esc_attr( $title_id ); ?>">
@@ -312,9 +312,7 @@ function _s_display_copyright_text() {
 		return false;
 	}
 
-	?>
-	<span class="copyright-text"><?php echo wp_kses_post( do_shortcode( $copyright_text ) ); ?></span>
-	<?php
+	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
 }
 
 /**
@@ -386,7 +384,7 @@ function _s_display_social_network_links() {
 						?>
 						<span class="screen-reader-text">
 						<?php
-							echo /* translators: the social network name */ sprintf( esc_html_e( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
+							echo /* translators: the social network name */ sprintf( esc_html( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
 						?>
 						</span>
 					</a>
@@ -421,7 +419,7 @@ function _s_display_card( $args = array() ) {
 	<div class="<?php echo esc_attr( $args['class'] ); ?> card">
 
 		<?php if ( $args['image'] ) : ?>
-			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] ); ?>"></a>
+			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] . '-image' ); ?>"></a>
 		<?php endif; ?>
 
 		<div class="card-section">
@@ -473,7 +471,9 @@ function _s_display_header_button() {
 			<button type="button" class="cta-button" aria-expanded="false" aria-label="<?php esc_html_e( 'Search', '_s' ); ?>">
 				<?php esc_html_e( 'Search', '_s' ); ?>
 			</button>
-			<?php get_search_form(); ?>
+			<div class="form-container">
+				<?php get_search_form(); ?>
+			</div><!-- .form-container -->
 		<?php endif; ?>
 	</div><!-- .header-trigger -->
 	<?php
@@ -483,6 +483,7 @@ function _s_display_header_button() {
  * Displays numeric pagination on archive pages.
  *
  * @param array $args Array of params to customize output.
+ * @return void.
  * @author Corey Collins
  */
 function _s_display_numeric_pagination( $args = array() ) {
@@ -496,10 +497,16 @@ function _s_display_numeric_pagination( $args = array() ) {
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
+
+	if ( is_null( paginate_links( $args ) ) ) {
+		return;
+	}
 	?>
-	<nav class="pagination-container">
+
+	<nav class="pagination-container container" aria-label="<?php esc_html_e( 'numeric pagination', '_s' ); ?>">
 		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
 	</nav>
+
 	<?php
 }
 
@@ -525,7 +532,7 @@ function _s_display_mobile_menu() {
 	}
 	?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-hidden="true">
+	<nav class="off-canvas-container" aria-label="<?php esc_html_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
 		<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e( 'Close Menu', '_s' ); ?>">
 			<span class="close"></span>
 		</button>
@@ -539,6 +546,7 @@ function _s_display_mobile_menu() {
 			'menu_id'         => 'site-mobile-menu',
 			'menu_class'      => 'mobile-menu',
 			'fallback_cb'     => false,
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		);
 
 		// Display the mobile menu.

@@ -7,9 +7,14 @@ button,
 input,
 select,
 textarea {
+	-moz-font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+	-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
+	-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
 	color: $color-text-main;
 	font-family: $font-sans;
+	font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
 	line-height: $line-height-body;
+	text-rendering: optimizeLegibility; // Improved kerning pairs & ligatures
 } // body, button, input, select, textarea
 
 //--------------------------------------------------------------
@@ -18,39 +23,45 @@ textarea {
 
 // Global Header Resets.
 @for $i from 1 through 6 {
-	h#{$i} {
+	h#{$i},
+	.h#{$i} {
+		font-weight: bold;
 		margin-top: 0;
-	} // h#{$i}
+	} // h#{$i}, .h#{$i}
 } // end @for
 
 h1,
 .h1 {
-
+	font-size: rem(32); // HTML5 Default.
 } // h1, .h1
 
 h2,
 .h2 {
-
+	font-size: rem(24); // HTML5 Default.
 } // h2, .h2
 
 h3,
 .h3 {
-
+	font-size: rem(18.72); // HTML5 Default.
 } // h3, .h3
 
 h4,
 .h4 {
-
+	font-size: rem(18); // HTML5 Default.
 } // h4, .h4
 
 h5,
 .h5 {
+	@extend h4; // Typically h5 isn't used, default to h4.
 
+	font-style: italic;
 }  // h5, .h5
 
 h6,
 .h6 {
+	@extend h4; // Typically h6 isn't used, default to h4.
 
+	font-style: italic;
 } // h6, .h6
 
 //--------------------------------------------------------------
@@ -58,7 +69,12 @@ h6,
 //--------------------------------------------------------------
 
 p {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 $space);
+
+	// Remove margin from last paragraph in element.
+	&:last-child {
+		@include margin(0);
+	} // &:last-child
 } // p
 
 b,
@@ -75,7 +91,10 @@ i {
 
 blockquote,
 q {
-	margin: 0 rem(24);
+	@extend h3;
+	@include margin(0 $space $space);
+
+	font-style: italic;
 	quotes: '" "';
 
 	&::before,
@@ -84,19 +103,33 @@ q {
 	}  // &::before, &::after
 } // blockquote, q
 
+blockquote {
+	border-left: 4px solid $color-cod-gray;
+	font-style: italic;
+	margin-left: 0;
+	padding-left: rem(20);
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
 address {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 $space);
 } // address
 
 pre {
+	@include margin(0 0 $space rem(-24));
+	@include padding($space);
+
 	background-color: $color-background-pre;
+	border: 1px solid $color-border-pre;
 	color: $color-text-pre;
 	font-family: $font-pre;
 	font-size: rem(13);
 	line-height: $line-height-pre;
-	margin: 0 0 rem(24) rem(-24);
 	overflow: auto;
-	padding: rem(24);
 	white-space: pre;
 	word-break: normal;
 	word-wrap: normal;
@@ -110,11 +143,26 @@ var {
 	font-size: rem(15);
 } // code, kbd, tt, var
 
-abbr,
-acronym {
+kbd {
+	background-color: $color-whitesmoke;
+	border: 1px solid $color-silver;
+	border-radius: rem(4);
+	box-shadow: 0 rem(1) 0 rgba($color-black, 0.2), 0 0 0 rem(2) $color-white inset;
+	display: inline-block;
+	margin: 0 rem(3);
+	padding: rem(2) rem(8);
+}
+
+code {
+	background-color: $color-gallery;
+	color: $color-tundora;
+	padding: rem(2) rem(4);
+}
+
+abbr {
 	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
-} // abbr, acronym
+} // abbr
 
 mark,
 ins {
@@ -153,5 +201,6 @@ big {
 .comment-content,
 .widget-title,
 .widget {
-	@include word-break;
+	word-break: keep-all;
+	word-wrap: break-word;
 } // .entry-title, .entry-content, .comments-title, .comment-content, .widget-title, .widget

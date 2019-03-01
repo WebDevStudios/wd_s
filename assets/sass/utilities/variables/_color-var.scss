@@ -81,13 +81,13 @@ $color-background-body: $color-white;
 $color-text-main: $color-cod-gray;
 
 /// Pre Background color.
-$color-background-pre: $color-gallery;
+$color-background-pre: $color-whitesmoke;
 
 /// Pre Border color.
-$color-border-pre: $color-alto;
+$color-border-pre: $color-silver;
 
 /// Pre text color.
-$color-text-pre: $color-cod-gray;
+$color-text-pre:  $color-gray;
 
 /// Code background color.
 $color-background-code: $color-alto;
@@ -191,10 +191,10 @@ $color-modal-close: $color-white;
 //-----------------------------------------
 
 /// Close Icon Background.
-$color-background-icon-close: $color-white;
+$color-background-icon-close: $color-cod-gray;
 
 /// Down Arrow Background Color.
-$color-background-down-arrow: $color-white;
+$color-background-down-arrow: $color-link;
 
 
 //-----------------------------------------
@@ -209,6 +209,9 @@ $color-border-comment-focus: $color-mineshaft;
 
 /// Comment even background.
 $color-background-even: $color-gallery;
+
+/// Comment odd background.
+$color-background-odd: $color-whitesmoke;
 
 /// Comment response background.
 $color-comment-response: $color-white;
@@ -236,13 +239,13 @@ $color-border-block: $color-silver;
 //-----------------------------------------
 
 /// Mobile menu link.
-$color-mobile-menu-link: $color-white;
+$color-mobile-menu-link: $color-link;
 
 /// Hamburger background.
 $color-background-hamburger: $color-cod-gray;
 
 /// Off-canvas Container Background.
-$color-background-off-canvas: $color-cod-gray;
+$color-background-off-canvas: $color-whitesmoke;
 
 /// Off-canvas Screen Background.
 $color-background-off-canvas-screen: $color-black;

@@ -19,7 +19,7 @@
 
 // hentry
 .hentry {
-	margin: 0 0 rem(24) 0;
+	@include margin(0 0 $space 0);
 } // .hentry
 
 // Byline and update post date
@@ -37,24 +37,26 @@
 // Page content, entry content and entry summary
 .page-content,
 .entry-content,
+.entry-footer,
 .entry-summary {
-	margin: rem(24) 0 0;
-} // .page-content, .entry-content, .entry-summary
+	@include margin($space 0 0);
+} // .page-content, .entry-content, .entry-footer, .entry-summary
 
 // Page links
 .page-links {
+	@include margin(0 0 $space 0);
+
 	clear: both;
-	margin: 0 0 rem(24) 0;
 } // .page-links
 
 // Tags links
 .tags-links {
-	margin-left: rem(24);
+	margin-left: $space;
 } // .tags-links
 
 // Edit link
 .edit-link {
-	margin: 0 0 0 rem(5);
+	@include margin(0 0 0 rem(5));
 
 	a {
 		display: inline-block;
@@ -78,8 +80,3 @@
 .archive .format-aside .entry-title {
 	display: none;
 } // .blog .format-aside .entry-title, .archive .format-aside .entry-title
-
-// Content blocks.
-.content-block {
-	@include clearfix;
-} // .content-block

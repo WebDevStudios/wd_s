@@ -3,17 +3,18 @@
 //--------------------------------------------------------------
 
 table {
+	@include padding(0);
+
 	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	padding: 0;
 	width: 100%;
 
 	// thead
 	thead {
 		display: none;
 
-		@include media($phone) {
+		@include media($wp-admin-bar) {
 			display: table-row-group;
 		}
 	} // thead
@@ -21,16 +22,18 @@ table {
 	// th, td
 	th,
 	td {
-		padding: rem(10);
+		@include padding(rem(10));
+
 		text-align: center;
 
-		@include media($phone) {
+		@include media($wp-admin-bar) {
 			display: table-cell;
 		}
 	} // th, td
 
 	// th
 	th {
+		border: 1px solid $color-silver;
 		font-size: rem(14);
 		letter-spacing: rem(1);
 		text-transform: uppercase;
@@ -45,7 +48,7 @@ table {
 		display: block;
 		margin-bottom: rem(10);
 
-		@include media($phone) {
+		@include media($wp-admin-bar) {
 			display: table-row;
 			margin-bottom: 0;
 		}
@@ -59,7 +62,7 @@ table {
 		font-size: rem(13);
 		text-align: center;
 
-		@include media($phone) {
+		@include media($wp-admin-bar) {
 			border-bottom: 0;
 		}
 
@@ -68,16 +71,21 @@ table {
 			border-bottom: 1px solid $color-border-table;
 		} // &:last-child
 
+
 		// before
 		&::before {
-			content: '';
-			float: left;
+			content: attr(data-label);
+			display: block;
 			font-weight: bold;
 			text-transform: uppercase;
+
+			@include media($wp-admin-bar) {
+				display: none;
+			}
 		} // &::before
 	} // td
 
-	@include media($phone) {
+	@include media($wp-admin-bar) {
 		border: 1px solid $color-border-table;
 	}
 } // table

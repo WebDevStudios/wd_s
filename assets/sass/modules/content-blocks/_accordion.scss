@@ -11,7 +11,7 @@
 		.accordion-item {
 
 			.item-toggle {
-				@include size(rem(24) rem(24));
+				@include size($space);
 			} // .item-toggle
 		} // .accordion-item
 	} // .accordion
@@ -23,6 +23,7 @@
 .accordion {
 
 	.accordion-item {
+		@include margin($space null null null);
 
 		&-header {
 			cursor: pointer;
@@ -30,8 +31,10 @@
 		} // &-header
 
 		&-title {
-			margin: 0;
+			@include margin(0);
+
 			padding-right: rem(30); // Space for toggle.
+			position: relative;
 		} // &-title
 
 		&-content {
@@ -57,19 +60,20 @@
 		} // &.open
 
 		&-toggle {
+			@include padding(0);
+			@include position(absolute, rem(12) 0 null null);
+
 			align-items: center;
 			background-color: transparent;
 			border: none;
 			color: inherit;
 			display: flex;
-			justify-content: center;
 			min-width: unset;
-			padding: unset;
-
+			width: 100%;
 
 			&-icon {
-				@include position(absolute, 0 0 null null);
-				@include size(rem(24));
+				@include position(absolute, calc(50% - #{rem(12)}) 0 null null);
+				@include size($space);
 
 				background-color: $color-background-button;
 				border-radius: 100%;

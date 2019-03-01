@@ -16,18 +16,10 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 */
 
 //-----------------------------------------
-// Dependencies
-//-----------------------------------------
-$output-bourbon-deprecation-warnings: false;
-
-@import 'bourbon';
-@import 'neat';
-
-//-----------------------------------------
 // Extras
 //-----------------------------------------
-@import 'assets/bower_components/normalize-css/normalize.css';
-@import 'assets/bower_components/animate.css/animate.css';
+@import 'vendor/sanitize/sanitize';
+@import 'vendor/animate/animate';
 
 //-----------------------------------------
 // Utilities
@@ -36,11 +28,11 @@ $output-bourbon-deprecation-warnings: false;
 // Helper functions.
 @import 'utilities/functions/index';
 
-// Global variables.
-@import 'utilities/variables/index';
-
 // Mixins.
 @import 'utilities/mixins/index';
+
+// Global variables.
+@import 'utilities/variables/index';
 
 // Quick Helpers.
 @import 'utilities/helpers/index';
