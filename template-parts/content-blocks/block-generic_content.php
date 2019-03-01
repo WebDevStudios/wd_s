@@ -6,7 +6,7 @@
  */
 
 // Set up fields.
-$title   = get_sub_field( 'title' );
+$title   = get_sub_field( 'title' ); // Field unused, but kept for multiple blocks, or as base.
 $content = get_sub_field( 'content' );
 
 // Start a <container> with possible block options.
