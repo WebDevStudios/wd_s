@@ -25,9 +25,14 @@
 		} // &.container-width.
 	} // &.has-background
 
-	&.container-width {
-		@include margin(0 auto);
-	}
+	// Remove the extra padding on nested no-background blocks.
+	&.no-background {
+
+		// Remove padding from nth no-background block.
+		& + .no-background {
+			padding-top: 0;
+		} // & + .no-background
+	} // &.no-background
 
 	// Make sure videos stay in their containers.
 	&.video-as-background {
