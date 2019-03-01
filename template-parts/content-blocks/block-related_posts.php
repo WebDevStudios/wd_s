@@ -6,9 +6,8 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
-$related_posts   = get_sub_field( 'related_posts' );
-$animation_class = _s_get_animation_class();
+$title         = get_sub_field( 'title' );
+$related_posts = get_sub_field( 'related_posts' );
 
 // Display section if we have any posts.
 if ( $related_posts ) :
@@ -28,7 +27,7 @@ if ( $related_posts ) :
 			<?php endif; ?>
 		</div>
 
-		<div class="container display-flex <?php echo esc_attr( $animation_class ); ?>">
+		<div class="container display-flex<?php echo esc_attr( _s_get_animation_class() ); ?>">
 
 			<?php
 			// Loop through recent posts.

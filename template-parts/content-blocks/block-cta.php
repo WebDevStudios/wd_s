@@ -6,11 +6,8 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
-$text            = get_sub_field( 'text' );
-$button_url      = get_sub_field( 'button_url' );
-$button_text     = get_sub_field( 'button_text' );
-$animation_class = _s_get_animation_class();
+$title = get_sub_field( 'title' );
+$text  = get_sub_field( 'text' );
 
 // Start a <container> with possible block options.
 _s_display_block_options( array(
@@ -18,7 +15,7 @@ _s_display_block_options( array(
 	'class'     => 'content-block cta-block', // Container class.
 ) );
 ?>
-	<div class="container display-flex align-center <?php echo esc_attr( $animation_class ); ?>">
+	<div class="container display-flex align-center<?php echo esc_attr( _s_get_animation_class() ); ?>">
 		<header>
 			<?php if ( $title ) : ?>
 				<h1 class="cta-title"><?php echo esc_html( $title ); ?></h1>
