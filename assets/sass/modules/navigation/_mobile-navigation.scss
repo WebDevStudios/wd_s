@@ -20,8 +20,9 @@
 	} // ul
 
 	li {
+		@include padding(rem(12));
+
 		list-style: none;
-		padding: rem(12);
 		position: relative;
 	} // li
 
@@ -51,12 +52,12 @@
 // 2. Create a down arrow on parent items.
 //-----------------------------------------
 .parent-indicator {
+	@include padding(0 rem(5));
 	@include position(absolute, rem(10) rem(10) null null);
-	@include size(rem(35));
+	@include size(rem(35), rem(25));
 
 	background-color: transparent;
 	display: inline-block;
-	padding: rem(5);
 	z-index: 9999;
 
 	&:focus {
@@ -140,23 +141,30 @@
 	&,
 	&::before,
 	&::after {
-		@include size(rem(35) rem(5));
+		@include position(absolute, null null null 0);
+		@include size(rem(35), rem(5));
 
 		background: $color-background-hamburger;
 		border-radius: $border-radius-thin;
 		content: '';
 		cursor: pointer;
 		display: block;
-		position: absolute;
+		transform-origin: center center;
 		transition: $transition-hamburger;
 	}
 
+	& {
+		@include position(absolute, 50% null null 0);
+
+		transform: translateY(-50%);
+	}
+
 	&::before {
-		transform: translateY(rem(-10));
+		transform: translateY(-200%);
 	}
 
 	&::after {
-		transform: translateY(rem(10));
+		transform: translateY(200%);
 	}
 
 	.is-visible & {
@@ -180,7 +188,7 @@
 	// The container.
 	&-container {
 		@include position(fixed, 0 auto 0 0);
-		@include size(rem(220) 100%);
+		@include size(rem(220), 100%);
 
 		-webkit-overflow-scrolling: touch;
 		background-color: $color-background-off-canvas;
@@ -205,12 +213,12 @@
 
 	// The hamburger nav.
 	&-open {
-		@include position(absolute, rem(24) rem(24) null null);
+		@include padding(0);
+		@include position(absolute, $space $space null null);
 		@include size(rem(35));
 
 		background-color: transparent;
 		display: block;
-		padding: 0;
 
 		@include media($tablet-landscape) {
 			display: none;
@@ -230,11 +238,12 @@
 
 	// The close "X" button.
 	&-close {
+		@include padding(rem(12) rem(5));
 		@include position(absolute, rem(10) rem(10) null null);
+		@include size(rem(35));
 
 		background-color: transparent;
 		display: none;
-		padding: rem(12) rem(5);
 		z-index: 9999;
 
 		&:focus,
@@ -277,6 +286,8 @@
 		display: none;
 
 		.is-visible & {
+			@include margin($gutter * 2 null null);
+
 			display: block;
 		}
 	} // .off-canvas-content

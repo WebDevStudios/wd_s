@@ -2,125 +2,125 @@
 // Header.
 //--------------------------------------------------------------
 
-// Site logo.
-.site-branding {
-	@include span-columns(10);
+.site-header {
+	flex: 0 0 100%;
+	width: 100%;
 
-	@include media($tablet-portrait) {
-		@include span-columns(11);
-	}
+	// Site logo.
+	.site-branding {
+		flex: 0 0 auto;
+		width: 85%;
 
-	@include media($tablet-landscape) {
-		@include span-columns(5);
-	}
+		@include media($tablet-portrait) {
+			margin-right: auto;
+			width: 90%;
+		}
 
-	// Don't let the logo get out of control.
-	img {
-		@include media(min-width $tablet-portrait max-width $tablet-landscape) {
-			float: left;
+		@include media($tablet-landscape) {
+			width: 45%;
+		}
+
+		// Don't let the logo get out of control.
+		img {
+			@include media($tablet-portrait, $tablet-landscape) {
+				width: 50%;
+			}
+		} // img
+	} // .site-branding
+
+	//-----------------------------------------
+	// Site Title.
+	//-----------------------------------------
+	.site-title {
+		font-size: rem(48);
+
+		// Align next to the logo on mid-size screens.
+		@include media($tablet-portrait, $tablet-landscape) {
+			@include margin(0);
+
 			width: 50%;
 		}
-	} // img
-} // .site-branding
+	} // .site-title
 
-//-----------------------------------------
-// Site Title.
-//-----------------------------------------
-.site-title {
-	font-size: rem(48);
+	//-----------------------------------------
+	// Site Description.
+	//-----------------------------------------
+	.site-description {
+		@include margin(0 0 $space 0);
 
-	// Align next to the logo on mid-size screens.
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
-		float: left;
-		margin: 0;
-		padding: 0 rem(12);
-		width: 50%;
-	}
-} // .site-title
+		font-size: $space;
 
-//-----------------------------------------
-// Site Description.
-//-----------------------------------------
-.site-description {
-	font-size: rem(24);
-	margin: 0 0 rem(24) 0;
+		@include media($tablet-portrait, $tablet-landscape) {
+			clear: both;
+		}
+	} // .site-description
 
-	@include media(min-width $tablet-portrait max-width $tablet-landscape) {
-		clear: both;
-	}
-} // .site-description
-
-//-----------------------------------------
-// Header action container — Form Dropdown.
-//-----------------------------------------
-.site-header-action {
-	@include span-columns(12);
-
-	@include media($tablet-portrait) {
-		@include span-columns(5);
-	}
-
-	@include media($tablet-landscape) {
-		@include span-columns(4);
-
-		float: right;
-		margin-right: 0;
-	}
-
-	@include media($desktop) {
-		@include span-columns(3);
-
-		float: right;
-		margin-right: 0;
-	}
-
-	@include media($desktop-large) {
-		@include span-columns(2);
-
-		float: right;
-		margin-right: 0;
-	}
-} // .site-header-action
-
-//-----------------------------------------
-// Site header action cta buttons.
-//-----------------------------------------
-.site-header-action {
-
-	// Span the button the full width.
-	.button-link,
-	.cta-button {
-		color: $color-cta-link;
-		display: block;
-		text-align: center;
-		text-decoration: none;
+	//-----------------------------------------
+	// Header action container — Form Dropdown.
+	//-----------------------------------------
+	.site-header-action {
+		flex: 0 0 auto;
 		width: 100%;
-	} // .button-link, .cta-button
-} // .site-header-action
 
-//-----------------------------------------
-// Site header Action Searchform.
-//-----------------------------------------
-.site-header-action {
+		@include media($tablet-landscape) {
+			margin-left: auto;
+			width: 35%;
+		}
 
-	.search-form {
-		opacity: 0;
-		transition: $transition-opacity;
-		visibility: hidden;
+		@include media($desktop) {
+			width: 25%;
+		}
+	} // .site-header-action
 
-		// If the body class is there, show the form.
-		.search-form-visible & {
-			display: block;
-			opacity: 1;
-			transition: $transition-opacity;
-			visibility: visible;
-		} // .search-form-visible &
-	} // .search-form
-} // .site-header-action
+	//-----------------------------------------
+	// Site header action cta buttons.
+	//-----------------------------------------
+	.site-header-action {
+		text-align: left;
 
-//-----------------------------------------
-// Main Navigation Container.
-//-----------------------------------------
-.main-navigation {
-	@include span-columns(12);
-} // .main-navigation
+		@include media($tablet-landscape) {
+			text-align: right;
+		}
+
+		// Span the button the full width.
+		.button-link,
+		.cta-button {
+			color: $color-cta-link;
+			text-align: center;
+			text-decoration: none;
+		} // .button-link, .cta-button
+	} // .site-header-action
+
+	//-----------------------------------------
+	// Site header Action Searchform.
+	//-----------------------------------------
+	.site-header-action {
+
+		.form-container {
+			max-height: 0;
+			overflow: hidden;
+			transition: $transition-height;
+
+			.search-form {
+				@include padding($space / 2);
+
+				background-color: $color-white;
+				border: 1px solid $color-gallery;
+			} // .search-form
+
+			// If the body class is there, show the form.
+			.search-form-visible & {
+				display: block;
+				max-height: rem(150);
+			} // .search-form-visible &
+		} // .form-container
+	} // .site-header-action
+
+	//-----------------------------------------
+	// Main Navigation Container.
+	//-----------------------------------------
+	.main-navigation {
+		flex: 0 0 auto;
+		width: 100%;
+	} // .main-navigation
+} // .site-header

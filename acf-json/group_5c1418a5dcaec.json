@@ -1,0 +1,202 @@
+{
+    "key": "group_5c1418a5dcaec",
+    "title": "Group: Display Options — To Clone",
+    "fields": [
+        {
+            "key": "field_5c1418dcb3fbf",
+            "label": "Display Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c141b521fc2d",
+            "label": "Display Options",
+            "name": "display_options",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5c1418bbb3fbe",
+                    "label": "Block Width",
+                    "name": "block_width",
+                    "type": "radio",
+                    "instructions": "Select whether this block should display at container width or full width.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "full-width": "Full",
+                        "container-width": "Container"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "container-width",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5c49f13b705f3",
+                    "label": "Font Color",
+                    "name": "font_color",
+                    "type": "clone",
+                    "instructions": "Change the text color of this block.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5bb7934b61627"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_5c49f169705f4",
+                    "label": "Animation",
+                    "name": "animation",
+                    "type": "select",
+                    "instructions": "Select the animation for this block.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "null": "None",
+                        "bounce": "bounce",
+                        "flash": "flash",
+                        "pulse": "pulse",
+                        "rubberBand": "rubberBand",
+                        "shake": "shake",
+                        "headShake": "headShake",
+                        "swing": "swing",
+                        "tada": "tada",
+                        "wobble": "wobble",
+                        "jello": "jello",
+                        "bounceIn": "bounceIn",
+                        "bounceInDown": "bounceInDown",
+                        "bounceInLeft": "bounceInLeft",
+                        "bounceInRight": "bounceInRight",
+                        "bounceInUp": "bounceInUp",
+                        "bounceOut": "bounceOut",
+                        "bounceOutDown": "bounceOutDown",
+                        "bounceOutLeft": "bounceOutLeft",
+                        "bounceOutRight": "bounceOutRight",
+                        "bounceOutUp": "bounceOutUp",
+                        "fadeIn": "fadeIn",
+                        "fadeInDown": "fadeInDown",
+                        "fadeInDownBig": "fadeInDownBig",
+                        "fadeInLeft": "fadeInLeft",
+                        "fadeInLeftBig": "fadeInLeftBig",
+                        "fadeInRight": "fadeInRight",
+                        "fadeInRightBig": "fadeInRightBig",
+                        "fadeInUp": "fadeInUp",
+                        "fadeInUpBig": "fadeInUpBig",
+                        "fadeOut": "fadeOut",
+                        "fadeOutDown": "fadeOutDown",
+                        "fadeOutDownBig": "fadeOutDownBig",
+                        "fadeOutLeft": "fadeOutLeft",
+                        "fadeOutLeftBig": "fadeOutLeftBig",
+                        "fadeOutRight": "fadeOutRight",
+                        "fadeOutRightBig": "fadeOutRightBig",
+                        "fadeOutUp": "fadeOutUp",
+                        "fadeOutUpBig": "fadeOutUpBig",
+                        "flipInX": "flipInX",
+                        "flipInY": "flipInY",
+                        "flipOutX": "flipOutX",
+                        "flipOutY": "flipOutY",
+                        "lightSpeedIn": "lightSpeedIn",
+                        "lightSpeedOut": "lightSpeedOut",
+                        "rotateIn": "rotateIn",
+                        "rotateInDownLeft": "rotateInDownLeft",
+                        "rotateInDownRight": "rotateInDownRight",
+                        "rotateInUpLeft": "rotateInUpLeft",
+                        "rotateInUpRight": "rotateInUpRight",
+                        "rotateOut": "rotateOut",
+                        "rotateOutDownLeft": "rotateOutDownLeft",
+                        "rotateOutDownRight": "rotateOutDownRight",
+                        "rotateOutUpLeft": "rotateOutUpLeft",
+                        "rotateOutUpRight": "rotateOutUpRight",
+                        "hinge": "hinge",
+                        "jackInTheBox": "jackInTheBox",
+                        "rollIn": "rollIn",
+                        "rollOut": "rollOut",
+                        "zoomIn": "zoomIn",
+                        "zoomInDown": "zoomInDown",
+                        "zoomInLeft": "zoomInLeft",
+                        "zoomInRight": "zoomInRight",
+                        "zoomInUp": "zoomInUp",
+                        "zoomOut": "zoomOut",
+                        "zoomOutDown": "zoomOutDown",
+                        "zoomOutLeft": "zoomOutLeft",
+                        "zoomOutRight": "zoomOutRight",
+                        "zoomOutUp": "zoomOutUp",
+                        "slideInDown": "slideInDown",
+                        "slideInLeft": "slideInLeft",
+                        "slideInRight": "slideInRight",
+                        "slideInUp": "slideInUp",
+                        "slideOutDown": "slideOutDown",
+                        "slideOutLeft": "slideOutLeft",
+                        "slideOutRight": "slideOutRight",
+                        "slideOutUp": "slideOutUp"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1548349823
+}

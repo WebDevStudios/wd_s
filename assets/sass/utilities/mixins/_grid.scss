@@ -1,0 +1,127 @@
+//--------------------------------------------------------------
+// Grid-related mixins
+// Flex grow, shrink, and basis required separate for IE11.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Full Width
+//-----------------------------------------
+@mixin full-width {
+	max-width: 100%;
+	width: 100%;
+}
+
+//-----------------------------------------
+// Half or 50% grid element.
+//-----------------------------------------
+@mixin half {
+
+	@include media($tablet-landscape) {
+		flex-basis: calc(50% - #{rem(25)});
+		flex-grow: 0;
+		flex-shrink: 0;
+		width: calc(50% - #{rem(25)}); // For IE11.
+	}
+
+	&:nth-child(odd) {
+		@include margin(0 0 rem(25) 0);
+
+		@include media($tablet-landscape) {
+			@include margin(0 rem(50) 0 0);
+		}
+	} // &:first-child
+}
+
+//-----------------------------------------
+// Third
+//-----------------------------------------
+@mixin third {
+	@include margin(0 0 rem(25) 0);
+
+	@include media($tablet-landscape) {
+		@include margin(0 rem(50) rem(50) 0);
+
+		flex: 0 0 calc(33.33% - #{rem(33.33)});
+		width: calc(33.33% - #{rem(33.33)}); // For IE11.
+	}
+
+	&:nth-child(3n + 3) {
+		@include margin(0 0 rem(50));
+
+		@include media($tablet-landscape) {
+			@include margin(0 0 rem(50));
+		}
+	} // &:first-child
+}
+
+//-----------------------------------------
+// Quarter
+//-----------------------------------------
+@mixin quarter {
+	@include margin(0 0 rem(25) 0);
+
+	@include media($tablet-landscape) {
+		@include margin(0 rem(50) rem(50) 0);
+
+		flex: 0 0 calc(25% - #{rem(37.5)});
+		width: calc(25% - #{rem(37.5)}); // For IE11.
+	}
+
+	&:nth-child(4n + 4) {
+		@include margin(0 0 rem(50));
+
+		@include media($tablet-landscape) {
+			@include margin(0 0 rem(50));
+		}
+	} // &:first-child
+}
+
+//-----------------------------------------
+// With Sidebar Right
+//-----------------------------------------
+@mixin left-two-thirds {
+
+	@include media($tablet-landscape) {
+		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-grow: 0;
+		flex-shrink: 0;
+		width: calc(66.66% - #{$gutter * 3}); // For IE11.
+	}
+}
+
+@mixin right-third {
+
+	@include media($tablet-landscape) {
+		flex-basis: 33%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-left: auto;
+		margin-right: 0;
+		width: 33%; // For IE11.
+	}
+}
+
+//-----------------------------------------
+// With Sidebar Left
+//-----------------------------------------
+@mixin left-third {
+
+	@include media($tablet-landscape) {
+		flex-basis: 33%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-left: 0;
+		width: 33%; // For IE11.
+	}
+}
+
+@mixin right-two-thirds {
+
+	@include media($tablet-landscape) {
+		flex-basis: calc(66.66% - #{$gutter * 3});
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-left: auto;
+		width: calc(66.66% - #{$gutter * 3}); // For IE11.
+	}
+}

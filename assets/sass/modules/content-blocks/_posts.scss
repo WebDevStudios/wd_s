@@ -1,15 +1,12 @@
 //--------------------------------------------------------------
-// Row Helpers
+// Related and Recent Posts Blocks
 //--------------------------------------------------------------
 
-//-----------------------------------------
-// Row Widths
-//-----------------------------------------
-@for $i from 1 through length($row-widths) {
 
-	$width:	nth($row-widths, $i);
-
-	.row-#{$width} {
-		width: rem($width);
-	} // .row-#{width}
-}
+//-----------------------------------------
+// Shared
+//-----------------------------------------
+.recent-posts-block,
+.related-posts-block {
+	padding-bottom: 0;
+} // .recent-posts-block, .related-posts-block

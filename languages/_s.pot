@@ -13,12 +13,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:17
+#: 404.php:16
 msgid "Sorry, this page doesn't exist."
 msgstr ""
 
-#: 404.php:22
-msgid "It seems we can’t find what you’re looking for. Perhaps searching can help."
+#: 404.php:21
+msgid "It seems we can't find what you’re looking for. Perhaps searching can help."
 msgstr ""
 
 #: comments.php:24
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:51, inc/template-tags.php:528
+#: functions.php:51, inc/template-tags.php:535
 msgid "Mobile Menu"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Widget area for %s"
 msgstr ""
 
-#: header.php:27
+#: header.php:26
 msgid "Skip to content"
 msgstr ""
 
@@ -90,12 +90,12 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
-#: header.php:57
-msgid "Main Menu"
+#: header.php:58
+msgid "Main Navigation"
 msgstr ""
 
 #. translators: the term(s) searched
-#: search.php:18
+#: search.php:17
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "To search this site, enter a search term"
 msgstr ""
 
-#: searchform.php:12, inc/template-tags.php:473, inc/template-tags.php:474
+#: searchform.php:12, inc/template-tags.php:471, inc/template-tags.php:472
 msgid "Search"
 msgstr ""
 
@@ -119,71 +119,84 @@ msgstr ""
 msgid "Scaffolding"
 msgstr ""
 
+#: template-sidebar-left.php:3
+msgid "Sidebar Left"
+msgstr ""
+
 #: template-sidebar-right.php:3
 msgid "Sidebar Right"
 msgstr ""
 
-#: inc/acf.php:259
+#. translators: get the title of the video.
+#: inc/acf.php:100
+msgid "Video Background"
+msgstr ""
+
+#: inc/acf.php:113
+msgid "Toggle video playback"
+msgstr ""
+
+#: inc/acf.php:271
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:281
+#: inc/acf.php:293
 msgid "expired"
 msgstr ""
 
-#: inc/acf.php:380
+#: inc/acf.php:392
 msgid "Alto"
 msgstr ""
 
-#: inc/acf.php:381
+#: inc/acf.php:393
 msgid "Black"
 msgstr ""
 
-#: inc/acf.php:382
+#: inc/acf.php:394
 msgid "Blue"
 msgstr ""
 
-#: inc/acf.php:383
+#: inc/acf.php:395
 msgid "Cod Gray"
 msgstr ""
 
-#: inc/acf.php:384
+#: inc/acf.php:396
 msgid "Dove Gray"
 msgstr ""
 
-#: inc/acf.php:385
+#: inc/acf.php:397
 msgid "Gallery"
 msgstr ""
 
-#: inc/acf.php:386
+#: inc/acf.php:398
 msgid "Gray"
 msgstr ""
 
-#: inc/acf.php:387
+#: inc/acf.php:399
 msgid "Gray Alt"
 msgstr ""
 
-#: inc/acf.php:388
+#: inc/acf.php:400
 msgid "Light Yellow"
 msgstr ""
 
-#: inc/acf.php:389
+#: inc/acf.php:401
 msgid "Mineshaft"
 msgstr ""
 
-#: inc/acf.php:390
+#: inc/acf.php:402
 msgid "Silver"
 msgstr ""
 
-#: inc/acf.php:391
+#: inc/acf.php:403
 msgid "Silver Chalice"
 msgstr ""
 
-#: inc/acf.php:392
+#: inc/acf.php:404
 msgid "White"
 msgstr ""
 
-#: inc/acf.php:393
+#: inc/acf.php:405
 msgid "Whitesmoke"
 msgstr ""
 
@@ -199,7 +212,7 @@ msgstr ""
 msgid "WebDevStudios Placeholder Image"
 msgstr ""
 
-#: inc/hooks.php:96, inc/template-tags.php:438
+#: inc/hooks.php:96, inc/template-tags.php:436
 msgid "Read More"
 msgstr ""
 
@@ -317,16 +330,15 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#. translators: the social network name
-#: inc/template-tags.php:389
-msgid "Link to %s"
-msgstr ""
-
-#: inc/template-tags.php:471
+#: inc/template-tags.php:469
 msgid "More Information"
 msgstr ""
 
-#: inc/template-tags.php:529
+#: inc/template-tags.php:506
+msgid "numeric pagination"
+msgstr ""
+
+#: inc/template-tags.php:536
 msgid "Close Menu"
 msgstr ""
 
@@ -344,7 +356,7 @@ msgid "Sorry, but nothing matched your search terms. Please try again with some 
 msgstr ""
 
 #: template-parts/content-none.php:38
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/content-page.php:22, template-parts/content.php:41
@@ -465,12 +477,8 @@ msgstr ""
 msgid "Enter the text to be displayed in the button in the header."
 msgstr ""
 
-#: template-parts/content-blocks/block-accordion.php:35
+#: template-parts/content-blocks/block-accordion.php:33
 msgid "Accordion Content Block"
-msgstr ""
-
-#: template-parts/content-blocks/block-accordion.php:50
-msgid "Toggle"
 msgstr ""
 
 #: template-parts/scaffolding/scaffolding-blank.php:11

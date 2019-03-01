@@ -4,6 +4,6 @@
 
 // Remove the left margin/padding.
 .wp-block-gallery {
-	@include margin-padding-reset;
-
+	@include margin(0);
+	@include padding(0);
 } // .wp-block-gallery

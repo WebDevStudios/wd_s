@@ -17,41 +17,43 @@ if ( $related_posts ) :
 	_s_display_block_options(
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block grid-container related-posts', // Container class.
+			'class'     => 'content-block related-posts-block', // Container class.
 		)
 	);
-
 	?>
 
-	<div class="grid-x">
-	<?php if ( $title ) : ?>
-		<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
-	<?php endif; ?>
-	</div>
+		<div class="container">
+			<?php if ( $title ) : ?>
+				<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
+			<?php endif; ?>
+		</div>
 
-	<div class="grid-x<?php echo esc_attr( $animation_class ); ?>">
+		<div class="container display-flex <?php echo esc_attr( $animation_class ); ?>">
 
-		<?php
-		// Loop through recent posts.
-		foreach ( $related_posts as $key => $post ) :
+			<?php
+			// Loop through recent posts.
+			foreach ( $related_posts as $key => $post ) :
 
-			// Convert post object to post data.
-			setup_postdata( $post );
+				// Convert post object to post data.
+				setup_postdata( $post );
 
-			// Display a card.
-			_s_display_card( array(
-				'title' => get_the_title(),
-				'image' => _s_get_post_image_url( 'medium' ),
-				'text'  => _s_get_the_excerpt( array(
-					'length' => 20,
-					'more'   => '...',
-				) ),
-				'url'   => get_the_permalink(),
-				'class' => 'cell',
-			) );
-		endforeach;
-		wp_reset_postdata();
-	?>
-	</div><!-- .grid-x -->
-</section><!-- .recent-posts -->
+						// Display a card.
+				_s_display_card(
+					array(
+						'title' => get_the_title(),
+						'image' => _s_get_post_image_url( 'medium' ),
+						'text'  => _s_get_the_excerpt( array(
+							'length' => 20,
+							'more'   => '...',
+						) ),
+						'url'   => get_the_permalink(),
+						'class' => 'third',
+					)
+				);
+
+			endforeach;
+			wp_reset_postdata();
+		?>
+		</div><!-- .container -->
+	</section><!-- .recent-posts -->
 <?php endif; ?>

@@ -37,7 +37,7 @@ function _s_display_scaffolding_section( $args = array() ) {
 	<div class="scaffolding-document <?php echo esc_attr( $class ); ?>">
 
 		<?php if ( $args['title'] ) : ?>
-		<header class="scaffolding-document-header">
+		<header class="scaffolding-document-header display-flex flex-start space-between">
 			<h3 class="scaffolding-document-title"><?php echo esc_html( $args['title'] ); ?></h3>
 			<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', '_s' ); ?></button>
 		</header><!-- .scaffolding-document-header -->
@@ -189,7 +189,7 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 				case 'colors':
 				?>
 
-					<div class="swatch-container">
+					<div class="swatch-container display-flex">
 
 					<?php
 					// Grab the array of colors.
@@ -199,7 +199,7 @@ function _s_display_global_scaffolding_section( $args = array() ) {
 						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) );
 					?>
 
-						<div class="swatch" style="background-color: <?php echo esc_attr( $hex ); ?>;">
+						<div class="swatch quarter" style="background-color: <?php echo esc_attr( $hex ); ?>;">
 							<header><?php echo esc_html( $name ); ?></header>
 							<footer><?php echo esc_html( $color_var ); ?></footer>
 						</div><!-- .swatch -->

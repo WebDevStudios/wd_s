@@ -3,85 +3,167 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
-// Basic structure
+// Full-width Helper
 //-----------------------------------------
-.site-header,
-.site-footer,
-.primary,
-.secondary {
-	padding: 0 $gutter;
+.site-main {
+	@include margin($gutter * 2 null);
 
-	@include media($tablet-landscape) {
-		padding: 0 2 * $gutter;
-	}
-} // .site-header, .site-footer, .primary, .secondary
+	width: 100%;
 
-.site-content {
-	margin: rem(20) auto;
+	&.acf-content-blocks {
+		@include margin(0 null);
+	} // &.acf-content-blocks
 
-	@include media($desktop) {
-		margin: rem(40) auto rem(60);
-	}
-} // .site-content
+	// Styles internal elements to max-width unless it's full-width.
+	> *:not(.full-width) {
+		@include margin($gutter * 2 auto);
+
+		max-width: $container;
+
+		&.container-width {
+			@include margin(0 auto);
+		} // &.container-width
+	} // > *:not(.full-width)
+
+	// Post elements.
+	.hentry {
+		@include margin(0 auto $space * 2);
+
+		max-width: $container;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		} // &:last-child
+	} // .hentry
+
+	// Full-screen elements. Ignores sidebar issues.
+	.full-width {
+		@include full-width;
+	} // .full-width
+} // .site-main
 
 //-----------------------------------------
-// Create Content/Sidebary layout
+// Bound Container at $container width
+//-----------------------------------------
+.container {
+	@include margin(null auto);
+	@include padding(null $gutter);
+
+	max-width: $container;
+
+	@include media($container-offset) {
+		@include padding(0);
+	}
+} // .container
+
+//-----------------------------------------
+// Site Layout Wrapper and Grid Elements
+// and Grid Layout Wrapper
+//-----------------------------------------
+.site-wrapper,
+.display-flex {
+	display: flex;
+	flex: 0 0 100%;
+	flex-flow: row wrap;
+	width: 100%; // For IE11.
+
+	//-----------------------------------------
+	// Justification
+	//-----------------------------------------
+	&.justify-center {
+		justify-content: center; // Allows center elements without margin: 0 auto;
+	} // &.justify-center
+
+	&.space-between {
+		justify-content: space-between; // Allows space-between elements.
+	} // &.space-between
+
+	//-----------------------------------------
+	// Alignments
+	//-----------------------------------------
+	&.flex-start {
+		align-items: flex-start;
+	} // &.flex-start
+
+	&.align-center {
+		align-items: center;
+	} // &.align-center
+
+	//-----------------------------------------
+	// Grid Elements
+	//-----------------------------------------
+
+	// 50%.
+	.half {
+		@include half;
+	} // .half
+
+	// 33%.
+	.third {
+		@include third;
+	} // .third
+
+	// 25%
+	.quarter {
+		@include quarter;
+	} // .quarter
+
+	//-----------------------------------------
+	// Sidebar Elements
+	//-----------------------------------------
+
+	// Left @ ~66% with ~50px gutter.
+	.left-two-thirds {
+		@include left-two-thirds;
+	} // .left-two-thirds
+
+	// 33%.
+	.right-third {
+		@include right-third;
+	} // .right-third
+
+	// 33%.
+	.left-third {
+		@include left-third;
+	} // .left-third
+
+	// Right @ ~66% with ~50px gutter.
+	.right-two-thirds {
+		@include right-two-thirds;
+	} // .right-two-thirds
+} // .site-wrapper, .display-flex
+
+//-----------------------------------------
+// Create Content/Sidebar layout
 //-----------------------------------------
 .has-sidebar {
 
-	.primary {
-		margin-left: 0;
+	// Left sidebar.
+	&.page-template-template-sidebar-left {
 
-		@include media($tablet-landscape) {
-			@include span-columns(8);
-		}
-	} // .primary
+		.grid-wrapper {
 
-	.secondary {
-		@include media($tablet-landscape) {
-			@include span-columns(4);
+			.sidebar {
+				@include media(null, $tablet-landscape) {
+					order: 2;
+				}
+			}
+
+			.site-main {
+				@include media(null, $tablet-landscape) {
+					order: 1;
+				}
+			}
 		}
-	} // .secondary
+	}
+
+	.grid-wrapper {
+		@include margin($gutter * 2 auto);
+
+		max-width: $container;
+	} // .grid-wrapper
+
+	.site-main {
+		@include margin(0 null);
+	} // .site-main
 } // .has-sidebar
-
-/// This is the outermost element for a module or block.
-///
-/// @name .grid-container
-/// @example html - Usage
-/// <div class="grid-container">
-///   <div class="grid-x">
-///     <div class="cell ...">I am a cell!</div>
-///   </div>
-/// </div>
-///
-.grid-container {
-	@include row;
-}
-
-/// This is the inner container for a module or block, and generally establishes the inner content width.
-///
-/// @name .grid-x
-/// @example html - Usage
-/// <div class="grid-container">
-///   <div class="grid-x">
-///     <div class="cell ...">I am a cellu!</div>
-///   </div>
-/// </div>;
-///
-.grid-x {
-	@include outer-container($max-width);
-} // .grid-x
-
-/// Create a generic, 100% width cell.
-///
-/// @name .cell
-/// @example html - Usage
-/// <div class="grid-container">
-///   <div class="grid-x">
-///     <div class="cell">100% width no matter what viewport</div>
-///   </div>
-/// </div>
-///
-.cell {
-	@include fill-parent;
-} // .cell

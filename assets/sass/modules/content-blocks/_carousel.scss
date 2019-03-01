@@ -3,8 +3,12 @@
 //--------------------------------------------------------------
 $slide-height: rem(500);
 
-.carousel {
-	margin-bottom: 0;
+.carousel-block {
+	
+	// Removes padding.
+	&.content-block {
+		@include padding(0 null);
+	} // &.content-block
 
 	// Arbitrary <div> inserted by Slick.
 	.slick-slide div {
@@ -20,12 +24,20 @@ $slide-height: rem(500);
 
 	// Next button.
 	.slick-next {
-		right: 0;
+		right: $gutter;
+
+		@include media($desktop) {
+			right: 0;
+		}
 	} // .slick-next
 
 	// Previous button.
 	.slick-prev {
-		left: 0;
+		left: $gutter;
+
+		@include media($desktop) {
+			left: 0;
+		}
 	} // .slick-prev
 
 	// Navigation dots/numbers.
@@ -43,7 +55,7 @@ $slide-height: rem(500);
 			justify-content: center;
 		} // li
 	} // .slick-dots
-} // .carousel
+} // .carousel-block
 
 .slide {
 	margin-bottom: 0;
@@ -63,13 +75,13 @@ $slide-height: rem(500);
 
 	// Content container.
 	&-content {
+		@include margin(0 auto);
+
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		height: $slide-height;
 		justify-content: center;
-		margin: 0 auto;
-		max-width: 50%;
 		position: relative;
 		text-align: center;
 		z-index: 3;

@@ -4,19 +4,23 @@
 
 // Left Align
 .alignleft {
-	display: inline;
+	@include margin(0 $space 0 0);
+
+	display: block;
 	float: left;
-	margin: 0 rem(24) 0 0;
 } // .alignleft
 
 // Right Align
 .alignright {
-	display: inline;
+	@include margin(0 0 0 $space);
+
+	display: block;
 	float: right;
-	margin: 0 0 0 rem(24);
 } // .alignright
 
 // Center Align
 .aligncenter {
-	@include margin-auto;
+	@include margin(null auto);
+
+	display: block;
 } // .aligncenter

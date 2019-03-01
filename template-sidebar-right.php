@@ -11,8 +11,8 @@
 
 get_header(); ?>
 
-	<div class="primary content-area col-l-8">
-		<main id="main" class="site-main">
+	<div class="display-flex grid-wrapper">
+		<main id="main" class="site-main left-two-thirds">
 
 			<?php
 			while ( have_posts() ) :
@@ -29,8 +29,8 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-	</div><!-- .primary -->
 
-	<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
+	</div><!-- .display-flex -->
 
 <?php get_footer(); ?>

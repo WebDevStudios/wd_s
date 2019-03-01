@@ -64,7 +64,7 @@ function _s_body_classes( $classes ) {
 	}
 
 	// Add a `has-sidebar` class if we're using the sidebar template.
-	if ( is_page_template( 'template-sidebar-right.php' ) || is_singular( 'post' ) ) {
+	if ( is_page_template( 'template-sidebar-right.php' ) || is_page_template( 'template-sidebar-left.php' ) || is_singular( 'post' ) ) {
 		$classes[] = 'has-sidebar';
 	}
 
@@ -147,7 +147,7 @@ function _s_display_customizer_header_scripts() {
 	}
 
 	// Otherwise, echo the scripts!
-	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+	echo _s_get_the_content( $scripts ); // WPCS XSS OK.
 }
 add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
 
@@ -168,7 +168,7 @@ function _s_display_customizer_footer_scripts() {
 	}
 
 	// Otherwise, echo the scripts!
-	echo force_balance_tags( $scripts ); // WPCS XSS OK.
+	echo _s_get_the_content( $scripts ); // WPCS XSS OK.
 }
 add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 
@@ -300,7 +300,9 @@ function _s_add_og_tags() {
 	<meta property="og:title" content="<?php echo esc_attr( $card_title ); ?>" />
 	<meta property="og:description" content="<?php echo esc_attr( $card_description ); ?>" />
 	<meta property="og:url" content="<?php echo esc_url( $card_url ); ?>" />
-	<meta property="og:image" content="<?php echo esc_url( $card_image ); ?>" />
+	<?php if ( $card_image ) : ?>
+		<meta property="og:image" content="<?php echo esc_url( $card_image ); ?>" />
+	<?php endif; ?>
 	<meta property="og:site_name" content="<?php echo esc_attr( $default_title ); ?>" />
 	<meta property="og:type" content="<?php echo esc_attr( $card_type ); ?>" />
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />

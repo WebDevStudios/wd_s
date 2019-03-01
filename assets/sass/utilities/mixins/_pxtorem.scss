@@ -1,0 +1,40 @@
+//--------------------------------------------------------------
+// PX to Rem
+//--------------------------------------------------------------
+
+/// Convert pixels to rems
+/// eg. for a relational value of 12px write rem(12)
+/// Assumes $em-base is the font-size of <html>
+///
+/// @example scss
+///   .element-one {
+///     font-size: rem(16);
+///   }
+///
+///   // CSS Output
+///   .element-one {
+///     font-size: 1rem;
+///   }
+///
+/// @example scss
+///   .element-two {
+///     font-size: rem(32, 14);
+///   }
+///
+///   // CSS Output
+///   .element-two {
+///     font-size: 2.286rem;
+///   }
+
+@function rem($pxval, $base: 16) {
+
+	@if not unitless($pxval) {
+		$pxval: strip-units($pxval);
+	}
+
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+
+	@return ($pxval / $base) * 1rem;
+}
