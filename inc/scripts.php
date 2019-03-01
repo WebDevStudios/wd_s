@@ -72,6 +72,7 @@ function _s_scripts() {
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
 	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
 	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
+	wp_register_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery', 'wp-a11y' ), $version, true );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
@@ -82,7 +83,9 @@ function _s_scripts() {
 		wp_enqueue_script( '_s-babel-polyfill', get_template_directory_uri() . '/assets/scripts/babel-polyfill.min.js', array(), $version, true );
 	}
 
-	wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/scripts/project' . $suffix . '.js', array( 'jquery', 'wp-a11y' ), $version, true );
+	wp_localize_script( '_s-scripts', 'wdsi18n', _s_get_script_translations() );
+
+	wp_enqueue_script( '_s-scripts' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -146,3 +149,19 @@ function _s_include_svg_icons() {
 	}
 }
 add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
+
+/**
+ * Create an array for string translations in the main project script file.
+ *
+ * @return array Array of translations.
+ */
+function _s_get_script_translations() {
+
+	return array(
+		'pauseButtonTextPause'    => esc_html__( 'Pause', '_s' ),
+		'pauseButtonTextPlay'     => esc_html__( 'Play', '_s' ),
+		'pauseButtonSpeakPaused'  => esc_html__( 'Carousel paused.', '_s' ),
+		'pauseButtonSpeakResumed' => esc_html__( 'Carousel resumed.', '_s' ),
+	);
+
+}
