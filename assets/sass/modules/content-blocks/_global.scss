@@ -15,7 +15,6 @@
 
 	&.has-background {
 		@include margin(0 auto);
-		@include padding($gutter * 2 null);
 
 		&.container-width {
 			@include padding($gutter * 2 0);
