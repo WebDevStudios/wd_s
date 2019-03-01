@@ -81,7 +81,12 @@ function _s_display_block_options( $args = array() ) {
 
 		if ( 'image' === $args['background_type'] && $background_options['background_image'] ) {
 			$background_image = $background_options['background_image'];
-			$args['class']   .= ' has-background image-as-background';
+
+			// Show overlay?
+			$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
+
+			// Construct class.
+			$args['class'] .= ' has-background image-as-background' . esc_attr( $has_show_overlay );
 			ob_start();
 			?>
 			<figure class="image-background" aria-hidden="true">
@@ -466,33 +471,4 @@ function _s_get_link( $args = array() ) {
 	<?php
 	// Return output buffer value.
 	return ob_get_clean();
-}
-
-/**
- * Get the overlay class.
- *
- * @author jomurgel <jo@webdevstudios.com>
- * @since NEXT
- * @return string $classes Animate.css classes for our element.
- */
-function _s_get_overlay_class() {
-
-	// Get block other options for our animation data.
-	$background_options = get_sub_field( 'background_options' );
-
-	// Get out of here if we don't have other options.
-	if ( ! $background_options ) {
-		return false;
-	}
-
-	// Has overlay.
-	$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'];
-
-	// Is image background set?
-	$is_bg_image = _s_has_array_key( 'background_type', $background_options ) && 'image' === $background_options['background_type']['value'];
-
-	// Set up our animation class for the wrapping element.
-	$classes = $has_show_overlay && $is_bg_image ? ' has-overlay' : '';
-
-	return $classes;
 }
