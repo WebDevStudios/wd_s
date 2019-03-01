@@ -405,6 +405,69 @@ function _s_get_theme_colors() {
 		esc_html__( 'Whitesmoke', '_s' )     => '#f1f1f1',
 	);
 }
+
+/**
+ * Echo link function
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ */
+function _s_display_link( $args = array() ) {
+	echo _s_get_link( $args ); // WPCS: XSS Ok.
+}
+
+/**
+ * Get link markup from button/link array.
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ *
+ * @return string button markup.
+ */
+function _s_get_link( $args = array() ) {
+
+	// Defaults.
+	$defaults = array(
+		'link'      => get_sub_field( 'button_link' ),
+		'button'    => false, // display as button?
+	);
+
+	// Parse those args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Make args pretty readable and default.
+	$button_array = $args['link'] ?: $defaults['link'];
+
+	// Start output buffer.
+	ob_start();
+
+	if ( ! is_array( $button_array ) ) {
+		ob_get_clean();
+		return;
+	}
+
+	// Append button class if button exists.
+	$classes = $args['button'] ? ' button' : '';
+
+	// Get title else default to "Read More".
+	$title = _s_has_array_key( 'title', $button_array ) ? $button_array['title'] : esc_html__( 'Read More', 'firemon' );
+
+	// Get url.
+	$url = _s_has_array_key( 'url', $button_array ) ? $button_array['url'] : '';
+
+	// Get target, else default internal.
+	$target = _s_has_array_key( 'target', $button_array ) ? $button_array['target'] : '_self';
+	?>
+
+	<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>" target="<?php echo esc_attr( $target ); ?>"><?php echo esc_html( $title ); ?></a>
+
+	<?php
+	// Return output buffer value.
+	return ob_get_clean();
+}
+
 /**
  * Get the overlay class.
  *
