@@ -28,5 +28,5 @@ _s_display_block_options(
 			echo _s_get_the_content( $content ); // WP XSS OK.
 		?>
 
-	</div><!-- .grid-x -->
+	</div><!-- .container -->
 </section><!-- .generic-content -->

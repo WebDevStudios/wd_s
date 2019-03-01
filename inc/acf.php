@@ -405,3 +405,24 @@ function _s_get_theme_colors() {
 		esc_html__( 'Whitesmoke', '_s' )     => '#f1f1f1',
 	);
 }
+
+/**
+ * Adds h1 or h2 heading for hero based on location.
+ *
+ * @param string $title acf value.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @return void
+ */
+function _s_display_hero_heading( $title ) {
+
+	// Bail if our title is empty.
+	if ( empty( $title ) ) {
+		return;
+	}
+
+	// Set hero title to h1 if it's the first block not on the homepage.
+	$index   = get_row_index();
+	$heading = 1 === $index && ! ( is_front_page() && is_home() ) ? 'h1' : 'h2';
+
+	echo sprintf( '<%1$s class="hero-title">%2$s</%1$s>', esc_attr( $heading ), esc_html( $title ) );
+}
