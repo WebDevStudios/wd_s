@@ -30,6 +30,7 @@ _s_display_block_options(
 		_s_display_link(
 			array(
 				'button' => true,
+				'class'  => 'button-hero',
 			)
 		);
 		?>
