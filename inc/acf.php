@@ -193,7 +193,7 @@ function _s_get_animation_class( $args = array() ) {
 	// If we have an animation set...
 	if ( _s_has_array_key( 'animation', $display_options ) ) {
 		$classes = ' animated ' . $display_options['animation'];
-	} else if ( ! is_array( $display_options ) && is_string( $display_options ) ) {
+	} else if ( is_string( $display_options ) && ! empty( $display_options ) ) {
 		$classes = ' animated ' . $display_options;
 	}
 
