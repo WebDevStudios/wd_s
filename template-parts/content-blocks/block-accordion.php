@@ -17,19 +17,17 @@ _s_display_block_options( array(
 	'class'     => 'content-block accordion-block', // Container class.
 ) );
 ?>
-	<div class="accordion-wrapper<?php echo esc_attr( _s_get_animation_class() ); ?>">
-		<div class="container">
-			<?php if ( $title ) : ?>
-				<h2 class="block-title"><?php echo esc_html( $title ); ?></h2>
-			<?php endif; ?>
+	<div class="container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+		<?php if ( $title ) : ?>
+			<h2 class="block-title"><?php echo esc_html( $title ); ?></h2>
+		<?php endif; ?>
 
-			<?php if ( $text ) : ?>
-				<?php echo wp_kses_post( $text ); ?>
-			<?php endif; ?>
-		</div>
+		<?php if ( $text ) : ?>
+			<?php echo wp_kses_post( $text ); ?>
+		<?php endif; ?>
 
 		<?php if ( $accordion_items ) : ?>
-			<div class="container accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
+			<div class="accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
 				<?php
 				$count = 0;
 				while ( have_rows( 'accordion_items' ) ) :
