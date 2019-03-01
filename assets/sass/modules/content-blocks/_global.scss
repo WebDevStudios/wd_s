@@ -4,23 +4,6 @@
 .content-block {
 	@include margin(null null $gutter * 2 null);
 
-	// if overlay exists.
-	&.has-overlay {
-		overflow-y: hidden;
-		position: relative;
-		z-index: 1;
-
-		// Transparent overlay.
-		&::after {
-			@include position(absolute, 0 0 null null);
-			@include size(100%);
-
-			background-color: $color-overlay;
-			content: '';
-			z-index: 0;
-		} // &:after
-	} // &.has-overlay
-
 	&.has-background {
 		@include padding($gutter * 2 null);
 
@@ -48,6 +31,26 @@
 		}
 	} // .content-block-title
 } // .content-block
+
+//-----------------------------------------
+// Overlay
+//-----------------------------------------
+// if overlay exists.
+.has-overlay {
+	overflow-y: hidden;
+	position: relative;
+	z-index: 1;
+
+	// Transparent overlay.
+	&::after {
+		@include position(absolute, 0 0 null null);
+		@include size(100%);
+
+		background-color: $color-overlay;
+		content: '';
+		z-index: 0;
+	} // &:after
+} // &.has-overlay
 
 
 //-----------------------------------------
