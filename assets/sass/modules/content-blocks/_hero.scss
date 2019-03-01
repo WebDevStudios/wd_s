@@ -3,26 +3,6 @@
 //--------------------------------------------------------------
 .hero {
 
-	// Parent block.
-	&-block {
-		overflow-y: hidden;
-		position: relative;
-		z-index: 1;
-
-		&.has-overlay {
-
-			// Transparent overlay.
-			&::after {
-				@include position(absolute, 0 0 null null);
-				@include size(100%);
-
-				background-color: $color-overlay;
-				content: '';
-				z-index: 0;
-			} // &:after
-		} // &.has-overlay
-	} // &-block
-
 	// Content container.
 	&-content {
 		@include margin(0 auto);
