@@ -22,9 +22,9 @@ if ( have_rows( 'carousel_slides' ) ) :
 		the_row();
 
 		// Set up fields.
-		$title           = get_sub_field( 'title' );
-		$text            = get_sub_field( 'text' );
-		$other_options   = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+		$title         = get_sub_field( 'title' );
+		$text          = get_sub_field( 'text' );
+		$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 		// If the block has expired, then bail!
 		if ( _s_has_block_expired( array(
