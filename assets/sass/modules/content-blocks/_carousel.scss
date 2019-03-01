@@ -50,6 +50,11 @@ $slide-height: rem(500);
 			justify-content: center;
 		} // li
 	} // .slick-dots
+
+	.slick-pause {
+		position: relative;
+		z-index: 1000;
+	} // .pause-slick
 } // .carousel-block
 
 .slide {
