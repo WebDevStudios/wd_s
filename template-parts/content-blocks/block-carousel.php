@@ -6,8 +6,8 @@
  */
 
 $classnames[] = 'content-block carousel-block';
-$classnames[] = get_sub_field( 'display_options' )['block_width'];
 $classnames[] = get_sub_field( 'display_options' )['font_color']['color_picker'] ? 'has-font-color color-' . get_sub_field( 'display_options' )['font_color']['color_picker'] : '';
+$classnames[] = get_sub_field( 'block_width' );
 
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
