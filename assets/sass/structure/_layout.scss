@@ -19,10 +19,6 @@
 		@include margin($gutter * 2 auto);
 
 		max-width: $container;
-
-		&.container-width {
-			@include margin(0 auto);
-		} // &.container-width
 	} // > *:not(.full-width)
 
 	// Post elements.
