@@ -153,6 +153,29 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_5c799c6d2a8cc",
+                    "label": "Slide Display Options",
+                    "name": "display_options",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_5c1418dcb3fbf",
+                        "field_5c49f13b705f3",
+                        "field_5c49f169705f4"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         }
@@ -174,5 +197,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1551452499
+    "modified": 1551473811
 }
