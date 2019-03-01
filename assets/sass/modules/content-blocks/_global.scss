@@ -35,6 +35,11 @@
 		position: relative;
 	} // &.video-as-background
 
+	// Z-index container in ACF blocks.
+	.container {
+		z-index: 3;
+	}
+
 	// Content Block titles.
 	&-title {
 		text-align: center;
@@ -52,7 +57,7 @@
 .has-overlay {
 	overflow-y: hidden;
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 
 	// Transparent overlay.
 	&::after {
