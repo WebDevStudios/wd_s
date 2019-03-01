@@ -406,6 +406,13 @@ function _s_get_theme_colors() {
 	);
 }
 
+/**
+ * Adds h1 or h2 heading for hero based on location.
+ *
+ * @param string $title acf value.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @return void
+ */
 function _s_display_hero_heading( $title ) {
 
 	// Bail if our title is empty.
