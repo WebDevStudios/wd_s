@@ -72,6 +72,9 @@ function _s_display_block_options( $args = array() ) {
 
 	$background_video_markup = $background_image_markup = '';
 
+	// Show overlay class, if it exists.
+	$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
+
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
 		if ( 'color' === $args['background_type'] && $background_options['color']['color_picker'] ) {
@@ -81,9 +84,6 @@ function _s_display_block_options( $args = array() ) {
 
 		if ( 'image' === $args['background_type'] && $background_options['background_image'] ) {
 			$background_image = $background_options['background_image'];
-
-			// Show overlay?
-			$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
 
 			// Construct class.
 			$args['class'] .= ' has-background image-as-background' . esc_attr( $has_show_overlay );
@@ -100,7 +100,7 @@ function _s_display_block_options( $args = array() ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
 			$background_title      = $background_options['background_video_title'];
-			$args['class']        .= ' has-background video-as-background';
+			$args['class']        .= ' has-background video-as-background' . esc_attr( $has_show_overlay );
 			// Translators: get the title of the video.
 			$background_alt = $background_title ? sprintf( esc_attr( 'Video Background of %s', '_s' ), esc_attr( $background_options['background_video_title'] ) ) : __( 'Video Background', '_s' );
 
