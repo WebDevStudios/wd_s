@@ -134,6 +134,25 @@
 //-----------------------------------------
 .has-sidebar {
 
+	// Left sidebar.
+	&.page-template-template-sidebar-left {
+
+		.grid-wrapper {
+
+			.sidebar {
+				@include media(null, $tablet-landscape) {
+					order: 2;
+				}
+			}
+
+			.site-main {
+				@include media(null, $tablet-landscape) {
+					order: 1;
+				}
+			}
+		}
+	}
+
 	.grid-wrapper {
 		@include margin($gutter * 2 auto);
 
