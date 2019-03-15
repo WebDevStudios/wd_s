@@ -1,6 +1,6 @@
 /**
-* WDS Scaffolding.
-*/
+ * WDS Scaffolding.
+ */
 window.wdsScaffolding = {};
 ( function( window, $, app ) {
 
