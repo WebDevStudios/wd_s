@@ -9,9 +9,13 @@ const host = isProduction ? themeConfig.localURL : themeConfig.watchURL;
 
 const config = {
 	mode: isProduction ? 'production' : 'development',
-	entry: './assets/scripts/src/index.js',
+	entry: {
+		'project': [ './assets/scripts/src/index.js' ],
+		'customizer': [ './assets/scripts/customizer/customizer.js' ],
+		'scaffolding': [ './assets/scripts/scaffolding/scaffolding.js' ]
+	},
 	output: {
-		filename: isProduction ? 'project.min.js' : 'project.js',
+		filename: isProduction ? '[name].min.js' : '[name].js',
 		publicPath: host + '/wp-content/themes/' + themeConfig.themeName + '/assets/scripts/'
 	},
 	module: {
