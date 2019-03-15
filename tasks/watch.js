@@ -22,5 +22,9 @@ gulp.task( 'watch-files', function() {
 	gulp.watch( themeConfig.paths.sass, [ 'sass:lint', 'styles' ] );
 	gulp.watch( themeConfig.paths.php, [ 'markup' ] );
 	gulp.watch( themeConfig.paths.js, [ 'js:lint', 'scripts' ] );
+	gulp.watch( themeConfig.paths.customizer, [ 'js:lint', 'scripts' ] );
+	gulp.watch( themeConfig.paths.scaffolding, [ 'js:lint', 'scripts' ] );
 	gulp.watch( themeConfig.paths.js ).on( 'change', browserSync.reload );
+	gulp.watch( themeConfig.paths.customizer ).on( 'change', browserSync.reload );
+	gulp.watch( themeConfig.paths.scaffolding ).on( 'change', browserSync.reload );
 } );
