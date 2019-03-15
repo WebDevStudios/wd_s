@@ -2,7 +2,7 @@
  * Theme Configuration.
  */
 module.exports = {
-	localURL: 'http://hacker.local',
+	localURL: 'https://testing.test',
 	paths: {
 		'css': [ './*.css', '!*.min.css' ],
 		'icons': 'assets/images/svg-icons/*.svg',
@@ -14,5 +14,5 @@ module.exports = {
 		'sass': 'assets/sass/**/*.scss'
 	},
 	themeName: 'wd_s',
-	watchURL: 'http://localhost:3000'
+	watchURL: 'https://localhost:3000'
 };
