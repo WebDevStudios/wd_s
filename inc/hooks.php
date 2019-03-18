@@ -11,6 +11,7 @@
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ * @author WDS
  * @return array
  */
 function _s_body_classes( $classes ) {
@@ -75,6 +76,7 @@ add_filter( 'body_class', '_s_body_classes' );
 /**
  * Flush out the transients used in _s_categorized_blog.
  *
+ * @author WDS
  * @return string
  */
 function _s_category_transient_flusher() {
@@ -90,6 +92,7 @@ add_action( 'save_post', '_s_category_transient_flusher' );
 /**
  * Customize "Read More" string on <!-- more --> with the_content();
  *
+ * @author WDS
  * @return string
  */
 function _s_content_more_link() {
@@ -100,6 +103,7 @@ add_filter( 'the_content_more_link', '_s_content_more_link' );
 /**
  * Customize the [...] on the_excerpt();
  *
+ * @author WDS
  * @param string $more The current $more string.
  * @return string
  */
@@ -111,6 +115,7 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
 /**
  * Enable custom mime types.
  *
+ * @author WDS
  * @param array $mimes Current allowed mime types.
  * @return array
  */
@@ -313,11 +318,11 @@ add_action( 'wp_head', '_s_add_og_tags' );
 /**
  * Removes or Adjusts the prefix on category archive page titles.
  *
- * @param string $title The default $title of the page.
- * @return string The updated $title.
+ * @param string $block_title The default $block_title of the page.
+ * @return string The updated $block_title.
  * @author Corey Collins
  */
-function _s_remove_archive_title_prefix( $title ) {
+function _s_remove_archive_title_prefix( $block_title ) {
 
 	// Get the single category title with no prefix.
 	$single_cat_title = single_term_title( '', false );
@@ -326,6 +331,6 @@ function _s_remove_archive_title_prefix( $title ) {
 		return esc_html( $single_cat_title );
 	}
 
-	return $title;
+	return $block_title;
 }
 add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );

@@ -10,7 +10,7 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $post_count      = get_sub_field( 'number_of_posts' );
 $categories      = get_sub_field( 'categories' );
 $tags            = get_sub_field( 'tags' );
@@ -41,8 +41,8 @@ if ( $recent_posts->have_posts() ) :
 	?>
 
 		<div class="container">
-			<?php if ( $title ) : ?>
-			<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
+			<?php if ( $block_title ) : ?>
+			<h2 class="content-block-title"><?php echo esc_html( $block_title ); ?></h2>
 			<?php endif; ?>
 		</div>
 

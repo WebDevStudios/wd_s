@@ -6,7 +6,7 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $content         = get_sub_field( 'content' );
 $animation_class = _s_get_animation_class();
 
@@ -20,8 +20,8 @@ _s_display_block_options(
 ?>
 	<div class="container <?php echo esc_attr( $animation_class ); ?>">
 
-		<?php if ( $title ) : ?>
-			<h2 class="generic-content-title"><?php echo esc_html( $title ); ?></h2>
+		<?php if ( $block_title ) : ?>
+			<h2 class="generic-content-title"><?php echo esc_html( $block_title ); ?></h2>
 		<?php endif; ?>
 
 		<?php

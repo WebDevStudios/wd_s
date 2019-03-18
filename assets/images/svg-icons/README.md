@@ -18,7 +18,7 @@ All of the starter SVG icons included in this repo are from [IcoMoon App](https:
  *     Paramenters needed to display an SVG.
  *
  *     @param string $icon Required. Use the icon filename, e.g. "facebook-square".
- *     @param string $title Optional. SVG title, e.g. "Facebook".
+ *     @param string $block_title Optional. SVG title, e.g. "Facebook".
  *     @param string $desc Optional. SVG description, e.g. "Share this post on Facebook".
  * }
  * @return string SVG markup.

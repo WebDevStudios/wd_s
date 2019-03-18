@@ -6,7 +6,7 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $text            = get_sub_field( 'text' );
 $button_url      = get_sub_field( 'button_url' );
 $button_text     = get_sub_field( 'button_text' );
@@ -20,8 +20,8 @@ _s_display_block_options( array(
 ?>
 	<div class="container display-flex align-center <?php echo esc_attr( $animation_class ); ?>">
 		<header>
-			<?php if ( $title ) : ?>
-				<h1 class="cta-title"><?php echo esc_html( $title ); ?></h1>
+			<?php if ( $block_title ) : ?>
+				<h1 class="cta-title"><?php echo esc_html( $block_title ); ?></h1>
 			<?php endif; ?>
 
 			<?php if ( $text ) : ?>

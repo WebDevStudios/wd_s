@@ -14,6 +14,8 @@ if ( ! function_exists( '_s_setup' ) ) :
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
+	 *
+	 * @author WDS
 	 */
 	function _s_setup() {
 		/**
@@ -127,6 +129,7 @@ add_action( 'after_setup_theme', '_s_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
+ * @author WDS
  */
 function _s_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
@@ -137,6 +140,7 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @author WDS
  */
 function _s_widgets_init() {
 
