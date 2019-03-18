@@ -10,6 +10,7 @@
 /**
  * Returns true if a blog has more than 1 category, else false.
  *
+ * @author WDS
  * @return bool Whether the blog has more than one category.
  */
 function _s_categorized_blog() {
@@ -33,6 +34,7 @@ function _s_categorized_blog() {
 /**
  * Get an attachment ID from it's URL.
  *
+ * @author WDS
  * @param string $attachment_url The URL of the attachment.
  * @return int The attachment ID.
  */

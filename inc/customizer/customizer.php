@@ -23,6 +23,8 @@ add_action( 'customize_register', '_s_remove_default_customizer_sections', 15 );
 
 /**
  * Include other customizer files.
+ *
+ * @author WDS
  */
 function _s_include_custom_controls() {
 	require get_template_directory() . '/inc/customizer/panels.php';
@@ -34,6 +36,8 @@ add_action( 'customize_register', '_s_include_custom_controls', -999 );
 
 /**
  * Enqueue customizer related scripts.
+ *
+ * @author WDS
  */
 function _s_customize_scripts() {
 	wp_enqueue_script( '_s-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', array( 'jquery', 'customize-preview' ), '1.0.0', true );
@@ -44,6 +48,8 @@ add_action( 'customize_preview_init', '_s_customize_scripts' );
  * Add support for the fancy new edit icons.
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
+ *
+ * @author WDS
  * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/.
  */
 function _s_selective_refresh_support( $wp_customize ) {
@@ -67,6 +73,8 @@ add_action( 'customize_register', '_s_selective_refresh_support' );
  * Add live preview support via postMessage.
  *
  * Note: You will need to hook this up via livepreview.js
+ *
+ * @author WDS
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29.

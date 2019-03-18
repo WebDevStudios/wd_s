@@ -8,6 +8,7 @@
 /**
  * Add a custom panels to attach sections too.
  *
+ * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_panels( $wp_customize ) {
