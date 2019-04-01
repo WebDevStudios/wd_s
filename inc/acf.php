@@ -273,7 +273,7 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 
 	// If there's no background, just move along...
 	if ( ! 'none' === $background ) {
-		$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
+		$background_repeater = get_sub_field( 'carousel_slides' )[0]['background_options']['background_type']['value'];
 		$background_type     = $background ? $background : $background_repeater;
 
 		$type = _s_return_flexible_content_layout_value( $background_type );
@@ -297,7 +297,7 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 
 	// ACF Flexible Content Title Fields.
 	$block_title = get_sub_field( 'title' );
-	$headline    = get_sub_field( 'hero_slides' )[0]['headline'];
+	$headline    = get_sub_field( 'carousel_slides' )[0]['title'];
 	$text        = $block_title ? $block_title : $headline;
 	$start_date  = $other_options['start_date'];
 	$end_date    = $other_options['end_date'];
@@ -337,7 +337,7 @@ function _s_return_flexible_content_layout_value( $type ) {
 	}
 
 	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
-	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
+	$background_type_repeater = get_sub_field( 'carousel_slides' )[0]['background_options'][ "background_{$type}" ];
 
 	return $background_type ? $background_type : $background_type_repeater;
 }
