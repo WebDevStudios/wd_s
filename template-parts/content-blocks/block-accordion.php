@@ -25,7 +25,7 @@ _s_display_block_options(
 		<?php endif; ?>
 
 		<?php if ( $text ) : ?>
-			<?php echo wp_kses_post( $text ); ?>
+			<?php echo _s_get_the_content( $text ); // phpcs: xss: ok. ?>
 		<?php endif; ?>
 
 		<?php if ( $accordion_items ) : ?>
