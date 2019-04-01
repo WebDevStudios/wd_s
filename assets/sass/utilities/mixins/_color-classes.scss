@@ -34,12 +34,14 @@
 	@each $name, $color in $colors {
 
 		// Create background color classes.
-		.background-#{$name} {
+		.background-#{$name},
+		.has-#{$name}-background-color {
 			background-color: $color;
 		}
 
 		// Create color classes.
-		.color-#{$name} {
+		.color-#{$name},
+		.has-#{$name}-color {
 			color: $color;
 		}
 

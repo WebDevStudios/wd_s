@@ -16,6 +16,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 $classname .= is_page_template( 'template-sidebar-left.php' ) ? ' left-third' : ' right-third';
 ?>
 
-<aside class="sidebar widget-area<?php echo esc_attr( $classname ); ?>" role="complementary">
+<aside class="sidebar widget-area<?php echo esc_attr( $classname ); ?>">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- .secondary -->
