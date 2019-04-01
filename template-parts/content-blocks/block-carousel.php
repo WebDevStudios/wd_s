@@ -29,10 +29,12 @@ if ( have_rows( 'carousel_slides' ) ) :
 		$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 		// If the block has expired, then bail!
-		if ( _s_has_block_expired( array(
-			'start_date' => $other_options['start_date'],
-			'end_date'   => $other_options['end_date'],
-		) ) ) {
+		if ( _s_has_block_expired(
+			array(
+				'start_date' => $other_options['start_date'],
+				'end_date'   => $other_options['end_date'],
+			)
+		) ) {
 			continue;
 		}
 

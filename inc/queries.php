@@ -33,19 +33,22 @@ function _s_get_recent_posts_query_arguments( $categories, $tags ) {
 
 	// If both categories and tags.
 	if ( $categories && $tags ) {
-		$args = array_merge( $args, array(
-			'tax_query' => array(
-				'relation' => 'OR',
-				array(
-					'taxonomy' => 'category',
-					'terms'    => $categories,
+		$args = array_merge(
+			$args,
+			array(
+				'tax_query' => array(
+					'relation' => 'OR',
+					array(
+						'taxonomy' => 'category',
+						'terms'    => $categories,
+					),
+					array(
+						'taxonomy' => 'post_tag',
+						'terms'    => $tags,
+					),
 				),
-				array(
-					'taxonomy' => 'post_tag',
-					'terms'    => $tags,
-				),
-			),
-		));
+			)
+		);
 	}
 
 	return $args;

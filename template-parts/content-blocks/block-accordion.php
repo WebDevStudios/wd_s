@@ -13,10 +13,12 @@ $animation_class = _s_get_animation_class();
 $row_index       = get_row_index();
 
 // Start a <container> with possible block options.
-_s_display_block_options( array(
-	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block accordion-block', // Container class.
-) );
+_s_display_block_options(
+	array(
+		'container' => 'section', // Any HTML5 container: section, div, etc...
+		'class'     => 'content-block accordion-block', // Container class.
+	)
+);
 ?>
 	<div class="<?php echo esc_attr( $animation_class ); ?>">
 		<div class="container">

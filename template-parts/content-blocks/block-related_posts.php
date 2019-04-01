@@ -42,10 +42,12 @@ if ( $related_posts ) :
 					array(
 						'title' => get_the_title(),
 						'image' => _s_get_post_image_url( 'medium' ),
-						'text'  => _s_get_the_excerpt( array(
-							'length' => 20,
-							'more'   => '...',
-						) ),
+						'text'  => _s_get_the_excerpt(
+							array(
+								'length' => 20,
+								'more'   => '...',
+							)
+						),
 						'url'   => get_the_permalink(),
 						'class' => 'third',
 					)

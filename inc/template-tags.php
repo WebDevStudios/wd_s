@@ -344,7 +344,8 @@ function _s_get_twitter_share_url() {
 		array(
 			'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
 			'url'  => rawurlencode( get_the_permalink() ),
-		), 'https://twitter.com/share'
+		),
+		'https://twitter.com/share'
 	);
 }
 
@@ -369,7 +370,8 @@ function _s_get_linkedin_share_url() {
 		array(
 			'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
 			'url'   => rawurlencode( get_the_permalink() ),
-		), 'https://www.linkedin.com/shareArticle'
+		),
+		'https://www.linkedin.com/shareArticle'
 	);
 }
 

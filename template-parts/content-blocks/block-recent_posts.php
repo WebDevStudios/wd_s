@@ -34,10 +34,12 @@ $recent_posts = _s_get_recent_posts( $args );
 if ( $recent_posts->have_posts() ) :
 
 	// Start a <container> with possible block options.
-	_s_display_block_options( array(
-		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block recent-posts-block', // Container class.
-	) );
+	_s_display_block_options(
+		array(
+			'container' => 'section', // Any HTML5 container: section, div, etc...
+			'class'     => 'content-block recent-posts-block', // Container class.
+		)
+	);
 	?>
 
 		<div class="container">
@@ -58,10 +60,12 @@ if ( $recent_posts->have_posts() ) :
 					array(
 						'title' => get_the_title(),
 						'image' => _s_get_post_image_url( 'medium' ),
-						'text'  => _s_get_the_excerpt( array(
-							'length' => 20,
-							'more'   => '...',
-						) ),
+						'text'  => _s_get_the_excerpt(
+							array(
+								'length' => 20,
+								'more'   => '...',
+							)
+						),
 						'url'   => get_the_permalink(),
 						'class' => 'third',
 					)
