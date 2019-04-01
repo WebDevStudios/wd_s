@@ -33,52 +33,52 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:45, comments.php:71
+#: comments.php:45, comments.php:73
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:48, comments.php:74
+#: comments.php:48, comments.php:76
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:49, comments.php:75
+#: comments.php:49, comments.php:77
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:89
+#: comments.php:91
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:50
+#: functions.php:53
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:51, inc/template-tags.php:535
+#: functions.php:54, inc/template-tags.php:566
 msgid "Mobile Menu"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:111
 msgid "Small"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:116
 msgid "Normal"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:121
 msgid "Large"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:126
 msgid "Huge"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:166
 msgid "Sidebar 1"
 msgstr ""
 
 #. translators: the sidebar name
-#: functions.php:153
+#: functions.php:175
 msgid "Widget area for %s"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "To search this site, enter a search term"
 msgstr ""
 
-#: searchform.php:12, inc/template-tags.php:471, inc/template-tags.php:472
+#: searchform.php:12, inc/template-tags.php:498, inc/template-tags.php:499
 msgid "Search"
 msgstr ""
 
@@ -128,117 +128,117 @@ msgid "Sidebar Right"
 msgstr ""
 
 #. translators: get the title of the video.
-#: inc/acf.php:100
+#: inc/acf.php:108
 msgid "Video Background"
 msgstr ""
 
-#: inc/acf.php:113
+#: inc/acf.php:121
 msgid "Toggle video playback"
 msgstr ""
 
-#: inc/acf.php:271
+#: inc/acf.php:291
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:293
+#: inc/acf.php:313
 msgid "expired"
 msgstr ""
 
-#: inc/acf.php:392
+#: inc/acf.php:416
 msgid "Alto"
 msgstr ""
 
-#: inc/acf.php:393
+#: inc/acf.php:417
 msgid "Black"
 msgstr ""
 
-#: inc/acf.php:394
+#: inc/acf.php:418
 msgid "Blue"
 msgstr ""
 
-#: inc/acf.php:395
+#: inc/acf.php:419
 msgid "Cod Gray"
 msgstr ""
 
-#: inc/acf.php:396
+#: inc/acf.php:420
 msgid "Dove Gray"
 msgstr ""
 
-#: inc/acf.php:397
+#: inc/acf.php:421
 msgid "Gallery"
 msgstr ""
 
-#: inc/acf.php:398
+#: inc/acf.php:422
 msgid "Gray"
 msgstr ""
 
-#: inc/acf.php:399
+#: inc/acf.php:423
 msgid "Gray Alt"
 msgstr ""
 
-#: inc/acf.php:400
+#: inc/acf.php:424
 msgid "Light Yellow"
 msgstr ""
 
-#: inc/acf.php:401
+#: inc/acf.php:425
 msgid "Mineshaft"
 msgstr ""
 
-#: inc/acf.php:402
+#: inc/acf.php:426
 msgid "Silver"
 msgstr ""
 
-#: inc/acf.php:403
+#: inc/acf.php:427
 msgid "Silver Chalice"
 msgstr ""
 
-#: inc/acf.php:404
+#: inc/acf.php:428
 msgid "White"
 msgstr ""
 
-#: inc/acf.php:405
+#: inc/acf.php:429
 msgid "Whitesmoke"
 msgstr ""
 
-#: inc/extras.php:111
-msgid "Width must be an integer"
-msgstr ""
-
-#: inc/extras.php:115
-msgid "Height must be an integer"
-msgstr ""
-
-#: inc/extras.php:136
-msgid "WebDevStudios Placeholder Image"
-msgstr ""
-
-#: inc/hooks.php:96, inc/template-tags.php:436
+#: inc/acf.php:505, inc/hooks.php:99, inc/template-tags.php:462
 msgid "Read More"
 msgstr ""
 
-#: inc/hooks.php:107
+#: inc/extras.php:115
+msgid "Width must be an integer"
+msgstr ""
+
+#: inc/extras.php:119
+msgid "Height must be an integer"
+msgstr ""
+
+#: inc/extras.php:140
+msgid "WebDevStudios Placeholder Image"
+msgstr ""
+
+#: inc/hooks.php:111
 msgid "Read more..."
 msgstr ""
 
-#: inc/hooks.php:206
+#: inc/hooks.php:211
 msgid "Visit our website to learn more."
 msgstr ""
 
-#: inc/hooks.php:246
+#: inc/hooks.php:251
 msgid "categorized in"
 msgstr ""
 
-#: inc/hooks.php:246
+#: inc/hooks.php:251
 msgid "tagged with"
 msgstr ""
 
 #. translators: get the term name.
-#: inc/hooks.php:252
+#: inc/hooks.php:257
 msgid "Posts %1$s %2$s."
 msgstr ""
 
 #. translators: get the search term.
-#: inc/hooks.php:264
+#: inc/hooks.php:269
 msgid "Search results for %s."
 msgstr ""
 
@@ -266,79 +266,79 @@ msgstr ""
 msgid "HTML Output"
 msgstr ""
 
-#: inc/scripts.php:23
+#: inc/scripts.php:25
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/scripts.php:24
+#: inc/scripts.php:26
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: the date the post was published
-#: inc/template-tags.php:30
+#: inc/template-tags.php:32
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: the post author
-#: inc/template-tags.php:36
+#: inc/template-tags.php:38
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:53, inc/template-tags.php:60
+#: inc/template-tags.php:57, inc/template-tags.php:64
 msgid ", "
 msgstr ""
 
 #. translators: the post category
-#: inc/template-tags.php:56
+#: inc/template-tags.php:60
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: the post tags
-#: inc/template-tags.php:63
+#: inc/template-tags.php:67
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:73
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:73
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:73
 msgid "% Comments"
 msgstr ""
 
 #. translators: %s: Name of current post
 #. translators: %s: Name of current post
-#: inc/template-tags.php:76, template-parts/content-page.php:34
+#: inc/template-tags.php:80, template-parts/content-page.php:36
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:104
+#: inc/template-tags.php:111
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/template-tags.php:109
+#: inc/template-tags.php:116
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:469
+#: inc/template-tags.php:496
 msgid "More Information"
 msgstr ""
 
-#: inc/template-tags.php:506
+#: inc/template-tags.php:535
 msgid "numeric pagination"
 msgstr ""
 
-#: inc/template-tags.php:536
+#: inc/template-tags.php:567
 msgid "Close Menu"
 msgstr ""
 
@@ -351,20 +351,20 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:35
+#: template-parts/content-none.php:36
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:38
+#: template-parts/content-none.php:39
 msgid "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22, template-parts/content.php:41
+#: template-parts/content-page.php:23, template-parts/content.php:47
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: template-parts/content.php:32
+#: template-parts/content.php:34
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -372,112 +372,124 @@ msgstr ""
 msgid "Share This"
 msgstr ""
 
-#: template-parts/sharing-icons.php:19, template-parts/sharing-icons.php:22
+#: template-parts/sharing-icons.php:19
+msgid "Twitter"
+msgstr ""
+
+#: template-parts/sharing-icons.php:20, template-parts/sharing-icons.php:24
 msgid "Share on Twitter"
 msgstr ""
 
-#: template-parts/sharing-icons.php:31, template-parts/sharing-icons.php:34
+#: template-parts/sharing-icons.php:33
+msgid "Facebook"
+msgstr ""
+
+#: template-parts/sharing-icons.php:34, template-parts/sharing-icons.php:38
 msgid "Share on Facebook"
 msgstr ""
 
-#: template-parts/sharing-icons.php:43, template-parts/sharing-icons.php:46
+#: template-parts/sharing-icons.php:47
+msgid "LinkedIn"
+msgstr ""
+
+#: template-parts/sharing-icons.php:48, template-parts/sharing-icons.php:52
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: inc/customizer/panels.php:21
+#: inc/customizer/panels.php:23
 msgid "Site Options"
 msgstr ""
 
-#: inc/customizer/panels.php:22
+#: inc/customizer/panels.php:24
 msgid "Other theme options."
 msgstr ""
 
-#: inc/customizer/sections.php:19
+#: inc/customizer/sections.php:20
 msgid "Additional Scripts"
 msgstr ""
 
-#: inc/customizer/sections.php:29
+#: inc/customizer/sections.php:30
 msgid "Social Media"
 msgstr ""
 
-#: inc/customizer/sections.php:30
+#: inc/customizer/sections.php:31
 msgid "Links here power the display_social_network_links() template tag."
 msgstr ""
 
-#: inc/customizer/sections.php:40
+#: inc/customizer/sections.php:41
 msgid "Header Customizations"
 msgstr ""
 
-#: inc/customizer/sections.php:50
+#: inc/customizer/sections.php:51
 msgid "Footer Customizations"
 msgstr ""
 
-#: inc/customizer/settings.php:28
+#: inc/customizer/settings.php:29
 msgid "Header Scripts"
 msgstr ""
 
-#: inc/customizer/settings.php:29
+#: inc/customizer/settings.php:30
 msgid "Additional scripts to add to the header. Basic HTML tags are allowed."
 msgstr ""
 
-#: inc/customizer/settings.php:48
+#: inc/customizer/settings.php:49
 msgid "Footer Scripts"
 msgstr ""
 
-#: inc/customizer/settings.php:49
+#: inc/customizer/settings.php:50
 msgid "Additional scripts to add to the footer. Basic HTML tags are allowed."
 msgstr ""
 
 #. translators: the social network name.
-#: inc/customizer/settings.php:83
+#: inc/customizer/settings.php:85
 msgid "%s URL"
 msgstr ""
 
-#: inc/customizer/settings.php:113
+#: inc/customizer/settings.php:116
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings.php:114
+#: inc/customizer/settings.php:117
 msgid "The copyright text will be displayed in the footer. Basic HTML tags allowed."
 msgstr ""
 
-#: inc/customizer/settings.php:143
+#: inc/customizer/settings.php:147
 msgid "Header Button"
 msgstr ""
 
-#: inc/customizer/settings.php:144
+#: inc/customizer/settings.php:148
 msgid "Display a custom button in the header."
 msgstr ""
 
-#: inc/customizer/settings.php:148
+#: inc/customizer/settings.php:152
 msgid "No button"
 msgstr ""
 
-#: inc/customizer/settings.php:149
+#: inc/customizer/settings.php:153
 msgid "Trigger a search field"
 msgstr ""
 
-#: inc/customizer/settings.php:150
+#: inc/customizer/settings.php:154
 msgid "Link to a custom URL"
 msgstr ""
 
-#: inc/customizer/settings.php:168
+#: inc/customizer/settings.php:172
 msgid "Header Button URL"
 msgstr ""
 
-#: inc/customizer/settings.php:169
+#: inc/customizer/settings.php:173
 msgid "Enter the URL or email address to be used by the button in the header."
 msgstr ""
 
-#: inc/customizer/settings.php:189
+#: inc/customizer/settings.php:193
 msgid "Header Button Text"
 msgstr ""
 
-#: inc/customizer/settings.php:190
+#: inc/customizer/settings.php:194
 msgid "Enter the text to be displayed in the button in the header."
 msgstr ""
 
-#: template-parts/content-blocks/block-accordion.php:33
+#: template-parts/content-blocks/block-accordion.php:32
 msgid "Accordion Content Block"
 msgstr ""
 
