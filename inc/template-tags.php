@@ -10,6 +10,8 @@
 if ( ! function_exists( '_s_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
+	 *
+	 * @author WDS
 	 */
 	function _s_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -45,6 +47,8 @@ endif;
 if ( ! function_exists( '_s_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
+	 *
+	 * @author WDS
 	 */
 	function _s_entry_footer() {
 		// Hide category and tag text for pages.
@@ -86,6 +90,8 @@ endif;
  * Display SVG Markup.
  *
  * @param array $args The parameters needed to get the SVG.
+ *
+ * @author WDS
  */
 function _s_display_svg( $args = array() ) {
 	echo _s_get_svg( $args ); // WPCS XSS Ok.
@@ -95,6 +101,7 @@ function _s_display_svg( $args = array() ) {
  * Return SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.
+ * @author WDS
  * @return string
  */
 function _s_get_svg( $args = array() ) {
@@ -123,19 +130,19 @@ function _s_get_svg( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Figure out which title to use.
-	$title = ( $args['title'] ) ? $args['title'] : $args['icon'];
+	$block_title = ( $args['title'] ) ? $args['title'] : $args['icon'];
 
 	// Generate random IDs for the title and description.
-	$random_number = rand( 0, 99999 );
-	$title_id      = 'title-' . sanitize_title( $title ) . '-' . $random_number;
-	$desc_id       = 'desc-' . sanitize_title( $title ) . '-' . $random_number;
+	$random_number  = wp_rand( 0, 99999 );
+	$block_title_id = 'title-' . sanitize_title( $block_title ) . '-' . $random_number;
+	$desc_id        = 'desc-' . sanitize_title( $block_title ) . '-' . $random_number;
 
 	// Set ARIA.
 	$aria_hidden     = ' aria-hidden="true"';
 	$aria_labelledby = '';
 
 	if ( $args['title'] && $args['desc'] ) {
-		$aria_labelledby = ' aria-labelledby="' . $title_id . ' ' . $desc_id . '"';
+		$aria_labelledby = ' aria-labelledby="' . $block_title_id . ' ' . $desc_id . '"';
 		$aria_hidden     = '';
 	}
 
@@ -160,8 +167,8 @@ function _s_get_svg( $args = array() ) {
 		echo _s_get_the_content( $aria_labelledby ); // WPCS XSS OK.
 	?>
 		role="img">
-		<title id="<?php echo esc_attr( $title_id ); ?>">
-			<?php echo esc_html( $title ); ?>
+		<title id="<?php echo esc_attr( $block_title_id ); ?>">
+			<?php echo esc_html( $block_title ); ?>
 		</title>
 
 		<?php
@@ -193,6 +200,8 @@ function _s_get_svg( $args = array() ) {
  * Trim the title length.
  *
  * @param array $args Parameters include length and more.
+ *
+ * @author WDS
  * @return string
  */
 function _s_get_the_title( $args = array() ) {
@@ -214,6 +223,8 @@ function _s_get_the_title( $args = array() ) {
  * Limit the excerpt length.
  *
  * @param array $args Parameters include length and more.
+ *
+ * @author WDS
  * @return string
  */
 function _s_get_the_excerpt( $args = array() ) {
@@ -235,6 +246,8 @@ function _s_get_the_excerpt( $args = array() ) {
  * Echo an image, no matter what.
  *
  * @param string $size The image size to display. Default is thumbnail.
+ *
+ * @author WDS
  * @return string
  */
 function _s_display_post_image( $size = 'thumbnail' ) {
@@ -257,6 +270,8 @@ function _s_display_post_image( $size = 'thumbnail' ) {
  * Return an image URL, no matter what.
  *
  * @param  string $size The image size to return. Default is thumbnail.
+ *
+ * @author WDS
  * @return string
  */
 function _s_get_post_image_url( $size = 'thumbnail' ) {
@@ -280,6 +295,8 @@ function _s_get_post_image_url( $size = 'thumbnail' ) {
  * Get the URL of an image that's attached to the current post, else a placeholder image URL.
  *
  * @param  string $size The image size to return. Default is thumbnail.
+ *
+ * @author WDS
  * @return string
  */
 function _s_get_attached_image_url( $size = 'thumbnail' ) {
@@ -300,6 +317,7 @@ function _s_get_attached_image_url( $size = 'thumbnail' ) {
 /**
  * Echo the copyright text saved in the Customizer.
  *
+ * @author WDS
  * @return bool
  */
 function _s_display_copyright_text() {
@@ -318,6 +336,7 @@ function _s_display_copyright_text() {
 /**
  * Get the Twitter social sharing URL for the current page.
  *
+ * @author WDS
  * @return string
  */
 function _s_get_twitter_share_url() {
@@ -325,13 +344,15 @@ function _s_get_twitter_share_url() {
 		array(
 			'text' => rawurlencode( html_entity_decode( get_the_title() ) ),
 			'url'  => rawurlencode( get_the_permalink() ),
-		), 'https://twitter.com/share'
+		),
+		'https://twitter.com/share'
 	);
 }
 
 /**
  * Get the Facebook social sharing URL for the current page.
  *
+ * @author WDS
  * @return string
  */
 function _s_get_facebook_share_url() {
@@ -341,6 +362,7 @@ function _s_get_facebook_share_url() {
 /**
  * Get the LinkedIn social sharing URL for the current page.
  *
+ * @author WDS
  * @return string
  */
 function _s_get_linkedin_share_url() {
@@ -348,12 +370,15 @@ function _s_get_linkedin_share_url() {
 		array(
 			'title' => rawurlencode( html_entity_decode( get_the_title() ) ),
 			'url'   => rawurlencode( get_the_permalink() ),
-		), 'https://www.linkedin.com/shareArticle'
+		),
+		'https://www.linkedin.com/shareArticle'
 	);
 }
 
 /**
  * Display the social links saved in the customizer.
+ *
+ * @author WDS
  */
 function _s_display_social_network_links() {
 
@@ -400,6 +425,7 @@ function _s_display_social_network_links() {
 /**
  * Display a card.
  *
+ * @author WDS
  * @param array $args Card defaults.
  */
 function _s_display_card( $args = array() ) {
@@ -444,6 +470,7 @@ function _s_display_card( $args = array() ) {
 /**
  * Display header button.
  *
+ * @author WDS
  * @author Corey Collins
  * @return string
  */
@@ -483,6 +510,8 @@ function _s_display_header_button() {
  * Displays numeric pagination on archive pages.
  *
  * @param array $args Array of params to customize output.
+ *
+ * @author WDS
  * @return void.
  * @author Corey Collins
  */
@@ -514,6 +543,8 @@ function _s_display_numeric_pagination( $args = array() ) {
  * Displays the mobile menu with off-canvas background layer.
  *
  * @return string An empty string if no menus are found at all.
+ *
+ * @author WDS
  * @author Corey Collins
  */
 function _s_display_mobile_menu() {

@@ -14,6 +14,8 @@ if ( ! class_exists( 'acf' ) ) {
 
 /**
  * Loop through and output ACF flexible content blocks for the current page.
+ *
+ * @author WDS
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
@@ -42,6 +44,7 @@ function _s_display_content_blocks() {
 /**
  * Associate the possible block options with the appropriate section.
  *
+ * @author WDS
  * @param  array $args Possible arguments.
  */
 function _s_display_block_options( $args = array() ) {
@@ -167,7 +170,7 @@ function _s_display_block_options( $args = array() ) {
 /**
  * Get the animate.css classes for an element.
  *
- * @param array $args parsed args option array/string.
+ * @author WDS
  * @return string $classes Animate.css classes for our element.
  */
 function _s_get_animation_class( $args = array() ) {
@@ -203,6 +206,7 @@ function _s_get_animation_class( $args = array() ) {
 /**
  * Decide whether or not a block has expired.
  *
+ * @author WDS
  * @param array $args start and end dates.
  *
  * @return bool
@@ -240,7 +244,8 @@ function _s_has_block_expired( $args = array() ) {
 /**
  * Update Layout Titles with Subfield Image and Text Fields
  *
- * @param string $title Default Field Title.
+ * @author WDS
+ * @param string $block_title Default Field Title.
  * @param array  $field Field array.
  * @param string $layout Layout type.
  * @param int    $i number.
@@ -249,13 +254,13 @@ function _s_has_block_expired( $args = array() ) {
  *
  * @return string new ACF title.
  */
-function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
+function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i ) {
 
 	// Current ACF field name.
-	$current_title = $title;
+	$current_title = $block_title;
 
 	// Remove layout title from text.
-	$title = '';
+	$block_title = '';
 
 	// Set an expired var.
 	$expired = '';
@@ -275,20 +280,20 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
 		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
 		if ( 'image' === $background_type ) {
-			$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
+			$block_title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
 		}
 
 		if ( 'color' === $background_type ) {
-			$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
+			$block_title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
 		}
 
 		if ( 'video' === $background_type ) {
-			$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+			$block_title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
 		}
 	}
 
 	// Set default field title. Don't want to lose this.
-	$title .= '<strong>' . esc_html( $current_title ) . '</strong>';
+	$block_title .= '<strong>' . esc_html( $current_title ) . '</strong>';
 
 	// ACF Flexible Content Title Fields.
 	$block_title = get_sub_field( 'title' );
@@ -310,11 +315,11 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
 	// Load title field text else Load headline text — Hero.
 	if ( $text ) {
-		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
+		$block_title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
 	}
 
 	// Return New Title.
-	return $title . $expired;
+	return $block_title . $expired;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
 
@@ -322,7 +327,7 @@ add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_
  * Return flexible content field value by type
  *
  * @param string $type field type.
- *
+ * @author WDS
  * @return string field value.
  */
 function _s_return_flexible_content_layout_value( $type ) {
@@ -341,6 +346,8 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 
 	/**
 	 * Set Admin Styles for Flexible Content Layout Image/Title in _s_acf_flexible_content_layout_title().
+	 *
+	 * @author WDS
 	 */
 	function _s_flexible_content_layout_title_acf_admin_head() {
 	?>
@@ -368,6 +375,7 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 /**
  * Load colors dynamically into select field from _s_get_theme_colors()
  *
+ * @author WDS
  * @param array $field field options.
  * @return array new field choices.
  *
@@ -399,6 +407,7 @@ add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_color_picker_field_
 /**
  * Get the theme colors for this project. Set these first in the Sass partial then migrate them over here.
  *
+ * @author WDS
  * @return array The array of our color names and hex values.
  * @author Corey Collins
  */
@@ -424,14 +433,15 @@ function _s_get_theme_colors() {
 /**
  * Adds h1 or h2 heading for hero based on location.
  *
- * @param string $title acf value.
+ * @author WDS
+ * @param string $block_title acf value.
  * @author jomurgel <jo@webdevstudios.com>
  * @return void
  */
-function _s_display_hero_heading( $title ) {
+function _s_display_hero_heading( $block_title ) {
 
 	// Bail if our title is empty.
-	if ( empty( $title ) ) {
+	if ( empty( $block_title ) ) {
 		return;
 	}
 
@@ -439,7 +449,7 @@ function _s_display_hero_heading( $title ) {
 	$index   = get_row_index();
 	$heading = 1 === $index && ! ( is_front_page() && is_home() ) ? 'h1' : 'h2';
 
-	echo sprintf( '<%1$s class="hero-title">%2$s</%1$s>', esc_attr( $heading ), esc_html( $title ) );
+	echo sprintf( '<%1$s class="hero-title">%2$s</%1$s>', esc_attr( $heading ), esc_html( $block_title ) );
 }
 
 /**

@@ -4,7 +4,7 @@
 $slide-height: rem(500);
 
 .carousel-block {
-	
+
 	// Removes padding.
 	&.content-block {
 		@include padding(0 null);

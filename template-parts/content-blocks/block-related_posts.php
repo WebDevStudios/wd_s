@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$title         = get_sub_field( 'title' );
-$related_posts = get_sub_field( 'related_posts' );
+$block_title     = get_sub_field( 'title' );
+$related_posts   = get_sub_field( 'related_posts' );
 
 // Display section if we have any posts.
 if ( $related_posts ) :
@@ -22,8 +22,8 @@ if ( $related_posts ) :
 	?>
 
 		<div class="container">
-			<?php if ( $title ) : ?>
-				<h2 class="content-block-title"><?php echo esc_html( $title ); ?></h2>
+			<?php if ( $block_title ) : ?>
+				<h2 class="content-block-title"><?php echo esc_html( $block_title ); ?></h2>
 			<?php endif; ?>
 		</div>
 
@@ -31,7 +31,7 @@ if ( $related_posts ) :
 
 			<?php
 			// Loop through recent posts.
-			foreach ( $related_posts as $key => $post ) :
+			foreach ( $related_posts as $key => $post ) :// @codingStandardsIgnoreLine
 
 				// Convert post object to post data.
 				setup_postdata( $post );
@@ -41,10 +41,12 @@ if ( $related_posts ) :
 					array(
 						'title' => get_the_title(),
 						'image' => _s_get_post_image_url( 'medium' ),
-						'text'  => _s_get_the_excerpt( array(
-							'length' => 20,
-							'more'   => '...',
-						) ),
+						'text'  => _s_get_the_excerpt(
+							array(
+								'length' => 20,
+								'more'   => '...',
+							)
+						),
 						'url'   => get_the_permalink(),
 						'class' => 'third',
 					)

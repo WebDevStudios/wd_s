@@ -13,20 +13,22 @@
 
 	<?php
 	// Right-aligned Image.
-	_s_display_scaffolding_section( array(
-		'title'       => 'Numeric Pagination',
-		'description' => 'Display numeric pagination.',
-		'usage'       => '_s_display_numeric_pagination()',
-		'output'      => '
-			<nav class="pagination-container">
-				<a class="prev page-numbers" href="#>«</a>
-				<a class="page-numbers" href="#">1</a>
-				<span aria-current="page" class="page-numbers current">2</span>
-				<a class="page-numbers" href="#">3</a>
-				<a class="next page-numbers" href="#">»</a>
-			</nav>
-		',
-	) );
+	_s_display_scaffolding_section(
+		array(
+			'title'       => 'Numeric Pagination',
+			'description' => 'Display numeric pagination.',
+			'usage'       => '_s_display_numeric_pagination()',
+			'output'      => '
+				<nav class="pagination-container">
+					<a class="prev page-numbers" href="#>«</a>
+					<a class="page-numbers" href="#">1</a>
+					<span aria-current="page" class="page-numbers current">2</span>
+					<a class="page-numbers" href="#">3</a>
+					<a class="next page-numbers" href="#">»</a>
+				</nav>
+			',
+		)
+	);
 
 	?>
 </section>

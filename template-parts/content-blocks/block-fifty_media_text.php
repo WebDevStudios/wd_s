@@ -10,10 +10,12 @@ $image_data = get_sub_field( 'media_left' );
 $text       = get_sub_field( 'text_primary' );
 
 // Start a <container> with a possible media background.
-_s_display_block_options(array(
-	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block fifty-fifty-block fifty-media-text', // The class of the container.
-) );
+_s_display_block_options(
+	array(
+		'container' => 'section', // Any HTML5 container: section, div, etc...
+		'class'     => 'content-block fifty-fifty-block fifty-media-text', // The class of the container.
+	)
+);
 ?>
 	<div class="display-flex container<?php echo esc_attr( _s_get_animation_class() ); ?>">
 
