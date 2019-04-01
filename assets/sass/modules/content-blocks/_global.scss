@@ -83,12 +83,12 @@
 	opacity: 0.2;
 	padding: 0;
 	transition: $transition-opacity;
-	z-index: 1;
+	z-index: 5;
 
 	&:active,
 	&:focus,
 	&:hover {
-		opacity: 1;
+		opacity: 2;
 	}
 
 	.video-toggled & {
