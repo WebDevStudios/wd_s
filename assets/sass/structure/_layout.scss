@@ -19,6 +19,10 @@
 		@include margin($gutter * 2 auto);
 
 		max-width: $container;
+
+		&.container-width {
+			@include margin(0 auto);
+		} // &.container-width
 	} // > *:not(.full-width)
 
 	// Post elements.
@@ -133,6 +137,25 @@
 // Create Content/Sidebar layout
 //-----------------------------------------
 .has-sidebar {
+
+	// Left sidebar.
+	&.page-template-template-sidebar-left {
+
+		.grid-wrapper {
+
+			.sidebar {
+				@include media(null, $tablet-landscape) {
+					order: 2;
+				}
+			}
+
+			.site-main {
+				@include media(null, $tablet-landscape) {
+					order: 1;
+				}
+			}
+		}
+	}
 
 	.grid-wrapper {
 		@include margin($gutter * 2 auto);

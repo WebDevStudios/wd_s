@@ -198,3 +198,29 @@ function _s_get_the_content( $content ) {
 	return $content;
 }
 add_filter( 'the_content', '_s_get_the_content', 20 );
+
+/**
+ * Copies our ACF color settings into an array readable by Gutenberg's color picker.
+ *
+ * @return array $gutenberg_colors The Gutenberg-ready array
+ * @author Corey Collins
+ */
+function _s_get_theme_colors_gutenberg() {
+
+	// Grab our ACF theme colors.
+	$colors = _s_get_theme_colors();
+
+	if ( ! $colors ) {
+		return array();
+	}
+
+	foreach ( $colors as $key => $color ) {
+		$gutenberg_colors[] = array(
+			'name'  => esc_html( $key ),
+			'slug'  => sanitize_title( $key ),
+			'color' => esc_attr( $color ),
+		);
+	}
+
+	return $gutenberg_colors;
+}
