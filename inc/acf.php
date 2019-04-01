@@ -80,8 +80,8 @@ function _s_display_block_options( $args = array() ) {
 
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
-		if ( 'color' === $args['background_type'] && $background_options['color']['color_picker'] ) {
-			$background_color = $background_options['color']['color_picker'];
+		if ( 'color' === $args['background_type'] && $background_options['background_color']['color_picker'] ) {
+			$background_color = $background_options['background_color']['color_picker'];
 			$args['class']   .= ' has-background color-as-background background-' . esc_attr( $background_color );
 		}
 
@@ -254,13 +254,13 @@ function _s_has_block_expired( $args = array() ) {
  *
  * @return string new ACF title.
  */
-function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i ) {
+function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
 	// Current ACF field name.
-	$current_title = $block_title;
+	$current_title = $title;
 
 	// Remove layout title from text.
-	$block_title = '';
+	$block_heading = '';
 
 	// Set an expired var.
 	$expired = '';
@@ -272,7 +272,7 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 	$background = get_sub_field( 'background_options' )['background_type']['value'];
 
 	// If there's no background, just move along...
-	if ( ! 'none' === $background ) {
+	if ( 'none' !== $background ) {
 		$background_repeater = get_sub_field( 'carousel_slides' )[0]['background_options']['background_type']['value'];
 		$background_type     = $background ? $background : $background_repeater;
 
@@ -280,20 +280,16 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 
 		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
 		if ( 'image' === $background_type ) {
-			$block_title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
-		}
-
-		if ( 'color' === $background_type ) {
-			$block_title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
+			$block_heading .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
 		}
 
 		if ( 'video' === $background_type ) {
-			$block_title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+			$block_heading .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
 		}
 	}
 
 	// Set default field title. Don't want to lose this.
-	$block_title .= '<strong>' . esc_html( $current_title ) . '</strong>';
+	$block_heading .= '<strong>' . esc_html( $current_title ) . '</strong>';
 
 	// ACF Flexible Content Title Fields.
 	$block_title = get_sub_field( 'title' );
@@ -315,11 +311,11 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 
 	// Load title field text else Load headline text — Hero.
 	if ( $text ) {
-		$block_title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
+		$block_heading .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
 	}
 
 	// Return New Title.
-	return $block_title . $expired;
+	return $block_heading . $expired;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
 
