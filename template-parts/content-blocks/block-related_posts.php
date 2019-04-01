@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$block_title     = get_sub_field( 'title' );
-$related_posts   = get_sub_field( 'related_posts' );
+$block_title   = get_sub_field( 'title' );
+$related_posts = get_sub_field( 'related_posts' );
 
 // Display section if we have any posts.
 if ( $related_posts ) :

@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$block_title     = get_sub_field( 'title' );
-$text            = get_sub_field( 'text' );
+$block_title = get_sub_field( 'title' );
+$text        = get_sub_field( 'text' );
 
 // Start a <container> with possible block options.
 _s_display_block_options(
