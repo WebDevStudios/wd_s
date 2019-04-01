@@ -1,4 +1,3 @@
-const del = require( 'del' );
 const gulp = require( 'gulp' );
 const imagemin = require( 'gulp-imagemin' );
 const plumber = require( 'gulp-plumber' );

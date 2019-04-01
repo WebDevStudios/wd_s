@@ -22,5 +22,6 @@ gulp.task( 'watch-files', function() {
 	gulp.watch( themeConfig.paths.sass, [ 'sass:lint', 'styles' ] );
 	gulp.watch( themeConfig.paths.php, [ 'markup' ] );
 	gulp.watch( themeConfig.paths.js, [ 'js:lint', 'scripts' ] );
+	gulp.watch( themeConfig.paths.images, [ 'copy:svg', 'imagemin' ] );
 	gulp.watch( themeConfig.paths.js ).on( 'change', browserSync.reload );
 } );
