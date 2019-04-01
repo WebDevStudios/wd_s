@@ -65,7 +65,7 @@
                 {
                     "key": "field_5bb79386c24c1",
                     "label": "Color",
-                    "name": "color",
+                    "name": "background_color",
                     "type": "clone",
                     "instructions": "Select a background color.",
                     "required": 0,
@@ -258,5 +258,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1551462016
+    "modified": 1554136392
 }
