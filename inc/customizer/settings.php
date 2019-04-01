@@ -9,6 +9,7 @@
  * Register additional scripts.
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
+ * @author WDS
  */
 function _s_customize_additional_scripts( $wp_customize ) {
 
@@ -57,6 +58,7 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
 /**
  * Register a social icons setting.
  *
+ * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_social_icons( $wp_customize ) {
@@ -92,6 +94,7 @@ add_action( 'customize_register', '_s_customize_social_icons' );
 /**
  * Register copyright text setting.
  *
+ * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_copyright_text( $wp_customize ) {
@@ -123,6 +126,7 @@ add_action( 'customize_register', '_s_customize_copyright_text' );
 /**
  * Register header button setting.
  *
+ * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_header_button( $wp_customize ) {
@@ -199,6 +203,7 @@ add_action( 'customize_register', '_s_customize_header_button' );
 /**
  * Sanitizes the select dropdown in the customizer.
  *
+ * @author WDS
  * @param string $input  The input.
  * @param string $setting The setting.
  * @return string
@@ -219,6 +224,7 @@ function _s_sanitize_select( $input, $setting ) {
 /**
  * Checks to see if the link option is selected in our button settings.
  *
+ * @author WDS
  * @return boolean True/False whether or not the Link radio is selected.
  * @author Corey Collins
  */

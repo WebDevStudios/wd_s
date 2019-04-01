@@ -28,7 +28,8 @@
 							),
 						)
 					),
-				esc_url( admin_url( 'post-new.php' ) ) );
+					esc_url( admin_url( 'post-new.php' ) )
+				);
 				?>
 				</p>
 			<?php elseif ( is_search() ) : ?>

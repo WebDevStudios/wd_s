@@ -6,7 +6,7 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $text            = get_sub_field( 'text' );
 $button_url      = get_sub_field( 'button_url' );
 $button_text     = get_sub_field( 'button_text' );
@@ -21,7 +21,7 @@ _s_display_block_options(
 );
 ?>
 	<div class="container hero-content<?php echo esc_attr( $animation_class ); ?>">
-		<?php _s_display_hero_heading( $title ); ?>
+		<?php _s_display_hero_heading( $block_title ); ?>
 
 		<?php if ( $text ) : ?>
 			<p class="hero-description"><?php echo esc_html( $text ); ?></p>

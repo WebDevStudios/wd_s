@@ -6,22 +6,24 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $text            = get_sub_field( 'text' );
 $accordion_items = get_sub_field( 'accordion_items' );
 $animation_class = _s_get_animation_class();
 $row_index       = get_row_index();
 
 // Start a <container> with possible block options.
-_s_display_block_options( array(
-	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block accordion-block', // Container class.
-) );
+_s_display_block_options(
+	array(
+		'container' => 'section', // Any HTML5 container: section, div, etc...
+		'class'     => 'content-block accordion-block', // Container class.
+	)
+);
 ?>
 	<div class="<?php echo esc_attr( $animation_class ); ?>">
 		<div class="container">
-			<?php if ( $title ) : ?>
-				<h2 class="block-title"><?php echo esc_html( $title ); ?></h2>
+			<?php if ( $block_title ) : ?>
+				<h2 class="block-title"><?php echo esc_html( $block_title ); ?></h2>
 			<?php endif; ?>
 
 			<?php if ( $text ) : ?>

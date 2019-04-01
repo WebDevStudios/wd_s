@@ -10,6 +10,7 @@
 /**
  * Returns true if a blog has more than 1 category, else false.
  *
+ * @author WDS
  * @return bool Whether the blog has more than one category.
  */
 function _s_categorized_blog() {
@@ -18,9 +19,11 @@ function _s_categorized_blog() {
 
 	if ( false === $category_count ) {
 
-		$category_count_query = get_categories( array(
-			'fields' => 'count',
-		) );
+		$category_count_query = get_categories(
+			array(
+				'fields' => 'count',
+			)
+		);
 
 		$category_count = (int) $category_count_query[0];
 
@@ -33,6 +36,7 @@ function _s_categorized_blog() {
 /**
  * Get an attachment ID from it's URL.
  *
+ * @author WDS
  * @param string $attachment_url The URL of the attachment.
  * @return int The attachment ID.
  */
@@ -151,10 +155,13 @@ function _s_get_placeholder_unsplash( $args = array() ) {
 function _s_copyright_year( $atts ) {
 
 	// Setup defaults.
-	$args = shortcode_atts( array(
-		'starting_year' => '',
-		'separator'     => ' - ',
-	), $atts );
+	$args = shortcode_atts(
+		array(
+			'starting_year' => '',
+			'separator'     => ' - ',
+		),
+		$atts
+	);
 
 	$current_year = date( 'Y' );
 
