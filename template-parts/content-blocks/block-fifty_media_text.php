@@ -6,9 +6,8 @@
  */
 
 // Set up fields.
-$image_data      = get_sub_field( 'media_left' );
-$text            = get_sub_field( 'text_primary' );
-$animation_class = _s_get_animation_class();
+$image_data = get_sub_field( 'media_left' );
+$text       = get_sub_field( 'text_primary' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options(
@@ -18,7 +17,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="display-flex container <?php echo esc_attr( $animation_class ); ?>">
+	<div class="display-flex container<?php echo esc_attr( _s_get_animation_class() ); ?>">
 
 		<div class="half">
 			<img class="fifty-image" src="<?php echo esc_url( $image_data['url'] ); ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">

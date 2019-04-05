@@ -10,11 +10,10 @@
  */
 
 // Set up fields.
-$block_title     = get_sub_field( 'title' );
-$post_count      = get_sub_field( 'number_of_posts' );
-$categories      = get_sub_field( 'categories' );
-$tags            = get_sub_field( 'tags' );
-$animation_class = _s_get_animation_class();
+$block_title = get_sub_field( 'title' );
+$post_count  = get_sub_field( 'number_of_posts' );
+$categories  = get_sub_field( 'categories' );
+$tags        = get_sub_field( 'tags' );
 
 // Variable to hold query args.
 $args = array();
@@ -48,7 +47,7 @@ if ( $recent_posts->have_posts() ) :
 			<?php endif; ?>
 		</div>
 
-		<div class="container display-flex <?php echo esc_attr( $animation_class ); ?>">
+		<div class="container display-flex<?php echo esc_attr( _s_get_animation_class() ); ?>">
 
 			<?php
 			// Loop through recent posts.

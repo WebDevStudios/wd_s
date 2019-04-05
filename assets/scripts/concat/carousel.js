@@ -48,13 +48,18 @@ window.wdsCarousel = {};
 
 	// Animate the slide content.
 	app.doAnimation = function() {
-		let slides = $( '.slide' ),
-			activeSlide = $( '.slick-current' ),
+		let slides = $( this ).find( '.slide' ),
+			activeSlide = $( this ).find( '.slick-current' ),
 			activeContent = activeSlide.find( '.slide-content' ),
 
 			// This is a string like so: 'animated someCssClass'.
-			animationClass = activeContent.attr( 'data-animation' ),
-			splitAnimation = animationClass.split( ' ' ),
+			animationClass = activeContent.attr( 'data-animation' );
+
+			if ( undefined === animationClass ) {
+				return;
+			}
+
+			let splitAnimation = animationClass.split( ' ' ),
 
 			// This is the 'animated' class.
 			animationTrigger = splitAnimation[0];

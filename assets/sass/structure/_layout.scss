@@ -50,6 +50,7 @@
 	@include padding(null $gutter);
 
 	max-width: $container;
+	position: relative;
 
 	@include media($container-offset) {
 		@include padding(0);
