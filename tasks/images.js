@@ -1,6 +1,7 @@
 const gulp = require( 'gulp' );
 const imagemin = require( 'gulp-imagemin' );
 const plumber = require( 'gulp-plumber' );
+const del = require( 'del' );
 
 const themeConfig = require( './theme-config' );
 const handleErrors = require( './handle-errors' );
@@ -9,6 +10,7 @@ const handleErrors = require( './handle-errors' );
  * Copy SVGs that shouldn't be processed.
  */
 gulp.task( 'copy:svg', () => {
+	del( [ 'assets/dist/images/**', '!assets/dist/images', '!assets/dist/images/.gitkeep', '!assets/dist/images/svg' ] );
 	gulp.src( [ 'assets/src/images/svg/**/*.svg' ] )
 		.pipe( gulp.dest( 'assets/dist/images/svg/' ) );
 } );
