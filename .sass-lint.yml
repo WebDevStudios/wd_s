@@ -99,7 +99,7 @@ rules:
   indentation:
   - 1
   -
-    size: tab
+    size: 'tab'
   leading-zero:
   - 1
   -
