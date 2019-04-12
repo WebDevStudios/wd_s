@@ -246,7 +246,7 @@ function _s_has_block_expired( $args = array() ) {
  * Update Layout Titles with Subfield Image and Text Fields
  *
  * @author WDS
- * @param string $title Default Field Title.
+ * @param string $block_title Default Field Title.
  * @param array  $field Field array.
  * @param string $layout Layout type.
  * @param int    $i number.
