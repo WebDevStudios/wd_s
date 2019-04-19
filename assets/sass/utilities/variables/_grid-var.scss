@@ -7,6 +7,14 @@
 /// @author WebDevStudios
 ////
 
+//-----------------------------------------
+// Grid Values – Used for general Sass/styling. Note the rem values!
+//-----------------------------------------
+$max-width: rem(1170);
+
+///-----------------------------------------
+// Breakpoints – Used for Media Query Mixins only. Note the px values!
+//-----------------------------------------
 /// Larger HD Desktops.
 $desktop-large: 1800px;
 

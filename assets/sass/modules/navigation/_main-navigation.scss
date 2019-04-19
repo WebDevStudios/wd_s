@@ -17,7 +17,7 @@
 			@include padding(null $gutter);
 
 			display: block;
-			max-width: $container;
+			max-width: $max-width;
 		}
 
 		@include media($container-offset) {

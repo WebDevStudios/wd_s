@@ -13,7 +13,7 @@ $text_secondary = get_sub_field( 'text_secondary' );
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container fifty-fifty fifty-text-only', // The container class.
+		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-only', // The container class.
 	)
 );
 ?>

@@ -13,7 +13,7 @@ $text       = get_sub_field( 'text_primary' );
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container fifty-fifty fifty-text-media', // Container class.
+		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-media', // Container class.
 	)
 );
 ?>
