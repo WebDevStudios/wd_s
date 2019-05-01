@@ -10,10 +10,10 @@
  */
 
 // Set up fields.
-$block_title = get_sub_field( 'title' );
-$post_count  = get_sub_field( 'number_of_posts' );
-$categories  = get_sub_field( 'categories' );
-$tags        = get_sub_field( 'tags' );
+$block_title = get_field( 'title' );
+$post_count  = get_field( 'number_of_posts' );
+$categories  = get_field( 'categories' );
+$tags        = get_field( 'tags' );
 
 // Variable to hold query args.
 $args = array();
