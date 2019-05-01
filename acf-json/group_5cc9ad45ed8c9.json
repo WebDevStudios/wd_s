@@ -132,6 +132,48 @@
             ]
         },
         {
+            "key": "field_5cc9b9db3a120",
+            "label": "Background Options",
+            "name": "background_options",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58ebcc07bfbd7"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5cc9b9ef3a121",
+            "label": "Display Options",
+            "name": "display_options",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5c1418a5dcaec"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_5cc9b584fa831",
             "label": "Other Options",
             "name": "other_options",
@@ -170,5 +212,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556723210
+    "modified": 1556724224
 }
