@@ -133,8 +133,8 @@ function _s_acf_block_registration_callback( $block ) {
 /**
  * Adds a WDS Block category to the Gutenberg category list.
  *
- * @param array $categories The existing categories.
- * @param object $post The current post
+ * @param array  $categories The existing categories.
+ * @param object $post The current post.
  * @return array The updated array of categories.
  * @author Corey Collins
  */
