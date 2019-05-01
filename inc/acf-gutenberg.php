@@ -28,6 +28,7 @@ function _s_acf_init() {
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'keywords'        => array( 'accordion', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 		)
 	);
 
@@ -40,6 +41,20 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
 			'keywords'        => array( 'carousel', 'slider', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+		)
+	);
+
+	acf_register_block(
+		array(
+			'name'            => 'cta',
+			'title'           => __( 'Call To Action', '_s' ),
+			'description'     => __( 'A call to action block.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'megaphone',
+			'keywords'        => array( 'call to action', 'cta', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 		)
 	);
 }
@@ -84,3 +99,18 @@ function _s_add_block_categories( $categories, $post ) {
 	);
 }
 add_filter( 'block_categories', '_s_add_block_categories', 10, 2 );
+
+/**
+ * Enqueues a stylesheet for backend block styles.
+ *
+ * @return void Bail if we're not in the dashboard.
+ * @author Corey Collins
+ */
+function _s_acf_enqueue_backend_block_styles() {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	// Enqueue styles here, eventually. And scripts. Need to look at a good way of enqueuing things smartly on the backend without having to enqueue the whole of project.js, for instance.
+}
