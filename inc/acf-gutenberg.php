@@ -30,6 +30,18 @@ function _s_acf_init() {
 			'keywords'        => array( 'accordion', 'wds' ),
 		)
 	);
+
+	acf_register_block(
+		array(
+			'name'            => 'carousel',
+			'title'           => __( 'Carousel', '_s' ),
+			'description'     => __( 'A carousel with a call to action for each slide.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'slides',
+			'keywords'        => array( 'carousel', 'slider', 'wds' ),
+		)
+	);
 }
 add_action( 'acf/init', '_s_acf_init' );
 
