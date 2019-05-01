@@ -48,13 +48,13 @@ _s_display_block_options(
 										<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 									</button>
 								</h3>
-							</div><!-- .accordion-item-header-->
+							</div>
 							<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
 								<?php echo _s_get_the_content( $item_content ); // phpcs: xss: ok. ?>
-							</div><!-- .accordion-item-content -->
+							</div>
 						</div>
 				<?php endwhile; ?>
-			</div><!-- .accordion -->
+			</div>
 		<?php endif; ?>
-	</div><!-- .container -->
-</section><!-- .accordion-block -->
+	</div>
+</section>

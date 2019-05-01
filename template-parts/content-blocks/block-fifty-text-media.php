@@ -27,5 +27,5 @@ _s_display_block_options(
 			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['url'] ); ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
 		</div>
 
-	</div><!-- .container -->
-</section><!-- .fifty-text-media -->
+	</div>
+</section>

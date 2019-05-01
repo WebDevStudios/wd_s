@@ -73,6 +73,6 @@ if ( $recent_posts->have_posts() ) :
 			endwhile;
 			wp_reset_postdata();
 			?>
-		</div><!-- .container -->
-	</section><!-- .recent-posts -->
+		</div>
+	</section>
 <?php endif; ?>

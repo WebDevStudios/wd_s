@@ -32,5 +32,5 @@ _s_display_block_options(
 			)
 		);
 		?>
-	</div><!-- .hero-content-->
-</section><!-- .hero -->
+	</div>
+</section>

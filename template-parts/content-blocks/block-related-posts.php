@@ -55,6 +55,6 @@ if ( $related_posts ) :
 			endforeach;
 			wp_reset_postdata();
 		?>
-		</div><!-- .container -->
-	</section><!-- .recent-posts -->
+		</div>
+	</section>
 <?php endif; ?>

@@ -27,5 +27,5 @@ _s_display_block_options(
 			<?php echo _s_get_the_content( $text_secondary ); // WPCS: XSS OK. ?>
 		</div>
 
-	</div><!-- .container -->
-</section><!-- .fifty-text-only -->
+	</div>
+</section>

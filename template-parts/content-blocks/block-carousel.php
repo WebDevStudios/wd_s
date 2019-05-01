@@ -66,10 +66,10 @@ if ( have_rows( 'carousel_slides' ) ) :
 				);
 				?>
 
-			</div><!-- .slide-content -->
-		</section><!-- .slide -->
+			</div>
+		</section>
 
 <?php
 	endwhile;
-	echo '</div><!-- .carousel -->';
+	echo '</div>';
 endif;

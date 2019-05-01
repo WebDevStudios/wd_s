@@ -36,5 +36,5 @@ _s_display_block_options(
 			)
 		);
 		?>
-	</div><!-- .container -->
-</aside><!-- .cta-block -->
+	</div>
+</aside>
