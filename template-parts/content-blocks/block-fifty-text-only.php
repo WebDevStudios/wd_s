@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$text_primary   = get_sub_field( 'text_primary' );
-$text_secondary = get_sub_field( 'text_secondary' );
+$text_primary   = get_field( 'text_primary' );
+$text_secondary = get_field( 'text_secondary' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options(

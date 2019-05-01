@@ -6,8 +6,8 @@
  */
 
 // Set up fields.
-$image_data = get_sub_field( 'media_left' );
-$text       = get_sub_field( 'text_primary' );
+$image_data = get_field( 'media_left' );
+$text       = get_field( 'text_primary' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options(
