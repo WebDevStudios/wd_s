@@ -166,3 +166,21 @@ function _s_acf_enqueue_backend_block_styles() {
 
 	// Enqueue styles here, eventually. And scripts. Need to look at a good way of enqueuing things smartly on the backend without having to enqueue the whole of project.js, for instance.
 }
+
+/**
+ * Returns the alignment set for a content block.
+ *
+ * @param array $block The block settings.
+ * @return string The class, if one is set.
+ * @author Corey Collins
+ */
+function _s_get_block_alignment( $block ) {
+
+	if ( ! $block ) {
+		return;
+	}
+
+	// echo '<xmp>: '. print_r( $block, true ) .'</xmp>';
+
+	return ! empty( $block['align'] ) ? ' align' . esc_attr( $block['align'] ) : '';
+}
