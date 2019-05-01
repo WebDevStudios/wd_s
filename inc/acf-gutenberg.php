@@ -70,6 +70,19 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 		)
 	);
+
+	acf_register_block(
+		array(
+			'name'            => 'hero',
+			'title'           => __( 'Hero Block', '_s' ),
+			'description'     => __( 'A hero with an optional call to action.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'slides',
+			'keywords'        => array( 'hero', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+		)
+	);
 }
 add_action( 'acf/init', '_s_acf_init' );
 
