@@ -21,6 +21,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 		/**
 		 * Render the content on the theme customizer page
+		 *
+		 * @author WDS
 		 */
 		public function render_content() {
 			?>
@@ -57,6 +59,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 		/**
 		 * Enqueue scripts.
+		 *
+		 * @author WDS
 		 */
 		protected function enqueue_scripts() {
 			wp_enqueue_script( 'tiny_mce' );
@@ -65,6 +69,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 		/**
 		 * Add footer scripts for Tinymce.
+		 *
+		 * @author WDS
 		 */
 		protected function add_footer_scripts() {
 			do_action( 'admin_print_footer_scripts' );

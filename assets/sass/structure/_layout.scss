@@ -18,7 +18,7 @@
 	> *:not(.full-width) {
 		@include margin($gutter * 2 auto);
 
-		max-width: $container;
+		max-width: $max-width;
 
 		&.container-width {
 			@include margin(0 auto);
@@ -29,7 +29,7 @@
 	.hentry {
 		@include margin(0 auto $space * 2);
 
-		max-width: $container;
+		max-width: $max-width;
 
 		&:last-of-type {
 			margin-bottom: 0;
@@ -49,7 +49,8 @@
 	@include margin(null auto);
 	@include padding(null $gutter);
 
-	max-width: $container;
+	max-width: $max-width;
+	position: relative;
 
 	@include media($container-offset) {
 		@include padding(0);
@@ -160,7 +161,7 @@
 	.grid-wrapper {
 		@include margin($gutter * 2 auto);
 
-		max-width: $container;
+		max-width: $max-width;
 	} // .grid-wrapper
 
 	.site-main {

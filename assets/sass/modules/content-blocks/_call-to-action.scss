@@ -16,7 +16,7 @@
 		font-weight: 400;
 	} // .cta-text
 
-	.cta-button {
+	.button-cta {
 		@include margin(0 auto);
 
 		@include media($tablet-portrait) {

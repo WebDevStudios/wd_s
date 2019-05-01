@@ -4,15 +4,6 @@
 .content-block {
 	@include padding($gutter * 2 null);
 
-	// Content Block titles.
-	&-title {
-		text-align: center;
-
-		@include media($tablet-portrait) {
-			text-align: left;
-		}
-	} // .content-block-title
-
 	&.has-background {
 		@include margin(0 auto);
 
@@ -43,7 +34,41 @@
 		overflow: hidden;
 		position: relative;
 	} // &.video-as-background
+
+	// Z-index container in ACF blocks.
+	.container {
+		z-index: 3;
+	}
+
+	// Content Block titles.
+	&-title {
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			text-align: left;
+		}
+	} // .content-block-title
 } // .content-block
+
+//-----------------------------------------
+// Overlay
+//-----------------------------------------
+// if overlay exists.
+.has-overlay {
+	overflow-y: hidden;
+	position: relative;
+	z-index: 0;
+
+	// Transparent overlay.
+	&::after {
+		@include position(absolute, 0 0 null null);
+		@include size(100%);
+
+		background-color: $color-overlay;
+		content: '';
+		z-index: 0;
+	} // &:after
+} // &.has-overlay
 
 
 //-----------------------------------------
@@ -58,11 +83,12 @@
 	opacity: 0.2;
 	padding: 0;
 	transition: $transition-opacity;
+	z-index: 5;
 
 	&:active,
 	&:focus,
 	&:hover {
-		opacity: 1;
+		opacity: 2;
 	}
 
 	.video-toggled & {

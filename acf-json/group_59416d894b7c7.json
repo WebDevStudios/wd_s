@@ -3,39 +3,19 @@
     "title": "Fields: Button — To Clone",
     "fields": [
         {
-            "key": "field_59416d96077a8",
-            "label": "Button Text",
-            "name": "button_text",
-            "type": "text",
-            "instructions": "Optional. Write a short call to action.",
+            "key": "field_5c794a29fdd20",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "link",
+            "instructions": "Determine the button url, button text (default Read More), and if the link opens in a new tab.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_59416db5077a9",
-            "label": "Button URL",
-            "name": "button_url",
-            "type": "url",
-            "instructions": "Optional. Where will this button link to?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "return_format": "array"
         }
     ],
     "location": [
@@ -55,5 +35,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1528475212
+    "modified": 1551452973
 }

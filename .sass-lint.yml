@@ -99,7 +99,7 @@ rules:
   indentation:
   - 1
   -
-    size: tab
+    size: 'tab'
   leading-zero:
   - 1
   -
@@ -113,7 +113,7 @@ rules:
   property-units:
     - 1
     -
-      per-property: { border: ['px'], box-shadow: ['rem'], font-size: ['rem'], letter-spacing: ['em'], text-shadow: ['em'], width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
+      per-property: { border: ['px'], border-bottom: ['px'], border-left: ['px'], border-right: ['px'], border-top: ['px'], border-radius: ['px'], border-bottom-left-radius: ['px'], border-bottom-right-radius: ['px'], border-top-left-radius: ['px'], border-top-right-radius: ['px'], box-shadow: ['rem'], font-size: ['rem'], height: ['rem', 'vh'], letter-spacing: ['em'], margin: ['rem'], margin-bottom: ['rem'], margin-left: ['rem'], margin-right: ['rem'], margin-top: ['rem'], padding: ['rem'], padding-bottom: ['rem'], padding-left: ['rem'], padding-right: ['rem'], padding-top: ['rem'], text-shadow: ['em'], width: ['rem', 'vw'] }
 
   quotes:
     - 1

@@ -6,31 +6,30 @@
  */
 
 // Set up fields.
-$title           = get_sub_field( 'title' );
+$block_title     = get_sub_field( 'title' );
 $text            = get_sub_field( 'text' );
 $accordion_items = get_sub_field( 'accordion_items' );
-$animation_class = _s_get_animation_class();
 $row_index       = get_row_index();
 
 // Start a <container> with possible block options.
-_s_display_block_options( array(
-	'container' => 'section', // Any HTML5 container: section, div, etc...
-	'class'     => 'content-block accordion-block', // Container class.
-) );
+_s_display_block_options(
+	array(
+		'container' => 'section', // Any HTML5 container: section, div, etc...
+		'class'     => 'content-block accordion-block', // Container class.
+	)
+);
 ?>
-	<div class="<?php echo esc_attr( $animation_class ); ?>">
-		<div class="container">
-			<?php if ( $title ) : ?>
-				<h2 class="block-title"><?php echo esc_html( $title ); ?></h2>
-			<?php endif; ?>
+	<div class="container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+		<?php if ( $block_title ) : ?>
+			<h2 class="block-title"><?php echo esc_html( $block_title ); ?></h2>
+		<?php endif; ?>
 
-			<?php if ( $text ) : ?>
-				<?php echo wp_kses_post( $text ); ?>
-			<?php endif; ?>
-		</div>
+		<?php if ( $text ) : ?>
+			<?php echo _s_get_the_content( $text ); // phpcs: xss: ok. ?>
+		<?php endif; ?>
 
 		<?php if ( $accordion_items ) : ?>
-			<div class="container accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
+			<div class="accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
 				<?php
 				$count = 0;
 				while ( have_rows( 'accordion_items' ) ) :
@@ -55,7 +54,7 @@ _s_display_block_options( array(
 							</div><!-- .accordion-item-content -->
 						</div>
 				<?php endwhile; ?>
-			</div><!-- .container -->
+			</div><!-- .accordion -->
 		<?php endif; ?>
 	</div><!-- .container -->
 </section><!-- .accordion-block -->

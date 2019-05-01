@@ -2,20 +2,6 @@
 // Hero Block
 //--------------------------------------------------------------
 .hero {
-	margin-bottom: 0;
-	overflow-y: hidden;
-	position: relative;
-	z-index: 1;
-
-	// Transparent overlay.
-	&::after {
-		@include position(absolute, 0 0 null null);
-		@include size(100%);
-
-		background-color: $color-overlay;
-		content: '';
-		z-index: 2;
-	} // &:after
 
 	// Content container.
 	&-content {
@@ -29,7 +15,6 @@
 		max-width: 50%;
 		position: relative;
 		text-align: center;
-		z-index: 3;
 	} // .hero-content
 
 	// Add padding to description.

@@ -1,6 +1,6 @@
 {
     "key": "group_595550c063c89",
-    "title": "Group: Related Posts — To Clone",
+    "title": "Block: Related Posts — To Clone",
     "fields": [
         {
             "key": "field_59567736aa8d5",
@@ -82,5 +82,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1521823744
+    "modified": 1551452519
 }

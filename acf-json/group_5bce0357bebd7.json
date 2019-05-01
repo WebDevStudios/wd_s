@@ -1,6 +1,6 @@
 {
     "key": "group_5bce0357bebd7",
-    "title": "Group: Accordion Block – To Clone",
+    "title": "Block: Accordion Block – To Clone",
     "fields": [
         {
             "key": "field_5bce036da010a",
@@ -149,5 +149,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1540228967
+    "modified": 1551452492
 }

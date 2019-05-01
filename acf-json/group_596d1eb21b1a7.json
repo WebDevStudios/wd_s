@@ -1,6 +1,6 @@
 {
     "key": "group_596d1eb21b1a7",
-    "title": "Group: Hero — To Clone",
+    "title": "Block: Hero — To Clone",
     "fields": [
         {
             "key": "field_59416d6104f5e",
@@ -76,6 +76,7 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
+
         }
     ],
     "location": [
@@ -95,5 +96,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1528470458
+    "modified": 1551452510
 }

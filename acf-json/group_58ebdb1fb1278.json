@@ -245,7 +245,8 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_5c1418a5dcaec"
+                                "field_5c1418dcb3fbf",
+                                "field_5c1418bbb3fbe"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -748,7 +749,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "the_content",
-        "excerpt",
         "discussion",
         "comments",
         "revisions",
@@ -761,5 +761,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1544821519
+    "modified": 1551473751
 }

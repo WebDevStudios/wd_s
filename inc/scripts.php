@@ -9,6 +9,8 @@
  * Register Google font.
  *
  * @link http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
+ *
+ * @author WDS
  * @return string
  */
 function _s_font_url() {
@@ -46,6 +48,8 @@ function _s_font_url() {
 
 /**
  * Enqueue scripts and styles.
+ *
+ * @author WDS
  */
 function _s_scripts() {
 	/**
@@ -66,10 +70,10 @@ function _s_scripts() {
 	/**
 	 * Global variable for IE.
 	 */
-	global $is_IE;
+	global $is_IE; // @codingStandardsIgnoreLine
 
 	// Register styles & scripts.
-	wp_register_style( '_s-google-font', _s_font_url(), array(), null );
+	wp_register_style( '_s-google-font', _s_font_url(), array(), null ); // @codingStandardsIgnoreLine - required to avoid Google caching issues.
 	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
 	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
 
@@ -134,6 +138,8 @@ add_action( 'customize_controls_enqueue_scripts', '_s_customizer_scripts' );
 
 /**
  * Add SVG definitions to footer.
+ *
+ * @author WDS
  */
 function _s_include_svg_icons() {
 

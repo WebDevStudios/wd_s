@@ -14,6 +14,8 @@ if ( ! class_exists( 'acf' ) ) {
 
 /**
  * Loop through and output ACF flexible content blocks for the current page.
+ *
+ * @author WDS
  */
 function _s_display_content_blocks() {
 	if ( have_rows( 'content_blocks' ) ) :
@@ -42,6 +44,7 @@ function _s_display_content_blocks() {
 /**
  * Associate the possible block options with the appropriate section.
  *
+ * @author WDS
  * @param  array $args Possible arguments.
  */
 function _s_display_block_options( $args = array() ) {
@@ -72,16 +75,21 @@ function _s_display_block_options( $args = array() ) {
 
 	$background_video_markup = $background_image_markup = '';
 
+	// Show overlay class, if it exists.
+	$has_show_overlay = _s_has_array_key( 'show_overlay', $background_options ) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
+
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ( $args['background_type'] ) {
-		if ( 'color' === $args['background_type'] && $background_options['color']['color_picker'] ) {
-			$background_color = $background_options['color']['color_picker'];
+		if ( 'color' === $args['background_type'] && $background_options['background_color']['color_picker'] ) {
+			$background_color = $background_options['background_color']['color_picker'];
 			$args['class']   .= ' has-background color-as-background background-' . esc_attr( $background_color );
 		}
 
 		if ( 'image' === $args['background_type'] && $background_options['background_image'] ) {
 			$background_image = $background_options['background_image'];
-			$args['class']   .= ' has-background image-as-background';
+
+			// Construct class.
+			$args['class'] .= ' has-background image-as-background' . esc_attr( $has_show_overlay );
 			ob_start();
 			?>
 			<figure class="image-background" aria-hidden="true">
@@ -95,7 +103,7 @@ function _s_display_block_options( $args = array() ) {
 			$background_video      = $background_options['background_video'];
 			$background_video_webm = $background_options['background_video_webm'];
 			$background_title      = $background_options['background_video_title'];
-			$args['class']        .= ' has-background video-as-background';
+			$args['class']        .= ' has-background video-as-background' . esc_attr( $has_show_overlay );
 			// Translators: get the title of the video.
 			$background_alt = $background_title ? sprintf( esc_attr( 'Video Background of %s', '_s' ), esc_attr( $background_options['background_video_title'] ) ) : __( 'Video Background', '_s' );
 
@@ -162,12 +170,21 @@ function _s_display_block_options( $args = array() ) {
 /**
  * Get the animate.css classes for an element.
  *
+ * @author WDS
+ * @param array $args display options array.
  * @return string $classes Animate.css classes for our element.
  */
-function _s_get_animation_class() {
+function _s_get_animation_class( $args = array() ) {
+
+	// Defaults.
+	$defaults = array(
+		'options' => get_sub_field( 'display_options' ),
+	);
+
+	$args = wp_parse_args( $args, $defaults );
 
 	// Get block other options for our animation data.
-	$display_options = get_sub_field( 'display_options' );
+	$display_options = $args['options'] ?: $defaults['options'];
 
 	// Get out of here if we don't have other options.
 	if ( ! $display_options ) {
@@ -175,11 +192,13 @@ function _s_get_animation_class() {
 	}
 
 	// Set up our animation class for the wrapping element.
-	$classes = 'not-animated';
+	$classes = ' not-animated';
 
 	// If we have an animation set...
-	if ( $display_options['animation'] ) {
-		$classes = 'animated ' . $display_options['animation'];
+	if ( _s_has_array_key( 'animation', $display_options ) ) {
+		$classes = ' animated ' . $display_options['animation'];
+	} elseif ( is_string( $display_options ) && ! empty( $display_options ) ) {
+		$classes = ' animated ' . $display_options;
 	}
 
 	return $classes;
@@ -188,6 +207,7 @@ function _s_get_animation_class() {
 /**
  * Decide whether or not a block has expired.
  *
+ * @author WDS
  * @param array $args start and end dates.
  *
  * @return bool
@@ -225,7 +245,8 @@ function _s_has_block_expired( $args = array() ) {
 /**
  * Update Layout Titles with Subfield Image and Text Fields
  *
- * @param string $title Default Field Title.
+ * @author WDS
+ * @param string $block_title Default Field Title.
  * @param array  $field Field array.
  * @param string $layout Layout type.
  * @param int    $i number.
@@ -234,13 +255,13 @@ function _s_has_block_expired( $args = array() ) {
  *
  * @return string new ACF title.
  */
-function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
+function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i ) {
 
 	// Current ACF field name.
-	$current_title = $title;
+	$current_title = $block_title;
 
 	// Remove layout title from text.
-	$title = '';
+	$block_heading = '';
 
 	// Set an expired var.
 	$expired = '';
@@ -252,32 +273,28 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 	$background = get_sub_field( 'background_options' )['background_type']['value'];
 
 	// If there's no background, just move along...
-	if ( ! 'none' === $background ) {
-		$background_repeater = get_sub_field( 'hero_slides' )[0]['background_options']['background_type']['value'];
+	if ( 'none' !== $background ) {
+		$background_repeater = get_sub_field( 'carousel_slides' )[0]['background_options']['background_type']['value'];
 		$background_type     = $background ? $background : $background_repeater;
 
 		$type = _s_return_flexible_content_layout_value( $background_type );
 
 		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
 		if ( 'image' === $background_type ) {
-			$title .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
-		}
-
-		if ( 'color' === $background_type ) {
-			$title .= '<div style="background-color: ' . esc_attr( $type ) . '; height: 30px; width: 30px;" class="acf-flexible-title-image"><span class="screen-reader-text">' . esc_html( $type ) . '</span></div>';
+			$block_heading .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
 		}
 
 		if ( 'video' === $background_type ) {
-			$title .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
+			$block_heading .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__( 'Video', '_s' ) . '</span></div>';
 		}
 	}
 
 	// Set default field title. Don't want to lose this.
-	$title .= '<strong>' . esc_html( $current_title ) . '</strong>';
+	$block_heading .= '<strong>' . esc_html( $current_title ) . '</strong>';
 
 	// ACF Flexible Content Title Fields.
 	$block_title = get_sub_field( 'title' );
-	$headline    = get_sub_field( 'hero_slides' )[0]['headline'];
+	$headline    = get_sub_field( 'carousel_slides' )[0]['title'];
 	$text        = $block_title ? $block_title : $headline;
 	$start_date  = $other_options['start_date'];
 	$end_date    = $other_options['end_date'];
@@ -295,11 +312,11 @@ function _s_acf_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
 	// Load title field text else Load headline text — Hero.
 	if ( $text ) {
-		$title .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
+		$block_heading .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
 	}
 
 	// Return New Title.
-	return $title . $expired;
+	return $block_heading . $expired;
 }
 add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_acf_flexible_content_layout_title', 10, 4 );
 
@@ -307,7 +324,7 @@ add_filter( 'acf/fields/flexible_content/layout_title/name=content_blocks', '_s_
  * Return flexible content field value by type
  *
  * @param string $type field type.
- *
+ * @author WDS
  * @return string field value.
  */
 function _s_return_flexible_content_layout_value( $type ) {
@@ -317,7 +334,7 @@ function _s_return_flexible_content_layout_value( $type ) {
 	}
 
 	$background_type          = get_sub_field( 'background_options' )[ "background_{$type}" ];
-	$background_type_repeater = get_sub_field( 'hero_slides' )[0]['background_options'][ "background_{$type}" ];
+	$background_type_repeater = get_sub_field( 'carousel_slides' )[0]['background_options'][ "background_{$type}" ];
 
 	return $background_type ? $background_type : $background_type_repeater;
 }
@@ -326,6 +343,8 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 
 	/**
 	 * Set Admin Styles for Flexible Content Layout Image/Title in _s_acf_flexible_content_layout_title().
+	 *
+	 * @author WDS
 	 */
 	function _s_flexible_content_layout_title_acf_admin_head() {
 	?>
@@ -353,6 +372,7 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 /**
  * Load colors dynamically into select field from _s_get_theme_colors()
  *
+ * @author WDS
  * @param array $field field options.
  * @return array new field choices.
  *
@@ -384,6 +404,7 @@ add_filter( 'acf/load_field/name=color_picker', '_s_acf_load_color_picker_field_
 /**
  * Get the theme colors for this project. Set these first in the Sass partial then migrate them over here.
  *
+ * @author WDS
  * @return array The array of our color names and hex values.
  * @author Corey Collins
  */
@@ -409,14 +430,15 @@ function _s_get_theme_colors() {
 /**
  * Adds h1 or h2 heading for hero based on location.
  *
- * @param string $title acf value.
+ * @author WDS
+ * @param string $block_title acf value.
  * @author jomurgel <jo@webdevstudios.com>
  * @return void
  */
-function _s_display_hero_heading( $title ) {
+function _s_display_hero_heading( $block_title ) {
 
 	// Bail if our title is empty.
-	if ( empty( $title ) ) {
+	if ( empty( $block_title ) ) {
 		return;
 	}
 
@@ -424,5 +446,71 @@ function _s_display_hero_heading( $title ) {
 	$index   = get_row_index();
 	$heading = 1 === $index && ! ( is_front_page() && is_home() ) ? 'h1' : 'h2';
 
-	echo sprintf( '<%1$s class="hero-title">%2$s</%1$s>', esc_attr( $heading ), esc_html( $title ) );
+	echo sprintf( '<%1$s class="hero-title">%2$s</%1$s>', esc_attr( $heading ), esc_html( $block_title ) );
+}
+
+/**
+ * Echo link function
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ */
+function _s_display_link( $args = array() ) {
+	echo _s_get_link( $args ); // WPCS: XSS Ok.
+}
+
+/**
+ * Get link markup from button/link array.
+ *
+ * @param array $args defaults args - link array and whether or not to append button class.
+ * @author jomurgel <jo@webdevstudios.com>
+ * @since NEXT
+ *
+ * @return string button markup.
+ */
+function _s_get_link( $args = array() ) {
+
+	// Defaults.
+	$defaults = array(
+		'button' => false, // display as button?
+		'class'  => '',
+		'link'   => get_sub_field( 'button_link' ),
+	);
+
+	// Parse those args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Make args pretty readable and default.
+	$button_array = $args['link'] ?: $defaults['link'];
+
+	// Start output buffer.
+	ob_start();
+
+	if ( ! is_array( $button_array ) ) {
+		ob_get_clean();
+		return;
+	}
+
+	// Append button class if button exists.
+	$classes = $args['button'] ? ' button' : '';
+
+	// Append class.
+	$classes .= ' ' . $args['class'];
+
+	// Get title else default to "Read More".
+	$title = _s_has_array_key( 'title', $button_array ) ? $button_array['title'] : esc_html__( 'Read More', '_s' );
+
+	// Get url.
+	$url = _s_has_array_key( 'url', $button_array ) ? $button_array['url'] : '';
+
+	// Get target, else default internal.
+	$target = _s_has_array_key( 'target', $button_array ) ? $button_array['target'] : '_self';
+	?>
+
+	<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>" target="<?php echo esc_attr( $target ); ?>"><?php echo esc_html( $title ); ?></a>
+
+	<?php
+	// Return output buffer value.
+	return ob_get_clean();
 }
