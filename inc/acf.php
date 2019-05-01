@@ -475,7 +475,7 @@ function _s_get_link( $args = array() ) {
 	$defaults = array(
 		'button' => false, // display as button?
 		'class'  => '',
-		'link'   => get_sub_field( 'button_link' ),
+		'link'   => get_field( 'button_link' ),
 	);
 
 	// Parse those args.
