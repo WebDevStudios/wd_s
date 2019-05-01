@@ -83,6 +83,32 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 		)
 	);
+
+	acf_register_block(
+		array(
+			'name'            => 'recent-posts',
+			'title'           => __( 'Recent Posts Block', '_s' ),
+			'description'     => __( 'A set of recent posts displayed by category and/or tag.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'admin-page',
+			'keywords'        => array( 'recent posts', 'posts', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+		)
+	);
+
+	acf_register_block(
+		array(
+			'name'            => 'related-posts',
+			'title'           => __( 'Related Posts Block', '_s' ),
+			'description'     => __( 'A set of manually selected posts.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'admin-page',
+			'keywords'        => array( 'related posts', 'posts', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+		)
+	);
 }
 add_action( 'acf/init', '_s_acf_init' );
 
