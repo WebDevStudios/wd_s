@@ -42,7 +42,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
@@ -58,14 +58,14 @@
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
-                    "ajax": 0,
                     "return_format": "array",
+                    "ajax": 0,
                     "placeholder": ""
                 },
                 {
                     "key": "field_5bb79386c24c1",
                     "label": "Color",
-                    "name": "color",
+                    "name": "background_color",
                     "type": "clone",
                     "instructions": "Select a background color.",
                     "required": 0,
@@ -79,7 +79,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "60",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     },
@@ -124,6 +124,67 @@
                     "mime_types": "jpg, jpeg, png"
                 },
                 {
+                    "key": "field_5c4202c73e2e8",
+                    "label": "Video Description",
+                    "name": "background_video_title",
+                    "type": "text",
+                    "instructions": "Describe your uploaded videos.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c794cdf8de38",
+                    "label": "Show Overlay?",
+                    "name": "show_overlay",
+                    "type": "true_false",
+                    "instructions": "Show darker overlay between image and content",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_5ab3e72e7bba0",
                     "label": "Video (mp4)",
                     "name": "background_video",
@@ -140,7 +201,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -167,7 +228,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -176,33 +237,6 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": "webm"
-                },
-                {
-                    "key": "field_5c4202c73e2e8",
-                    "label": "Video Description",
-                    "name": "background_video_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5ab3e6937bb9d",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
         }
@@ -224,5 +258,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1547830147
+    "modified": 1554136392
 }

@@ -4,7 +4,7 @@
 $slide-height: rem(500);
 
 .carousel-block {
-	
+
 	// Removes padding.
 	&.content-block {
 		@include padding(0 null);
@@ -43,11 +43,14 @@ $slide-height: rem(500);
 	// Navigation dots/numbers.
 	.slick-dots {
 		@include list-reset;
-		@include position(absolute, null null 0);
+		@include position(absolute, null 0 0 0);
 
 		display: flex;
 		justify-content: center;
-		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		z-index: 1;
 
 		// Each dot.
 		li {
@@ -68,16 +71,6 @@ $slide-height: rem(500);
 	position: relative;
 	z-index: 1;
 
-	// Transparent overlay.
-	&::after {
-		@include position(absolute, 0 0 null null);
-		@include size(100%);
-
-		background-color: rgba($color-black, 0.3);
-		content: '';
-		z-index: 2;
-	} // &:after
-
 	// Content container.
 	&-content {
 		@include margin(0 auto);
@@ -90,6 +83,15 @@ $slide-height: rem(500);
 		position: relative;
 		text-align: center;
 		z-index: 3;
+
+		&[data-animation~='animated'] {
+			opacity: 0;
+			transition: $transition-opacity;
+
+			&.animated {
+				opacity: 1;
+			}
+		}
 	} // .slide-content
 
 	// Add padding to description.

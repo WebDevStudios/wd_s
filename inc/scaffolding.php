@@ -104,52 +104,55 @@ function _s_display_scaffolding_section( $args = array() ) {
 function _s_scaffolding_allowed_html() {
 
 	// Add additional HTML tags to the wp_kses() allowed html filter.
-	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'svg'    => array(
-			'aria-hidden' => true,
-			'class'       => true,
-			'id'          => true,
-			'role'        => true,
-			'title'       => true,
-			'fill'        => true,
-			'height'      => true,
-			'width'       => true,
-			'use'         => true,
-			'path'        => true,
-		),
-		'use'    => array(
-			'xlink:href' => true,
-		),
-		'title'  => array(
-			'id' => true,
-		),
-		'desc'   => array(
-			'id' => true,
-		),
-		'select' => array(
-			'class' => true,
-		),
-		'option' => array(
-			'option'   => true,
-			'value'    => true,
-			'selected' => true,
-			'disabled' => true,
-		),
-		'input'  => array(
-			'type'        => true,
-			'name'        => true,
-			'value'       => true,
-			'placeholder' => true,
-			'class'       => true,
-		),
-		'iframe' => array(
-			'src'             => array(),
-			'height'          => array(),
-			'width'           => array(),
-			'frameborder'     => array(),
-			'allowfullscreen' => array(),
-		),
-	) );
+	$allowed_tags = array_merge(
+		wp_kses_allowed_html( 'post' ),
+		array(
+			'svg'    => array(
+				'aria-hidden' => true,
+				'class'       => true,
+				'id'          => true,
+				'role'        => true,
+				'title'       => true,
+				'fill'        => true,
+				'height'      => true,
+				'width'       => true,
+				'use'         => true,
+				'path'        => true,
+			),
+			'use'    => array(
+				'xlink:href' => true,
+			),
+			'title'  => array(
+				'id' => true,
+			),
+			'desc'   => array(
+				'id' => true,
+			),
+			'select' => array(
+				'class' => true,
+			),
+			'option' => array(
+				'option'   => true,
+				'value'    => true,
+				'selected' => true,
+				'disabled' => true,
+			),
+			'input'  => array(
+				'type'        => true,
+				'name'        => true,
+				'value'       => true,
+				'placeholder' => true,
+				'class'       => true,
+			),
+			'iframe' => array(
+				'src'             => array(),
+				'height'          => array(),
+				'width'           => array(),
+				'frameborder'     => array(),
+				'allowfullscreen' => array(),
+			),
+		)
+	);
 	return $allowed_tags;
 }
 
