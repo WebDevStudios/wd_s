@@ -57,6 +57,19 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 		)
 	);
+
+	acf_register_block(
+		array(
+			'name'            => 'fifty-fifty',
+			'title'           => __( 'Fifty/Fifty Block', '_s' ),
+			'description'     => __( 'A split-content block with text and/or media.', '_s' ),
+			'render_callback' => '_s_acf_block_registration_callback',
+			'category'        => 'wds-blocks',
+			'icon'            => 'editor-table',
+			'keywords'        => array( 'fifty fifty', 'columns', 'wds' ),
+			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+		)
+	);
 }
 add_action( 'acf/init', '_s_acf_init' );
 
