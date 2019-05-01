@@ -6,9 +6,9 @@
  */
 
 // Set up fields.
-$block_title     = get_sub_field( 'title' );
-$text            = get_sub_field( 'text' );
-$accordion_items = get_sub_field( 'accordion_items' );
+$block_title     = get_field( 'title' );
+$text            = get_field( 'text' );
+$accordion_items = get_field( 'accordion_items' );
 $row_index       = get_row_index();
 
 // Start a <container> with possible block options.
