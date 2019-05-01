@@ -334,3 +334,22 @@ function _s_remove_archive_title_prefix( $block_title ) {
 	return $block_title;
 }
 add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
+
+/**
+ * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
+ *
+ * @param string $content The starting post content.
+ * @return string The updated post content.
+ * @author Corey Collins
+ */
+function _s_remove_empty_p_tags_from_content( $content ) {
+
+	// If we have blocks in place, don't add wpautop.
+	if ( has_blocks() ) {
+		return $content;
+	}
+
+	return wpautop( $content );
+}
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', '_s_remove_empty_p_tags_from_content' );
