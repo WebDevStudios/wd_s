@@ -42,8 +42,8 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
 			'keywords'        => array( 'carousel', 'slider', 'wds' ),
-			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'mode'            => false,
+			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
 		)
 	);
 
@@ -172,6 +172,24 @@ function _s_acf_enqueue_backend_block_styles() {
 	}
 
 	// Enqueue styles here, eventually. And scripts. Need to look at a good way of enqueuing things smartly on the backend without having to enqueue the whole of project.js, for instance.
+}
+
+/**
+ * Enqueues carousel scripts.
+ *
+ * @return void
+ * @author Corey Collins
+ */
+function _s_acf_enqueue_carousel_scripts() {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
+	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
+	wp_enqueue_script( 'wds-carousel', get_template_directory_uri() . '/assets/scripts/project.js', array( 'slick-carousel' ), '1.0.0', true );
+	wp_enqueue_style( 'slick-carousel' );
 }
 
 /**
