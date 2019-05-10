@@ -180,7 +180,5 @@ function _s_get_block_alignment( $block ) {
 		return;
 	}
 
-	// echo '<xmp>: '. print_r( $block, true ) .'</xmp>';
-
 	return ! empty( $block['align'] ) ? ' align' . esc_attr( $block['align'] ) : '';
 }
