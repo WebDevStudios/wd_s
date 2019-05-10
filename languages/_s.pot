@@ -127,6 +127,66 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
+#: inc/acf-gutenberg.php:26
+msgid "Accordion"
+msgstr ""
+
+#: inc/acf-gutenberg.php:27
+msgid "A custom set of collapsable accordion items."
+msgstr ""
+
+#: inc/acf-gutenberg.php:38
+msgid "Carousel"
+msgstr ""
+
+#: inc/acf-gutenberg.php:39
+msgid "A carousel with a call to action for each slide."
+msgstr ""
+
+#: inc/acf-gutenberg.php:51
+msgid "Call To Action"
+msgstr ""
+
+#: inc/acf-gutenberg.php:52
+msgid "A call to action block."
+msgstr ""
+
+#: inc/acf-gutenberg.php:64
+msgid "Fifty/Fifty Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:65
+msgid "A split-content block with text and/or media."
+msgstr ""
+
+#: inc/acf-gutenberg.php:77
+msgid "Hero Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:78
+msgid "A hero with an optional call to action."
+msgstr ""
+
+#: inc/acf-gutenberg.php:90
+msgid "Recent Posts Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:91
+msgid "A set of recent posts displayed by category and/or tag."
+msgstr ""
+
+#: inc/acf-gutenberg.php:103
+msgid "Related Posts Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:104
+msgid "A set of manually selected posts."
+msgstr ""
+
+#: inc/acf-gutenberg.php:148
+msgid "WDS Blocks"
+msgstr ""
+
 #. translators: get the title of the video.
 #: inc/acf.php:108
 msgid "Video Background"
