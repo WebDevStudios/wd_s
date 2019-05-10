@@ -10,6 +10,11 @@ window.wdsCarousel = {};
 	app.init = function() {
 		app.cache();
 
+		// If we're in an ACF edit page.
+		if ( window.acf ) {
+			app.doSlick();
+		}
+
 		if ( app.meetsRequirements() ) {
 			app.bindEvents();
 		}
@@ -99,16 +104,28 @@ window.wdsCarousel = {};
 
 	// Kick off Slick.
 	app.doSlick = function() {
-		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
-		app.$c.theCarousel.slick( {
-			autoplay: true,
-			autoplaySpeed: 5000,
-			arrows: true,
-			dots: true,
-			focusOnSelect: true,
-			waitForAnimate: true
+		let initializeCarousel = function( $block ) {
+			$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
+				autoplay: true,
+				autoplaySpeed: 5000,
+				arrows: true,
+				dots: true,
+				focusOnSelect: true,
+				waitForAnimate: true
+			} );
+		}
+
+		// Render on the frontend.
+		$( document ).ready( function() {
+			app.playBackgroundVideos;
+			initializeCarousel();
 		} );
+
+		// Render on the backend.
+		if ( window.acf ) {
+			window.acf.addAction( 'render_block_preview', initializeCarousel );
+		}
 
 		app.$c.theCarousel.on( 'afterChange', app.doAnimation );
 	};
