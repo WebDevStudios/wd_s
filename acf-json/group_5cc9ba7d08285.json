@@ -134,27 +134,6 @@
                     "prefix_name": 0
                 },
                 {
-                    "key": "field_5cc9ba7d13300",
-                    "label": "Slide Other Options",
-                    "name": "other_options",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_594168e970d85"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
                     "key": "field_5cc9ba7d1330e",
                     "label": "Slide Display Options",
                     "name": "display_options",
@@ -169,8 +148,28 @@
                     },
                     "clone": [
                         "field_5c1418dcb3fbf",
-                        "field_5c49f13b705f3",
-                        "field_5c49f169705f4"
+                        "field_5c49f13b705f3"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_5cc9ba7d13300",
+                    "label": "Slide Other Options",
+                    "name": "other_options",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_594168e970d85"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -218,5 +217,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556724439
+    "modified": 1558730861
 }
