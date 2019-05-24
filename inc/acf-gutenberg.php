@@ -172,6 +172,7 @@ function _s_acf_enqueue_backend_block_styles() {
 	}
 
 	// Enqueue styles here, eventually. And scripts. Need to look at a good way of enqueuing things smartly on the backend without having to enqueue the whole of project.js, for instance.
+	wp_enqueue_style( 'wds-gutenberg-blocks', get_template_directory_uri() . '/gutenberg-blocks-style.css', array(), '1.0.0' );
 }
 
 /**
