@@ -2,27 +2,30 @@
 // Gutenberg Backend Overrides
 //--------------------------------------------------------------
 
-.button {
+.content-block {
 
-	&:hover,
-	&:active,
-	&:focus {
-		background: $color-background-button;
+	.button {
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color-background-button;
+		}
 	}
-}
 
-.card {
-	background: unset;
-	border: none;
-	box-shadow: none;
-}
+	.card {
+		background: unset;
+		border: none;
+		box-shadow: none;
+	}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	color: inherit;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: inherit;
+	}
 }
