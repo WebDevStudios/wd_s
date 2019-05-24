@@ -6,6 +6,7 @@
  */
 
 // Set up fields.
+global $fifty_alignment;
 $text_primary   = get_field( 'text_primary' );
 $text_secondary = get_field( 'text_secondary' );
 
@@ -13,7 +14,7 @@ $text_secondary = get_field( 'text_secondary' );
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-only', // The container class.
+		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-only' . esc_attr( $fifty_alignment ), // The container class.
 	)
 );
 ?>

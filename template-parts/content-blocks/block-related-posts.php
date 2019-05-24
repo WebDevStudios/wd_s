@@ -8,6 +8,7 @@
 // Set up fields.
 $block_title   = get_field( 'title' );
 $related_posts = get_field( 'related_posts' );
+$alignment     = _s_get_block_alignment( $block );
 
 // Display section if we have any posts.
 if ( $related_posts ) :
@@ -16,7 +17,7 @@ if ( $related_posts ) :
 	_s_display_block_options(
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block related-posts-block', // Container class.
+			'class'     => 'content-block related-posts-block' . esc_attr( $alignment ), // Container class.
 		)
 	);
 	?>

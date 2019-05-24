@@ -14,6 +14,7 @@ $block_title = get_field( 'title' );
 $post_count  = get_field( 'number_of_posts' );
 $categories  = get_field( 'categories' );
 $tags        = get_field( 'tags' );
+$alignment   = _s_get_block_alignment( $block );
 
 // Variable to hold query args.
 $args = array();
@@ -36,7 +37,7 @@ if ( $recent_posts->have_posts() ) :
 	_s_display_block_options(
 		array(
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block recent-posts-block', // Container class.
+			'class'     => 'content-block recent-posts-block' . esc_attr( $alignment ), // Container class.
 		)
 	);
 	?>

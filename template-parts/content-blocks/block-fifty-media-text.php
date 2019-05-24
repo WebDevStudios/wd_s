@@ -6,6 +6,7 @@
  */
 
 // Set up fields.
+global $fifty_alignment;
 $image_data = get_field( 'media_left' );
 $text       = get_field( 'text_primary' );
 
@@ -13,7 +14,7 @@ $text       = get_field( 'text_primary' );
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block fifty-fifty-block fifty-media-text', // The class of the container.
+		'class'     => 'content-block fifty-fifty-block fifty-media-text' . esc_attr( $fifty_alignment ), // The class of the container.
 	)
 );
 ?>
