@@ -28,7 +28,7 @@ if ( $related_posts ) :
 			<?php endif; ?>
 		</div>
 
-		<div class="container display-flex<?php echo esc_attr( _s_get_animation_class() ); ?>">
+		<div class="container display-flex">
 
 			<?php
 			// Loop through recent posts.

@@ -163,43 +163,6 @@ function _s_display_block_options( $args = array() ) {
 }
 
 /**
- * Get the animate.css classes for an element.
- *
- * @author WDS
- * @param array $args display options array.
- * @return string $classes Animate.css classes for our element.
- */
-function _s_get_animation_class( $args = array() ) {
-
-	// Defaults.
-	$defaults = array(
-		'options' => get_sub_field( 'display_options' ),
-	);
-
-	$args = wp_parse_args( $args, $defaults );
-
-	// Get block other options for our animation data.
-	$display_options = $args['options'] ?: $defaults['options'];
-
-	// Get out of here if we don't have other options.
-	if ( ! $display_options ) {
-		return '';
-	}
-
-	// Set up our animation class for the wrapping element.
-	$classes = ' not-animated';
-
-	// If we have an animation set...
-	if ( _s_has_array_key( 'animation', $display_options ) ) {
-		$classes = ' animated ' . $display_options['animation'];
-	} elseif ( is_string( $display_options ) && ! empty( $display_options ) ) {
-		$classes = ' animated ' . $display_options;
-	}
-
-	return $classes;
-}
-
-/**
  * Decide whether or not a block has expired.
  *
  * @author WDS

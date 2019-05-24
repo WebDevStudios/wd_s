@@ -18,7 +18,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="display-flex container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+	<div class="display-flex container">
 
 		<div class="half">
 			<?php echo _s_get_the_content( $text_primary ); // WPCS: XSS OK. ?>

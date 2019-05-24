@@ -18,7 +18,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="container display-flex align-center<?php echo esc_attr( _s_get_animation_class() ); ?>">
+	<div class="container display-flex align-center">
 		<header>
 			<?php if ( $block_title ) : ?>
 				<h1 class="cta-title"><?php echo esc_html( $block_title ); ?></h1>

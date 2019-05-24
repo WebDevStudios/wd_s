@@ -20,7 +20,7 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+	<div class="container">
 		<?php if ( $block_title ) : ?>
 			<h2 class="block-title"><?php echo esc_html( $block_title ); ?></h2>
 		<?php endif; ?>
