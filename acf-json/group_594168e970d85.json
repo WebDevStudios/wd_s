@@ -42,31 +42,12 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "100",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "placeholder": "custom-id",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ab3e4afab635",
-                    "label": "Custom CSS Class",
-                    "name": "custom_css_class",
-                    "type": "text",
-                    "instructions": "Add a custom CSS class to this block.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "custom-class",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -125,5 +106,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1548349847
+    "modified": 1558731361
 }
