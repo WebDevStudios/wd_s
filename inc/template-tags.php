@@ -233,13 +233,14 @@ function _s_get_the_excerpt( $args = array() ) {
 	$defaults = array(
 		'length' => 20,
 		'more'   => '...',
+		'post'   => '',
 	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
 	// Trim the excerpt.
-	return wp_trim_words( get_the_excerpt(), absint( $args['length'] ), esc_html( $args['more'] ) );
+	return wp_trim_words( get_the_excerpt( $args['post'] ), absint( $args['length'] ), esc_html( $args['more'] ) );
 }
 
 /**
@@ -270,16 +271,19 @@ function _s_display_post_image( $size = 'thumbnail' ) {
  * Return an image URL, no matter what.
  *
  * @param  string $size The image size to return. Default is thumbnail.
+ * @param  object $selected_post The post whose thumbnail we want.
  *
  * @author WDS
  * @return string
  */
-function _s_get_post_image_url( $size = 'thumbnail' ) {
+function _s_get_post_image_url( $size = 'thumbnail', $selected_post = '' ) {
+
+	$selected_post = $selected_post ?: get_the_ID();
 
 	// If post has a featured image, return its URL.
 	if ( has_post_thumbnail() ) {
 
-		$featured_image_id = get_post_thumbnail_id( get_the_ID() );
+		$featured_image_id = get_post_thumbnail_id( $selected_post );
 		$media             = wp_get_attachment_image_src( $featured_image_id, $size );
 
 		if ( is_array( $media ) ) {
