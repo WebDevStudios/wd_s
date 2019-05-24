@@ -34,30 +34,6 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5c1418bbb3fbe",
-                    "label": "Block Width",
-                    "name": "block_width",
-                    "type": "radio",
-                    "instructions": "Select whether this block should display at container width or full width.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "full-width": "Full",
-                        "container-width": "Container"
-                    },
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "default_value": "container-width",
-                    "layout": "horizontal",
-                    "return_format": "value",
-                    "save_other_choice": 0
-                },
-                {
                     "key": "field_5c49f13b705f3",
                     "label": "Font Color",
                     "name": "font_color",
@@ -198,5 +174,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1548349823
+    "modified": 1558727365
 }
