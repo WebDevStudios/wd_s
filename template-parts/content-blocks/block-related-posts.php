@@ -38,18 +38,19 @@ if ( $related_posts ) :
 				// Convert post object to post data.
 				setup_postdata( $post );
 
-						// Display a card.
+				// Display a card.
 				_s_display_card(
 					array(
-						'title' => get_the_title(),
-						'image' => _s_get_post_image_url( 'medium' ),
+						'title' => get_the_title( $post ),
+						'image' => _s_get_post_image_url( 'medium', $post ),
 						'text'  => _s_get_the_excerpt(
 							array(
 								'length' => 20,
 								'more'   => '...',
+								'post'   => $post,
 							)
 						),
-						'url'   => get_the_permalink(),
+						'url'   => get_the_permalink( $post ),
 						'class' => 'third',
 					)
 				);
