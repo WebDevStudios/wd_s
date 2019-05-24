@@ -55,6 +55,15 @@
 	@include media($container-offset) {
 		@include padding(0);
 	}
+
+	// Adjusts padding for non-full-width content blocks with backgrounds.
+	.content-block.has-background.alignwide & {
+
+		@include media($container-offset) {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
 } // .container
 
 //-----------------------------------------
