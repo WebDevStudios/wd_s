@@ -65,7 +65,6 @@ function _s_display_block_options( $args = array() ) {
 		'background_type'  => $background_options['background_type']['value'],
 		'container'        => 'section',
 		'class'            => 'content-block',
-		'custom_css_class' => $other_options['custom_css_class'],
 		'font_color'       => $display_options['font_color'],
 		'id'               => $default_id,
 	);
@@ -136,11 +135,6 @@ function _s_display_block_options( $args = array() ) {
 	// Set the custom ID.
 	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
 		$args['id'] = $other_options['custom_id'];
-	}
-
-	// Set the custom css class.
-	if ( $args['custom_css_class'] ) {
-		$args['class'] .= ' ' . $args['custom_css_class'];
 	}
 
 	// Print our block container with options.
