@@ -37,7 +37,7 @@
 	} // .hentry
 
 	// Full-screen elements. Ignores sidebar issues.
-	.full-width {
+	.full-width:not(.content-block) {
 		@include full-width;
 	} // .full-width
 } // .site-main
