@@ -229,3 +229,19 @@ function _s_get_block_alignment( $block ) {
 
 	return ! empty( $block['align'] ) ? ' align' . esc_attr( $block['align'] ) : '';
 }
+
+/**
+ * Returns the class names set for a content block.
+ *
+ * @param array $block The block settings.
+ * @return string The class, if one is set.
+ * @author Corey Collins
+ */
+function _s_get_block_classes( $block ) {
+
+	if ( ! $block ) {
+		return;
+	}
+
+	return ! empty( $block['className'] ) ? ' ' . esc_attr( $block['className'] ) : '';
+}
