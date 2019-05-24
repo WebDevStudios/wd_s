@@ -16,12 +16,6 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 */
 
 //-----------------------------------------
-// Extras
-//-----------------------------------------
-// @import 'vendor/sanitize/sanitize';
-// @import 'vendor/animate/animate';
-
-//-----------------------------------------
 // Utilities
 //-----------------------------------------
 
@@ -42,6 +36,14 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 //-----------------------------------------
 
 .edit-post-visual-editor {
+
+	// Set our max width and make up for the padding.
+	.wp-block[data-align="wide"] {
+		max-width: rem(1112);
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 
 	.acf-block-preview {
 

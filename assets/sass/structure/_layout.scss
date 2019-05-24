@@ -55,16 +55,19 @@
 	@include media($container-offset) {
 		@include padding(0);
 	}
+} // .container
 
-	// Adjusts padding for non-full-width content blocks with backgrounds.
-	.content-block.has-background.alignwide & {
+// Adjusts padding for non-full-width content blocks with backgrounds.
+.content-block.has-background {
+
+	.container {
 
 		@include media($container-offset) {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
-} // .container
+}
 
 //-----------------------------------------
 // Site Layout Wrapper and Grid Elements

@@ -28,4 +28,11 @@
 	p {
 		color: inherit;
 	}
+
+	&.alignfull {
+		left: unset;
+		margin: 0;
+		right: unset;
+		width: 100%;
+	}
 }
