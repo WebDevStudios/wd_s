@@ -6,7 +6,8 @@
  */
 
 $alignment    = _s_get_block_alignment( $block );
-$classnames[] = 'content-block carousel-block' . $alignment;
+$classes      = _s_get_block_classes( $block );
+$classnames[] = 'content-block carousel-block' . $alignment . $classes;
 $classnames[] = get_sub_field( 'block_width' );
 
 // Start repeater markup...

@@ -11,12 +11,13 @@ $text            = get_field( 'text' );
 $accordion_items = get_field( 'accordion_items' );
 $row_index       = get_row_index();
 $alignment       = _s_get_block_alignment( $block );
+$classes         = _s_get_block_classes( $block );
 
 // Start a <container> with possible block options.
 _s_display_block_options(
 	array(
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block accordion-block' . esc_attr( $alignment ), // Container class.
+		'class'     => 'content-block accordion-block' . esc_attr( $alignment . $classes ), // Container class.
 	)
 );
 ?>

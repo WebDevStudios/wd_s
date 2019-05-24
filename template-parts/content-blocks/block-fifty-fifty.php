@@ -6,9 +6,10 @@
  */
 
 // Get the block layout field so block template is conditionally loaded.
-global $fifty_alignment;
+global $fifty_alignment, $fifty_classes;
 $block_layout    = get_field( 'block_layout' );
 $fifty_alignment = _s_get_block_alignment( $block );
+$fifty_classes   = _s_get_block_classes( $block );
 
 switch ( $block_layout ) {
 

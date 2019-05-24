@@ -9,12 +9,13 @@
 $block_title = get_field( 'title' );
 $text        = get_field( 'text' );
 $alignment   = _s_get_block_alignment( $block );
+$classes     = _s_get_block_classes( $block );
 
 // Start a <container> with possible block options.
 _s_display_block_options(
 	array(
 		'container' => 'aside', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block cta-block' . esc_attr( $alignment ), // Container class.
+		'class'     => 'content-block cta-block' . esc_attr( $alignment . $classes ), // Container class.
 	)
 );
 ?>
