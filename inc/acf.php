@@ -138,11 +138,6 @@ function _s_display_block_options( $args = array() ) {
 		$args['id'] = $other_options['custom_id'];
 	}
 
-	// Set the Container width.
-	if ( isset( $display_options['block_width'] ) && ! empty( $display_options['block_width'] ) ) {
-		$args['class'] .= ' ' . $display_options['block_width'];
-	}
-
 	// Set the custom css class.
 	if ( $args['custom_css_class'] ) {
 		$args['class'] .= ' ' . $args['custom_css_class'];
