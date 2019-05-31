@@ -17,6 +17,7 @@ if ( $related_posts ) :
 	// Start a <container> with possible block options.
 	_s_display_block_options(
 		array(
+			'block'     => $block,
 			'container' => 'section', // Any HTML5 container: section, div, etc...
 			'class'     => 'content-block related-posts-block' . esc_attr( $alignment . $classes ), // Container class.
 		)

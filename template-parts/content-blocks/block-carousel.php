@@ -43,6 +43,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 		// Start a <container> with possible block options.
 		_s_display_block_options(
 			array(
+				'block'     => $block,
 				'container' => 'section', // Any HTML5 container: section, div, etc...
 				'class'     => 'slide', // Container class.
 				'id'        => esc_attr( 'carousel-' . get_row_index() ),

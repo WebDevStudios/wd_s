@@ -19,6 +19,11 @@ if ( ! function_exists( 'acf_register_block_type' ) ) {
  */
 function _s_acf_init() {
 
+	$supports = array(
+		'align'  => array( 'wide', 'full' ),
+		'anchor' => true,
+	);
+
 	// Register our Accordion block.
 	acf_register_block_type(
 		array(
@@ -30,9 +35,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'accordion', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -47,9 +50,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'carousel', 'slider', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -64,9 +65,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'call to action', 'cta', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -81,9 +80,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'fifty fifty', 'columns', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -98,9 +95,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'hero', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -115,9 +110,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'recent posts', 'posts', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 
@@ -132,9 +125,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'related posts', 'posts', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
-			'supports'        => array(
-				'align' => array( 'wide', 'full' ),
-			),
+			'supports'        => $supports,
 		)
 	);
 }
@@ -261,4 +252,20 @@ function _s_get_block_classes( $block ) {
 	}
 
 	return ! empty( $block['className'] ) ? ' ' . esc_attr( $block['className'] ) : '';
+}
+
+/**
+ * Returns the ID (anchor link field) set for a content block.
+ *
+ * @param array $block The block settings.
+ * @return string The ID, if one is set.
+ * @author Corey Collins
+ */
+function _s_get_block_id( $block ) {
+
+	if ( ! $block ) {
+		return;
+	}
+
+	return empty( $block['anchor'] ) ? str_replace( '_', '-', $block['id'] ) : esc_attr( $block['anchor'] );
 }

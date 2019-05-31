@@ -57,8 +57,8 @@ function _s_display_block_options( $args = array() ) {
 
 	$display_options = get_sub_field( 'display_options' ) ? get_sub_field( 'display_options' ) : get_field( 'display_options' )['display_options'];
 
-	// Get a default ID.
-	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
+	// Get the block ID.
+	$block_id = _s_get_block_id( $args['block'] );
 
 	// Setup defaults.
 	$defaults = array(
@@ -66,7 +66,7 @@ function _s_display_block_options( $args = array() ) {
 		'container'        => 'section',
 		'class'            => 'content-block',
 		'font_color'       => $display_options['font_color'],
-		'id'               => $default_id,
+		'id'               => $block_id,
 	);
 
 	// Parse args.

@@ -6,13 +6,14 @@
  */
 
 // Set up fields.
-global $fifty_alignment, $fifty_classes;
+global $fifty_block, $fifty_alignment, $fifty_classes;
 $text_primary   = get_field( 'text_primary' );
 $text_secondary = get_field( 'text_secondary' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options(
 	array(
+		'block'     => $fifty_block,
 		'container' => 'section', // Any HTML5 container: section, div, etc...
 		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-only' . esc_attr( $fifty_alignment . $fifty_classes ), // The container class.
 	)
