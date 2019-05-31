@@ -1,8 +1,12 @@
 # Changes to normalize.css
 
+### 8.0.1 (November 4, 2018)
+
+* Fix regression in IE rendering of `main` element.
+
 ### 8.0.0 (February 2, 2018)
 
-* Remove support for older browsers Android 4, lte IE, lte Safari 7.
+* Remove support for older browsers Android 4, lte IE 9, lte Safari 7.
 * Don't remove search input cancel button in Chrome/Safari.
 * Form inputs inherit `font-family`.
 * Fix text decoration in Safari 8+.
