@@ -28,7 +28,7 @@ function _s_acf_init() {
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'keywords'        => array( 'accordion', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -45,7 +45,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
 			'keywords'        => array( 'carousel', 'slider', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -62,7 +62,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'megaphone',
 			'keywords'        => array( 'call to action', 'cta', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -79,7 +79,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'editor-table',
 			'keywords'        => array( 'fifty fifty', 'columns', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -96,7 +96,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
 			'keywords'        => array( 'hero', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -113,7 +113,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'admin-page',
 			'keywords'        => array( 'recent posts', 'posts', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
@@ -130,7 +130,7 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'icon'            => 'admin-page',
 			'keywords'        => array( 'related posts', 'posts', 'wds' ),
-			'mode'            => false,
+			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),

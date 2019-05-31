@@ -6,7 +6,7 @@
             "key": "field_5cc9ba7d0f78a",
             "label": "Block Content",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -37,22 +38,6 @@
             "layout": "block",
             "button_label": "Add Slide",
             "sub_fields": [
-                {
-                    "key": "field_5cc9ba7d132b5",
-                    "label": "Slide Content",
-                    "name": "",
-                    "type": "tab",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "placement": "top",
-                    "endpoint": 0
-                },
                 {
                     "key": "field_5cc9ba7d132c7",
                     "label": "Title",
@@ -217,5 +202,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1558730861
+    "modified": 1559318620
 }

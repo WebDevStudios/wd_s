@@ -6,7 +6,7 @@
             "key": "field_596d121bd7ea2",
             "label": "Other Options",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -42,7 +43,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "100",
+                        "width": "33.333",
                         "class": "",
                         "id": ""
                     },
@@ -61,7 +62,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "33.333",
                         "class": "",
                         "id": ""
                     },
@@ -78,7 +79,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "33.333",
                         "class": "",
                         "id": ""
                     },
@@ -106,5 +107,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1558731361
+    "modified": 1559318345
 }

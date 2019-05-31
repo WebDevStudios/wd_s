@@ -6,7 +6,7 @@
             "key": "field_5cc9b2818d84a",
             "label": "Block Content",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -60,7 +61,7 @@
             "key": "field_5cc9b2958d84b",
             "label": "Accordion Content",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -69,7 +70,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -212,5 +214,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1556724224
+    "modified": 1559318441
 }
