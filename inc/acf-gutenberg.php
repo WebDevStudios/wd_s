@@ -8,7 +8,7 @@
  */
 
 // Make sure ACF is active.
-if ( ! function_exists( 'acf_register_block' ) ) {
+if ( ! function_exists( 'acf_register_block_type' ) ) {
 	return;
 }
 
@@ -20,7 +20,7 @@ if ( ! function_exists( 'acf_register_block' ) ) {
 function _s_acf_init() {
 
 	// Register our Accordion block.
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'accordion',
 			'title'           => __( 'Accordion', '_s' ),
@@ -29,14 +29,14 @@ function _s_acf_init() {
 			'category'        => 'wds-blocks',
 			'keywords'        => array( 'accordion', 'wds' ),
 			'mode'            => 'preview',
-			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
 			'supports'        => array(
 				'align' => array( 'wide', 'full' ),
 			),
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'carousel',
 			'title'           => __( 'Carousel', '_s' ),
@@ -53,7 +53,7 @@ function _s_acf_init() {
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'cta',
 			'title'           => __( 'Call To Action', '_s' ),
@@ -70,7 +70,7 @@ function _s_acf_init() {
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'fifty-fifty',
 			'title'           => __( 'Fifty/Fifty Block', '_s' ),
@@ -87,7 +87,7 @@ function _s_acf_init() {
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'hero',
 			'title'           => __( 'Hero Block', '_s' ),
@@ -104,7 +104,7 @@ function _s_acf_init() {
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'recent-posts',
 			'title'           => __( 'Recent Posts Block', '_s' ),
@@ -121,7 +121,7 @@ function _s_acf_init() {
 		)
 	);
 
-	acf_register_block(
+	acf_register_block_type(
 		array(
 			'name'            => 'related-posts',
 			'title'           => __( 'Related Posts Block', '_s' ),
@@ -208,10 +208,27 @@ function _s_acf_enqueue_carousel_scripts() {
 		return;
 	}
 
+	_s_acf_enqueue_backend_block_styles();
 	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
 	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
-	wp_enqueue_script( 'wds-carousel', get_template_directory_uri() . '/assets/scripts/project.js', array( 'slick-carousel' ), '1.0.0', true );
+	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/assets/scripts/project.js', array( 'slick-carousel' ), '1.0.0', true );
 	wp_enqueue_style( 'slick-carousel' );
+}
+
+/**
+ * Enqueues accordion scripts.
+ *
+ * @return void
+ * @author Corey Collins
+ */
+function _s_acf_enqueue_accordion_scripts() {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	_s_acf_enqueue_backend_block_styles();
+	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/assets/scripts/project.js', array( 'jquery' ), '1.0.0', true );
 }
 
 /**
