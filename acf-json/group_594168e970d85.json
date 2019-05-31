@@ -35,25 +35,6 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5ba51914757eb",
-                    "label": "Custom ID",
-                    "name": "custom_id",
-                    "type": "text",
-                    "instructions": "Add a custom ID to this block.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33.333",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "custom-id",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_5ab53deb4fbc4",
                     "label": "Start Date",
                     "name": "start_date",
@@ -107,5 +88,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1559318345
+    "modified": 1559330134
 }
