@@ -132,11 +132,6 @@ function _s_display_block_options( $args = array() ) {
 		$args['class'] .= ' has-font-color color-' . esc_attr( $args['font_color']['color_picker'] );
 	}
 
-	// Set the custom ID.
-	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
-		$args['id'] = $other_options['custom_id'];
-	}
-
 	// Print our block container with options.
 	printf(
 		'<%s id="%s" class="%s">',
