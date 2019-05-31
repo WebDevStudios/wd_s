@@ -19,11 +19,11 @@ _s_display_block_options(
 	)
 );
 ?>
-	<div class="container hero-content">
+	<div class="container hero-block-content">
 		<?php _s_display_hero_heading( $block_title ); ?>
 
 		<?php if ( $text ) : ?>
-			<p class="hero-description"><?php echo esc_html( $text ); ?></p>
+			<p class="hero-block-description"><?php echo esc_html( $text ); ?></p>
 		<?php endif; ?>
 
 		<?php
