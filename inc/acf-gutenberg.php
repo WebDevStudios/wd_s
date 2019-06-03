@@ -35,6 +35,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'accordion', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -50,6 +51,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'carousel', 'slider', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -65,6 +67,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'call to action', 'cta', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -80,6 +83,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'fifty fifty', 'columns', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -95,6 +99,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'hero', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -110,6 +115,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'recent posts', 'posts', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -125,6 +131,7 @@ function _s_acf_init() {
 			'keywords'        => array( 'related posts', 'posts', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
+			'align'           => 'wide',
 			'supports'        => $supports,
 		)
 	);
@@ -235,7 +242,7 @@ function _s_get_block_alignment( $block ) {
 		return;
 	}
 
-	return ! empty( $block['align'] ) ? ' align' . esc_attr( $block['align'] ) : '';
+	return ! empty( $block['align'] ) ? ' align' . esc_attr( $block['align'] ) : 'alignwide';
 }
 
 /**
