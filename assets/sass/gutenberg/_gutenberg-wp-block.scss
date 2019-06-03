@@ -5,13 +5,16 @@
 // Set our max width and make up for the padding.
 .wp-block {
 
-	&[data-align='wide'] {
+	&[data-type*='wds'] {
 		max-width: rem(1112);
 		padding-left: 0;
 		padding-right: 0;
-	}
 
-	&[data-type*='wds'] {
+		&[data-align='full'] {
+			max-width: unset;
+			padding-left: rem(43);
+			padding-right: rem(43);
+		}
 
 		.editor-block-list__block-edit {
 			margin-bottom: 0;
