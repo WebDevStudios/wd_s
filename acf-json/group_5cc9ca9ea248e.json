@@ -147,7 +147,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cta"
+                "value": "acf\/wds-cta"
             }
         ]
     ],
@@ -159,5 +159,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559318882
+    "modified": 1559569435
 }

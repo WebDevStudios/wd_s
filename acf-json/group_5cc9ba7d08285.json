@@ -190,7 +190,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/carousel"
+                "value": "acf\/wds-carousel"
             }
         ]
     ],
@@ -202,5 +202,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559318620
+    "modified": 1559570636
 }

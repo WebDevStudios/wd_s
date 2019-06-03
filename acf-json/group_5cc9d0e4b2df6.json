@@ -147,7 +147,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/hero"
+                "value": "acf\/wds-hero"
             }
         ]
     ],
@@ -159,5 +159,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559318911
+    "modified": 1559570642
 }

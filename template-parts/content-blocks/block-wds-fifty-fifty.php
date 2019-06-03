@@ -15,19 +15,19 @@ $fifty_classes   = _s_get_block_classes( $fifty_block );
 switch ( $block_layout ) {
 
 	case 'text_media':
-		get_template_part( 'template-parts/content-blocks/block', 'fifty-text-media' );
+		get_template_part( 'template-parts/content-blocks/block', 'wds-fifty-text-media' );
 		break;
 
 	case 'media_text':
-		get_template_part( 'template-parts/content-blocks/block', 'fifty-media-text' );
+		get_template_part( 'template-parts/content-blocks/block', 'wds-fifty-media-text' );
 		break;
 
 	case 'text_text':
-		get_template_part( 'template-parts/content-blocks/block', 'fifty-text-only' );
+		get_template_part( 'template-parts/content-blocks/block', 'wds-fifty-text-only' );
 		break;
 
 	default:
-		get_template_part( 'template-parts/content-blocks/block', 'fifty-text-media' );
+		get_template_part( 'template-parts/content-blocks/block', 'wds-fifty-text-media' );
 }
 
 

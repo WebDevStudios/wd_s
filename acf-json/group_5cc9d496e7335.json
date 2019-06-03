@@ -134,7 +134,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/related-posts"
+                "value": "acf\/wds-related-posts"
             }
         ]
     ],
@@ -146,5 +146,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559318922
+    "modified": 1559570649
 }

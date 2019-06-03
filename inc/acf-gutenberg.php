@@ -27,7 +27,7 @@ function _s_acf_init() {
 	// Register our Accordion block.
 	acf_register_block_type(
 		array(
-			'name'            => 'accordion',
+			'name'            => 'wds-accordion',
 			'title'           => __( 'Accordion', '_s' ),
 			'description'     => __( 'A custom set of collapsable accordion items.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -41,7 +41,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'carousel',
+			'name'            => 'wds-carousel',
 			'title'           => __( 'Carousel', '_s' ),
 			'description'     => __( 'A carousel with a call to action for each slide.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -56,7 +56,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'cta',
+			'name'            => 'wds-cta',
 			'title'           => __( 'Call To Action', '_s' ),
 			'description'     => __( 'A call to action block.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -71,7 +71,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'fifty-fifty',
+			'name'            => 'wds-fifty-fifty',
 			'title'           => __( 'Fifty/Fifty Block', '_s' ),
 			'description'     => __( 'A split-content block with text and/or media.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -86,7 +86,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'hero',
+			'name'            => 'wds-hero',
 			'title'           => __( 'Hero Block', '_s' ),
 			'description'     => __( 'A hero with an optional call to action.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -101,7 +101,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'recent-posts',
+			'name'            => 'wds-recent-posts',
 			'title'           => __( 'Recent Posts Block', '_s' ),
 			'description'     => __( 'A set of recent posts displayed by category and/or tag.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
@@ -116,7 +116,7 @@ function _s_acf_init() {
 
 	acf_register_block_type(
 		array(
-			'name'            => 'related-posts',
+			'name'            => 'wds-related-posts',
 			'title'           => __( 'Related Posts Block', '_s' ),
 			'description'     => __( 'A set of manually selected posts.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
