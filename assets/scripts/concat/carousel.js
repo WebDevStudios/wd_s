@@ -105,7 +105,7 @@ window.wdsCarousel = {};
 	// Kick off Slick.
 	app.doSlick = function() {
 
-		let initializeCarousel = function( $block ) {
+		let initializeCarousel = function() {
 			$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
 				autoplay: true,
 				autoplaySpeed: 5000,
