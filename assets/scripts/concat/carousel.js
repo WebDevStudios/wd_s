@@ -102,29 +102,32 @@ window.wdsCarousel = {};
 		} );
 	};
 
+	// Initialize our carousel.
+	app.initializeCarousel = function() {
+
+		$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
+			autoplay: true,
+			autoplaySpeed: 5000,
+			arrows: true,
+			dots: true,
+			focusOnSelect: true,
+			waitForAnimate: true
+		} );
+	};
+
 	// Kick off Slick.
 	app.doSlick = function() {
 
-		let initializeCarousel = function() {
-			$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
-				autoplay: true,
-				autoplaySpeed: 5000,
-				arrows: true,
-				dots: true,
-				focusOnSelect: true,
-				waitForAnimate: true
-			} );
-		};
 
 		// Render on the frontend.
 		$( document ).ready( function() {
 			app.playBackgroundVideos;
-			initializeCarousel();
+			app.initializeCarousel();
 		} );
 
 		// Render on the backend.
 		if ( window.acf ) {
-			window.acf.addAction( 'render_block_preview', initializeCarousel );
+			window.acf.addAction( 'render_block_preview', app.initializeCarousel );
 		}
 
 		app.$c.theCarousel.on( 'afterChange', app.doAnimation );
