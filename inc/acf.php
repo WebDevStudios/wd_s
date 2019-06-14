@@ -13,35 +13,6 @@ if ( ! class_exists( 'acf' ) ) {
 }
 
 /**
- * Loop through and output ACF flexible content blocks for the current page.
- *
- * @author WDS
- */
-function _s_display_content_blocks() {
-	if ( have_rows( 'content_blocks' ) ) :
-		while ( have_rows( 'content_blocks' ) ) :
-			the_row();
-
-			// Get block other options.
-			$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
-
-			// If the block has expired,then bail!
-			if ( _s_has_block_expired(
-				array(
-					'start_date' => $other_options['start_date'],
-					'end_date'   => $other_options['end_date'],
-				)
-			) ) {
-				continue;
-			}
-
-			get_template_part( 'template-parts/content-blocks/block', get_row_layout() ); // Template part name MUST match layout ID.
-		endwhile;
-		wp_reset_postdata();
-	endif;
-}
-
-/**
  * Associate the possible block options with the appropriate section.
  *
  * @author WDS
