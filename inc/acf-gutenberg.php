@@ -161,7 +161,7 @@ function _s_acf_block_registration_callback( $block ) {
 		return;
 	}
 
-	_s_display_expired_block_message( $block );
+	_s_display_expired_block_message();
 
 	// Include our template part.
 	if ( file_exists( get_theme_file_path( '/template-parts/content-blocks/block-' . $block_slug . '.php' ) ) ) {
@@ -272,7 +272,7 @@ function _s_get_block_classes( $block ) {
 	}
 
 	$classes  = '';
-	$classes  = _s_get_block_expired_class( $block );
+	$classes  = _s_get_block_expired_class();
 	$classes .= ! empty( $block['className'] ) ? ' ' . esc_attr( $block['className'] ) : '';
 
 	return $classes;
@@ -285,20 +285,18 @@ function _s_get_block_classes( $block ) {
  * @return string The class, if one is set.
  * @author Corey Collins
  */
-function _s_get_block_expired_class( $block ) {
+function _s_get_block_expired_class() {
 
 	if ( ! is_admin() ) {
 		return;
 	}
 
-	if ( ! $block ) {
-		return;
-	}
+	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 
 	if ( _s_has_block_expired(
 		array(
-			'start_date' => strtotime( $block['data']['other_options_start_date'], true ),
-			'end_date'   => strtotime( $block['data']['other_options_end_date'], true ),
+			'start_date' => $other_options['start_date'],
+			'end_date'   => $other_options['end_date'],
 		)
 	) ) {
 		return ' block-expired';
@@ -312,9 +310,9 @@ function _s_get_block_expired_class( $block ) {
  * @return void Bail if the block isn't expired.
  * @author Corey Collins
  */
-function _s_display_expired_block_message( $block ) {
+function _s_display_expired_block_message() {
 
-	if ( ! _s_get_block_expired_class( $block ) ) {
+	if ( ! _s_get_block_expired_class() ) {
 		return;
 	}
 
