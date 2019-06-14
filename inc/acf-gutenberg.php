@@ -161,6 +161,8 @@ function _s_acf_block_registration_callback( $block ) {
 		return;
 	}
 
+	_s_display_expired_block_message( $block );
+
 	// Include our template part.
 	if ( file_exists( get_theme_file_path( '/template-parts/content-blocks/block-' . $block_slug . '.php' ) ) ) {
 		include get_theme_file_path( '/template-parts/content-blocks/block-' . $block_slug . '.php' );
@@ -269,7 +271,58 @@ function _s_get_block_classes( $block ) {
 		return;
 	}
 
-	return ! empty( $block['className'] ) ? ' ' . esc_attr( $block['className'] ) : '';
+	$classes  = '';
+	$classes  = _s_get_block_expired_class( $block );
+	$classes .= ! empty( $block['className'] ) ? ' ' . esc_attr( $block['className'] ) : '';
+
+	return $classes;
+}
+
+/**
+ * Returns a class to be used for expired blocks.
+ *
+ * @param array $block The block settings.
+ * @return string The class, if one is set.
+ * @author Corey Collins
+ */
+function _s_get_block_expired_class( $block ) {
+
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	if ( ! $block ) {
+		return;
+	}
+
+	if ( _s_has_block_expired(
+		array(
+			'start_date' => strtotime( $block['data']['other_options_start_date'], true ),
+			'end_date'   => strtotime( $block['data']['other_options_end_date'], true ),
+		)
+	) ) {
+		return ' block-expired';
+	}
+}
+
+/**
+ * Displays a message for the user on the backend if a block is expired.
+ *
+ * @param array $block The block settings.
+ * @return void Bail if the block isn't expired.
+ * @author Corey Collins
+ */
+function _s_display_expired_block_message( $block ) {
+
+	if ( ! _s_get_block_expired_class( $block ) ) {
+		return;
+	}
+
+	?>
+	<div class="block-expired-message">
+		<span class="block-expired-text"><?php esc_html_e( 'Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend.', '_s' ); ?></span>
+	</div>
+	<?php
 }
 
 /**
