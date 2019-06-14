@@ -28,8 +28,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-accordion',
-			'title'           => __( 'Accordion', '_s' ),
-			'description'     => __( 'A custom set of collapsable accordion items.', '_s' ),
+			'title'           => esc_html__( 'Accordion', '_s' ),
+			'description'     => esc_html__( 'A custom set of collapsable accordion items.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'keywords'        => array( 'accordion', 'wds' ),
@@ -43,8 +43,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-carousel',
-			'title'           => __( 'Carousel', '_s' ),
-			'description'     => __( 'A carousel with a call to action for each slide.', '_s' ),
+			'title'           => esc_html__( 'Carousel', '_s' ),
+			'description'     => esc_html__( 'A carousel with a call to action for each slide.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
@@ -59,8 +59,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-cta',
-			'title'           => __( 'Call To Action', '_s' ),
-			'description'     => __( 'A call to action block.', '_s' ),
+			'title'           => esc_html__( 'Call To Action', '_s' ),
+			'description'     => esc_html__( 'A call to action block.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'megaphone',
@@ -75,8 +75,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-fifty-fifty',
-			'title'           => __( 'Fifty/Fifty Block', '_s' ),
-			'description'     => __( 'A split-content block with text and/or media.', '_s' ),
+			'title'           => esc_html__( 'Fifty/Fifty Block', '_s' ),
+			'description'     => esc_html__( 'A split-content block with text and/or media.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'editor-table',
@@ -91,8 +91,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-hero',
-			'title'           => __( 'Hero Block', '_s' ),
-			'description'     => __( 'A hero with an optional call to action.', '_s' ),
+			'title'           => esc_html__( 'Hero Block', '_s' ),
+			'description'     => esc_html__( 'A hero with an optional call to action.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'slides',
@@ -107,8 +107,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-recent-posts',
-			'title'           => __( 'Recent Posts Block', '_s' ),
-			'description'     => __( 'A set of recent posts displayed by category and/or tag.', '_s' ),
+			'title'           => esc_html__( 'Recent Posts Block', '_s' ),
+			'description'     => esc_html__( 'A set of recent posts displayed by category and/or tag.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'admin-page',
@@ -123,8 +123,8 @@ function _s_acf_init() {
 	acf_register_block_type(
 		array(
 			'name'            => 'wds-related-posts',
-			'title'           => __( 'Related Posts Block', '_s' ),
-			'description'     => __( 'A set of manually selected posts.', '_s' ),
+			'title'           => esc_html__( 'Related Posts Block', '_s' ),
+			'description'     => esc_html__( 'A set of manually selected posts.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
 			'icon'            => 'admin-page',
@@ -182,7 +182,7 @@ function _s_add_block_categories( $categories, $post ) {
 		array(
 			array(
 				'slug'  => 'wds-blocks',
-				'title' => __( 'WDS Blocks', '_s' ),
+				'title' => esc_html__( 'WDS Blocks', '_s' ),
 			),
 		)
 	);
