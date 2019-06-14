@@ -150,6 +150,16 @@ function _s_acf_block_registration_callback( $block ) {
 	// Convert the block name into a handy slug.
 	$block_slug = str_replace( 'acf/', '', $block['name'] );
 
+	// If the block has expired,then bail!
+	if ( _s_has_block_expired(
+		array(
+			'start_date' => strtotime( $block['data']['other_options_start_date'], true ),
+			'end_date'   => strtotime( $block['data']['other_options_end_date'], true ),
+		)
+	) ) {
+		return;
+	}
+
 	// Include our template part.
 	if ( file_exists( get_theme_file_path( '/template-parts/content-blocks/block-' . $block_slug . '.php' ) ) ) {
 		include get_theme_file_path( '/template-parts/content-blocks/block-' . $block_slug . '.php' );
