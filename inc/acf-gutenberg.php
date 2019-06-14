@@ -143,6 +143,7 @@ add_action( 'acf/init', '_s_acf_init' );
  * Name accordingly to the file name!
  *
  * @param array $block The block details.
+ * @return void Bail if the block has expired.
  * @author Corey Collins
  */
 function _s_acf_block_registration_callback( $block ) {
