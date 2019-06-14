@@ -33,11 +33,11 @@ function _s_display_block_options( $args = array() ) {
 
 	// Setup defaults.
 	$defaults = array(
-		'background_type'  => $background_options['background_type']['value'],
-		'container'        => 'section',
-		'class'            => 'content-block',
-		'font_color'       => $display_options['font_color'],
-		'id'               => $block_id,
+		'background_type' => $background_options['background_type']['value'],
+		'container'       => 'section',
+		'class'           => 'content-block',
+		'font_color'      => $display_options['font_color'],
+		'id'              => $block_id,
 	);
 
 	// Parse args.
