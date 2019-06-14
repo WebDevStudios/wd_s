@@ -114,7 +114,7 @@ window.wdsCarousel = {};
 				focusOnSelect: true,
 				waitForAnimate: true
 			} );
-		}
+		};
 
 		// Render on the frontend.
 		$( document ).ready( function() {
