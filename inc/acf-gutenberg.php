@@ -281,7 +281,6 @@ function _s_get_block_classes( $block ) {
 /**
  * Returns a class to be used for expired blocks.
  *
- * @param array $block The block settings.
  * @return string The class, if one is set.
  * @author Corey Collins
  */
@@ -306,7 +305,6 @@ function _s_get_block_expired_class() {
 /**
  * Displays a message for the user on the backend if a block is expired.
  *
- * @param array $block The block settings.
  * @return void Bail if the block isn't expired.
  * @author Corey Collins
  */
