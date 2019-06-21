@@ -1,0 +1,39 @@
+{
+  "name": "tiny-slider",
+  "version": "2.9.2",
+  "homepage": "https://github.com/ganlanyuan/tiny-slider",
+  "authors": [
+    "WilliamLin <ganlanyuan@gmail.com>"
+  ],
+  "description": "Tiny slider for all purposes.",
+  "main": [
+    "dist/tiny-slider.css",
+    "dist/tiny-slider.js"
+  ],
+  "moduleType": [],
+  "keywords": [
+    "slider",
+    "tiny"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".env",
+    "docker-compose.yml",
+    "gulpfile.js"
+  ],
+  "_release": "2.9.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.9.2",
+    "commit": "9e44f9d8a9c3458c1cfdd660009a376228db3946"
+  },
+  "_source": "https://github.com/ganlanyuan/tiny-slider.git",
+  "_target": "^2.9.2",
+  "_originalSource": "tiny-slider",
+  "_direct": true
+}
