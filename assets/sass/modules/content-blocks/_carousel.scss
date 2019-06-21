@@ -9,56 +9,69 @@ $slide-height: rem(500);
 	&.content-block {
 		@include padding(0 null);
 	} // &.content-block
-
-	// Arbitrary <div> inserted by Slick.
-	.slick-slide div {
-		height: $slide-height; // force slick to set a height.
-	} // .slick-slide div
-
-	// Navigation buttons.
-	.slick-arrow {
-		@include position(absolute, 45% null null null);
-
-		z-index: 10;
-	} // .sick-arrow
-
-	// Next button.
-	.slick-next {
-		right: $gutter;
-
-		@include media($desktop) {
-			right: 0;
-		}
-	} // .slick-next
-
-	// Previous button.
-	.slick-prev {
-		left: $gutter;
-
-		@include media($desktop) {
-			left: 0;
-		}
-	} // .slick-prev
-
-	// Navigation dots/numbers.
-	.slick-dots {
-		@include list-reset;
-		@include position(absolute, null 0 0 0);
-
-		display: flex;
-		justify-content: center;
-		margin-left: auto;
-		margin-right: auto;
-		width: 80%;
-		z-index: 1;
-
-		// Each dot.
-		li {
-			flex-direction: row;
-			justify-content: center;
-		} // li
-	} // .slick-dots
 } // .carousel-block
+
+.tns-outer {
+	position: relative;
+
+	button {
+
+		&[data-action='stop'],
+		&[data-action='start'] {
+			@include position(absolute, null 0 $gutter * 2 0);
+
+			margin-left: auto;
+			margin-right: auto;
+			width: rem(120);
+			z-index: 20;
+		}
+	}
+}
+
+.tns-controls {
+	@include position(absolute, 45% null null null);
+	@include size(100%, auto);
+
+	z-index: 10;
+
+	button {
+		position: absolute;
+
+		&[data-controls='prev'] {
+			left: $gutter;
+
+			@include media($desktop) {
+				left: 0;
+			}
+		}
+
+		&[data-controls='next'] {
+			right: $gutter;
+
+			@include media($desktop) {
+				right: 0;
+			}
+		}
+	}
+}
+
+.tns-nav {
+	@include position(absolute, null null $gutter 0);
+	@include size(100%, auto);
+
+	text-align: center;
+	z-index: 20;
+
+	button {
+
+		&:hover,
+		&:active,
+		&:focus,
+		&.tns-nav-active {
+			background-color: $color-white;
+		}
+	}
+}
 
 .slide {
 	margin-bottom: 0;
