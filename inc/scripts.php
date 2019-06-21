@@ -74,8 +74,10 @@ function _s_scripts() {
 
 	// Register styles & scripts.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null ); // @codingStandardsIgnoreLine - required to avoid Google caching issues.
-	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
-	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
+
+	// Tiny Slider.
+	wp_register_style( 'tiny-slider', get_template_directory_uri() . '/assets/bower_components/tiny-slider/dist/tiny-slider.css', null, $version );
+	wp_register_script( 'tiny-slider', get_template_directory_uri() . '/assets/bower_components/tiny-slider/dist/tiny-slider.js', array( 'jquery' ), $version, true );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
@@ -100,15 +102,15 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
- * Enqueue Slick scripts. This is done to avoid enqueueing scripts in the wrong spot by enqueuing them directly.
+ * Enqueue carousel scripts. This is done to avoid enqueueing scripts in the wrong spot by enqueuing them directly.
  *
  * @author Corey Collins
  */
-function _s_enqueue_slick_scripts() {
-	wp_enqueue_style( 'slick-carousel' );
-	wp_enqueue_script( 'slick-carousel' );
+function _s_enqueue_carousel_scripts() {
+	wp_enqueue_style( 'tiny-slider' );
+	wp_enqueue_script( 'tiny-slider' );
 }
-add_action( 'wp_enqueue_scripts', '_s_enqueue_slick_scripts' );
+add_action( 'wp_enqueue_scripts', '_s_enqueue_carousel_scripts' );
 
 /**
  * Enqueue scripts for the customizer.
