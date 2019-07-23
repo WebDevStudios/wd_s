@@ -59,7 +59,13 @@ window.wdsCarousel = {};
 		} );
 
 		var info = slider.getInfo(),
+			initialAllSlides = info.slideItems,
 			initialSlide = info.index;
+
+		// Set ALL links and buttons in ALL slides to tabindex -1.
+		Object.keys( initialAllSlides ).forEach( function( slide ) {
+			initialAllSlides[slide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '-1' ) );
+		});
 
 		// Set the INITIAL slide links and buttons to tabindex 0. This only happens once.
 		info.slideItems[initialSlide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
