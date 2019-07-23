@@ -58,17 +58,28 @@ window.wdsCarousel = {};
 			autoplayTimeout: "5000",
 		} );
 
+		app.setInitialLinkAttributes( slider );
+		app.setLinkStatesOnChange( slider );
+	};
+
+	// Set link attributes on load so we can't tab to inactive slides.
+	app.setInitialLinkAttributes = function( slider ) {
+
 		var info = slider.getInfo(),
-			initialAllSlides = info.slideItems,
-			initialSlide = info.index;
+			allSlides = info.slideItems,
+			currentSlide = info.index;
 
 		// Set ALL links and buttons in ALL slides to tabindex -1.
-		Object.keys( initialAllSlides ).forEach( function( slide ) {
-			initialAllSlides[slide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '-1' ) );
+		Object.keys( allSlides ).forEach( function( slide ) {
+			allSlides[slide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '-1' ) );
 		});
 
 		// Set the INITIAL slide links and buttons to tabindex 0. This only happens once.
-		info.slideItems[initialSlide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
+		info.slideItems[currentSlide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
+	};
+
+	// Change link tabindex values on slide change so only the current slide is tab-able.
+	app.setLinkStatesOnChange = function( slider ) {
 
 		// Listen for slide changes.
 		slider.events.on( 'indexChanged', function() {
@@ -76,7 +87,7 @@ window.wdsCarousel = {};
 			// Get slider info.
 			var ChangeInfo = slider.getInfo(),
 				allSlides = ChangeInfo.slideItems,
-				indexCurrent = ChangeInfo.index;
+				currentSlide = ChangeInfo.index;
 
 			// Set ALL links and buttons in ALL slides to tabindex -1.
 			Object.keys( allSlides ).forEach( function( slide ) {
@@ -84,7 +95,7 @@ window.wdsCarousel = {};
 			});
 
 			// Set the CURRENT slide links and buttons to tabindex 0.
-			allSlides[indexCurrent].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
+			allSlides[currentSlide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
 		} );
 	};
 
