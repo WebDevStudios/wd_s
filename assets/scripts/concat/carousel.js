@@ -48,18 +48,22 @@ window.wdsCarousel = {};
 	app.doCarousel = function() {
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
-		var slider = tns( {
-			container: '.carousel-block',
-			items: 1,
-			slideBy: 'page',
-			autoplay: true,
-			navPosition: 'bottom',
-			autoplayPosition: 'bottom',
-			autoplayTimeout: "5000",
-		} );
+		var blockList = document.querySelectorAll( '.carousel-block' ); // grabs some <li>
 
-		app.setInitialLinkAttributes( slider );
-		app.setLinkStatesOnChange( slider );
+		[].forEach.call( blockList, function( item ) {
+			var slider = tns( {
+				container: item,
+				items: 1,
+				slideBy: 'page',
+				autoplay: true,
+				navPosition: 'bottom',
+				autoplayPosition: 'bottom',
+				autoplayTimeout: "5000",
+			} );
+
+			app.setInitialLinkAttributes( slider );
+			app.setLinkStatesOnChange( slider );
+		});
 	};
 
 	// Set link attributes on load so we can't tab to inactive slides.
