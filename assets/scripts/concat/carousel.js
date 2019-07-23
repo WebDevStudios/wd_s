@@ -1,7 +1,7 @@
 /**
  * File carousel.js
  *
- * Deal with the Slick carousel.
+ * Deal with the carousel.
  */
 window.wdsCarousel = {};
 ( function( window, $, app ) {
@@ -25,7 +25,7 @@ window.wdsCarousel = {};
 
 	// Combine all events.
 	app.bindEvents = function() {
-		app.$c.window.on( 'load', app.doSlick );
+		app.$c.window.on( 'load', app.doCarousel );
 	};
 
 	// Do we meet the requirements?
@@ -44,8 +44,8 @@ window.wdsCarousel = {};
 		} );
 	};
 
-	// Kick off Slick.
-	app.doSlick = function() {
+	// Kick off the carousel.
+	app.doCarousel = function() {
 		app.$c.theCarousel.on( 'init', app.playBackgroundVideos );
 
 		var slider = tns( {
@@ -55,7 +55,30 @@ window.wdsCarousel = {};
 			autoplay: true,
 			navPosition: 'bottom',
 			autoplayPosition: 'bottom',
-			autoplayTimeout: "2000",
+			autoplayTimeout: "5000",
+		} );
+
+		var info = slider.getInfo(),
+			initialSlide = info.index;
+
+		// Set the INITIAL slide links and buttons to tabindex 0. This only happens once.
+		info.slideItems[initialSlide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
+
+		// Listen for slide changes.
+		slider.events.on( 'indexChanged', function() {
+
+			// Get slider info.
+			var ChangeInfo = slider.getInfo(),
+				allSlides = ChangeInfo.slideItems,
+				indexCurrent = ChangeInfo.index;
+
+			// Set ALL links and buttons in ALL slides to tabindex -1.
+			Object.keys( allSlides ).forEach( function( slide ) {
+				allSlides[slide].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '-1' ) );
+			});
+
+			// Set the CURRENT slide links and buttons to tabindex 0.
+			allSlides[indexCurrent].querySelectorAll( 'a, button' ).forEach( links => links.setAttribute( 'tabindex', '0' ) );
 		} );
 	};
 
