@@ -106,12 +106,17 @@
 
 				background-color: $color-white;
 				border: 1px solid $color-gallery;
+				display: none;
 			} // .search-form
 
 			// If the body class is there, show the form.
 			.search-form-visible & {
 				display: block;
 				max-height: rem(150);
+
+				.search-form {
+					display: block;
+				}
 			} // .search-form-visible &
 		} // .form-container
 	} // .site-header-action
