@@ -49,7 +49,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Accordion Block",
+            "default_value": "Accordion Block Title",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -68,7 +68,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Accordion Block intro text.",
+            "default_value": "Accordion Block Content",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
@@ -231,5 +231,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567181244
+    "modified": 1567182026
 }
