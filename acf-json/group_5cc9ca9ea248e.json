@@ -3,6 +3,23 @@
     "title": "Block: Call To Action",
     "fields": [
         {
+            "key": "field_5d69477dfe5b7",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Call To Action<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_5cc9ca9ea8ea0",
             "label": "Block Content",
             "name": "",
@@ -32,7 +49,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Call To Action Title",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -51,7 +68,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Call To Action Text",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -59,7 +76,7 @@
         },
         {
             "key": "field_5cc9ca9ea8f21",
-            "label": "Button Text",
+            "label": "Button",
             "name": "button_text",
             "type": "clone",
             "instructions": "",
@@ -159,5 +176,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559569435
+    "modified": 1567181223
 }

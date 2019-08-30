@@ -3,6 +3,23 @@
     "title": "Block: Carousel",
     "fields": [
         {
+            "key": "field_5d6949f2c878b",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Carousel<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_5cc9ba7d0f78a",
             "label": "Block Content",
             "name": "",
@@ -51,7 +68,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "Slide Title",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -70,7 +87,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "Slide Content",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -202,5 +219,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559570636
+    "modified": 1567181334
 }

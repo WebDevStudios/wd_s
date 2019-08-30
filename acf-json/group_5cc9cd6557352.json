@@ -1,7 +1,24 @@
 {
     "key": "group_5cc9cd6557352",
-    "title": "Block: Fifty\/Fifty Block",
+    "title": "Block: Fifty\/Fifty",
     "fields": [
+        {
+            "key": "field_5d694a1bdcd07",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Fifty\/Fifty<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
         {
             "key": "field_5cc9cd655d984",
             "label": "Block Content",
@@ -114,7 +131,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Primary Text content",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
@@ -125,7 +142,7 @@
             "label": "Text (Secondary)",
             "name": "text_secondary",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Secondary Text content",
             "required": 0,
             "conditional_logic": [
                 [
@@ -260,5 +277,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559570639
+    "modified": 1567181459
 }

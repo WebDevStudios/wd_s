@@ -3,6 +3,23 @@
     "title": "Block: Related Posts",
     "fields": [
         {
+            "key": "field_5d694a7f60ff1",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Related Posts<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_5cc9d496ecba0",
             "label": "Related Posts",
             "name": "",
@@ -32,8 +49,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "Related Posts",
+            "default_value": "Related Posts",
+            "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -146,5 +163,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559570649
+    "modified": 1567181546
 }

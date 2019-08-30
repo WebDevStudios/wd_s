@@ -3,6 +3,23 @@
     "title": "Block: Hero",
     "fields": [
         {
+            "key": "field_5d694a436659a",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Hero<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_5cc9d0e4b7f79",
             "label": "Block Content",
             "name": "",
@@ -32,7 +49,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Hero Title",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -51,7 +68,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Hero Content",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -159,5 +176,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1559570642
+    "modified": 1567181410
 }
