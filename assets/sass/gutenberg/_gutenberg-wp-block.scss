@@ -47,3 +47,14 @@
 		z-index: 50;
 	}
 }
+
+
+//-----------------------------------------
+// Add space below blocks when they're in Edit mode.
+//-----------------------------------------
+.acf-block-component {
+
+	.acf-block-fields {
+		margin-bottom: rem(60);
+	}
+}
