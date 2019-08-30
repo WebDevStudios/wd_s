@@ -61,4 +61,22 @@ if ( $related_posts ) :
 		?>
 		</div>
 	</section>
+<?php elseif ( ! $related_posts && is_admin() ) : ?>
+	<?php
+	// Start a <container> with possible block options.
+	_s_display_block_options(
+		array(
+			'block'     => $block,
+			'container' => 'section', // Any HTML5 container: section, div, etc...
+			'class'     => 'content-block related-posts-block' . esc_attr( $alignment . $classes ), // Container class.
+		)
+	);
+	?>
+
+		<div class="container">
+			<?php if ( $block_title ) : ?>
+				<h2 class="content-block-title"><?php echo esc_html( $block_title ); ?></h2>
+			<?php endif; ?>
+		</div>
+	</section>
 <?php endif; ?>
