@@ -52,9 +52,15 @@
 //-----------------------------------------
 // Add space below blocks when they're in Edit mode.
 //-----------------------------------------
-.acf-block-component {
+.wp-block {
 
-	.acf-block-fields {
-		margin-bottom: rem(60);
+	&[data-type*="wds"] {
+
+		.acf-block-component {
+
+			.acf-block-fields {
+				margin-bottom: rem(60);
+			}
+		}
 	}
 }
