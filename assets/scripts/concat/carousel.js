@@ -51,46 +51,6 @@ window.wdsCarousel = {};
 		firstSlideContent.addClass( firstAnimation );
 	};
 
-	// Animate the slide content.
-	app.doAnimation = function() {
-		let slides = $( this ).find( '.slide' ),
-			activeSlide = $( this ).find( '.slick-current' ),
-			activeContent = activeSlide.find( '.slide-content' ),
-
-			// This is a string like so: 'animated someCssClass'.
-			animationClass = activeContent.attr( 'data-animation' );
-
-			if ( undefined === animationClass ) {
-				return;
-			}
-
-			let splitAnimation = animationClass.split( ' ' ),
-
-			// This is the 'animated' class.
-			animationTrigger = splitAnimation[0];
-
-		// Go through each slide to see if we've already set animation classes.
-		slides.each( function() {
-			let slideContent = $( this ).find( '.slide-content' );
-
-			// If we've set animation classes on a slide, remove them.
-			if ( slideContent.hasClass( 'animated' ) ) {
-
-				// Get the last class, which is the animate.css class.
-				let lastClass = slideContent
-					.attr( 'class' )
-					.split( ' ' )
-					.pop();
-
-				// Remove both animation classes.
-				slideContent.removeClass( lastClass ).removeClass( animationTrigger );
-			}
-		} );
-
-		// Add animation classes after slide is in view.
-		activeContent.addClass( animationClass );
-	};
-
 	// Allow background videos to autoplay.
 	app.playBackgroundVideos = function() {
 
@@ -129,8 +89,6 @@ window.wdsCarousel = {};
 		if ( window.acf ) {
 			window.acf.addAction( 'render_block_preview', app.initializeCarousel );
 		}
-
-		app.$c.theCarousel.on( 'afterChange', app.doAnimation );
 	};
 
 	// Engage!
