@@ -99,15 +99,15 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "To search this site, enter a search term"
 msgstr ""
 
-#: searchform.php:12, inc/template-tags.php:502, inc/template-tags.php:503
+#: searchform.php:13, inc/template-tags.php:502, inc/template-tags.php:503
 msgid "Search"
 msgstr ""
 
-#: searchform.php:13
+#: searchform.php:15
 msgid "Submit"
 msgstr ""
 
@@ -183,8 +183,16 @@ msgstr ""
 msgid "WDS Blocks"
 msgstr ""
 
-#: inc/acf-gutenberg.php:319
+#: inc/acf-gutenberg.php:320
 msgid "Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend."
+msgstr ""
+
+#: inc/acf-gutenberg.php:366
+msgid "Slide Title"
+msgstr ""
+
+#: inc/acf-gutenberg.php:367
+msgid "Slide Content"
 msgstr ""
 
 #. translators: get the title of the video.
