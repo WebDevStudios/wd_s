@@ -10,6 +10,8 @@ $classes      = _s_get_block_classes( $block );
 $classnames[] = 'content-block carousel-block' . $alignment . $classes;
 $classnames[] = get_sub_field( 'block_width' );
 
+_s_acf_gutenberg_display_admin_default_carousel( $block );
+
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
 	echo '<div class="' . esc_attr( implode( ' ', array_filter( $classnames ) ) ) . '">';

@@ -337,3 +337,38 @@ function _s_get_block_id( $block ) {
 
 	return empty( $block['anchor'] ) ? str_replace( '_', '-', $block['id'] ) : esc_attr( $block['anchor'] );
 }
+
+/**
+ * Displays a dummy carousel on the backend, since there won't be any rows to load when first adding.
+ *
+ * @param array $block The block settings.
+ * @return void Bail if we have to.
+ * @author Corey Collins
+ */
+function _s_acf_gutenberg_display_admin_default_carousel( $block ) {
+
+	// Only in the dashboard.
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	// Only if we don't have rows added manually.
+	if ( have_rows( 'carousel_slides' ) ) {
+		return;
+	}
+
+	echo '<div class="content-block carousel-block">';
+
+	for ( $slides = 0; $slides < 2; $slides++ ) :
+		?>
+		<section class-"slide">
+			<div class="slide-content container">
+				<h2 class="slide-title"><?php esc_html_e( 'Slide Title', '_s' ); ?></h2>
+				<p class="slide-description"><?php esc_html_e( 'Slide Content', '_s' ); ?></p>
+			</div>
+		</section>
+	<?php
+	endfor;
+
+	echo '</div>';
+}
