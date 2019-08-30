@@ -14,9 +14,6 @@ $classnames[] = get_sub_field( 'block_width' );
 if ( have_rows( 'carousel_slides' ) ) :
 	echo '<div class="' . esc_attr( implode( ' ', array_filter( $classnames ) ) ) . '">';
 
-	// Enqueue Slick carousel.
-	_s_enqueue_slick_scripts();
-
 	// Loop through slide slides.
 	while ( have_rows( 'carousel_slides' ) ) :
 		the_row();
