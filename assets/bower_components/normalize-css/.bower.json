@@ -1,15 +1,14 @@
 {
   "name": "normalize-css",
   "homepage": "https://github.com/necolas/normalize.css",
-  "version": "8.0.0",
-  "_release": "8.0.0",
+  "version": "8.0.1",
+  "_release": "8.0.1",
   "_resolution": {
     "type": "version",
-    "tag": "8.0.0",
-    "commit": "6889e824ec6affef988986e0602cd32465207c64"
+    "tag": "8.0.1",
+    "commit": "981ce6bc9c29d28f1554d699654b247463163ccc"
   },
   "_source": "https://github.com/necolas/normalize.css.git",
   "_target": "^8.0.0",
-  "_originalSource": "normalize-css",
-  "_direct": true
+  "_originalSource": "normalize-css"
 }

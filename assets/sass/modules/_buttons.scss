@@ -15,10 +15,12 @@ input[type='submit'] {
 	border: none;
 	border-radius: 0;
 	border-width: 0;
+	box-shadow: none;
 	color: $color-text-button;
 	cursor: pointer;
 	display: inline-block;
 	font-size: inherit;
+	height: auto;
 	line-height: normal;
 	overflow: visible; // removes padding in IE.
 	text-decoration: none;

@@ -13,35 +13,6 @@ if ( ! class_exists( 'acf' ) ) {
 }
 
 /**
- * Loop through and output ACF flexible content blocks for the current page.
- *
- * @author WDS
- */
-function _s_display_content_blocks() {
-	if ( have_rows( 'content_blocks' ) ) :
-		while ( have_rows( 'content_blocks' ) ) :
-			the_row();
-
-			// Get block other options.
-			$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
-
-			// If the block has expired,then bail!
-			if ( _s_has_block_expired(
-				array(
-					'start_date' => $other_options['start_date'],
-					'end_date'   => $other_options['end_date'],
-				)
-			) ) {
-				continue;
-			}
-
-			get_template_part( 'template-parts/content-blocks/block', get_row_layout() ); // Template part name MUST match layout ID.
-		endwhile;
-		wp_reset_postdata();
-	endif;
-}
-
-/**
  * Associate the possible block options with the appropriate section.
  *
  * @author WDS
@@ -57,17 +28,16 @@ function _s_display_block_options( $args = array() ) {
 
 	$display_options = get_sub_field( 'display_options' ) ? get_sub_field( 'display_options' ) : get_field( 'display_options' )['display_options'];
 
-	// Get a default ID.
-	$default_id = get_row_layout() ? str_replace( '_', '-', get_row_layout() . '-' . get_row_index() ) : '';
+	// Get the block ID.
+	$block_id = _s_get_block_id( $args['block'] );
 
 	// Setup defaults.
 	$defaults = array(
-		'background_type'  => $background_options['background_type']['value'],
-		'container'        => 'section',
-		'class'            => 'content-block',
-		'custom_css_class' => $other_options['custom_css_class'],
-		'font_color'       => $display_options['font_color'],
-		'id'               => $default_id,
+		'background_type' => $background_options['background_type']['value'],
+		'container'       => 'section',
+		'class'           => 'content-block',
+		'font_color'      => $display_options['font_color'],
+		'id'              => $block_id,
 	);
 
 	// Parse args.
@@ -133,21 +103,6 @@ function _s_display_block_options( $args = array() ) {
 		$args['class'] .= ' has-font-color color-' . esc_attr( $args['font_color']['color_picker'] );
 	}
 
-	// Set the custom ID.
-	if ( isset( $other_options['custom_id'] ) && ! empty( $other_options['custom_id'] ) ) {
-		$args['id'] = $other_options['custom_id'];
-	}
-
-	// Set the Container width.
-	if ( isset( $display_options['block_width'] ) && ! empty( $display_options['block_width'] ) ) {
-		$args['class'] .= ' ' . $display_options['block_width'];
-	}
-
-	// Set the custom css class.
-	if ( $args['custom_css_class'] ) {
-		$args['class'] .= ' ' . $args['custom_css_class'];
-	}
-
 	// Print our block container with options.
 	printf(
 		'<%s id="%s" class="%s">',
@@ -165,43 +120,6 @@ function _s_display_block_options( $args = array() ) {
 	if ( $background_image_markup ) {
 		echo $background_image_markup; // WPCS XSS OK.
 	}
-}
-
-/**
- * Get the animate.css classes for an element.
- *
- * @author WDS
- * @param array $args display options array.
- * @return string $classes Animate.css classes for our element.
- */
-function _s_get_animation_class( $args = array() ) {
-
-	// Defaults.
-	$defaults = array(
-		'options' => get_sub_field( 'display_options' ),
-	);
-
-	$args = wp_parse_args( $args, $defaults );
-
-	// Get block other options for our animation data.
-	$display_options = $args['options'] ?: $defaults['options'];
-
-	// Get out of here if we don't have other options.
-	if ( ! $display_options ) {
-		return '';
-	}
-
-	// Set up our animation class for the wrapping element.
-	$classes = ' not-animated';
-
-	// If we have an animation set...
-	if ( _s_has_array_key( 'animation', $display_options ) ) {
-		$classes = ' animated ' . $display_options['animation'];
-	} elseif ( is_string( $display_options ) && ! empty( $display_options ) ) {
-		$classes = ' animated ' . $display_options;
-	}
-
-	return $classes;
 }
 
 /**
@@ -475,7 +393,7 @@ function _s_get_link( $args = array() ) {
 	$defaults = array(
 		'button' => false, // display as button?
 		'class'  => '',
-		'link'   => get_sub_field( 'button_link' ),
+		'link'   => get_field( 'button_link' ),
 	);
 
 	// Parse those args.
