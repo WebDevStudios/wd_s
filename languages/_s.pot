@@ -179,8 +179,12 @@ msgstr ""
 msgid "A set of manually selected posts."
 msgstr ""
 
-#: inc/acf-gutenberg.php:185
+#: inc/acf-gutenberg.php:187
 msgid "WDS Blocks"
+msgstr ""
+
+#: inc/acf-gutenberg.php:319
+msgid "Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend."
 msgstr ""
 
 #. translators: get the title of the video.
