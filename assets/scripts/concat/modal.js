@@ -39,16 +39,16 @@ window.wdsModal = {};
 	app.bindEvents = function() {
 
 		// Trigger a modal to open.
-		app.$c.body.on( 'click touchstart', '.modal-trigger', app.openModal );
+		app.$c.body.on( 'click', '.modal-trigger', app.openModal );
 
 		// Trigger the close button to close the modal.
-		app.$c.body.on( 'click touchstart', '.close', app.closeModal );
+		app.$c.body.on( 'click', '.close', app.closeModal );
 
 		// Allow the user to close the modal by hitting the esc key.
 		app.$c.body.on( 'keydown', app.escKeyClose );
 
 		// Allow the user to close the modal by clicking outside of the modal.
-		app.$c.body.on( 'click touchstart', 'div.modal-open', app.closeModalByClick );
+		app.$c.body.on( 'click', 'div.modal-open', app.closeModalByClick );
 
 		// Listen to tabs, trap keyboard if we need to
 		app.$c.body.on( 'keydown', app.trapKeyboardMaybe );
@@ -81,6 +81,8 @@ window.wdsModal = {};
 			// Shift focus to the first focusable element.
 			$focusableChildren[0].focus();
 		}
+
+		return false;
 
 	};
 
@@ -120,6 +122,8 @@ window.wdsModal = {};
 
 		// Revert focus back to toggle element
 		$modalToggle.focus();
+
+		return false;
 
 	};
 
