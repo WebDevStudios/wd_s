@@ -129,6 +129,11 @@ window.wdsModal = {};
 
 	// Close if "esc" key is pressed.
 	app.escKeyClose = function( event ) {
+
+		if ( ! app.$c.body.hasClass( 'modal-open' ) ) {
+			return;
+		}
+
 		if ( 27 === event.keyCode ) {
 			app.closeModal();
 		}
