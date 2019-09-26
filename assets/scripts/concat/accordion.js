@@ -36,8 +36,8 @@ window.accordionBlockToggle = {};
 
 	// Combine all events
 	app.bindEvents = function() {
-		$( '.accordion-item-header' ).on( 'click touchstart', app.toggleAccordion );
-		$( '.accordion-item-toggle' ).on( 'click touchstart', app.toggleAccordion );
+		$( '.accordion-item-header' ).on( 'click', app.toggleAccordion );
+		$( '.accordion-item-toggle' ).on( 'click', app.toggleAccordion );
 		app.$c.window.on( 'load', app.openHashAccordion );
 	};
 
