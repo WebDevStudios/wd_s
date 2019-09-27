@@ -373,9 +373,13 @@ function _s_display_card( $args = array() ) {
 	?>
 	<div class="<?php echo esc_attr( $args['class'] ); ?> card">
 
-		<?php if ( $args['image'] ) : ?>
-			<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1"><img class="card-image" src="<?php echo esc_url( $args['image'] ); ?>" alt="<?php echo esc_attr( $args['title'] . '-image' ); ?>"></a>
-		<?php endif; ?>
+		<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1">
+			<?php if ( $args['image'] ) : ?>
+				<?php echo wp_kses_post( $args['image'] ); ?>
+			<?php else : ?>
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/placeholder.png" class="card-image" loading="lazy">
+			<?php endif; ?>
+		</a>
 
 		<div class="card-section">
 
