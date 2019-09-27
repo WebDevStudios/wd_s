@@ -377,7 +377,7 @@ function _s_display_card( $args = array() ) {
 			<?php if ( $args['image'] ) : ?>
 				<?php echo wp_kses_post( $args['image'] ); ?>
 			<?php else : ?>
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/placeholder.png" class="card-image" loading="lazy" alt="">
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/placeholder.png" class="card-image" loading="lazy" alt="<?php echo sprintf( esc_html( 'Featured image for %s', '_s' ), esc_attr( $args['title'] ) ); ?>">
 			<?php endif; ?>
 		</a>
 
