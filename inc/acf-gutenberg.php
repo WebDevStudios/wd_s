@@ -38,6 +38,20 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'title'           => esc_html__( 'Accordion Block Title', '_s' ),
+						'text'            => esc_html__( 'Accordion Block Content', '_s' ),
+						'accordion_items' => array(
+							'0' => array(
+								'accordion_title' => esc_html__( 'Accordion Item Title', '_s' ),
+								'accordion_text'  => esc_html__( 'Accordion Item Content', '_s' ),
+							),
+						),
+					),
+				),
+			),
 		)
 	);
 
