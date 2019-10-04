@@ -70,8 +70,7 @@ function _s_acf_init() {
 			'supports'        => $supports,
 			'example'         => array(
 				'attributes' => array(
-					'data' => array(
-					),
+					'data' => array(),
 				),
 			),
 		)
