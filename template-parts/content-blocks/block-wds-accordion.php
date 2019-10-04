@@ -21,6 +21,7 @@ _s_display_block_options(
 		'class'     => 'content-block accordion-block' . esc_attr( $alignment . $classes ), // Container class.
 	)
 );
+
 ?>
 	<div class="container">
 		<?php if ( $block_title ) : ?>
@@ -32,31 +33,29 @@ _s_display_block_options(
 		<?php endif; ?>
 
 		<?php if ( $accordion_items ) : ?>
+			<?php $count = 0; ?>
 			<div class="accordion" aria-label="<?php esc_attr_e( 'Accordion Content Block', '_s' ); ?>">
-				<?php
-				$count = 0;
-				while ( have_rows( 'accordion_items' ) ) :
-						the_row();
-
-						$count++;
-						$item_title      = get_sub_field( 'accordion_title' );
-						$item_content    = get_sub_field( 'accordion_text' );
-						$item_content_id = 'accordion-' . intval( $row_index ) . '-item-' . intval( $count );
-						?>
-						<div class="accordion-item">
-							<div class="accordion-item-header">
-								<h3 class="accordion-item-title"><?php echo esc_html( $item_title ); ?>
-									<button class="accordion-item-toggle" aria-expanded="false" aria-controls="<?php echo esc_attr( $item_content_id ); ?>">
-										<span class="screen-reader-text"><?php echo sprintf( esc_html( 'Toggle %s', '_s' ), esc_html( $item_title ) ); ?></span>
-										<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
-									</button>
-								</h3>
-							</div>
-							<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
-								<?php echo _s_get_the_content( $item_content ); // phpcs: xss: ok. ?>
-							</div>
+				<?php foreach ( $accordion_items as $accordion_item ) : ?>
+					<?php
+					$count++;
+					$item_title      = get_sub_field( 'accordion_title' );
+					$item_content    = get_sub_field( 'accordion_text' );
+					$item_content_id = 'accordion-' . intval( $row_index ) . '-item-' . intval( $count );
+					?>
+					<div class="accordion-item">
+						<div class="accordion-item-header">
+							<h3 class="accordion-item-title"><?php echo esc_html( $accordion_item['accordion_title'] ); ?>
+								<button class="accordion-item-toggle" aria-expanded="false" aria-controls="<?php echo esc_attr( $item_content_id ); ?>">
+									<span class="screen-reader-text"><?php echo sprintf( esc_html( 'Toggle %s', '_s' ), esc_html( $accordion_item['accordion_title'] ) ); ?></span>
+									<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
+								</button>
+							</h3>
 						</div>
-				<?php endwhile; ?>
+						<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
+							<?php echo _s_get_the_content( $accordion_item['accordion_text'] ); // phpcs: xss: ok. ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
 	</div>
