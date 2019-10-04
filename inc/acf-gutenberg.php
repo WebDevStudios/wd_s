@@ -68,6 +68,12 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+					),
+				),
+			),
 		)
 	);
 
