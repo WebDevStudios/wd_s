@@ -89,6 +89,18 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'title'       => esc_html__( 'Call To Action Title', '_s' ),
+						'text'        => esc_html__( 'Call To Action Text', '_s' ),
+						'button_link' => array(
+							'title' => esc_html__( 'Learn More', '_s' ),
+							'url'   => '#',
+						),
+					),
+				),
+			),
 		)
 	);
 
