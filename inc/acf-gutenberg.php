@@ -117,6 +117,16 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'text_primary' => esc_html__( 'Primary Text content', '_s' ),
+						'media_right'  => array(
+							'url' => get_stylesheet_directory_uri() . '/assets/images/placeholder.png',
+						),
+					),
+				),
+			),
 		)
 	);
 
