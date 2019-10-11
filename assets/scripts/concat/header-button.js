@@ -27,7 +27,7 @@ window.ShowHideSearchForm = {};
 
 	// Combine all events
 	app.bindEvents = function() {
-		app.$c.headerSearchToggle.on( 'keyup touchstart click', app.showHideSearchForm );
+		app.$c.headerSearchToggle.on( 'keyup click', app.showHideSearchForm );
 		app.$c.body.on( 'keyup touchstart click', app.hideSearchForm );
 	};
 
