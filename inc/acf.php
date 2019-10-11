@@ -197,7 +197,7 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 
 		$type = _s_return_flexible_content_layout_value( $background_type );
 
-		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists — Hero.
+		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists - Hero.
 		if ( 'image' === $background_type ) {
 			$block_heading .= '<img src="' . esc_url( $type['sizes']['thumbnail'] ) . '" height="30" width="30" class="acf-flexible-title-image" />';
 		}
@@ -228,9 +228,9 @@ function _s_acf_flexible_content_layout_title( $block_title, $field, $layout, $i
 		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__( 'expired', '_s' ) . ')</span>';
 	}
 
-	// Load title field text else Load headline text — Hero.
+	// Load title field text else Load headline text - Hero.
 	if ( $text ) {
-		$block_heading .= '<span class="acf-flexible-content-headline-title"> — ' . $text . '</span>';
+		$block_heading .= '<span class="acf-flexible-content-headline-title"> - ' . $text . '</span>';
 	}
 
 	// Return New Title.

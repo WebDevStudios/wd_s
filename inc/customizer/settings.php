@@ -103,7 +103,8 @@ function _s_customize_copyright_text( $wp_customize ) {
 	$wp_customize->add_setting(
 		'_s_copyright_text',
 		array(
-			'default' => '',
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
 

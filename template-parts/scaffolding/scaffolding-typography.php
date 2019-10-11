@@ -315,7 +315,7 @@
 			'title'       => 'Abbreviation Tag',
 			'description' => 'Display an abbreviation.',
 			'usage'       => '<abbr title="Seriously">srsly</abbr>',
-			'output'      => '<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for “seriously”.</p>',
+			'output'      => '<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for "seriously".</p>',
 		)
 	);
 
@@ -325,7 +325,7 @@
 			'title'       => 'Cite Tag',
 			'description' => 'Display a citation.',
 			'usage'       => '<cite>Automattic</cite>',
-			'output'      => '<p>“Code is poetry.” —<cite>Automattic</cite></p>',
+			'output'      => '<p>"Code is poetry." &mdash;<cite>Automattic</cite></p>',
 		)
 	);
 
@@ -379,7 +379,7 @@
 			'title'       => 'Keyboard Tag',
 			'description' => 'To display a key.',
 			'usage'       => '<kbd>Shift/kbd>',
-			'output'      => '<p>To paste copied text content stripped of formatting, use <kbd>⌘</kbd>+<kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.</p>',
+			'output'      => '<p>To paste copied text content stripped of formatting, use <kbd>&#8984;</kbd>+<kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.</p>',
 		)
 	);
 
@@ -389,7 +389,7 @@
 			'title'       => 'Subscript Tag',
 			'description' => 'To display a subscript.',
 			'usage'       => '<sub>2</sub>',
-			'output'      => '<p>Getting our science styling on with H<sub>2</sub>O, which should push the “2” down.</p>',
+			'output'      => '<p>Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.</p>',
 		)
 	);
 
@@ -399,7 +399,7 @@
 			'title'       => 'Superscript Tag',
 			'description' => 'To display a superscript.',
 			'usage'       => '<sup>2</sup>',
-			'output'      => '<p>Still sticking with science and Albert Einstein’s&nbsp;E = MC<sup>2</sup>, which should lift the “2” up.</p>',
+			'output'      => '<p>Still sticking with science and Albert Einstein\'s&nbsp;E = MC<sup>2</sup>, which should lift the "2" up.</p>',
 		)
 	);
 
@@ -447,7 +447,7 @@
 					<dt>Startup</dt>
 					<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
 					<dt>#dowork</dt>
-					<dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
+					<dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd>
 				</dl>
 			',
 			'output'      => '
@@ -457,7 +457,7 @@
 					<dt>Startup</dt>
 					<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
 					<dt>#dowork</dt>
-					<dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
+					<dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd>
 				</dl>
 			',
 		)
