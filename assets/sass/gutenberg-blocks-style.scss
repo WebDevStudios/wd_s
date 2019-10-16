@@ -62,5 +62,17 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 
 		// Gutenberg overrides.
 		@import 'gutenberg/index';
+
+		.hero-block-content {
+			height: unset;
+		}
+
+		.carousel-block {
+
+			.slide,
+			.slick-slide div {
+				height: unset;
+			}
+		}
 	}
 }
