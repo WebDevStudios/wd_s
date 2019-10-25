@@ -61,7 +61,7 @@ if ( $recent_posts->have_posts() ) :
 				_s_display_card(
 					array(
 						'title' => get_the_title(),
-						'image' => _s_get_post_image_url( 'medium' ),
+						'image' => wp_get_attachment_image( get_post_thumbnail_id(), 'medium', false, array( 'card-image' ) ),
 						'text'  => _s_get_the_excerpt(
 							array(
 								'length' => 20,

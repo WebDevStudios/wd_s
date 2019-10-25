@@ -26,7 +26,11 @@ _s_display_block_options(
 		</div>
 
 		<div class="half">
-			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['url'] ); ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
+			<?php
+			if ( $image_data ) :
+				echo wp_get_attachment_image( $image_data['ID'], 'full', true, array( 'class' => 'fifty-image' ) );
+			endif;
+			?>
 		</div>
 
 	</div>
