@@ -2,7 +2,7 @@
 // Global Link Styles
 //--------------------------------------------------------------
 
-a:not(.button) {
+a:not(.button):not(.wp-block-button__link) {
 	color: $color-link;
 	opacity: 1;
 	transition: $transition-opacity;
