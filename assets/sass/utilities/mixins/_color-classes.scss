@@ -45,6 +45,12 @@
 			color: $color;
 		}
 
+		// Adds colors for gutenberg buttons.
+		.wp-block-button__link.has-text-color.has-#{$name}-color {
+			color: $color;
+		}
+
+
 		// Create fill classes.
 		.fill-#{$name} {
 			fill: $color;
