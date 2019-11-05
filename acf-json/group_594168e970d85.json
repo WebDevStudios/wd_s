@@ -39,7 +39,7 @@
                     "label": "Start Date",
                     "name": "start_date",
                     "type": "date_time_picker",
-                    "instructions": "Choose a start date for this block. This block will be hidden on the frontend, until the date and time selected.",
+                    "instructions": "Choose a start date for this block. This block will be hidden on the frontend, until the date and time selected.<br><br><strong>Note:</strong> In order to use Start Date, both the Start Date and End Date must be set.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -56,7 +56,7 @@
                     "label": "End Date",
                     "name": "end_date",
                     "type": "date_time_picker",
-                    "instructions": "Choose an end date for this block. This block will be display on the frontend, until the date and time selected.",
+                    "instructions": "Choose an end date for this block. This block will be display on the frontend, until the date and time selected.<br><br><strong>Note:</strong> In order to use End Date, both the Start Date and End Date must be set.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -88,5 +88,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1559330134
+    "modified": 1572973813
 }

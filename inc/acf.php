@@ -24,9 +24,24 @@ function _s_display_block_options( $args = array() ) {
 	$background_options = get_sub_field( 'background_options' ) ? get_sub_field( 'background_options' ) : get_field( 'background_options' )['background_options'];
 
 	// Get block other options.
-	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+	$other_options = array();
 
-	$display_options = get_sub_field( 'display_options' ) ? get_sub_field( 'display_options' ) : get_field( 'display_options' )['display_options'];
+	// Set our Other Options if we have them. Some blocks may not.
+	if ( get_sub_field( 'other_options' ) ) {
+		$other_options = get_sub_field( 'other_options' );
+	} elseif ( get_field( 'other_options' ) ) {
+		$other_options = get_field( 'other_options' )['other_options'];
+	}
+
+	// Get block display options.
+	$display_options = array();
+
+	// Set our Display Options if we have them. Some blocks may not.
+	if ( get_sub_field( 'display_options' ) ) {
+		$display_options = get_sub_field( 'display_options' );
+	} elseif ( get_field( 'display_options' ) ) {
+		$display_options = get_field( 'display_options' )['display_options'];
+	}
 
 	// Get the block ID.
 	$block_id = _s_get_block_id( $args['block'] );
@@ -142,7 +157,7 @@ function _s_has_block_expired( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Get (Unix) times and convert to integer.
-	$now   = (int) date( 'U' );
+	$now   = (int) current_time( 'timestamp' );
 	$start = (int) $args['start_date'];
 	$end   = (int) $args['end_date'];
 

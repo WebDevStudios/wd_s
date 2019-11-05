@@ -151,11 +151,15 @@ function _s_acf_block_registration_callback( $block ) {
 	// Convert the block name into a handy slug.
 	$block_slug = str_replace( 'acf/', '', $block['name'] );
 
+	// Make sure we have fields.
+	$start_date = isset( $block['data']['other_options_start_date'] ) ? $block['data']['other_options_start_date'] : '';
+	$end_date   = isset( $block['data']['other_options_end_date'] ) ? $block['data']['other_options_end_date'] : '';
+
 	// If the block has expired, then bail! But only on the frontend, so we can still see and edit the block in the backend.
 	if ( ! is_admin() && _s_has_block_expired(
 		array(
-			'start_date' => strtotime( $block['data']['other_options_start_date'], true ),
-			'end_date'   => strtotime( $block['data']['other_options_end_date'], true ),
+			'start_date' => strtotime( $start_date, true ),
+			'end_date'   => strtotime( $end_date, true ),
 		)
 	) ) {
 		return;
