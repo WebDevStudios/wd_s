@@ -157,7 +157,7 @@ function _s_has_block_expired( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Get (Unix) times and convert to integer.
-	$now   = (int) date( 'U' );
+	$now   = (int) current_time( 'timestamp' );
 	$start = (int) $args['start_date'];
 	$end   = (int) $args['end_date'];
 
