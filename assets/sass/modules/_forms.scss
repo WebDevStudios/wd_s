@@ -149,12 +149,12 @@ input[type='radio']:checked::after {
 }
 
 input[type='checkbox']:checked::after {
-	@include position(relative, rem(-8) rem(4) null null);
-	@include size(rem(4), rem(9)); // Make it a small rectangle so the border will create an L-shape.
+	@include position(relative, rem(-7) rem(3) null null);
+	@include size(rem(7), rem(11)); // Make it a small rectangle so the border will create an L-shape.
 
 	// Add a white border on the bottom and left, creating that 'L'.
 	border: solid $color-focus-text-input;
-	border-width: 0 4px 4px 0;
+	border-width: 0 3px 3px 0;
 
 	// Add another block-level blank space.
 	content: '';

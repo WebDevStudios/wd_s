@@ -4,7 +4,7 @@
 .content-block {
 	@include padding($gutter * 2 null);
 
-	&.has-background {
+	&.has-background:not(.alignfull) {
 		@include margin(0 auto);
 
 		&.container-width {

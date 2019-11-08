@@ -122,7 +122,8 @@ img {
 } // .gallery-caption
 
 // Fluid embed
-.fluid-embed {
+.fluid-embed,
+.is-provider-wistia-inc {
 	height: 0;
 	overflow: hidden;
 	padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3

@@ -137,7 +137,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		// Gutenberg responsive embed support.
 		add_theme_support( 'responsive-embeds' );
 	}
-endif; // _s_setup
+endif; // _s_setup.
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
@@ -208,6 +208,11 @@ require get_template_directory() . '/inc/scripts.php';
  * Load custom ACF features.
  */
 require get_template_directory() . '/inc/acf.php';
+
+/**
+ * Load ACF Gutenberg block registration.
+ */
+require get_template_directory() . '/inc/acf-gutenberg.php';
 
 /**
  * Load custom ACF search functionality.

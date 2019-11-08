@@ -10,6 +10,11 @@ window.accordionBlockToggle = {};
 	app.init = function() {
 		app.cache();
 
+		// If we're in an ACF edit page.
+		if ( window.acf ) {
+			window.acf.addAction( 'render_block_preview', app.bindEvents );
+		}
+
 		if ( app.meetsRequirements() ) {
 			app.bindEvents();
 		}
@@ -31,8 +36,8 @@ window.accordionBlockToggle = {};
 
 	// Combine all events
 	app.bindEvents = function() {
-		app.$c.headers.on( 'click touchstart', app.toggleAccordion );
-		app.$c.button.on( 'click touchstart', app.toggleAccordion );
+		$( '.accordion-item-header' ).on( 'click', app.toggleAccordion );
+		$( '.accordion-item-toggle' ).on( 'click', app.toggleAccordion );
 		app.$c.window.on( 'load', app.openHashAccordion );
 	};
 

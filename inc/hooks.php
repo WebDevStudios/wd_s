@@ -334,3 +334,82 @@ function _s_remove_archive_title_prefix( $block_title ) {
 	return $block_title;
 }
 add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
+
+/**
+ * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
+ *
+ * @param string $content The starting post content.
+ * @return string The updated post content.
+ * @author Corey Collins
+ */
+function _s_remove_empty_p_tags_from_content( $content ) {
+
+	// If we have blocks in place, don't add wpautop.
+	if ( has_blocks() ) {
+		return $content;
+	}
+
+	return wpautop( $content );
+}
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', '_s_remove_empty_p_tags_from_content' );
+
+/**
+ * Adds lazy loading attribute to images for Chrome native lazy loading. This is for images used outside of the Gutenberg Image block.
+ *
+ * @param array $attr Our default attributes.
+ * @return array $attr Our updated attributes.
+ * @author Corey Collins
+ */
+function _s_add_chrome_lazy_loading_to_images( $attr ) {
+
+	$attr['loading'] = 'lazy';
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', '_s_add_chrome_lazy_loading_to_images' );
+
+/**
+ * Allows the loading attribute to be used in images.
+ *
+ * @param array $allowedposttags Allowed tags by WordPress.
+ * @return array $allowedposttags Updated tags to be allowed.
+ * @author Corey Collins
+ */
+function _s_allow_img_attributes( $allowedposttags ) {
+
+	$allowedposttags['img'] = array(
+		'loading' => true,
+		'width'   => true,
+		'height'  => true,
+		'src'     => true,
+		'class'   => true,
+		'srcset'  => true,
+		'alt'     => true,
+		'title'   => true,
+	);
+
+	return $allowedposttags;
+}
+add_filter( 'wp_kses_allowed_html', '_s_allow_img_attributes', 1 );
+
+/**
+ * Filters the output of blocks to add Chrome native lazy loading.
+ *
+ * @param mixed $block_content The HTML markup for the block.
+ * @param array $block The block object.
+ * @return mixed $block_content The HTML markup for the block.
+ * @author Corey Collins
+ */
+function _s_add_lazy_loading_to_image_block( $block_content, $block ) {
+
+	// We only want to filter core blocks here, because our custom blocks are handled differently.
+	if ( $block['blockName'] && strpos( $block['blockName'], 'core/' ) === false ) {
+		return $block_content;
+	}
+
+	$block_content = str_replace( '<img', '<img loading="lazy"', $block_content );
+
+	return $block_content;
+}
+add_filter( 'render_block', '_s_add_lazy_loading_to_image_block', 10, 2 );

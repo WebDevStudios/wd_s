@@ -6,7 +6,7 @@
             "key": "field_596d115a08097",
             "label": "Background Options",
             "name": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -258,5 +259,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1554136392
+    "modified": 1559318547
 }

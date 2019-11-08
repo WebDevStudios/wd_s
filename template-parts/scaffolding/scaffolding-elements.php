@@ -20,11 +20,11 @@
 			'usage'       => '_s_display_numeric_pagination()',
 			'output'      => '
 				<nav class="pagination-container">
-					<a class="prev page-numbers" href="#>«</a>
+					<a class="prev page-numbers" href="#>&laquo;</a>
 					<a class="page-numbers" href="#">1</a>
 					<span aria-current="page" class="page-numbers current">2</span>
 					<a class="page-numbers" href="#">3</a>
-					<a class="next page-numbers" href="#">»</a>
+					<a class="next page-numbers" href="#">&raquo;</a>
 				</nav>
 			',
 		)

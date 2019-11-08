@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 .card {
 	margin-bottom: $gutter * 2;
+	padding: 0;
 	text-align: center;
 
 	@include media($tablet-portrait) {

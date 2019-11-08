@@ -37,7 +37,7 @@
 	} // .hentry
 
 	// Full-screen elements. Ignores sidebar issues.
-	.full-width {
+	.full-width:not(.content-block) {
 		@include full-width;
 	} // .full-width
 } // .site-main
@@ -56,6 +56,18 @@
 		@include padding(0);
 	}
 } // .container
+
+// Adjusts padding for non-full-width content blocks with backgrounds.
+.content-block.has-background {
+
+	.container {
+
+		@include media($container-offset) {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+}
 
 //-----------------------------------------
 // Site Layout Wrapper and Grid Elements

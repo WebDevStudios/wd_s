@@ -53,7 +53,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:54, inc/template-tags.php:566
+#: functions.php:54, inc/template-tags.php:570
 msgid "Mobile Menu"
 msgstr ""
 
@@ -99,20 +99,16 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "To search this site, enter a search term"
 msgstr ""
 
-#: searchform.php:12, inc/template-tags.php:498, inc/template-tags.php:499
+#: searchform.php:13, inc/template-tags.php:502, inc/template-tags.php:503
 msgid "Search"
 msgstr ""
 
-#: searchform.php:13
+#: searchform.php:15
 msgid "Submit"
-msgstr ""
-
-#: template-acf.php:3
-msgid "Page with Content Blocks"
 msgstr ""
 
 #: template-scaffolding.php:3
@@ -127,80 +123,152 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
+#: inc/acf-gutenberg.php:31
+msgid "Accordion"
+msgstr ""
+
+#: inc/acf-gutenberg.php:32
+msgid "A custom set of collapsable accordion items."
+msgstr ""
+
+#: inc/acf-gutenberg.php:46
+msgid "Carousel"
+msgstr ""
+
+#: inc/acf-gutenberg.php:47
+msgid "A carousel with a call to action for each slide."
+msgstr ""
+
+#: inc/acf-gutenberg.php:62
+msgid "Call To Action"
+msgstr ""
+
+#: inc/acf-gutenberg.php:63
+msgid "A call to action block."
+msgstr ""
+
+#: inc/acf-gutenberg.php:78
+msgid "Fifty/Fifty Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:79
+msgid "A split-content block with text and/or media."
+msgstr ""
+
+#: inc/acf-gutenberg.php:94
+msgid "Hero Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:95
+msgid "A hero with an optional call to action."
+msgstr ""
+
+#: inc/acf-gutenberg.php:110
+msgid "Recent Posts Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:111
+msgid "A set of recent posts displayed by category and/or tag."
+msgstr ""
+
+#: inc/acf-gutenberg.php:126
+msgid "Related Posts Block"
+msgstr ""
+
+#: inc/acf-gutenberg.php:127
+msgid "A set of manually selected posts."
+msgstr ""
+
+#: inc/acf-gutenberg.php:187
+msgid "WDS Blocks"
+msgstr ""
+
+#: inc/acf-gutenberg.php:320
+msgid "Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend."
+msgstr ""
+
+#: inc/acf-gutenberg.php:366
+msgid "Slide Title"
+msgstr ""
+
+#: inc/acf-gutenberg.php:367
+msgid "Slide Content"
+msgstr ""
+
 #. translators: get the title of the video.
-#: inc/acf.php:108
+#: inc/acf.php:78
 msgid "Video Background"
 msgstr ""
 
-#: inc/acf.php:121
+#: inc/acf.php:91
 msgid "Toggle video playback"
 msgstr ""
 
-#: inc/acf.php:288
+#: inc/acf.php:206
 msgid "Video"
 msgstr ""
 
-#: inc/acf.php:310
+#: inc/acf.php:228
 msgid "expired"
 msgstr ""
 
-#: inc/acf.php:413
+#: inc/acf.php:331
 msgid "Alto"
 msgstr ""
 
-#: inc/acf.php:414
+#: inc/acf.php:332
 msgid "Black"
 msgstr ""
 
-#: inc/acf.php:415
+#: inc/acf.php:333
 msgid "Blue"
 msgstr ""
 
-#: inc/acf.php:416
+#: inc/acf.php:334
 msgid "Cod Gray"
 msgstr ""
 
-#: inc/acf.php:417
+#: inc/acf.php:335
 msgid "Dove Gray"
 msgstr ""
 
-#: inc/acf.php:418
+#: inc/acf.php:336
 msgid "Gallery"
 msgstr ""
 
-#: inc/acf.php:419
+#: inc/acf.php:337
 msgid "Gray"
 msgstr ""
 
-#: inc/acf.php:420
+#: inc/acf.php:338
 msgid "Gray Alt"
 msgstr ""
 
-#: inc/acf.php:421
+#: inc/acf.php:339
 msgid "Light Yellow"
 msgstr ""
 
-#: inc/acf.php:422
+#: inc/acf.php:340
 msgid "Mineshaft"
 msgstr ""
 
-#: inc/acf.php:423
+#: inc/acf.php:341
 msgid "Silver"
 msgstr ""
 
-#: inc/acf.php:424
+#: inc/acf.php:342
 msgid "Silver Chalice"
 msgstr ""
 
-#: inc/acf.php:425
+#: inc/acf.php:343
 msgid "White"
 msgstr ""
 
-#: inc/acf.php:426
+#: inc/acf.php:344
 msgid "Whitesmoke"
 msgstr ""
 
-#: inc/acf.php:502, inc/hooks.php:99, inc/template-tags.php:462
+#: inc/acf.php:420, inc/hooks.php:99, inc/template-tags.php:466
 msgid "Read More"
 msgstr ""
 
@@ -330,15 +398,15 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/template-tags.php:496
+#: inc/template-tags.php:500
 msgid "More Information"
 msgstr ""
 
-#: inc/template-tags.php:535
+#: inc/template-tags.php:539
 msgid "numeric pagination"
 msgstr ""
 
-#: inc/template-tags.php:567
+#: inc/template-tags.php:571
 msgid "Close Menu"
 msgstr ""
 
@@ -489,7 +557,7 @@ msgstr ""
 msgid "Enter the text to be displayed in the button in the header."
 msgstr ""
 
-#: template-parts/content-blocks/block-accordion.php:32
+#: template-parts/content-blocks/block-wds-accordion.php:35
 msgid "Accordion Content Block"
 msgstr ""
 
