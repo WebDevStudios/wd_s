@@ -365,7 +365,7 @@ function _s_acf_gutenberg_display_admin_default_carousel( $block ) {
 
 	for ( $slides = 0; $slides < 2; $slides++ ) :
 		?>
-		<section class-"slide">
+		<section class="slide">
 			<div class="slide-content container">
 				<h2 class="slide-title"><?php esc_html_e( 'Slide Title', '_s' ); ?></h2>
 				<p class="slide-description"><?php esc_html_e( 'Slide Content', '_s' ); ?></p>
