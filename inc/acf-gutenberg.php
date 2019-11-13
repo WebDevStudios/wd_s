@@ -32,6 +32,7 @@ function _s_acf_init() {
 			'description'     => esc_html__( 'A custom set of collapsable accordion items.', '_s' ),
 			'render_callback' => '_s_acf_block_registration_callback',
 			'category'        => 'wds-blocks',
+			'icon'            => 'sort',
 			'keywords'        => array( 'accordion', 'wds' ),
 			'mode'            => 'preview',
 			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
