@@ -24,8 +24,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 		$color         = get_sub_field( 'font_color' );
 		$block_title   = get_sub_field( 'title' );
 		$text          = get_sub_field( 'text' );
-		$button_text   = get_sub_field( 'button_text' );
-		$button_url    = get_sub_field( 'button_url' );
+		$button        = get_sub_field( 'button_link' );
 		$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
 		$classname     = $color && _s_has_array_key( 'color_picker', $color ) ? 'has-font-color color-' . esc_attr( $color['color_picker'] ) : '';
 
@@ -64,6 +63,7 @@ if ( have_rows( 'carousel_slides' ) ) :
 					array(
 						'button' => true,
 						'class'  => 'button-slide',
+						'link'   => $button,
 					)
 				);
 				?>

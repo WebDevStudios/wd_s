@@ -38,6 +38,20 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_accordion_scripts',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'title'           => esc_html__( 'Accordion Block Title', '_s' ),
+						'text'            => esc_html__( 'Accordion Block Content', '_s' ),
+						'accordion_items' => array(
+							'0' => array(
+								'accordion_title' => esc_html__( 'Accordion Item Title', '_s' ),
+								'accordion_text'  => esc_html__( 'Accordion Item Content', '_s' ),
+							),
+						),
+					),
+				),
+			),
 		)
 	);
 
@@ -54,6 +68,11 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_carousel_scripts',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(),
+				),
+			),
 		)
 	);
 
@@ -70,6 +89,18 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'title'       => esc_html__( 'Call To Action Title', '_s' ),
+						'text'        => esc_html__( 'Call To Action Text', '_s' ),
+						'button_link' => array(
+							'title' => esc_html__( 'Learn More', '_s' ),
+							'url'   => '#',
+						),
+					),
+				),
+			),
 		)
 	);
 
@@ -86,6 +117,16 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'text_primary' => esc_html__( 'Primary Text content', '_s' ),
+						'media_right'  => array(
+							'url' => get_stylesheet_directory_uri() . '/assets/images/placeholder.png',
+						),
+					),
+				),
+			),
 		)
 	);
 
@@ -102,6 +143,29 @@ function _s_acf_init() {
 			'enqueue_assets'  => '_s_acf_enqueue_backend_block_styles',
 			'align'           => 'wide',
 			'supports'        => $supports,
+			'example'         => array(
+				'attributes' => array(
+					'data' => array(
+						'title'       => esc_html__( 'Call To Action Title', '_s' ),
+						'text'        => esc_html__( 'Call To Action Text', '_s' ),
+						'button_link' => array(
+							'title' => esc_html__( 'Learn More', '_s' ),
+							'url'   => '#',
+						),
+						'background_options' => array(
+							'background_type' => 'color',
+							'background_color' => array(
+								'color_picker' => 'blue',
+							),
+						),
+						'display_options' => array(
+							'font_color' => array(
+								'color_picker' => 'gallery',
+							),
+						),
+					),
+				),
+			),
 		)
 	);
 

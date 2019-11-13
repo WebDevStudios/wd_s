@@ -35,7 +35,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 // Theme Styles
 //-----------------------------------------
 
-.edit-post-visual-editor {
+.edit-post-visual-editor,
+.block-editor-inserter__preview {
 
 	// Global elements.
 	@import 'gutenberg/gutenberg-wp-block';
@@ -61,5 +62,17 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 
 		// Gutenberg overrides.
 		@import 'gutenberg/index';
+
+		.hero-block-content {
+			height: unset;
+		}
+
+		.carousel-block {
+
+			.slide,
+			.slick-slide div {
+				height: unset;
+			}
+		}
 	}
 }

@@ -131,67 +131,67 @@ msgstr ""
 msgid "A custom set of collapsable accordion items."
 msgstr ""
 
-#: inc/acf-gutenberg.php:46
+#: inc/acf-gutenberg.php:60
 msgid "Carousel"
 msgstr ""
 
-#: inc/acf-gutenberg.php:47
+#: inc/acf-gutenberg.php:61
 msgid "A carousel with a call to action for each slide."
 msgstr ""
 
-#: inc/acf-gutenberg.php:62
+#: inc/acf-gutenberg.php:81
 msgid "Call To Action"
 msgstr ""
 
-#: inc/acf-gutenberg.php:63
+#: inc/acf-gutenberg.php:82
 msgid "A call to action block."
 msgstr ""
 
-#: inc/acf-gutenberg.php:78
+#: inc/acf-gutenberg.php:97
 msgid "Fifty/Fifty Block"
 msgstr ""
 
-#: inc/acf-gutenberg.php:79
+#: inc/acf-gutenberg.php:98
 msgid "A split-content block with text and/or media."
 msgstr ""
 
-#: inc/acf-gutenberg.php:94
+#: inc/acf-gutenberg.php:113
 msgid "Hero Block"
 msgstr ""
 
-#: inc/acf-gutenberg.php:95
+#: inc/acf-gutenberg.php:114
 msgid "A hero with an optional call to action."
 msgstr ""
 
-#: inc/acf-gutenberg.php:110
+#: inc/acf-gutenberg.php:129
 msgid "Recent Posts Block"
 msgstr ""
 
-#: inc/acf-gutenberg.php:111
+#: inc/acf-gutenberg.php:130
 msgid "A set of recent posts displayed by category and/or tag."
 msgstr ""
 
-#: inc/acf-gutenberg.php:126
+#: inc/acf-gutenberg.php:145
 msgid "Related Posts Block"
 msgstr ""
 
-#: inc/acf-gutenberg.php:127
+#: inc/acf-gutenberg.php:146
 msgid "A set of manually selected posts."
 msgstr ""
 
-#: inc/acf-gutenberg.php:187
+#: inc/acf-gutenberg.php:206
 msgid "WDS Blocks"
 msgstr ""
 
-#: inc/acf-gutenberg.php:320
+#: inc/acf-gutenberg.php:339
 msgid "Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend."
 msgstr ""
 
-#: inc/acf-gutenberg.php:366
+#: inc/acf-gutenberg.php:385
 msgid "Slide Title"
 msgstr ""
 
-#: inc/acf-gutenberg.php:367
+#: inc/acf-gutenberg.php:386
 msgid "Slide Content"
 msgstr ""
 
@@ -557,7 +557,7 @@ msgstr ""
 msgid "Enter the text to be displayed in the button in the header."
 msgstr ""
 
-#: template-parts/content-blocks/block-wds-accordion.php:35
+#: template-parts/content-blocks/block-wds-accordion.php:39
 msgid "Accordion Content Block"
 msgstr ""
 
