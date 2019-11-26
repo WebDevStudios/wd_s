@@ -2,53 +2,72 @@
   "name": "wd_s",
   "version": "1.0.0",
   "description": "A theme boilerplate for WebDevStudios.",
-  "main": "Gulpfile.js",
-  "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.3",
-    "css-mqpacker": "^6.0.2",
-    "del": "^3.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-wordpress": "^2.0.0",
-    "glob": "^7.1.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-cheerio": "^0.6.3",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-eslint": "^4.0.2",
-    "gulp-imagemin": "^3.4.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.3",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^3.2.1",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-sort": "^2.0.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-svgmin": "^1.2.4",
-    "gulp-svgstore": "^6.1.1",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "gulp-wp-pot": "^2.3.1",
-    "gulp.spritesmith": "^6.9.0",
-    "natives": "^1.1.6",
-    "sassdoc": "^2.5.1"
+  "author": "WebDevStudios",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebDevStudios/wd_s.git"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"No test specified\""
-  },
-  "repository": "git+https://github.com/WebDevStudios/wd_s.git",
   "keywords": [
     "theme"
   ],
-  "author": "WebDevStudios",
-  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/WebDevStudios/wd_s/issues"
   },
-  "homepage": "https://github.com/WebDevStudios/wd_s#readme"
+  "homepage": "https://github.com/WebDevStudios/wd_s#readme",
+  "main": "src/js/app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^3.1.0",
+    "autoprefixer": "^9.6.5",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.5.1",
+    "imagemin-cli": "^5.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3",
+    "rimraf": "^3.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-wordpress": "^15.0.0",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^1.3.0",
+    "uglify-es": "^3.3.9",
+    "wp-pot-cli": "^1.2.4"
+  },
+  "scripts": {
+    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
+    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
+    "scss": "node-sass src/scss/style.scss -o dist/css",
+    "lint": "eslint src/js || true",
+    "lint-scss": "stylelint src/scss/*.scss --syntax scss || true",
+    "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
+    "imagemin": "imagemin src/images/*.jpg, src/images/*.png, src/images/*.gif --out-dir=dist/images/",
+    "icons": "svgo -f src/images/icons -o dist/images/icons && svg-sprite-generate -d dist/images/icons -o dist/images/icons/sprite.svg",
+    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
+    "php": "phpcs -p -s -n . --standard=phpcs.xml.dist --extensions=php || true || exit",
+    "serve": "browser-sync start --https --proxy 'https://testing.test' --files \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
+    "build:css": "run-s lint-scss scss optimizecss",
+    "build:js": "run-s lint uglify",
+    "build:images": "run-s imagemin icons",
+    "build:pot": "run-s pot",
+    "build": "run-s clean build:*",
+    "watch:css": "onchange \"src/scss\" -- run-s build:css",
+    "watch:js": "onchange \"src/js\" -- run-s build:js",
+    "watch:images": "onchange \"src/images\" -- run-s build:images",
+    "watch:php": "onchange './*.php', './**/*.php' -- run-s php",
+    "watch": "run-p serve watch:*",
+    "postinstall": "run-s build"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "eslintConfig": {
+    "extends": "plugin:@wordpress/eslint-plugin/recommended"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-wordpress"
+  }
 }
