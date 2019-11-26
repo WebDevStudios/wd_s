@@ -16,7 +16,9 @@
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
   "main": "src/js/app.js",
-  "dependencies": {},
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^3.1.0",
     "autoprefixer": "^9.6.5",
