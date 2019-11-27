@@ -78,7 +78,7 @@
 	@include position(absolute, null 1% 2% null);
 	@include size(rem(22));
 
-	background: url('dist/images/icons/pause.svg') center center no-repeat transparent;
+	background: url('../images/icons/pause.svg') center center no-repeat transparent;
 	background-size: rem(16);
 	opacity: 0.2;
 	padding: 0;
@@ -92,6 +92,6 @@
 	}
 
 	.video-toggled & {
-		background-image: url('dist/images/icons/play.svg');
+		background-image: url('../images/icons/play.svg');
 	}
 } // .video-toggle
