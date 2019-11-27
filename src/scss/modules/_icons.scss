@@ -49,7 +49,7 @@ $social-sites: facebook instagram linkedin twitter;
 			&[href*='#{$network}'] {
 				@include size(rem(30));
 
-				background: url('assets/images/svg-icons/#{$network}-square.svg') no-repeat center center transparent;
+				background: url('dist/images/icons/#{$network}-square.svg') no-repeat center center transparent;
 				background-size: rem(30);
 				display: block;
 				text-indent: rem(-999999);

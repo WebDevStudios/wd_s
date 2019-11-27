@@ -122,7 +122,7 @@ function _s_acf_init() {
 					'data' => array(
 						'text_primary' => esc_html__( 'Primary Text content', '_s' ),
 						'media_right'  => array(
-							'url' => get_stylesheet_directory_uri() . '/assets/images/placeholder.png',
+							'url' => get_stylesheet_directory_uri() . '/dist/images/placeholder.png',
 						),
 					),
 				),

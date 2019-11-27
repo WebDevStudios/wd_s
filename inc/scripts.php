@@ -139,7 +139,7 @@ add_action( 'customize_controls_enqueue_scripts', '_s_customizer_scripts' );
 function _s_include_svg_icons() {
 
 	// Define SVG sprite file.
-	$svg_icons = get_template_directory() . '/assets/images/svg-icons.svg';
+	$svg_icons = get_template_directory() . '/dist/images/icons/sprite.svg';
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
