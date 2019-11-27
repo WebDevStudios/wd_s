@@ -47,7 +47,7 @@
     "lint-scss": "stylelint src/scss/*.scss --syntax scss || true",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
-    "imagemin": "imagemin src/images/*.jpg, src/images/*.png, src/images/*.gif --out-dir=dist/images/",
+    "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
     "icons": "svgo -f src/images/icons -o dist/images/icons && svg-sprite-generate -d dist/images/icons -o dist/images/icons/sprite.svg",
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
     "php": "phpcs -p -s -n . --standard=phpcs.xml.dist --extensions=php || true || exit",
