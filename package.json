@@ -45,7 +45,7 @@
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "lint": "eslint src/js || true",
     "lint-scss": "stylelint src/scss/*.scss --syntax scss || true",
-    "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
+    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "imagemin": "imagemin src/images/*.jpg, src/images/*.png, src/images/*.gif --out-dir=dist/images/",
     "icons": "svgo -f src/images/icons -o dist/images/icons && svg-sprite-generate -d dist/images/icons -o dist/images/icons/sprite.svg",
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
