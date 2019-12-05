@@ -5,7 +5,6 @@
  */
 window.wdsCarousel = {};
 ( function( window, $, app ) {
-
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -24,7 +23,7 @@ window.wdsCarousel = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			theCarousel: $( '.carousel-block' )
+			theCarousel: $( '.carousel-block' ),
 		};
 	};
 
@@ -41,9 +40,8 @@ window.wdsCarousel = {};
 
 	// Animate the first slide on window load.
 	app.doFirstAnimation = function() {
-
 		// Get the first slide content area and animation attribute.
-		let firstSlide = app.$c.theCarousel.find( '[data-slick-index=0]' ),
+		const firstSlide = app.$c.theCarousel.find( '[data-slick-index=0]' ),
 			firstSlideContent = firstSlide.find( '.slide-content' ),
 			firstAnimation = firstSlideContent.attr( 'data-animation' );
 
@@ -53,10 +51,8 @@ window.wdsCarousel = {};
 
 	// Allow background videos to autoplay.
 	app.playBackgroundVideos = function() {
-
 		// Get all the videos in our slides object.
 		$( 'video' ).each( function() {
-
 			// Let them autoplay. TODO: Possibly change this later to only play the visible slide video.
 			this.play();
 		} );
@@ -64,23 +60,21 @@ window.wdsCarousel = {};
 
 	// Initialize our carousel.
 	app.initializeCarousel = function() {
-
 		$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: true,
 			dots: true,
 			focusOnSelect: true,
-			waitForAnimate: true
+			waitForAnimate: true,
 		} );
 	};
 
 	// Kick off Slick.
 	app.doSlick = function() {
-
 		// Render on the frontend.
 		$( document ).ready( function() {
-			app.playBackgroundVideos;
+			app.playBackgroundVideos();
 			app.initializeCarousel();
 		} );
 
@@ -92,4 +86,4 @@ window.wdsCarousel = {};
 
 	// Engage!
 	$( app.init );
-} ( window, jQuery, window.wdsCarousel ) );
+}( window, jQuery, window.wdsCarousel ) );

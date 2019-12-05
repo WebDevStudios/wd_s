@@ -5,7 +5,6 @@
  */
 window.accordionBlockToggle = {};
 ( function( window, $, app ) {
-
 	// Constructor
 	app.init = function() {
 		app.cache();
@@ -26,7 +25,7 @@ window.accordionBlockToggle = {};
 			window: $( window ),
 			html: $( 'html' ),
 			accordion: $( '.accordion' ),
-			anchorID: $( window.location.hash )
+			anchorID: $( window.location.hash ),
 		};
 	};
 
@@ -43,12 +42,11 @@ window.accordionBlockToggle = {};
 	};
 
 	app.toggleAccordion = function() {
-
 		// Add the open class to the item.
 		$( this ).parents( '.accordion-item' ).toggleClass( 'open' );
 
 		// Is this one expanded?
-		let isExpanded = $( this ).parents( '.accordion-item' ).hasClass( 'open' );
+		const isExpanded = $( this ).parents( '.accordion-item' ).hasClass( 'open' );
 
 		// Set this button's aria-expanded value.
 		$( this ).parents( '.accordion-item' ).find( '.accordion-item-toggle' ).attr( 'aria-expanded', isExpanded ? 'true' : 'false' );
@@ -67,7 +65,6 @@ window.accordionBlockToggle = {};
 	};
 
 	app.openHashAccordion = function() {
-
 		if ( ! app.$c.anchorID.selector ) {
 			return;
 		}
@@ -80,11 +77,10 @@ window.accordionBlockToggle = {};
 
 		// Animate to the div for a nicer experience.
 		app.$c.html.animate( {
-			scrollTop: app.$c.anchorID.offset().top - adminBarHeight
+			scrollTop: app.$c.anchorID.offset().top - adminBarHeight,
 		}, 'slow' );
 	};
 
 	// Engage
 	app.init();
-
-} ( window, jQuery, window.accordionBlockToggle ) );
+}( window, jQuery, window.accordionBlockToggle ) );

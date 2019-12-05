@@ -5,7 +5,6 @@
  */
 window.wdsPrimaryNavigation = {};
 ( function( window, $, app ) {
-
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -20,7 +19,7 @@ window.wdsPrimaryNavigation = {};
 		app.$c = {
 			window: $( window ),
 			subMenuContainer: $( '.main-navigation .sub-menu' ),
-			subMenuParentItem: $( '.main-navigation li.menu-item-has-children' )
+			subMenuParentItem: $( '.main-navigation li.menu-item-has-children' ),
 		};
 	};
 
@@ -47,5 +46,4 @@ window.wdsPrimaryNavigation = {};
 
 	// Engage!
 	$( app.init );
-
 }( window, jQuery, window.wdsPrimaryNavigation ) );

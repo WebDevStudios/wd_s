@@ -3,7 +3,6 @@
  */
 window.WDSVideoBackgroundObject = {};
 ( function( window, $, app ) {
-
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -17,7 +16,7 @@ window.WDSVideoBackgroundObject = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			videoButton: $( '.video-toggle' )
+			videoButton: $( '.video-toggle' ),
 		};
 	};
 
@@ -44,5 +43,4 @@ window.WDSVideoBackgroundObject = {};
 
 	// Engage!
 	$( app.init );
-
 }( window, jQuery, window.WDSVideoBackgroundObject ) );

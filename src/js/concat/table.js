@@ -5,7 +5,6 @@
  */
 window.wdsTables = {};
 ( function( window, $, app ) {
-
 	// Constructor
 	app.init = function() {
 		app.cache();
@@ -19,7 +18,7 @@ window.wdsTables = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			table: $( 'table' )
+			table: $( 'table' ),
 		};
 	};
 
@@ -54,5 +53,4 @@ window.wdsTables = {};
 
 	// Engage
 	$( app.init );
-
-} ( window, jQuery, window.wdsTables ) );
+}( window, jQuery, window.wdsTables ) );

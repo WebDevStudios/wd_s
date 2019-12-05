@@ -5,7 +5,6 @@
  */
 window.wdsWindowReady = {};
 ( function( window, $, app ) {
-
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -15,8 +14,8 @@ window.wdsWindowReady = {};
 	// Cache document elements.
 	app.cache = function() {
 		app.$c = {
-			'window': $( window ),
-			'body': $( document.body )
+			window: $( window ),
+			body: $( document.body ),
 		};
 	};
 

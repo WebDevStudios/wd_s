@@ -5,7 +5,6 @@
  */
 window.wdsoffCanvas = {};
 ( function( window, $, app ) {
-
 	// Constructor.
 	app.init = function() {
 		app.cache();
@@ -22,7 +21,7 @@ window.wdsoffCanvas = {};
 			offCanvasClose: $( '.off-canvas-close' ),
 			offCanvasContainer: $( '.off-canvas-container' ),
 			offCanvasOpen: $( '.off-canvas-open' ),
-			offCanvasScreen: $( '.off-canvas-screen' )
+			offCanvasScreen: $( '.off-canvas-screen' ),
 		};
 	};
 
@@ -41,13 +40,11 @@ window.wdsoffCanvas = {};
 
 	// To show or not to show?
 	app.toggleoffCanvas = function() {
-
 		if ( 'true' === $( this ).attr( 'aria-expanded' ) ) {
 			app.closeoffCanvas();
 		} else {
 			app.openoffCanvas();
 		}
-
 	};
 
 	// Show that drawer!
@@ -81,5 +78,4 @@ window.wdsoffCanvas = {};
 
 	// Engage!
 	$( app.init );
-
 }( window, jQuery, window.wdsoffCanvas ) );

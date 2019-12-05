@@ -5,7 +5,6 @@
  */
 window.ShowHideSearchForm = {};
 ( function( window, $, app ) {
-
 	// Constructor
 	app.init = function() {
 		app.cache();
@@ -38,7 +37,6 @@ window.ShowHideSearchForm = {};
 
 	// Checks to see if the menu has been opened.
 	app.searchIsOpen = function() {
-
 		if ( app.$c.body.hasClass( 'search-form-visible' ) ) {
 			return true;
 		}
@@ -58,7 +56,6 @@ window.ShowHideSearchForm = {};
 
 	// Hides the search form if we click outside of its container.
 	app.hideSearchForm = function( event ) {
-
 		if ( ! $( event.target ).parents( 'div' ).hasClass( 'site-header-action' ) ) {
 			app.$c.body.removeClass( 'search-form-visible' );
 			app.toggleSearchFormAriaLabel();
@@ -78,5 +75,4 @@ window.ShowHideSearchForm = {};
 
 	// Engage
 	$( app.init );
-
-} ( window, jQuery, window.ShowHideSearchForm ) );
+}( window, jQuery, window.ShowHideSearchForm ) );
