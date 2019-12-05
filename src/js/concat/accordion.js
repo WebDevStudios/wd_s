@@ -26,18 +26,14 @@ window.accordionBlockToggle = {};
 			window: $( window ),
 			html: $( 'html' ),
 			accordion: $( '.accordion' ),
-			items: $( '.accordion-item' ),
-			headers: $( '.accordion-item-header' ),
-			contents: $( '.accordion-item-content' ),
-			button: $( '.accordion-item-toggle' ),
 			anchorID: $( window.location.hash )
 		};
 	};
 
 	// Combine all events
 	app.bindEvents = function() {
-		$( '.accordion-item-header' ).on( 'click', app.toggleAccordion );
-		$( '.accordion-item-toggle' ).on( 'click', app.toggleAccordion );
+		$( '.accordion-item-header' ).off().on( 'click', app.toggleAccordion );
+		$( '.accordion-item-toggle' ).off().on( 'click', app.toggleAccordion );
 		app.$c.window.on( 'load', app.openHashAccordion );
 	};
 
