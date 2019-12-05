@@ -35,7 +35,7 @@ window.wdsTables = {};
 	// Adds data-label to td based on th.
 	app.addDataLabel = function() {
 		const table = app.$c.table;
-		const tableHeaders = table.find( 'thead th' );
+		const tableHeaders = table.find( 'th' );
 		const tableRow = table.find( 'tbody tr' );
 
 		tableRow.each( function() {
