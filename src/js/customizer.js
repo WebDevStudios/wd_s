@@ -5,7 +5,6 @@
  */
 window.CustomizerHeaderOptions = {};
 ( function( window, $, app ) {
-
 	// Constructor
 	app.init = function() {
 		app.cache();
@@ -21,7 +20,7 @@ window.CustomizerHeaderOptions = {};
 			window: $( window ),
 			headerButtonSelect: $( '#customize-control-_s_header_button select' ),
 			headerLinkButton: $( '#customize-control-_s_header_button_url' ),
-			headerLinkText: $( '#customize-control-_s_header_button_text' )
+			headerLinkText: $( '#customize-control-_s_header_button_text' ),
 		};
 	};
 
@@ -38,7 +37,6 @@ window.CustomizerHeaderOptions = {};
 
 	// Show/Hide the Link field when the select value changes.
 	app.showHideLinkField = function() {
-
 		if ( 'link' === app.$c.headerButtonSelect.val() ) {
 			app.$c.headerLinkButton.show();
 			app.$c.headerLinkText.show();
@@ -50,7 +48,6 @@ window.CustomizerHeaderOptions = {};
 
 	// If the value is set and is already 'link', make sure the field is displayed.
 	app.showLinkField = function() {
-
 		if ( 'link' === app.$c.headerButtonSelect.val() ) {
 			app.$c.headerLinkButton.show();
 			app.$c.headerLinkText.show();
@@ -59,5 +56,4 @@ window.CustomizerHeaderOptions = {};
 
 	// Engage
 	$( app.init );
-
-} ( window, jQuery, window.CustomizerHeaderOptions ) );
+}( window, jQuery, window.CustomizerHeaderOptions ) );
