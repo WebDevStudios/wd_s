@@ -78,7 +78,6 @@ window.wdsCarousel = {};
 	// Kick off Slick.
 	app.doSlick = function() {
 
-
 		// Render on the frontend.
 		$( document ).ready( function() {
 			app.playBackgroundVideos;
