@@ -3,84 +3,60 @@
  *
  * @author Shannon MacMillan, Corey Collins
  */
-window.accordionBlockToggle = {};
-( function( window, $, app ) {
-	// Constructor
-	app.init = function() {
-		app.cache();
+function wdsAccordion() {
+	const accordionItems = document.querySelectorAll( '.accordion-item' ),
+		accordionItemContent = document.querySelectorAll( '.accordion-item-content' );
 
-		// If we're in an ACF edit page.
-		if ( window.acf ) {
-			window.acf.addAction( 'render_block_preview', app.bindEvents );
-		}
+	// Loop through each accordion on the page and add a listener for its header.
+	accordionItems.forEach( ( accordion ) => {
+		const accordionHeader = accordion.querySelector( '.accordion-item-header' );
 
-		if ( app.meetsRequirements() ) {
-			app.bindEvents();
-		}
-	};
+		accordionHeader.addEventListener( 'click', toggleAccordion );
+	} );
 
-	// Cache all the things
-	app.cache = function() {
-		app.$c = {
-			window: $( window ),
-			html: $( 'html' ),
-			accordion: $( '.accordion' ),
-			anchorID: $( window.location.hash ),
-		};
-	};
+	// Open the hash link if one exists.
+	openHashLink();
 
-	// Combine all events
-	app.bindEvents = function() {
-		$( '.accordion-item-header' ).off().on( 'click', app.toggleAccordion );
-		$( '.accordion-item-toggle' ).off().on( 'click', app.toggleAccordion );
-		app.$c.window.on( 'load', app.openHashAccordion );
-	};
+	// Handle toggling the accordion.
+	function toggleAccordion( event ) {
+		accordionItemContent.forEach( function( content ) {
+			const targetParent = event.target.parentNode.closest( '.accordion-item-header' );
 
-	// Do we meet the requirements?
-	app.meetsRequirements = function() {
-		return app.$c.accordion.length;
-	};
+			// If we're clicking on this accordion...
+			if ( content.previousElementSibling === targetParent ) {
+				// If it's already opened, close it. Otherwise, open it!
+				if ( 'false' === content.getAttribute( 'aria-hidden' ) ) {
+					content.setAttribute( 'aria-hidden', 'true' );
+					content.parentElement.classList.remove( 'open' );
+				} else {
+					content.setAttribute( 'aria-hidden', 'false' );
+					content.parentElement.classList.add( 'open' );
+				}
+			} else {
+				content.setAttribute( 'aria-hidden', 'true' );
+				content.parentElement.classList.remove( 'open' );
+			}
+		} );
+	}
+}
 
-	app.toggleAccordion = function() {
-		// Add the open class to the item.
-		$( this ).parents( '.accordion-item' ).toggleClass( 'open' );
-
-		// Is this one expanded?
-		const isExpanded = $( this ).parents( '.accordion-item' ).hasClass( 'open' );
-
-		// Set this button's aria-expanded value.
-		$( this ).parents( '.accordion-item' ).find( '.accordion-item-toggle' ).attr( 'aria-expanded', isExpanded ? 'true' : 'false' );
-
-		// Set all other items in this block to aria-hidden=true.
-		$( this ).parents( '.accordion-block' ).find( '.accordion-item-content' ).not( $( this ).parents( '.accordion-item' ) ).attr( 'aria-hidden', 'true' );
-
-		// Set this item to aria-hidden=false.
-		$( this ).parents( '.accordion-item' ).find( '.accordion-item-content' ).attr( 'aria-hidden', isExpanded ? 'false' : 'true' );
-
-		// Hide the other panels.
-		$( this ).parents( '.accordion-block' ).find( '.accordion-item' ).not( $( this ).parents( '.accordion-item' ) ).removeClass( 'open' );
-		$( this ).parents( '.accordion-block' ).find( '.accordion-item-toggle' ).not( $( this ) ).attr( 'aria-expanded', 'false' );
-
+// Checks for a hash link in the URL and if one exists and matches an accordion, opens that accordion item.
+function openHashLink() {
+	if ( ! window.location.hash ) {
 		return false;
-	};
+	}
 
-	app.openHashAccordion = function() {
-		if ( ! app.$c.anchorID.selector ) {
-			return;
-		}
+	const hashAccordionItem = document.querySelector( window.location.hash ),
+		hashAccordionItemHeader = hashAccordionItem.previousElementSibling,
+		hashAccordionItemButton = hashAccordionItemHeader.querySelector( '.accordion-item-toggle' );
 
-		// Trigger a click on the button closest to this accordion.
-		app.$c.anchorID.parents( '.accordion-item' ).find( '.accordion-item-toggle' ).trigger( 'click' );
+	hashAccordionItemButton.click();
+}
 
-		// Not setting a cached variable as it doesn't seem to grab the height properly.
-		const adminBarHeight = $( '#wpadminbar' ).length ? $( '#wpadminbar' ).height() : 0;
+// Handles ACF + Goots backend integration.
+if ( window.acf ) {
+	window.acf.addAction( 'render_block_preview/type=wds-accordion', wdsAccordion );
+}
 
-		// Animate to the div for a nicer experience.
-		app.$c.html.animate( {
-			scrollTop: app.$c.anchorID.offset().top - adminBarHeight,
-		}, 'slow' );
-	};
-
-	// Engage
-	app.init();
-}( window, jQuery, window.accordionBlockToggle ) );
+// Fire off our function.
+wdsAccordion();
