@@ -9,6 +9,10 @@
 		headerSearchToggle = document.querySelector( '.site-header-action .cta-button' ),
 		headerSearchForm = document.querySelector( '.site-header-action .form-container' );
 
+	if ( ! headerSearch ) {
+		return;
+	}
+
 	headerSearchToggle.addEventListener( 'click', toggleSearchForm );
 	document.body.addEventListener( 'keyup', hideSearchForm );
 	document.body.addEventListener( 'touchstart', hideSearchForm );
