@@ -1,46 +1,30 @@
 /**
  * Video Playback Script.
+ *
+ * @author Jo Murgel, Corey Collins
  */
-window.WDSVideoBackgroundObject = {};
-( function( window, $, app ) {
-	// Constructor.
-	app.init = function() {
-		app.cache();
 
-		if ( app.meetsRequirements() ) {
-			app.bindEvents();
-		}
-	};
+( function() {
+	const videoButtons = document.querySelectorAll( '.video-toggle' );
 
-	// Cache all the things.
-	app.cache = function() {
-		app.$c = {
-			window: $( window ),
-			videoButton: $( '.video-toggle' ),
-		};
-	};
+	// Toggle playback on background videos.
+	videoButtons.forEach( ( videoButton ) => {
+		videoButton.addEventListener( 'click', toggleVideoPlayback );
+	} );
 
-	// Combine all events.
-	app.bindEvents = function() {
-		app.$c.videoButton.on( 'click', app.doTogglePlayback );
-	};
+	function toggleVideoPlayback( event ) {
 
-	// Do we meet the requirements?
-	app.meetsRequirements = function() {
-		return app.$c.videoButton.length;
-	};
+		const targetParent = event.target.parentNode,
+			targetElement = targetParent.querySelector( '.video-background' );
 
-	// Video Playback.
-	app.doTogglePlayback = function() {
-		$( this ).parents( '.content-block' ).toggleClass( 'video-toggled' );
+		targetParent.classList.toggle( 'video-toggled' );
 
-		if ( $( this ).parents( '.content-block' ).hasClass( 'video-toggled' ) ) {
-			$( this ).siblings( '.video-background' ).trigger( 'pause' );
+		if ( targetParent.classList.contains( 'video-toggled' ) ) {
+			console.log( 'toggled' );
+			targetElement.pause();
 		} else {
-			$( this ).siblings( '.video-background' ).trigger( 'play' );
+			console.log( 'not toggled' );
+			targetElement.play();
 		}
-	};
-
-	// Engage!
-	$( app.init );
-}( window, jQuery, window.WDSVideoBackgroundObject ) );
+	}
+}() );
