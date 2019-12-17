@@ -9,6 +9,11 @@
 		const tableRow = table.querySelectorAll( 'tbody tr' ),
 			tableHeaders = table.querySelectorAll( 'th' );
 
+		// Bail if our table has no headers set.
+		if ( 0 == tableHeaders.length ) {
+			return;
+		}
+
 		tableRow.forEach( ( row ) => {
 			const tableCell = row.querySelectorAll( 'td' );
 
