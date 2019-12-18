@@ -3,79 +3,55 @@
  *
  * Help deal with the off-canvas mobile menu.
  */
-window.wdsoffCanvas = {};
-( function( window, $, app ) {
-	// Constructor.
-	app.init = function() {
-		app.cache();
 
-		if ( app.meetsRequirements() ) {
-			app.bindEvents();
-		}
-	};
+// Make sure everything is loaded first.
+if ( 'complete' === document.readyState || 'loading' !== document.readyState && ! document.documentElement.doScroll ) {
+	wdsOffCanvas();
+} else {
+	document.addEventListener( 'DOMContentLoaded', wdsOffCanvas );
+}
 
-	// Cache all the things.
-	app.cache = function() {
-		app.$c = {
-			body: $( 'body' ),
-			offCanvasClose: $( '.off-canvas-close' ),
-			offCanvasContainer: $( '.off-canvas-container' ),
-			offCanvasOpen: $( '.off-canvas-open' ),
-			offCanvasScreen: $( '.off-canvas-screen' ),
-		};
-	};
+function wdsOffCanvas() {
 
-	// Combine all events.
-	app.bindEvents = function() {
-		app.$c.body.on( 'keydown', app.escKeyClose );
-		app.$c.offCanvasClose.on( 'click', app.closeoffCanvas );
-		app.$c.offCanvasOpen.on( 'click', app.toggleoffCanvas );
-		app.$c.offCanvasScreen.on( 'click', app.closeoffCanvas );
-	};
+	const offCanvasClose = document.querySelector( '.off-canvas-close' ),
+		offCanvasContainer = document.querySelector( '.off-canvas-container' ),
+		offCanvasOpen = document.querySelector( '.off-canvas-open' ),
+		offCanvasScreen = document.querySelector( '.off-canvas-screen' );
 
-	// Do we meet the requirements?
-	app.meetsRequirements = function() {
-		return app.$c.offCanvasContainer.length;
-	};
+	offCanvasOpen.addEventListener( 'click', toggleOffCanvas );
+	offCanvasClose.addEventListener( 'click', closeOffCanvas );
+	offCanvasScreen.addEventListener( 'click', closeOffCanvas );
+	document.body.addEventListener( 'keydown', closeOnEscape );
 
-	// To show or not to show?
-	app.toggleoffCanvas = function() {
-		if ( 'true' === $( this ).attr( 'aria-expanded' ) ) {
-			app.closeoffCanvas();
-		} else {
-			app.openoffCanvas();
-		}
-	};
-
-	// Show that drawer!
-	app.openoffCanvas = function() {
-		app.$c.offCanvasContainer.addClass( 'is-visible' );
-		app.$c.offCanvasOpen.addClass( 'is-visible' );
-		app.$c.offCanvasScreen.addClass( 'is-visible' );
-
-		app.$c.offCanvasOpen.attr( 'aria-expanded', true );
-		app.$c.offCanvasContainer.attr( 'aria-hidden', false );
-	};
-
-	// Close that drawer!
-	app.closeoffCanvas = function() {
-		app.$c.offCanvasContainer.removeClass( 'is-visible' );
-		app.$c.offCanvasOpen.removeClass( 'is-visible' );
-		app.$c.offCanvasScreen.removeClass( 'is-visible' );
-
-		app.$c.offCanvasOpen.attr( 'aria-expanded', false );
-		app.$c.offCanvasContainer.attr( 'aria-hidden', true );
-
-		app.$c.offCanvasOpen.focus();
-	};
-
-	// Close drawer if "esc" key is pressed.
-	app.escKeyClose = function( event ) {
+	function closeOnEscape( event ) {
 		if ( 27 === event.keyCode ) {
-			app.closeoffCanvas();
+			closeOffCanvas();
 		}
-	};
+	}
 
-	// Engage!
-	$( app.init );
-}( window, jQuery, window.wdsoffCanvas ) );
+	function closeOffCanvas() {
+		offCanvasContainer.classList.remove( 'is-visible' );
+		offCanvasOpen.classList.remove( 'is-visible' );
+		offCanvasScreen.classList.remove( 'is-visible' );
+
+		offCanvasContainer.setAttribute( 'aria-hidden', true );
+		offCanvasOpen.setAttribute( 'aria-expanded', false );
+	}
+
+	function toggleOffCanvas() {
+		if ( true === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
+			closeOffCanvas();
+		} else {
+			openOffCanvas();
+		}
+	}
+
+	function openOffCanvas() {
+		offCanvasContainer.classList.add( 'is-visible' );
+		offCanvasOpen.classList.add( 'is-visible' );
+		offCanvasScreen.classList.add( 'is-visible' );
+
+		offCanvasContainer.setAttribute( 'aria-hidden', false );
+		offCanvasOpen.setAttribute( 'aria-expanded', true );
+	}
+}
