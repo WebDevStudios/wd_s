@@ -3,47 +3,77 @@
  *
  * Helpers for the primary navigation.
  */
-window.wdsPrimaryNavigation = {};
-( function( window, $, app ) {
-	// Constructor.
-	app.init = function() {
-		app.cache();
 
-		if ( app.meetsRequirements() ) {
-			app.bindEvents();
+( function() {
+	const subMenuParentItem = document.querySelectorAll( '.main-navigation .menu-item-has-children' );
+
+	document.addEventListener( 'DOMContentLoaded', addDownArrow );
+	document.addEventListener( 'DOMContentLoaded', toggleFocusClass );
+
+	function addDownArrow() {
+		subMenuParentItem.forEach( ( parentItem ) => {
+			const menuItem = parentItem.querySelector( 'a' );
+			menuItem.innerHTML += '<span class="caret-down" aria-hidden="true"></span>';
+		} );
+	}
+
+	function toggleFocusClass() {
+		subMenuParentItem.forEach( ( parentItem ) => {
+			parentItem.addEventListener( 'focusin', toggleIn );
+			parentItem.addEventListener( 'focusout', toggleOut );
+		} );
+	}
+
+	function toggleIn( event ) {
+		const parentMenuItems = getParents( event.target.parentNode, '.menu-item-has-children' );
+		parentMenuItems.forEach( ( parentItem ) => {
+			parentItem.classList.add( 'focus' );
+		} );
+	}
+
+	function toggleOut( event ) {
+		const parentMenuItems = getParents( event.target.parentNode, '.menu-item-has-children' );
+		parentMenuItems.forEach( ( parentItem ) => {
+			parentItem.classList.remove( 'focus' );
+		} );
+	}
+
+	// Get all of the parents for a matching element and selector.
+	// https://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/#getting-all-matches-up-the-tree
+	var getParents = function ( elem, selector ) {
+
+		// Element.matches() polyfill
+		if (!Element.prototype.matches) {
+			Element.prototype.matches =
+				Element.prototype.matchesSelector ||
+				Element.prototype.mozMatchesSelector ||
+				Element.prototype.msMatchesSelector ||
+				Element.prototype.oMatchesSelector ||
+				Element.prototype.webkitMatchesSelector ||
+				function(s) {
+					var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+						i = matches.length;
+					while (--i >= 0 && matches.item(i) !== this) {}
+					return i > -1;
+				};
 		}
-	};
 
-	// Cache all the things.
-	app.cache = function() {
-		app.$c = {
-			window: $( window ),
-			subMenuContainer: $( '.main-navigation .sub-menu' ),
-			subMenuParentItem: $( '.main-navigation li.menu-item-has-children' ),
-		};
-	};
+		// Setup parents array
+		var parents = [];
 
-	// Combine all events.
-	app.bindEvents = function() {
-		app.$c.window.on( 'load', app.addDownArrow );
-		app.$c.subMenuParentItem.find( 'a' ).on( 'focusin focusout', app.toggleFocus );
-	};
+		// Get matching parent elements
+		for ( ; elem && elem !== document; elem = elem.parentNode ) {
 
-	// Do we meet the requirements?
-	app.meetsRequirements = function() {
-		return app.$c.subMenuContainer.length;
-	};
+			// Add matching parents to array
+			if ( selector ) {
+				if ( elem.matches( selector ) ) {
+					parents.push( elem );
+				}
+			} else {
+				parents.push( elem );
+			}
+		}
 
-	// Add the down arrow to submenu parents.
-	app.addDownArrow = function() {
-		app.$c.subMenuParentItem.find( '> a' ).append( '<span class="caret-down" aria-hidden="true"></span>' );
+		return parents;
 	};
-
-	// Toggle the focus class on the link parent.
-	app.toggleFocus = function() {
-		$( this ).parents( 'li.menu-item-has-children' ).toggleClass( 'focus' );
-	};
-
-	// Engage!
-	$( app.init );
-}( window, jQuery, window.wdsPrimaryNavigation ) );
+}() );
