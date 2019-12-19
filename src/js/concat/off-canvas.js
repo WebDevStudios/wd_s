@@ -5,14 +5,13 @@
  */
 
 // Make sure everything is loaded first.
-if ( 'complete' === document.readyState || 'loading' !== document.readyState && ! document.documentElement.doScroll ) {
+if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
 	wdsOffCanvas();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsOffCanvas );
 }
 
 function wdsOffCanvas() {
-
 	const offCanvasClose = document.querySelector( '.off-canvas-close' ),
 		offCanvasContainer = document.querySelector( '.off-canvas-container' ),
 		offCanvasOpen = document.querySelector( '.off-canvas-open' ),

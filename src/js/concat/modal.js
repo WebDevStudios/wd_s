@@ -5,7 +5,7 @@
  */
 
 // Make sure everything is loaded first.
-if ( 'complete' === document.readyState || 'loading' !== document.readyState && ! document.documentElement.doScroll ) {
+if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
 	wdsModals();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsModals );
@@ -13,7 +13,7 @@ if ( 'complete' === document.readyState || 'loading' !== document.readyState && 
 
 function wdsModals() {
 	const modalTrigger = document.querySelectorAll( '.modal-trigger' ),
-		modalClose = document.querySelectorAll( '.close' ),
+		modalClose = document.querySelectorAll( '.modal .close' ),
 		pageBody = document.body;
 
 	// Loop through each modal trigger on the page and add a listener for its header.
@@ -66,29 +66,26 @@ function wdsModals() {
 			return;
 		}
 
-		const openModal = document.querySelector( '.modal.modal-open' ),
-			modalIframe = openModal.querySelector( 'iframe' );
+		const currentlyOpenModal = document.querySelector( '.modal.modal-open' ),
+			modalIframe = currentlyOpenModal.querySelector( 'iframe' );
 
-			if ( 27 === event.keyCode ) {
-				openModal.setAttribute( 'aria-hidden', true );
-				openModal.classList.remove( 'modal-open' );
-				pageBody.classList.remove( 'modal-open' );
+		if ( 27 === event.keyCode ) {
+			currentlyOpenModal.setAttribute( 'aria-hidden', true );
+			currentlyOpenModal.classList.remove( 'modal-open' );
+			pageBody.classList.remove( 'modal-open' );
 
-				if ( modalIframe ) {
-					const iframeURL = modalIframe.getAttribute( 'src' );
-
-					modalIframe.setAttribute( 'src', '' );
-					modalIframe.setAttribute( 'src', iframeURL );
-				}
+			if ( modalIframe ) {
+				const iframeURL = modalIframe.getAttribute( 'src' );
+				modalIframe.setAttribute( 'src', '' );
+				modalIframe.setAttribute( 'src', iframeURL );
+			}
 		}
 	}
 
 	function closeOnClick( event ) {
-		const parentModal = event.target.parentNode.closest( '.modal' ),
-			clickedElement = event.target;
+		const clickedElement = event.target;
 
 		if ( pageBody.classList.contains( 'modal-open' ) ) {
-
 			if ( clickedElement.classList.contains( 'modal-open' ) ) {
 				const modalIframe = clickedElement.querySelector( 'iframe' );
 

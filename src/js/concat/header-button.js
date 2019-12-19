@@ -5,13 +5,14 @@
  */
 
 ( function() {
-	const headerSearch = document.querySelector( '.site-header-action' ),
-		headerSearchToggle = document.querySelector( '.site-header-action .cta-button' ),
-		headerSearchForm = document.querySelector( '.site-header-action .form-container' );
+	const headerSearch = document.querySelector( '.site-header-action' );
 
 	if ( ! headerSearch ) {
 		return;
 	}
+
+	const headerSearchToggle = document.querySelector( '.site-header-action .cta-button' ),
+		headerSearchForm = document.querySelector( '.site-header-action .form-container' );
 
 	headerSearchToggle.addEventListener( 'click', toggleSearchForm );
 	document.body.addEventListener( 'keyup', hideSearchForm );

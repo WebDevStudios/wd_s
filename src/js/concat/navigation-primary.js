@@ -40,31 +40,29 @@
 
 	// Get all of the parents for a matching element and selector.
 	// https://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/#getting-all-matches-up-the-tree
-	var getParents = function ( elem, selector ) {
-
-		// Element.matches() polyfill
-		if (!Element.prototype.matches) {
+	const getParents = function( elem, selector ) {
+		// Element.matches() polyfill.
+		if ( ! Element.prototype.matches ) {
 			Element.prototype.matches =
 				Element.prototype.matchesSelector ||
 				Element.prototype.mozMatchesSelector ||
 				Element.prototype.msMatchesSelector ||
 				Element.prototype.oMatchesSelector ||
 				Element.prototype.webkitMatchesSelector ||
-				function(s) {
-					var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-						i = matches.length;
-					while (--i >= 0 && matches.item(i) !== this) {}
+				function( s ) {
+					const matches = ( this.document || this.ownerDocument ).querySelectorAll( s );
+					let i = matches.length;
+					while ( --i >= 0 && matches.item( i ) !== this ) {}
 					return i > -1;
 				};
 		}
 
-		// Setup parents array
-		var parents = [];
+		// Setup parents array.
+		const parents = [];
 
-		// Get matching parent elements
+		// Get matching parent elements.
 		for ( ; elem && elem !== document; elem = elem.parentNode ) {
-
-			// Add matching parents to array
+			// Add matching parents to array.
 			if ( selector ) {
 				if ( elem.matches( selector ) ) {
 					parents.push( elem );

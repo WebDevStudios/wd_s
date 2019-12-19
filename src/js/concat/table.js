@@ -6,13 +6,14 @@
 
 ( function() {
 	document.querySelectorAll( 'table' ).forEach( ( table ) => {
-		const tableRow = table.querySelectorAll( 'tbody tr' ),
-			tableHeaders = table.querySelectorAll( 'th' );
+		const tableHeaders = table.querySelectorAll( 'th' );
 
 		// Bail if our table has no headers set.
-		if ( 0 == tableHeaders.length ) {
+		if ( 0 === tableHeaders.length ) {
 			return;
 		}
+
+		const tableRow = table.querySelectorAll( 'tbody tr' );
 
 		tableRow.forEach( ( row ) => {
 			const tableCell = row.querySelectorAll( 'td' );

@@ -5,7 +5,7 @@
  */
 
 // Make sure everything is loaded first.
-if ( 'complete' === document.readyState || 'loading' !== document.readyState && ! document.documentElement.doScroll ) {
+if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
 	wdsMobileMenu();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsMobileMenu );
@@ -41,7 +41,6 @@ function wdsMobileMenu() {
 
 	// Open a submenu.
 	function maybeOpenSubmenu( parent, subMenu ) {
-
 		if ( parent.classList.contains( 'is-visible' ) ) {
 			closeSubmenu( parent, subMenu );
 			return;
@@ -53,18 +52,17 @@ function wdsMobileMenu() {
 
 		// Slide the menu in.
 		subMenu.classList.add( 'is-visible', 'animated', 'slideInLeft' );
-	};
+	}
 
 	// Close a submenu.
 	function closeSubmenu( parent, subMenu ) {
 		parent.classList.remove( 'is-visible' );
 		parent.querySelector( '.parent-indicator' ).setAttribute( 'aria-expanded', false );
 		subMenu.classList.remove( 'is-visible', 'animated', 'slideInLeft' );
-	};
+	}
 
 	// Close all open submenus on the same level/hierarchy as the menu we're trying to open.
 	function closeAllSubmenus( targetParent ) {
-
 		const submenuSiblings = getSiblings( targetParent );
 
 		submenuSiblings.forEach( ( sibling ) => {
@@ -81,13 +79,11 @@ function wdsMobileMenu() {
 	}
 
 	// Find siblings of an item.
-	let getSiblings = function( element ) {
-
-		let siblings = [];
+	const getSiblings = function( element ) {
+		const siblings = [];
 		let sibling = element.parentNode.firstChild;
 
 		while ( sibling ) {
-
 			if ( sibling.nodeType === 1 && sibling !== element ) {
 				siblings.push( sibling );
 			}
