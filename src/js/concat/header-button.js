@@ -5,14 +5,18 @@
  */
 
 ( function() {
-	const headerSearch = document.querySelector( '.site-header-action' );
+	const siteHeaderAction = document.querySelector( '.site-header-action' );
 
-	if ( ! headerSearch ) {
+	if ( ! siteHeaderAction ) {
 		return;
 	}
 
 	const headerSearchToggle = document.querySelector( '.site-header-action .cta-button' ),
 		headerSearchForm = document.querySelector( '.site-header-action .form-container' );
+
+	if ( ! headerSearchToggle || ! headerSearchForm ) {
+		return;
+	}
 
 	headerSearchToggle.addEventListener( 'click', toggleSearchForm );
 	document.body.addEventListener( 'keyup', hideSearchForm );
@@ -47,7 +51,7 @@
 
 	// Hide the form if we click or tab outside of its container.
 	function hideSearchForm( event ) {
-		const isTargetInside = headerSearch.contains( event.target );
+		const isTargetInside = siteHeaderAction.contains( event.target );
 
 		if ( ! isTargetInside ) {
 			document.body.classList.remove( 'search-form-visible' );
