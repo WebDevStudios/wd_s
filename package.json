@@ -34,6 +34,7 @@
     "rimraf": "^3.0.0",
     "stylelint": "^11.1.1",
     "stylelint-config-wordpress": "^15.0.0",
+    "stylelint-scss": "^3.13.0",
     "svg-sprite-generator": "0.0.7",
     "svgo": "^1.3.0",
     "uglify-es": "^3.3.9",
@@ -45,7 +46,7 @@
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
     "lint": "eslint src/js || true",
-    "lint-scss": "stylelint src/scss/*.scss --syntax scss || true",
+    "lint-scss": "stylelint src/scss/*/*.scss --syntax scss || true",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
@@ -73,6 +74,14 @@
     "extends": "plugin:@wordpress/eslint-plugin/recommended"
   },
   "stylelint": {
-    "extends": "stylelint-config-wordpress"
+    "extends": "stylelint-config-wordpress",
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "rules": {
+      "at-rule-no-unknown": [ true, {
+        "ignoreAtRules": [ "extend", "at-root", "debug", "warn", "error", "if", "else", "for", "each", "while", "mixin", "include", "content", "return", "function" ]
+      } ]
+    }
   }
 }
