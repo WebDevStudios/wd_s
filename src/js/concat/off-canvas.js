@@ -12,10 +12,15 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 }
 
 function wdsOffCanvas() {
+	const offCanvasScreen = document.querySelector( '.off-canvas-screen' );
+
+	if ( ! offCanvasScreen ) {
+		return;
+	}
+
 	const offCanvasClose = document.querySelector( '.off-canvas-close' ),
 		offCanvasContainer = document.querySelector( '.off-canvas-container' ),
-		offCanvasOpen = document.querySelector( '.off-canvas-open' ),
-		offCanvasScreen = document.querySelector( '.off-canvas-screen' );
+		offCanvasOpen = document.querySelector( '.off-canvas-open' );
 
 	offCanvasOpen.addEventListener( 'click', toggleOffCanvas );
 	offCanvasClose.addEventListener( 'click', closeOffCanvas );
