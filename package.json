@@ -20,6 +20,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@webdevstudios/js-coding-standards": "^1.0.0-beta1",
     "@wordpress/eslint-plugin": "^3.1.0",
     "autoprefixer": "^9.6.5",
     "browser-sync": "^2.26.7",
@@ -71,7 +72,7 @@
     "defaults"
   ],
   "eslintConfig": {
-    "extends": "plugin:@wordpress/eslint-plugin/recommended"
+    "extends": "@webdevstudios/js-coding-standards"
   },
   "stylelint": {
     "extends": "stylelint-config-wordpress",
@@ -79,9 +80,14 @@
       "stylelint-scss"
     ],
     "rules": {
-      "at-rule-no-unknown": [ true, {
-        "ignoreAtRules": [ "extend", "at-root", "debug", "warn", "error", "if", "else", "for", "each", "while", "mixin", "include", "content", "return", "function" ]
-      } ]
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extend", "at-root", "debug", "warn", "error", "if", "else", "for", "each", "while", "mixin", "include", "content", "return", "function"
+          ]
+        }
+      ]
     }
   }
 }
