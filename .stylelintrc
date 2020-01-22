@@ -1,0 +1,86 @@
+{
+	"ignoreFiles": [
+		"src/scss/vendor/**/*.scss",
+		"src/scss/utilities/variables/_color-var.scss"
+	],
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"at-rule-name-case": "lower",
+		"block-closing-brace-empty-line-before": "never",
+		"block-closing-brace-newline-after": [
+			"always",
+			{
+				ignoreAtRules: ["if", "else", "else if"]
+			}
+		],
+		"block-closing-brace-newline-before": "always",
+		"block-no-empty": true,
+		"declaration-block-no-shorthand-property-overrides": true,
+		"block-opening-brace-newline-after": [
+		"always",
+			{
+				ignoreAtRules: ["if", "else", "else if"]
+			}
+		],
+		"block-opening-brace-space-before": "always",
+		"color-hex-case": "lower",
+		"color-named": "never",
+		"color-no-hex": true,
+		"color-no-invalid-hex": true,
+		"comment-empty-line-before": "always",
+		"comment-no-empty": true,
+		"declaration-property-unit-whitelist": {
+			"/^border/": ["px"],
+			"box-shadow": ["rem"],
+			"font-size": ["rem"],
+			"letter-spacing": ["em"],
+			"text-shadow": ["em"],
+			"width": ["rem", "vw"],
+			"height": ["rem", "vh"],
+			"/^margin/": ["rem"],
+			"/^padding/": ["rem"],
+		},
+		"declaration-block-single-line-max-declarations": 0,
+		"font-weight-notation": "numeric",
+		"function-name-case": "lower",
+		"function-url-quotes": "always",
+		"indentation": [
+			"tab",
+			{
+				ignore: "param"
+			}
+		],
+		"max-nesting-depth": 4,
+		"number-no-trailing-zeros": true,
+		"number-leading-zero": "always",
+		"order/order": [
+			"at-rules",
+			"declarations",
+			{
+				type: "at-rule",
+				name: "include",
+				parameter: "media"
+			}
+		],
+		"order/properties-alphabetical-order": true,
+		"property-case": "lower",
+		"property-no-unknown": true,
+		"property-no-vendor-prefix": true,
+		"rule-empty-line-before": [
+			"always",
+				{
+					"except": [ "after-single-line-comment" ]
+				}
+		],
+		"selector-attribute-quotes": "always",
+		"selector-class-pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+		"selector-list-comma-newline-after": "always",
+		"selector-max-id": 0,
+		"selector-type-case": "lower",
+		"string-quotes": "single",
+		"unit-case": "lower",
+		"value-no-vendor-prefix": true,
+	}
+}
