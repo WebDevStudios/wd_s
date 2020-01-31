@@ -11,6 +11,12 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 	document.addEventListener( 'DOMContentLoaded', wdsModals );
 }
 
+/**
+ * Fire off our modal functions.
+ *
+ * @since January 31, 2020
+ * @author Corey Collins
+ */
 function wdsModals() {
 	const modalTrigger = document.querySelectorAll( '.modal-trigger' ),
 		modalClose = document.querySelectorAll( '.modal .close' ),
@@ -28,6 +34,14 @@ function wdsModals() {
 	pageBody.addEventListener( 'keydown', closeOnEscape );
 	pageBody.addEventListener( 'click', closeOnClick );
 
+	/**
+	 * Open a modal when we trigger it.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function openModal( event ) {
 		const thisTarget = event.target,
 			thisModalTarget = thisTarget.getAttribute( 'data-target' ),
@@ -43,6 +57,14 @@ function wdsModals() {
 		}
 	}
 
+	/**
+	 * Close a modal when we hit the close button.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeModalOnCloseButton( event ) {
 		const thisTarget = event.target,
 			thisModalTarget = thisTarget.getAttribute( 'data-target' ),
@@ -61,6 +83,14 @@ function wdsModals() {
 		}
 	}
 
+	/**
+	 * Close the modal when we hit the escape key.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeOnEscape( event ) {
 		if ( ! pageBody.classList.contains( 'modal-open' ) ) {
 			return;
@@ -82,6 +112,14 @@ function wdsModals() {
 		}
 	}
 
+	/**
+	 * Close the modal when we hit outside of the modal area.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeOnClick( event ) {
 		const clickedElement = event.target;
 

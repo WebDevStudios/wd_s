@@ -11,6 +11,12 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 	document.addEventListener( 'DOMContentLoaded', wdsOffCanvas );
 }
 
+/**
+ * Kick off our off canvas functions.
+ *
+ * @since January 31, 2020
+ * @author Corey Collins
+ */
 function wdsOffCanvas() {
 	const offCanvasScreen = document.querySelector( '.off-canvas-screen' );
 
@@ -27,12 +33,26 @@ function wdsOffCanvas() {
 	offCanvasScreen.addEventListener( 'click', closeOffCanvas );
 	document.body.addEventListener( 'keydown', closeOnEscape );
 
+	/**
+	 * Close everything when we hit the escape key.
+	 *
+	 * @param {Object} event The event trigger.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeOnEscape( event ) {
 		if ( 27 === event.keyCode ) {
 			closeOffCanvas();
 		}
 	}
 
+	/**
+	 * Handle closing the off-canvas overlay.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeOffCanvas() {
 		offCanvasContainer.classList.remove( 'is-visible' );
 		offCanvasOpen.classList.remove( 'is-visible' );
@@ -42,6 +62,12 @@ function wdsOffCanvas() {
 		offCanvasOpen.setAttribute( 'aria-expanded', false );
 	}
 
+	/**
+	 * Toggle the display of the off-canvas overlay.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleOffCanvas() {
 		if ( true === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
 			closeOffCanvas();
@@ -50,6 +76,12 @@ function wdsOffCanvas() {
 		}
 	}
 
+	/**
+	 * Handle opening the off-canvas overlay.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function openOffCanvas() {
 		offCanvasContainer.classList.add( 'is-visible' );
 		offCanvasOpen.classList.add( 'is-visible' );

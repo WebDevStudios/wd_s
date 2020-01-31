@@ -11,7 +11,12 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 	document.addEventListener( 'DOMContentLoaded', wdsMobileMenu );
 }
 
-// Handle our mobile menus.
+/**
+ * Handle our mobile menus.
+ *
+ * @since January 31, 2020
+ * @author Corey Collins
+ */
 function wdsMobileMenu() {
 	const subMenuParentItem = document.querySelectorAll( '.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children' );
 
@@ -27,7 +32,14 @@ function wdsMobileMenu() {
 		} );
 	} );
 
-	// Open/Close a submenu.
+	/**
+	 * Open/Close a submenu.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleSubmenu( event ) {
 		event.preventDefault();
 
@@ -39,7 +51,15 @@ function wdsMobileMenu() {
 		maybeOpenSubmenu( targetParent, subMenu );
 	}
 
-	// Open a submenu.
+	/**
+	 * Open a submenu.
+	 *
+	 * @param {Object} parent THe parent menu.
+	 * @param {Object} subMenu The submenu.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function maybeOpenSubmenu( parent, subMenu ) {
 		if ( parent.classList.contains( 'is-visible' ) ) {
 			closeSubmenu( parent, subMenu );
@@ -54,14 +74,29 @@ function wdsMobileMenu() {
 		subMenu.classList.add( 'is-visible', 'animated', 'slideInLeft' );
 	}
 
-	// Close a submenu.
+	/**
+	 * Close a submenu.
+	 *
+	 * @param {Object} parent The parent item.
+	 * @param {Object} subMenu The submenu.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeSubmenu( parent, subMenu ) {
 		parent.classList.remove( 'is-visible' );
 		parent.querySelector( '.parent-indicator' ).setAttribute( 'aria-expanded', false );
 		subMenu.classList.remove( 'is-visible', 'animated', 'slideInLeft' );
 	}
 
-	// Close all open submenus on the same level/hierarchy as the menu we're trying to open.
+	/**
+	 * Close all open submenus on the same level/hierarchy as the menu we're trying to open.
+	 *
+	 * @param {Object} targetParent The target parent item.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function closeAllSubmenus( targetParent ) {
 		const submenuSiblings = getSiblings( targetParent );
 
@@ -78,13 +113,21 @@ function wdsMobileMenu() {
 		} );
 	}
 
-	// Find siblings of an item.
+	/* eslint-disable func-style */
+	/**
+	 * Find siblings of an item.
+	 *
+	 * @param {Object} element The element being opened.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	const getSiblings = function( element ) {
 		const siblings = [];
 		let sibling = element.parentNode.firstChild;
 
 		while ( sibling ) {
-			if ( sibling.nodeType === 1 && sibling !== element ) {
+			if ( 1 === sibling.nodeType && sibling !== element ) {
 				siblings.push( sibling );
 			}
 

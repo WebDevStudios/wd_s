@@ -23,7 +23,12 @@
 	document.body.addEventListener( 'touchstart', hideSearchForm );
 	document.body.addEventListener( 'click', hideSearchForm );
 
-	// Check to see if the search is open or not.
+	/**
+	 * Check to see if the search is open or not.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function searchIsOpen() {
 		if ( document.body.classList.contains( 'search-form-visible' ) ) {
 			return true;
@@ -32,13 +37,23 @@
 		return false;
 	}
 
-	// Toggle our form display by changing body classes and aria labels.
+	/**
+	 * Toggle our form display by changing body classes and aria labels.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleSearchForm() {
 		document.body.classList.toggle( 'search-form-visible' );
 		toggleAriaLabels();
 	}
 
-	// Toggle the aria label values.
+	/**
+	 * Toggle the aria label values.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleAriaLabels() {
 		if ( searchIsOpen() ) {
 			headerSearchForm.setAttribute( 'aria-hidden', 'false' );
@@ -49,7 +64,14 @@
 		}
 	}
 
-	// Hide the form if we click or tab outside of its container.
+	/**
+	 * Hide the form if we click or tab outside of its container.
+	 *
+	 * @param {Object} event The targeted element.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function hideSearchForm( event ) {
 		const isTargetInside = siteHeaderAction.contains( event.target );
 

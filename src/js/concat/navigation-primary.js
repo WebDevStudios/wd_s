@@ -3,13 +3,18 @@
  *
  * Helpers for the primary navigation.
  */
-
 ( function() {
 	const subMenuParentItem = document.querySelectorAll( '.main-navigation .menu-item-has-children' );
 
 	document.addEventListener( 'DOMContentLoaded', addDownArrow );
 	document.addEventListener( 'DOMContentLoaded', toggleFocusClass );
 
+	/**
+	 * Adds the down arrow to parent menu items.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function addDownArrow() {
 		subMenuParentItem.forEach( ( parentItem ) => {
 			const menuItem = parentItem.querySelector( 'a' );
@@ -17,6 +22,12 @@
 		} );
 	}
 
+	/**
+	 * Adds event listeners for tabbing in and out of parent items.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleFocusClass() {
 		subMenuParentItem.forEach( ( parentItem ) => {
 			parentItem.addEventListener( 'focusin', toggleIn );
@@ -24,6 +35,14 @@
 		} );
 	}
 
+	/**
+	 * Handle toggling a parent menu on.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleIn( event ) {
 		const parentMenuItems = getParents( event.target.parentNode, '.menu-item-has-children' );
 		parentMenuItems.forEach( ( parentItem ) => {
@@ -31,6 +50,14 @@
 		} );
 	}
 
+	/**
+	 * Handle toggling a parent menu off.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function toggleOut( event ) {
 		const parentMenuItems = getParents( event.target.parentNode, '.menu-item-has-children' );
 		parentMenuItems.forEach( ( parentItem ) => {
@@ -38,9 +65,19 @@
 		} );
 	}
 
-	// Get all of the parents for a matching element and selector.
-	// https://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/#getting-all-matches-up-the-tree
+	/* eslint-disable func-style */
+	/**
+	 * Get all of the parents for a matching element and selector.
+	 * https://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/#getting-all-matches-up-the-tree
+	 *
+	 * @param {Object} elem The parent menu item.
+	 * @param {string} selector The CSS class of the element.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	const getParents = function( elem, selector ) {
+
 		// Element.matches() polyfill.
 		if ( ! Element.prototype.matches ) {
 			Element.prototype.matches =
@@ -52,8 +89,8 @@
 				function( s ) {
 					const matches = ( this.document || this.ownerDocument ).querySelectorAll( s );
 					let i = matches.length;
-					while ( --i >= 0 && matches.item( i ) !== this ) {}
-					return i > -1;
+					while ( 0 >= --i && matches.item( i ) !== this ) {}
+					return -1 > i;
 				};
 		}
 
@@ -62,6 +99,7 @@
 
 		// Get matching parent elements.
 		for ( ; elem && elem !== document; elem = elem.parentNode ) {
+
 			// Add matching parents to array.
 			if ( selector ) {
 				if ( elem.matches( selector ) ) {

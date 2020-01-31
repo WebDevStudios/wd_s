@@ -12,6 +12,14 @@
 		videoButton.addEventListener( 'click', toggleVideoPlayback );
 	} );
 
+	/**
+	 * Toggle video playback when the button is pressed.
+	 *
+	 * @param {Object} event The triggered event.
+	 *
+	 * @since January 31, 2020
+	 * @author Jo Murgel, Corey Collins
+	 */
 	function toggleVideoPlayback( event ) {
 		const targetParent = event.target.parentNode,
 			targetElement = targetParent.querySelector( '.video-background' );

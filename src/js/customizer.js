@@ -1,6 +1,7 @@
 /**
  * Show or hide the URL field in the Header Button options when the select option is changed.
  *
+ * @since January 31, 2020
  * @author Corey Collins
  */
 
@@ -10,6 +11,12 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 	document.addEventListener( 'DOMContentLoaded', wdsCustomizer );
 }
 
+/**
+ * Fire off the customizer functions.
+ *
+ * @since January 31, 2020
+ * @author Corey Collins
+ */
 function wdsCustomizer() {
 	const headerButtonSelect = document.querySelector( '#customize-control-_s_header_button select' );
 
@@ -22,6 +29,12 @@ function wdsCustomizer() {
 
 	headerButtonSelect.addEventListener( 'change', showHideLinkField );
 
+	/**
+	 * Handle showing/hiding the link field.
+	 *
+	 * @since January 31, 2020
+	 * @author Corey Collins
+	 */
 	function showHideLinkField() {
 		if ( 'link' === headerButtonSelect.value ) {
 			headerLinkButton.style.display = '';

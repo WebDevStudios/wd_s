@@ -1,6 +1,7 @@
 /**
  * Accordion block functionality
  *
+ * @since January 31, 2020
  * @author Shannon MacMillan, Corey Collins
  */
 function wdsAccordion() {
@@ -17,13 +18,21 @@ function wdsAccordion() {
 	// Open the hash link if one exists.
 	openHashLink();
 
-	// Handle toggling the accordion.
+	/**
+	 * Handle toggling the accordion.
+	 *
+	 * @param {Object} event The targeted element.
+	 *
+	 * @since January 31, 2020
+	 * @author Shannon MacMillan, Corey Collins
+	 */
 	function toggleAccordion( event ) {
 		accordionItemContent.forEach( function( content ) {
 			const targetParent = event.target.parentNode.closest( '.accordion-item-header' );
 
 			// If we're clicking on this accordion...
 			if ( content.previousElementSibling === targetParent ) {
+
 				// If it's already opened, close it. Otherwise, open it!
 				if ( 'false' === content.getAttribute( 'aria-hidden' ) ) {
 					content.setAttribute( 'aria-hidden', 'true' );
@@ -40,7 +49,12 @@ function wdsAccordion() {
 	}
 }
 
-// Checks for a hash link in the URL and if one exists and matches an accordion, opens that accordion item.
+/**
+ * Checks for a hash link in the URL and if one exists and matches an accordion, opens that accordion item.
+ *
+ * @since January 31, 2020
+ * @author Shannon MacMillan, Corey Collins
+ */
 function openHashLink() {
 	if ( ! window.location.hash ) {
 		return false;

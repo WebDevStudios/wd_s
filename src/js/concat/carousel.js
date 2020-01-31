@@ -5,7 +5,12 @@
  */
 window.wdsCarousel = {};
 ( function( window, $, app ) {
-	// Constructor.
+
+	/**
+	 * Initialize our functionality.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.init = function() {
 		app.cache();
 
@@ -19,7 +24,11 @@ window.wdsCarousel = {};
 		}
 	};
 
-	// Cache all the things.
+	/**
+	 * Cache our variables.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
@@ -27,19 +36,32 @@ window.wdsCarousel = {};
 		};
 	};
 
-	// Combine all events.
+	/**
+	 * Bind events.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.bindEvents = function() {
 		app.$c.window.on( 'load', app.doSlick );
 		app.$c.window.on( 'load', app.doFirstAnimation );
 	};
 
-	// Do we meet the requirements?
+	/**
+	 * Determine if a carousel exists on the page.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.meetsRequirements = function() {
 		return app.$c.theCarousel.length;
 	};
 
-	// Animate the first slide on window load.
+	/**
+	 * Fire off animations when the first slide loads.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.doFirstAnimation = function() {
+
 		// Get the first slide content area and animation attribute.
 		const firstSlide = app.$c.theCarousel.find( '[data-slick-index=0]' ),
 			firstSlideContent = firstSlide.find( '.slide-content' ),
@@ -49,16 +71,26 @@ window.wdsCarousel = {};
 		firstSlideContent.addClass( firstAnimation );
 	};
 
-	// Allow background videos to autoplay.
+	/**
+	 * Enable video background autoplay.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.playBackgroundVideos = function() {
+
 		// Get all the videos in our slides object.
 		$( 'video' ).each( function() {
+
 			// Let them autoplay. TODO: Possibly change this later to only play the visible slide video.
 			this.play();
 		} );
 	};
 
-	// Initialize our carousel.
+	/**
+	 * Initialize the carousel.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.initializeCarousel = function() {
 		$( '.carousel-block' ).not( '.slick-initialized' ).slick( {
 			autoplay: true,
@@ -70,8 +102,13 @@ window.wdsCarousel = {};
 		} );
 	};
 
-	// Kick off Slick.
+	/**
+	 * Initialize Slick.
+	 *
+	 * @since January 31, 2020
+	 */
 	app.doSlick = function() {
+
 		// Render on the frontend.
 		$( document ).ready( function() {
 			app.playBackgroundVideos();
