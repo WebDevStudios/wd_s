@@ -30,23 +30,26 @@
 	@if $a == 0 {
 		$a: 0;
 	}
+
 	@if $b == 0 {
 		$b: 0;
 	}
+
 	@if $c == 0 {
 		$c: 0;
 	}
+
 	@if $d == 0 {
 		$d: 0;
 	}
 
 	@if $a == $b and $a == $c and $a == $d {
 		$output: $a;
-	} @else if $a == $c and $b == $d         {
+	} @else if $a == $c and $b == $d {
 		$output: $a $b;
-	} @else if $b == $d                      {
+	} @else if $b == $d {
 		$output: $a $b $c;
-	} @else                                  {
+	} @else {
 		$output: $a $b $c $d;
 	}
 

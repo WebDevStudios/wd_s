@@ -40,10 +40,12 @@
 	} // a
 
 	// Current items
+	/* stylelint-disable selector-class-pattern */
 	.current_page_item a,
 	.current-menu-item a {
 		color: $color-link-hover;
 	} // .current_page_item a, .current-menu-item a
+	/* stylelint-enable */
 } // .menu
 
 //-----------------------------------------

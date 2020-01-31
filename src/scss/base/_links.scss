@@ -1,8 +1,7 @@
 //--------------------------------------------------------------
 // Global Link Styles
 //--------------------------------------------------------------
-
-a:not(.button):not(.wp-block-button__link) {
+a:not(.button):not(.wp-block-button__link) { /* stylelint-disable-line selector-class-pattern */
 	color: $color-link;
 	opacity: 1;
 	transition: $transition-opacity;

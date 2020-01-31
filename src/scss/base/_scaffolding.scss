@@ -88,7 +88,7 @@
 			color: $color-scaffolding;
 			display: flex;
 			flex-direction: column;
-			height: calc(100% - 39px);
+			height: calc(100% - #{rem(39)});
 			justify-content: center;
 		} // header
 

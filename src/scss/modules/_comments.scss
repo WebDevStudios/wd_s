@@ -169,7 +169,7 @@
 	.avatar {
 		@include margin(0 $space 0 0);
 
-		border-radius: 50%;
+		border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
 	} // .avatar
 
 	// By post author.

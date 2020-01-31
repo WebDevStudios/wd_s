@@ -40,6 +40,7 @@ $gf-input-padding: rem(6);
 //--------------------------------------------------------------
 //	BASE STYLES
 //--------------------------------------------------------------
+/* stylelint-disable selector-class-pattern, selector-max-id */
 .gform_wrapper { // the entire form
 	background: $gf-bg; // background for the form
 	border: $gf-border-width solid $gf-border-color; // outer form border
@@ -175,9 +176,8 @@ $gf-input-padding: rem(6);
 			// adjust size and color for active icon
 			&::before {
 				border-color: transparent transparent $color-silver;
-				border-width: 0 1rem 1rem;
 				border-style: solid;
-				border-width: 0 (12px / 2) 12px;
+				border-width: 0 6px 12px;
 				content: '';
 				height: 0;
 				width: 0;
@@ -257,3 +257,4 @@ $gf-input-padding: rem(6);
 		} // .name_first input[type="text"], .name_last input[type="text"]
 	} // .ginput_complex
 } // #content .gform_wrapper
+/* stylelint-enable */

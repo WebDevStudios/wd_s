@@ -6,7 +6,7 @@
 .wp-block-button {
 
 	// The class on the <a>.
-	.wp-block-button__link {
+	.wp-block-button__link { /* stylelint-disable-line selector-class-pattern */
 
 		// The hover and focus states.
 		&:hover,

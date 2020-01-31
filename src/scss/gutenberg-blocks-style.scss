@@ -20,48 +20,49 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 //-----------------------------------------
 
 // Helper functions.
-@import "utilities/functions/index";
+@import 'utilities/functions/index';
 
 // Mixins.
-@import "utilities/mixins/index";
+@import 'utilities/mixins/index';
 
 // Global variables.
-@import "utilities/variables/index";
+@import 'utilities/variables/index';
 
 // Quick Helpers.
-@import "utilities/helpers/index";
+@import 'utilities/helpers/index';
 
 //-----------------------------------------
 // Theme Styles
 //-----------------------------------------
-
 .edit-post-visual-editor,
-.block-editor-inserter__preview {
+.block-editor-inserter__preview { /* stylelint-disable-line selector-class-pattern */
 
 	// Global elements.
-	@import "gutenberg/gutenberg-wp-block";
+	@import 'gutenberg/gutenberg-wp-block';
 
 	.acf-block-preview {
-		-moz-font-feature-settings: "liga", "kern"; // Control over advanced typographic features in OpenType fonts.
-		-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
-		-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
+		/* stylelint-disable property-no-vendor-prefix */
 		color: $color-text-main;
 		font-family: $font-sans;
-		font-feature-settings: "liga", "kern"; // Control over advanced typographic features in OpenType fonts.
+		-moz-font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+		font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+		-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
+		-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
 		line-height: $line-height-body;
 		text-rendering: optimizeLegibility; // Improved kerning pairs & ligatures
+		/* stylelint-enable */
 
 		// Global elements.
-		@import "base/index";
+		@import 'base/index';
 
 		// Layout.
-		@import "structure/index";
+		@import 'structure/index';
 
 		// Modules.
-		@import "modules/index";
+		@import 'modules/index';
 
 		// Gutenberg overrides.
-		@import "gutenberg/index";
+		@import 'gutenberg/index';
 
 		.hero-block-content {
 			height: unset;

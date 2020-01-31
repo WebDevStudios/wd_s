@@ -1,7 +1,6 @@
 //--------------------------------------------------------------
 // Modal
 //--------------------------------------------------------------
-
 .modal {
 	@include position(fixed, 0 0 0 0);
 
@@ -49,7 +48,7 @@
 
 				background: $color-background-modal-close;
 				border: 3px solid $color-modal-close;
-				border-radius: 50%;
+				border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
 				color: $color-modal-close;
 				cursor: pointer;
 				font-size: rem(30);

@@ -2,7 +2,6 @@
 // Accordion Block
 //--------------------------------------------------------------
 // sass-lint:disable no-transition-all
-
 .accordion-block {
 	position: relative;
 
@@ -76,7 +75,7 @@
 				@include size($space);
 
 				background-color: $color-background-button;
-				border-radius: 100%;
+				border-radius: 100%; /* stylelint-disable-line declaration-property-unit-whitelist */
 				color: $color-white;
 				transition: $transition-transform;
 

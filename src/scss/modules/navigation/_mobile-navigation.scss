@@ -114,6 +114,7 @@
 				} // .down-arrow
 			} // &.is-visible
 
+			/* stylelint-disable max-nesting-depth */
 			.menu-item-has-children {
 
 				.down-arrow {
@@ -121,12 +122,14 @@
 				} // .down-arrow
 
 				&.is-visible {
+
 					// When visible, flip the down arrow.
 					.down-arrow {
 						transform: rotateX(180deg);
 					} // .down-arrow
 				} // &.is-visible
 			} // .menu-item-has-children
+			/* stylelint-enable */
 		} // .menu-item-has-children
 	} // .menu-item-has-children
 } // .mobile-menu
@@ -190,8 +193,8 @@
 		@include position(fixed, 0 auto 0 0);
 		@include size(rem(220), 100%);
 
-		-webkit-overflow-scrolling: touch;
 		background-color: $color-background-off-canvas;
+		-webkit-overflow-scrolling: touch;
 		overflow-y: auto;
 		transform: translateX(rem(-220));
 		transition: $transition-transform;

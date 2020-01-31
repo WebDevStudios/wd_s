@@ -1,14 +1,14 @@
 //--------------------------------------------------------------
 // Forms
 //--------------------------------------------------------------
-
 button,
 input,
 select,
 textarea {
 	@include margin(0); // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
 
-	font-size: 100%; // Corrects font size not being inherited in all browsers
+	// Corrects font size not being inherited in all browsers
+	font-size: 100%; /* stylelint-disable-line declaration-property-unit-whitelist */
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
 } // button, input, select, textarea
 
@@ -25,12 +25,13 @@ input[type='search']::-ms-clear {
 } // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
 
 input[type='search'] {
-	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
+	// Addresses appearance set to searchfield in S5, Chrome
+	-webkit-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
 	box-sizing: content-box;
 
 	// Corrects inner padding displayed oddly in S5, Chrome on OSX
 	&::-webkit-search-decoration {
-		-webkit-appearance: none;
+		-webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
 	} // &::-webkit-search-decoration
 } // input[type="search"]
 
@@ -143,7 +144,7 @@ input[type='radio']:checked::after {
 	@include size(rem(12));
 
 	background-color: $color-focus-text-input;
-	border-radius: 50%;
+	border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
 	content: '';
 	display: block;
 }

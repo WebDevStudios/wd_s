@@ -1,7 +1,6 @@
 //--------------------------------------------------------------
 // Tables
 //--------------------------------------------------------------
-
 table {
 	@include padding(0);
 
@@ -41,7 +40,7 @@ table {
 		&::before {
 			content: attr(data-label);
 			display: block;
-			font-weight: bold;
+			font-weight: 600;
 			text-transform: uppercase;
 
 			@include media($wp-admin-bar) {

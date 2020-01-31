@@ -66,6 +66,7 @@
 			@if nth($values, 1) {
 				#{$bottom}: nth($values, 1);
 			}
+
 			@if nth($values, 2) {
 				#{$left}: nth($values, 2);
 			}
@@ -73,6 +74,7 @@
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
 			}
+
 			@if nth($values, 2) {
 				#{$left}: nth($values, 2);
 			}
@@ -80,6 +82,7 @@
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
 			}
+
 			@if nth($values, 4) {
 				#{$left}: nth($values, 4);
 			}
