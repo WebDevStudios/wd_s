@@ -7,6 +7,14 @@
 		"stylelint-order"
 	],
 	"rules": {
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				except: ["first-nested"],
+				ignore: ["first-nested", "after-comment"],
+				ignoreAtRules: ["include", "import", "else"]
+			}
+		],
 		"at-rule-name-case": "lower",
 		"block-closing-brace-empty-line-before": "never",
 		"block-closing-brace-newline-after": [
@@ -29,18 +37,24 @@
 		"color-named": "never",
 		"color-no-hex": true,
 		"color-no-invalid-hex": true,
-		"comment-empty-line-before": "always",
+		"comment-empty-line-before": [
+			"always",
+			{
+				except: ["first-nested"],
+				ignore: ["after-comment", "stylelint-commands"]
+			}
+		],
 		"comment-no-empty": true,
 		"declaration-property-unit-whitelist": {
 			"/^border/": ["px"],
 			"box-shadow": ["rem"],
 			"font-size": ["rem"],
+			"height": ["rem", "vh", "%"],
 			"letter-spacing": ["em"],
+			"/^margin/": ["rem", "vw", "vh", "%"],
+			"/^padding/": ["rem", "%"],
 			"text-shadow": ["em"],
-			"width": ["rem", "vw"],
-			"height": ["rem", "vh"],
-			"/^margin/": ["rem"],
-			"/^padding/": ["rem"],
+			"width": ["rem", "vw", "%"],
 		},
 		"declaration-block-single-line-max-declarations": 0,
 		"font-weight-notation": "numeric",
@@ -60,8 +74,20 @@
 			"declarations",
 			{
 				type: "at-rule",
+				name: "import",
+			},
+			{
+				type: "at-rule",
+				hasBlock: true,
+			},
+			{
+				type: "at-rule",
 				name: "include",
 				parameter: "media"
+			},
+			{
+				type: "at-rule",
+				name: "return"
 			}
 		],
 		"order/properties-alphabetical-order": true,
@@ -71,10 +97,10 @@
 		"rule-empty-line-before": [
 			"always",
 				{
-					"except": [ "after-single-line-comment" ]
+					"except": [ "after-single-line-comment", "first-nested" ],
+					"ignore": [ "first-nested" ]
 				}
 		],
-		"selector-attribute-quotes": "always",
 		"selector-class-pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
 		"selector-list-comma-newline-after": "always",
 		"selector-max-id": 0,
