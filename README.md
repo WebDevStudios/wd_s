@@ -10,7 +10,7 @@ If that weren't enough, I also support [synchronized JSON](https://www.advancedc
 
 If you have the pro version of [Advanced Custom Fields](https://www.advancedcustomfields.com/pro/), then you can take advantage of our [ACF Content Blocks](https://github.com/WebDevStudios/wd_s/wiki/ACF-Content-Blocks) system. Blocks are great way to "visually manage blocks of content" throughout your website. Learn more about [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/).
 
-<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
+<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. Your Success is Our Mission."></a>
 
 ## Getting Started
 
