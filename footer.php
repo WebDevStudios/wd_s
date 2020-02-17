@@ -13,7 +13,7 @@
 
 	<footer class="site-footer background-gallery">
 
-		<div class="site-info">
+		<div class="container site-info">
 			<?php _s_display_copyright_text(); ?>
 			<?php _s_display_social_network_links(); ?>
 		</div><!-- .site-info -->
