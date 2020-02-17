@@ -3,10 +3,10 @@
     "title": "Group: Display Options — To Clone",
     "fields": [
         {
-            "key": "field_5c1418dcb3fbf",
+            "key": "field_5e4abdd195782",
             "label": "Display Options",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,8 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -75,5 +74,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1559319065
+    "modified": 1581956655
 }
