@@ -56,7 +56,7 @@
     "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
     "icons": "svgo -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
-    "lint:php": "phpcs -p -s -n . --standard=phpcs.xml.dist --extensions=php || true || exit",
+    "lint:php": "./vendor/bin/phpcs -p -s -n . --standard=WebDevStudios --extensions=php --ignore='node_modules/*,vendor/*,./dist/*,./acf-json/*' || true || exit",
     "php": "npm run lint:php",
     "serve": "browser-sync start --https --proxy 'https://testing.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
     "build:css": "run-s lint-scss scss gutenberg optimizecss",
