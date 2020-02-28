@@ -50,6 +50,8 @@ window.wdsCarousel = {};
 	 * Determine if a carousel exists on the page.
 	 *
 	 * @since January 31, 2020
+	 *
+	 * @return {boolean} True if the requirements are met.
 	 */
 	app.meetsRequirements = function() {
 		return app.$c.theCarousel.length;

@@ -28,6 +28,8 @@
 	 *
 	 * @since January 31, 2020
 	 * @author Corey Collins
+	 *
+	 * @return {boolean} True if search is open, false if not.
 	 */
 	function searchIsOpen() {
 		if ( document.body.classList.contains( 'search-form-visible' ) ) {
