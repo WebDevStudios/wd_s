@@ -20,7 +20,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@webdevstudios/js-coding-standards": "~1.0.1",
+    "@webdevstudios/js-coding-standards": "~1.0.2",
     "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
