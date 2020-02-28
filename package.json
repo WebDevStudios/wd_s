@@ -45,7 +45,7 @@
     "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
-    "lint": "npm run lint-js && npm run lint-scss",
+    "lint": "npm run lint-js && npm run lint-scss && npm run lint:php",
     "lint:js": "npm run lint-js",
     "lint:scss": "npm run lint-scss",
     "lint-js": "./node_modules/.bin/eslint src/js || true",
