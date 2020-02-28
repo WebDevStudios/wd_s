@@ -69,7 +69,7 @@
     "watch:images": "onchange \"src/images\" -- run-s build:images",
     "watch:php": "onchange './*.php', './**/*.php' -- run-s php",
     "watch": "run-p serve watch:*",
-    "postinstall": "run-s build"
+    "postinstall": "run-s build && composer install"
   },
   "browserslist": [
     "defaults"
