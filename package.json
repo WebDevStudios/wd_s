@@ -49,6 +49,8 @@
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
     "lint": "npm run lint-js && npm run lint-scss",
+    "lint:js": "npm run lint-js",
+    "lint:scss": "npm run lint-scss",
     "lint-js": "./node_modules/.bin/eslint src/js || true",
     "lint-scss": "./node_modules/.bin/stylelint src/scss/**/*.scss --syntax scss --config .stylelintrc || true",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
