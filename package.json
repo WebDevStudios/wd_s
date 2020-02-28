@@ -75,7 +75,11 @@
     "defaults"
   ],
   "eslintConfig": {
-    "extends": "@webdevstudios/js-coding-standards"
+    "extends": [
+      "@webdevstudios/js-coding-standards",
+      "plugin:@wordpress/eslint-plugin/esnext",
+      "plugin:@wordpress/eslint-plugin/react"
+    ]
   },
   "stylelint": {
     "extends": "stylelint-config-wordpress",
