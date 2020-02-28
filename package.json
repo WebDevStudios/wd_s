@@ -49,7 +49,7 @@
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
     "lint": "./node_modules/.bin/eslint src/js || true",
-    "lint-scss": "stylelint src/scss/**/*.scss --syntax scss --config .stylelintrc || true",
+    "lint-scss": "./node_modules/.bin/stylelint src/scss/**/*.scss --syntax scss --config .stylelintrc || true",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
