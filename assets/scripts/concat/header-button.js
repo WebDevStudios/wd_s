@@ -21,7 +21,7 @@ window.ShowHideSearchForm = {};
 			window: $( window ),
 			body: $( 'body' ),
 			headerSearchToggle: $( '.site-header-action .cta-button' ),
-			headerSearchForm: $( '.site-header-action .form-container' ),
+			headerSearchForm: $( '.site-header-action .form-container' )
 		};
 	};
 
