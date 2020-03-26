@@ -76,7 +76,7 @@ gulp.task( 'clean:styles', () =>
  * https://www.npmjs.com/package/gulp-autoprefixer
  * https://www.npmjs.com/package/css-mqpacker
  */
-gulp.task( 'postcss', [ 'clean:styles' ], () =>
+gulp.task( 'postcss', [ 'clean:styles', 'sass:lint' ], () =>
 	gulp.src( 'assets/sass/*.scss', paths.css )
 
 		// Deal with errors.
@@ -259,7 +259,7 @@ gulp.task( 'concat', () =>
   *
   * https://www.npmjs.com/package/gulp-uglify
   */
-gulp.task( 'uglify', [ 'concat' ], () =>
+gulp.task( 'uglify', [ 'concat', 'js:lint' ], () =>
 	gulp.src( paths.scripts )
 		.pipe( plumber( {'errorHandler': handleErrors} ) )
 		.pipe( rename( {'suffix': '.min'} ) )
@@ -311,6 +311,8 @@ gulp.task( 'sass:lint', () =>
 		'assets/sass/**/*.scss',
 		'!assets/sass/base/_normalize.scss',
 		'!assets/sass/base/_sprites.scss',
+		'!assets/sass/plugins/_gravity-forms.scss',
+		'!assets/sass/gutenberg-blocks-style.scss',
 		'!node_modules/**'
 	] )
 		.pipe( sassLint() )
@@ -390,4 +392,4 @@ gulp.task( 'styles', [ 'cssnano' ] );
 gulp.task( 'sprites', [ 'spritesmith' ] );
 gulp.task( 'lint', [ 'sass:lint', 'js:lint' ] );
 gulp.task( 'docs', [ 'sassdoc' ] );
-gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin' ] );
+gulp.task( 'default', [ 'sprites', 'i18n', 'icons', 'styles', 'scripts', 'imagemin', 'lint' ] );
