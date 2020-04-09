@@ -21,8 +21,10 @@
   },
   "devDependencies": {
     "@webdevstudios/js-coding-standards": "~1.0.2",
+    "@wordpress/browserslist-config": "^2.6.0",
     "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
+    "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
     "imagemin-cli": "^5.1.0",
     "mkdirp": "^1.0.4",
@@ -62,27 +64,14 @@
     "php": "npm run lint:php",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
     "postinstall": "run-s build && composer install",
-    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/wdsx.pot'",
+    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
     "scss": "node-sass src/scss/style.scss -o dist/css",
-    "serve": "browser-sync start --https --proxy 'https://wdsx.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
+    "serve": "browser-sync start --https --proxy 'https://_s.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "watch": "run-p serve watch:*",
     "watch:css": "onchange \"src/scss\" -- run-s build:css && run-s lint:scss",
     "watch:images": "onchange \"src/images\" -- run-s build:images",
     "watch:js": "onchange \"src/js\" -- run-s build:js && run-s lint:js",
     "watch:php": "onchange './*.php', './**/*.php' -- run-s php"
-  },
-  "browserslist": [
-    "defaults"
-  ],
-  "eslintConfig": {
-    "extends": [
-      "plugin:@wordpress/eslint-plugin/esnext",
-      "plugin:@wordpress/eslint-plugin/react",
-      "@webdevstudios/js-coding-standards"
-    ]
-  },
-  "stylelint": {
-    "extends": "stylelint-config-wordpress/scss"
   }
 }
