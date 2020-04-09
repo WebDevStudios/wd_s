@@ -34,5 +34,6 @@
 /// @require {mixin} _directional-property
 
 @mixin padding($values) {
+
 	@include _directional-property(padding, null, $values);
 }

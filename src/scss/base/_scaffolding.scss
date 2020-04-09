@@ -16,6 +16,7 @@
 
 		// The title.
 		h3 {
+
 			@include margin(0);
 			@include padding(0);
 		} // h2
@@ -33,11 +34,13 @@
 		// Reset.
 		h4,
 		p {
+
 			@include margin($gutter 0);
 		} // h4, p
 
 		// The <pre> container.
 		pre {
+
 			@include margin(0 0 $gutter);
 			@include padding($gutter);
 
@@ -48,6 +51,7 @@
 
 		// The <code> container.
 		code {
+
 			@include padding(rem(5));
 
 			background-color: $color-background-code;
@@ -83,7 +87,7 @@
 		text-align: center;
 
 		// The swatch <header>
-		& header {
+		header {
 			align-content: center;
 			color: $color-scaffolding;
 			display: flex;
@@ -93,7 +97,8 @@
 		} // header
 
 		// The swatch <footer>
-		& footer {
+		footer {
+
 			@include padding(rem(10));
 			@include position(absolute, null null 0 null);
 

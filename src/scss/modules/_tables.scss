@@ -2,6 +2,7 @@
 // Tables
 //--------------------------------------------------------------
 table {
+
 	@include padding(0);
 
 	border: 0;
@@ -17,6 +18,19 @@ table {
 			display: table-row-group;
 		}
 	} // thead
+
+	// th, td
+	th,
+	td {
+
+		@include padding(rem(10));
+
+		text-align: center;
+
+		@include media($wp-admin-bar) {
+			display: table-cell;
+		}
+	} // th, td
 
 	// td
 	td {
@@ -48,18 +62,6 @@ table {
 			}
 		} // &::before
 	} // td
-
-	// th, td
-	th,
-	td {
-		@include padding(rem(10));
-
-		text-align: center;
-
-		@include media($wp-admin-bar) {
-			display: table-cell;
-		}
-	} // th, td
 
 	// th
 	th {

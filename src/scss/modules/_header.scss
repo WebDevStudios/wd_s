@@ -21,6 +21,7 @@
 
 		// Don't let the logo get out of control.
 		img {
+
 			@include media($tablet-portrait, $tablet-landscape) {
 				width: 50%;
 			}
@@ -35,6 +36,7 @@
 
 		// Align next to the logo on mid-size screens.
 		@include media($tablet-portrait, $tablet-landscape) {
+
 			@include margin(0);
 
 			width: 50%;
@@ -45,6 +47,7 @@
 	// Site Description.
 	//-----------------------------------------
 	.site-description {
+
 		@include margin(0 0 $space 0);
 
 		font-size: $space;
@@ -59,26 +62,17 @@
 	//-----------------------------------------
 	.site-header-action {
 		flex: 0 0 auto;
+		text-align: left;
 		width: 100%;
 
 		@include media($tablet-landscape) {
 			margin-left: auto;
+			text-align: right;
 			width: 35%;
 		}
 
 		@include media($desktop) {
 			width: 25%;
-		}
-	} // .site-header-action
-
-	//-----------------------------------------
-	// Site header action cta buttons.
-	//-----------------------------------------
-	.site-header-action {
-		text-align: left;
-
-		@include media($tablet-landscape) {
-			text-align: right;
 		}
 
 		// Span the button the full width.
@@ -88,19 +82,17 @@
 			text-align: center;
 			text-decoration: none;
 		} // .button-link, .cta-button
-	} // .site-header-action
 
-	//-----------------------------------------
-	// Site header Action Searchform.
-	//-----------------------------------------
-	.site-header-action {
-
+		//-----------------------------------------
+		// Site header Action Searchform.
+		//-----------------------------------------
 		.form-container {
 			max-height: 0;
 			overflow: hidden;
 			transition: $transition-height;
 
 			.search-form {
+
 				@include padding($space / 2);
 
 				background-color: $color-white;

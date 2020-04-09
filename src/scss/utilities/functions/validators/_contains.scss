@@ -18,8 +18,11 @@
 	$list,
 	$values...
 ) {
+
 	@each $value in $values {
-		@if type-of(index($list, $value)) != 'number' {
+
+		@if type-of(index($list, $value)) != "number" {
+
 			@return false;
 		}
 	}

@@ -4,6 +4,7 @@
 
 // Left Align
 .alignleft {
+
 	@include margin(0 $space 0 0);
 
 	display: block;
@@ -12,6 +13,7 @@
 
 // Right Align
 .alignright {
+
 	@include margin(0 0 0 $space);
 
 	display: block;
@@ -20,6 +22,7 @@
 
 // Center Align
 .aligncenter {
+
 	@include margin(null auto);
 
 	display: block;
@@ -34,4 +37,4 @@
 	position: relative;
 	right: 50%;
 	width: 100vw;
-}
+} // .alignfull

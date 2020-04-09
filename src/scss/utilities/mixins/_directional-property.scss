@@ -2,11 +2,10 @@
 // Directional Property Handler
 //--------------------------------------------------------------
 
-// scss-lint:disable SpaceAroundOperator
-
-/// Builds directional properties by parsing CSS shorthand values. For example,
-/// a value of `10px null` will output top and bottom directional properties,
-/// but the `null` skips left and right from being output.
+/// Builds directional properties by parsing CSS shorthand values.
+// For example,  a value of `10px null` will output top and bottom
+// directional properties, but the `null` skips left and right
+// from being output.
 ///
 /// @argument {string} $property
 ///     Base property.
@@ -34,35 +33,35 @@
 ///
 /// @access private
 
-@mixin _directional-property(
-	$property,
-	$suffix,
-	$values
-) {
-	$top:    $property + '-top' + if($suffix, '-#{$suffix}', '');
-	$bottom: $property + '-bottom' + if($suffix, '-#{$suffix}', '');
-	$left:   $property + '-left' + if($suffix, '-#{$suffix}', '');
-	$right:  $property + '-right' + if($suffix, '-#{$suffix}', '');
-	$all:    $property + if($suffix, '-#{$suffix}', '');
+@mixin _directional-property($property, $suffix, $values) {
+	$top: $property + "-top" + if($suffix, "-#{$suffix}", "");
+	$bottom: $property + "-bottom" + if($suffix, "-#{$suffix}", "");
+	$left: $property + "-left" + if($suffix, "-#{$suffix}", "");
+	$right: $property + "-right" + if($suffix, "-#{$suffix}", "");
+	$all: $property + if($suffix, "-#{$suffix}", "");
 
 	$values: _compact-shorthand($values);
 
 	@if _contains-falsy($values) {
+
 		@if nth($values, 1) {
 			#{$top}: nth($values, 1);
 		}
 
 		@if length($values) == 1 {
+
 			@if nth($values, 1) {
 				#{$right}: nth($values, 1);
 			}
 		} @else {
+
 			@if nth($values, 2) {
 				#{$right}: nth($values, 2);
 			}
 		}
 
 		@if length($values) == 2 {
+
 			@if nth($values, 1) {
 				#{$bottom}: nth($values, 1);
 			}
@@ -71,6 +70,7 @@
 				#{$left}: nth($values, 2);
 			}
 		} @else if length($values) == 3 {
+
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
 			}
@@ -79,6 +79,7 @@
 				#{$left}: nth($values, 2);
 			}
 		} @else if length($values) == 4 {
+
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
 			}

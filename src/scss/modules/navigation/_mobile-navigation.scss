@@ -8,18 +8,21 @@
 // 5. Off Canvas Drawer.
 //
 //--------------------------------------------------------------
-
+// stylelint-disable max-line-length, no-duplicate-selectors, no-descending-specificity
 //-----------------------------------------
 // 1. Mobile Navigation Styles.
 //-----------------------------------------
 .mobile-menu {
+
 	@include list-reset;
 
 	ul {
+
 		@include list-reset;
 	} // ul
 
 	li {
+
 		@include padding(rem(12));
 
 		list-style: none;
@@ -52,6 +55,7 @@
 // 2. Create a down arrow on parent items.
 //-----------------------------------------
 .parent-indicator {
+
 	@include padding(0 rem(5));
 	@include position(absolute, rem(10) rem(10) null null);
 	@include size(rem(35), rem(25));
@@ -138,28 +142,27 @@
 // 4. Hamburger Button.
 //-----------------------------------------
 .hamburger {
+
+	@include position(absolute, 50% null null 0);
+
 	background-color: transparent;
 	outline: none;
+	transform: translateY(-50%);
 
 	&,
 	&::before,
 	&::after {
+
 		@include position(absolute, null null null 0);
 		@include size(rem(35), rem(5));
 
 		background: $color-background-hamburger;
 		border-radius: $border-radius-thin;
-		content: '';
+		content: "";
 		cursor: pointer;
 		display: block;
 		transform-origin: center center;
 		transition: $transition-hamburger;
-	}
-
-	& {
-		@include position(absolute, 50% null null 0);
-
-		transform: translateY(-50%);
 	}
 
 	&::before {
@@ -190,6 +193,7 @@
 
 	// The container.
 	&-container {
+
 		@include position(fixed, 0 auto 0 0);
 		@include size(rem(220), 100%);
 
@@ -216,6 +220,7 @@
 
 	// The hamburger nav.
 	&-open {
+
 		@include padding(0);
 		@include position(absolute, $space $space null null);
 		@include size(rem(35));
@@ -229,6 +234,7 @@
 
 		// Deal with the admin bar.
 		.admin-bar & {
+
 			@include position(absolute, rem(56) null null null);
 		} // .admin-bar &
 
@@ -241,6 +247,7 @@
 
 	// The close "X" button.
 	&-close {
+
 		@include padding(rem(12) rem(5));
 		@include position(absolute, rem(10) rem(10) null null);
 		@include size(rem(35));
@@ -270,6 +277,7 @@
 
 	// The background screen.
 	&-screen {
+
 		@include position(fixed, 0);
 
 		background: $color-background-off-canvas-screen;
@@ -289,6 +297,7 @@
 		display: none;
 
 		.is-visible & {
+
 			@include margin($gutter * 2 null null);
 
 			display: block;

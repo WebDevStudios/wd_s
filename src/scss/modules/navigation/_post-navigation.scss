@@ -4,16 +4,19 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+
 	@include margin(null auto);
 	@include padding(null $gutter);
 
 	max-width: $max-width;
 
 	@include media($container-offset) {
+
 		@include padding(0);
 	}
 
 	.nav-links {
+
 		@include margin($space null null);
 
 		display: flex;
@@ -23,18 +26,21 @@
 	} // .nav-links
 
 	.site-main & {
+
 		@include margin(0 0 $space);
 
 		overflow: hidden;
 	} // .site-main &
 
 	.nav-previous {
+
 		@include size(50%, auto);
 
 		margin-right: auto;
 	} // &.nav-previous
 
 	.nav-next {
+
 		@include size(50%, auto);
 
 		margin-left: auto;

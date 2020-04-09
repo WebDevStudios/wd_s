@@ -8,6 +8,7 @@
 .comment-content {
 	// WP smiley
 	.wp-smiley {
+
 		@include margin(0);
 		@include padding(0);
 
@@ -15,25 +16,32 @@
 	} // img.wp-smiley
 } // .page-content, .entry-content, .comment-content
 
-// --------------------------------------------------------------
+//-----------------------------------------
 // Images
-// --------------------------------------------------------------
+//-----------------------------------------
 img {
 	height: auto;
 	max-width: 100%;
 }
 
-// --------------------------------------------------------------
+//-----------------------------------------
 // Captions
-// --------------------------------------------------------------
+//-----------------------------------------
+
+// Image caption text
+.wp-caption-text {
+	text-align: center;
+} // .wp-caption-text
 
 // Image captions
 .wp-caption {
+
 	@include margin(0 0 $space);
 
 	max-width: 100%;
 
-	img[class*='wp-image-'] {
+	img[class*="wp-image-"] {
+
 		@include margin(0 auto);
 
 		display: block;
@@ -41,41 +49,42 @@ img {
 
 	// Add auto margins so image is centered
 	&.aligncenter {
+
 		@include margin(0 auto $space auto);
 	} // &.aligncenter
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
+
 		@include margin(null $space null null);
 	} // &.alignleft
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
+
 		@include margin(null null null $space);
 	} // &.alignright
 
 	// Add top and bottom margin to caption text
 	.wp-caption-text {
+
 		@include margin(rem(12) 0);
 	} // .wp-caption-text
 } // .wp-caption
 
-// Image caption text
-.wp-caption-text {
-	text-align: center;
-} // .wp-caption-text
-
-// --------------------------------------------------------------
+//-----------------------------------------
 // Galleries
-// --------------------------------------------------------------
+//-----------------------------------------
 
 // Gallery
 .gallery {
+
 	@include margin(0 0 $space);
 } // .gallery
 
 // Gallery items
 .gallery-item {
+
 	@include size(100%, auto);
 
 	display: inline-block;
@@ -120,7 +129,9 @@ img {
 	display: block;
 } // .gallery-caption
 
-// Fluid embed
+//-----------------------------------------
+// Embeds
+//-----------------------------------------
 .fluid-embed,
 .is-provider-wistia-inc {
 	height: 0;
@@ -131,6 +142,7 @@ img {
 	embed,
 	object,
 	iframe {
+
 		@include position(absolute, 0 null null 0);
 		@include size(100%);
 	} // embed, object, iframe
@@ -138,8 +150,6 @@ img {
 
 // Jetpack now auto wraps all oembed videos in a <div>
 // Let's make it full-width in the content cuz it looks cool.
-
-/* stylelint-disable declaration-property-unit-whitelist */
 .jetpack-video-wrapper {
 	margin-left: rem(-35);
 	max-width: calc(100% + 70px);
@@ -152,8 +162,6 @@ img {
 	}
 } // .jetpack-video-wrapper
 
-/* stylelint-enable */
-
 // Center image background
 .image-as-background {
 	overflow: hidden;
@@ -163,6 +171,7 @@ img {
 // Video and Image as background.
 .video-background,
 .image-background {
+
 	@include position(absolute, 50% null null 0);
 	@include size(100%, auto);
 
@@ -171,11 +180,12 @@ img {
 	z-index: -1;
 
 	@supports (object-fit: cover) {
+
 		@include size(100%);
 
 		object-fit: cover;
 	}
-}
+} // .video-background
 
 // Video as background
 .video-background {
@@ -187,6 +197,7 @@ img {
 	object-position: center center;
 
 	img {
+
 		@include size(100%);
 
 		object-fit: cover;

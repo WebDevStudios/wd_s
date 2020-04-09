@@ -7,7 +7,8 @@
 /// @author Carrie Forde
 ////
 
-/// Quickly and easily create color presentational classes. Includes background-color, color, and fill clases.
+/// Quickly and easily create color presentational classes.
+/// Includes background-color, color, and fill clases.
 ///
 /// @param {map} $colors [$theme-colors] - The theme color map.
 ///
@@ -27,12 +28,12 @@
 
 @mixin colors($colors: $theme-colors) {
 
-	@if type-of($colors) != 'map' {
-		@error 'Sorry, $colors is not a Sass map!';
+	@if type-of($colors) != "map" {
+
+		@error "Sorry, $colors is not a Sass map!";
 	}
 
 	@each $name, $color in $colors {
-
 		// Create background color classes.
 		.background-#{$name},
 		.has-#{$name}-background-color {
@@ -49,7 +50,6 @@
 		.wp-block-button__link.has-text-color.has-#{$name}-color {
 			color: $color;
 		}
-
 
 		// Create fill classes.
 		.fill-#{$name} {

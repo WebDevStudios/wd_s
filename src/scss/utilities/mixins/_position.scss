@@ -57,6 +57,7 @@
 	position: $position;
 
 	@each $offset, $value in $offsets {
+
 		@if _is-length($value) {
 			#{$offset}: $value;
 		}

@@ -11,7 +11,8 @@
 /// @access private
 
 @function _is-length($value) {
-	@return type-of($value) != 'null' and (str-slice($value + '', 1, 4) == 'calc'
+
+	@return type-of($value) != "null" and (str-slice($value + "", 1, 4) == "calc"
 	or index(auto inherit initial 0, $value)
-	or (type-of($value) == 'number' and not(unitless($value))));
+	or (type-of($value) == "number" and not(unitless($value))));
 }

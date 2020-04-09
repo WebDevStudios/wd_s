@@ -1,10 +1,12 @@
 //--------------------------------------------------------------
 // Forms
 //--------------------------------------------------------------
+
 button,
 input,
 select,
 textarea {
+
 	@include margin(0); // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
 
 	// Corrects font size not being inherited in all browsers
@@ -12,19 +14,27 @@ textarea {
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
 } // button, input, select, textarea
 
-// Addresses excess padding in IE8/9
-input[type='checkbox'],
-input[type='radio'] {
+/* stylelint-disable max-line-length */
+// Corrects inner padding and border displayed oddly in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+
 	@include padding(0);
-} // input[type="checkbox"], input[type="radio"]
 
-// Remove the clear x icon in IE
-input[type='text']::-ms-clear,
-input[type='search']::-ms-clear {
-	display: none;
-} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
+	border: 0;
+} // button::-moz-focus-inner, input::-moz-focus-inner
+/* stylelint-enable */
 
-input[type='search'] {
+textarea {
+
+	@include size(100%, auto);
+
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
+	vertical-align: top; // Improves readability and alignment in all browsers
+} // textarea
+
+input[type="search"] {
 	// Addresses appearance set to searchfield in S5, Chrome
 	-webkit-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
 	box-sizing: content-box;
@@ -35,32 +45,40 @@ input[type='search'] {
 	} // &::-webkit-search-decoration
 } // input[type="search"]
 
-// Corrects inner padding and border displayed oddly in FF3/4
-// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	@include padding(0);
+//-----------------------------------------
+// Select Form Default
+//-----------------------------------------
+select {
+	background-image: url(../images/icons/caret-down.svg);
+	background-position: calc(100% - #{rem(20)}) 50%;
+	background-repeat: no-repeat;
+	background-size: 10px 16px;
 
-	border: 0;
-} // button::-moz-focus-inner, input::-moz-focus-inner
+	// for IE11;
+	&::-ms-expand {
+		display: none;
+	} // &::-ms-expand
+} // select
 
-input[type='text'],
-input[type='email'],
-input[type='url'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
-input[type='tel'],
-input[type='range'],
-input[type='date'],
-input[type='month'],
-input[type='week'],
-input[type='time'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='color'],
+/* stylelint-disable no-descending-specificity */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 select,
 textarea {
+
 	@include padding(rem(6) rem(10));
 
 	appearance: none;
@@ -77,12 +95,12 @@ textarea {
 		opacity: 1;
 	}
 
-	&:-moz-placeholder {
+	&::-moz-placeholder {
 		color: $color-text-input;
 		opacity: 1;
 	}
 
-	&::-moz-placeholder {
+	&:-moz-placeholder {
 		color: $color-text-input;
 		opacity: 1;
 	}
@@ -94,35 +112,22 @@ textarea {
 	&:focus {
 		color: $color-focus-text-input;
 	} // &:focus
-} // input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea
+}
 
-textarea {
-	@include size(100%, auto);
+/* stylelint-enable */
 
-	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
-	vertical-align: top; // Improves readability and alignment in all browsers
-} // textarea
-
-//-----------------------------------------
-// Select Form Default
-//-----------------------------------------
-select {
-	background-image: url('../images/icons/caret-down.svg');
-	background-position: calc(100% - #{rem(20)}) 50%;
-	background-repeat: no-repeat;
-	background-size: 10px 16px;
-
-	// for IE11;
-	&::-ms-expand {
-		display: none;
-	} // &::-ms-expand
-} // select
+// Remove the clear x icon in IE
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
 
 //-----------------------------------------
 // Radio/Checkbox
 //-----------------------------------------
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
+
 	@include size(rem(20));
 
 	appearance: none;
@@ -135,21 +140,23 @@ input[type='radio'] {
 	vertical-align: sub;
 }
 
-input[type='radio'] {
+input[type="radio"] {
 	border-radius: rem(75);
 }
 
-input[type='radio']:checked::after {
+input[type="radio"]:checked::after {
+
 	@include position(relative, rem(-6) rem(6) null null);
 	@include size(rem(12));
 
 	background-color: $color-focus-text-input;
-	border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
-	content: '';
+	border-radius: 50%;
+	content: "";
 	display: block;
 }
 
-input[type='checkbox']:checked::after {
+input[type="checkbox"]:checked::after {
+
 	@include position(relative, rem(-7) rem(3) null null);
 	@include size(rem(7), rem(11)); // Make it a small rectangle so the border will create an L-shape.
 
@@ -158,7 +165,7 @@ input[type='checkbox']:checked::after {
 	border-width: 0 3px 3px 0;
 
 	// Add another block-level blank space.
-	content: '';
+	content: "";
 	display: block;
 
 	// Rotate the L 45 degrees to turn it into a checkmark.

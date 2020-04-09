@@ -13,6 +13,7 @@
 	$result: ();
 
 	@for $i from length($list) * -1 through -1 {
+
 		@if type-of(nth($list, abs($i))) == list and $recursive {
 			$result: append($result, reverse-list(nth($list, abs($i)), $recursive));
 		} @else {
