@@ -14,7 +14,6 @@ textarea {
 	vertical-align: baseline; // Improves appearance and consistency in all browsers
 } // button, input, select, textarea
 
-/* stylelint-disable max-line-length */
 // Corrects inner padding and border displayed oddly in FF3/4
 // www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 button::-moz-focus-inner,
@@ -24,7 +23,6 @@ input::-moz-focus-inner {
 
 	border: 0;
 } // button::-moz-focus-inner, input::-moz-focus-inner
-/* stylelint-enable */
 
 textarea {
 
