@@ -8,7 +8,6 @@
 // 5. Off Canvas Drawer.
 //
 //--------------------------------------------------------------
-// stylelint-disable max-line-length, no-duplicate-selectors, no-descending-specificity
 //-----------------------------------------
 // 1. Mobile Navigation Styles.
 //-----------------------------------------
@@ -133,7 +132,6 @@
 					} // .down-arrow
 				} // &.is-visible
 			} // .menu-item-has-children
-			/* stylelint-enable */
 		} // .menu-item-has-children
 	} // .menu-item-has-children
 } // .mobile-menu

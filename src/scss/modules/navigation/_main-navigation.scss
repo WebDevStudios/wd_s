@@ -48,7 +48,7 @@
 	position: relative;
 
 	// Sub-menu
-	ul { /* stylelint-disable-line no-descending-specificity */
+	ul {
 
 		@include position(absolute, $space null null -999em);
 
@@ -56,7 +56,7 @@
 		z-index: 99999;
 
 		// Sub-sub menu
-		ul { /* stylelint-disable-line no-descending-specificity */
+		ul {
 			left: -999em;
 			top: 0;
 		} // ul
@@ -80,7 +80,6 @@
 		} // a
 	} // ul
 
-	/* stylelint-disable no-descending-specificity */
 	// Display sub-menu on hover
 	li:hover > ul,
 	.focus > ul {
@@ -91,6 +90,4 @@
 	li {
 		position: relative;
 	} // li
-
-	/* styleline-enable */
 } // &.dropdown

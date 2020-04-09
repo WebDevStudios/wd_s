@@ -60,7 +60,6 @@ select {
 	} // &::-ms-expand
 } // select
 
-/* stylelint-disable no-descending-specificity */
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -113,8 +112,6 @@ textarea {
 		color: $color-focus-text-input;
 	} // &:focus
 }
-
-/* stylelint-enable */
 
 // Remove the clear x icon in IE
 input[type="text"]::-ms-clear,
