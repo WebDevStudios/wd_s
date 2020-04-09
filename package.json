@@ -15,61 +15,62 @@
     "url": "https://github.com/WebDevStudios/wd_s/issues"
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
-  "main": "src/js/app.js",
+  "main": "src/js/index.js",
   "dependencies": {
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@webdevstudios/js-coding-standards": "~1.0.2",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "imagemin-cli": "^5.1.0",
-    "mkdirp": "^1.0.3",
+    "mkdirp": "^1.0.4",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.0",
     "postcss-cli": "^7.1.0",
     "rimraf": "^3.0.2",
-    "stylelint": "^13.1.0",
+    "stylelint": "^13.3.1",
+    "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-wordpress": "^16.0.0",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2",
+    "stylelint-scss": "^3.16.1",
     "svgo": "^1.3.2",
     "svgstore-cli": "^1.3.1",
     "uglify-es": "^3.3.9",
-    "wp-pot-cli": "^1.3.0"
+    "wp-pot-cli": "^1.4.1"
   },
   "scripts": {
-    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
-    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
-    "scss": "node-sass src/scss/style.scss -o dist/css",
-    "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
-    "lint": "npm run lint-js && npm run lint-scss && npm run lint:php",
-    "lint:js": "npm run lint-js",
-    "lint:scss": "npm run lint-scss",
-    "lint-js": "./node_modules/.bin/eslint src/js || true",
-    "lint-scss": "./node_modules/.bin/stylelint src/scss/**/*.scss --syntax scss --config .stylelintrc || true",
-    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
-    "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
-    "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
-    "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
-    "icons": "svgo -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
-    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
-    "lint:php": "./vendor/bin/phpcs -p -s -n . --standard=WebDevStudios --extensions=php --ignore='node_modules/*,vendor/*,./dist/*,./acf-json/*' || true || exit",
-    "php": "npm run lint:php",
-    "serve": "browser-sync start --https --proxy 'https://testing.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
+    "build": "run-s clean build:* && run-s lint",
     "build:css": "run-s lint-scss scss gutenberg optimizecss",
-    "build:js": "run-s lint uglify polyfill customizer",
     "build:images": "run-s imagemin icons",
+    "build:js": "run-s lint uglify polyfill customizer",
     "build:pot": "run-s pot",
-    "build": "run-s clean build:*",
-    "watch:css": "onchange \"src/scss\" -- run-s build:css",
-    "watch:js": "onchange \"src/js\" -- run-s build:js",
-    "watch:images": "onchange \"src/images\" -- run-s build:images",
-    "watch:php": "onchange './*.php', './**/*.php' -- run-s php",
+    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
+    "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
+    "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
+    "icons": "svgo -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
+    "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
+    "lint": "npm run lint-js && npm run lint-scss && npm run lint:php",
+    "lint-js": "./node_modules/.bin/eslint src/js || true",
+    "lint-scss": "./node_modules/.bin/stylelint 'src/scss/**/*.scss' --syntax scss || true",
+    "lint:js": "npm run lint-js",
+    "lint:php": "./vendor/bin/phpcs -p -s -n . --standard=WebDevStudios --extensions=php --ignore='node_modules/*,vendor/*,./dist/*,./acf-json/*' || true || exit",
+    "lint:scss": "npm run lint-scss",
+    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
+    "php": "npm run lint:php",
+    "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
+    "postinstall": "run-s build && composer install",
+    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/wdsx.pot'",
+    "scss": "node-sass src/scss/style.scss -o dist/css",
+    "serve": "browser-sync start --https --proxy 'https://wdsx.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
+    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "watch": "run-p serve watch:*",
-    "postinstall": "run-s build && composer install"
+    "watch:css": "onchange \"src/scss\" -- run-s build:css && run-s lint:scss",
+    "watch:images": "onchange \"src/images\" -- run-s build:images",
+    "watch:js": "onchange \"src/js\" -- run-s build:js && run-s lint:js",
+    "watch:php": "onchange './*.php', './**/*.php' -- run-s php"
   },
   "browserslist": [
     "defaults"
@@ -82,33 +83,6 @@
     ]
   },
   "stylelint": {
-    "extends": "stylelint-config-wordpress",
-    "plugins": [
-      "stylelint-scss"
-    ],
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "extend",
-            "at-root",
-            "debug",
-            "warn",
-            "error",
-            "if",
-            "else",
-            "for",
-            "each",
-            "while",
-            "mixin",
-            "include",
-            "content",
-            "return",
-            "function"
-          ]
-        }
-      ]
-    }
+    "extends": "stylelint-config-wordpress/scss"
   }
 }
