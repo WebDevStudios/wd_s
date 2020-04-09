@@ -18,15 +18,6 @@ node_modules/
 # composer
 vendor/
 
-# wordpress
-uploads/
-
-# plugins
-plugins/*
-!plugins/wds-master-plugin
-!plugins/wds-master-plugin/vendor
-
 # theme
-themes/_s/dist
-!themes/_s/src/scss/plugins
-!themes/_s/src/scss/vendor
+dist
+!src/scss/vendor
