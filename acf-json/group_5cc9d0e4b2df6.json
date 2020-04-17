@@ -15,15 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<h2>Hero<\/h2>",
+            "message": "<h2>Hero Block<\/h2>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
         {
-            "key": "field_5cc9d0e4b7f79",
+            "key": "field_5e4abe43bc291",
             "label": "Block Content",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,8 +32,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -176,5 +175,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567181410
+    "modified": 1581960445
 }

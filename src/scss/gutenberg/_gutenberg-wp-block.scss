@@ -1,0 +1,91 @@
+//--------------------------------------------------------------
+// Adjusting styles for the Gutenberg blocks outside of our containers.
+//--------------------------------------------------------------
+// Set our max width and make up for the padding.
+.wp-block {
+
+	&[data-type*="wds"] {
+		max-width: rem(1112);
+		padding-left: 0;
+		padding-right: 0;
+
+		&[data-align="full"] {
+			max-width: unset;
+			padding-left: rem(43);
+			padding-right: rem(43);
+		}
+
+		//-----------------------------------------
+		// Add space below blocks when they're in Edit mode.
+		//-----------------------------------------
+		.acf-block-component {
+
+			.acf-block-fields {
+				margin-bottom: rem(60);
+			}
+		}
+
+		.editor-block-list__block-edit { /* stylelint-disable-line selector-class-pattern */
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+	}
+
+	.block-expired {
+		opacity: 0.3;
+	}
+
+	.block-expired-message {
+
+		@include position(absolute, 0 null null 0 );
+		@include size(100%);
+
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: $gutter;
+		text-align: center;
+	}
+
+	.block-expired-text {
+		background-color: rgba($color-white, 0.8);
+		border: 1px solid $color-cod-gray;
+		color: $color-cod-gray;
+		display: block;
+		padding: $gutter;
+		position: relative;
+		z-index: 50;
+	}
+}
+
+.wp-block-column {
+
+	.wp-block {
+
+		&[data-type*="wds"] {
+			padding-left: rem(43);
+			padding-right: rem(43);
+
+			&[data-align="full"] {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+//-----------------------------------------
+// Add space below blocks when they're in Edit mode.
+//-----------------------------------------
+.wp-block {
+
+	&[data-type*="wds"] {
+
+		.acf-block-component {
+
+			.acf-block-fields {
+				margin-bottom: rem(60);
+			}
+		}
+	}
+}

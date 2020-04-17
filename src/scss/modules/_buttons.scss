@@ -1,0 +1,66 @@
+//--------------------------------------------------------------
+// Buttons
+//--------------------------------------------------------------
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	@include margin(0);
+	@include padding(rem(8) rem(20));
+
+	appearance: none;
+	background-color: $color-background-button;
+	border: none;
+	border-radius: 0;
+	border-width: 0;
+	box-shadow: none;
+	color: $color-text-button;
+	cursor: pointer;
+	display: inline-block;
+	font-size: inherit;
+	height: auto;
+	line-height: normal;
+	overflow: visible; // removes padding in IE.
+	text-decoration: none;
+	transition: $transition-bg-color, $transition-opacity, $transition-color;
+	user-select: none;
+	vertical-align: bottom;
+
+	// removes padding in Firefox.
+	&::-moz-focus-inner {
+		border: none;
+		padding: 0;
+	} // &::-moz-focus-inner
+
+	.ie & {
+
+		@include padding(rem(7) rem(20));
+	} // .ie &
+
+	&:hover,
+	&:active {
+		color: $color-text-button;
+		opacity: 0.6;
+	} // &:hover, &:active
+
+	&:focus {
+		color: $color-text-button;
+	} //  &:focus
+
+	// Visited.
+	&:visited {
+		color: $color-text-button;
+
+		&:hover,
+		&:active {
+			color: $color-text-button;
+			opacity: 0.6;
+		} // &:hover, &:active
+
+		&:focus {
+			color: $color-text-button;
+		} //  &:focus
+	} // &:visited
+} // button, input[type="button"], input[type="reset"], input[type="submit"]

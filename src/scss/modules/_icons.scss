@@ -1,0 +1,137 @@
+//--------------------------------------------------------------
+// Icons
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Replace Text With Icons
+//-----------------------------------------
+$social-sites: facebook instagram linkedin twitter;
+
+.menu {
+
+	a {
+		// Set the background image for each social network.
+		@each $network in $social-sites {
+			&[href*='#{$network}'] {
+
+				@include size(rem(30));
+
+				background: url("../images/icons/#{$network}-square.svg") no-repeat center center transparent;
+				background-size: rem(30);
+				display: block;
+				text-indent: rem(-999999);
+
+				@include media($tablet-portrait) {
+
+					@include size(rem(19));
+
+					background-size: rem(19);
+				}
+			}
+		}
+	}
+} // .menu
+
+
+// Social icons <ul>
+.social-icons {
+
+	@include list-reset;
+
+	// Each icon <li>
+	.social-icon {
+		display: inline-block;
+
+		a {
+			display: block;
+		} // a
+
+		// Loop through all social icons
+		@each $social-color, $color in $social-colors {
+
+			// Set styles on those social icons!
+			.icon-#{$social-color} {
+
+				@include size(rem(30));
+
+				fill: $color;
+
+				&:hover {
+					fill: lighten($color, 20%);
+				} // &:hover
+			} // .icon-#{$social-color}
+		} // end each loop
+
+		// No margin for the last <li> item
+		&:last-child {
+			margin-right: 0;
+		} // &:last-child
+	} // .social-icon
+} // .social-icons
+
+
+//-----------------------------------------
+// Close icon
+//-----------------------------------------
+.close {
+	cursor: pointer;
+	display: block;
+	margin-top: rem(-5);
+	outline: none;
+
+	&::before,
+	&::after {
+
+		@include size(rem(25), rem(3));
+
+		background: $color-background-icon-close;
+		border-radius: $border-radius-thin;
+		content: "";
+		cursor: pointer;
+		display: block;
+		position: relative;
+	}
+
+	&::before {
+		top: rem(3);
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+} // .cross
+
+//-----------------------------------------
+// Down arrow icon
+//-----------------------------------------
+.down-arrow {
+	cursor: pointer;
+	display: block;
+	margin-left: rem(10);
+	outline: none;
+	transition: $transition-transform;
+
+	&::before,
+	&::after {
+
+		@include size(rem(10), rem(2));
+
+		background: $color-background-down-arrow;
+		border-radius: $border-radius-thin;
+		content: "";
+		cursor: pointer;
+		display: block;
+		position: relative;
+	}
+
+	&::before {
+		left: rem(-6);
+		top: rem(2);
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-225deg);
+	}
+} // .down-arrow

@@ -1,0 +1,36 @@
+//--------------------------------------------------------------
+// Accessibility
+//--------------------------------------------------------------
+
+// Hide text meant only for screen readers
+.screen-reader-text {
+
+	@include size(rem(1));
+
+	clip: rect(rem(1), rem(1), rem(1), rem(1));
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; // do not smuch text in screen readers
+
+	&:hover,
+	&:active,
+	&:focus {
+
+		@include padding(rem(15) rem(23) rem(14));
+		@include size(auto);
+
+		background-color: $color-background-screen-reader;
+		border-radius: $border-radius-medium;
+		box-shadow: 0 0 rem(2) rem(2) $color-box-shadow;
+		clip: auto;
+		color: $color-text-screen-reader;
+		display: block;
+		font-size: rem(14);
+		font-weight: 700;
+		left: rem(5);
+		line-height: normal;
+		text-decoration: none;
+		top: rem(5);
+		z-index: 100000; // Above WP toolbar
+	} // &:hover, &:active, &:focus
+} // .screen-reader-text

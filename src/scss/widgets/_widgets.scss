@@ -1,0 +1,23 @@
+//--------------------------------------------------------------
+// Widgets
+//--------------------------------------------------------------
+.widget {
+
+	@include margin(0 0 $space);
+
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	} // select
+
+	// Extend the h3 style for the widget titles.
+	.widget-title {
+
+		@extend .h3 !optional;
+	} // .widget-title
+} // .widget
+
+// Search widget.
+.widget_search .search-submit { /* stylelint-disable-line selector-class-pattern */
+	display: none;
+} // .widget_search .search-submit

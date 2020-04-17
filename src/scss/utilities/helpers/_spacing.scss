@@ -1,0 +1,139 @@
+//--------------------------------------------------------------
+// Grid Helpers
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Padding
+//-----------------------------------------
+@for $i from 1 through length($spacing-options) {
+	$number: nth($spacing-options, $i);
+
+	.pad-#{$number} {
+
+		@include padding(rem($number));
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include padding(rem($number / 2));
+			}
+		}
+	} // .pad-#{$option}
+
+	.pad-#{$number}-0 {
+
+		@include padding(rem($number) null);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include padding(rem($number / 2) null);
+			}
+		}
+	} // .pad-#{$option}-0
+
+	.pad-top-#{$number} {
+		padding-top: rem($number);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+				padding-top: rem($number / 2);
+			}
+		}
+	} // .pad-top-#{$option}
+
+	.pad-bottom-#{$number} {
+		padding-bottom: rem($number);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+				padding-bottom: rem($number / 2);
+			}
+		}
+	} // .pad-bottom-#{$option}
+
+	.pad-0-#{$number} {
+
+		@include padding(null rem($number));
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include padding(null rem($number / 2));
+			}
+		}
+	} // .pad-0-#{$option}
+} // end @for
+
+//-----------------------------------------
+// Margins
+//-----------------------------------------
+@for $i from 1 through length($spacing-options) {
+	$number: nth($spacing-options, $i);
+
+	.margin-#{$number} {
+
+		@include margin(rem($number));
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include margin(rem($number / 2));
+			}
+		}
+	} // .margin-#{$option}
+
+	.margin-#{$number}-0 {
+
+		@include margin(rem($number) null);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include margin(rem($number / 2) null);
+			}
+		}
+	} // .margin-#{$option}-0
+
+	.margin-top-#{$number} {
+		margin-top: rem($number);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+				margin-top: rem($number / 2);
+			}
+		}
+	} // .margin-top-#{$option}
+
+	.margin-bottom-#{$number} {
+		margin-bottom: rem($number);
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+				margin-bottom: rem($number / 2);
+			}
+		}
+	} // .margin-bottom-#{$option}
+
+	.margin-0-#{$number} {
+
+		@include margin(null rem($number));
+
+		@if $number > 75 {
+
+			@include media(null, $tablet-portrait) {
+
+				@include margin(null rem($number / 2));
+			}
+		}
+	} // .margin-0-#{$option}
+} // end @for

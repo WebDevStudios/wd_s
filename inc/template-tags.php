@@ -161,7 +161,7 @@ function _s_get_svg( $args = array() ) {
 		echo _s_get_the_content( $width ); // WPCS XSS OK.
 		echo _s_get_the_content( $fill ); // WPCS XSS OK.
 	?>
-		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
+		class="icon <?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
 		echo _s_get_the_content( $aria_hidden ); // WPCS XSS OK.
 		echo _s_get_the_content( $aria_labelledby ); // WPCS XSS OK.
@@ -184,9 +184,9 @@ function _s_get_svg( $args = array() ) {
 		// Use absolute path in the Customizer so that icons show up in there.
 		if ( is_customize_preview() ) :
 		?>
-			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/assets/images/svg-icons.svg#icon-' . esc_html( $args['icon'] ) ) ); ?>"></use>
+			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/dist/images/icons/sprite.svg#' . esc_html( $args['icon'] ) ) ); ?>"></use>
 		<?php else : ?>
-			<use xlink:href="#icon-<?php echo esc_html( $args['icon'] ); ?>"></use>
+			<use xlink:href="#<?php echo esc_html( $args['icon'] ); ?>"></use>
 		<?php endif; ?>
 
 	</svg>
@@ -332,7 +332,9 @@ function _s_display_social_network_links() {
 						<?php
 						_s_display_svg(
 							array(
-								'icon' => $network . '-square',
+								'icon'   => $network . '-square',
+								'width'  => '24',
+								'height' => '24',
 							)
 						);
 						?>
@@ -377,7 +379,7 @@ function _s_display_card( $args = array() ) {
 			<?php if ( $args['image'] ) : ?>
 				<?php echo wp_kses_post( $args['image'] ); ?>
 			<?php else : ?>
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/placeholder.png" class="card-image" loading="lazy" alt="<?php echo sprintf( esc_attr( 'Featured image for %s', '_s' ), esc_attr( $args['title'] ) ); ?>">
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/dist/images/placeholder.png" class="card-image" loading="lazy" alt="<?php echo sprintf( esc_attr( 'Featured image for %s', '_s' ), esc_attr( $args['title'] ) ); ?>">
 			<?php endif; ?>
 		</a>
 

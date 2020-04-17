@@ -3,10 +3,10 @@
     "title": "Group: Other Options — To Clone",
     "fields": [
         {
-            "key": "field_596d121bd7ea2",
+            "key": "field_5e4abdf5f5376",
             "label": "Other Options",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,8 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -39,7 +38,7 @@
                     "label": "Start Date",
                     "name": "start_date",
                     "type": "date_time_picker",
-                    "instructions": "Choose a start date for this block. This block will be hidden on the frontend, until the date and time selected.<br><br><strong>Note:</strong> In order to use Start Date, both the Start Date and End Date must be set.",
+                    "instructions": "Choose a start date for this block. This block will be hidden on the frontend, until the date and time selected.<br><br><strong>Note:<\/strong> In order to use Start Date, both the Start Date and End Date must be set.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -56,7 +55,7 @@
                     "label": "End Date",
                     "name": "end_date",
                     "type": "date_time_picker",
-                    "instructions": "Choose an end date for this block. This block will be display on the frontend, until the date and time selected.<br><br><strong>Note:</strong> In order to use End Date, both the Start Date and End Date must be set.",
+                    "instructions": "Choose an end date for this block. This block will be display on the frontend, until the date and time selected.<br><br><strong>Note:<\/strong> In order to use End Date, both the Start Date and End Date must be set.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -88,5 +87,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1572973813
+    "modified": 1581956664
 }

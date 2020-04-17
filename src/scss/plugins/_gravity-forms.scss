@@ -1,0 +1,259 @@
+//--------------------------------------------------------------
+//	Gravity Forms
+//	Visit this link for CSS Targeting Examples - Very Helpful
+//	https://www.gravityhelp.com/documentation/article/css-targeting-examples/
+//
+//	BASE STYLES
+//	FORM HEADER
+//	FORM FOOTER
+//	CONFIRMATION MESSAGE
+//	SELECTS
+// 	CHOSEN SELECT
+//	CONTENT OVERRIDES
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+//	LOCAL VARIABLES
+//--------------------------------------------------------------
+
+// Form
+$gf-padding: 0; // set outer padding on form
+$gf-bg: $color-white; // background color of form
+$gf-border-width: 0; // border-width on form
+$gf-border-color: $color-white; // border color
+
+// Fields / Rows
+$gf-field-margin-bottom: rem(25); // margin between field and label below (vertical spacing between rows)
+
+// Labels
+$gf-label-font-size: rem(16);
+$gf-label-font-color: $color-mineshaft;
+$gf-label-font-weight: 700;
+
+// Inputs
+$gf-input-color-background: $color-white;
+$gf-input-color-border: $color-border-input;
+$gf-input-color-text: $color-text-input;
+$gf-input-color-focus-text: $color-focus-text-input;
+$gf-input-padding: rem(6);
+
+//--------------------------------------------------------------
+//	BASE STYLES
+//--------------------------------------------------------------
+.gform_wrapper { // the entire form
+	background: $gf-bg; // background for the form
+	border: $gf-border-width solid $gf-border-color; // outer form border
+	padding: $gf-padding; // form padding
+
+	// Single and two-column fields
+	&.gform_body .gform_fields .gfield,
+	&.gform_body .gform_fields .gfield.gf_left_half,
+	&.gform_body .gform_fields .gfield.gf_right_half {
+		margin-bottom: $gf-field-margin-bottom; // space between input and label below
+	} // &.gform_body .gform_fields .gfield, &.gform_body .gform_fields .gfield.gf_left_half, &.gform_body .gform_fields .gfield.gf_right_half
+
+	// Labels
+	.gfield_label {
+		color: $gf-label-font-color;
+		font-size: $gf-label-font-size;
+		font-weight: $gf-label-font-weight;
+	} // .gfield_label
+
+	// Standard fields
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	input[type="file"],
+	textarea {
+		background: $gf-input-color-background;
+	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
+
+	textarea {
+		width: 100%;
+	} // textarea
+
+	// Default Drop-Down (Select) Field
+	// Feel free to change the svg icon being used
+	select {
+		appearance: none;
+		background: url(../images/icons/caret-down.svg) no-repeat 97% transparent;
+		background-color: $gf-input-color-background;
+		background-size: rem(12);
+		border-color: $gf-input-color-border;
+		border-radius: 0;
+		line-height: 1.45;
+		padding: $gf-input-padding !important; // need to override GF's "browser" stylesheet
+		width: 100%;
+
+		@include media($tablet-portrait) {
+			width: 49%;
+		}
+
+		&::-ms-expand {
+			display: none; // Remove default dropdown arrow in IE11.
+		}
+	} // select
+
+	// Remove icon for default multi-select
+	select[multiple="multiple"] {
+		background: $gf-input-color-background;
+	} // select[multiple="multiple"]
+} // .gform_wrapper
+
+//--------------------------------------------------------------
+//	SELECTS
+//--------------------------------------------------------------
+.gform_wrapper .gform_body .gform_fields .gfield select,
+.gform_wrapper.gf_browser_chrome .gform_body .gform_fields .gfield select {
+	margin-left: 0;
+	width: 100% !important; // overrides GF !important
+
+	@include media($tablet-portrait) {
+		width: 49% !important;
+	}
+} // .gform_wrapper .gform_body .gform_fields .gfield select, .gform_wrapper.gf_browser_chrome .gform_body .gform_fields .gfield select
+
+//--------------------------------------------------------------
+//	CHOSEN SELECT
+//--------------------------------------------------------------
+.gform_wrapper .gfield .chosen-container-single {
+	font-size: rem(16);
+
+	// Link holding initial selection - what user first sees
+	.chosen-single {
+		background: $gf-input-color-background;
+		border-color: $gf-input-color-border;
+		border-radius: 0;
+		height: auto;
+		padding: $gf-input-padding;
+	} // .chosen-single
+
+	// Default state of icon for select
+	.chosen-single div b {
+
+		@include position(absolute, 40% rem(11) null null);
+
+		background: none; // hide the default chosen background
+
+		// adjust size and color for active icon
+		&::before {
+			border-color: $color-silver transparent transparent;
+			border-style: solid;
+			border-width: 12px (12px / 2) 0;
+			content: "";
+			height: 0;
+			width: 0;
+		} // &::before
+	} // .chosen-single div b
+
+	// Selections drop-down
+	.chosen-drop {
+
+		// Search box by default has a small magnifying icon on right
+		.chosen-search input[type="text"] {
+			background: none;
+		} // .chosen-search input[type="text"]
+
+		// Search results list
+		.chosen-results li {
+			padding: rem(10) rem(5);
+		} // .chosen-results li
+	} // .chosen-drop
+
+	// For styling the icon when select is active
+	&.chosen-container-single.chosen-with-drop {
+
+		.chosen-single {
+			background-image: none;
+		} // .chosen-single
+
+		.chosen-single div b {
+			border: none; // hiding the previous triangle (border)
+
+			// adjust size and color for active icon
+			&::before {
+				border-color: transparent transparent $color-silver;
+				border-style: solid;
+				border-width: 0 6px 12px;
+				content: "";
+				height: 0;
+				width: 0;
+			} // &::before
+		} // .chosen-single div b
+	} // &.chosen-container-single.chosen-with-drop
+} // .gform_wrapper .gfield .chosen-container-single
+
+//--------------------------------------------------------------
+//	CONTENT OVERRIDES
+//--------------------------------------------------------------
+#content .gform_wrapper {
+	margin-right: 0; // allow for full width of containing element
+	max-width: 100%; // allow for full width of containing element
+
+	// Standard fields
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	input[type="file"],
+	textarea {
+		padding: $gf-input-padding;
+		width: 100%;
+
+		@include media($tablet-portrait) {
+			width: 49%;
+		}
+	} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"], textarea
+
+	.chosen-search input[type="text"],
+	textarea {
+		width: 100%;
+	} // .chosen-search input[type="text"], textarea
+
+	// Two-column fields
+	.gf_left_half,
+	.gf_right_half {
+		width: 100%;
+
+		// Inputs
+		input[type="text"],
+		input[type="url"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"],
+		input[type="file"] {
+
+			@include media($tablet-portrait) {
+				width: 100%;
+			}
+		} // input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="file"]
+
+		@include media($tablet-portrait) {
+			width: 49%;
+		}
+	} // .gf_left_half, .gf_right_half
+
+	// Target just left column on two-column row
+	.gf_left_half {
+
+		@include media($tablet-portrait) {
+			margin-right: 2%;
+		}
+	} // .gf_left_half
+
+	// Advanced fields
+	// https://www.gravityhelp.com/documentation/article/css-targeting-examples/#advanced-fields
+	.ginput_complex {
+
+		.name_first input[type="text"],
+		.name_last input[type="text"] {
+			width: 100%;
+		} // .name_first input[type="text"], .name_last input[type="text"]
+	} // .ginput_complex
+} // #content .gform_wrapper

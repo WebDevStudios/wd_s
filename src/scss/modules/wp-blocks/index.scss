@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// WP/Gutenberg Blocks
+//--------------------------------------------------------------
+
+// Default blocks.
+@import "default-blocks/wp-block-button";
+@import "default-blocks/wp-block-gallery";
+@import "default-blocks/wp-block-pullquote";
+@import "default-blocks/wp-block-quote";
+@import "default-blocks/wp-block-separator";
+@import "default-blocks/wp-block-table";
+@import "default-blocks/wp-block-video";
+
+// WDS Blocks.
+@import "wds-blocks/wds-cta";
+@import "wds-blocks/wds-hero";

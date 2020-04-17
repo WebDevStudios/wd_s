@@ -1,0 +1,120 @@
+//--------------------------------------------------------------
+// Global Content Block Styles
+//--------------------------------------------------------------
+.content-block {
+
+	@include padding($gutter * 2 null);
+
+	// Remove the extra padding on nested no-background blocks.
+	&.no-background,
+	&.no-background.container-width,
+	&.has-background.container-width {
+
+		// Remove padding from nth no-background block.
+		+ .no-background,
+		+ .no-background.container-width {
+			padding-top: 0;
+		} // & + .no-background
+	} // &.no-background
+
+	&.has-background:not(.alignfull) {
+
+		@include margin(0 auto);
+
+		&.container-width {
+
+			@include margin($gutter * 2 auto);
+			@include padding($gutter * 2 0);
+
+			@include media($container-offset) {
+
+				@include padding($gutter * 2 $gutter);
+			}
+		} // &.container-width.
+	} // &.has-background
+
+	// Make sure videos stay in their containers.
+	&.video-as-background {
+		overflow: hidden;
+		position: relative;
+	} // &.video-as-background
+
+	// Z-index container in ACF blocks.
+	.container {
+		z-index: 3;
+	}
+
+	// Content Block titles.
+	&-title {
+		text-align: center;
+
+		@include media($tablet-portrait) {
+			text-align: left;
+		}
+	} // .content-block-title
+} // .content-block
+
+
+//-----------------------------------------
+// Gutenberg Columns
+//-----------------------------------------
+.wp-block-column {
+
+	.content-block {
+
+		&.alignfull {
+			left: unset;
+			margin: unset;
+			max-width: 100%;
+			right: unset;
+		}
+	}
+} // .wp-column
+
+//-----------------------------------------
+// Overlay
+//-----------------------------------------
+// If overlay exists...
+.has-overlay {
+	overflow-y: hidden;
+	position: relative;
+	z-index: 0;
+
+	// Transparent overlay.
+	&::after {
+
+		@include position(absolute, 0 0 null null);
+		@include size(100%);
+
+		background-color: $color-overlay;
+		content: "";
+		z-index: 0;
+	} // &:after
+} // &.has-overlay
+
+
+//-----------------------------------------
+// Video Controls
+//-----------------------------------------
+.video-toggle {
+
+	@include position(absolute, null 1% 2% null);
+	@include size(rem(22));
+
+	background: url(../images/icons/pause.svg) center center no-repeat transparent;
+	background-size: rem(16);
+	opacity: 0.2;
+	padding: 0;
+	transition: $transition-opacity;
+	z-index: 5;
+
+	&:active,
+	&:focus,
+	&:hover {
+		opacity: 2;
+	}
+
+	.video-toggled & {
+		background-image: url(../images/icons/play.svg);
+	}
+} // .video-toggle

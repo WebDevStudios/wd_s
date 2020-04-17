@@ -1,0 +1,70 @@
+//--------------------------------------------------------------
+// Global and Shared Navigation Styles.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Caret down.
+//-----------------------------------------
+.caret-down {
+
+	@include size(rem(10), rem(20));
+
+	background: url(../images/icons/caret-down.svg) no-repeat transparent;
+	background-size: 100%;
+	display: inline-block;
+	margin-left: rem(5);
+	vertical-align: middle;
+} // .angle-down
+
+
+//-----------------------------------------
+// Default menu (active after a fresh WordPress install).
+//-----------------------------------------
+.menu {
+
+	@include list-reset;
+
+	ul {
+
+		@include list-reset;
+
+		// Dropdowns.
+		&.sub-menu {
+
+			@include padding(rem(10));
+
+			background: $color-background-submenu;
+
+			li {
+
+				@include margin(0);
+			} // li
+		} // &.sub-menu
+	} // ul
+
+	// For list items with menu items.
+	.menu-item-has-children {
+
+		.menu-item-has-children {
+
+			// Rotate to the right to point toward the direction of the dropdown.
+			.caret-down {
+				transform: rotate(-90deg) translateX(rem(2));
+			} // .caret-down
+		} // .menu-item-has-children
+	} // .menu-item-has-children
+
+	// Menu hyperlinks
+	a {
+		display: block;
+		text-decoration: none;
+	} // a
+
+	// Current items
+	/* stylelint-disable selector-class-pattern */
+	.current_page_item a,
+	.current-menu-item a {
+		color: $color-link-hover;
+	} // .current_page_item a, .current-menu-item a
+	/* stylelint-enable */
+} // .menu

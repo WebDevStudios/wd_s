@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<h2>Fifty\/Fifty<\/h2>",
+            "message": "<h2>Fifty\/Fifty Block<\/h2>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -23,7 +23,7 @@
             "key": "field_5cc9cd655d984",
             "label": "Block Content",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,8 +32,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -277,5 +276,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567181459
+    "modified": 1581959342
 }

@@ -1,0 +1,26 @@
+//--------------------------------------------------------------
+// Typography
+//--------------------------------------------------------------
+
+////
+/// @group variables
+/// @author WebDevStudios
+////
+
+/// Define sans font.
+$font-sans: "Open Sans", sans-serif;
+
+/// Define serif font.
+$font-serif: roboto, georgia, times, "Times New Roman", serif;
+
+/// Define monospace font.
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+/// Define pre font.
+$font-pre: "Courier 10 Pitch", courier, monospace;
+
+/// Define global line-height.
+$line-height-body: lh(26, 16);
+
+/// Define line-height for `<pre>`.
+$line-height-pre: $line-height-body;

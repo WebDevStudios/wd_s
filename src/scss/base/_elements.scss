@@ -1,0 +1,72 @@
+//--------------------------------------------------------------
+// HTML Elements
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Iframes
+//-----------------------------------------
+embed,
+iframe,
+object {
+	max-width: 100%;
+} // embed, iframe, object
+
+hr {
+
+	@include margin(0 0 $space);
+	@include size(auto, 1px);
+
+	background-color: $color-background-hr;
+	border: 0;
+} // hr
+
+figure {
+
+	@include margin(0);
+} // figure
+
+//-----------------------------------------
+// Lists
+//-----------------------------------------
+ul,
+ol {
+
+	@include margin(0);
+	@include padding(0 0 $space rem(30));
+} // ul, ol
+
+ul {
+	list-style: disc;
+} // ul
+
+ol {
+	list-style: decimal;
+} // ol
+
+li > ul,
+li > ol {
+
+	@include margin(0 0 0 $space);
+} // li > ul, li > ol
+
+dt {
+	font-weight: 700;
+} // dt
+
+dd {
+
+	@include margin(0 $space $space 0);
+} // dd
+
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+table {
+
+	@include margin(0 0 $space);
+	@include size(100%, auto);
+} // table
+
+th {
+	font-weight: 700;
+} // th

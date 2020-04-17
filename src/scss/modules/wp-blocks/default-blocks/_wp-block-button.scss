@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// WordPress Default Button Block
+//--------------------------------------------------------------
+// Reset button links to be more inline with our defaults.
+.wp-block-button {
+
+	// The class on the <a>.
+	.wp-block-button__link { /* stylelint-disable-line selector-class-pattern */
+
+		// The hover and focus states.
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		} // &:hover, &:focus
+	} // &__link
+} // .wp-block-button

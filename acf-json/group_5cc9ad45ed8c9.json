@@ -15,15 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<h2>Accordion<\/h2>",
+            "message": "<h2>Accordion Block<\/h2>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
         {
-            "key": "field_5cc9b2818d84a",
+            "key": "field_5e4ac1fd8bd07",
             "label": "Block Content",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,8 +32,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -78,7 +77,7 @@
             "key": "field_5cc9b2958d84b",
             "label": "Accordion Content",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -87,8 +86,7 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -104,12 +102,29 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_5bce03d6a010e",
+            "collapsed": "field_5e4ac38456f0f",
             "min": 1,
             "max": 0,
             "layout": "block",
             "button_label": "Add Accordion Item",
             "sub_fields": [
+                {
+                    "key": "field_5e4ac38456f0f",
+                    "label": "Accordion Item",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
                 {
                     "key": "field_5cc9ad460902d",
                     "label": "Accordion Title",
@@ -231,5 +246,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567182026
+    "modified": 1581958981
 }

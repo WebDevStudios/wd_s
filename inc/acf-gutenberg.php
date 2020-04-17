@@ -122,7 +122,7 @@ function _s_acf_init() {
 					'data' => array(
 						'text_primary' => esc_html__( 'Primary Text content', '_s' ),
 						'media_right'  => array(
-							'url' => get_stylesheet_directory_uri() . '/assets/images/placeholder.png',
+							'url' => get_stylesheet_directory_uri() . '/dist/images/placeholder.png',
 						),
 					),
 				),
@@ -273,7 +273,7 @@ function _s_acf_enqueue_backend_block_styles() {
 	}
 
 	// Enqueue styles here, eventually. And scripts. Need to look at a good way of enqueuing things smartly on the backend without having to enqueue the whole of project.js, for instance.
-	wp_enqueue_style( 'wds-gutenberg-blocks', get_template_directory_uri() . '/gutenberg-blocks-style.css', array(), '1.0.0' );
+	wp_enqueue_style( 'wds-gutenberg-blocks', get_template_directory_uri() . '/dist/css/gutenberg-blocks-style.css', array(), '1.0.0' );
 }
 
 /**
@@ -289,11 +289,11 @@ function _s_acf_enqueue_carousel_scripts() {
 	}
 
 	_s_acf_enqueue_backend_block_styles();
-	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
-	wp_register_script( 'slick-carousel-js', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
+	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/node_modules/slick-carousel/slick/slick.css', null, '1.8.1' );
+	wp_register_script( 'slick-carousel-js', get_template_directory_uri() . '/node_modules/slick-carousel/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
 	wp_enqueue_style( 'slick-carousel' );
 	wp_enqueue_script( 'slick-carousel-js' );
-	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/assets/scripts/project.js', array( 'slick-carousel-js' ), '1.0.0', true );
+	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/dist/js/app.min.js', array( 'slick-carousel-js' ), '1.0.0', true );
 }
 
 /**
@@ -309,7 +309,7 @@ function _s_acf_enqueue_accordion_scripts() {
 	}
 
 	_s_acf_enqueue_backend_block_styles();
-	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/assets/scripts/project.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'wds-block-js', get_template_directory_uri() . '/dist/js/app.min.js', array( 'jquery' ), '1.0.0', true );
 }
 
 /**

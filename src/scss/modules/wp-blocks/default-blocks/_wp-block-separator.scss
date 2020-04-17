@@ -1,0 +1,9 @@
+//--------------------------------------------------------------
+// WordPress Default Separator Block
+//--------------------------------------------------------------
+
+// Match the separator with our current default <hr>
+.wp-block-separator {
+	border-bottom: 1px solid $color-border-block;
+	max-width: 100%;
+} // .wp-block-separator.

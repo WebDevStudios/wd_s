@@ -1,12 +1,23 @@
-node_modules/
-.idea/
-.sass-cache
-*.sublime-project
-.htaccess
-compass_app_log.txt
-*.log
+# os
+*~
 .DS_Store
-.AppleDouble
-.LSOverride
-/vendor/
-/.vscode/
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+
+# node
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+
+# composer
+vendor/
+
+# theme
+dist
+!src/scss/vendor

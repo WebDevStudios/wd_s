@@ -3,10 +3,10 @@
     "title": "Group: Background Options — To Clone",
     "fields": [
         {
-            "key": "field_596d115a08097",
+            "key": "field_5e4abd5d8ad77",
             "label": "Background Options",
             "name": "",
-            "type": "accordion",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,16 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "open": 0,
-            "multi_expand": 0,
+            "placement": "left",
             "endpoint": 0
         },
         {
             "key": "field_596d117a08098",
-            "label": "Background Options",
+            "label": "",
             "name": "background_options",
             "type": "group",
-            "instructions": "Remember: image and video files should be compressed and optimized with tools like ImageOptim (https:\/\/imageoptim.com\/online) and Handbrake (https:\/\/handbrake.fr\/) prior to upload. For best results, background media should be at least 1280x720.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,14 +35,14 @@
             "sub_fields": [
                 {
                     "key": "field_5ab3e6937bb9d",
-                    "label": "Media Type",
+                    "label": "Select Media Type",
                     "name": "background_type",
                     "type": "select",
-                    "instructions": "Choose a type of background.",
+                    "instructions": "Choose a type of media for the background. Remember: image and video files should be compressed and optimized with tools like ImageOptim (https:\/\/imageoptim.com\/online) and Handbrake (https:\/\/handbrake.fr\/) prior to upload. For best results, background media should be at least 1280x720.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -80,7 +79,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "80",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -109,7 +108,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "60",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -141,7 +140,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "60",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -150,6 +149,60 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5ab3e72e7bba0",
+                    "label": "Video (mp4)",
+                    "name": "background_video",
+                    "type": "file",
+                    "instructions": "Required. Add\/Upload an .mp4 video file.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "mp4"
+                },
+                {
+                    "key": "field_5b1aa171e3f50",
+                    "label": "Video (webm)",
+                    "name": "background_video_webm",
+                    "type": "file",
+                    "instructions": "Optional. Add\/Upload an .webm video file. Note: .webm has better compression than .mp4, but isn't supported in all browsers. If both .mp4 and .webm are uploaded, the .webm will load first.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ab3e6937bb9d",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "webm"
                 },
                 {
                     "key": "field_5c794cdf8de38",
@@ -175,7 +228,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "20",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -184,60 +237,6 @@
                     "ui": 1,
                     "ui_on_text": "",
                     "ui_off_text": ""
-                },
-                {
-                    "key": "field_5ab3e72e7bba0",
-                    "label": "Video (mp4)",
-                    "name": "background_video",
-                    "type": "file",
-                    "instructions": "Required. Add\/Upload an .mp4 video file.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5ab3e6937bb9d",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "mp4"
-                },
-                {
-                    "key": "field_5b1aa171e3f50",
-                    "label": "Video (webm)",
-                    "name": "background_video_webm",
-                    "type": "file",
-                    "instructions": "Optional. Add\/Upload an .webm video file. Note: .webm has better compression than .mp4, resulting in much smaller file size.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5ab3e6937bb9d",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "webm"
                 }
             ]
         }
@@ -259,5 +258,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1559318547
+    "modified": 1581960662
 }

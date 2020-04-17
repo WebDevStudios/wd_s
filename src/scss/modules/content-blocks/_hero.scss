@@ -1,0 +1,48 @@
+//--------------------------------------------------------------
+// Hero Block
+//--------------------------------------------------------------
+.hero-block {
+
+	// Content container.
+	&-content {
+
+		@include margin(0 auto);
+
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: rem(500);
+		justify-content: center;
+		max-width: 50%;
+		position: relative;
+		text-align: center;
+	} // .hero-content
+
+	// Add padding to description.
+	&-description {
+		padding-bottom: $gutter * 2;
+	} // .hero-description
+
+	// Remove any text decoration.
+	.button-hero {
+		font-size: inherit;
+		height: auto;
+		line-height: normal;
+		padding: rem(8) rem(20);
+		text-decoration: none;
+	} // a.button-hero
+} // .hero
+
+//-----------------------------------------
+// IE Fixes
+//-----------------------------------------
+.ie .hero {
+
+	// IE seems to have some width issues with flexbox,
+	// the text is rendered wider than its container
+	// and doesn't wrap. This fixes that.
+	.hero-title,
+	.hero-description {
+		width: 100%;
+	} // .hero-title, .hero-description
+} // .ie .hero

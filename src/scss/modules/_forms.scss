@@ -1,0 +1,184 @@
+//--------------------------------------------------------------
+// Forms
+//--------------------------------------------------------------
+
+button,
+input,
+select,
+textarea {
+
+	@include margin(0); // Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+
+	// Corrects font size not being inherited in all browsers
+	font-size: 100%; /* stylelint-disable-line declaration-property-unit-whitelist */
+	vertical-align: baseline; // Improves appearance and consistency in all browsers
+} // button, input, select, textarea
+
+// Corrects inner padding and border displayed oddly in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+
+	@include padding(0);
+
+	border: 0;
+} // button::-moz-focus-inner, input::-moz-focus-inner
+
+textarea {
+
+	@include size(100%, auto);
+
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
+	vertical-align: top; // Improves readability and alignment in all browsers
+} // textarea
+
+input[type="search"] {
+	// Addresses appearance set to searchfield in S5, Chrome
+	-webkit-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
+	box-sizing: content-box;
+
+	// Corrects inner padding displayed oddly in S5, Chrome on OSX
+	&::-webkit-search-decoration {
+		-webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+	} // &::-webkit-search-decoration
+} // input[type="search"]
+
+//-----------------------------------------
+// Select Form Default
+//-----------------------------------------
+select {
+	background-image: url(../images/icons/caret-down.svg);
+	background-position: calc(100% - #{rem(20)}) 50%;
+	background-repeat: no-repeat;
+	background-size: 10px 16px;
+
+	// for IE11;
+	&::-ms-expand {
+		display: none;
+	} // &::-ms-expand
+} // select
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+select,
+textarea {
+
+	@include padding(rem(6) rem(10));
+
+	appearance: none;
+	background-color: $color-white;
+	border: 1px solid $color-border-input;
+	border-radius: 0;
+	color: $color-text-input;
+	line-height: 1.5;
+	max-width: 100%;
+	min-width: rem(250);
+
+	&::-webkit-input-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&::-moz-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&:-moz-placeholder {
+		color: $color-text-input;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-text-input;
+	}
+
+	&:focus {
+		color: $color-focus-text-input;
+	} // &:focus
+}
+
+// Remove the clear x icon in IE
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+} // input[type="text"]::-ms-clear, input[type="search"]::-ms-clear
+
+//-----------------------------------------
+// Radio/Checkbox
+//-----------------------------------------
+input[type="checkbox"],
+input[type="radio"] {
+
+	@include size(rem(20));
+
+	appearance: none;
+	border: 1px solid $color-border-input;
+	border-radius: rem(3);
+	margin: 0 rem(3) 0 0;
+	outline: 0;
+	padding: rem(9);
+	position: relative;
+	vertical-align: sub;
+}
+
+input[type="radio"] {
+	border-radius: rem(75);
+}
+
+input[type="radio"]:checked::after {
+
+	@include position(relative, rem(-6) rem(6) null null);
+	@include size(rem(12));
+
+	background-color: $color-focus-text-input;
+	border-radius: 50%;
+	content: "";
+	display: block;
+}
+
+input[type="checkbox"]:checked::after {
+
+	@include position(relative, rem(-7) rem(3) null null);
+	@include size(rem(7), rem(11)); // Make it a small rectangle so the border will create an L-shape.
+
+	// Add a white border on the bottom and left, creating that 'L'.
+	border: solid $color-focus-text-input;
+	border-width: 0 3px 3px 0;
+
+	// Add another block-level blank space.
+	content: "";
+	display: block;
+
+	// Rotate the L 45 degrees to turn it into a checkmark.
+	transform: rotate(45deg);
+}
+
+//-----------------------------------------
+// Search Form Input + Button
+//-----------------------------------------
+.search-form {
+
+	// Input.
+	.search-field {
+		min-width: 0;
+		width: calc(100% - #{rem(98)});
+	} // .search-field
+
+	.search-submit {
+		width: rem(100);
+	} // .search-submit
+} // .search-form

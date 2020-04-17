@@ -1,0 +1,93 @@
+//--------------------------------------------------------------
+// Accordion Block
+//--------------------------------------------------------------
+.accordion-block {
+	position: relative;
+
+	.accordion {
+
+		.accordion-item {
+
+			@include margin($space null null null);
+
+			&-header {
+				cursor: pointer;
+				position: relative;
+			} // &-header
+
+			&-title {
+
+				@include margin(0);
+
+				padding-right: rem(30); // Space for toggle.
+				position: relative;
+			} // &-title
+
+			&-content {
+				max-height: 0;
+				opacity: 0;
+				transition: $trasition-accordion;
+				transition-delay: 0.4s, 0s, 0.2s;
+				visibility: hidden;
+
+				p:last-of-type {
+					margin-bottom: 0;
+				} // p:last-of-type
+			} // &-content
+
+			&.open,
+			.no-js & {
+
+				.accordion-item-content {
+					max-height: rem(10000);
+					opacity: 1;
+					visibility: visible;
+				} // .accordion-item-content
+			} // &.open
+
+			&-toggle {
+
+				@include padding(0);
+				@include position(absolute, rem(12) 0 null null);
+
+				align-items: center;
+				background-color: transparent;
+				border: none;
+				color: inherit;
+				display: flex;
+				min-width: unset;
+				width: 100%;
+
+				&-icon {
+
+					@include position(absolute, calc(50% - #{rem(12)}) 0 null null);
+					@include size($space);
+
+					background-color: $color-background-button;
+					border-radius: 100%;
+					color: $color-white;
+					transition: $transition-transform;
+
+					.no-js & {
+						display: none;
+					} // .no-js &
+				} // &-icon
+			} // &-toggle
+
+			&.open {
+
+				.accordion-item-toggle {
+
+					span {
+						transform: rotate(45deg);
+					} // span
+				} // .item-toggle
+			} // &.open
+
+			.item-toggle {
+
+				@include size($space);
+			} // .item-toggle
+		} // .accordion-item
+	} // .accordion
+} // .accordion-block

@@ -1,0 +1,111 @@
+//--------------------------------------------------------------
+// Scaffolding Library
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Scaffolding defaults
+//-----------------------------------------
+.scaffolding-document {
+	margin-bottom: $gutter * 2;
+
+	// The section <header>
+	&-header {
+		border-bottom: 1px solid $color-border-scaffolding;
+		margin-bottom: $gutter;
+		padding-bottom: $gutter;
+
+		// The title.
+		h3 {
+
+			@include margin(0);
+			@include padding(0);
+		} // h2
+
+		// The text.
+		p {
+			font-style: italic;
+			margin-top: rem(12);
+		} // p
+	} // .scaffolding-section-header
+
+	// The section content <div>
+	&-content {
+
+		// Reset.
+		h4,
+		p {
+
+			@include margin($gutter 0);
+		} // h4, p
+
+		// The <pre> container.
+		pre {
+
+			@include margin(0 0 $gutter);
+			@include padding($gutter);
+
+			background-color: $color-background-pre;
+			border: 1px solid $color-border-pre;
+			color: $color-text-pre;
+		} // pre
+
+		// The <code> container.
+		code {
+
+			@include padding(rem(5));
+
+			background-color: $color-background-code;
+			font-size: rem(13);
+		} // code
+	} // &-content
+
+	// Always display the global scaffolding.
+	&.scaffolding-colors,
+	&.scaffolding-fonts {
+
+		.scaffolding-document-content {
+			display: block;
+		} // .scaffolding-document-content
+	} // &.scaffolding-colors, &.scaffolding-fonts
+} // .scaffolding-document
+
+
+//-----------------------------------------
+// Color swatch defaults
+//-----------------------------------------
+.swatch-container {
+	position: relative;
+
+	// Each swatch.
+	.swatch {
+		border: 1px solid $color-border-scaffolding-swatch;
+		height: rem(150);
+		margin-bottom: $gutter;
+		margin-right: 1.5%;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+
+		// The swatch <header>
+		header {
+			align-content: center;
+			color: $color-scaffolding;
+			display: flex;
+			flex-direction: column;
+			height: calc(100% - #{rem(39)});
+			justify-content: center;
+		} // header
+
+		// The swatch <footer>
+		footer {
+
+			@include padding(rem(10));
+			@include position(absolute, null null 0 null);
+
+			background-color: $color-background-scaffolding;
+			border-top: 1px solid $color-scaffolding;
+			font-size: rem(12);
+			width: 100%;
+		} // footer
+	} // .swatch
+} // .swatch-container

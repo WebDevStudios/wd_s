@@ -1,0 +1,286 @@
+//--------------------------------------------------------------
+// Comments
+//--------------------------------------------------------------
+
+
+//-----------------------------------------
+// Comment area scaffolding
+//-----------------------------------------
+.comments-area {
+
+	@include margin(rem(100) 0 rem(151));
+
+	border-top: 1px solid $color-border-comment;
+
+	@include media($desktop) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.comment-reply-title {
+
+		@include margin(rem(47) null null null);
+	} // .comment-reply-title
+
+	.comments-title {
+
+		@include margin(rem(126) null null null);
+
+		font-size: $space;
+	} // .comments-title
+
+	.comment-notes {
+
+		@include margin(null null rem(54) null);
+
+		font-size: em(16);
+	} // .comment-notes
+} // .comments-area
+
+
+//-----------------------------------------
+// Labels
+//-----------------------------------------
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+
+	label {
+		font-size: rem(16);
+		text-transform: uppercase;
+		width: 100%;
+	} // label
+} // .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url
+
+
+//-----------------------------------------
+// The comment form.
+//-----------------------------------------
+.comment-form {
+	width: 100%;
+
+	// Any input (except submit button)
+	input:not(.button):not([type="checkbox"]) {
+		clear: both;
+		transition: $transition-border;
+		width: 100%;
+
+		// Focus + active state.
+		&:focus,
+		&:active {
+			border: 1px solid $color-border-comment-focus;
+		} // &:focus, &:active
+
+		@include media($tablet-portrait) {
+			max-width: rem(250);
+		}
+	} // input:not(.submit)
+
+	// Comment text area.
+	textarea {
+		max-width: rem(870);
+		transition: $transition-border;
+
+		// Focus + active state.
+		&:focus,
+		&:active {
+			border: 1px solid $color-border-comment-focus;
+		} // &:focus, &:active
+	} // textara
+
+	.form-submit {
+
+		@include margin(0);
+	} // .form-submit
+
+	// Submit button.
+	input[type="submit"] {
+		width: rem(196);
+	} // input[type="submit"]
+} // .comment-form
+
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+.comment-list {
+
+	@include list-reset;
+	@include margin(0);
+
+	// Each comment body.
+	.comment-body {
+
+		@include padding(rem(36));
+	} // .comment-body
+
+	li > .comment-body {
+
+		@include margin(rem(2) null);
+	} // li
+
+	// By post author.
+	.bypostauthor > .comment-body {
+		background-color: $color-background-author;
+		display: block;
+	} // .bypostauthor > .comment-body
+
+	// Even comments get nice gray background.
+	.even:not(.bypostauthor) > .comment-body {
+		background-color: $color-background-even;
+	} // .even > .comment-body
+
+	// Even comments get nice gray background.
+	.odd:not(.bypostauthor) > .comment-body {
+		background-color: $color-background-odd;
+	} // .odd > .comment-body
+
+	// Comment content.
+	.comment-content {
+
+		@include margin($space 0);
+
+		max-width: rem(936);
+	} // .comment-content
+
+	// The comment author name.
+	.comment-author {
+		line-height: 1;
+	} // .comment-author
+
+	// Comment meta.
+	.comment-meta {
+
+		@include margin(0 0 rem(14));
+
+		.comment-author {
+			align-items: center;
+			display: flex;
+
+			.says {
+				display: inline-block;
+				margin-left: rem(5);
+			} // .says
+		} // .comment-author
+	} // .comment-meta
+
+	// The date/time.
+	.comment-metadata {
+
+		@include margin(rem(25) null null);
+
+		line-height: 1;
+
+		a {
+			color: $color-meta-links;
+			text-decoration: none;
+		} // a
+
+		time {
+			font-size: rem(12);
+		} // time
+	} // .comment-metadata
+
+	// Comments avatar.
+	.avatar {
+
+		@include margin(0 $space 0 0);
+
+		border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
+	} // .avatar
+
+	// The reply link/button thingy.
+	.comment-reply-link {
+		font-weight: 700;
+	} // .comment-reply-link
+
+	// If someone replies with code...
+	pre,
+	code {
+
+		@include margin(0);
+
+		padding-top: rem(5);
+		width: 100%;
+	} // pre, code
+} // .comment-list
+
+
+//-----------------------------------------
+// Nested children scaffolding.
+//-----------------------------------------
+.comment-list {
+
+	// Comment children.
+	.children {
+
+		@include padding(null null 0 $space / 2);
+
+		list-style: none;
+		margin-left: 0;
+
+		.depth-4,
+		.depth-5,
+		.depth-6,
+		.depth-7,
+		.depth-8,
+		.depth-9,
+		.depth-10 {
+
+			// Increase line height on mobile for better readability.
+			.comment-author {
+				line-height: 1.25;
+
+				@include media($phone) {
+					line-height: 1;
+				}
+			} // .comment-author
+		} // .depth-x
+	} // .children
+} // .comment-list
+
+
+//-----------------------------------------
+// Inline reply
+//-----------------------------------------
+.comment-list {
+
+	.comment-respond {
+
+		@include padding($space);
+
+		background-color: $color-comment-response;
+
+		@include media($phone) {
+			padding-left: rem(36);
+			padding-right: rem(36);
+		}
+
+		.comment-reply-title {
+
+			// The "cancel reply".
+			a {
+				display: inline-block;
+				text-transform: lowercase;
+
+				&::before {
+					content: "(";
+				}
+
+				&::after {
+					content: ")";
+				}
+			} // a
+		} // .comment-reply-title
+
+		.form-submit {
+
+			@include margin(0);
+
+			input[type="submit"] {
+				margin-top: rem(5);
+			}
+		} // .form-submit
+	} // .comment-respond
+} // .comment-list

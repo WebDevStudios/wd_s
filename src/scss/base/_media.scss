@@ -1,0 +1,216 @@
+// --------------------------------------------------------------
+// Media
+// --------------------------------------------------------------
+
+// Page, Entry and Comment Content
+.page-content,
+.entry-content,
+.comment-content {
+	// WP smiley
+	.wp-smiley {
+
+		@include margin(0);
+		@include padding(0);
+
+		border: none;
+	} // img.wp-smiley
+} // .page-content, .entry-content, .comment-content
+
+//-----------------------------------------
+// Images
+//-----------------------------------------
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+//-----------------------------------------
+// Captions
+//-----------------------------------------
+
+// Image caption text
+.wp-caption-text {
+	text-align: center;
+} // .wp-caption-text
+
+// Image captions
+.wp-caption {
+
+	@include margin(0 0 $space);
+
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+
+		@include margin(0 auto);
+
+		display: block;
+	} // img[class*="wp-image-"]
+
+	// Add auto margins so image is centered
+	&.aligncenter {
+
+		@include margin(0 auto $space auto);
+	} // &.aligncenter
+
+	// Add a margin right to left-aligned images with captions
+	&.alignleft {
+
+		@include margin(null $space null null);
+	} // &.alignleft
+
+	// Add a margin left to right-aligned images with captions
+	&.alignright {
+
+		@include margin(null null null $space);
+	} // &.alignright
+
+	// Add top and bottom margin to caption text
+	.wp-caption-text {
+
+		@include margin(rem(12) 0);
+	} // .wp-caption-text
+} // .wp-caption
+
+//-----------------------------------------
+// Galleries
+//-----------------------------------------
+
+// Gallery
+.gallery {
+
+	@include margin(0 0 $space);
+} // .gallery
+
+// Gallery items
+.gallery-item {
+
+	@include size(100%, auto);
+
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+
+	.gallery-columns-2 & {
+		max-width: 50%;
+	} // .gallery-columns-2 &
+
+	.gallery-columns-3 & {
+		max-width: 33.33%;
+	} // .gallery-columns-3 &
+
+	.gallery-columns-4 & {
+		max-width: 25%;
+	} // .gallery-columns-4 &
+
+	.gallery-columns-5 & {
+		max-width: 20%;
+	} // .gallery-columns-5 &
+
+	.gallery-columns-6 & {
+		max-width: 16.66%;
+	} // .gallery-columns-6 &
+
+	.gallery-columns-7 & {
+		max-width: 14.28%;
+	} // .gallery-columns-7 &
+
+	.gallery-columns-8 & {
+		max-width: 12.5%;
+	} // .gallery-columns-8 &
+
+	.gallery-columns-9 & {
+		max-width: 11.11%;
+	} // .gallery-columns-9 &
+} // .gallery-item
+
+// Gallery caption
+.gallery-caption {
+	display: block;
+} // .gallery-caption
+
+//-----------------------------------------
+// Embeds
+//-----------------------------------------
+.fluid-embed,
+.is-provider-wistia-inc {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+	position: relative;
+
+	embed,
+	object,
+	iframe {
+
+		@include position(absolute, 0 null null 0);
+		@include size(100%);
+	} // embed, object, iframe
+} // .fluid-embed
+
+// Jetpack now auto wraps all oembed videos in a <div>
+// Let's make it full-width in the content cuz it looks cool.
+.jetpack-video-wrapper {
+	margin-left: rem(-35);
+	max-width: calc(100% + 70px);
+	width: calc(100% + 70px);
+
+	@include media($tablet-landscape) {
+		margin-left: rem(-115);
+		max-width: calc(100% + 230px);
+		width: calc(100% + 230px);
+	}
+} // .jetpack-video-wrapper
+
+// Center image background
+.image-as-background {
+	overflow: hidden;
+	position: relative;
+} // .image-as-background
+
+// Video and Image as background.
+.video-background,
+.image-background {
+
+	@include position(absolute, 50% null null 0);
+	@include size(100%, auto);
+
+	display: block;
+	transform: translateY(-50%);
+	z-index: -1;
+
+	@supports (object-fit: cover) {
+
+		@include size(100%);
+
+		object-fit: cover;
+	}
+} // .video-background
+
+// Video as background
+.video-background {
+	object-position: center top;
+} // .video-background
+
+// Image as background
+.image-background {
+	object-position: center center;
+
+	img {
+
+		@include size(100%);
+
+		object-fit: cover;
+	}
+} // .image-background
+
+// IE/Edge hacks.
+.ie .video-background,
+.edge .video-background {
+	height: auto;
+} // .ie .video-background
+
+// svg defs
+.svg-defs {
+	display: none;
+} // .svg-defs

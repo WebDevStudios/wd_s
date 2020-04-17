@@ -1,0 +1,93 @@
+//--------------------------------------------------------------
+// Main Navigation — Desktop.
+//--------------------------------------------------------------
+
+
+.main-navigation {
+	display: none;
+
+	@include media($tablet-landscape) {
+		display: block;
+	}
+
+	// Menu area
+	ul {
+		display: none;
+
+		@include media($phone) {
+
+			@include margin(null auto);
+			@include padding(null $gutter);
+
+			display: block;
+			max-width: $max-width;
+		}
+
+		@include media($container-offset) {
+
+			@include padding(null 0);
+		}
+
+		li {
+
+			@include margin(0 rem(10) 0 0);
+
+			display: inline-block;
+		} // li
+	} // ul
+
+	&.toggled ul {
+		display: block;
+	} // &.toggled ul
+} // .main-navigation
+
+//-----------------------------------------
+// Dropdown.
+//-----------------------------------------
+.dropdown {
+	position: relative;
+
+	// Sub-menu
+	ul {
+
+		@include position(absolute, $space null null -999em);
+
+		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
+		z-index: 99999;
+
+		// Sub-sub menu
+		ul {
+			left: -999em;
+			top: 0;
+		} // ul
+
+		// Sub-menu items
+		li {
+			width: 100%;
+
+			&:hover > ul,
+			&.focus > ul {
+				left: 100%;
+			} // &:hover > ul, &.focus > ul
+		} // li
+
+		// Sub-menu links
+		a {
+
+			@include size(100%, auto);
+
+			min-width: rem(200);
+		} // a
+	} // ul
+
+	// Display sub-menu on hover
+	li:hover > ul,
+	.focus > ul {
+		left: auto;
+	} // li:hover > ul, .focus > ul
+
+	// Menu items
+	li {
+		position: relative;
+	} // li
+} // &.dropdown

@@ -34,7 +34,9 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Get block display options.
-	$display_options = array();
+	$display_options = array(
+		'font_color' => '',
+	);
 
 	// Set our Display Options if we have them. Some blocks may not.
 	if ( get_sub_field( 'display_options' ) ) {
@@ -114,7 +116,7 @@ function _s_display_block_options( $args = array() ) {
 	}
 
 	// Set the custom font color.
-	if ( $args['font_color']['color_picker'] ) {
+	if ( isset( $args['font_color']['color_picker'] ) ) {
 		$args['class'] .= ' has-font-color color-' . esc_attr( $args['font_color']['color_picker'] );
 	}
 

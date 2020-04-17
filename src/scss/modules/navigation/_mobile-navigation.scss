@@ -1,0 +1,304 @@
+//--------------------------------------------------------------
+// Mobile Navigation.
+//
+// 1. Mobile Navigation Styles.
+// 2. Parent Indicator.
+// 3. Menu Item Has Children.
+// 4. Hamburger Button.
+// 5. Off Canvas Drawer.
+//
+//--------------------------------------------------------------
+//-----------------------------------------
+// 1. Mobile Navigation Styles.
+//-----------------------------------------
+.mobile-menu {
+
+	@include list-reset;
+
+	ul {
+
+		@include list-reset;
+	} // ul
+
+	li {
+
+		@include padding(rem(12));
+
+		list-style: none;
+		position: relative;
+	} // li
+
+	a {
+		color: $color-mobile-menu-link;
+		font-size: rem(14);
+
+		&:focus {
+			outline: 2px solid $color-mobile-menu-link;
+		} // &:focus
+	} // a
+
+	// Submenu dropdowns.
+	.sub-menu {
+		display: none;
+
+		// If submenu is open.
+		&.is-visible {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		} // &.is-visible
+	} // .sub-menu
+} // .mobile-menu
+
+//-----------------------------------------
+// 2. Create a down arrow on parent items.
+//-----------------------------------------
+.parent-indicator {
+
+	@include padding(0 rem(5));
+	@include position(absolute, rem(10) rem(10) null null);
+	@include size(rem(35), rem(25));
+
+	background-color: transparent;
+	display: inline-block;
+	z-index: 9999;
+
+	&:focus {
+		outline: 2px solid $color-mobile-menu-link;
+	} // &:focus
+} // .parent-indicator
+
+//-----------------------------------------
+// 3. Menu Item Has Children.
+//-----------------------------------------
+.mobile-menu {
+
+	// Parent menu items.
+	.menu-item-has-children {
+		transition: max-height 0.5s;
+
+		// Force menu link to accomodate down button.
+		a {
+			display: inline-block;
+			max-width: calc(100% - 40px);
+		} // a
+
+		&.is-visible {
+			max-height: rem(500);
+
+			// When visible, flip the down arrow.
+			.down-arrow {
+				transform: rotateX(180deg);
+			} // .down-arrow
+		} // .is-visible
+
+		.menu-item-has-children {
+
+			&:last-of-type {
+
+				.menu-item-has-children.is-visible {
+					margin-bottom: 0;
+				}
+			} // &:last-of-type
+
+			.down-arrow {
+				transform: rotateX(0);
+			} // .down-arrow
+
+			&.is-visible {
+
+				&:last-of-type {
+					margin-bottom: 0;
+				} // &:last-of-type
+
+				// When visible, flip the down arrow.
+				.down-arrow {
+					transform: rotateX(180deg);
+				} // .down-arrow
+			} // &.is-visible
+
+			/* stylelint-disable max-nesting-depth */
+			.menu-item-has-children {
+
+				.down-arrow {
+					transform: rotateX(0);
+				} // .down-arrow
+
+				&.is-visible {
+
+					// When visible, flip the down arrow.
+					.down-arrow {
+						transform: rotateX(180deg);
+					} // .down-arrow
+				} // &.is-visible
+			} // .menu-item-has-children
+		} // .menu-item-has-children
+	} // .menu-item-has-children
+} // .mobile-menu
+
+//-----------------------------------------
+// 4. Hamburger Button.
+//-----------------------------------------
+.hamburger {
+
+	@include position(absolute, 50% null null 0);
+
+	background-color: transparent;
+	outline: none;
+	transform: translateY(-50%);
+
+	&,
+	&::before,
+	&::after {
+
+		@include position(absolute, null null null 0);
+		@include size(rem(35), rem(5));
+
+		background: $color-background-hamburger;
+		border-radius: $border-radius-thin;
+		content: "";
+		cursor: pointer;
+		display: block;
+		transform-origin: center center;
+		transition: $transition-hamburger;
+	}
+
+	&::before {
+		transform: translateY(-200%);
+	}
+
+	&::after {
+		transform: translateY(200%);
+	}
+
+	.is-visible & {
+		background-color: transparent;
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	} // .is-visible
+} // .hamburger
+
+//-----------------------------------------
+// 5. Off Canvas Drawer.
+//-----------------------------------------
+.off-canvas {
+
+	// The container.
+	&-container {
+
+		@include position(fixed, 0 auto 0 0);
+		@include size(rem(220), 100%);
+
+		background-color: $color-background-off-canvas;
+		-webkit-overflow-scrolling: touch;
+		overflow-y: auto;
+		transform: translateX(rem(-220));
+		transition: $transition-transform;
+		z-index: 9998;
+
+		&.is-visible {
+			transform: translateX(0);
+		}
+
+		// Deal with the admin bar.
+		.admin-bar & {
+			padding-top: rem(46);
+
+			@include media($wp-admin-bar) {
+				padding-top: rem(32);
+			}
+		} // .admin-bar &
+	} // .off-canvas-container
+
+	// The hamburger nav.
+	&-open {
+
+		@include padding(0);
+		@include position(absolute, $space $space null null);
+		@include size(rem(35));
+
+		background-color: transparent;
+		display: block;
+
+		@include media($tablet-landscape) {
+			display: none;
+		}
+
+		// Deal with the admin bar.
+		.admin-bar & {
+
+			@include position(absolute, rem(56) null null null);
+		} // .admin-bar &
+
+		&:focus,
+		&:hover {
+			background-color: transparent;
+			outline: 2px solid $color-mobile-menu-link;
+		} // &:focus, &:hover
+	} // .off-canvas-button
+
+	// The close "X" button.
+	&-close {
+
+		@include padding(rem(12) rem(5));
+		@include position(absolute, rem(10) rem(10) null null);
+		@include size(rem(35));
+
+		background-color: transparent;
+		display: none;
+		z-index: 9999;
+
+		&:focus,
+		&:hover {
+			background: transparent;
+			outline: 2px solid $color-mobile-menu-link;
+		} // &:focus, &:hover
+
+		.admin-bar & {
+			top: rem(60);
+
+			@include media($wp-admin-bar) {
+				top: rem(46);
+			}
+		} // .admin-bar &
+
+		.is-visible & {
+			display: inline-block;
+		} // .is-visible &
+	} // .off-canvas-close
+
+	// The background screen.
+	&-screen {
+
+		@include position(fixed, 0);
+
+		background: $color-background-off-canvas-screen;
+		opacity: 0;
+		transition: $transition-opacity;
+		visibility: hidden;
+		z-index: 9996;
+
+		&.is-visible {
+			opacity: 0.4;
+			visibility: visible;
+		}
+	} // .off-canvas-screen
+
+	// Content container.
+	&-content {
+		display: none;
+
+		.is-visible & {
+
+			@include margin($gutter * 2 null null);
+
+			display: block;
+		}
+	} // .off-canvas-content
+} // .off-canvas

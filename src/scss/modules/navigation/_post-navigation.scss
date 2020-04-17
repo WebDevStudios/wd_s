@@ -1,0 +1,62 @@
+//--------------------------------------------------------------
+// Navigation on Comment, Post and Posts.
+//--------------------------------------------------------------
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	@include margin(null auto);
+	@include padding(null $gutter);
+
+	max-width: $max-width;
+
+	@include media($container-offset) {
+
+		@include padding(0);
+	}
+
+	.nav-links {
+
+		@include margin($space null null);
+
+		display: flex;
+		flex: 0 0 100%;
+		flex-flow: row wrap;
+		width: 100%; // For IE11.
+	} // .nav-links
+
+	.site-main & {
+
+		@include margin(0 0 $space);
+
+		overflow: hidden;
+	} // .site-main &
+
+	.nav-previous {
+
+		@include size(50%, auto);
+
+		margin-right: auto;
+	} // &.nav-previous
+
+	.nav-next {
+
+		@include size(50%, auto);
+
+		margin-left: auto;
+		text-align: right;
+	} // &.nav-next
+} // .comment-navigation, .posts-navigation, .post-navigation
+
+//-----------------------------------------
+// Numbered Pagination
+//-----------------------------------------
+.pagination-container {
+
+	.page-numbers {
+
+		&.current {
+			font-weight: 700;
+		} // &.current
+	} // .page-numbers
+} // .pagination-container
