@@ -332,7 +332,9 @@ function _s_display_social_network_links() {
 						<?php
 						_s_display_svg(
 							array(
-								'icon' => $network . '-square',
+								'icon'   => $network . '-square',
+								'width'  => '24',
+								'height' => '24',
 							)
 						);
 						?>
