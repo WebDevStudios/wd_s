@@ -62,11 +62,11 @@
 
 	.wp-block {
 
-		&[data-type*='wds'] {
+		&[data-type*="wds"] {
 			padding-left: rem(43);
 			padding-right: rem(43);
 
-			&[data-align='full'] {
+			&[data-align="full"] {
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -79,7 +79,7 @@
 //-----------------------------------------
 .wp-block {
 
-	&[data-type*='wds'] {
+	&[data-type*="wds"] {
 
 		.acf-block-component {
 
