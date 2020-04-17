@@ -4,8 +4,6 @@
 // github.com/csstools/sanitize.css
 //--------------------------------------------------------------
 
-// sass-lint:disable property-sort-order, indentation, property-units, no-duplicate-properties
-
 //-----------------------------------------
 // Colors
 //-----------------------------------------
@@ -49,19 +47,20 @@ $color-white: #fff;
 //-----------------------------------------
 html {
 	cursor: default; // 1
-	font-family: // 2
+	font-family:
+		// 2
 		system-ui,
-		-apple-system, // macOS 10.11-10.12
-		Segoe UI, // Windows 6+
-		Roboto, // Android 4+
-		Ubuntu, // Ubuntu 10.10+
-		Cantarell, // Gnome 3+
-		Noto Sans, // KDE Plasma 5+
-		sans-serif, // fallback
-		'Apple Color Emoji', // macOS emoji
-		'Segoe UI Emoji', // Windows emoji
-		'Segoe UI Symbol', // Windows emoji
-		'Noto Color Emoji'; // Linux emoji
+		-apple-system,
+		Segoe UI,
+		Roboto,
+		Ubuntu,
+		Cantarell,
+		Noto Sans,
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji"; // Linux emoji
 	line-height: 1.15; // 3
 	-moz-tab-size: 4; // 4
 	tab-size: 4; // 4
@@ -125,14 +124,15 @@ nav ul {
 // 2. Correct the odd `em` font sizing in all browsers.
 //-----------------------------------------
 pre {
-	font-family: // 1
-		Menlo, // macOS 10.10+
-		Consolas, // Windows 6+
-		Roboto Mono, // Android 4+
-		Ubuntu Monospace, // Ubuntu 10.10+
-		Noto Mono, // KDE Plasma 5+
-		Oxygen Mono, // KDE Plasma 4+
-		Liberation Mono, // Linux/OpenOffice fallback
+	font-family:
+		// 1
+		Menlo, /* macOS 10.10+*/
+		Consolas, /* Windows 6+*/
+		Roboto Mono, /* Android 4+*/
+		Ubuntu monospace, /* Ubuntu 10.10+*/
+		Noto Mono, /* KDE Plasma 5+*/
+		Oxygen Mono, /* KDE Plasma 4+*/
+		Liberation Mono, /* Linux/OpenOffice fallback*/
 		monospace; // fallback
 	font-size: 1em; // 2
 }
@@ -173,13 +173,13 @@ code,
 kbd,
 samp {
 	font-family:
-		Menlo, // macOS 10.10+
-		Consolas, // Windows 6+
-		Roboto Mono, // Android 4+
-		Ubuntu Monospace, // Ubuntu 10.10+
-		Noto Mono, // KDE Plasma 5+
-		Oxygen Mono, // KDE Plasma 4+
-		Liberation Mono, // Linux/OpenOffice fallback
+		Menlo, /* macOS 10.10+*/
+		Consolas, /* Windows 6+*/
+		Roboto Mono, /* Android 4+*/
+		Ubuntu monospace, /* Ubuntu 10.10+*/
+		Noto Mono, /* KDE Plasma 5+*/
+		Oxygen Mono, /* KDE Plasma 4+*/
+		Liberation Mono, /* Linux/OpenOffice fallback*/
 		monospace; // fallback
 	font-size: 1em; // 2
 }
@@ -312,9 +312,9 @@ button {
 // Correct the inability to style clickable types in iOS and Safari.
 //-----------------------------------------
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
 	-webkit-appearance: button;
 }
 
@@ -373,8 +373,8 @@ textarea {
 //-----------------------------------------
 // Remove the padding in IE 10-.
 //-----------------------------------------
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
 	padding: 0;
 }
 
@@ -382,7 +382,7 @@ textarea {
 // 1. Correct the odd appearance in Chrome and Safari.
 // 2. Correct the outline style in Safari.
 //-----------------------------------------
-[type='search'] {
+[type="search"] {
 	-webkit-appearance: textfield; // 1
 	outline-offset: -2px; // 2
 }
@@ -415,7 +415,7 @@ textarea {
 // 2. Change font properties to `inherit` in Safari.
 //-----------------------------------------
 ::-webkit-file-upload-button {
--webkit-appearance: button; // 1
+	-webkit-appearance: button; // 1
 	font: inherit; // 2
 }
 
@@ -534,7 +534,7 @@ textarea,
 //-----------------------------------------
 // Change the cursor on busy elements in all browsers (opinionated).
 //-----------------------------------------
-[aria-busy='true'] {
+[aria-busy="true"] {
 	cursor: progress;
 }
 
@@ -549,7 +549,7 @@ textarea,
 // Change the cursor on disabled, not-editable, or otherwise
 // inoperable elements in all browsers (opinionated).
 //-----------------------------------------
-[aria-disabled='true'],
+[aria-disabled="true"],
 [disabled] {
 	cursor: not-allowed;
 }
@@ -558,7 +558,7 @@ textarea,
 // Change the display on visually hidden accessible elements
 // in all browsers (opinionated).
 //-----------------------------------------
-[aria-hidden='false'][hidden]:not(:focus) {
+[aria-hidden="false"][hidden]:not(:focus) {
 	clip: rect(0, 0, 0, 0);
 	display: inherit;
 	position: absolute;

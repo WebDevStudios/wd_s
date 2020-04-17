@@ -6,27 +6,32 @@
 // Full-width Helper
 //-----------------------------------------
 .site-main {
+
 	@include margin($gutter * 2 null);
 
 	width: 100%;
 
 	&.acf-content-blocks {
+
 		@include margin(0 null);
 	} // &.acf-content-blocks
 
 	// Styles internal elements to max-width unless it's full-width.
 	> *:not(.full-width) {
+
 		@include margin($gutter * 2 auto);
 
 		max-width: $max-width;
 
 		&.container-width {
+
 			@include margin(0 auto);
 		} // &.container-width
 	} // > *:not(.full-width)
 
 	// Post elements.
 	.hentry {
+
 		@include margin(0 auto $space * 2);
 
 		max-width: $max-width;
@@ -38,6 +43,7 @@
 
 	// Full-screen elements. Ignores sidebar issues.
 	.full-width:not(.content-block) {
+
 		@include full-width;
 	} // .full-width
 } // .site-main
@@ -46,6 +52,7 @@
 // Bound Container at $container width
 //-----------------------------------------
 .container {
+
 	@include margin(null auto);
 	@include padding(null $gutter);
 
@@ -53,6 +60,7 @@
 	position: relative;
 
 	@include media($container-offset) {
+
 		@include padding(0);
 	}
 } // .container
@@ -108,16 +116,19 @@
 
 	// 50%.
 	.half {
+
 		@include half;
 	} // .half
 
 	// 33%.
 	.third {
+
 		@include third;
 	} // .third
 
 	// 25%
 	.quarter {
+
 		@include quarter;
 	} // .quarter
 
@@ -127,21 +138,25 @@
 
 	// Left @ ~66% with ~50px gutter.
 	.left-two-thirds {
+
 		@include left-two-thirds;
 	} // .left-two-thirds
 
 	// 33%.
 	.right-third {
+
 		@include right-third;
 	} // .right-third
 
 	// 33%.
 	.left-third {
+
 		@include left-third;
 	} // .left-third
 
 	// Right @ ~66% with ~50px gutter.
 	.right-two-thirds {
+
 		@include right-two-thirds;
 	} // .right-two-thirds
 } // .site-wrapper, .display-flex
@@ -151,32 +166,36 @@
 //-----------------------------------------
 .has-sidebar {
 
-	// Left sidebar.
-	&.page-template-template-sidebar-left {
-
-		.grid-wrapper {
-
-			.sidebar {
-				@include media(null, $tablet-landscape) {
-					order: 2;
-				}
-			}
-
-			.site-main {
-				@include media(null, $tablet-landscape) {
-					order: 1;
-				}
-			}
-		}
-	}
-
 	.grid-wrapper {
+
 		@include margin($gutter * 2 auto);
 
 		max-width: $max-width;
 	} // .grid-wrapper
 
 	.site-main {
+
 		@include margin(0 null);
 	} // .site-main
+
+	// Left sidebar.
+	&.page-template-template-sidebar-left {
+
+		.grid-wrapper {
+
+			.sidebar {
+
+				@include media(null, $tablet-landscape) {
+					order: 2;
+				}
+			}
+
+			.site-main {
+
+				@include media(null, $tablet-landscape) {
+					order: 1;
+				}
+			}
+		}
+	}
 } // .has-sidebar

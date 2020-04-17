@@ -17,9 +17,11 @@
 	} // .cta-text
 
 	.button-cta {
+
 		@include margin(0 auto);
 
 		@include media($tablet-portrait) {
+
 			@include margin(0);
 		}
 	} // .cta-button

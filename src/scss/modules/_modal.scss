@@ -2,6 +2,7 @@
 // Modal
 //--------------------------------------------------------------
 .modal {
+
 	@include position(fixed, 0 0 0 0);
 
 	background-color: $color-overlay;
@@ -18,6 +19,7 @@
 
 	// Center the modal container.
 	.modal-dialog {
+
 		@include position(absolute, 50% null null 50%);
 
 		transform: translate(-50%, -50%);
@@ -26,6 +28,7 @@
 
 	// The modal content container.
 	.modal-content {
+
 		@include padding(rem(10));
 
 		background-clip: padding-box;
@@ -41,6 +44,7 @@
 
 			// Close "X" button.
 			.close {
+
 				@include margin(0);
 				@include padding(0);
 				@include position(absolute, rem(-15) rem(-15) null null);
@@ -48,7 +52,7 @@
 
 				background: $color-background-modal-close;
 				border: 3px solid $color-modal-close;
-				border-radius: 50%; /* stylelint-disable-line declaration-property-unit-whitelist */
+				border-radius: 50%;
 				color: $color-modal-close;
 				cursor: pointer;
 				font-size: rem(30);
@@ -70,6 +74,7 @@
 
 	// Remove the border from embedded elements.
 	.fluid-embed {
+
 		embed,
 		object,
 		iframe {

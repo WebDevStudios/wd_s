@@ -9,8 +9,8 @@ textarea {
 	/* stylelint-disable property-no-vendor-prefix */
 	color: $color-text-main;
 	font-family: $font-sans;
-	-moz-font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
-	font-feature-settings: 'liga', 'kern'; // Control over advanced typographic features in OpenType fonts.
+	-moz-font-feature-settings: "liga", "kern"; // Control over advanced typographic features in OpenType fonts.
+	font-feature-settings: "liga", "kern"; // Control over advanced typographic features in OpenType fonts.
 	-moz-osx-font-smoothing: grayscale; // Control the application of anti-aliasing when fonts are rendered in OS X.
 	-webkit-font-smoothing: antialiased; // Control the application of anti-aliasing when fonts are rendered.
 	line-height: $line-height-body;
@@ -18,9 +18,9 @@ textarea {
 	/* stylelint-enable */
 } // body, button, input, select, textarea
 
-//--------------------------------------------------------------
+//-----------------------------------------
 // Headers
-//--------------------------------------------------------------
+//-----------------------------------------
 
 // Global Header Resets.
 @for $i from 1 through 6 {
@@ -54,6 +54,7 @@ h4,
 
 h5,
 .h5 {
+
 	@extend h4; // Typically h5 isn't used, default to h4.
 
 	font-style: italic;
@@ -61,19 +62,22 @@ h5,
 
 h6,
 .h6 {
+
 	@extend h4; // Typically h6 isn't used, default to h4.
 
 	font-style: italic;
 } // h6, .h6
 
-//--------------------------------------------------------------
+//-----------------------------------------
 // Copy
-//--------------------------------------------------------------
+//-----------------------------------------
 p {
+
 	@include margin(0 0 $space);
 
 	// Remove margin from last paragraph in element.
 	&:last-child {
+
 		@include margin(0);
 	} // &:last-child
 } // p
@@ -100,6 +104,7 @@ i {
 
 blockquote,
 q {
+
 	@extend h3;
 	@include margin(0 $space $space);
 
@@ -108,7 +113,7 @@ q {
 
 	&::before,
 	&::after {
-		content: '';
+		content: "";
 	}  // &::before, &::after
 } // blockquote, q
 
@@ -125,10 +130,12 @@ blockquote {
 }
 
 address {
+
 	@include margin(0 0 $space);
 } // address
 
 pre {
+
 	@include margin(0 0 $space rem(-24));
 	@include padding($space);
 
@@ -180,7 +187,7 @@ ins {
 
 sup,
 sub {
-	font-size: 75%; /* stylelint-disable-line declaration-property-unit-whitelist */
+	font-size: 75%;
 	height: 0;
 	line-height: 0;
 	position: relative;
@@ -196,11 +203,11 @@ sub {
 } // sub
 
 small {
-	font-size: 75%; /* stylelint-disable-line declaration-property-unit-whitelist */
+	font-size: 75%;
 } // small
 
 big {
-	font-size: 125%; /* stylelint-disable-line declaration-property-unit-whitelist */
+	font-size: 125%;
 } // big
 
 // Word Wrapping

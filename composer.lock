@@ -1,12 +1,78 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0e33a105902995d6934ca33aa3c187c",
+    "content-hash": "5ac62346e5227b26fafaa4391933922e",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "dealerdirect/phpcodesniffer-composer-installer",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
+                "reference": "e749410375ff6fb7a040a68878c656c2e610b132"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/e749410375ff6fb7a040a68878c656c2e610b132",
+                "reference": "e749410375ff6fb7a040a68878c656c2e610b132",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^5.3|^7",
+                "squizlabs/php_codesniffer": "^2|^3"
+            },
+            "require-dev": {
+                "composer/composer": "*",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "sensiolabs/security-checker": "^4.1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Franck Nijhof",
+                    "email": "franck.nijhof@dealerdirect.com",
+                    "homepage": "http://www.frenck.nl",
+                    "role": "Developer / IT Manager"
+                }
+            ],
+            "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
+            "homepage": "http://www.dealerdirect.com",
+            "keywords": [
+                "PHPCodeSniffer",
+                "PHP_CodeSniffer",
+                "code quality",
+                "codesniffer",
+                "composer",
+                "installer",
+                "phpcs",
+                "plugin",
+                "qa",
+                "quality",
+                "standard",
+                "standards",
+                "style guide",
+                "stylecheck",
+                "tests"
+            ],
+            "time": "2018-10-26T13:21:45+00:00"
+        },
         {
             "name": "squizlabs/php_codesniffer",
             "version": "3.3.2",
@@ -59,51 +125,69 @@
             "time": "2018-09-23T23:08:17+00:00"
         },
         {
-            "name": "webdevstudios/wds-coding-standards",
-            "version": "1.2.0",
+            "name": "webdevstudios/php-coding-standards",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WebDevStudios/WDS-Coding-Standards.git",
-                "reference": "d84a17dfe1054105ef35bed4b08d85e7087b2bd8"
+                "url": "https://github.com/WebDevStudios/php-coding-standards.git",
+                "reference": "8ae496d38fa5f2733a99a2e531e4fc21b329ae02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebDevStudios/WDS-Coding-Standards/zipball/d84a17dfe1054105ef35bed4b08d85e7087b2bd8",
-                "reference": "d84a17dfe1054105ef35bed4b08d85e7087b2bd8",
+                "url": "https://api.github.com/repos/WebDevStudios/php-coding-standards/zipball/8ae496d38fa5f2733a99a2e531e4fc21b329ae02",
+                "reference": "8ae496d38fa5f2733a99a2e531e4fc21b329ae02",
                 "shasum": ""
             },
             "require": {
-                "squizlabs/php_codesniffer": "3.3.2",
-                "wp-coding-standards/wpcs": "1.2.1"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "squizlabs/php_codesniffer": ">=3.3.1 <3.4.0",
+                "wp-coding-standards/wpcs": ">=2.1.0 <2.2.0"
             },
-            "type": "library",
+            "type": "phpcodesniffer-standard",
+            "extra": {
+                "phpcodesniffer-search-depth": 5
+            },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "In-house linting and coding standards for WebDevStudios",
-            "time": "2019-03-17T18:31:09+00:00"
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Aubrey Portwood",
+                    "email": "aubrey@webdevstudios.com",
+                    "homepage": "http://webdevstudios.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "In-house PHP linting and coding standards for WebDevStudios",
+            "homepage": "https://github.com/WebDevStudios/php-coding-standards",
+            "time": "2020-02-14T16:12:48+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "1.2.1",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-                "reference": "f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c"
+                "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
+                "reference": "bd9c33152115e6741e3510ff7189605b35167908"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c",
-                "reference": "f328bcafd97377e8e5e5d7b244d5ddbf301a3a5c",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/bd9c33152115e6741e3510ff7189605b35167908",
+                "reference": "bd9c33152115e6741e3510ff7189605b35167908",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3",
-                "squizlabs/php_codesniffer": "^2.9.0 || ^3.0.2"
+                "php": ">=5.4",
+                "squizlabs/php_codesniffer": "^3.3.1"
             },
             "require-dev": {
-                "phpcompatibility/php-compatibility": "^9.0"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "suggest": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -122,7 +206,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2018-12-18T09:43:51+00:00"
+            "time": "2019-05-21T02:50:00+00:00"
         }
     ],
     "aliases": [],

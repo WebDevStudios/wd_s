@@ -75,6 +75,8 @@
 	 *
 	 * @since January 31, 2020
 	 * @author Corey Collins
+	 *
+	 * @return {Array} Parents.
 	 */
 	const getParents = function( elem, selector ) {
 

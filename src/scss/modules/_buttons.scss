@@ -3,9 +3,10 @@
 //--------------------------------------------------------------
 .button,
 button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
 	@include margin(0);
 	@include padding(rem(8) rem(20));
 
@@ -27,15 +28,26 @@ input[type='submit'] {
 	user-select: none;
 	vertical-align: bottom;
 
-	.ie & {
-		@include padding(rem(7) rem(20));
-	} // .ie &
-
 	// removes padding in Firefox.
 	&::-moz-focus-inner {
 		border: none;
 		padding: 0;
 	} // &::-moz-focus-inner
+
+	.ie & {
+
+		@include padding(rem(7) rem(20));
+	} // .ie &
+
+	&:hover,
+	&:active {
+		color: $color-text-button;
+		opacity: 0.6;
+	} // &:hover, &:active
+
+	&:focus {
+		color: $color-text-button;
+	} //  &:focus
 
 	// Visited.
 	&:visited {
@@ -51,14 +63,4 @@ input[type='submit'] {
 			color: $color-text-button;
 		} //  &:focus
 	} // &:visited
-
-	&:hover,
-	&:active {
-		color: $color-text-button;
-		opacity: 0.6;
-	} // &:hover, &:active
-
-	&:focus {
-		color: $color-text-button;
-	} //  &:focus
 } // button, input[type="button"], input[type="reset"], input[type="submit"]

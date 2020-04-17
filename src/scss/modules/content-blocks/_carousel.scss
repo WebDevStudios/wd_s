@@ -7,6 +7,7 @@ $slide-height: rem(500);
 
 	// Removes padding.
 	&.content-block {
+
 		@include padding(0 null);
 	} // &.content-block
 
@@ -17,6 +18,7 @@ $slide-height: rem(500);
 
 	// Navigation buttons.
 	.slick-arrow {
+
 		@include position(absolute, 45% null null null);
 
 		z-index: 10;
@@ -42,6 +44,7 @@ $slide-height: rem(500);
 
 	// Navigation dots/numbers.
 	.slick-dots {
+
 		@include list-reset;
 		@include position(absolute, null 0 0 0);
 
@@ -68,6 +71,7 @@ $slide-height: rem(500);
 
 	// Content container.
 	&-content {
+
 		@include margin(0 auto);
 
 		align-items: center;

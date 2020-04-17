@@ -18,42 +18,42 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 //-----------------------------------------
 // Extras
 //-----------------------------------------
-@import 'vendor/sanitize/sanitize';
+@import "vendor/sanitize/sanitize";
 
 //-----------------------------------------
 // Utilities
 //-----------------------------------------
 
 // Helper functions.
-@import 'utilities/functions/index';
+@import "utilities/functions/index";
 
 // Mixins.
-@import 'utilities/mixins/index';
+@import "utilities/mixins/index";
 
 // Global variables.
-@import 'utilities/variables/index';
+@import "utilities/variables/index";
 
 // Quick Helpers.
-@import 'utilities/helpers/index';
+@import "utilities/helpers/index";
 
 //-----------------------------------------
 // Theme Styles
 //-----------------------------------------
 
 // Global elements.
-@import 'base/index';
+@import "base/index";
 
 // Layout.
-@import 'structure/index';
+@import "structure/index";
 
 // Modules.
-@import 'modules/index';
+@import "modules/index";
 
 // Plugin overrides.
-@import 'plugins/index';
+@import "plugins/index";
 
 // Views/Pages.
-@import 'views/index';
+@import "views/index";
 
 // WP Widgets.
-@import 'widgets/index';
+@import "widgets/index";

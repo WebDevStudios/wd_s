@@ -42,23 +42,27 @@
 /// 	.test {}
 /// }
 
-@mixin media($min, $max: null, $media: 'screen', $orientation: null) {
+@mixin media($min, $max: null, $media: "screen", $orientation: null) {
 
 	@if $orientation == null {
 
 		@if $max == null and $min != null {
+
 			@media #{$media} and (min-width: #{$min}) {
 				@content;
 			}
 		} @else if $min == null and $max != null {
+
 			@media #{$media} and (max-width: #{($max - 1)}) {
 				@content;
 			}
 		} @else if $min == null and $max == null {
+
 			@media #{$media} {
 				@content;
 			}
 		} @else {
+
 			@media #{$media} and (min-width: #{$min}) and (max-width: #{($max - 1)}) {
 				@content;
 			}
@@ -66,18 +70,22 @@
 	} @else {
 
 		@if $max == null and $min != null {
+
 			@media #{$media} and (min-width: #{$min}) and (orientation: #{$orientation}) {
 				@content;
 			}
 		} @else if $min == null and $max != null {
+
 			@media #{$media} and (max-width: #{($max - 1)}) and (orientation: #{$orientation}) {
 				@content;
 			}
 		} @else if $min == null and $max == null and $orientation == null {
+
 			@media #{$media} {
 				@content;
 			}
 		} @else {
+
 			@media #{$media} and (min-width: #{$min}) and (max-width: #{($max - 1)}) and (orientation: #{$orientation}) {
 				@content;
 			}

@@ -24,9 +24,11 @@
 	}
 
 	&:nth-child(odd) {
+
 		@include margin(0 0 rem(25) 0);
 
 		@include media($tablet-landscape) {
+
 			@include margin(0 rem(50) 0 0);
 		}
 	} // &:first-child
@@ -36,9 +38,11 @@
 // Third
 //-----------------------------------------
 @mixin third {
+
 	@include margin(0 0 rem(25) 0);
 
 	@include media($tablet-landscape) {
+
 		@include margin(0 rem(50) rem(50) 0);
 
 		flex: 0 0 calc(33.33% - #{rem(33.33)});
@@ -46,9 +50,11 @@
 	}
 
 	&:nth-child(3n + 3) {
+
 		@include margin(0 0 rem(50));
 
 		@include media($tablet-landscape) {
+
 			@include margin(0 0 rem(50));
 		}
 	} // &:first-child
@@ -58,9 +64,11 @@
 // Quarter
 //-----------------------------------------
 @mixin quarter {
+
 	@include margin(0 0 rem(25) 0);
 
 	@include media($tablet-landscape) {
+
 		@include margin(0 rem(50) rem(50) 0);
 
 		flex: 0 0 calc(25% - #{rem(37.5)});
@@ -68,9 +76,11 @@
 	}
 
 	&:nth-child(4n + 4) {
+
 		@include margin(0 0 rem(50));
 
 		@include media($tablet-landscape) {
+
 			@include margin(0 0 rem(50));
 		}
 	} // &:first-child

@@ -1,0 +1,6 @@
+src/scss/styles.scss
+src/scss/gutenberg-blocks-style.scss
+src/scss/vendor/**/*.scss
+src/scss/plugins/*.scss
+style.css
+gutenberg-blocks-style.css

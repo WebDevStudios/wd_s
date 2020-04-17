@@ -2,8 +2,40 @@
 // Icons
 //--------------------------------------------------------------
 
+//-----------------------------------------
+// Replace Text With Icons
+//-----------------------------------------
+$social-sites: facebook instagram linkedin twitter;
+
+.menu {
+
+	a {
+		// Set the background image for each social network.
+		@each $network in $social-sites {
+			&[href*='#{$network}'] {
+
+				@include size(rem(30));
+
+				background: url("../images/icons/#{$network}-square.svg") no-repeat center center transparent;
+				background-size: rem(30);
+				display: block;
+				text-indent: rem(-999999);
+
+				@include media($tablet-portrait) {
+
+					@include size(rem(19));
+
+					background-size: rem(19);
+				}
+			}
+		}
+	}
+} // .menu
+
+
 // Social icons <ul>
 .social-icons {
+
 	@include list-reset;
 
 	// Each icon <li>
@@ -19,6 +51,7 @@
 
 			// Set styles on those social icons!
 			.icon-#{$social-color} {
+
 				@include size(rem(30));
 
 				fill: $color;
@@ -36,33 +69,6 @@
 	} // .social-icon
 } // .social-icons
 
-//--------------------------------------------------------------
-// Replace Text With Icons
-//--------------------------------------------------------------
-$social-sites: facebook instagram linkedin twitter;
-
-.menu {
-
-	a {
-		// Set the background image for each social network.
-		@each $network in $social-sites {
-			&[href*='#{$network}'] {
-				@include size(rem(30));
-
-				background: url('../images/icons/#{$network}-square.svg') no-repeat center center transparent;
-				background-size: rem(30);
-				display: block;
-				text-indent: rem(-999999);
-
-				@include media($tablet-portrait) {
-					@include size(rem(19));
-
-					background-size: rem(19);
-				}
-			}
-		}
-	}
-} // .menu
 
 //-----------------------------------------
 // Close icon
@@ -75,11 +81,12 @@ $social-sites: facebook instagram linkedin twitter;
 
 	&::before,
 	&::after {
+
 		@include size(rem(25), rem(3));
 
 		background: $color-background-icon-close;
 		border-radius: $border-radius-thin;
-		content: '';
+		content: "";
 		cursor: pointer;
 		display: block;
 		position: relative;
@@ -95,9 +102,9 @@ $social-sites: facebook instagram linkedin twitter;
 	}
 } // .cross
 
-//--------------------------------------------------------------
+//-----------------------------------------
 // Down arrow icon
-//--------------------------------------------------------------
+//-----------------------------------------
 .down-arrow {
 	cursor: pointer;
 	display: block;
@@ -107,11 +114,12 @@ $social-sites: facebook instagram linkedin twitter;
 
 	&::before,
 	&::after {
+
 		@include size(rem(10), rem(2));
 
 		background: $color-background-down-arrow;
 		border-radius: $border-radius-thin;
-		content: '';
+		content: "";
 		cursor: pointer;
 		display: block;
 		position: relative;

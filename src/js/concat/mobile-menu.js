@@ -121,6 +121,8 @@ function wdsMobileMenu() {
 	 *
 	 * @since January 31, 2020
 	 * @author Corey Collins
+	 *
+	 * @return {Array} List of siblings.
 	 */
 	const getSiblings = function( element ) {
 		const siblings = [];

@@ -1,6 +1,8 @@
 //--------------------------------------------------------------
 // Main Navigation — Desktop.
 //--------------------------------------------------------------
+
+
 .main-navigation {
 	display: none;
 
@@ -13,6 +15,7 @@
 		display: none;
 
 		@include media($phone) {
+
 			@include margin(null auto);
 			@include padding(null $gutter);
 
@@ -21,10 +24,12 @@
 		}
 
 		@include media($container-offset) {
+
 			@include padding(null 0);
 		}
 
 		li {
+
 			@include margin(0 rem(10) 0 0);
 
 			display: inline-block;
@@ -44,6 +49,7 @@
 
 	// Sub-menu
 	ul {
+
 		@include position(absolute, $space null null -999em);
 
 		box-shadow: 0 rem(3) rem(3) $color-box-shadow;
@@ -67,6 +73,7 @@
 
 		// Sub-menu links
 		a {
+
 			@include size(100%, auto);
 
 			min-width: rem(200);

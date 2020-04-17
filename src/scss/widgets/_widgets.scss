@@ -2,6 +2,7 @@
 // Widgets
 //--------------------------------------------------------------
 .widget {
+
 	@include margin(0 0 $space);
 
 	// Make sure select elements fit in widgets.
@@ -11,6 +12,7 @@
 
 	// Extend the h3 style for the widget titles.
 	.widget-title {
+
 		@extend .h3 !optional;
 	} // .widget-title
 } // .widget
