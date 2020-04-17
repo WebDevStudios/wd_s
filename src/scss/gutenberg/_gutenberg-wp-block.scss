@@ -56,4 +56,36 @@
 		position: relative;
 		z-index: 50;
 	}
-} // .wp-block
+}
+
+.wp-block-column {
+
+	.wp-block {
+
+		&[data-type*='wds'] {
+			padding-left: rem(43);
+			padding-right: rem(43);
+
+			&[data-align='full'] {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+//-----------------------------------------
+// Add space below blocks when they're in Edit mode.
+//-----------------------------------------
+.wp-block {
+
+	&[data-type*='wds'] {
+
+		.acf-block-component {
+
+			.acf-block-fields {
+				margin-bottom: rem(60);
+			}
+		}
+	}
+}

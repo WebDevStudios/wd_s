@@ -54,6 +54,23 @@
 	} // .content-block-title
 } // .content-block
 
+
+//-----------------------------------------
+// Gutenberg Columns
+//-----------------------------------------
+.wp-block-column {
+
+	.content-block {
+
+		&.alignfull {
+			left: unset;
+			margin: unset;
+			max-width: 100%;
+			right: unset;
+		}
+	}
+} // .wp-column
+
 //-----------------------------------------
 // Overlay
 //-----------------------------------------

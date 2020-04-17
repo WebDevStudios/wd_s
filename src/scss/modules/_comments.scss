@@ -61,7 +61,7 @@
 	width: 100%;
 
 	// Any input (except submit button)
-	input:not(.button) {
+	input:not(.button):not([type='checkbox']) {
 		clear: both;
 		transition: $transition-border;
 		width: 100%;
@@ -72,7 +72,7 @@
 			border: 1px solid $color-border-comment-focus;
 		} // &:focus, &:active
 
-		@include media($phone) {
+		@include media($tablet-portrait) {
 			max-width: rem(250);
 		}
 	} // input:not(.submit)
