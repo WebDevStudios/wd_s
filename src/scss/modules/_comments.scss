@@ -61,7 +61,7 @@
 	width: 100%;
 
 	// Any input (except submit button)
-	input:not(.button):not([type='checkbox']) {
+	input:not(.button):not([type="checkbox"]) {
 		clear: both;
 		transition: $transition-border;
 		width: 100%;
