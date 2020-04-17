@@ -52,7 +52,7 @@
     "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
-    "icons": "svgo -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
+    "icons": "svgo --config=svgo.yml -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
     "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
     "lint": "run-s lint:js lint:scss lint:php",
     "lint:js": "./node_modules/.bin/eslint src/js || true",
