@@ -118,12 +118,14 @@ function _s_get_svg( $args = array() ) {
 
 	// Set defaults.
 	$defaults = array(
-		'icon'   => '',
-		'title'  => '',
-		'desc'   => '',
-		'fill'   => '',
-		'height' => '',
-		'width'  => '',
+		'icon'         => '',
+		'title'        => '',
+		'desc'         => '',
+		'fill'         => '',
+		'stroke'       => '',
+		'stroke-width' => '',
+		'height'       => '',
+		'width'        => '',
 	);
 
 	// Parse args.
@@ -147,9 +149,11 @@ function _s_get_svg( $args = array() ) {
 	}
 
 	// Set SVG parameters.
-	$fill   = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
-	$height = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
-	$width  = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
+	$fill         = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
+	$stroke       = ( $args['stroke'] ) ? ' stroke="' . $args['stroke'] . '"' : '';
+	$stroke_width = ( $args['stroke-width'] ) ? ' stroke-width="' . $args['stroke-width'] . '"' : '';
+	$height       = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
+	$width        = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
 
 	// Start a buffer...
 	ob_start();
@@ -160,6 +164,8 @@ function _s_get_svg( $args = array() ) {
 		echo _s_get_the_content( $height ); // WPCS XSS OK.
 		echo _s_get_the_content( $width ); // WPCS XSS OK.
 		echo _s_get_the_content( $fill ); // WPCS XSS OK.
+		echo _s_get_the_content( $stroke ); // WPCS XSS OK.
+		echo _s_get_the_content( $stroke_width ); // WPCS XSS OK.
 	?>
 		class="icon <?php echo esc_attr( $args['icon'] ); ?>"
 	<?php

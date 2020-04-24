@@ -1,6 +1,0 @@
-plugins:
-    - removeViewBox: false
-    - removeDimensions: true
-    - removeAttributesBySelector:
-        selector: '[fill]'
-        attributes: 'fill'
