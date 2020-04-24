@@ -1,6 +1,5 @@
 plugins:
     - removeViewBox: false
     - removeDimensions: true
-    - removeAttributesBySelector:
-        selector: '[fill]'
-        attributes: 'fill'
+    - removeAttrs:
+        attrs: '*:(stroke|fill):((?!^none$).)*'
