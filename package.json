@@ -44,11 +44,12 @@
     "wp-pot-cli": "^1.4.1"
   },
   "scripts": {
-    "build": "run-p lint build:scss build:js build:images build:pot clean",
+    "build": "run-p lint build:scss build:js build:images build:pot copy:slick clean",
     "build:scss": "run-s scss gutenberg optimizecss",
     "build:images": "run-s imagemin icons",
     "build:js": "run-s uglify polyfill customizer",
     "build:pot": "run-s pot",
+    "copy:slick": "cp -R ./node_modules/slick-carousel/ assets/slick-carousel || true",
     "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
