@@ -16,8 +16,16 @@
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
   "main": "src/js/index.js",
-  "dependencies": {
-    "slick-carousel": "^1.8.1"
+  "dependencies": {},
+  "frontendDependencies": {
+    "target": "assets",
+    "packages": {
+      "slick-carousel": {
+        "version": "^1.8.1",
+        "src": "slick/*",
+        "namespaced": true
+      }
+    }
   },
   "devDependencies": {
     "@webdevstudios/js-coding-standards": "~1.0.2",
@@ -26,6 +34,7 @@
     "browser-sync": "^2.26.7",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
+    "frontend-dependencies": "^1.1.8",
     "imagemin-cli": "^5.1.0",
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.0",
@@ -44,14 +53,14 @@
     "wp-pot-cli": "^1.4.2"
   },
   "scripts": {
-    "build": "run-p lint build:scss build:js build:images build:pot copy:slick clean",
+    "build": "run-p lint build:scss build:js build:images build:pot frontend clean",
     "build:scss": "run-s scss gutenberg optimizecss",
     "build:images": "run-s imagemin icons",
     "build:js": "run-s uglify polyfill customizer",
     "build:pot": "run-s pot",
-    "copy:slick": "cp -R ./node_modules/slick-carousel/ assets/slick-carousel || true",
-    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*}",
+    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*} assets/*",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
+    "frontend": "frontend-dependencies",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
     "icons": "svgo --config=.svgo.yml -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
     "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
