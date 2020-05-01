@@ -20,11 +20,7 @@
   "frontendDependencies": {
     "target": "assets",
     "packages": {
-      "slick-carousel": {
-        "version": "^1.8.1",
-        "src": "slick/*",
-        "namespaced": true
-      }
+      "slick-carousel": "^1.8.1"
     }
   },
   "devDependencies": {
