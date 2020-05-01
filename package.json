@@ -16,7 +16,9 @@
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
   "main": "src/js/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
   "frontendDependencies": {
     "target": "assets",
     "packages": {
