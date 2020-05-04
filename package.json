@@ -16,13 +16,15 @@
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
   "main": "src/js/index.js",
-  "dependencies": {
-    "slick-carousel": "^1.8.1"
-  },
+  "dependencies": {},
   "frontendDependencies": {
-    "target": "assets",
+    "target": "dist/",
     "packages": {
-      "slick-carousel": "^1.8.1"
+      "slick-carousel": {
+        "version": "^1.8.1",
+        "src": "slick",
+        "namespace": true
+      }
     }
   },
   "devDependencies": {
@@ -37,7 +39,7 @@
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.0",
     "npm-run-all": "^4.1.5",
-    "onchange": "^7.0.1",
+    "onchange": "^7.0.2",
     "postcss-cli": "^7.1.1",
     "rimraf": "^3.0.2",
     "stylelint": "^13.3.3",
@@ -51,12 +53,13 @@
     "wp-pot-cli": "^1.4.2"
   },
   "scripts": {
-    "build": "run-p lint build:scss build:js build:images build:pot frontend clean",
+    "build": "run-p build:scss build:js build:images build:pot clean",
     "build:scss": "run-s scss gutenberg optimizecss",
     "build:images": "run-s imagemin icons",
     "build:js": "run-s uglify polyfill customizer",
     "build:pot": "run-s pot",
     "clean": "rimraf dist/{css/*,js/*,images/*,languages/*} assets/*",
+    "composer": "composer install",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "frontend": "frontend-dependencies",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
@@ -68,7 +71,7 @@
     "lint:scss": "./node_modules/.bin/stylelint 'src/scss/**/*.scss' --syntax scss || true",
     "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
-    "postinstall": "run-s build && composer install",
+    "postinstall": "run-s composer frontend build",
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
     "scss": "node-sass src/scss/style.scss -o dist/css --source-map-root file://${PWD}/ --source-map-embed true",
     "serve": "browser-sync start --https --proxy 'https://_s.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
