@@ -16,15 +16,13 @@
   },
   "homepage": "https://github.com/WebDevStudios/wd_s#readme",
   "main": "src/js/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
   "frontendDependencies": {
     "target": "dist/",
     "packages": {
-      "slick-carousel": {
-        "version": "^1.8.1",
-        "src": "slick",
-        "namespace": true
-      }
+      "slick-carousel": "^1.8.1"
     }
   },
   "devDependencies": {
@@ -53,13 +51,12 @@
     "wp-pot-cli": "^1.4.2"
   },
   "scripts": {
-    "build": "run-p build:scss build:js build:images build:pot clean",
+    "build": "run-p build:scss build:js build:images build:pot frontend clean",
     "build:scss": "run-s scss gutenberg optimizecss",
     "build:images": "run-s imagemin icons",
     "build:js": "run-s uglify polyfill customizer",
     "build:pot": "run-s pot",
-    "clean": "rimraf dist/{css/*,js/*,images/*,languages/*} assets/*",
-    "composer": "composer install",
+    "clean": "rimraf dist/",
     "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "frontend": "frontend-dependencies",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
@@ -71,7 +68,7 @@
     "lint:scss": "./node_modules/.bin/stylelint 'src/scss/**/*.scss' --syntax scss || true",
     "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.css",
     "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
-    "postinstall": "run-s composer frontend build",
+    "postinstall": "run-s frontend build",
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
     "scss": "node-sass src/scss/style.scss -o dist/css --source-map-root file://${PWD}/ --source-map-embed true",
     "serve": "browser-sync start --https --proxy 'https://_s.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
