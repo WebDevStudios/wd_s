@@ -1,19 +1,26 @@
 {
-    "name": "webdevstudios/wd_s",
-    "description": "A theme boilerplate for WebDevStudios.",
-    "type": "wordpress-theme",
-    "require-dev": {
-        "webdevstudios/php-coding-standards": "^1.0"
-    },
-    "scripts": {
-      "sniff": "composer install"
-    },
-    "license": "GPL-2.0",
-    "authors": [
-        {
-            "name": "WebDevStudios",
-            "email": "contact@webdevstudios.com"
-        }
-    ],
-    "minimum-stability": "stable"
+  "name": "webdevstudios/wd_s",
+  "description": "A theme boilerplate for WebDevStudios.",
+  "type": "wordpress-theme",
+  "require": {},
+  "require-dev": {
+    "webdevstudios/php-coding-standards": "^1.0",
+    "phpcompatibility/php-compatibility": "^9.3"
+  },
+  "scripts": {
+    "lint": "composer run lint:all",
+    "lint:all": "composer run lint:php",
+    "lint:php": "composer run lint:php-compat && composer run lint:phpcs",
+    "lint:php-compat": "./vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.2 --ignore='.github/*,vendor/*' --warning-severity=8 -d memory_limit=4096M || true || exit",
+    "lint:phpcs": "./vendor/bin/phpcs -d memory_limit=1024M --standard=.phpcs.xml.dist --extensions=php -n --colors --ignore='*/node_modules/*,*/vendor/*' ./",
+    "post-autoload-dump": "WebDevStudios\\MUAutoload\\Installer::install"
+  },
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "WebDevStudios",
+      "email": "contact@webdevstudios.com"
+    }
+  ],
+  "minimum-stability": "stable"
 }
