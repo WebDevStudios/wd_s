@@ -57,7 +57,7 @@
     "build:js": "run-s uglify polyfill customizer",
     "build:pot": "run-s pot",
     "clean": "rimraf dist/",
-    "customizer": "uglifyjs src/js/customizer.js -m -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
+    "customizer": "uglifyjs src/js/customizer.js -m -b -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
     "frontend": "frontend-dependencies",
     "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
     "icons": "svgo --config=.svgo.yml -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
