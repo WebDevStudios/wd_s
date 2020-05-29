@@ -72,7 +72,7 @@
     "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
     "scss": "node-sass src/scss/style.scss -o dist/css",
     "serve": "browser-sync start --https --proxy 'https://_s.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
-    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
+    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -b -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
     "watch": "run-p serve watch:*",
     "watch:css": "onchange \"src/scss\" -- run-p lint:scss build:scss",
     "watch:images": "onchange \"src/images\" -- run-p build:images",
