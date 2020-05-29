@@ -79,7 +79,7 @@ function _s_scripts() {
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
-	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), $version );
+	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/dist/css/style' . $suffix . '.css', array(), $version );
 
 	// Enqueue scripts.
 	if ( $is_IE ) {
