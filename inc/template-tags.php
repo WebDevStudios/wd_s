@@ -450,7 +450,8 @@ function _s_display_header_button() {
 /**
  * Displays numeric pagination on archive pages.
  *
- * @param array $args Array of params to customize output.
+ * @param array  $args Array of params to customize output.
+ * @param object $query The Query object; only passed if a custom WP_Query is used.
  *
  * @author WDS
  * @return void.
