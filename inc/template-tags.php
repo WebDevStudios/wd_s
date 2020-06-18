@@ -456,13 +456,24 @@ function _s_display_header_button() {
  * @return void.
  * @author Corey Collins
  */
-function _s_display_numeric_pagination( $args = array() ) {
+function _s_display_numeric_pagination( $args = array(), $query = null ) {
+
+	global $wp;
+
+	if ( ! $query ) {
+		global $wp_query;
+		$query = $wp_query;
+	}
+
+	// Make the pagination work on custom query loops.
+	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
 	// Set defaults.
 	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
 		'mid_size'  => 4,
+		'total'     => $total_pages,
 	);
 
 	// Parse args.
