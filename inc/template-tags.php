@@ -450,19 +450,29 @@ function _s_display_header_button() {
 /**
  * Displays numeric pagination on archive pages.
  *
- * @param array $args Array of params to customize output.
+ * @param array  $args Array of params to customize output.
+ * @param object $query The Query object; only passed if a custom WP_Query is used.
  *
  * @author WDS
  * @return void.
  * @author Corey Collins
  */
-function _s_display_numeric_pagination( $args = array() ) {
+function _s_display_numeric_pagination( $args = array(), $query = null ) {
+
+	if ( ! $query ) {
+		global $wp_query;
+		$query = $wp_query;
+	}
+
+	// Make the pagination work on custom query loops.
+	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
 	// Set defaults.
 	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
 		'mid_size'  => 4,
+		'total'     => $total_pages,
 	);
 
 	// Parse args.
