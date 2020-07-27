@@ -458,7 +458,6 @@ function _s_display_header_button() {
  * @author Corey Collins
  */
 function _s_display_numeric_pagination( $args = array(), $query = null ) {
-
 	global $wp;
 
 	if ( ! $query ) {
