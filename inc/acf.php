@@ -21,7 +21,13 @@ if ( ! class_exists( 'acf' ) ) {
 function _s_display_block_options( $args = array() ) {
 
 	// Get block background options.
-	$background_options = get_sub_field( 'background_options' ) ? get_sub_field( 'background_options' ) : get_field( 'background_options' )['background_options'];
+	$background_options = array();
+
+	if ( get_sub_field( 'background_options' ) ) {
+		$background_options = get_sub_field( 'background_options' );
+	} elseif ( get_field( 'background_options' ) ) {
+		$background_options = get_field( 'background_options' )['background_options'];
+	}
 
 	// Get block other options.
 	$other_options = array();
@@ -50,7 +56,7 @@ function _s_display_block_options( $args = array() ) {
 
 	// Setup defaults.
 	$defaults = array(
-		'background_type' => $background_options['background_type']['value'],
+		'background_type' => ! empty( $background_options ) ? $background_options['background_type']['value'] : 'none',
 		'container'       => 'section',
 		'class'           => 'content-block',
 		'font_color'      => $display_options['font_color'],
