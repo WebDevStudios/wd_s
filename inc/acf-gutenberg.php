@@ -360,7 +360,17 @@ function _s_get_block_expired_class() {
 		return;
 	}
 
-	$other_options = get_sub_field( 'other_options' ) ? get_sub_field( 'other_options' ) : get_field( 'other_options' )['other_options'];
+	$other_options = array();
+
+	if ( get_sub_field( 'other_options' ) ) {
+		$other_options = get_sub_field( 'other_options' );
+	} elseif ( isset( get_field( 'other_options' )['other_options'] ) ) {
+		$other_options = get_field( 'other_options' )['other_options'];
+	}
+
+	if ( empty( $other_options ) ) {
+		return;
+	}
 
 	if ( _s_has_block_expired(
 		array(

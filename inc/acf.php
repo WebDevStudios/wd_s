@@ -25,7 +25,7 @@ function _s_display_block_options( $args = array() ) {
 
 	if ( get_sub_field( 'background_options' ) ) {
 		$background_options = get_sub_field( 'background_options' );
-	} elseif ( get_field( 'background_options' ) ) {
+	} elseif ( get_field( 'background_options' ) && isset( get_field( 'background_options' )['background_options'] ) ) {
 		$background_options = get_field( 'background_options' )['background_options'];
 	}
 
@@ -35,7 +35,7 @@ function _s_display_block_options( $args = array() ) {
 	// Set our Other Options if we have them. Some blocks may not.
 	if ( get_sub_field( 'other_options' ) ) {
 		$other_options = get_sub_field( 'other_options' );
-	} elseif ( get_field( 'other_options' ) ) {
+	} elseif ( get_field( 'other_options' ) && isset( get_field( 'other_options' )['other_options'] ) ) {
 		$other_options = get_field( 'other_options' )['other_options'];
 	}
 
@@ -47,7 +47,7 @@ function _s_display_block_options( $args = array() ) {
 	// Set our Display Options if we have them. Some blocks may not.
 	if ( get_sub_field( 'display_options' ) ) {
 		$display_options = get_sub_field( 'display_options' );
-	} elseif ( get_field( 'display_options' ) ) {
+	} elseif ( get_field( 'display_options' ) && isset( get_field( 'display_options' )['display_options'] ) ) {
 		$display_options = get_field( 'display_options' )['display_options'];
 	}
 
