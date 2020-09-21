@@ -72,18 +72,6 @@ module.exports = {
 				'table,dl,ol,ul,address,pre,blockquote,iframe': {
 					marginBottom: config( 'theme.spacing.4' ),
 				},
-				'.container': {
-					paddingLeft: config( 'theme.spacing.4' ),
-					paddingRight: config( 'theme.spacing.4' ),
-					'@screen desktop-large': {
-						paddingLeft: '0',
-						paddingRight: '0',
-					}
-				},
-				'.site-main': {
-					marginBottom: config( 'theme.spacing.12' ),
-					marginTop: config( 'theme.spacing.12' ),
-				},
 			})
 		}),
 		plugin( function({ addComponents, config }) {
@@ -270,6 +258,24 @@ module.exports = {
 				},
 			}
 
+			const templateElements = {
+				'.container': {
+					paddingLeft: config( 'theme.spacing.4' ),
+					paddingRight: config( 'theme.spacing.4' ),
+					'@screen desktop-large': {
+						paddingLeft: '0',
+						paddingRight: '0',
+					}
+				},
+				'.site-main': {
+					marginBottom: config( 'theme.spacing.12' ),
+					marginTop: config( 'theme.spacing.12' ),
+				},
+				'.archive-description': {
+					marginBottom: config( 'theme.spacing.6' ),
+				},
+			}
+
 			addComponents( postDetails, {
 				variants: ['responsive'],
 			})
@@ -279,6 +285,7 @@ module.exports = {
 			addComponents( globalElements )
 			addComponents( forms )
 			addComponents( menus )
+			addComponents( templateElements )
 		}),
 	],
 }
