@@ -15,11 +15,16 @@ module.exports = {
 			'tablet-portrait': '600px',
 			'wp-admin-bar': '783px',
 			'tablet-landscape': '900px',
+			'desktop-min': {'min': '1200px'},
 			'desktop': '1200px',
-			'desktop-large': {'min': '1200px'},
+			'desktop-large': '1600px',
 		},
 		container: {
 			center: true,
+			screens: {
+				'phone': '100%',
+				'desktop': '1200px',
+			},
 		},
 	},
 	variants: {},
@@ -78,6 +83,14 @@ module.exports = {
 				},
 				'table,dl,ol,ul,address,pre,blockquote,iframe': {
 					marginBottom: config( 'theme.spacing.4' ),
+				},
+				'.container': {
+					paddingLeft: config( 'theme.spacing.4' ),
+					paddingRight: config( 'theme.spacing.4' ),
+					'@screen desktop-large': {
+						paddingLeft: '0',
+						paddingRight: '0',
+					}
 				},
 			})
 		}),
