@@ -8,7 +8,7 @@ module.exports = {
 		extend: {
 			maxHeight: {
 				'0': '0',
-			}
+			},
 		},
 		screens: {
 			'phone': '300px',
@@ -239,6 +239,17 @@ module.exports = {
 							width: '100%',
 						},
 					},
+				},
+				'.bg-menu': {
+					backgroundImage: 'url("/wp-content/themes/wd_s/build/images/icons/caret-down.svg")',
+					backgroundPosition: '50% 50%',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: '100%',
+					display: 'block',
+					float: 'right',
+					width: config( 'theme.spacing.4' ),
+					height: '100%',
+					marginLeft: config( 'theme.spacing.2' ),
 				},
 			}
 

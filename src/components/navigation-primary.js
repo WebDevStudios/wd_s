@@ -18,7 +18,7 @@
 	function addDownArrow() {
 		subMenuParentItem.forEach( ( parentItem ) => {
 			const menuItem = parentItem.querySelector( 'a' );
-			menuItem.innerHTML += '<span class="caret-down" aria-hidden="true"></span>';
+			menuItem.innerHTML += '<span class="caret-down bg-menu" aria-hidden="true"></span>';
 		} );
 	}
 
