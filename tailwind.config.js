@@ -260,7 +260,7 @@ module.exports = {
 					backgroundSize: '100%',
 					display: 'block',
 					float: 'right',
-					width: config( 'theme.spacing.4' ),
+					width: config( 'theme.spacing.2' ),
 					height: '100%',
 					marginLeft: config( 'theme.spacing.2' ),
 				},
