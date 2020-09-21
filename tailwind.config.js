@@ -61,19 +61,7 @@ module.exports = {
 					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'a': {
-					color: config( 'theme.colors.blue.600' ),
 					textDecoration: 'underline',
-					'-webkit-text-stroke': '.05rem',
-					textStroke: '.05rem',
-					'-webkit-text-stroke-color': 'transparent',
-					textStrokeColor: 'transparent',
-					transition: '-webkit-text-stroke-color 0.3s',
-					'&:hover,&:focus,&:active': {
-						'-webkit-text-stroke': '.05rem',
-						'textStroke': '.05rem',
-						'-webkit-text-stroke-color': config( 'theme.colors.blue.600' ),
-						textStrokeColor: config( 'theme.colors.blue.600' ),
-					},
 				},
 				'p': {
 					marginBottom: config( 'theme.spacing.4' ),
