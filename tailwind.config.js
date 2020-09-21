@@ -142,6 +142,11 @@ module.exports = {
 					display: 'block',
 					fontSize: config( 'theme.fontSize.sm' ),
 				},
+				'.updated': {
+					'&:not(.published)': {
+						display: 'none',
+					},
+				},
 			}
 
 			const screenReaderText = {
