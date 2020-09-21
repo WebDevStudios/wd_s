@@ -36,27 +36,27 @@ module.exports = {
 					wordBreak: 'unset',
 					wordWrap: 'unset',
 				},
-				'h1': {
+				'h1,.h1': {
 					fontSize: config( 'theme.fontSize.5xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
-				'h2': {
+				'h2,.h2': {
 					fontSize: config( 'theme.fontSize.4xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
-				'h3': {
+				'h3,.h3': {
 					fontSize: config( 'theme.fontSize.3xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
-				'h4': {
+				'h4,.h4': {
 					fontSize: config( 'theme.fontSize.2xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
-				'h5': {
+				'h5,.h5': {
 					fontSize: config( 'theme.fontSize.xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
-				'h6': {
+				'h6,.h6': {
 					fontSize: config( 'theme.fontSize.lg' ),
 					marginBottom: config( 'theme.spacing.2' ),
 				},
@@ -278,6 +278,22 @@ module.exports = {
 				},
 				'.archive-description': {
 					marginBottom: config( 'theme.spacing.6' ),
+				},
+				'.alignleft': {
+					float: 'left',
+					marginBottom: config( 'theme.spacing.4' ),
+					marginRight: config( 'theme.spacing.4' ),
+				},
+				'.alignright': {
+					float: 'right',
+					marginBottom: config( 'theme.spacing.4' ),
+					marginLeft: config( 'theme.spacing.4' ),
+				},
+				'.aligncenter': {
+					margin: `${ config( 'theme.spacing.4' ) } auto`,
+				},
+				'.alignnone': {
+					marginBottom: config( 'theme.spacing.4' ),
 				},
 			}
 
