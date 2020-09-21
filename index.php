@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main mx-auto my-12">
+	<main id="main" class="site-main mx-auto">
 
 		<?php
 		if ( have_posts() ) :

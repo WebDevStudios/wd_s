@@ -80,6 +80,10 @@ module.exports = {
 						paddingRight: '0',
 					}
 				},
+				'.site-main': {
+					marginBottom: config( 'theme.spacing.12' ),
+					marginTop: config( 'theme.spacing.12' ),
+				},
 			})
 		}),
 		plugin( function({ addComponents, config }) {

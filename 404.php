@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main container mx-auto my-12">
+	<main id="main" class="site-main container">
 
 		<section class="error-404 not-found">
 			<header class="page-header">

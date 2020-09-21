@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main container mx-auto my-0">
+	<main id="main" class="site-main container">
 
 		<?php if ( have_posts() ) : ?>
 
