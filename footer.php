@@ -11,17 +11,12 @@
 
 ?>
 
-	<footer class="site-footer background-gallery">
-
-		<div class="container site-info">
+	<footer class="site-footer">
+		<div class="container site-info container mx-auto my-0 flex justify-between">
 			<?php _s_display_copyright_text(); ?>
 			<?php _s_display_social_network_links(); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer container-->
-
 	<?php wp_footer(); ?>
-
-	<?php _s_display_mobile_menu(); ?>
-
 </body>
 </html>

@@ -9,11 +9,11 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-main container mx-auto my-12">
 
-		<section class="error-404 not-found container">
+		<section class="error-404 not-found">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Sorry, this page doesn\'t exist.', '_s' ); ?></h1>
+				<h1 class="page-title text-2xl"><?php esc_html_e( 'Sorry, this page doesn\'t exist.', '_s' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<div class="page-content">

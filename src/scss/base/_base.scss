@@ -1,0 +1,14 @@
+//--------------------------------------------------------------
+// Preflight Overrides
+//-------------------------------------------------------------
+
+@layer base {
+
+	*,
+	::after,
+	::before {
+		box-sizing: border-box;
+		word-break: unset;
+		word-wrap: unset;
+	}
+}

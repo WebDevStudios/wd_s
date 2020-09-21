@@ -14,13 +14,13 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-main container mx-auto my-12">
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
-		?>
+			?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
@@ -40,8 +40,6 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
-
-			_s_display_numeric_pagination();
 
 		else :
 

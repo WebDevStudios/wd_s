@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div class="display-flex grid-wrapper">
+	<div class="container mx-auto my-12">
 		<main id="main" class="site-main">
 
 			<?php

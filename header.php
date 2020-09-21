@@ -25,28 +25,26 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="site-header background-gallery">
-		<div class="display-flex container">
+	<header class="site-header bg-gray-200 py-12">
+		<div class="flex justify-between container my-0">
 
 			<div class="site-branding">
 
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title text-4xl"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="no-underline" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="site-title text-4xl"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="no-underline" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
 
 				<?php
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) :
 				?>
-					<p class="site-description"><?php echo esc_html( $description ); ?></p>
+					<p class="site-description text-blue-800 no-underline"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
-
-			<?php _s_display_header_button(); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
 				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">

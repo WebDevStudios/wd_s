@@ -97,9 +97,6 @@ if ( ! function_exists( '_s_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Gutenberg color palette support.
-		add_theme_support( 'editor-color-palette', _s_get_theme_colors_gutenberg() );
-
 		// Gutenberg support for full-width/wide alignment of supported blocks.
 		add_theme_support( 'align-wide' );
 
@@ -185,19 +182,9 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Load styles and scripts.
@@ -205,29 +192,14 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/scripts.php';
 
 /**
- * Load custom ACF features.
- */
-require get_template_directory() . '/inc/acf.php';
-
-/**
- * Load ACF Gutenberg block registration.
- */
-require get_template_directory() . '/inc/acf-gutenberg.php';
-
-/**
- * Load custom ACF search functionality.
- */
-require get_template_directory() . '/inc/acf-search.php';
-
-/**
  * Load custom filters and hooks.
  */
 require get_template_directory() . '/inc/hooks.php';
 
 /**
- * Load custom queries.
+ * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/queries.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Customizer additions.
@@ -235,6 +207,6 @@ require get_template_directory() . '/inc/queries.php';
 require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
- * Scaffolding Library.
+ * Scaffolding.
  */
 require get_template_directory() . '/inc/scaffolding.php';

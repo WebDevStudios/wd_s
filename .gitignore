@@ -19,5 +19,5 @@ node_modules/
 vendor/
 
 # theme
-dist
+build
 !src/scss/vendor

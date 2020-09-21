@@ -1,82 +1,39 @@
 {
   "name": "wd_s",
   "version": "1.0.0",
-  "description": "A theme boilerplate for WebDevStudios.",
-  "author": "WebDevStudios",
-  "license": "GPL-3.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WebDevStudios/wd_s.git"
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build && npm run theme",
+    "dev": "wp-scripts start",
+    "postinstall": "npm run build",
+    "start": "npm run dev",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:style": "wp-scripts lint-style",
+    "theme": "run-s pot imagemin icons",
+    "pot": "mkdirp build/languages && wp-pot --src './*.php' --dest-file 'build/languages/wd_s.pot'",
+    "imagemin": "imagemin src/images/*.* --out-dir=build/images/",
+    "icons": "svgo --config=.svgo.yml -f src/images/icons -o build/images/icons && svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg"
   },
-  "keywords": [
-    "theme"
-  ],
-  "bugs": {
-    "url": "https://github.com/WebDevStudios/wd_s/issues"
-  },
-  "homepage": "https://github.com/WebDevStudios/wd_s#readme",
-  "main": "src/js/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "slick-carousel": "^1.8.1"
-  },
-  "frontendDependencies": {
-    "target": "dist/",
-    "packages": {
-      "slick-carousel": "^1.8.1"
-    }
+    "npm-run-all": "^4.1.5"
   },
   "devDependencies": {
+    "@webdevstudios/css-coding-standards": "^1.0.1",
     "@webdevstudios/js-coding-standards": "^1.1.1",
-    "@wordpress/browserslist-config": "^2.7.0",
+    "@wordpress/scripts": "^12.1.1",
     "autoprefixer": "^9.8.6",
-    "browser-sync": "^2.26.12",
-    "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
-    "frontend-dependencies": "^1.1.8",
     "imagemin-cli": "^6.0.0",
     "mkdirp": "^1.0.4",
-    "node-sass": "^4.14.1",
-    "npm-run-all": "^4.1.5",
-    "onchange": "^7.0.2",
     "postcss-cli": "^7.1.1",
-    "rimraf": "^3.0.2",
-    "stylelint": "^13.6.1",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-config-wordpress": "^17.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.18.0",
     "svgo": "^1.3.2",
     "svgstore-cli": "^2.0.0",
-    "uglify-es": "^3.3.9",
+    "tailwindcss": "^1.7.3",
     "wp-pot-cli": "^1.5.0"
-  },
-  "scripts": {
-    "build": "run-p build:scss build:js build:images build:pot frontend clean",
-    "build:scss": "run-s scss gutenberg optimizecss",
-    "build:images": "run-s imagemin icons",
-    "build:js": "run-s uglify polyfill customizer",
-    "build:pot": "run-s pot",
-    "clean": "rimraf dist/",
-    "customizer": "uglifyjs src/js/customizer.js -m -b -o dist/js/customizer.js && uglifyjs src/js/customizer.js -m -c -o dist/js/customizer.min.js",
-    "frontend": "frontend-dependencies",
-    "gutenberg": "node-sass src/scss/gutenberg-blocks-style.scss -o dist/css",
-    "icons": "svgo --config=.svgo.yml -f src/images/icons -o dist/images/icons && svgstore dist/images/icons/*.svg --inline -o dist/images/icons/sprite.svg",
-    "imagemin": "imagemin src/images/*.* --out-dir=dist/images/",
-    "lint": "run-s lint:js lint:scss lint:php",
-    "lint:js": "./node_modules/.bin/eslint src/js || true",
-    "lint:php": "./vendor/bin/phpcs -p -s -n . --standard=WebDevStudios --extensions=php --ignore='node_modules/*,vendor/*,./dist/*,./acf-json/*' || true || exit",
-    "lint:scss": "./node_modules/.bin/stylelint 'src/scss/**/*.scss' --syntax scss || true",
-    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.min.css",
-    "polyfill": "uglifyjs src/js/babel-polyfill.min.js -m -o dist/js/babel-polyfill.js && uglifyjs src/js/babel-polyfill.min.js -m -c -o dist/js/babel-polyfill.min.js",
-    "postinstall": "run-s frontend build",
-    "pot": "mkdirp dist/languages && wp-pot --src './*.php' --dest-file 'dist/languages/_s.pot'",
-    "scss": "node-sass src/scss/style.scss -o dist/css --source-map true",
-    "serve": "browser-sync start --https --proxy 'https://_s.test' --no-open --files \"dist/css/*.css, dist/js/*.js, **/*.html, **/*.php, !node_modules/**/*.html\"",
-    "uglify": "mkdirp dist/js -p && uglifyjs src/js/concat/*.js -m -b -o dist/js/app.js && uglifyjs src/js/concat/*.js -m -c -o dist/js/app.min.js",
-    "watch": "run-p serve watch:*",
-    "watch:css": "onchange \"src/scss\" -- run-p lint:scss build:scss",
-    "watch:images": "onchange \"src/images\" -- run-p build:images",
-    "watch:js": "onchange \"src/js\" -- run-p lint:js build:js",
-    "watch:php": "onchange './*.php', './**/*.php' -- run-p lint:php"
   }
 }
