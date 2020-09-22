@@ -1,3 +1,11 @@
+/**
+ * wd_s Webpack config.
+ *
+ * This config includes the `@wordpress/scripts` defaults, along with
+ * imagemin-webpack-plugin for optimizing images present in the theme.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-scripts/#provide-your-own-webpack-config
+ */
 const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
@@ -9,6 +17,7 @@ module.exports = {
 	plugins: [
 		...defaultConfig.plugins,
 
+		// Copy the all types of images present in `src/images` directory to build directory.
 		new CopyWebpackPlugin( {
 			patterns: [
 				{
@@ -19,6 +28,8 @@ module.exports = {
 			],
 		} ),
 
+		// This should run after CopyWebpackPlugin.
+		// This plugin optimizes the images copied in the previous step build directory.
 		new ImageminPlugin( {
 			disable: 'production' !== mode,
 			test: /\.(jpe?g|png|gif|svg)$/i,
