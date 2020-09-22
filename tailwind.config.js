@@ -79,7 +79,7 @@ module.exports = {
 					padding: '0',
 					width: '100%',
 					'@screen wp-admin-bar': {
-						border: '1px solid black',
+						border: `1px solid ${config( 'theme.colors.black' )}`,
 					},
 					'thead': {
 						display: 'none',
@@ -97,7 +97,7 @@ module.exports = {
 						},
 					},
 					'td': {
-						border: '1px solid black',
+						border: `1px solid ${config( 'theme.colors.black' )}`,
 						borderBottom: '0',
 						display: 'block',
 						fontSize: config( 'theme.fontSize.base' ),
@@ -107,7 +107,7 @@ module.exports = {
 							display: 'table-cell',
 						},
 						'&:last-child': {
-							borderBottom: '1px solid black',
+							borderBottom: `1px solid ${config( 'theme.colors.black' )}`,
 						},
 						'&::before': {
 							content: 'attr(data-label)',
@@ -121,7 +121,7 @@ module.exports = {
 						},
 					},
 					'th': {
-						border: '1px solid black',
+						border: `1px solid ${config( 'theme.colors.black' )}`,
 						fontSize: config( 'theme.fontSize.base' ),
 						letterSpacing: config( 'theme.letterSpacing.widest' ),
 						textTransform: 'uppercase',
