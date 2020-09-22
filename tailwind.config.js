@@ -2,7 +2,7 @@ const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
 	purge: [
-		'./**/*.php',
+		'./**/*.php'
 	],
 	theme: {
 		extend: {
@@ -26,6 +26,9 @@ module.exports = {
 				'desktop': '1200px',
 			},
 		},
+	},
+	future: {
+		purgeLayersByDefault: false,
 	},
 	variants: {},
 	plugins: [
