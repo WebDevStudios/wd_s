@@ -1,9 +1,11 @@
 const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
-	purge: [
-		'./**/*.php'
-	],
+	purge: {
+		content: ['./**/*.php'],
+		layers: ['utilities'],
+		mode: 'layers',
+	},
 	theme: {
 		extend: {
 			maxHeight: {
@@ -28,7 +30,7 @@ module.exports = {
 		},
 	},
 	future: {
-		purgeLayersByDefault: false,
+		purgeLayersByDefault: true,
 	},
 	variants: {},
 	plugins: [
