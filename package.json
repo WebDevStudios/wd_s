@@ -6,16 +6,15 @@
   "scripts": {
     "build": "wp-scripts build && npm run theme",
     "format:js": "wp-scripts format-js",
-    "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "packages-update": "wp-scripts packages-update",
     "start": "wp-scripts start",
     "postinstall": "npm run build",
     "lint": "npm run lint:js && npm run lint:style",
-    "theme": "run-s pot imagemin icons",
+    "lint:style": "wp-scripts lint-style",
+    "theme": "run-s pot icons",
     "pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build",
-    "imagemin": "imagemin src/images/*.* --out-dir=build/images/",
-    "icons": "svgo --config=.svgo.yml -f src/images/icons -o build/images/icons && svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg"
+    "icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg"
   },
   "keywords": [],
   "author": "",
@@ -26,14 +25,22 @@
   "devDependencies": {
     "@webdevstudios/css-coding-standards": "^1.0.1",
     "@webdevstudios/js-coding-standards": "^1.1.1",
-    "@wordpress/scripts": "^12.2.1",
-    "autoprefixer": "^9.8.6",
+    "@wordpress/scripts": "^12.1.1",
+    "copy-webpack-plugin": "^6.1.1",
     "cssnano": "^4.1.10",
-    "imagemin-cli": "^6.0.0",
-    "mkdirp": "^1.0.4",
-    "postcss-cli": "^7.1.1",
-    "svgo": "^1.3.2",
+    "imagemin-webpack-plugin": "^2.4.2",
     "svgstore-cli": "^2.0.0",
     "tailwindcss": "^1.8.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/esnext",
+      "plugin:@wordpress/eslint-plugin/react",
+      "@webdevstudios/js-coding-standards"
+    ],
+    "ignorePatterns": [
+      "build/**",
+      "vendor/**"
+    ]
   }
 }

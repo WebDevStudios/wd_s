@@ -1,5 +1,0 @@
-plugins:
-    - removeViewBox: false
-    - removeDimensions: true
-    - removeAttrs:
-        attrs: '*:(stroke|fill):((?!^none$).)*'
