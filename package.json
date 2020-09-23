@@ -1,15 +1,16 @@
 {
   "name": "wd_s",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "build": "wp-scripts build && npm run theme",
-    "dev": "wp-scripts start",
-    "postinstall": "npm run build",
-    "start": "npm run dev",
-    "lint": "npm run lint:js && npm run lint:style",
+    "format:js": "wp-scripts format-js",
     "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start",
+    "postinstall": "npm run build",
+    "lint": "npm run lint:js && npm run lint:style",
     "lint:style": "wp-scripts lint-style",
     "theme": "run-s pot icons",
     "pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build",
@@ -29,7 +30,7 @@
     "cssnano": "^4.1.10",
     "imagemin-webpack-plugin": "^2.4.2",
     "svgstore-cli": "^2.0.0",
-    "tailwindcss": "^1.7.3"
+    "tailwindcss": "^1.8.0"
   },
   "eslintConfig": {
     "extends": [
