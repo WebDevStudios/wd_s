@@ -23,7 +23,7 @@ function wdsMobileMenu() {
 	subMenuParentItem.forEach( ( subMenuParent ) => {
 		const menuItem = subMenuParent.querySelector( 'a' );
 
-		menuItem.innerHTML += '<button type="button" aria-expanded="false" class="parent-indicator" aria-label="Open submenu"><span class="down-arrow"></span></button>';
+		menuItem.innerHTML += '<button type="button" aria-expanded="false" class="parent-indicator bg-menu" aria-label="Open submenu"><span class="down-arrow"></span></button>';
 
 		const subMenuTrigger = document.querySelectorAll( '.parent-indicator' );
 

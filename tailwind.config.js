@@ -308,9 +308,57 @@ module.exports = {
 						marginBottom: config( 'theme.spacing.2' ),
 					},
 					'.sub-menu': {
+						display: 'none',
 						marginBottom: '0',
 						marginLeft: config( 'theme.spacing.4' ),
 						marginTop: config( 'theme.spacing.2' ),
+						'&.is-visible': {
+							display: 'block',
+							opacity: '1',
+							visibility: 'visible',
+						},
+					},
+					'.menu-item-has-children': {
+						transition: 'max-height 0.5s',
+						'&.is-visible': {
+							maxHeight: '8000px',
+
+							'.parent-indicator': {
+								transform: 'rotateX(180deg)',
+							}
+						},
+						'.menu-item-has-children': {
+							'&:last-of-type': {
+								'.menu-item-has-children.is-visible': {
+									marginBottom: '0',
+								},
+							},
+							'.parent-indicator': {
+								transform: 'rotateX(0)',
+							},
+							'&.is-visible': {
+								'&:last-of-type': {
+									marginBottom: '0',
+								},
+								'.parent-indicator': {
+									transform: 'rotateX(180deg)',
+								},
+							},
+							'.menu-item-has-children': {
+								'.parent-indicator': {
+									transform: 'rotateX(0)',
+								},
+								'&.is-visible': {
+									'.parent-indicator': {
+										transform: 'rotateX(180deg)',
+									},
+								},
+							},
+						},
+					},
+					'.parent-indicator': {
+						height: config( 'theme.height.4' ),
+						width: config( 'theme.width.4' ),
 					},
 				},
 				'.dropdown': {
