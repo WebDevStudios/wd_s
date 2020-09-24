@@ -414,20 +414,20 @@ module.exports = {
 						backgroundSize: '100%',
 						bottom: '0',
 						display: 'block',
-						height: config( 'theme.spacing.6' ),
+						height: config( 'theme.height.6' ),
 						right: '0',
 						padding: '0',
 						position: 'absolute',
-						right: '10px',
-						top: '10px',
-						width: config( 'theme.spacing.6' ),
+						right: config( 'theme.spacing.3' ),
+						top: config( 'theme.spacing.3' ),
+						width: config( 'theme.width.6' ),
 						zIndex: '9999',
 						'@screen tablet-landscape': {
 							display: 'none',
 						},
 						'.admin-bar &': {
 							position: 'absolute',
-							top: '56px',
+							top: config( 'theme.spacing.12' ),
 						},
 						'&:focus,&:hover': {
 							backgroundColor: 'transparent',
@@ -455,7 +455,7 @@ module.exports = {
 					},
 					'&-content': {
 						display: 'none',
-						margin: '20px unset unset',
+						margin: `${config( 'theme.spacing.5' )} unset unset`,
 						padding: config( 'theme.spacing.4' ),
 						'.is-visible &': {
 							display: 'block',
