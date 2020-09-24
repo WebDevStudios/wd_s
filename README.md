@@ -4,11 +4,9 @@ wd_s
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
-I feature some of the web's most proven technologies like: [Sass](http://sass-lang.com/), [PostCSS](https://github.com/postcss/postcss), and [BrowserSync](https://www.browsersync.io/). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), I'm also bundled with a [Stylelint](https://stylelint.io/), [ESLint](https://eslint.org/), and [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) linting rulesets. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.1AA and Section 508 standards out of the box.
+I feature some of the web's most proven technologies like: [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [Sass](http://sass-lang.com/), and [PostCSS](https://github.com/postcss/postcss). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), we tap into [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for linting CSS and JavaScript. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.1AA and Section 508 standards out of the box.
 
-If that weren't enough, I also support [synchronized JSON](https://www.advancedcustomfields.com/resources/synchronized-json/) for Advanced Custom Fields and support both [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
-
-If you have [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/), then you can take advantage of our [ACF Blocks](https://github.com/WebDevStudios/wd_s/wiki/ACF-Blocks) system. ACF Blocks are a powerful PHP-based framework for developing custom block types. Learn more about [ACF Blocks](https://www.advancedcustomfields.com/resources/blocks/).
+I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
 
 <a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. Your Success is Our Mission."></a>
 
@@ -16,7 +14,7 @@ If you have [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pr
 
 ### Prerequisites
 
-Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (v12+) and [Composer](https://getcomposer.org/).
+Because I compile and bundle assets via npm scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (v12+) and [Composer](https://getcomposer.org/).
 
 ### Quick Start
 If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
@@ -60,7 +58,7 @@ From the command line, type any of the following to perform an action:
 
 `npm run build` - Compile and build all assets.
 
-`npm run watch` - Automatically handle changes to CSS, JS, SVGs, and image sprites. Also kicks off BrowserSync for hot-module reloading.
+`npm run start` - Automatically handle changes to CSS, JS, SVGs, and image sprites.
 
 ## Contributing and Support
 
