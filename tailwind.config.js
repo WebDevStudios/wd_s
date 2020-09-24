@@ -254,7 +254,7 @@ module.exports = {
 			}
 
 			const menus = {
-				'.main-navigation .menu': {
+				'.navigation-menu .menu': {
 					display: 'flex',
 					'> li': {
 						'&:not(:last-child)': {

@@ -51,6 +51,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => esc_html__( 'Primary Menu', '_s' ),
+				'footer'  => esc_html__( 'Footer Menu', '_s' ),
 				'mobile'  => esc_html__( 'Mobile Menu', '_s' ),
 			)
 		);
