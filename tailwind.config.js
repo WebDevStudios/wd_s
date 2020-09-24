@@ -38,27 +38,24 @@ module.exports = {
 			addBase({
 				'h1,.h1': {
 					fontSize: config( 'theme.fontSize.5xl' ),
-					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'h2,.h2': {
 					fontSize: config( 'theme.fontSize.4xl' ),
-					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'h3,.h3': {
 					fontSize: config( 'theme.fontSize.3xl' ),
-					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'h4,.h4': {
 					fontSize: config( 'theme.fontSize.2xl' ),
-					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'h5,.h5': {
 					fontSize: config( 'theme.fontSize.xl' ),
-					marginBottom: config( 'theme.spacing.2' ),
 				},
 				'h6,.h6': {
 					fontSize: config( 'theme.fontSize.lg' ),
-					marginBottom: config( 'theme.spacing.2' ),
+				},
+				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
+					marginBottom: config( 'theme.spacing.4' ),
 				},
 				'a': {
 					textDecoration: 'underline',
