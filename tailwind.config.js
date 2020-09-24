@@ -36,11 +36,6 @@ module.exports = {
 	plugins: [
 		plugin( function({ addBase, config }) {
 			addBase({
-				'*, ::before, ::after': {
-					boxSizing: 'border-box',
-					wordBreak: 'unset',
-					wordWrap: 'unset',
-				},
 				'h1,.h1': {
 					fontSize: config( 'theme.fontSize.5xl' ),
 					marginBottom: config( 'theme.spacing.2' ),
