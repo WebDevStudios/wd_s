@@ -48,7 +48,6 @@
 
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
 				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e( 'Open Menu', '_s' ); ?>">
-					<span class="hamburger"></span>
 				</button>
 			<?php endif; ?>
 		</div><!-- .container -->

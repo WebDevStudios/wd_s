@@ -6,7 +6,6 @@ import wdsWindowReady from "./components/window-ready";
 
 // Components.
 import wdsAccordion from "./components/accordion";
-import wdsHeaderButton from "./components/header-button";
 import wdsMobileMenu from "./components/mobile-menu";
 import wdsModal from "./components/modal";
 import wdsPrimaryNav from "./components/navigation-primary";

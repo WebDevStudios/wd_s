@@ -31,6 +31,7 @@
 			<?php _s_display_social_network_links(); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer container-->
+	<?php _s_display_mobile_menu(); ?>
 	<?php wp_footer(); ?>
 </body>
 </html>

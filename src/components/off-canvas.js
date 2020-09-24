@@ -24,12 +24,10 @@ function wdsOffCanvas() {
 		return;
 	}
 
-	const offCanvasClose = document.querySelector( '.off-canvas-close' ),
-		offCanvasContainer = document.querySelector( '.off-canvas-container' ),
+	const offCanvasContainer = document.querySelector( '.off-canvas-container' ),
 		offCanvasOpen = document.querySelector( '.off-canvas-open' );
 
 	offCanvasOpen.addEventListener( 'click', toggleOffCanvas );
-	offCanvasClose.addEventListener( 'click', closeOffCanvas );
 	offCanvasScreen.addEventListener( 'click', closeOffCanvas );
 	document.body.addEventListener( 'keydown', closeOnEscape );
 
@@ -69,9 +67,11 @@ function wdsOffCanvas() {
 	 * @author Corey Collins
 	 */
 	function toggleOffCanvas() {
-		if ( true === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
+		if ( 'true' === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
+			console.log( 'it is open' );
 			closeOffCanvas();
 		} else {
+			console.log( 'it is closed' );
 			openOffCanvas();
 		}
 	}
