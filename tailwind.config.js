@@ -194,12 +194,18 @@ module.exports = {
 				'.comment-metadata': {
 					marginBottom: config( 'theme.spacing.4' ),
 				},
+				'.comment-body': {
+					padding: `${config( 'theme.spacing.2' )} 0`,
+				},
 				'.comment-content': {
 					backgroundColor: config( 'theme.colors.blue.100' ),
 					padding: config( 'theme.spacing.4' ),
 				},
 				'.comment-list .children': {
 					marginLeft: config( 'theme.spacing.4' ),
+				},
+				'.reply': {
+					paddingTop: config( 'theme.spacing.2' ),
 				},
 				'.comment-reply-title a': {
 					display: 'block',
