@@ -1,0 +1,59 @@
+//--------------------------------------------------------------
+// COLORS CLASSES
+//--------------------------------------------------------------
+
+////
+/// @group mixins
+/// @author Carrie Forde
+////
+
+/// Quickly and easily create color presentational classes.
+/// Includes background-color, color, and fill clases.
+///
+/// @param {map} $colors [$theme-colors] - The theme color map.
+///
+/// @example scss - Basic usage.
+///  @include colors($theme-colors);
+///
+/// @example css - Output
+///  .background-blue {
+///    background-color: #00f;
+///  }
+///  .color-blue {
+///    color: #00f;
+///  }
+///  .fill-blue {
+///    fill: #00f;
+///  }
+
+@mixin colors($colors: $theme-colors) {
+
+	@if type-of($colors) != "map" {
+
+		@error "Sorry, $colors is not a Sass map!";
+	}
+
+	@each $name, $color in $colors {
+		// Create background color classes.
+		.background-#{$name},
+		.has-#{$name}-background-color {
+			background-color: $color;
+		}
+
+		// Create color classes.
+		.color-#{$name},
+		.has-#{$name}-color {
+			color: $color;
+		}
+
+		// Adds colors for gutenberg buttons.
+		.wp-block-button__link.has-text-color.has-#{$name}-color {
+			color: $color;
+		}
+
+		// Create fill classes.
+		.fill-#{$name} {
+			fill: $color;
+		}
+	}
+}

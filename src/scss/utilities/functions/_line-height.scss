@@ -1,0 +1,25 @@
+//--------------------------------------------------------------
+// LINE HEIGHT
+//--------------------------------------------------------------
+////
+/// @group functions
+/// @author Jo Murgel
+////
+
+/// Calculates a unitless line-height.
+///
+/// @param {int} $line-height - The desired line-height.
+/// @param {int} $font-size [16px] - The font-size used to calculate the line-height.
+
+@function lh($line-height, $font-size: $base-context) {
+
+	@if not unitless($line-height) {
+		$line-height: strip-units($line-height);
+	}
+
+	@if not unitless($font-size) {
+		$font-size: strip-units($font-size);
+	}
+
+	@return $line-height / $font-size;
+}
