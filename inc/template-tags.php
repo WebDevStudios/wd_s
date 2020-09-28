@@ -56,6 +56,53 @@ function _s_display_social_network_links() {
 	<?php
 }
 
+/**
+ * Trim the title length.
+ *
+ * @param array $args Parameters include length and more.
+ *
+ * @author WDS
+ * @return string
+ */
+function _s_get_the_title( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length' => 12,
+		'more'   => '...',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the title.
+	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
+}
+
+/**
+ * Limit the excerpt length.
+ *
+ * @param array $args Parameters include length and more.
+ *
+ * @author WDS
+ * @return string
+ */
+function _s_get_the_excerpt( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length' => 20,
+		'more'   => '...',
+		'post'   => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the excerpt.
+	return wp_trim_words( get_the_excerpt( $args['post'] ), absint( $args['length'] ), esc_html( $args['more'] ) );
+}
+
  /**
  * Echo the copyright text saved in the Customizer.
  *
@@ -264,6 +311,49 @@ function _s_entry_footer() {
 		'<span class="edit-link">',
 		'</span>'
 	);
+}
+
+/**
+ * Displays numeric pagination on archive pages.
+ *
+ * @param array  $args Array of params to customize output.
+ * @param object $query The Query object; only passed if a custom WP_Query is used.
+ *
+ * @author WDS
+ * @return void.
+ * @author Corey Collins
+ */
+function _s_display_numeric_pagination( $args = array(), $query = null ) {
+
+	if ( ! $query ) {
+		global $wp_query;
+		$query = $wp_query;
+	}
+
+	// Make the pagination work on custom query loops.
+	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
+
+	// Set defaults.
+	$defaults = array(
+		'prev_text' => '&laquo;',
+		'next_text' => '&raquo;',
+		'mid_size'  => 4,
+		'total'     => $total_pages,
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( is_null( paginate_links( $args ) ) ) {
+		return;
+	}
+	?>
+
+	<nav class="pagination-container container" aria-label="<?php esc_html_e( 'numeric pagination', '_s' ); ?>">
+		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
+	</nav>
+
+	<?php
 }
 
 /**
