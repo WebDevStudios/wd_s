@@ -7,119 +7,78 @@
  * @package _s
  */
 
- /**
- * Display the social links saved in the customizer.
- *
- * @author WDS
- */
-function _s_display_social_network_links() {
-
-	// Create an array of our social links for ease of setup.
-	// Change the order of the networks in this array to change the output order.
-	$social_networks = array( 'facebook', 'instagram', 'linkedin', 'twitter' );
-
-	?>
-	<ul class="social-icons flex">
-		<?php
-		// Loop through our network array.
-		foreach ( $social_networks as $network ) :
-
-			// Look for the social network's URL.
-			$network_url = get_theme_mod( '_s_' . $network . '_link' );
-
-			// Only display the list item if a URL is set.
-			if ( ! empty( $network_url ) ) :
-			?>
-				<li class="social-icon <?php echo esc_attr( $network ); ?> mr-2">
-					<a href="<?php echo esc_url( $network_url ); ?>">
-						<?php
-						_s_display_svg(
-							array(
-								'icon'   => $network . '-square',
-								'width'  => '24',
-								'height' => '24',
-							)
-						);
-						?>
-						<span class="screen-reader-text">
-						<?php
-							echo /* translators: the social network name */ sprintf( esc_html( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
-						?>
-						</span>
-					</a>
-				</li><!-- .social-icon -->
-			<?php
-			endif;
-		endforeach;
-		?>
-	</ul><!-- .social-icons -->
-	<?php
-}
-
 /**
- * Trim the title length.
- *
- * @param array $args Parameters include length and more.
+ * Prints HTML with meta information for the current post-date/time and author.
  *
  * @author WDS
- * @return string
  */
-function _s_get_the_title( $args = array() ) {
-
-	// Set defaults.
-	$defaults = array(
-		'length' => 12,
-		'more'   => '...',
-	);
-
-	// Parse args.
-	$args = wp_parse_args( $args, $defaults );
-
-	// Trim the title.
-	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
-}
-
-/**
- * Limit the excerpt length.
- *
- * @param array $args Parameters include length and more.
- *
- * @author WDS
- * @return string
- */
-function _s_get_the_excerpt( $args = array() ) {
-
-	// Set defaults.
-	$defaults = array(
-		'length' => 20,
-		'more'   => '...',
-		'post'   => '',
-	);
-
-	// Parse args.
-	$args = wp_parse_args( $args, $defaults );
-
-	// Trim the excerpt.
-	return wp_trim_words( get_the_excerpt( $args['post'] ), absint( $args['length'] ), esc_html( $args['more'] ) );
-}
-
- /**
- * Echo the copyright text saved in the Customizer.
- *
- * @author WDS
- * @return bool
- */
-function _s_display_copyright_text() {
-
-	// Grab our customizer settings.
-	$copyright_text = get_theme_mod( '_s_copyright_text' );
-
-	// Stop if there's nothing to display.
-	if ( ! $copyright_text ) {
-		return false;
+function _s_posted_on() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
-	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
+	$time_string = sprintf(
+		$time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		/* translators: the date the post was published */
+		esc_html_x( 'Posted on %s', 'post date', '_s' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	$byline = sprintf(
+		/* translators: the post author */
+		esc_html_x( 'by %s', 'post author', '_s' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+}
+
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ *
+ * @author WDS
+ */
+function _s_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+		if ( $categories_list && _s_categorized_blog() ) {
+			/* translators: the post category */
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
+		if ( $tags_list ) {
+			/* translators: the post tags */
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		}
+	}
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
+		echo '</span>';
+	}
+
+	edit_post_link(
+		sprintf(
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', '_s' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
 }
 
 /**
@@ -239,78 +198,118 @@ function _s_get_svg( $args = array() ) {
 }
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Trim the title length.
+ *
+ * @param array $args Parameters include length and more.
  *
  * @author WDS
+ * @return string
  */
-function _s_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+function _s_get_the_title( $args = array() ) {
 
-	$time_string = sprintf(
-		$time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+	// Set defaults.
+	$defaults = array(
+		'length' => 12,
+		'more'   => '...',
 	);
 
-	$posted_on = sprintf(
-		/* translators: the date the post was published */
-		esc_html_x( 'Posted on %s', 'post date', '_s' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
 
-	$byline = sprintf(
-		/* translators: the post author */
-		esc_html_x( 'by %s', 'post author', '_s' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
+	// Trim the title.
+	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
 }
 
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Limit the excerpt length.
+ *
+ * @param array $args Parameters include length and more.
+ *
+ * @author WDS
+ * @return string
+ */
+function _s_get_the_excerpt( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length' => 20,
+		'more'   => '...',
+		'post'   => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the excerpt.
+	return wp_trim_words( get_the_excerpt( $args['post'] ), absint( $args['length'] ), esc_html( $args['more'] ) );
+}
+
+/**
+ * Echo the copyright text saved in the Customizer.
+ *
+ * @author WDS
+ * @return bool
+ */
+function _s_display_copyright_text() {
+
+	// Grab our customizer settings.
+	$copyright_text = get_theme_mod( '_s_copyright_text' );
+
+	// Stop if there's nothing to display.
+	if ( ! $copyright_text ) {
+		return false;
+	}
+
+	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
+}
+
+/**
+ * Display the social links saved in the customizer.
  *
  * @author WDS
  */
-function _s_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
-		if ( $categories_list && _s_categorized_blog() ) {
-			/* translators: the post category */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+function _s_display_social_network_links() {
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
-		if ( $tags_list ) {
-			/* translators: the post tags */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
+	// Create an array of our social links for ease of setup.
+	// Change the order of the networks in this array to change the output order.
+	$social_networks = array( 'facebook', 'instagram', 'linkedin', 'twitter' );
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
-		echo '</span>';
-	}
+	?>
+	<ul class="social-icons flex">
+		<?php
+		// Loop through our network array.
+		foreach ( $social_networks as $network ) :
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', '_s' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
+			// Look for the social network's URL.
+			$network_url = get_theme_mod( '_s_' . $network . '_link' );
+
+			// Only display the list item if a URL is set.
+			if ( ! empty( $network_url ) ) :
+			?>
+				<li class="social-icon <?php echo esc_attr( $network ); ?> mr-2">
+					<a href="<?php echo esc_url( $network_url ); ?>">
+						<?php
+						_s_display_svg(
+							array(
+								'icon'   => $network . '-square',
+								'width'  => '24',
+								'height' => '24',
+							)
+						);
+						?>
+						<span class="screen-reader-text">
+						<?php
+							echo /* translators: the social network name */ sprintf( esc_html( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // WPCS: XSS OK.
+						?>
+						</span>
+					</a>
+				</li><!-- .social-icon -->
+			<?php
+			endif;
+		endforeach;
+		?>
+	</ul><!-- .social-icons -->
+	<?php
 }
 
 /**
