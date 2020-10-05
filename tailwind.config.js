@@ -250,7 +250,7 @@ module.exports = {
 					padding: config( 'theme.spacing.4' ),
 				},
 				'*, ::after, ::before': {
-					boxSizing: 'inherit',
+					boxSizing: 'border-box',
 					wordBreak: 'break-word',
 					wordWrap: 'break-word',
 				},
