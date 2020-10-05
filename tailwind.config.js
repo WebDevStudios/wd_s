@@ -363,8 +363,12 @@ module.exports = {
 						},
 					},
 					'.parent-indicator': {
+						display: 'inline-block',
+						float: 'unset',
 						height: config( 'theme.height.4' ),
 						width: config( 'theme.width.4' ),
+						position: 'relative',
+						top: '-4px',
 					},
 				},
 				'.dropdown': {
@@ -451,8 +455,11 @@ module.exports = {
 						right: '-100%',
 						top: '0',
 						transition: 'right .6s ease-in-out',
-						width: '35vw',
+						width: '75%',
 						zIndex: '9998',
+						'@screen tablet-portrait': {
+							width: '35vw',
+						},
 						'&.is-visible': {
 							right: '0',
 						},
