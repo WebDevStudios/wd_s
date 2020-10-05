@@ -9,7 +9,7 @@
 
 ?>
 
-	<article <?php post_class( 'container post-container' ); ?>>
+	<article <?php post_class( 'post-container' ); ?>>
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :
