@@ -8,7 +8,8 @@ table {
 	border-spacing: 0;
 
 	@screen wp-admin-bar {
-		border: 1px solid theme( 'colors.black' );
+
+		@apply border border-black border-solid;
 	}
 
 	thead {
@@ -34,9 +35,7 @@ table {
 
 	td {
 
-		@apply border-b-0 block text-base text-center;
-
-		border: 1px solid theme( 'colors.black' );
+		@apply block text-base text-center border border-black border-solid;
 
 		@screen wp-admin-bar {
 
@@ -44,7 +43,8 @@ table {
 		}
 
 		&:last-child {
-			border-bottom: 1px solid theme( 'colors.black' );
+
+			@apply border-b border-black border-solid;
 		}
 
 		&::before {
@@ -62,9 +62,7 @@ table {
 
 	th {
 
-		@apply text-base tracking-widest uppercase;
-
-		border: 1px solid theme( 'colors.black' );
+		@apply text-base tracking-widest uppercase border border-solid border-black;
 
 		@screen phone {
 
