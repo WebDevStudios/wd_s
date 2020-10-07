@@ -138,86 +138,6 @@ module.exports = {
 			})
 		}),
 		plugin( function({ addComponents, config }) {
-			const postDetails = {
-				'.entry-meta': {
-					marginBottom: config( 'theme.spacing.4' ),
-				},
-				'.entry-footer': {
-					marginTop: config( 'theme.spacing.4' ),
-				},
-				'.cat-links,.tag-links': {
-					display: 'block',
-				},
-				'.post-edit-link': {
-					display: 'block',
-					marginBottom: config( 'theme.spacing.4' ),
-					marginTop: config( 'theme.spacing.4' ),
-				},
-				'.post-container': {
-					'&:not(:last-child)': {
-						marginBottom: config( 'theme.spacing.4' ),
-					},
-				},
-				'.post-navigation .nav-links': {
-					display: 'flex',
-					flexDirection: 'column',
-					textAlign: 'center',
-					'@screen tablet-landscape': {
-						flexDirection: 'row',
-						justifyContent: 'space-between',
-						textAlign: 'unset',
-					},
-				},
-				'.post-navigation .nav-next': {
-					marginTop: config( 'theme.spacing.4' ),
-					'@screen tablet-landscape': {
-						marginTop: '0',
-					},
-				},
-				'.comments-link': {
-					marginTop: config( 'theme.spacing.4' ),
-				},
-				'.comments-area': {
-					marginTop: config( 'theme.spacing.6' ),
-				},
-				'.comment-author': {
-					alignItems: 'center',
-					display: 'flex',
-					marginBottom: config( 'theme.spacing.4' ),
-				},
-				'.comment-author .avatar': {
-					marginRight: config( 'theme.spacing.4' ),
-				},
-				'.comment-author .fn': {
-					marginRight: config( 'theme.spacing.2' ),
-				},
-				'.comment-metadata': {
-					marginBottom: config( 'theme.spacing.4' ),
-				},
-				'.comment-body': {
-					padding: `${config( 'theme.spacing.2' )} 0`,
-				},
-				'.comment-content': {
-					backgroundColor: config( 'theme.colors.blue.100' ),
-					padding: config( 'theme.spacing.4' ),
-				},
-				'.comment-list .children': {
-					marginLeft: config( 'theme.spacing.4' ),
-				},
-				'.reply': {
-					paddingTop: config( 'theme.spacing.2' ),
-				},
-				'.comment-reply-title a': {
-					display: 'block',
-					fontSize: config( 'theme.fontSize.sm' ),
-				},
-				'.updated': {
-					'&:not(.published)': {
-						display: 'none',
-					},
-				},
-			}
-
 			const screenReaderText = {
 				'.screen-reader-text': {
 					clip: 'rect(1px, 1px, 1px, 1px)',
@@ -581,9 +501,6 @@ module.exports = {
 				},
 			}
 
-			addComponents( postDetails, {
-				variants: ['responsive'],
-			})
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})

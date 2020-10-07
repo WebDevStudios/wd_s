@@ -1,0 +1,65 @@
+//--------------------------------------------------------------
+// Post Elements
+//--------------------------------------------------------------
+.entry-meta {
+
+	@apply mb-4;
+}
+
+.entry-footer {
+
+	@apply mt-4;
+}
+
+.cat-links,
+.tag-links {
+	display: block;
+}
+
+.post-edit-link {
+
+	@apply mb-4 mt-4;
+
+	display: block;
+}
+
+.post-container {
+
+	&:not(:last-child) {
+
+		@apply mb-4;
+	}
+}
+
+.post-navigation {
+
+	.nav-links {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		@screen tablet-landscape {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: unset;
+		}
+	}
+}
+
+.post-navigation .nav-next {
+
+	@apply mt-4;
+
+	@screen tablet-landscape {
+
+		@apply mt-0;
+	}
+}
+
+
+.updated {
+
+	&:not(.published) {
+		display: none;
+	}
+}
