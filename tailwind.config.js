@@ -302,18 +302,6 @@ module.exports = {
 				},
 			}
 
-			const forms = {
-				'textarea, input:not(.button)': {
-					backgroundColor: config( 'theme.colors.gray.100' ),
-					padding: config( 'theme.spacing.2' ),
-				},
-				'label': {
-					display: 'block',
-					fontWeight: config( 'theme.fontWeight.semibold' ),
-					marginBottom: config( 'theme.spacing.1' ),
-				},
-			}
-
 			const templateElements = {
 				'.container': {
 					paddingLeft: config( 'theme.spacing.4' ),
@@ -490,7 +478,6 @@ module.exports = {
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})
-			addComponents( forms )
 			addComponents( menus )
 			addComponents( templateElements )
 			addComponents( offCanvasElements )
