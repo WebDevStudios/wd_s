@@ -9,7 +9,5 @@ input:not(.button) {
 
 label {
 
-	@apply font-semibold mb-1;
-
-	display: block;
+	@apply block font-semibold mb-1;
 }

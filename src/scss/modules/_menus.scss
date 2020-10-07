@@ -2,14 +2,17 @@
 // Menus and Sub-Menus
 //--------------------------------------------------------------
 .navigation-menu {
-	display: none;
+
+	@apply hidden;
 
 	@screen tablet-landscape {
-		display: block;
+
+		@apply block;
 	}
 
 	.menu {
-		display: flex;
+
+		@apply flex;
 
 		> li {
 
@@ -22,11 +25,10 @@
 
 	.sub-menu {
 
-		@apply bg-white py-2 absolute;
+		@apply bg-white py-2 absolute shadow-md;
 
-		box-shadow: '0 .1875rem .1875rem rgba(0,0,0,.5)';
 		left: -999em;
-		top: 1.5rem;
+		top: theme( 'spacing.6' );
 		z-index: 99999;
 
 		li {
@@ -52,12 +54,14 @@
 // Menu Items With Children
 //-----------------------------------------
 .menu-item-has-children {
-	position: relative;
+
+	@apply relative;
 
 	&:hover,
 	&.focus {
 		> .sub-menu {
-			left: 0;
+
+			@apply left-0;
 		}
 	}
 }
@@ -104,10 +108,12 @@
 .footer-navigation {
 
 	.menu {
-		display: block;
+
+		@apply block;
 
 		@screen tablet-landscape {
-			display: flex;
+
+			@apply flex;
 		}
 	}
 }

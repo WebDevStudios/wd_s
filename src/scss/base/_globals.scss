@@ -4,13 +4,15 @@
 *,
 ::after,
 ::before {
-	box-sizing: border-box;
-	word-break: break-word;
+
+	@apply box-border break-words;
+
 	word-wrap: break-word;
 }
 
 pre {
-	overflow: auto;
+
+	@apply overflow-auto;
 }
 
 

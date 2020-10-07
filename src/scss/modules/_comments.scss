@@ -13,10 +13,7 @@
 
 .comment-author {
 
-	@apply mb-4;
-
-	align-items: center;
-	display: flex;
+	@apply mb-4 items-center flex;
 }
 
 .comment-author {
@@ -65,8 +62,6 @@
 
 	a {
 
-		@apply text-sm;
-
-		display: block;
+		@apply block text-sm;
 	}
 }

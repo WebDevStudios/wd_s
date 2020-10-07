@@ -25,7 +25,8 @@
 			max-height: 8000px;
 
 			.parent-indicator {
-				transform: rotateX(180deg);
+
+				@apply rotate-180;
 			}
 		}
 
@@ -40,7 +41,8 @@
 			}
 
 			.parent-indicator {
-				transform: rotateX(0);
+
+				@apply rotate-0;
 			}
 
 			&.is-visible {
@@ -51,7 +53,7 @@
 				}
 				.parent-indicator {
 
-					transform: rotateX(180deg);
+					@apply rotate-180;
 				}
 			}
 
@@ -59,13 +61,13 @@
 
 				.parent-indicator {
 
-					transform: rotateX(0);
+					@apply rotate-0;
 				}
 
 				&.is-visible {
 
 					.parent-indicator {
-						transform: rotateX(180deg);
+						@apply rotate-180;
 					}
 				}
 			}
