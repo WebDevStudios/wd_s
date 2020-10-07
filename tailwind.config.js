@@ -165,20 +165,6 @@ module.exports = {
 				},
 			}
 
-			const globalElements = {
-				'.button': {
-					padding: config( 'theme.spacing.4' ),
-				},
-				'*, ::after, ::before': {
-					boxSizing: 'border-box',
-					wordBreak: 'break-word',
-					wordWrap: 'break-word',
-				},
-				'pre': {
-					overflow: 'auto',
-				},
-			}
-
 			const menus = {
 				'.navigation-menu .menu': {
 					'> li': {
@@ -504,7 +490,6 @@ module.exports = {
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})
-			addComponents( globalElements )
 			addComponents( forms )
 			addComponents( menus )
 			addComponents( templateElements )

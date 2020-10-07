@@ -1,0 +1,19 @@
+//--------------------------------------------------------------
+// Global Elements
+//--------------------------------------------------------------
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	word-break: break-word;
+	word-wrap: break-word;
+}
+
+.button {
+
+	@apply p-4;
+}
+
+pre {
+	overflow: auto;
+}
