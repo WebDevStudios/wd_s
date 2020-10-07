@@ -165,89 +165,6 @@ module.exports = {
 				},
 			}
 
-			const offCanvasElements = {
-				'.off-canvas': {
-					'&-container': {
-						backgroundColor: config( 'theme.colors.white' ),
-						bottom: '0',
-						height: '100%',
-						right: '0',
-						overflowScrolling: 'touch',
-						overflowY: 'auto',
-						position: 'fixed',
-						right: '-100%',
-						top: '0',
-						transition: 'right .6s ease-in-out',
-						width: '75%',
-						zIndex: '9998',
-						'@screen tablet-portrait': {
-							width: '35vw',
-						},
-						'&.is-visible': {
-							right: '0',
-						},
-						'.admin-bar &': {
-							paddingTop: config( 'theme.spacing.16' ),
-						},
-					},
-					'&-open': {
-						backgroundColor: 'transparent',
-						backgroundImage: 'url("/wp-content/themes/wd_s/build/images/icons/hamburger.svg")',
-						backgroundPosition: '50% 50%',
-						backgroundRepeat: 'no-repeat',
-						backgroundSize: '100%',
-						bottom: '0',
-						display: 'block',
-						height: config( 'theme.height.6' ),
-						right: '0',
-						padding: '0',
-						position: 'absolute',
-						right: config( 'theme.spacing.3' ),
-						top: config( 'theme.spacing.3' ),
-						width: config( 'theme.width.6' ),
-						zIndex: '9999',
-						'@screen tablet-landscape': {
-							display: 'none',
-						},
-						'.admin-bar &': {
-							position: 'absolute',
-							top: config( 'theme.spacing.12' ),
-						},
-						'&:focus,&:hover': {
-							backgroundColor: 'transparent',
-							outline: `2px solid ${config( 'theme.colors.black' )}`,
-						},
-						'&.is-visible': {
-							backgroundImage: 'url("/wp-content/themes/wd_s/build/images/icons/close.svg")',
-						},
-					},
-					'&-screen': {
-						backgroundColor: config( 'theme.colors.gray.600' ),
-						bottom: '0',
-						left: '0',
-						opacity: '0',
-						position: 'fixed',
-						right: '0',
-						top: '0',
-						visibility: 'hidden',
-						zIndex: '9996',
-
-						'&.is-visible': {
-							opacity: '0.4',
-							visibility: 'visible',
-						},
-					},
-					'&-content': {
-						display: 'none',
-						margin: `${config( 'theme.spacing.5' )} unset unset`,
-						padding: config( 'theme.spacing.4' ),
-						'.is-visible &': {
-							display: 'block',
-						},
-					},
-				},
-			}
-
 			const modals = {
 				'.modal': {
 					bottom: '0',
@@ -307,7 +224,6 @@ module.exports = {
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})
-			addComponents( offCanvasElements )
 			addComponents( modals )
 		}),
 	],
