@@ -25,19 +25,18 @@
 
 		.admin-bar & {
 
-			@apply pt-16;
+			@apply pt-64;
 		}
 	}
 
 	&-open {
 
-		@apply bottom-0 right-0 block h-6 p-0 absolute w-6;
+		@apply bottom-0 right-0 block h-24 p-0 absolute w-24;
 
 		background: url('../images/icons/hamburger.svg') 50% 50% no-repeat transparent;
 		background-size: 100%;
-		right: theme( 'spacing.3' );
-		top: theme( 'spacing.3' );
-		width: theme( 'width.6' );
+		right: theme( 'spacing.12' );
+		top: theme( 'spacing.12' );
 		z-index: 9999;
 
 		@screen tablet-landscape {
@@ -48,7 +47,7 @@
 
 			@apply absolute;
 
-			top: theme( 'spacing.12' );
+			top: theme( 'spacing.48' );
 		}
 
 		&:focus,
@@ -75,7 +74,7 @@
 
 	&-content {
 
-		@apply hidden mt-5 p-4;
+		@apply hidden mt-20 p-16;
 
 		.is-visible & {
 

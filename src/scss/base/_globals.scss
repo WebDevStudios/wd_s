@@ -21,12 +21,12 @@ pre {
 //-----------------------------------------
 .button {
 
-	@apply p-4;
+	@apply p-16;
 }
 
 .container {
 
-	@apply px-4;
+	@apply px-16;
 
 	@screen desktop-large {
 
@@ -36,7 +36,7 @@ pre {
 
 .site-main {
 
-	@apply my-12;
+	@apply my-48;
 }
 
 table,
@@ -48,5 +48,5 @@ pre,
 blockquote,
 iframe {
 
-	@apply mb-4;
+	@apply mb-16;
 }

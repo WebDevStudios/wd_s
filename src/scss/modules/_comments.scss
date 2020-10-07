@@ -3,17 +3,17 @@
 //--------------------------------------------------------------
 .comments-link {
 
-	@apply mt-4;
+	@apply mt-16;
 }
 
 .comments-area {
 
-	@apply mt-6;
+	@apply mt-24;
 }
 
 .comment-author {
 
-	@apply mb-4 items-center flex;
+	@apply mb-16 items-center flex;
 }
 
 .comment-author {
@@ -21,41 +21,41 @@
 
 	.avatar {
 
-		@apply mr-4;
+		@apply mr-16;
 	}
 
 	.fn {
 
-		@apply mr-2;
+		@apply mr-8;
 	}
 }
 
 .comment-metadata {
 
-	@apply mb-4;
+	@apply mb-16;
 }
 
 .comment-body {
 
-	@apply py-2;
+	@apply py-8;
 }
 
 .comment-content {
 
-	@apply bg-blue-100 p-4;
+	@apply bg-blue-100 p-16;
 }
 
 .comment-list {
 
 	.children {
 
-		@apply ml-4;
+		@apply ml-16;
 	}
 }
 
 .reply {
 
-	@apply pt-2;
+	@apply pt-8;
 }
 
 .comment-reply-title {

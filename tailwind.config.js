@@ -7,6 +7,45 @@ module.exports = {
 		mode: 'layers',
 	},
 	theme: {
+		fontSize: {
+			'root-em': '16px',
+			'xs': '0.75rem',
+			'sm': '0.875rem',
+			'base': '1rem',
+			'lg': '1.125rem',
+			'xl': '1.25rem',
+			'2xl': '1.375rem',
+			'3xl': '1.5rem',
+			'4xl': '1.625rem',
+			'5xl': '1.75rem',
+			'6xl': '1.875rem',
+		},
+		spacing: {
+			px: '1px',
+			0: '0',
+			1: '0.0625rem',
+			2: '0.125rem',
+			3: '0.1875rem',
+			4: '0.25rem',
+			5: '0.3125rem',
+			6: '0.375rem',
+			8: '0.5rem',
+			10: '0.625rem',
+			12: '0.75rem',
+			16: '1rem',
+			20: '1.25rem',
+			24: '1.5rem',
+			32: '2rem',
+			40: '2.5rem',
+			48: '3rem',
+			56: '3.5rem',
+			64: '4rem',
+			68: '4.25rem',
+			72: '4.5rem',
+			76: '4.75rem',
+			80: '5rem',
+			192: '12rem',
+		},
 		extend: {
 			maxHeight: {
 				'0': '0',
@@ -37,31 +76,31 @@ module.exports = {
 		plugin( function({ addBase, config }) {
 			addBase({
 				'h1,.h1': {
-					fontSize: config( 'theme.fontSize.5xl' ),
+					fontSize: config( 'theme.fontSize.6xl' ),
 				},
 				'h2,.h2': {
-					fontSize: config( 'theme.fontSize.4xl' ),
+					fontSize: config( 'theme.fontSize.5xl' ),
 				},
 				'h3,.h3': {
-					fontSize: config( 'theme.fontSize.3xl' ),
+					fontSize: config( 'theme.fontSize.4xl' ),
 				},
 				'h4,.h4': {
-					fontSize: config( 'theme.fontSize.2xl' ),
+					fontSize: config( 'theme.fontSize.3xl' ),
 				},
 				'h5,.h5': {
-					fontSize: config( 'theme.fontSize.xl' ),
+					fontSize: config( 'theme.fontSize.2xl' ),
 				},
 				'h6,.h6': {
-					fontSize: config( 'theme.fontSize.lg' ),
+					fontSize: config( 'theme.fontSize.xl' ),
 				},
 				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
-					marginBottom: config( 'theme.spacing.4' ),
+					marginBottom: config( 'theme.spacing.16' ),
 				},
 				'a': {
 					textDecoration: 'underline',
 				},
 				'p': {
-					marginBottom: config( 'theme.spacing.4' ),
+					marginBottom: config( 'theme.spacing.16' ),
 					'&:last-child': {
 						marginBottom: '0',
 					},
@@ -87,7 +126,7 @@ module.exports = {
 						height: 'auto',
 						left: '5px',
 						lineHeight: 'normal',
-						padding: config( 'theme.spacing.4' ),
+						padding: config( 'theme.spacing.8' ),
 						textDecoration: 'none',
 						top: '5px',
 						width: 'auto',

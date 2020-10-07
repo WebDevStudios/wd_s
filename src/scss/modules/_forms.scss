@@ -4,10 +4,10 @@
 textarea,
 input:not(.button) {
 
-	@apply bg-gray-100 p-2;
+	@apply bg-gray-100 p-8;
 }
 
 label {
 
-	@apply block font-semibold mb-1;
+	@apply block font-semibold mb-16;
 }

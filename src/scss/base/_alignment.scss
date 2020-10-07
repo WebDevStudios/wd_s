@@ -3,20 +3,20 @@
 //--------------------------------------------------------------
 .alignleft {
 
-	@apply float-left mb-4 mr-4;
+	@apply float-left mb-16 mr-16;
 }
 
 .alignright {
 
-	@apply float-right mb-4 ml-4;
+	@apply float-right mb-16 ml-16;
 }
 
 .aligncenter {
 
-	@apply my-4 mx-auto;
+	@apply my-16 mx-auto;
 }
 
 .alignnone {
 
-	@apply mb-4;
+	@apply mb-16;
 }

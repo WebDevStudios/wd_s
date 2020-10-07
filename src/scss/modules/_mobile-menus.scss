@@ -5,12 +5,12 @@
 
 	li {
 
-		@apply mb-2;
+		@apply mb-8;
 	}
 
 	.sub-menu {
 
-		@apply hidden mb-0 ml-4 mt-2;
+		@apply hidden mb-0 ml-16 mt-8;
 
 		&.is-visible {
 
@@ -79,8 +79,8 @@
 		@apply inline-block relative;
 
 		float: unset;
-		height: theme( 'height.4' );
-		width: theme( 'width.4' );
+		height: theme( 'height.16' );
+		width: theme( 'width.16' );
 		top: -4px;
 	}
 }

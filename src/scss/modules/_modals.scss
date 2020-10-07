@@ -23,7 +23,7 @@
 
 	.modal-content {
 
-		@apply bg-clip-padding bg-white outline-none p-6 relative;
+		@apply bg-clip-padding bg-white outline-none p-24 relative;
 
 		.modal-header {
 
@@ -55,5 +55,5 @@
 
 .close {
 
-	@apply bg-black text-white cursor-pointer block mt-2 outline-none p-2;
+	@apply bg-black text-white cursor-pointer block mt-8 outline-none p-8;
 }

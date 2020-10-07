@@ -3,12 +3,12 @@
 //--------------------------------------------------------------
 .entry-meta {
 
-	@apply mb-4;
+	@apply mb-16;
 }
 
 .entry-footer {
 
-	@apply mt-4;
+	@apply mt-16;
 }
 
 .cat-links,
@@ -19,14 +19,14 @@
 
 .post-edit-link {
 
-	@apply block mb-4 mt-4;
+	@apply block mb-16 mt-16;
 }
 
 .post-container {
 
 	&:not(:last-child) {
 
-		@apply mb-4;
+		@apply mb-16;
 	}
 }
 
@@ -47,7 +47,7 @@
 
 .post-navigation .nav-next {
 
-	@apply mt-4;
+	@apply mt-16;
 
 	@screen tablet-landscape {
 

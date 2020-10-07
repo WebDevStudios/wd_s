@@ -25,7 +25,7 @@ table {
 	th,
 	td {
 
-		@apply p-2 text-center;
+		@apply p-8 text-center;
 
 		@screen wp-admin-bar {
 
@@ -72,7 +72,7 @@ table {
 
 	tr {
 
-		@apply block mb-4;
+		@apply block mb-16;
 
 		@screen wp-admin-bar {
 
