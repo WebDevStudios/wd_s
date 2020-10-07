@@ -165,66 +165,9 @@ module.exports = {
 				},
 			}
 
-			const modals = {
-				'.modal': {
-					bottom: '0',
-					display: 'none',
-					left: '0',
-					overflow: 'hidden',
-					position: 'fixed',
-					right: '0',
-					top: '0',
-					zIndex: '1050',
-
-					'&.modal-open': {
-						display: 'block',
-						overflowX: 'hidden',
-						overflowY: 'auto',
-					},
-					'.modal-dialog': {
-						left: '50%',
-						position: 'absolute',
-						top: '50%',
-						transform: 'translate(-50%, -50%)',
-						width: 'auto',
-					},
-					'.modal-content': {
-						backgroundClip: 'padding-box',
-						backgroundColor: config( 'theme.colors.white' ),
-						outline: '0',
-						padding: config( 'theme.spacing.6' ),
-						position: 'relative',
-						'.modal-header': {
-							textAlign: 'center',
-						},
-						'.modal-body': {
-							position: 'relative',
-						},
-						'.modal-footer': {
-							position: 'relative',
-						},
-					},
-					'.fluid-embed': {
-						'embed,object,iframe': {
-							border: 'none',
-						},
-					},
-				},
-				'.close': {
-					backgroundColor: config( 'theme.colors.black' ),
-					color: config( 'theme.colors.white' ),
-					cursor: 'pointer',
-					display: 'block',
-					marginTop: config( 'theme.spacing.2' ),
-					outline: 'none',
-					padding: config( 'theme.spacing.2' ),
-				},
-			}
-
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})
-			addComponents( modals )
 		}),
 	],
 }
