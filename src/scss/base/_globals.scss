@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-// Global Elements
+// Global Resets/Overrides
 //--------------------------------------------------------------
 *,
 ::after,
@@ -9,11 +9,30 @@
 	word-wrap: break-word;
 }
 
+pre {
+	overflow: auto;
+}
+
+
+//-----------------------------------------
+// Theme Elements
+//-----------------------------------------
 .button {
 
 	@apply p-4;
 }
 
-pre {
-	overflow: auto;
+.container {
+
+	@apply px-4;
+
+	@screen desktop-large {
+
+		@apply px-0;
+	}
+}
+
+.site-main {
+
+	@apply my-12;
 }

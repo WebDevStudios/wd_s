@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// WordPress Alignments
+//--------------------------------------------------------------
+.alignleft {
+
+	@apply float-left mb-4 mr-4;
+}
+
+.alignright {
+
+	@apply float-right mb-4 ml-4;
+}
+
+.aligncenter {
+
+	@apply my-4 mx-auto;
+}
+
+.alignnone {
+
+	@apply mb-4;
+}

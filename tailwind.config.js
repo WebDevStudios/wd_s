@@ -165,40 +165,6 @@ module.exports = {
 				},
 			}
 
-			const templateElements = {
-				'.container': {
-					paddingLeft: config( 'theme.spacing.4' ),
-					paddingRight: config( 'theme.spacing.4' ),
-					'@screen desktop-large': {
-						paddingLeft: '0',
-						paddingRight: '0',
-					}
-				},
-				'.site-main': {
-					marginBottom: config( 'theme.spacing.12' ),
-					marginTop: config( 'theme.spacing.12' ),
-				},
-				'.archive-description': {
-					marginBottom: config( 'theme.spacing.6' ),
-				},
-				'.alignleft': {
-					float: 'left',
-					marginBottom: config( 'theme.spacing.4' ),
-					marginRight: config( 'theme.spacing.4' ),
-				},
-				'.alignright': {
-					float: 'right',
-					marginBottom: config( 'theme.spacing.4' ),
-					marginLeft: config( 'theme.spacing.4' ),
-				},
-				'.aligncenter': {
-					margin: `${ config( 'theme.spacing.4' ) } auto`,
-				},
-				'.alignnone': {
-					marginBottom: config( 'theme.spacing.4' ),
-				},
-			}
-
 			const offCanvasElements = {
 				'.off-canvas': {
 					'&-container': {
@@ -341,7 +307,6 @@ module.exports = {
 			addComponents( screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			})
-			addComponents( templateElements )
 			addComponents( offCanvasElements )
 			addComponents( modals )
 		}),
