@@ -1,0 +1,84 @@
+//--------------------------------------------------------------
+// Mobile Menus
+//--------------------------------------------------------------
+.mobile-menu {
+
+	li {
+
+		@apply mb-2;
+	}
+
+	.sub-menu {
+
+		@apply hidden mb-0 ml-4 mt-2;
+
+		&.is-visible {
+
+			@apply block opacity-100 visible;
+		}
+	}
+
+	.menu-item-has-children {
+		transition: max-height 0.5s ease-in-out;
+
+		&.is-visible {
+			max-height: 8000px;
+
+			.parent-indicator {
+				transform: rotateX(180deg);
+			}
+		}
+
+		.menu-item-has-children {
+
+			&:last-of-type {
+
+				.menu-item-has-children.is-visible {
+
+					@apply mb-0;
+				}
+			}
+
+			.parent-indicator {
+				transform: rotateX(0);
+			}
+
+			&.is-visible {
+
+				&:last-of-type {
+
+					@apply mb-0;
+				}
+				.parent-indicator {
+
+					transform: rotateX(180deg);
+				}
+			}
+
+			.menu-item-has-children {
+
+				.parent-indicator {
+
+					transform: rotateX(0);
+				}
+
+				&.is-visible {
+
+					.parent-indicator {
+						transform: rotateX(180deg);
+					}
+				}
+			}
+		}
+	}
+
+	.parent-indicator {
+
+		@apply inline-block relative;
+
+		float: unset;
+		height: theme( 'height.4' );
+		width: theme( 'width.4' );
+		top: -4px;
+	}
+}

@@ -1,0 +1,114 @@
+//--------------------------------------------------------------
+// Menus and Sub-Menus
+//--------------------------------------------------------------
+.navigation-menu {
+	display: none;
+
+	@screen tablet-landscape {
+		display: block;
+	}
+
+	.menu {
+		display: flex;
+
+		> li {
+
+			&:not(:last-child) {
+
+				@apply mr-4;
+			}
+		}
+	}
+
+	.sub-menu {
+
+		@apply bg-white py-2 absolute;
+
+		box-shadow: '0 .1875rem .1875rem rgba(0,0,0,.5)';
+		left: -999em;
+		top: 1.5rem;
+		z-index: 99999;
+
+		li {
+
+			@apply px-6 py-2;
+		}
+
+		.menu-item-has-children {
+
+			&:hover,
+			&.focus {
+
+				> .sub-menu {
+					left: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Menu Items With Children
+//-----------------------------------------
+.menu-item-has-children {
+	position: relative;
+
+	&:hover,
+	&.focus {
+		> .sub-menu {
+			left: 0;
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Dropdown Styles
+//-----------------------------------------
+.dropdown {
+
+	ul {
+
+		li {
+
+			@apply w-full;
+		}
+
+		a {
+
+			@apply block w-full;
+
+			min-width: theme( 'width.48' );
+		}
+	}
+}
+
+
+//-----------------------------------------
+// The Down Caret
+//-----------------------------------------
+.bg-menu {
+
+	@apply block float-right h-full ml-2;
+
+	background: url('../images/icons/caret-down.svg') 50% 50% no-repeat;
+	background-size: 100%;
+	width: theme( 'spacing.2' );
+}
+
+
+//-----------------------------------------
+// Footer
+//-----------------------------------------
+.footer-navigation {
+
+	.menu {
+		display: block;
+
+		@screen tablet-landscape {
+			display: flex;
+		}
+	}
+}
+
