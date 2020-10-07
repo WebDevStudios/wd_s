@@ -36,3 +36,15 @@ pre {
 
 	@apply my-12;
 }
+
+table,
+dl,
+ol,
+ul,
+address,
+pre,
+blockquote,
+iframe {
+
+	@apply mb-4;
+}
