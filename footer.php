@@ -26,7 +26,7 @@
 			);
 			?>
 		</nav><!-- #site-navigation-->
-		<div class="container site-info container mx-auto my-0 flex justify-between">
+		<div class="container site-info">
 			<?php _s_display_copyright_text(); ?>
 			<?php _s_display_social_network_links(); ?>
 		</div><!-- .site-info -->
