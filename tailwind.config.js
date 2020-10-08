@@ -72,6 +72,9 @@ module.exports = {
 			maxHeight: {
 				'0': '0',
 			},
+			backgroundOpacity: {
+				'10': '0.1',
+			},
 		},
 		screens: {
 			'phone': '300px',
@@ -139,7 +142,7 @@ module.exports = {
 					whiteSpace: 'nowrap',
 					width: '1px',
 					'&:hover,&:active,&:focus': {
-						backgroundColor: config( 'theme.colors.blue.600' ),
+						backgroundColor: config( 'theme.colors.black' ),
 						clip: 'auto',
 						color: config( 'theme.colors.white' ),
 						display: 'block',

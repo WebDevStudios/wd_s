@@ -62,13 +62,13 @@
 
 	&-screen {
 
-		@apply bg-gray-600 inset-0 opacity-0 fixed invisible;
+		@apply bg-black bg-opacity-25 inset-0 fixed invisible;
 
 		z-index: 9996;
 
 		&.is-visible {
 
-			@apply opacity-50 visible;
+			@apply visible;
 		}
 	}
 
