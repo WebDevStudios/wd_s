@@ -11,8 +11,8 @@
 
 get_header(); ?>
 
-	<div class="site-main grid grid-cols-1 tablet-landscape:grid-cols-3 gap-20 container">
-		<main id="main" class="tablet-landscape:col-span-2">
+	<div id="main" class="site-main container">
+		<main id="main" class="content-container">
 
 			<?php
 			while ( have_posts() ) :

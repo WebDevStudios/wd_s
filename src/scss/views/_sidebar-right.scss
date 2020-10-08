@@ -1,0 +1,23 @@
+//--------------------------------------------------------------
+// Sidebar-Right Page Template
+//--------------------------------------------------------------
+.page-template-template-sidebar-right {
+
+	.site-main {
+
+		@apply grid grid-cols-1 gap-80;
+
+		@screen tablet-landscape {
+
+			@apply grid-cols-3;
+		}
+	}
+
+	.content-container {
+
+		@screen tablet-landscape {
+
+			@apply col-span-2;
+		}
+	}
+}
