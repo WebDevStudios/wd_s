@@ -25,24 +25,24 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="site-header bg-gray-200 py-12">
-		<div class="flex justify-between container my-0">
+	<header class="site-header">
+		<div class="container">
 
 			<div class="site-branding">
 
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="no-underline" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="no-underline" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
 
 				<?php
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) :
 				?>
-					<p class="site-description no-underline"><?php echo esc_html( $description ); ?></p>
+					<p class="site-description"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
