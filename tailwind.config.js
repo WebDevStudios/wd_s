@@ -19,6 +19,11 @@ module.exports = {
 			'4xl': '1.625rem',
 			'5xl': '1.75rem',
 			'6xl': '1.875rem',
+			'heading-xs': '2rem',
+			'heading-sm': '2.125rem',
+			'heading-md': '2.375rem',
+			'heading-lg': '2.625rem',
+			'heading-xl': '2.875rem'
 		},
 		spacing: {
 			px: '1px',
@@ -90,22 +95,22 @@ module.exports = {
 		plugin( function({ addBase, config }) {
 			addBase({
 				'h1,.h1': {
-					fontSize: config( 'theme.fontSize.6xl' ),
+					fontSize: config( 'theme.fontSize.heading-xl' ),
 				},
 				'h2,.h2': {
-					fontSize: config( 'theme.fontSize.5xl' ),
+					fontSize: config( 'theme.fontSize.heading-lg' ),
 				},
 				'h3,.h3': {
-					fontSize: config( 'theme.fontSize.4xl' ),
+					fontSize: config( 'theme.fontSize.heading-md' ),
 				},
 				'h4,.h4': {
-					fontSize: config( 'theme.fontSize.3xl' ),
+					fontSize: config( 'theme.fontSize.heading-sm' ),
 				},
 				'h5,.h5': {
-					fontSize: config( 'theme.fontSize.2xl' ),
+					fontSize: config( 'theme.fontSize.heading-xs' ),
 				},
 				'h6,.h6': {
-					fontSize: config( 'theme.fontSize.xl' ),
+					fontSize: config( 'theme.fontSize.heading-xs' ),
 				},
 				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
 					marginBottom: config( 'theme.spacing.16' ),
