@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@webdevstudios/css-coding-standards": "^1.0.1",
-    "@webdevstudios/js-coding-standards": "^1.1.1",
+    "@webdevstudios/js-coding-standards": "~1.2.2",
     "@wordpress/scripts": "~12.3.0",
     "copy-webpack-plugin": "^6.1.1",
     "cssnano": "^4.1.10",
