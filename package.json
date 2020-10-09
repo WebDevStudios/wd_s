@@ -16,7 +16,7 @@
     "theme": "run-s pot icons",
     "pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build",
     "icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg",
-    "format": "prettier '**/*.{js,jsx,ts,tsx,}' --write"
+    "format": "prettier '**/*.{js,jsx,ts,tsx}' --write"
   },
   "keywords": [],
   "author": "",
