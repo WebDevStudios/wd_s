@@ -1,6 +1,8 @@
-.cache
-dist
-node_modules
-vendor
-!.*.js
+cache/
+dist/
+node_modules/
+vendor/
 src/js/babel-polyfill.min.js
+./.*.js
+.git*
+build/
