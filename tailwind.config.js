@@ -6,17 +6,17 @@ module.exports = {
 			'./**/*.php',
 			'./src/components/*.js',
 		],
-		layers: ['utilities'],
+		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
 	theme: {
 		fontSize: {
 			'root-em': '16px',
-			'xs': '0.75rem',
-			'sm': '0.875rem',
-			'base': '1rem',
-			'lg': '1.125rem',
-			'xl': '1.25rem',
+			xs: '0.75rem',
+			sm: '0.875rem',
+			base: '1rem',
+			lg: '1.125rem',
+			xl: '1.25rem',
 			'2xl': '1.375rem',
 			'3xl': '1.5rem',
 			'4xl': '1.625rem',
@@ -26,7 +26,7 @@ module.exports = {
 			'heading-sm': '2.125rem',
 			'heading-md': '2.375rem',
 			'heading-lg': '2.625rem',
-			'heading-xl': '2.875rem'
+			'heading-xl': '2.875rem',
 		},
 		spacing: {
 			px: '1px',
@@ -69,24 +69,24 @@ module.exports = {
 			none: 'none',
 		},
 		screens: {
-			'phone': '300px',
+			phone: '300px',
 			'tablet-portrait': '600px',
 			'wp-admin-bar': '783px',
 			'tablet-landscape': '900px',
-			'desktop-min': {'min': '1200px'},
-			'desktop': '1200px',
+			'desktop-min': { min: '1200px' },
+			desktop: '1200px',
 			'desktop-large': '1600px',
 		},
 		container: {
 			center: true,
 			screens: {
-				'phone': '100%',
-				'desktop': '1200px',
+				phone: '100%',
+				desktop: '1200px',
 			},
 		},
 		extend: {
 			backgroundOpacity: {
-				'10': '0.1',
+				10: '0.1',
 			},
 		},
 	},
@@ -95,8 +95,8 @@ module.exports = {
 	},
 	variants: {},
 	plugins: [
-		plugin( function({ addBase, config }) {
-			addBase({
+		plugin( function( { addBase, config } ) {
+			addBase( {
 				'h1,.h1': {
 					fontSize: config( 'theme.fontSize.heading-xl' ),
 				},
@@ -118,18 +118,18 @@ module.exports = {
 				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
 					marginBottom: config( 'theme.spacing.16' ),
 				},
-				'a': {
+				a: {
 					textDecoration: 'underline',
 				},
-				'p': {
+				p: {
 					marginBottom: config( 'theme.spacing.16' ),
 					'&:last-child': {
 						marginBottom: '0',
 					},
 				},
-			})
-		}),
-		plugin( function({ addComponents, config }) {
+			} );
+		} ),
+		plugin( function( { addComponents, config } ) {
 			const screenReaderText = {
 				'.screen-reader-text': {
 					clip: 'rect(1px, 1px, 1px, 1px)',
@@ -155,11 +155,11 @@ module.exports = {
 						zIndex: '100000',
 					},
 				},
-			}
+			};
 
 			addComponents( screenReaderText, {
-				variants: ['hover', 'active', 'focus'],
-			})
-		}),
+				variants: [ 'hover', 'active', 'focus' ],
+			} );
+		} ),
 	],
-}
+};
