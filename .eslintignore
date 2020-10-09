@@ -11,6 +11,8 @@ build/
 src/js/babel-polyfill.min.js
 *.min.js # All minified scripts.
 ./.*.js # Root configuration scripts.
+.*rc.js # No config scripts with rc in them, e.g. .stylelintrc.js
+.*dist.js # No config scripts with rc in them, e.g. .styleint.dist.js
 
 ###
  # Legacy scripts that do not pass coding standards.
