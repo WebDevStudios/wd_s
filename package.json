@@ -6,7 +6,7 @@
   "scripts": {
     "build": "wp-scripts build && npm run theme",
     "format:js": "wp-scripts format-js",
-    "lint:js": "wp-scripts lint-js",
+    "lint:js": "wp-scripts lint-js --fix",
     "packages-update": "wp-scripts packages-update",
     "start": "wp-scripts start",
     "postinstall": "npm run build",
