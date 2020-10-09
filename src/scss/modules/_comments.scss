@@ -43,6 +43,11 @@
 .comment-content {
 
 	@apply bg-black bg-opacity-10 p-16;
+
+	.bypostauthor & {
+
+		@apply border-2 border-black border-solid;
+	}
 }
 
 .comment-list {
