@@ -8,6 +8,6 @@ module.exports = {
 		'max-line-length': null,
 		'no-descending-specificity': null,
 		'no-duplicate-selectors': null,
-		'scss/at-rule-no-unknown': true
+		'scss/at-rule-no-unknown': true,
 	},
 };
