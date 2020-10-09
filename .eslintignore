@@ -13,6 +13,11 @@ src/js/babel-polyfill.min.js
 ./.*.js # Root configuration scripts.
 .*rc.js # No config scripts with rc in them, e.g. .stylelintrc.js
 .*dist.js # No config scripts with rc in them, e.g. .styleint.dist.js
+!*.js
+!*.jsx
+!*.ts
+!*.tsx
+*.json
 
 ###
  # Legacy scripts that do not pass coding standards.
@@ -34,4 +39,6 @@ src/components/navigation-primary.js
 src/components/skip-link-focus-fix.js
 src/components/table.js
 src/components/video.js
+src/components/modal.js
+src/components/window-ready.js
 # / Legacy scripts...
