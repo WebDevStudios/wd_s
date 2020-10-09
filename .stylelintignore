@@ -1,1 +1,23 @@
+# Folders
+
+# Files
 index.css
+
+###
+ # Legacy styles that do not pass coding standards.
+ #
+ # @author Aubrey Portwood <aubrey@webdevstudios.com>
+ #
+ # @since Friday, 10/9/2020
+ # @see https://github.com/WebDevStudios/wd_s/pull/553
+ ##
+src/scss/index.scss
+src/scss/base/_globals.scss
+src/scss/modules/_forms.scss
+src/scss/modules/_menus.scss
+src/scss/modules/_mobile-menus.scss
+src/scss/modules/_off-canvas.scss
+src/scss/modules/_posts.scss
+src/scss/modules/_tables.scss
+src/scss/views/_sidebar-right.scss
+# / Legacy styles...

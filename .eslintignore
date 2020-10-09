@@ -1,8 +1,29 @@
+# Folders
 cache/
+.cache/
 dist/
 node_modules/
 vendor/
-src/js/babel-polyfill.min.js
-./.*.js
 .git*
 build/
+
+# Files
+src/js/babel-polyfill.min.js
+*.min.js # All minified scripts.
+./.*.js # Root configuration scripts.
+
+###
+ # Legacy scripts that do not pass coding standards.
+ #
+ # @author Aubrey Portwood <aubrey@webdevstudios.com>
+ #
+ # @since Friday, 10/9/2020
+ # @see https://github.com/WebDevStudios/wd_s/pull/553
+ ##
+inc/customizer/assets/scripts/livepreview.js
+inc/customizer/assets/scripts/tinymce.js
+postcss.config.js
+src/components/off-canvas.js
+src/index.js
+tailwind.config.js
+# / Legacy scripts...
