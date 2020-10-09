@@ -68,10 +68,8 @@ function wdsOffCanvas() {
 	 */
 	function toggleOffCanvas() {
 		if ( 'true' === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
-			console.log( 'it is open' );
 			closeOffCanvas();
 		} else {
-			console.log( 'it is closed' );
 			openOffCanvas();
 		}
 	}
