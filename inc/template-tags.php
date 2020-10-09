@@ -348,7 +348,7 @@ function _s_display_numeric_pagination( $args = array(), $query = null ) {
 	}
 	?>
 
-	<nav class="pagination-container container" aria-label="<?php esc_html_e( 'numeric pagination', '_s' ); ?>">
+	<nav class="pagination-container container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
 		<?php echo paginate_links( $args ); // WPCS: XSS OK. ?>
 	</nav>
 
@@ -379,7 +379,7 @@ function _s_display_mobile_menu() {
 	}
 	?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_html_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
+	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		// Mobile menu args.
 		$mobile_args = array(
