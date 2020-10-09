@@ -68,14 +68,6 @@ module.exports = {
 			focus: '0 0 0 0.1875rem rgba(66, 153, 225, 0.5)',
 			none: 'none',
 		},
-		extend: {
-			maxHeight: {
-				'0': '0',
-			},
-			backgroundOpacity: {
-				'10': '0.1',
-			},
-		},
 		screens: {
 			'phone': '300px',
 			'tablet-portrait': '600px',
@@ -90,6 +82,11 @@ module.exports = {
 			screens: {
 				'phone': '100%',
 				'desktop': '1200px',
+			},
+		},
+		extend: {
+			backgroundOpacity: {
+				'10': '0.1',
 			},
 		},
 	},
