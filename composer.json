@@ -1,0 +1,5 @@
+{
+    "require": {
+        "webdevstudios/php-coding-standards": "^1.1"
+    }
+}
