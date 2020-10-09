@@ -1,4 +1,6 @@
 # Folders
+vendor/
+node_modules/
 
 # Files
 index.css
