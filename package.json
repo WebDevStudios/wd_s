@@ -70,7 +70,8 @@
       "no-descending-specificity": null,
       "no-duplicate-selectors": null,
       "function-url-quotes": "always",
-      "property-no-unknown": null
+      "property-no-unknown": null,
+      "string-quotes": "single"
     },
     "ignoreFiles": [
       ".git*",
