@@ -100,9 +100,12 @@
     }
   },
   "lint-staged": {
-    "**/!*.{js,jsx,ts,tsx}": "npm run lint:js",
-    "**/!*.{css,scss}": "npm run lint:styles",
-    "**/!*.{php}": "npm run lint:php"
+    "**/*.js": "npm run lint:js",
+    "**/*.jsx": "npm run lint:js",
+    "**/*.ts": "npm run lint:js",
+    "**/*.tsx": "npm run lint:js",
+    "**/*.css": "npm run lint:styles",
+    "**/*.scss": "npm run lint:php"
   },
   "private": true
 }
