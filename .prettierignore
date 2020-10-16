@@ -12,6 +12,13 @@
  # format files, as we use eslint and stylelint's --fix
  # option.
  #
+ # We do, though, have prettier installed and use it for format all other
+ # types of files (that it does a good job with). It mostly integrates into
+ # husky, but if you run prettier on files, this will ensure it only
+ # runs on the types of files we want.
+ #
+ # - Ignore some misc files too
+ #
  # @since Thursday, 10/15/2020
  # @author Aubrey Portwood <aubrey@webdevstudios.com>
  ##
@@ -21,15 +28,19 @@
 **/*.jsx
 **/*.ts
 **/*.tsx
+**/*.vue
 
 # We don't want Prettier auto-formatting Styles, use styleint --fix.
 **/*.scss
 **/*.css
 
-# Also keep your hands off PHP, even though we don't really have an autoformatter.
-**/*.php
+**/*.php # Also keep your hands off PHP, even though we don't really have an autoformatter.
+**/*.html # Don't touch HTML files either.
+**/*.xml # You don't do XML, but I've seen you try as HTML.
 
-# Don't touch HTML files either...
-**/*.html
+# Don't touch lib directories.
+**/.git*/**
+**/node_modules/**
+**/vendor/**
 
 # ...but for everything else, go for it, we don't really have opinions about those.
