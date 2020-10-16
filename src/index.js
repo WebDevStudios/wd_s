@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import './scss/index.scss';
 
 // Make sure JS is enabled and the window is ready.

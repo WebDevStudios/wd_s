@@ -1,8 +1,9 @@
 # os
 *~
-.DS_Store
-.svn
-.cvs
+.DS_*
+.svn/
+.cvs/
+.hg/
 *.bak
 *.swp
 Thumbs.db
@@ -19,5 +20,5 @@ node_modules/
 vendor/
 
 # theme
-build
+build/
 !src/scss/vendor

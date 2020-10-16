@@ -1,1 +1,49 @@
-src/
+###
+ # Prettier Ignore
+ #
+ # - Ignore JavaScript
+ # - Ignore Styles
+ #
+ # !!! It is important that this file does NOT get deleted or modifed, we do not
+ # want PRettier autoformatting ALL-THE-THINGZ, only extraneous files, like
+ # markdown and JSON, etc.
+ #
+ # == WHY ==
+ #
+ # The reason this file exists is becacuse we DON'T
+ # use Prettier, so this is going to make sure any
+ # extensions or commands ran on this theme do NOT
+ # format files, as we use eslint and stylelint's --fix
+ # option.
+ #
+ # We do, though, have prettier installed and use it for format all other
+ # types of files (that it does a good job with). It mostly integrates into
+ # husky, but if you run prettier on files, this will ensure it only
+ # runs on the types of files we want.
+ #
+ # @since Thursday, 10/15/2020
+ # @author Aubrey Portwood <aubrey@webdevstudios.com>
+ ##
+
+# We don't want Prettier auto-formatting JS files, we use eslint --fix.
+**/*.js
+**/*.jsx
+**/*.ts
+**/*.tsx
+**/*.vue
+
+# We don't want Prettier auto-formatting Styles, we use styleint --fix.
+**/*.scss
+**/*.css
+
+**/*.php # Also keep your hands off PHP, even though we don't really have an autoformatter yet.
+**/*.html # Don't touch HTML files either.
+**/*.xml # You don't do XML, but I've seen you try as HTML, so don't do that.
+
+# Don't touch lib directories.
+**/.git/**
+**/node_modules/**
+**/vendor/**
+**/build/**
+
+# ...but for everything else, go for it, we don't really have opinions about those.

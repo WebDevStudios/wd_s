@@ -1,9 +1,0 @@
-.cache
-dist
-node_modules
-vendor
-!.*.js
-src/js/babel-polyfill.min.js
-src/index.js
-inc/customizer/assets/scripts/livepreview.js
-inc/customizer/assets/scripts/tinymce.js

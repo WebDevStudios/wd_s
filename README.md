@@ -1,5 +1,5 @@
-wd_s
-===
+# wd_s
+
 [![buddy pipeline](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066/badge.svg?token=2471ae60766a1e9a657f772e493188dde748aa18c236d0b1c325e80be13a2ac6 "buddy pipeline")](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066)
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
@@ -21,26 +21,27 @@ Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also ea
 Because I compile and bundle assets via npm scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (v12+) and [Composer](https://getcomposer.org/).
 
 ### Quick Start
+
 If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
 
 ### Advanced
 
 If you want to set me up manually:
 
-1) [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s-master` to fit your needs.
+1. [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s-master` to fit your needs.
 
-2) Find & Replace
+2. Find & Replace
 
 You'll need to change all instances of the names: `_s`.
 
-* Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
-* Search for: `_s_` and replace with: `project-name_` to capture all the function names
-* Search for: `Text Domain: _s` and replace with: `Text Domain: project-name` in style.css
-* Search for (and include the leading space): <code>&nbsp;_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
-* Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
-* Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
-* Search for `_s.test` and replace with: `project-name.test` to match your local development URL
-* Edit the theme information in the header of style.scss to meet your needs
+- Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
+- Search for: `_s_` and replace with: `project-name_` to capture all the function names
+- Search for: `Text Domain: _s` and replace with: `Text Domain: project-name` in style.css
+- Search for (and include the leading space): <code>&nbsp;\_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
+- Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
+- Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
+- Search for `_s.test` and replace with: `project-name.test` to match your local development URL
+- Edit the theme information in the header of style.scss to meet your needs
 
 ## Installation
 
