@@ -16,10 +16,11 @@
     "start": "wds-start",
     "theme": "run-s theme:pot theme:icons",
     "theme:icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg",
-    "theme:pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
+    "theme:pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build",
+    "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]"
   },
   "keywords": [],
-  "author": "",
+  "author": "WebDevStudios",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
