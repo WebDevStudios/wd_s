@@ -10,5 +10,5 @@
 
 files:
   ignore:
-    - '**/*.s+(a|c)ss'
-    - '**/*.css'
+    - "**/*.s+(a|c)ss"
+    - "**/*.css"
