@@ -90,5 +90,6 @@
       "node_modules/**/*",
       "vendor/**/*"
     ]
-  }
+  },
+  "private": true
 }
