@@ -111,6 +111,7 @@
     "*.jsx": "npm run lint:js",
     "*.ts": "npm run lint:js",
     "*.tsx": "npm run lint:js",
+    "*.vue": "npm run lint:js",
     "*.css": "npm run lint:styles",
     "*.scss": "npm run lint:styles",
     "*.php": "npm run lint:php",
