@@ -19,7 +19,6 @@
 	}
 
 	.menu-item-has-children {
-		transition: max-height 0.5s ease-in-out;
 
 		&.is-visible {
 			max-height: 8000px;
