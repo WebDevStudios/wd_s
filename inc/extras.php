@@ -91,7 +91,7 @@ function _s_copyright_year( $atts ) {
 		$atts
 	);
 
-	$current_year = date( 'Y' );
+	$current_year = gmdate( 'Y' );
 
 	// Return current year if starting year is empty.
 	if ( ! $args['starting_year'] ) {
