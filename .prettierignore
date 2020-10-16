@@ -45,5 +45,6 @@
 **/node_modules/**
 **/vendor/**
 **/build/**
+**/dist/**
 
 # ...but for everything else, go for it, we don't really have opinions about those.
