@@ -87,9 +87,14 @@
       "**/*.ts",
       "**/*.tsx",
       "*.min.js",
+      ".*dist.js",
+      ".*rc.js",
+      "./.*.js",
+      ".cache/**/*",
       ".git*",
       "build/**/*",
-      "index.css",
+      "cache/**/*",
+      "./style.css",
       "node_modules/**/*",
       "vendor/**/*"
     ]
