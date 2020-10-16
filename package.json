@@ -6,10 +6,10 @@
   "scripts": {
     "build": "wds-build && npm run theme",
     "format": "wds-format-js && wds-format-styles",
-    "lint": "run-s lint:js lint:style lint:php",
+    "lint": "run-s lint:js lint:styles lint:php",
     "lint:js": "wds-format-js && wds-lint-js",
     "lint:php": "composer install --quiet && composer run lint",
-    "lint:style": "wds-format-styles && wds-lint-style",
+    "lint:styles": "wds-format-styles && wds-lint-style",
     "packages-update": "wds-packages-update",
     "postinstall": "npm run build",
     "start": "wds-start",
@@ -105,7 +105,8 @@
     "*.ts": "npm run lint:js",
     "*.tsx": "npm run lint:js",
     "*.css": "npm run lint:styles",
-    "*.scss": "npm run lint:php"
+    "*.scss": "npm run lint:styles",
+    "*.php": "npm run lint:php"
   },
   "private": true
 }
