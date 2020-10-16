@@ -1,5 +1,7 @@
 # ===============
 #
+# Sass Lint Configuration
+#
 # The reason this file exists is to ensure that people who still have the
 # SASS extensions installed do not get false linting in thier editors.
 #
