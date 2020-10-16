@@ -3,7 +3,11 @@
 
 	<rule ref="WebDevStudios"/>
 
+	<!-- Ignore build and lib folders -->
 	<exclude-pattern>*/build/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<!-- Make sure, in case it's not configured correctly, we don't lint these files -->
+	<exclude-pattern>*/*\.(scss|css|js|jsx|ts|tsx)$</exclude-pattern>
 </ruleset>
