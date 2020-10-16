@@ -8,7 +8,7 @@
     "debug:phpcs": "which phpcs && phpcs -i"
   },
   "require-dev": {
-    "phpcompatibility/php-compatibility": "^9.3",
-    "webdevstudios/php-coding-standards": "^1.1"
+    "phpcompatibility/php-compatibility": "~9.3",
+    "webdevstudios/php-coding-standards": "~1.1"
   }
 }
