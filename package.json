@@ -13,7 +13,6 @@
     "lint:styles": "wds-format-styles && wds-lint-style",
     "packages-update": "wds-packages-update",
     "postinstall": "npm run build",
-    "preinstall": "$(echo node --version) | grep -sq '10' || ( echo \"\\n\\n\\n\\t!!! wd_s requires Node version 10, you are using version $(node --version), some things may fail to work. !!!\\n\\n\\n\\n\" )",
     "start": "wds-start",
     "theme": "run-s theme:pot theme:icons",
     "theme:icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg",
@@ -122,7 +121,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=10 <11",
-    "npm": ">=6 <7"
+    "node": ">=10",
+    "npm": ">=6"
   }
 }
