@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "wds-build && npm run theme",
-    "format": "wds-format-js && wds-format-styles",
+    "format": "wds-format-js && wds-format-styles && npm run format:prettier",
+    "format:prettier": "[[ -f .prettierignore ]] && ./node_modules/.bin/prettier ./ --write",
     "lint": "run-s lint:js lint:styles lint:php",
     "lint:js": "wds-format-js && wds-lint-js",
     "lint:php": "composer install --quiet && composer run lint",
