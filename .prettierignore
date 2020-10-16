@@ -1,3 +1,21 @@
+###
+ # Prettier Ignore
+ #
+ # - Ignore JS
+ # - Ignore Styles
+ #
+ # == WHY ==
+ #
+ # The reason this file exists is becacuse we DON'T
+ # use Prettier, so this is going to make sure any
+ # extensions or commands ran on this theme do NOT
+ # format files, as we use eslint and stylelint's --fix
+ # option.
+ #
+ # @since Thursday, 10/15/2020
+ # @author Aubrey Portwood <aubrey@webdevstudios.com>
+ ##
+
 # We don't want Prettier auto-formatting JS files, use eslint --fix.
 **/*.js
 **/*.jsx
@@ -8,4 +26,7 @@
 **/*.scss
 **/*.css
 
-# But for everything else, go for it...
+# Also keep your hands off PHP, even though we don't really have an autoformatter.
+**/*.php
+
+# ...but for everything else, go for it, we don't really have opinions about those.
