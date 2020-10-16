@@ -114,7 +114,8 @@
     "*.scss": "npm run lint:styles",
     "*.php": "npm run lint:php",
     "*.json": "prettier ./**/*.json --write",
-    "*.md": "prettier ./**/*.md --write"
+    "*.md": "prettier ./**/*.md --write",
+    "*.yml": "prettier ./**/*.yml --write"
   },
   "private": true
 }
