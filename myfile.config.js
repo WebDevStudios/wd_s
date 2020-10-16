@@ -1,9 +1,14 @@
-module.exports = {
-	plugins: [
-		require( 'tailwindcss' ),
-		require( 'autoprefixer' ),
-		require( 'cssnano' )( {
-			preset: 'default',
-		} ),
-	],
-};
+const a = true;
+
+/**
+ * asdfsadfs
+ *
+ * @author Aubrey Portwood <aubrey@webdevstudios.com>
+ * @since  asfd
+ * @return {boolean} things
+ */
+function thing() {
+	return a;
+}
+
+thing();
