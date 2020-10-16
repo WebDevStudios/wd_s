@@ -1,1 +1,3 @@
-<?xml version="1.0"?><ruleset name="Project"><rule ref="WebDevStudios"/></ruleset>
+<?xml version="1.0"?><ruleset name="Project">
+	<rule ref="WebDevStudios"/>
+</ruleset>
