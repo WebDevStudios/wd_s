@@ -29,4 +29,7 @@
 # Also keep your hands off PHP, even though we don't really have an autoformatter.
 **/*.php
 
+# Don't touch HTML files either...
+**/*.html
+
 # ...but for everything else, go for it, we don't really have opinions about those.
