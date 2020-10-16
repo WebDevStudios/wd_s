@@ -5,7 +5,7 @@
  * @author Shannon MacMillan, Corey Collins
  */
 function wdsAccordion() {
-	const accordionItems = document.querySelectorAll( '.accordion-itema' ),
+	const accordionItems = document.querySelectorAll( '.accordion-item' ),
 		accordionItemContent = document.querySelectorAll( '.accordion-item-content' );
 
 	// Loop through each accordion on the page and add a listener for its header.
