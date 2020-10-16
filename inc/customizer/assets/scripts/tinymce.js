@@ -1,3 +1,5 @@
+/* globals tinymce */
+
 /**
  * File editor.js.
  *
@@ -5,7 +7,7 @@
  */
 
 window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
-( function( window, document, $, app, undefined ) {
+( function( window, document, $, app ) {
 	'use strict';
 
 	/**
@@ -17,7 +19,7 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	/**
 	 * Caches elements
 	 *
-	 * @return void
+	 * @since  Unknown
 	 */
 	app.cache = function() {
 		app.$ = {};
@@ -28,7 +30,7 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	/**
 	 * Initialization function
 	 *
-	 * @return  void
+	 * @since Unknown
 	 */
 	app.init = function() {
 
@@ -50,47 +52,50 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	/**
 	 * Make sure the editor updates the customize option when changed in visual mode.
 	 *
-	 * @return void
+	 * @since  Unknown
 	 */
 	app.bindEditors = function() {
 
 		// Was needed a timeout since RTE is not initialized when this code run.
 		setTimeout( function() {
-			for ( var i = 0; i < tinymce.editors.length; i++ ) {
+			for ( let i = 0; i < tinymce.editors.length; i++ ) {
 
-				tinymce.editors[i].onChange.add( function ( ed, e ) {
+				tinymce.editors[ i ].onChange.add( function( ed ) {
 
 					// Update HTML view textarea (that is the one used to send the data to server).
 					ed.save();
 
 					// Update the customize option.
-					wp.customize( ed.id, function ( obj ) {
+					wp.customize( ed.id, function( obj ) {
 						obj.set( ed.getContent() );
-					});
-                });
-            }
-        }, 1000 );
+					} );
+				} );
+			}
+		}, 1000 );
 	};
 
 	/**
 	 * Fires when the editor is changed.
 	 *
-	 * @param  obj evt 	JS event object.
-	 * @return void
+	 * @param  {Object} evt JS event object.
+	 * @since  Unknown
 	 */
-	app.editorUpdated = function( evt ) {
-		var $me = $( this );
+	app.editorUpdated = function() {
+		const $me = $( this );
 
 		// Update the customize option.
-		wp.customize( this.id, function ( obj ) {
+		wp.customize( this.id, function( obj ) {
 			obj.set( $me.val() );
-		});
+		} );
 	};
 
 	/**
 	 * Determine if requirements are met for JS bindings.
 	 *
+	 * @since  Unknown
 	 * @return bool True if requirements are met, false otherwise.
+	 *
+	 * @return {number} .length value.
 	 */
 	app.MeetsRequirements = function() {
 		return $( '.wds-customize-text-editor' ).length;
@@ -98,8 +103,8 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 
 	/**
 	 * Safely log to the console
-	 * @param  mixed str var to log
-	 * @return void
+	 * @param  {mixed} str var to log
+	 * @since  Unknown
 	 */
 	app.log = function( str ) {
 
@@ -116,4 +121,4 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 
 	return app;
 
-})( window, document, jQuery, window.wdsAdditionalTinyMCE );
+} ( window, document, jQuery, window.wdsAdditionalTinyMCE ) );
