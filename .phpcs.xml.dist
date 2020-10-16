@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
-	<ruleset name="Project">
+	<ruleset name="wd_s">
+
 	<rule ref="WebDevStudios"/>
+
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>
