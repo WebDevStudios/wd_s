@@ -100,6 +100,9 @@ module.exports = {
 	plugins: [
 		plugin( function( { addBase, config } ) {
 			addBase( {
+				html: {
+					fontSize: '100%',
+				},
 				'h1,.h1': {
 					fontSize: config( 'theme.fontSize.heading-xl' ),
 				},
