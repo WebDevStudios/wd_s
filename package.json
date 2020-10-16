@@ -32,6 +32,7 @@
     "husky": "~4.3.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "npm-run-all": "~4.1.5",
+    "prettier": "~2.1.2",
     "run-s": "0.0.0",
     "stylelint": "~13.7.2",
     "stylelint-config-wordpress": "~17.0.0",
@@ -111,7 +112,9 @@
     "*.tsx": "npm run lint:js",
     "*.css": "npm run lint:styles",
     "*.scss": "npm run lint:styles",
-    "*.php": "npm run lint:php"
+    "*.php": "npm run lint:php",
+    "*.json": "prettier ./**/*.json --write",
+    "*.md": "prettier ./**/*.md --write"
   },
   "private": true
 }
