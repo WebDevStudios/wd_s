@@ -97,6 +97,7 @@
       ".git*",
       "build/**/*",
       "cache/**/*",
+      "dist/**/*",
       "./style.css",
       "node_modules/**/*",
       "vendor/**/*"
