@@ -26,9 +26,9 @@
   "dependencies": {},
   "devDependencies": {
     "@webdevstudios/js-coding-standards": "~1.3.0",
-    "@webdevstudios/npm-scripts": "~1.0.1",
+    "@webdevstudios/npm-scripts": "~1.1.0",
     "@wordpress/scripts": "~12.3.0",
-    "copy-webpack-plugin": "^6.1.1",
+    "copy-webpack-plugin": "^6.2.1",
     "cssnano": "^4.1.10",
     "husky": "~4.3.0",
     "imagemin-webpack-plugin": "^2.4.2",
@@ -39,7 +39,7 @@
     "stylelint": "~13.7.2",
     "stylelint-config-wordpress": "~17.0.0",
     "svgstore-cli": "^2.0.0",
-    "tailwindcss": "^1.8.0"
+    "tailwindcss": "^1.9.2"
   },
   "eslintConfig": {
     "extends": "@webdevstudios/js-coding-standards",
