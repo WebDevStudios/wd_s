@@ -51,6 +51,7 @@
 
 					@apply mb-0;
 				}
+
 				.parent-indicator {
 
 					@apply rotate-180;
@@ -67,6 +68,7 @@
 				&.is-visible {
 
 					.parent-indicator {
+
 						@apply rotate-180;
 					}
 				}
