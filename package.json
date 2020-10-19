@@ -39,7 +39,7 @@
     "stylelint": "~13.7.2",
     "stylelint-config-wordpress": "~17.0.0",
     "svgstore-cli": "^2.0.0",
-    "tailwindcss": "^1.9.3"
+    "tailwindcss": "^1.9.4"
   },
   "eslintConfig": {
     "extends": "@webdevstudios/js-coding-standards",
