@@ -1,4 +1,14 @@
 {
+  "name": "webdevstudios/wd_s",
+  "description": "A starter theme from WebDevStudios.",
+  "type": "wordpress-theme",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "WebDevStudios",
+      "email": "contact@webdevstudios.com"
+    }
+  ],
   "require": {},
   "scripts": {
     "lint": "composer run lint:php",
