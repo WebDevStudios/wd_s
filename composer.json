@@ -9,7 +9,9 @@
       "email": "contact@webdevstudios.com"
     }
   ],
-  "require": {},
+  "require": {
+    "composer/installers": "^1.5"
+  },
   "scripts": {
     "lint": "composer run lint:php",
     "lint:php": "composer run lint:php-compat && composer run lint:phpcs",
