@@ -10,6 +10,7 @@ module.exports = {
 		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
+	darkMode: 'class',
 	theme: {
 		fontSize: {
 			'root-em': '16px',
@@ -54,6 +55,7 @@ module.exports = {
 			76: '4.75rem',
 			80: '5rem',
 			192: '12rem',
+			384: '24rem',
 		},
 		boxShadow: {
 			xs: '0 0 0 0.0625rem rgba(0, 0, 0, 0.05)',

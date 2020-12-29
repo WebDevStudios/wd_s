@@ -1,0 +1,12 @@
+//--------------------------------------------------------------
+// Dark Mode Toggle
+//--------------------------------------------------------------
+.color-mode-switcher {
+
+	@apply absolute p-20 grid grid-cols-3 gap-4 max-w-full right-0 top-0 w-192;
+
+	label {
+
+		@apply text-xs;
+	}
+}

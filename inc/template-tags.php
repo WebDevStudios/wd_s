@@ -96,8 +96,9 @@ function _s_display_svg( $args = array() ) {
  * Return SVG markup.
  *
  * @param array $args The parameters needed to display the SVG.
- * @author WDS
+ *
  * @return string
+ * @author WDS
  */
 function _s_get_svg( $args = array() ) {
 
@@ -202,8 +203,8 @@ function _s_get_svg( $args = array() ) {
  *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
  * @return string
+ * @author WDS
  */
 function _s_get_the_title( $args = array() ) {
 
@@ -225,8 +226,8 @@ function _s_get_the_title( $args = array() ) {
  *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
  * @return string
+ * @author WDS
  */
 function _s_get_the_excerpt( $args = array() ) {
 
@@ -247,8 +248,8 @@ function _s_get_the_excerpt( $args = array() ) {
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @author WDS
  * @return bool
+ * @author WDS
  */
 function _s_display_copyright_text() {
 
@@ -318,9 +319,8 @@ function _s_display_social_network_links() {
  * @param array  $args Array of params to customize output.
  * @param object $query The Query object; only passed if a custom WP_Query is used.
  *
- * @author WDS
  * @return void.
- * @author Corey Collins
+ * @author WDS, Corey Collins
  */
 function _s_display_numeric_pagination( $args = array(), $query = null ) {
 
@@ -359,9 +359,7 @@ function _s_display_numeric_pagination( $args = array(), $query = null ) {
  * Displays the mobile menu with off-canvas background layer.
  *
  * @return string An empty string if no menus are found at all.
- *
- * @author WDS
- * @author Corey Collins
+ * @author WDS, Corey Collins
  */
 function _s_display_mobile_menu() {
 
@@ -397,5 +395,29 @@ function _s_display_mobile_menu() {
 		wp_nav_menu( $mobile_args );
 		?>
 	</nav>
+	<?php
+}
+
+/**
+ * Displays the color mode switcher.
+ *
+ * @author Corey Collins
+ */
+function _s_display_color_mode_switcher() {
+	?>
+	<div id="color-mode-switch" class="color-mode-switcher">
+		<div>
+			<input type="radio" id="dark-switch" name="color" value="dark">
+			<label for="dark-switch">Dark</label><br>
+		</div>
+		<div>
+			<input type="radio" id="light-switch" name="color" value="light">
+			<label for="light-switch">Light</label><br>
+		</div>
+		<div>
+			<input type="radio" id="system-switch" name="color" value="system">
+			<label for="system-switch">System</label>
+		</div>
+	</div>
 	<?php
 }

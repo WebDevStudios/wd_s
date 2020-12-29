@@ -65,4 +65,6 @@
 			);
 			?>
 		</nav><!-- #site-navigation-->
+
+		<?php _s_display_color_mode_switcher(); ?>
 	</header><!-- .site-header-->

@@ -15,3 +15,4 @@ import wdsOffCanvas from './components/off-canvas';
 import wdsSkipLinkFocusFix from './components/skip-link-focus-fix';
 import wdsTable from './components/table';
 import wdsVideo from './components/video';
+import wdsDarkMode from './components/dark-mode';
