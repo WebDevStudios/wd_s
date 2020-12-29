@@ -405,18 +405,23 @@ function _s_display_mobile_menu() {
  */
 function _s_display_color_mode_switcher() {
 	?>
-	<div id="color-mode-switch" class="color-mode-switcher">
-		<div>
-			<input type="radio" id="dark-switch" name="color" value="dark">
-			<label for="dark-switch">Dark</label><br>
+	<div id="color-mode-switch" class="color-mode-container">
+		<div class="toggle-slider">
+			<span class="slider round"></span>
 		</div>
-		<div>
-			<input type="radio" id="light-switch" name="color" value="light">
-			<label for="light-switch">Light</label><br>
-		</div>
-		<div>
-			<input type="radio" id="system-switch" name="color" value="system">
-			<label for="system-switch">System</label>
+		<div class="color-mode-switcher">
+			<div>
+				<input type="radio" id="light-switch" name="color" value="light">
+				<label for="light-switch">Light</label>
+			</div>
+			<div>
+				<input type="radio" id="system-switch" name="color" value="system">
+				<label for="system-switch">System</label>
+			</div>
+			<div>
+				<input type="radio" id="dark-switch" name="color" value="dark">
+				<label for="dark-switch">Dark</label>
+			</div>
 		</div>
 	</div>
 	<?php

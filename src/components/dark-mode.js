@@ -27,13 +27,17 @@ function wdsDarkMode() {
 	 */
 	function changeMode( value ) {
 		if ( 'dark' == value ) {
-			document.querySelector( 'html' ).classList.add( 'dark' );
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.add( 'dark' ) );
+			document.querySelector( '.toggle-slider' ).classList.remove( 'system', 'light' );
 			localStorage.theme = 'dark';
 		} else if ( 'light' == value ) {
-			document.querySelector( 'html' ).classList.remove( 'dark' );
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.remove( 'dark', 'system' ) );
+			document.querySelector( '.toggle-slider' ).classList.add( 'light' );
 			localStorage.theme = 'light';
 		} else {
 			localStorage.removeItem( 'theme' );
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.remove( 'dark', 'light' ) );
+			document.querySelector( '.toggle-slider' ).classList.add( 'system' );
 			changeSystemMode();
 		}
 	}
@@ -47,14 +51,17 @@ function wdsDarkMode() {
 	function checkDarkMode() {
 		if ( 'dark' === localStorage.theme ) {
 			document.querySelector( '#dark-switch' ).checked = true;
-			document.querySelector( 'html' ).classList.add( 'dark' );
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.add( 'dark' ) );
 			localStorage.theme = 'dark';
 		} else if ( 'light' === localStorage.theme ) {
 			document.querySelector( '#light-switch' ).checked = true;
-			document.querySelector( 'html' ).classList.remove( 'dark' );
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.remove( 'dark', 'system' ) );
+			document.querySelector( '.toggle-slider' ).classList.add( 'light' );
 			localStorage.theme = 'light';
 		} else {
 			document.querySelector( '#system-switch' ).checked = true;
+			document.querySelectorAll( 'html, .toggle-slider' ).forEach( element => element.classList.remove( 'dark', 'light' ) );
+			document.querySelector( '.toggle-slider' ).classList.add( 'system' );
 			changeSystemMode();
 			localStorage.theme = 'system';
 		}
@@ -69,6 +76,7 @@ function wdsDarkMode() {
 	function changeSystemMode() {
 		if ( true == document.querySelector( '#system-switch' ).checked ) {
 			localStorage.removeItem( 'theme' );
+			document.querySelector( '.toggle-slider' ).classList.add( 'system' );
 
 			if ( window.matchMedia && window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) {
 				document.querySelector( 'html' ).classList.add( 'dark' );

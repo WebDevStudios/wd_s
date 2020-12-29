@@ -1,4 +1,5 @@
 const plugin = require( 'tailwindcss/plugin' );
+const colors = require('tailwindcss/colors');
 
 module.exports = {
 	purge: {
@@ -90,6 +91,11 @@ module.exports = {
 		extend: {
 			backgroundOpacity: {
 				10: '0.1',
+			},
+			colors: {
+				'amber': colors.amber,
+				'blue-gray': colors.blueGray,
+				'cool-gray': colors.coolGray,
 			},
 		},
 	},

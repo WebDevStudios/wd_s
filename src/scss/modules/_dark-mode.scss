@@ -1,12 +1,112 @@
 //--------------------------------------------------------------
 // Dark Mode Toggle
 //--------------------------------------------------------------
+.color-mode-container {
+
+	@apply absolute top-6 right-6 max-w-full w-192;
+
+	.slider {
+
+		@apply h-32 w-full block bg-cool-gray-400 cursor-pointer rounded-full duration-500;
+
+		&::before {
+
+			@apply h-24 w-24 absolute bg-white duration-500 left-4 bottom-4;
+
+			content: '';
+		}
+
+		&.round {
+
+			&::before {
+
+				@apply rounded-full;
+			}
+		}
+	}
+
+	.toggle-slider {
+
+		@apply relative;
+
+		&.dark {
+
+			.slider {
+
+				@apply bg-blue-gray-600;
+
+				&::before {
+					left: calc(100% - 28px);
+				}
+			}
+		}
+
+		&.system {
+
+			.slider {
+
+				&::before {
+					left: calc(50% - 12px);
+				}
+			}
+		}
+
+		&.light {
+
+			.slider {
+
+				@apply bg-amber-200;
+			}
+		}
+	}
+
+	.toggle-slider-wrap {
+
+		@apply absolute w-1/2 top-0 border border-black z-50;
+	}
+
+	.toggle-slider-light {
+
+		@apply left-0;
+	}
+
+	.toggle-slider-dark {
+
+		@apply right-0;
+	}
+}
+
 .color-mode-switcher {
 
-	@apply absolute p-20 grid grid-cols-3 gap-4 max-w-full right-0 top-0 w-192;
+	@apply grid grid-cols-3 gap-4 w-full absolute top-0 left-0;
 
 	label {
 
-		@apply text-xs;
+		@apply text-xs p-6 text-center top-2 relative;
+	}
+
+	input {
+
+		@apply opacity-0 w-full;
+
+		height: 34px;
+
+		&:focus,
+		&:active,
+		&:hover {
+
+			~ label {
+
+				@apply bg-blue-gray-100 outline-white;
+			}
+		}
+
+		&:checked {
+
+			~ label {
+
+				@apply bg-blue-gray-300;
+			}
+		}
 	}
 }
