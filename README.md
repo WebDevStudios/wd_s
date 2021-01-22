@@ -40,7 +40,6 @@ You'll need to change all instances of the names: `_s`.
 - Search for (and include the leading space): <code>&nbsp;\_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 - Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
-- Search for `_s.test` and replace with: `project-name.test` to match your local development URL
 - Edit the theme information in the header of style.scss to meet your needs
 
 ## Installation
