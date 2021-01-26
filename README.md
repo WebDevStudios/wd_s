@@ -28,7 +28,7 @@ If you want to keep it simple, head over to [https://wdunderscores.com](https://
 
 If you want to set me up manually:
 
-1. [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s-master` to fit your needs.
+1. [Download](https://github.com/WebDevStudios/wd_s/archive/main.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s-main` to fit your needs.
 
 2. Find & Replace
 
