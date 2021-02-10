@@ -5,7 +5,7 @@ pre-commit:
   commands:
     phpcs:
       glob: "*.php"
-      run: composer run lint
+      run: composer run lint {staged_files}
     eslint:
       glob: "*.{js,jsx,ts,tsx,vue}"
       run: npx eslint --fix {staged_files}
