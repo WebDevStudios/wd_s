@@ -36,7 +36,7 @@
     "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]"
   },
   "dependencies": {
-    "@webdevstudios/npm-scripts": "^1.1.0",
+    "@webdevstudios/npm-scripts": "^1.1.1",
     "@wordpress/scripts": "^13.0.3",
     "tailwindcss": "^2.0.1-compat"
   },
