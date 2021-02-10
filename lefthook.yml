@@ -1,0 +1,17 @@
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+
+pre-commit:
+  parallel: true
+  commands:
+    phpcs:
+      glob: "*.php"
+      run: composer run lint
+    eslint:
+      glob: "*.{js,jsx,ts,tsx,vue}"
+      run: npx eslint --fix {staged_files}
+    stylelint:
+      glob: "*.{css,scss}"
+      run: npx stylelint --fix {staged_files}
+    prettier:
+      glob: "*.{md,html,json,yml}"
+      run: npx prettier --write {staged_files}
