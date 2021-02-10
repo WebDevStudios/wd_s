@@ -14,8 +14,8 @@
   "homepage": "https://github.com/WebDevStudios/wd_s/#readme",
   "private": true,
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "main": "src/index.js",
   "scripts": {
