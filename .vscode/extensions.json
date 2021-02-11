@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "snipsnapdev.snipsnap-vscode",
+    "stylelint.vscode-stylelint"
+  ]
+}
