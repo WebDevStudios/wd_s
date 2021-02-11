@@ -53,7 +53,7 @@
     "postcss": "^7.0.35",
     "prettier": "~2.2.1",
     "run-s": "0.0.0",
-    "stylelint": "~13.9.0",
+    "stylelint": "~13.10.0",
     "stylelint-config-wordpress": "~17.0.0",
     "svgstore-cli": "^2.0.0"
   },
