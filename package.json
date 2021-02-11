@@ -38,7 +38,7 @@
   "dependencies": {
     "@webdevstudios/npm-scripts": "^1.1.0",
     "@wordpress/scripts": "^12.4.0",
-    "tailwindcss": "^2.0.1-compat"
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.2",
