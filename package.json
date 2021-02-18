@@ -36,20 +36,23 @@
     "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]"
   },
   "dependencies": {
-    "@webdevstudios/npm-scripts": "^1.1.0",
-    "@wordpress/scripts": "^12.4.0",
-    "tailwindcss": "^2.0.1-compat"
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@webdevstudios/npm-scripts": "^1.1.1",
+    "@wordpress/scripts": "^13.0.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.2",
     "@webdevstudios/js-coding-standards": "~1.3.0",
+    "autoprefixer": "^9.8.6",
     "copy-webpack-plugin": "^6.2.1",
     "cssnano": "^4.1.10",
     "imagemin-webpack-plugin": "^2.4.2",
     "npm-run-all": "~4.1.5",
-    "prettier": "~2.1.2",
+    "postcss": "^7.0.35",
+    "prettier": "~2.2.1",
     "run-s": "0.0.0",
-    "stylelint": "~13.7.2",
+    "stylelint": "~13.10.0",
     "stylelint-config-wordpress": "~17.0.0",
     "svgstore-cli": "^2.0.0"
   },
