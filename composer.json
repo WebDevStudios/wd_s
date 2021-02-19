@@ -21,6 +21,6 @@
   },
   "require-dev": {
     "phpcompatibility/php-compatibility": "~9.3",
-    "webdevstudios/php-coding-standards": "~1.2.1"
+    "webdevstudios/php-coding-standards": "~1.3.0"
   }
 }

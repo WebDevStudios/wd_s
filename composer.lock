@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d532d522a4f22817d7b8e9b62e0cabc9",
+    "content-hash": "233b5f20945ac289702d30298197665c",
     "packages": [
         {
             "name": "composer/installers",
@@ -322,16 +322,16 @@
         },
         {
             "name": "webdevstudios/php-coding-standards",
-            "version": "1.2.1",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WebDevStudios/php-coding-standards.git",
-                "reference": "df0d63a81c0cd08b71348ca7017dba4e56c02c07"
+                "reference": "0896147c2e12ffaebf67fb5a9d49b1514e2ccec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WebDevStudios/php-coding-standards/zipball/df0d63a81c0cd08b71348ca7017dba4e56c02c07",
-                "reference": "df0d63a81c0cd08b71348ca7017dba4e56c02c07",
+                "url": "https://api.github.com/repos/WebDevStudios/php-coding-standards/zipball/0896147c2e12ffaebf67fb5a9d49b1514e2ccec3",
+                "reference": "0896147c2e12ffaebf67fb5a9d49b1514e2ccec3",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
             ],
             "description": "In-house PHP linting and coding standards for WebDevStudios",
             "homepage": "https://github.com/WebDevStudios/php-coding-standards",
-            "time": "2020-10-16T20:49:05+00:00"
+            "time": "2020-11-16T21:56:03+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
