@@ -18,7 +18,7 @@ Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also ea
 
 ### Prerequisites
 
-Because I compile and bundle assets via npm scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (v12+) and [Composer](https://getcomposer.org/).
+Because I compile and bundle assets via npm scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (14) and [Composer](https://getcomposer.org/).
 
 ### Quick Start
 

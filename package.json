@@ -14,8 +14,8 @@
   "homepage": "https://github.com/WebDevStudios/wd_s/#readme",
   "private": true,
   "engines": {
-    "node": ">=12",
-    "npm": ">=6"
+    "node": ">=14",
+    "npm": ">=7"
   },
   "main": "src/index.js",
   "scripts": {
@@ -28,7 +28,6 @@
     "lint:styles": "wds-format-styles && wds-lint-style",
     "packages-update": "wds-packages-update",
     "postinstall": "npm run build",
-    "preinstall": "$(echo node --version) | grep -sq $(cat .nvmrc) || ( echo \"\\n\\n\\n\\t!!! Please use Node version $(cat .nvmrc), you are using version $(node --version), some things may fail to work. !!!\\n\\n\\n\\n\" )",
     "start": "wds-start",
     "theme": "run-s theme:pot theme:icons",
     "theme:icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg",
