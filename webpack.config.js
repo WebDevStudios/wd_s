@@ -11,6 +11,8 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const { mode } = defaultConfig;
+const { sync: spawn } = require( 'cross-spawn' );
+const { sync: resolveBin } = require( 'resolve-bin' );
 
 module.exports = {
 	...defaultConfig,
@@ -45,5 +47,22 @@ module.exports = {
 				],
 			},
 		} ),
+
+		// Ad-hoc plugin.
+		{ apply: ( compiler ) => {
+
+			// After we build.
+			compiler.hooks.afterEmit.tap( 'wd_sAfterEmit', () => {
+
+				// Run anything in `npm run theme` so pot files and sprites are generated.
+				spawn(
+					resolveBin( 'npm' ),
+					[ 'run', 'theme' ],
+					{
+						stdio: 'inherit',
+					}
+				);
+			} );
+		} },
 	],
 };
