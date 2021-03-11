@@ -26,7 +26,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 * You will also need to update the Gulpfile with the new text domain
 		 * and matching destination POT file.
 		 */
-		load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+		load_theme_textdomain( '_s', get_template_directory() . '/build/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
