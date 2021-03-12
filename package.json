@@ -51,8 +51,7 @@
     "postcss": "^7.0.35",
     "prettier": "~2.2.1",
     "run-s": "0.0.0",
-    "stylelint": "~13.10.0",
-    "stylelint-config-wordpress": "~17.0.0",
+    "stylelint": "~13.12.0",
     "svgstore-cli": "^2.0.0"
   },
   "eslintConfig": {
@@ -79,19 +78,17 @@
     ]
   },
   "stylelint": {
-    "extends": "stylelint-config-wordpress/scss",
+    "extends": "@wordpress/stylelint-config",
     "rules": {
+      "at-rule-empty-line-before": null,
       "at-rule-no-unknown": null,
-      "block-no-empty": true,
-      "font-family-no-duplicate-names": true,
-      "font-family-no-missing-generic-family-keyword": true,
-      "function-url-quotes": "always",
+      "comment-empty-line-before": null,
+      "font-weight-notation": null,
       "max-line-length": null,
       "no-descending-specificity": null,
-      "no-duplicate-selectors": null,
-      "property-no-unknown": null,
-      "scss/at-rule-no-unknown": null,
-      "string-quotes": "single"
+      "rule-empty-line-before": null,
+      "selector-class-pattern": null,
+      "value-keyword-case": null
     },
     "ignoreFiles": [
       "**/*.js",
