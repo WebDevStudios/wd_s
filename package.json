@@ -77,41 +77,41 @@
       "vendor/**/*"
     ]
   },
-	"stylelint": {
-		"extends": "@wordpress/stylelint-config",
-		"rules": {
-			"at-rule-empty-line-before": null,
-			"at-rule-no-unknown": null,
-			"comment-empty-line-before": null,
-			"font-weight-notation": null,
-			"max-line-length": null,
-			"no-descending-specificity": null,
-			"rule-empty-line-before": null,
-			"selector-class-pattern": null,
-			"value-keyword-case": null
-		},
-		"ignoreFiles": [
-			"**/*.js",
-			"**/*.json",
-			"**/*.jsx",
-			"**/*.lock",
-			"**/*.php",
-			"**/*.png",
-			"**/*.svg",
-			"**/*.ts",
-			"**/*.tsx",
-			"*.min.js",
-			".*dist.js",
-			".*rc.js",
-			"./.*.js",
-			".cache/**/*",
-			".git*",
-			"build/**/*",
-			"cache/**/*",
-			"dist/**/*",
-			"./style.css",
-			"node_modules/**/*",
-			"vendor/**/*"
-		]
+  "stylelint": {
+    "extends": "@wordpress/stylelint-config",
+    "rules": {
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": null,
+      "comment-empty-line-before": null,
+      "font-weight-notation": null,
+      "max-line-length": null,
+      "no-descending-specificity": null,
+      "rule-empty-line-before": null,
+      "selector-class-pattern": null,
+      "value-keyword-case": null
+    },
+    "ignoreFiles": [
+      "**/*.js",
+      "**/*.json",
+      "**/*.jsx",
+      "**/*.lock",
+      "**/*.php",
+      "**/*.png",
+      "**/*.svg",
+      "**/*.ts",
+      "**/*.tsx",
+      "*.min.js",
+      ".*dist.js",
+      ".*rc.js",
+      "./.*.js",
+      ".cache/**/*",
+      ".git*",
+      "build/**/*",
+      "cache/**/*",
+      "dist/**/*",
+      "./style.css",
+      "node_modules/**/*",
+      "vendor/**/*"
+    ]
   }
 }
