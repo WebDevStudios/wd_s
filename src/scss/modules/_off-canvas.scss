@@ -32,10 +32,10 @@
 
 		@apply bottom-0 right-0 block h-24 p-0 absolute w-24;
 
-		background: url('../images/icons/hamburger.svg') 50% 50% no-repeat transparent;
+		background: url(../images/icons/hamburger.svg) 50% 50% no-repeat transparent;
 		background-size: 100%;
-		right: theme('spacing.12');
-		top: theme('spacing.12');
+		right: theme("spacing.12");
+		top: theme("spacing.12");
 		z-index: 9999;
 
 		@screen tablet-landscape {
@@ -46,16 +46,16 @@
 
 			@apply absolute;
 
-			top: theme('spacing.48');
+			top: theme("spacing.48");
 		}
 
 		&:focus,
 		&:hover {
-			outline: 2px solid theme('colors.black');
+			outline: 2px solid theme("colors.black");
 		}
 
 		&.is-visible {
-			background-image: url('../images/icons/close.svg');
+			background-image: url(../images/icons/close.svg);
 		}
 	}
 
