@@ -17,7 +17,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 	 * Fire the wp_body_open action.
 	 */
 	function wp_body_open() {
-		/**
+
 		/**
 		 * Triggered after the opening body tag.
 		 *
