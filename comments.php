@@ -29,7 +29,7 @@ if ( post_password_required() ) {
 	?>
 		<h3 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
+				printf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					/* translators: the number of comments */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', '_s' ) ),
 					number_format_i18n( get_comments_number() ),

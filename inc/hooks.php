@@ -177,7 +177,7 @@ function _s_display_customizer_header_scripts() {
 	}
 
 	// Otherwise, echo the scripts!
-	echo _s_get_the_content( $scripts ); // WPCS XSS OK.
+	echo _s_get_the_content( $scripts ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
 
@@ -198,7 +198,7 @@ function _s_display_customizer_footer_scripts() {
 	}
 
 	// Otherwise, echo the scripts!
-	echo _s_get_the_content( $scripts ); // WPCS XSS OK.
+	echo _s_get_the_content( $scripts ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 

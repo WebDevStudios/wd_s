@@ -14,7 +14,7 @@
 	<?php
 		// Theme colors.
 		_s_display_global_scaffolding_section(
-			array( // WPCS: XSS OK.
+			array( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'global_type' => 'colors',
 				'title'       => 'Colors',
 				'arguments'   => array(
@@ -29,7 +29,7 @@
 
 		// Theme fonts.
 		_s_display_global_scaffolding_section(
-			array( // WPCS: XSS OK.
+			array( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				'global_type' => 'fonts',
 				'title'       => 'Fonts',
 				'arguments'   => array(
