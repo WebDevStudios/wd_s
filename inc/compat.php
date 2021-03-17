@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Backwards compatibility fills for older WP versions.
  *
