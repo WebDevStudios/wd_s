@@ -2,6 +2,7 @@
 
 import './scss/tailwind.scss';
 import './scss/style.scss';
+import './scss/editor.scss';
 
 // Make sure JS is enabled and the window is ready.
 import './components/js-enabled';
