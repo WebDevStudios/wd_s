@@ -15,7 +15,10 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php echo get_the_password_form(); // WPCS XSS OK. ?>
+			<?php
+				 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo get_the_password_form();
+			?>
 		</div><!-- .entry-content -->
 
 	</article><!-- #post-## -->
