@@ -35,10 +35,10 @@
     "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@tailwindcss/postcss7-compat": "^2.0.4",
     "@webdevstudios/npm-scripts": "^1.1.1",
     "@wordpress/scripts": "^13.0.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.2",
