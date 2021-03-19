@@ -42,16 +42,3 @@ function _s_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
-
-/**
- * Enqueue editor scripts.
- *
- * @author WDS
- */
-function _s_editor_scripts() {
-	$asset_file = include( __DIR__ . '/../build/index.asset.php' );
-
-	wp_enqueue_style( '_s_editor_styles', get_stylesheet_directory_uri() . '/build/index.css', [ 'wp-edit-blocks' ], $asset_file['version'] );
-}
-
-add_action( 'enqueue_block_editor_assets', '_s_editor_scripts' );
