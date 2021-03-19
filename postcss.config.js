@@ -2,8 +2,8 @@ module.exports = {
 	plugins: [
 		require( 'tailwindcss' ),
 		require( 'autoprefixer' ),
-		require( 'cssnano' )( {
-			preset: 'default',
-		} ),
-	],
+		'production' === process.env.NODE_ENV ? require( 'cssnano' )(
+			{ preset: 'default' }
+		) : false,
+	].filter( Boolean ),
 };
