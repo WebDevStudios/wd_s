@@ -211,3 +211,8 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Scaffolding.
  */
 require get_template_directory() . '/inc/scaffolding.php';
+
+/**
+ * Backwards Compatibility
+ */
+require get_template_directory() . '/inc/compat.php';
