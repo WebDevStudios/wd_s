@@ -25,6 +25,11 @@ module.exports = {
 					to: 'images/[path][name].[ext]',
 					context: path.resolve( process.cwd(), 'src/images' ),
 				},
+				{
+					from: '*.svg',
+					to: 'images/icons/[name].[ext]',
+					context: path.resolve( process.cwd(), 'src/images/icons' ),
+				},
 			],
 		} ),
 
