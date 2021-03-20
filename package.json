@@ -30,8 +30,9 @@
     "postinstall": "npm run build",
     "start": "wds-start",
     "theme": "run-s theme:pot theme:icons",
+    "theme:node": "run-s theme:icons",
     "theme:icons": "svgstore build/images/icons/*.svg --inline -o build/images/icons/sprite.svg",
-    "theme:pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build",
+    "theme:pot": "composer run make-pot",
     "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]"
   },
   "dependencies": {
