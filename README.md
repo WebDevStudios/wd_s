@@ -8,6 +8,8 @@ I feature some of the web's most proven technologies like: [Tailwind](https://ww
 
 I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
 
+Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watch your project update in real-time while you work.
+
 Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Blocks](https://github.com/WebDevStudios/wds-blocks) plugin for a quick starter including our Accordion and Carousel bloocks.
 
 Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also easy! Add the [WDS ACF Blocks](https://github.com/WebDevStudios/wds-acf-blocks) plugin for a whole set of blocks built with ACF including: Accordion, Carousel, Call To Action, Fifty/Fifty, Hero, Recent Posts, and Related Posts.
@@ -63,6 +65,8 @@ From the command line, type any of the following to perform an action:
 `npm run build` - Compile and build all assets.
 
 `npm run start` - Automatically handle changes to CSS, JS, SVGs, and image sprites.
+
+`npm run start:sync` - Automatically handle changes to PHP, CSS, JS, SVGs, and image sprites – and see the changes refresh in your browser via Browsersync!
 
 ## Contributing and Support
 
