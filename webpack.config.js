@@ -14,6 +14,10 @@ const { mode } = defaultConfig;
 
 module.exports = {
 	...defaultConfig,
+	entry: {
+		...defaultConfig.entry,
+		tailwind: path.resolve( process.cwd(), 'src/scss/tailwind.scss' ),
+	},
 	plugins: [
 		...defaultConfig.plugins,
 
