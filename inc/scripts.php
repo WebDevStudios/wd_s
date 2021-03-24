@@ -6,6 +6,20 @@
  */
 
 /**
+ * Enqueue Tailwind.
+ *
+ * Load Tailwind dependencies in editor and frontend.
+ *
+ * @author WDS
+ */
+function _s_tailwind_scripts() {
+	// Register styles & scripts.
+	wp_enqueue_style( 'tailwind', get_stylesheet_directory_uri() . '/build/tailwind.css', array(), $asset_file['version'] );
+}
+add_action( 'wp_enqueue_scripts', '_s_tailwind_scripts' );
+add_action( 'enqueue_block_editor_assets', '_s_tailwind_scripts' );
+
+/**
  * Enqueue scripts and styles.
  *
  * @author WDS
