@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import './scss/style.scss';
+import './scss/editor.scss';
 
 // Make sure JS is enabled and the window is ready.
 import './components/js-enabled';
