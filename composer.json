@@ -14,9 +14,9 @@
   },
   "scripts": {
     "lint": "@composer run lint:php",
-    "lint:php": "@composer run lint:php-compat && composer run lint:phpcs",
-    "lint:php-compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.4 --ignore='.github/*,vendor/*' --warning-severity=8 -d memory_limit=-1",
-    "lint:phpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -d memory_limit=-1 --standard=./.phpcs.xml.dist --extensions=php -n --colors **/*.php",
+    "lint:php": [ "@composer run lint:php-compat", "@composer run lint:phpcs" ],
+    "lint:php-compat": "@php ./vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.4 --ignore='.git*,vendor/*' --warning-severity=8 -d memory_limit=-1",
+    "lint:phpcs": "@php ./vendor/bin/phpcs -ns -d memory_limit=-1 --standard=./.phpcs.xml.dist --extensions=php --colors .",
     "debug:phpcs": "which phpcs && phpcs -i",
     "make-pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
   },
