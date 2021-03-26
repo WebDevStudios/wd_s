@@ -15,7 +15,6 @@ pre {
 	@apply overflow-auto;
 }
 
-
 //-----------------------------------------
 // Theme Elements
 //-----------------------------------------
@@ -27,11 +26,6 @@ pre {
 .container {
 
 	@apply px-16;
-
-	@screen desktop-large {
-
-		@apply px-0;
-	}
 }
 
 .site-main {
