@@ -1,14 +1,14 @@
 /**
- * File: mobile-menu.js
+ * File: navigation-mobile.js
  *
  * Create an accordion style dropdown.
  */
 
 // Make sure everything is loaded first.
 if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
-	wdsMobileMenu();
+	wdsNavMobile();
 } else {
-	document.addEventListener( 'DOMContentLoaded', wdsMobileMenu );
+	document.addEventListener( 'DOMContentLoaded', wdsNavMobile );
 }
 
 /**
@@ -17,7 +17,7 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
  * @since January 31, 2020
  * @author Corey Collins
  */
-function wdsMobileMenu() {
+function wdsNavMobile() {
 	const subMenuParentItem = document.querySelectorAll( '.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children' );
 
 	subMenuParentItem.forEach( ( subMenuParent ) => {
