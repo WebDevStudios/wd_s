@@ -380,3 +380,16 @@ function _s_remove_empty_p_tags_from_content( $content ) {
 }
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', '_s_remove_empty_p_tags_from_content' );
+
+/**
+ * Disables automatic fullscreen mode in the block editor.
+ *
+ * @author WDS
+ */
+function _s_disable_editor_fullscreen_default() {
+	if ( is_admin() ) {
+		$script = "window.onload = function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } }";
+		wp_add_inline_script( 'wp-blocks', $script );
+	}
+}
+add_action( 'enqueue_block_editor_assets', '_s_disable_editor_fullscreen_default' );
