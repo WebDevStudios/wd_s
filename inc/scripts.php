@@ -14,6 +14,7 @@
  */
 function _s_tailwind_scripts() {
 	// Register styles & scripts.
+	$asset_file = include( __DIR__ . '/../build/tailwind.asset.php' );
 	wp_enqueue_style( 'tailwind', get_stylesheet_directory_uri() . '/build/tailwind.css', array(), $asset_file['version'] );
 }
 add_action( 'wp_enqueue_scripts', '_s_tailwind_scripts' );
