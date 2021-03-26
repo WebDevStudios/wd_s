@@ -19,7 +19,8 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "build": "wds-build && npm run theme",
+    "build": "wp-scripts build src/index.js src/editor/editor.js && npm run theme",
+    "build:editor": "wp-scripts build src/editor/editor.js",
     "format": "wds-format-js && wds-format-styles && npm run format:prettier",
     "format:prettier": "[[ -f .prettierignore ]] && ./node_modules/.bin/prettier ./ --write",
     "lint": "run-s lint:js lint:styles lint:php",
@@ -28,7 +29,7 @@
     "lint:styles": "wds-format-styles && wds-lint-style",
     "packages-update": "wds-packages-update",
     "postinstall": "npm run build",
-    "start": "wds-start",
+    "start": "wp-scripts start src/index.js src/editor/editor.js",
     "start:sync": "run-p start sync watch:icons",
     "sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files \"build/*.*, **/*.html, **/*.php, !node_modules/**/*.html\"",
     "test": "npm install && run-s lint build && [[ -d build ]] && [[ -d src ]] && [[ -d inc ]] && [[ -d template-parts ]] && [[ -f style.css ]] && [[ -f webpack.config.js ]]",
