@@ -1,9 +1,14 @@
 module.exports = {
-	plugins: [
-		require( 'tailwindcss' ),
-		require( 'autoprefixer' ),
-		'production' === process.env.NODE_ENV ? require( 'cssnano' )(
-			{ preset: 'default' }
-		) : false,
-	].filter( Boolean ),
+	plugins: {
+		tailwindcss: {},
+		'postcss-preset-env': {
+			autoprefixer: {
+				flexbox: 'no-2009',
+			},
+			stage: 3,
+			features: {
+				'nesting-rules': true,
+			},
+		},
+	},
 };
