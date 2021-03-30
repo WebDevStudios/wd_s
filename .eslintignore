@@ -1,7 +1,6 @@
 .cache
 build
-build-module
-build-types
 node_modules
 vendor
-!.*.js
+*.min.js
+!/.*.js
