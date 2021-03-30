@@ -3,6 +3,8 @@
 
 	<rule ref="WebDevStudios"/>
 
+	<arg name="extensions" value="php"/>
+
 	<!-- Ignore build and lib folders -->
 	<exclude-pattern>*/build/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>

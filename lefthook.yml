@@ -1,17 +1,24 @@
 # https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
 
 pre-commit:
-  parallel: true
-  commands:
-    phpcs:
-      glob: "*.php"
-      run: composer run lint {staged_files}
-    eslint:
-      glob: "*.{js,jsx,ts,tsx,vue}"
-      run: npx eslint --fix {staged_files}
-    stylelint:
-      glob: "*.{css,scss}"
-      run: npx stylelint --fix {staged_files}
-    prettier:
-      glob: "*.{md,html,json,yml}"
-      run: npx prettier --write {staged_files}
+    parallel: true
+    commands:
+        php:
+            glob: '*.php'
+            run: composer run-script lint {staged_files}
+        styles:
+            glob: '*.{css,scss}'
+            run: npm run lint:css:fix {staged_files}
+        javascript:
+            glob: '*.{js,ts,tsx}'
+            run: npm run format:js {staged_files}
+            run: npm run lint:js:fix {staged_files}
+        markdown:
+            glob: '*.{md}'
+            run: npm run lint:md:docs {staged_files}
+        other:
+            glob: '*.{yml,json,html}'
+            run: npx prettier --write {staged_files}
+         packagejson:
+            glob: './package.json'
+            run: npm run lint:pkg-json {staged_files}

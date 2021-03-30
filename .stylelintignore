@@ -1,5 +1,5 @@
+.cache/
 build/
 node_modules/
 vendor/
-style.css
-README.md
+!.*.js
