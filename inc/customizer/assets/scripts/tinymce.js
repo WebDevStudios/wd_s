@@ -7,33 +7,27 @@
  */
 
 window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
-( function( window, document, $, app ) {
-	'use strict';
+( function ( window, document, $, app ) {
+	( 'use strict' );
 
 	/**
-	 * Config from WP localization
-	 * @type object
+	 * Config from WP localization.
 	 */
 	app.l10n = window.wdsAdditionalTinyMCE || {};
 
 	/**
-	 * Caches elements
-	 *
-	 * @since  Unknown
+	 * Caches elements.
 	 */
-	app.cache = function() {
+	app.cache = function () {
 		app.$ = {};
 
 		app.api = wp.customize;
 	};
 
 	/**
-	 * Initialization function
-	 *
-	 * @since Unknown
+	 * Initialization function.
 	 */
-	app.init = function() {
-
+	app.init = function () {
 		// Build cached elements.
 		app.cache();
 
@@ -46,27 +40,24 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 		$( '.control-section' ).on( 'click', app.bindEditors );
 
 		// Update customizer option when tinymce is changed.
-		$( '.wds-customize-text-editor' ).find( 'textarea' ).on( 'change keyup', app.editorUpdated );
+		$( '.wds-customize-text-editor' )
+			.find( 'textarea' )
+			.on( 'change keyup', app.editorUpdated );
 	};
 
 	/**
 	 * Make sure the editor updates the customize option when changed in visual mode.
-	 *
-	 * @since  Unknown
 	 */
-	app.bindEditors = function() {
-
+	app.bindEditors = function () {
 		// Was needed a timeout since RTE is not initialized when this code run.
-		setTimeout( function() {
+		setTimeout( function () {
 			for ( let i = 0; i < tinymce.editors.length; i++ ) {
-
-				tinymce.editors[ i ].onChange.add( function( ed ) {
-
+				tinymce.editors[ i ].onChange.add( function ( ed ) {
 					// Update HTML view textarea (that is the one used to send the data to server).
 					ed.save();
 
 					// Update the customize option.
-					wp.customize( ed.id, function( obj ) {
+					wp.customize( ed.id, function ( obj ) {
 						obj.set( ed.getContent() );
 					} );
 				} );
@@ -76,15 +67,12 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 
 	/**
 	 * Fires when the editor is changed.
-	 *
-	 * @param  {Object} evt JS event object.
-	 * @since  Unknown
 	 */
-	app.editorUpdated = function() {
+	app.editorUpdated = function () {
 		const $me = $( this );
 
 		// Update the customize option.
-		wp.customize( this.id, function( obj ) {
+		wp.customize( this.id, function ( obj ) {
 			obj.set( $me.val() );
 		} );
 	};
@@ -92,22 +80,18 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	/**
 	 * Determine if requirements are met for JS bindings.
 	 *
-	 * @since  Unknown
-	 * @return bool True if requirements are met, false otherwise.
-	 *
-	 * @return {number} .length value.
+	 * @return {boolean} True if requirements are met, false otherwise.
 	 */
-	app.MeetsRequirements = function() {
+	app.MeetsRequirements = function () {
 		return $( '.wds-customize-text-editor' ).length;
 	};
 
 	/**
-	 * Safely log to the console
-	 * @param  {mixed} str var to log
-	 * @since  Unknown
+	 * Safely log to the console.
+	 *
+	 * @param {string} str var to log
 	 */
-	app.log = function( str ) {
-
+	app.log = function ( str ) {
 		// Bail early if no console.
 		if ( ! window.console ) {
 			return;
@@ -120,5 +104,4 @@ window.wdsAdditionalTinyMCE = window.wdsAdditionalTinyMCE || {};
 	$( document ).ready( app.init );
 
 	return app;
-
-} ( window, document, jQuery, window.wdsAdditionalTinyMCE ) );
+} )( window, document, jQuery, window.wdsAdditionalTinyMCE );

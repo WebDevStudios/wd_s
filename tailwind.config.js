@@ -1,10 +1,10 @@
-const plugin = require('tailwindcss/plugin');
+const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
 	purge: {
 		enabled: true,
-		content: ['./**/*.php', './src/components/*.js'],
-		layers: ['utilities'],
+		content: [ './**/*.php', './src/components/*.js' ],
+		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
 	darkMode: 'class',
@@ -95,44 +95,44 @@ module.exports = {
 	},
 	variants: {},
 	plugins: [
-		plugin(function ({ addBase, config }) {
-			addBase({
+		plugin( function ( { addBase, config } ) {
+			addBase( {
 				html: {
 					fontSize: '100%',
 				},
 				'h1,.h1': {
-					fontSize: config('theme.fontSize.heading-xl'),
+					fontSize: config( 'theme.fontSize.heading-xl' ),
 				},
 				'h2,.h2': {
-					fontSize: config('theme.fontSize.heading-lg'),
+					fontSize: config( 'theme.fontSize.heading-lg' ),
 				},
 				'h3,.h3': {
-					fontSize: config('theme.fontSize.heading-md'),
+					fontSize: config( 'theme.fontSize.heading-md' ),
 				},
 				'h4,.h4': {
-					fontSize: config('theme.fontSize.heading-sm'),
+					fontSize: config( 'theme.fontSize.heading-sm' ),
 				},
 				'h5,.h5': {
-					fontSize: config('theme.fontSize.heading-xs'),
+					fontSize: config( 'theme.fontSize.heading-xs' ),
 				},
 				'h6,.h6': {
-					fontSize: config('theme.fontSize.heading-xs'),
+					fontSize: config( 'theme.fontSize.heading-xs' ),
 				},
 				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
-					marginBottom: config('theme.spacing.16'),
+					marginBottom: config( 'theme.spacing.16' ),
 				},
 				a: {
 					textDecoration: 'underline',
 				},
 				p: {
-					marginBottom: config('theme.spacing.16'),
+					marginBottom: config( 'theme.spacing.16' ),
 					'&:last-child': {
 						marginBottom: '0',
 					},
 				},
-			});
-		}),
-		plugin(function ({ addComponents, config }) {
+			} );
+		} ),
+		plugin( function ( { addComponents, config } ) {
 			const screenReaderText = {
 				'.screen-reader-text': {
 					clip: 'rect(1px, 1px, 1px, 1px)',
@@ -142,16 +142,16 @@ module.exports = {
 					whiteSpace: 'nowrap',
 					width: '1px',
 					'&:hover,&:active,&:focus': {
-						backgroundColor: config('theme.colors.black'),
+						backgroundColor: config( 'theme.colors.black' ),
 						clip: 'auto',
-						color: config('theme.colors.white'),
+						color: config( 'theme.colors.white' ),
 						display: 'block',
-						fontSize: config('theme.fontSize.base'),
-						fontWeight: config('theme.fontWeight.medium'),
+						fontSize: config( 'theme.fontSize.base' ),
+						fontWeight: config( 'theme.fontWeight.medium' ),
 						height: 'auto',
 						left: '5px',
 						lineHeight: 'normal',
-						padding: config('theme.spacing.8'),
+						padding: config( 'theme.spacing.8' ),
 						textDecoration: 'none',
 						top: '5px',
 						width: 'auto',
@@ -160,9 +160,9 @@ module.exports = {
 				},
 			};
 
-			addComponents(screenReaderText, {
-				variants: ['hover', 'active', 'focus'],
-			});
-		}),
+			addComponents( screenReaderText, {
+				variants: [ 'hover', 'active', 'focus' ],
+			} );
+		} ),
 	],
 };

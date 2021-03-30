@@ -5,7 +5,11 @@
  */
 
 // Make sure everything is loaded first.
-if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
+if (
+	( 'complete' === document.readyState ||
+		'loading' !== document.readyState ) &&
+	! document.documentElement.doScroll
+) {
 	wdsModals();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsModals );
@@ -14,8 +18,8 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 /**
  * Fire off our modal functions.
  *
- * @since January 31, 2020
  * @author Corey Collins
+ * @since January 31, 2020
  */
 function wdsModals() {
 	const modalTrigger = document.querySelectorAll( '.modal-trigger' ),
@@ -37,16 +41,17 @@ function wdsModals() {
 	/**
 	 * Open a modal when we trigger it.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function openModal( event ) {
 		const thisTarget = event.target,
 			thisModalTarget = thisTarget.getAttribute( 'data-target' ),
 			thisModal = document.querySelector( thisModalTarget ),
-			focusableChildren = thisModal.querySelectorAll( 'a, input, button' );
+			focusableChildren = thisModal.querySelectorAll(
+				'a, input, button'
+			);
 
 		pageBody.classList.add( 'modal-open' );
 		thisModal.classList.add( 'modal-open' );
@@ -60,10 +65,9 @@ function wdsModals() {
 	/**
 	 * Close a modal when we hit the close button.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function closeModalOnCloseButton( event ) {
 		const thisTarget = event.target,
@@ -86,17 +90,18 @@ function wdsModals() {
 	/**
 	 * Close the modal when we hit the escape key.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function closeOnEscape( event ) {
 		if ( ! pageBody.classList.contains( 'modal-open' ) ) {
 			return;
 		}
 
-		const currentlyOpenModal = document.querySelector( '.modal.modal-open' ),
+		const currentlyOpenModal = document.querySelector(
+				'.modal.modal-open'
+			),
 			modalIframe = currentlyOpenModal.querySelector( 'iframe' );
 
 		if ( 27 === event.keyCode ) {
@@ -115,10 +120,9 @@ function wdsModals() {
 	/**
 	 * Close the modal when we hit outside of the modal area.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function closeOnClick( event ) {
 		const clickedElement = event.target;

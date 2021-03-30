@@ -5,7 +5,11 @@
  */
 
 // Make sure everything is loaded first.
-if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
+if (
+	( 'complete' === document.readyState ||
+		'loading' !== document.readyState ) &&
+	! document.documentElement.doScroll
+) {
 	wdsOffCanvas();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsOffCanvas );
@@ -14,8 +18,8 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 /**
  * Kick off our off canvas functions.
  *
- * @since January 31, 2020
  * @author Corey Collins
+ * @since January 31, 2020
  */
 function wdsOffCanvas() {
 	const offCanvasScreen = document.querySelector( '.off-canvas-screen' );
@@ -24,7 +28,9 @@ function wdsOffCanvas() {
 		return;
 	}
 
-	const offCanvasContainer = document.querySelector( '.off-canvas-container' ),
+	const offCanvasContainer = document.querySelector(
+			'.off-canvas-container'
+		),
 		offCanvasOpen = document.querySelector( '.off-canvas-open' );
 
 	offCanvasOpen.addEventListener( 'click', toggleOffCanvas );
@@ -34,10 +40,9 @@ function wdsOffCanvas() {
 	/**
 	 * Close everything when we hit the escape key.
 	 *
-	 * @param {Object} event The event trigger.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The event trigger.
 	 */
 	function closeOnEscape( event ) {
 		if ( 27 === event.keyCode ) {
@@ -48,8 +53,8 @@ function wdsOffCanvas() {
 	/**
 	 * Handle closing the off-canvas overlay.
 	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
 	 */
 	function closeOffCanvas() {
 		offCanvasContainer.classList.remove( 'is-visible' );
@@ -63,8 +68,8 @@ function wdsOffCanvas() {
 	/**
 	 * Toggle the display of the off-canvas overlay.
 	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
 	 */
 	function toggleOffCanvas() {
 		if ( 'true' === offCanvasOpen.getAttribute( 'aria-expanded' ) ) {
@@ -77,8 +82,8 @@ function wdsOffCanvas() {
 	/**
 	 * Handle opening the off-canvas overlay.
 	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
 	 */
 	function openOffCanvas() {
 		offCanvasContainer.classList.add( 'is-visible' );

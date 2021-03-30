@@ -1,16 +1,26 @@
 /**
- * Accordion block functionality
+ * File accordion.js
  *
- * @since January 31, 2020
+ * Deal with ACF Block accordions.
+ */
+
+/**
+ * Accordion block functionality.
+ *
  * @author Shannon MacMillan, Corey Collins
+ * @since January 31, 2020
  */
 function wdsAccordion() {
 	const accordionItems = document.querySelectorAll( '.accordion-item' ),
-		accordionItemContent = document.querySelectorAll( '.accordion-item-content' );
+		accordionItemContent = document.querySelectorAll(
+			'.accordion-item-content'
+		);
 
 	// Loop through each accordion on the page and add a listener for its header.
 	accordionItems.forEach( ( accordion ) => {
-		const accordionHeader = accordion.querySelector( '.accordion-item-header' );
+		const accordionHeader = accordion.querySelector(
+			'.accordion-item-header'
+		);
 
 		accordionHeader.addEventListener( 'click', toggleAccordion );
 	} );
@@ -21,18 +31,18 @@ function wdsAccordion() {
 	/**
 	 * Handle toggling the accordion.
 	 *
-	 * @param {Object} event The targeted element.
-	 *
-	 * @since January 31, 2020
 	 * @author Shannon MacMillan, Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The targeted element.
 	 */
 	function toggleAccordion( event ) {
-		accordionItemContent.forEach( function( content ) {
-			const targetParent = event.target.parentNode.closest( '.accordion-item-header' );
+		accordionItemContent.forEach( function ( content ) {
+			const targetParent = event.target.parentNode.closest(
+				'.accordion-item-header'
+			);
 
 			// If we're clicking on this accordion...
 			if ( content.previousElementSibling === targetParent ) {
-
 				// If it's already opened, close it. Otherwise, open it!
 				if ( 'false' === content.getAttribute( 'aria-hidden' ) ) {
 					content.setAttribute( 'aria-hidden', 'true' );
@@ -50,11 +60,12 @@ function wdsAccordion() {
 }
 
 /**
- * Checks for a hash link in the URL and if one exists and matches an accordion, opens that accordion item.
+ * Checks for a hash link in the URL.
+ * If one exists and matches an accordion,
+ * opens that accordion item.
  *
- * @since January 31, 2020
  * @author Shannon MacMillan, Corey Collins
- *
+ * @since January 31, 2020
  * @return {boolean} Early bail of no hash.
  */
 function openHashLink() {
@@ -64,14 +75,19 @@ function openHashLink() {
 
 	const hashAccordionItem = document.querySelector( window.location.hash ),
 		hashAccordionItemHeader = hashAccordionItem.previousElementSibling,
-		hashAccordionItemButton = hashAccordionItemHeader.querySelector( '.accordion-item-toggle' );
+		hashAccordionItemButton = hashAccordionItemHeader.querySelector(
+			'.accordion-item-toggle'
+		);
 
 	hashAccordionItemButton.click();
 }
 
 // Handles ACF + Goots backend integration.
 if ( window.acf ) {
-	window.acf.addAction( 'render_block_preview/type=wds-accordion', wdsAccordion );
+	window.acf.addAction(
+		'render_block_preview/type=wds-accordion',
+		wdsAccordion
+	);
 }
 
 // Fire off our function.

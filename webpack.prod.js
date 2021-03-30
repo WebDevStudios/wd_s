@@ -1,14 +1,14 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.config.js');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const { merge } = require( 'webpack-merge' );
+const common = require( './webpack.config.js' );
+const CssMinimizerPlugin = require( 'css-minimizer-webpack-plugin' );
+const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 
 /**
  * Webpack config (Production mode)
  *
  * @see https://webpack.js.org/guides/production/
  */
-module.exports = merge(common, {
+module.exports = merge( common, {
 	mode: 'production',
 	plugins: [
 		/**
@@ -16,7 +16,7 @@ module.exports = merge(common, {
 		 *
 		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
 		 */
-		new ImageminPlugin({
+		new ImageminPlugin( {
 			disable: false,
 			test: /\.(jpe?g|png|gif|svg)$/i,
 			optipng: {
@@ -37,7 +37,7 @@ module.exports = merge(common, {
 					},
 				],
 			},
-		}),
+		} ),
 	],
 	optimization: {
 		minimize: true,
@@ -47,7 +47,7 @@ module.exports = merge(common, {
 			 *
 			 * @see https://www.npmjs.com/package/css-minimizer-webpack-plugin
 			 */
-			new CssMinimizerPlugin({
+			new CssMinimizerPlugin( {
 				sourceMap: false,
 				parallel: true,
 				minimizerOptions: {
@@ -58,7 +58,7 @@ module.exports = merge(common, {
 						},
 					],
 				},
-			}),
+			} ),
 		],
 	},
-});
+} );
