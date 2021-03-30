@@ -14,7 +14,7 @@ Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Bloc
 
 Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also easy! Add the [WDS ACF Blocks](https://github.com/WebDevStudios/wds-acf-blocks) plugin for a whole set of blocks built with ACF including: Accordion, Carousel, Call To Action, Fifty/Fifty, Hero, Recent Posts, and Related Posts.
 
-<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. Your Success is Our Mission."></a>
+[![WebDevStudios. Your Success is Our Mission.](https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png)](https://webdevstudios.com/contact/)
 
 ## Getting Started
 
@@ -39,23 +39,23 @@ You'll need to change all instances of the names: `_s`.
 - Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
 - Search for: `_s_` and replace with: `project-name_` to capture all the function names
 - Search for: `Text Domain: _s` and replace with: `Text Domain: project-name` in style.css
-- Search for (and include the leading space): <code>&nbsp;\_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
+- Search for (and include the leading space): ` _s` and replace with: ` Project Name` (with a space before it) to capture DocBlocks
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 - Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 - Edit the theme information in the header of style.scss to meet your needs
 
 ## Installation
 
-1. From the command line, change directories to your new theme directory:
+From the command line, change directories to your new theme directory:
 
 ```bash
 cd /wp-content/themes/your-theme
 ```
 
-2. Install theme dependencies and trigger an initial build:
+Install theme dependencies and trigger an initial build:
 
 ```bash
-npm i
+npm i --legacy-peer-deps
 ```
 
 ### NPM Scripts
@@ -70,4 +70,6 @@ From the command line, type any of the following to perform an action:
 
 ## Contributing and Support
 
-Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/main/CONTRIBUTING.md) before submitting a pull request.
+
+wd_s is free software, and is released under the terms of the GNU General Public License version 2 or any later version. See [LICENSE.md](https://github.com/WebDevStudios/wd_s/blob/main/LICENSE.md) for complete license.
