@@ -3,7 +3,7 @@ const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 const CopyPlugin = require('copy-webpack-plugin');
 
 /**
- * Webpack config.
+ * Webpack config (Development mode)
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-scripts/#provide-your-own-webpack-config
  */

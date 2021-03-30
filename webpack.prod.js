@@ -4,7 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 /**
- * Webpack Config (Production)
+ * Webpack config (Production mode)
  *
  * @see https://webpack.js.org/guides/production/
  */
