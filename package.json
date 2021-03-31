@@ -40,7 +40,7 @@
 		"webpack-merge": "^5.7.3"
 	},
 	"scripts": {
-		"build": "wp-scripts build --config webpack.prod.js && npm run icons",
+		"build": "wp-scripts build --config webpack.prod.js && npm run icons && npm run pot",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
 		"clean": "rimraf build",
@@ -58,6 +58,7 @@
 		"lint:php": "composer run-script lint",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
+		"pot": "composer run-script pot",
 		"start": "npm run clean && wp-scripts start",
 		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files \"build/*.*, **/*.html, **/*.php, !node_modules/**/*.html\"",
 		"test:e2e": "wp-scripts test-e2e",

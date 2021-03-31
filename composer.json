@@ -22,7 +22,8 @@
 		"format": "@php ./vendor/bin/phpcbf -p -v . --standard=.phpcs.xml.dist --extensions=php --report-summary --report-source --ignore='*/node_modules/*,*/vendor/*,*/dist/*'",
 		"lint:php": "@php ./vendor/bin/phpcs -p -s -n . --standard=.phpcs.xml.dist --extensions=php -n --colors --ignore='*/node_modules/*,*/vendor/*,*/dist/*'",
 		"compat": "@php ./vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.4 --ignore='.github/*,vendor/*' --warning-severity=8 -d memory_limit=4096M || true || exit",
-		"debug:phpcs": "which phpcs && phpcs -i"
+		"debug:phpcs": "which phpcs && phpcs -i",
+		"pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
 	},
 	"config": {
 		"platform": {
