@@ -6,7 +6,6 @@ module.exports = {
 		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
-	darkMode: 'class',
 	theme: {
 		fontSize: {
 			'root-em': '16px',
