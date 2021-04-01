@@ -6,6 +6,7 @@ pre-commit:
         php:
             glob: '*.php'
             run: composer run-script lint {staged_files}
+            run: composer run-script format {staged_files}
         styles:
             glob: '*.{css,scss}'
             run: npm run lint:css:fix {staged_files}
