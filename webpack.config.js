@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
+const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
 
 /**
  * Webpack config (Development mode)
@@ -9,7 +10,6 @@ const CopyPlugin = require( 'copy-webpack-plugin' );
  */
 module.exports = {
 	...defaultConfig,
-	mode: 'development',
 	plugins: [
 		...defaultConfig.plugins,
 
@@ -31,6 +31,17 @@ module.exports = {
 					context: path.resolve( process.cwd(), 'src/images/icons' ),
 				},
 			],
+		} ),
+
+		/**
+		 * Generate an SVG sprite.
+		 *
+		 * @see https://github.com/cascornelissen/svg-spritemap-webpack-plugin
+		 */
+		new SVGSpritemapPlugin( 'src/images/icons/*.svg', {
+			output: {
+				filename: 'images/icons/sprite.svg',
+			},
 		} ),
 	],
 };
