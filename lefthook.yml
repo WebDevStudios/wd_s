@@ -9,11 +9,12 @@ pre-commit:
             run: composer run-script format {staged_files}
         styles:
             glob: '*.{css,scss}'
-            run: npm run lint:css:fix {staged_files}
+            run: npm run lint:css {staged_files}
+            run: npm run format:css {staged_files}
         javascript:
             glob: '*.{js,ts,tsx}'
+            run: npm run lint:js {staged_files}
             run: npm run format:js {staged_files}
-            run: npm run lint:js:fix {staged_files}
         markdown:
             glob: '*.{md}'
             run: npm run lint:md:docs {staged_files}
