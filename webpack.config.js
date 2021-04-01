@@ -42,6 +42,9 @@ module.exports = {
 			output: {
 				filename: 'images/icons/sprite.svg',
 			},
+			sprite: {
+				prefix: false,
+			},
 		} ),
 	],
 };
