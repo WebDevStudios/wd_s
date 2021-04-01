@@ -61,8 +61,6 @@
 		"packages-update": "wp-scripts packages-update",
 		"start": "cross-env NODE_ENV=development run-s clean && wp-scripts start",
 		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
-		"test:e2e": "wp-scripts test-e2e",
-		"test:unit": "wp-scripts test-unit-js",
 		"postinstall": "composer install --quiet && npm run build",
 		"watch": "run-p start sync"
 	}
