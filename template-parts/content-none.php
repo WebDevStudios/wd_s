@@ -22,11 +22,11 @@
 					wp_kses(
 						/* translators: the edit post url */
 						esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ),
-						array(
-							'a' => array(
-								'href' => array(),
-							),
-						)
+						[
+							'a' => [
+								'href' => [],
+							],
+						]
 					),
 					esc_url( admin_url( 'post-new.php' ) )
 				);

@@ -13,17 +13,17 @@
  * @param array $args The scaffolding defaults.
  * @author Greg Rickaby Carrie Forde
  */
-function _s_display_scaffolding_section( $args = array() ) {
+function _s_display_scaffolding_section( $args = [] ) {
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'title'       => '',       // The scaffolding title.
 		'description' => '',       // The scaffolding description.
 		'usage'       => '',       // The template tag or markup needed to display the scaffolding.
-		'parameters'  => array(),  // Does the scaffolding have params? Like $args?
-		'arguments'   => array(),  // If the scaffolding has params, what are the $args?
+		'parameters'  => [],  // Does the scaffolding have params? Like $args?
+		'arguments'   => [],  // If the scaffolding has params, what are the $args?
 		'output'      => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
-	);
+	];
 
 	// Parse arguments.
 	$args = wp_parse_args( $args, $defaults );
@@ -108,8 +108,8 @@ function _s_scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge(
 		wp_kses_allowed_html( 'post' ),
-		array(
-			'svg'    => array(
+		[
+			'svg'    => [
 				'aria-hidden' => true,
 				'class'       => true,
 				'id'          => true,
@@ -120,40 +120,40 @@ function _s_scaffolding_allowed_html() {
 				'width'       => true,
 				'use'         => true,
 				'path'        => true,
-			),
-			'use'    => array(
+			],
+			'use'    => [
 				'xlink:href' => true,
-			),
-			'title'  => array(
+			],
+			'title'  => [
 				'id' => true,
-			),
-			'desc'   => array(
+			],
+			'desc'   => [
 				'id' => true,
-			),
-			'select' => array(
+			],
+			'select' => [
 				'class' => true,
-			),
-			'option' => array(
+			],
+			'option' => [
 				'option'   => true,
 				'value'    => true,
 				'selected' => true,
 				'disabled' => true,
-			),
-			'input'  => array(
+			],
+			'input'  => [
 				'type'        => true,
 				'name'        => true,
 				'value'       => true,
 				'placeholder' => true,
 				'class'       => true,
-			),
-			'iframe' => array(
-				'src'             => array(),
-				'height'          => array(),
-				'width'           => array(),
-				'frameborder'     => array(),
-				'allowfullscreen' => array(),
-			),
-		)
+			],
+			'iframe' => [
+				'src'             => [],
+				'height'          => [],
+				'width'           => [],
+				'frameborder'     => [],
+				'allowfullscreen' => [],
+			],
+		]
 	);
 	return $allowed_tags;
 }
@@ -164,14 +164,14 @@ function _s_scaffolding_allowed_html() {
  * @param array $args The array of colors or fonts.
  * @author Carrie Forde
  */
-function _s_display_global_scaffolding_section( $args = array() ) {
+function _s_display_global_scaffolding_section( $args = [] ) {
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'global_type' => '',      // Can be 'colors' or 'fonts'.
 		'title'       => '',      // Give the section a title.
-		'arguments'   => array(), // Use key => value pairs to pass colors or fonts.
-	);
+		'arguments'   => [], // Use key => value pairs to pass colors or fonts.
+	];
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

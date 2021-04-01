@@ -91,7 +91,7 @@ function _s_entry_footer() {
  *
  * @author WDS
  */
-function _s_display_svg( $args = array() ) {
+function _s_display_svg( $args = [] ) {
 	echo _s_get_svg( $args ); // WPCS XSS Ok.
 }
 
@@ -102,7 +102,7 @@ function _s_display_svg( $args = array() ) {
  * @author WDS
  * @return string
  */
-function _s_get_svg( $args = array() ) {
+function _s_get_svg( $args = [] ) {
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
@@ -115,7 +115,7 @@ function _s_get_svg( $args = array() ) {
 	}
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'icon'         => '',
 		'title'        => '',
 		'desc'         => '',
@@ -124,7 +124,7 @@ function _s_get_svg( $args = array() ) {
 		'stroke-width' => '',
 		'height'       => '',
 		'width'        => '',
-	);
+	];
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -208,13 +208,13 @@ function _s_get_svg( $args = array() ) {
  * @author WDS
  * @return string
  */
-function _s_get_the_title( $args = array() ) {
+function _s_get_the_title( $args = [] ) {
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'length' => 12,
 		'more'   => '...',
-	);
+	];
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -231,14 +231,14 @@ function _s_get_the_title( $args = array() ) {
  * @author WDS
  * @return string
  */
-function _s_get_the_excerpt( $args = array() ) {
+function _s_get_the_excerpt( $args = [] ) {
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'length' => 20,
 		'more'   => '...',
 		'post'   => '',
-	);
+	];
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -275,7 +275,7 @@ function _s_display_social_network_links() {
 
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
-	$social_networks = array( 'facebook', 'instagram', 'linkedin', 'twitter' );
+	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
 
 	?>
 	<ul class="social-icons flex">
@@ -293,11 +293,11 @@ function _s_display_social_network_links() {
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
 						_s_display_svg(
-							array(
+							[
 								'icon'   => $network . '-square',
 								'width'  => '24',
 								'height' => '24',
-							)
+							]
 						);
 						?>
 						<span class="screen-reader-text">
@@ -326,7 +326,7 @@ function _s_display_social_network_links() {
  * @return void.
  * @author Corey Collins
  */
-function _s_display_numeric_pagination( $args = array(), $query = null ) {
+function _s_display_numeric_pagination( $args = [], $query = null ) {
 
 	if ( ! $query ) {
 		global $wp_query;
@@ -337,12 +337,12 @@ function _s_display_numeric_pagination( $args = array(), $query = null ) {
 	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
 	// Set defaults.
-	$defaults = array(
+	$defaults = [
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
 		'mid_size'  => 4,
 		'total'     => $total_pages,
-	);
+	];
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -389,7 +389,7 @@ function _s_display_mobile_menu() {
 	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		// Mobile menu args.
-		$mobile_args = array(
+		$mobile_args = [
 			'theme_location'  => $menu_location,
 			'container'       => 'div',
 			'container_class' => 'off-canvas-content',
@@ -398,7 +398,7 @@ function _s_display_mobile_menu() {
 			'menu_class'      => 'mobile-menu',
 			'fallback_cb'     => false,
 			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		);
+		];
 
 		// Display the mobile menu.
 		wp_nav_menu( $mobile_args );

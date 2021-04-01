@@ -49,11 +49,11 @@ if ( ! function_exists( '_s_setup' ) ) :
 
 		// Register navigation menus.
 		register_nav_menus(
-			array(
+			[
 				'primary' => esc_html__( 'Primary Menu', '_s' ),
 				'footer'  => esc_html__( 'Footer Menu', '_s' ),
 				'mobile'  => esc_html__( 'Mobile Menu', '_s' ),
-			)
+			]
 		);
 
 		/**
@@ -62,13 +62,13 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 */
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
+			]
 		);
 
 		// Set up the WordPress core custom background feature.
@@ -76,23 +76,23 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'custom-background',
 			apply_filters(
 				'_s_custom_background_args',
-				array(
+				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
-				)
+				]
 			)
 		);
 
 		// Custom logo support.
 		add_theme_support(
 			'custom-logo',
-			array(
+			[
 				'height'      => 250,
 				'width'       => 500,
 				'flex-height' => true,
 				'flex-width'  => true,
-				'header-text' => array( 'site-title', 'site-description' ),
-			)
+				'header-text' => [ 'site-title', 'site-description' ],
+			]
 		);
 
 		// Add theme support for selective refresh for widgets.
@@ -104,28 +104,28 @@ if ( ! function_exists( '_s_setup' ) ) :
 		// Gutenberg defaults for font sizes.
 		add_theme_support(
 			'editor-font-sizes',
-			array(
-				array(
+			[
+				[
 					'name' => __( 'Small', '_s' ),
 					'size' => 12,
 					'slug' => 'small',
-				),
-				array(
+				],
+				[
 					'name' => __( 'Normal', '_s' ),
 					'size' => 16,
 					'slug' => 'normal',
-				),
-				array(
+				],
+				[
 					'name' => __( 'Large', '_s' ),
 					'size' => 36,
 					'slug' => 'large',
-				),
-				array(
+				],
+				[
 					'name' => __( 'Huge', '_s' ),
 					'size' => 50,
 					'slug' => 'huge',
-				),
-			)
+				],
+			]
 		);
 
 		// Gutenberg editor styles support.
@@ -160,14 +160,14 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
 function _s_widgets_init() {
 
 	// Define sidebars.
-	$sidebars = array(
+	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
-	);
+	];
 
 	// Loop through each sidebar and register.
 	foreach ( $sidebars as $sidebar_id => $sidebar_name ) {
 		register_sidebar(
-			array(
+			[
 				'name'          => $sidebar_name,
 				'id'            => $sidebar_id,
 				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
@@ -175,7 +175,7 @@ function _s_widgets_init() {
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			)
+			]
 		);
 	}
 

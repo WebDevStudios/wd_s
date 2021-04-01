@@ -40,7 +40,7 @@ add_action( 'customize_register', '_s_include_custom_controls', -999 );
  * @author WDS
  */
 function _s_customize_scripts() {
-	wp_enqueue_script( '_s-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', array( 'jquery', 'customize-preview' ), '1.0.0', true );
+	wp_enqueue_script( '_s-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', [ 'jquery', 'customize-preview' ], '1.0.0', true );
 }
 add_action( 'customize_preview_init', '_s_customize_scripts' );
 
@@ -55,15 +55,15 @@ add_action( 'customize_preview_init', '_s_customize_scripts' );
 function _s_selective_refresh_support( $wp_customize ) {
 
 	// The <div> classname to append edit icon too.
-	$settings = array(
+	$settings = [
 		'blogname'          => '.site-title a',
 		'blogdescription'   => '.site-description',
 		'_s_copyright_text' => '.site-info',
-	);
+	];
 
 	// Loop through, and add selector partials.
 	foreach ( (array) $settings as $setting => $selector ) {
-		$args = array( 'selector' => $selector );
+		$args = [ 'selector' => $selector ];
 		$wp_customize->selective_refresh->add_partial( $setting, $args );
 	}
 }
@@ -82,13 +82,13 @@ add_action( 'customize_register', '_s_selective_refresh_support' );
 function _s_live_preview_support( $wp_customize ) {
 
 	// Settings to apply live preview to.
-	$settings = array(
+	$settings = [
 		'blogname',
 		'blogdescription',
 		'header_textcolor',
 		'background_image',
 		'_s_copyright_text',
-	);
+	];
 
 	// Loop through and add the live preview to each setting.
 	foreach ( (array) $settings as $setting_name ) {
