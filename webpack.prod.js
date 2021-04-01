@@ -9,7 +9,6 @@ const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
  * @see https://webpack.js.org/guides/production/
  */
 module.exports = merge( common, {
-	mode: 'production',
 	plugins: [
 		/**
 		 * Uses Imagemin to compress source images.
@@ -19,6 +18,9 @@ module.exports = merge( common, {
 		new ImageminPlugin( {
 			disable: false,
 			test: /\.(jpe?g|png|gif|svg)$/i,
+			gifsicle: {
+				interlaced: true,
+			},
 			optipng: {
 				optimizationLevel: 3,
 			},
