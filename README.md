@@ -58,15 +58,17 @@ Install theme dependencies and trigger an initial build:
 npm i --legacy-peer-deps
 ```
 
-### NPM Scripts
+### Development
 
 From the command line, type any of the following to perform an action:
 
-`npm run build` - Compile and build all assets.
-
-`npm run start` - Automatically handle changes to CSS, JS, SVGs, and image sprites.
-
-`npm run start:sync` - Automatically handle changes to PHP, CSS, JS, SVGs, and image sprites – and see the changes refresh in your browser via Browsersync!
+Command | Action
+:- | :-
+`npm run watch` | Builds assets and starts Live Reload and Browsersync servers
+`npm run start` | Builds assets and starts Live Reload server
+`npm run build` | Builds production-ready assets for a deployment
+`npm run lint` | Check all CSS, JS, MD, and PHP files for errors
+`npm run format` | Fix all CSS, JS, and PHP formatting errors automatically
 
 ## Contributing and Support
 
