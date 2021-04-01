@@ -155,7 +155,9 @@ function _s_include_svg_icons() {
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
+		echo '<div class="svg-sprite-wrapper">';
 		require_once $svg_icons;
+		echo '</div>';
 	}
 }
 add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
