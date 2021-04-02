@@ -4,38 +4,31 @@
 *,
 ::after,
 ::before {
-
 	@apply box-border break-words;
 
 	word-wrap: break-word;
 }
 
 pre {
-
 	@apply overflow-auto;
 }
-
 
 //-----------------------------------------
 // Theme Elements
 //-----------------------------------------
 .button {
-
 	@apply p-16;
 }
 
 .container {
-
 	@apply px-16;
 
 	@screen desktop-large {
-
 		@apply px-0;
 	}
 }
 
 .site-main {
-
 	@apply my-48;
 }
 
@@ -47,6 +40,5 @@ address,
 pre,
 blockquote,
 iframe {
-
 	@apply mb-16;
 }

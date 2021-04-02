@@ -2,80 +2,65 @@
 // Table Styles
 //--------------------------------------------------------------
 table {
-
 	@apply border-0 border-collapse p-0 w-full;
 
 	border-spacing: 0;
 
 	@screen wp-admin-bar {
-
 		@apply border border-black border-solid;
 	}
 
 	thead {
-
 		@apply hidden;
 
 		@screen wp-admin-bar {
-
 			@apply table-row-group;
 		}
 	}
 
 	th,
 	td {
-
 		@apply p-8 text-center;
 
 		@screen wp-admin-bar {
-
 			@apply table-cell;
 		}
 	}
 
 	td {
-
 		@apply block text-base text-center border border-black border-solid;
 
 		@screen wp-admin-bar {
-
 			@apply table-cell;
 		}
 
 		&:last-child {
-
 			@apply border-b border-black border-solid;
 		}
 
 		&::before {
-
 			@apply block font-semibold uppercase;
 
-			content: attr(data-label);
+			content: attr( data-label );
 
 			@screen wp-admin-bar {
-
 				@apply hidden;
 			}
 		}
 	}
 
 	th {
-
 		@apply text-base tracking-widest uppercase border border-solid border-black;
 
 		@screen phone {
-
 			@apply table-cell;
 		}
 	}
 
 	tr {
-
 		@apply block mb-16;
 
 		@screen wp-admin-bar {
-
 			@apply table-row mb-0;
 		}
 	}
