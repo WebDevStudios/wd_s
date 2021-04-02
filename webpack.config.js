@@ -2,6 +2,7 @@ const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
+const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 
 /**
  * Webpack config (Development mode)
@@ -44,6 +45,25 @@ module.exports = {
 			},
 			sprite: {
 				prefix: false,
+			},
+		} ),
+
+		/**
+		 * Uses Imagemin to compress SVG.
+		 *
+		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
+		 */
+		new ImageminPlugin( {
+			svgo: {
+				plugins: [
+					{ removeViewBox: false },
+					{ removeDimensions: true },
+					{
+						removeAttrs: {
+							attrs: '*:(stroke|fill):((?!^none$).)*',
+						},
+					},
+				],
 			},
 		} ),
 	],
