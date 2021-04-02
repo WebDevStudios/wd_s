@@ -2,6 +2,7 @@ const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 
 /**
@@ -49,7 +50,7 @@ module.exports = {
 		} ),
 
 		/**
-		 * Uses Imagemin to compress SVG.
+		 * Uses Imagemin to clean SVGs.
 		 *
 		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
 		 */
@@ -66,5 +67,12 @@ module.exports = {
 				],
 			},
 		} ),
+
+		/**
+		 * Clean build directory.
+		 *
+		 * @see https://www.npmjs.com/package/clean-webpack-plugin
+		 */
+		new CleanWebpackPlugin(),
 	],
 };
