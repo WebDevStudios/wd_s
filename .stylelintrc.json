@@ -5,7 +5,6 @@
 		"declaration-colon-newline-after": null,
 		"function-parentheses-space-inside": null,
 		"no-descending-specificity": null,
-		"rule-empty-line-before": null,
 		"selector-pseudo-class-parentheses-space-inside": null,
 		"string-quotes": "single",
 		"scss/at-rule-no-unknown": [
