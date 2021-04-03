@@ -8,7 +8,7 @@ pre-commit:
             run: ./vendor/bin/phpcs -p -v {staged_files} --standard=.phpcs.xml.dist
         styles:
             glob: '*.{css,scss}'
-            run: npx stylelint {staged_files}
+            run: npx stylelint {staged_files} -f verbose
         javascript:
             glob: '*.{js,ts,tsx}'
             run: npx eslint {staged_files}
@@ -18,6 +18,3 @@ pre-commit:
         other:
             glob: '*.{yml,json,html}'
             run: npx prettier {staged_files} --write
-        packagejson:
-            glob: 'package.json'
-            run: npm run lint:pkg-json
