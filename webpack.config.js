@@ -4,6 +4,7 @@ const CopyPlugin = require( 'copy-webpack-plugin' );
 const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
+const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 
 /**
  * Webpack config (Development mode)
@@ -12,6 +13,42 @@ const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
  */
 module.exports = {
 	...defaultConfig,
+	module: {
+		/**
+		 * Override WordPress default config for styles and SVG's.
+		 */
+		rules: [
+			{
+				test: /\.(sa|sc|c)ss$/,
+				exclude: '/node_modules',
+				use: [
+					MiniCSSExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
+				test: /\.svg$/,
+				use: [ '@svgr/webpack', 'url-loader' ],
+			},
+		],
+	},
 	plugins: [
 		...defaultConfig.plugins,
 
