@@ -14,9 +14,6 @@ const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 module.exports = {
 	...defaultConfig,
 	module: {
-		/**
-		 * Override WordPress default config for styles and SVG's.
-		 */
 		rules: [
 			{
 				test: /\.(sa|sc|c)ss$/,
