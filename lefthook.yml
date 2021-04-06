@@ -5,7 +5,7 @@ pre-commit:
     commands:
         php:
             glob: '*.php'
-            run: ./vendor/bin/phpcs -p -v {staged_files} --standard=.phpcs.xml.dist
+            run: ./vendor/bin/phpcs -p -s -v {staged_files} --standard=phpcs.xml.dist
         styles:
             glob: '*.{css,scss}'
             run: npx stylelint {staged_files} -f verbose
