@@ -1,7 +1,6 @@
 const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
-	mode: 'jit',
 	purge: {
 		content: [ './**/*.php', './src/components/*.js' ],
 		layers: [ 'utilities' ],
