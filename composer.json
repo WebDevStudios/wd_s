@@ -11,18 +11,14 @@
 	],
 	"require": {},
 	"require-dev": {
-		"phpcompatibility/php-compatibility": "^9.3",
-		"webdevstudios/php-coding-standards": "^1.3"
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"wp-coding-standards/wpcs": "~2.3.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.1"
 	},
 	"scripts": {
-		"lint": [
-			"@composer run compat",
-			"@composer run lint:php"
-		],
-		"format": "@php ./vendor/bin/phpcbf -p -v . --standard=.phpcs.xml.dist --extensions=php --report-summary --report-source --ignore='*/node_modules/*,*/vendor/*,*/dist/*'",
-		"lint:php": "@php ./vendor/bin/phpcs -p -s -n . --standard=.phpcs.xml.dist --extensions=php -n --colors --ignore='*/node_modules/*,*/vendor/*,*/dist/*'",
-		"compat": "@php ./vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.4 --ignore='.github/*,vendor/*' --warning-severity=8 -d memory_limit=4096M || true || exit",
-		"debug:phpcs": "which phpcs && phpcs -i",
+		"compat": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=phpcompat.xml.dist --report=summary,source",
+		"format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf --standard=phpcs.xml.dist --report=summary,source",
+		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=phpcs.xml.dist --report=summary,source",
 		"pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
 	},
 	"config": {
