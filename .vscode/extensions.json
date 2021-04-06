@@ -6,6 +6,7 @@
 		"editorconfig.editorconfig",
 		"esbenp.prettier-vscode",
 		"snipsnapdev.snipsnap-vscode",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"valeryanm.vscode-phpsab"
 	]
 }
