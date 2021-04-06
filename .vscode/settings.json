@@ -1,6 +1,5 @@
 {
 	"editor.formatOnSave": true,
-	"phpcs.composerJsonPath": "./composer.json",
 	"scss.validate": false,
 	"[javascriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
