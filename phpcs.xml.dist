@@ -2,17 +2,14 @@
 <ruleset name="WordPress Coding Standards">
 	<description>Apply WordPress Coding Standards</description>
 
-	<!-- Only scan PHP files. -->
-	<arg name="extensions" value="php"/>
-
-	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
-	<arg name="cache"/>
-
 	<!-- Set the memory limit to 256M.
 		 For most standard PHP configurations, this means the memory limit will temporarily be raised.
 		 Ref: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#specifying-phpini-settings
 	-->
 	<ini name="memory_limit" value="256M"/>
+
+	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="cache"/>
 
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>
@@ -23,14 +20,24 @@
 	<!-- Show sniff codes in all reports. -->
 	<arg value="ps"/>
 
-	<!-- Only scan the theme. -->
-	<file>./</file>
-
 	<!-- Use WordPress Coding Standards. -->
 	<rule ref="WordPress-Extra">
+		<!-- Sprinkle in WebDevStudios specifc rules and excludes. -->
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 	</rule>
 	<rule ref="WordPress-Docs" />
+
+	<!-- Use WordPress PHP Compatibility. -->
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- WordPress Core currently supports PHP 5.6+. -->
+	<config name="testVersion" value="5.6-"/>
+
+	<!-- Only sniff PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Only sniff the theme. -->
+	<file>./</file>
 
 	<!-- Don't sniff the following directories or file types. -->
 	<exclude-pattern>/build/*</exclude-pattern>
