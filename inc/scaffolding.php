@@ -17,12 +17,12 @@ function _s_display_scaffolding_section( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [
-		'title'       => '',       // The scaffolding title.
-		'description' => '',       // The scaffolding description.
-		'usage'       => '',       // The template tag or markup needed to display the scaffolding.
-		'parameters'  => [],  // Does the scaffolding have params? Like $args?
-		'arguments'   => [],  // If the scaffolding has params, what are the $args?
-		'output'      => '',       // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
+		'title'       => '', // The scaffolding title.
+		'description' => '', // The scaffolding description.
+		'usage'       => '', // The template tag or markup needed to display the scaffolding.
+		'parameters'  => [], // Does the scaffolding have params? Like $args?
+		'arguments'   => [], // If the scaffolding has params, what are the $args?
+		'output'      => '', // Use the template tag or scaffolding HTML markup here. It will be sanitized displayed.
 	];
 
 	// Parse arguments.
@@ -168,8 +168,8 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [
-		'global_type' => '',      // Can be 'colors' or 'fonts'.
-		'title'       => '',      // Give the section a title.
+		'global_type' => '', // Can be 'colors' or 'fonts'.
+		'title'       => '', // Give the section a title.
 		'arguments'   => [], // Use key => value pairs to pass colors or fonts.
 	];
 
@@ -192,7 +192,7 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 			switch ( $args['global_type'] ) :
 
 				case 'colors':
-				?>
+					?>
 
 					<div class="swatch-container display-flex">
 
@@ -202,7 +202,7 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 					foreach ( $colors as $name => $hex ) :
 						$color_var = '$color-' . str_replace( ' ', '-', strtolower( $name ) );
-					?>
+						?>
 
 						<div class="swatch quarter" style="background-color: <?php echo esc_attr( $hex ); ?>;">
 							<header><?php echo esc_html( $name ); ?></header>
@@ -211,10 +211,10 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 					<?php endforeach; ?>
 					</div>
-				<?php
+					<?php
 					break;
 				case 'fonts':
-				?>
+					?>
 
 					<div class="font-container">
 
@@ -224,15 +224,15 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 					foreach ( $fonts as $name => $family ) :
 						$font_var = '$font-' . str_replace( ' ', '-', strtolower( $name ) );
-					?>
+						?>
 
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
 					</div>
-				<?php
+					<?php
 					break;
 				default:
-				?>
+					?>
 			<?php endswitch; ?>
 		</div>
 	</div>

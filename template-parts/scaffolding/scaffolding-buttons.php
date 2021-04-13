@@ -20,5 +20,5 @@
 				'output'      => '<button class="button">Click Me</button>',
 			]
 		);
-	?>
+		?>
 </section>

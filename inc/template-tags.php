@@ -92,7 +92,7 @@ function _s_entry_footer() {
  * @author WDS
  */
 function _s_display_svg( $args = [] ) {
-	echo _s_get_svg( $args ); // WPCS XSS Ok.
+	echo _s_get_svg( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 }
 
 /**
@@ -159,16 +159,16 @@ function _s_get_svg( $args = [] ) {
 
 	<svg
 	<?php
-		echo _s_get_the_content( $height ); // WPCS XSS OK.
-		echo _s_get_the_content( $width ); // WPCS XSS OK.
-		echo _s_get_the_content( $fill ); // WPCS XSS OK.
-		echo _s_get_the_content( $stroke ); // WPCS XSS OK.
-		echo _s_get_the_content( $stroke_width ); // WPCS XSS OK.
+		echo _s_get_the_content( $height ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $fill ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $stroke ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $stroke_width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
 		class="icon <?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
-		echo _s_get_the_content( $aria_hidden ); // WPCS XSS OK.
-		echo _s_get_the_content( $aria_labelledby ); // WPCS XSS OK.
+		echo _s_get_the_content( $aria_hidden ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $aria_labelledby ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
 		role="img">
 		<title id="<?php echo esc_attr( $block_title_id ); ?>">
@@ -178,7 +178,7 @@ function _s_get_svg( $args = [] ) {
 		<?php
 		// Display description if available.
 		if ( $args['desc'] ) :
-		?>
+			?>
 			<desc id="<?php echo esc_attr( $desc_id ); ?>">
 				<?php echo esc_html( $args['desc'] ); ?>
 			</desc>
@@ -187,7 +187,7 @@ function _s_get_svg( $args = [] ) {
 		<?php
 		// Use absolute path in the Customizer so that icons show up in there.
 		if ( is_customize_preview() ) :
-		?>
+			?>
 			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/build/images/icons/sprite.svg#' . esc_html( $args['icon'] ) ) ); ?>"></use>
 		<?php else : ?>
 			<use xlink:href="#<?php echo esc_html( $args['icon'] ); ?>"></use>
@@ -263,7 +263,7 @@ function _s_display_copyright_text() {
 		return false;
 	}
 
-	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs: xss ok.
+	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 }
 
 /**
@@ -288,7 +288,7 @@ function _s_display_social_network_links() {
 
 			// Only display the list item if a URL is set.
 			if ( ! empty( $network_url ) ) :
-			?>
+				?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?> mr-2">
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
@@ -303,12 +303,12 @@ function _s_display_social_network_links() {
 						<span class="screen-reader-text">
 						<?php
 						 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-							echo /* translators: the social network name */ sprintf( esc_html( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) );
+							echo /* translators: the social network name */ sprintf( esc_html__( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) );
 						?>
 						</span>
 					</a>
 				</li><!-- .social-icon -->
-			<?php
+				<?php
 			endif;
 		endforeach;
 		?>
