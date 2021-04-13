@@ -5,6 +5,7 @@ const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
+const ESLintPlugin = require( 'eslint-webpack-plugin' );
 
 /**
  * Webpack config (Development mode)
@@ -119,5 +120,12 @@ module.exports = {
 		 * @see https://www.npmjs.com/package/clean-webpack-plugin
 		 */
 		new CleanWebpackPlugin(),
+
+		/**
+		 * Report JS warnings and errors to the command line.
+		 *
+		 * @see https://www.npmjs.com/package/eslint-webpack-plugin
+		 */
+		new ESLintPlugin(),
 	],
 };
