@@ -1,5 +1,6 @@
 module.exports = {
 	plugins: {
+		stylelint: {},
 		tailwindcss: {},
 		'postcss-preset-env': {
 			autoprefixer: {
@@ -9,6 +10,9 @@ module.exports = {
 			features: {
 				'nesting-rules': true,
 			},
+		},
+		'postcss-reporter': {
+			clearReportedMessages: true,
 		},
 	},
 };
