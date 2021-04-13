@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
 const ESLintPlugin = require( 'eslint-webpack-plugin' );
+const StylelintPlugin = require( 'stylelint-webpack-plugin' );
 
 /**
  * Webpack config (Development mode)
@@ -127,5 +128,12 @@ module.exports = {
 		 * @see https://www.npmjs.com/package/eslint-webpack-plugin
 		 */
 		new ESLintPlugin(),
+
+		/**
+		 * Report css warnings and errors to the command line.
+		 *
+		 * @see https://www.npmjs.com/package/stylelint-webpack-plugin
+		 */
+		new StylelintPlugin(),
 	],
 };
