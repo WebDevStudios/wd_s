@@ -16,7 +16,7 @@
 		"phpcompatibility/phpcompatibility-wp": "^2.1.1"
 	},
 	"scripts": {
-		"compat": "@php ./vendor/bin/phpcs --standard=phpcompat.xml.dist --report=summary,source",
+		"compat": "@php ./vendor/bin/phpcs --standard=phpcs.xml.dist --report=summary,source",
 		"format": "@php ./vendor/bin/phpcbf --standard=phpcs.xml.dist --report=summary,source",
 		"lint": "@php ./vendor/bin/phpcs --standard=phpcs.xml.dist --report=summary,source",
 		"pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
