@@ -24,6 +24,8 @@
 	<rule ref="WordPress-Extra">
 		<!-- Allow array short syntax. -->
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+		<!-- Allow short prefixes. -->
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
 
 	<!-- Use WordPress "Docs" Coding Standards. -->
@@ -40,6 +42,14 @@
 	<rule ref="WordPress.Files.FileName">
 		<properties>
 			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
+		 Multiple valid prefixes can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="_s" />
 		</properties>
 	</rule>
 
