@@ -20,12 +20,36 @@
 	<!-- Show sniff codes in all reports. -->
 	<arg value="ps"/>
 
-	<!-- Use WordPress Coding Standards. -->
+	<!-- Use WordPress "Extra" Coding Standards. -->
 	<rule ref="WordPress-Extra">
-		<!-- Sprinkle in WebDevStudios specifc rules and excludes. -->
+		<!-- Allow array short syntax. -->
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 	</rule>
+
+	<!-- Use WordPress "Docs" Coding Standards. -->
 	<rule ref="WordPress-Docs" />
+
+	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="5.6"/>
+		</properties>
+	</rule>
+
+	<!-- Allow for theme specific exceptions to the file name rules based on the theme hierarchy. -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Verify that the text_domain is set to the desired text-domain.
+		 Multiple valid text domains can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="_s"/>
+		</properties>
+	</rule>
 
 	<!-- Use WordPress PHP Compatibility. -->
 	<rule ref="PHPCompatibilityWP"/>
