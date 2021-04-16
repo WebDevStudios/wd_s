@@ -9,7 +9,9 @@
 			"email": "contact@webdevstudios.com"
 		}
 	],
-	"require": {},
+	"require": {
+		"composer/installers": "^1.10"
+	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"wp-coding-standards/wpcs": "~2.3.0",
