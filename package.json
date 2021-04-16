@@ -41,7 +41,7 @@
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
     "@webdevstudios/npm-scripts": "^1.1.1",
-    "@wordpress/scripts": "^14.0.1",
+    "@wordpress/scripts": "^14.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   },
   "devDependencies": {
