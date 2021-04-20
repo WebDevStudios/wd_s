@@ -1,10 +1,10 @@
 /**
- * Video Playback Script.
+ * File video.js
  *
- * @author Jo Murgel, Corey Collins
+ * Deal with video playback.
  */
 
-( function() {
+( function () {
 	const videoButtons = document.querySelectorAll( '.video-toggle' );
 
 	// Toggle playback on background videos.
@@ -15,10 +15,9 @@
 	/**
 	 * Toggle video playback when the button is pressed.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Jo Murgel, Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function toggleVideoPlayback( event ) {
 		const targetParent = event.target.parentNode,
@@ -32,4 +31,4 @@
 			targetElement.play();
 		}
 	}
-}() );
+} )();

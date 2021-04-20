@@ -5,7 +5,11 @@
  */
 
 // Make sure everything is loaded first.
-if ( ( 'complete' === document.readyState || 'loading' !== document.readyState ) && ! document.documentElement.doScroll ) {
+if (
+	( 'complete' === document.readyState ||
+		'loading' !== document.readyState ) &&
+	! document.documentElement.doScroll
+) {
 	wdsMobileMenu();
 } else {
 	document.addEventListener( 'DOMContentLoaded', wdsMobileMenu );
@@ -14,16 +18,19 @@ if ( ( 'complete' === document.readyState || 'loading' !== document.readyState )
 /**
  * Handle our mobile menus.
  *
- * @since January 31, 2020
  * @author Corey Collins
+ * @since January 31, 2020
  */
 function wdsMobileMenu() {
-	const subMenuParentItem = document.querySelectorAll( '.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children' );
+	const subMenuParentItem = document.querySelectorAll(
+		'.mobile-menu li.menu-item-has-children, .utility-navigation li.menu-item-has-children'
+	);
 
 	subMenuParentItem.forEach( ( subMenuParent ) => {
 		const menuItem = subMenuParent.querySelector( 'a' );
 
-		menuItem.innerHTML += '<button type="button" aria-expanded="false" class="parent-indicator caret-down" aria-label="Open submenu"><span class="down-arrow"></span></button>';
+		menuItem.innerHTML +=
+			'<button type="button" aria-expanded="false" class="parent-indicator caret-down" aria-label="Open submenu"><span class="down-arrow"></span></button>';
 
 		const subMenuTrigger = document.querySelectorAll( '.parent-indicator' );
 
@@ -35,16 +42,17 @@ function wdsMobileMenu() {
 	/**
 	 * Open/Close a submenu.
 	 *
-	 * @param {Object} event The triggered event.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} event The triggered event.
 	 */
 	function toggleSubmenu( event ) {
 		event.preventDefault();
 
 		const targetElement = event.target,
-			targetParent = targetElement.parentNode.closest( '.menu-item-has-children' ),
+			targetParent = targetElement.parentNode.closest(
+				'.menu-item-has-children'
+			),
 			subMenu = targetParent.querySelector( 'ul.sub-menu' );
 
 		closeAllSubmenus( targetParent );
@@ -54,11 +62,10 @@ function wdsMobileMenu() {
 	/**
 	 * Open a submenu.
 	 *
+	 * @author Corey Collins
+	 * @since January 31, 2020
 	 * @param {Object} parent THe parent menu.
 	 * @param {Object} subMenu The submenu.
-	 *
-	 * @since January 31, 2020
-	 * @author Corey Collins
 	 */
 	function maybeOpenSubmenu( parent, subMenu ) {
 		if ( parent.classList.contains( 'is-visible' ) ) {
@@ -68,7 +75,9 @@ function wdsMobileMenu() {
 
 		// Expand the list menu item, and set the corresponding button aria to true.
 		parent.classList.add( 'is-visible' );
-		parent.querySelector( '.parent-indicator' ).setAttribute( 'aria-expanded', true );
+		parent
+			.querySelector( '.parent-indicator' )
+			.setAttribute( 'aria-expanded', true );
 
 		// Slide the menu in.
 		subMenu.classList.add( 'is-visible', 'animated', 'slideInLeft' );
@@ -77,25 +86,27 @@ function wdsMobileMenu() {
 	/**
 	 * Close a submenu.
 	 *
+	 * @author Corey Collins
+	 * @since January 31, 2020
 	 * @param {Object} parent The parent item.
 	 * @param {Object} subMenu The submenu.
-	 *
-	 * @since January 31, 2020
-	 * @author Corey Collins
 	 */
 	function closeSubmenu( parent, subMenu ) {
 		parent.classList.remove( 'is-visible' );
-		parent.querySelector( '.parent-indicator' ).setAttribute( 'aria-expanded', false );
+		parent
+			.querySelector( '.parent-indicator' )
+			.setAttribute( 'aria-expanded', false );
 		subMenu.classList.remove( 'is-visible', 'animated', 'slideInLeft' );
 	}
 
 	/**
-	 * Close all open submenus on the same level/hierarchy as the menu we're trying to open.
+	 * Close all open submenus on the same
+	 * level/hierarchys the menu we're trying
+	 * to open.
 	 *
-	 * @param {Object} targetParent The target parent item.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
+	 * @since January 31, 2020
+	 * @param {Object} targetParent The target parent item.
 	 */
 	function closeAllSubmenus( targetParent ) {
 		const submenuSiblings = getSiblings( targetParent );
@@ -104,27 +115,32 @@ function wdsMobileMenu() {
 			sibling.classList.remove( 'is-visible' );
 
 			if ( sibling.querySelector( '.parent-indicator' ) ) {
-				sibling.querySelector( '.parent-indicator' ).setAttribute( 'aria-expanded', false );
+				sibling
+					.querySelector( '.parent-indicator' )
+					.setAttribute( 'aria-expanded', false );
 			}
 
 			if ( sibling.querySelector( '.sub-menu' ) ) {
-				sibling.querySelector( '.sub-menu' ).classList.remove( 'is-visible', 'animated', 'slideInLeft' );
+				sibling
+					.querySelector( '.sub-menu' )
+					.classList.remove(
+						'is-visible',
+						'animated',
+						'slideInLeft'
+					);
 			}
 		} );
 	}
 
-	/* eslint-disable func-style */
 	/**
 	 * Find siblings of an item.
 	 *
-	 * @param {Object} element The element being opened.
-	 *
-	 * @since January 31, 2020
 	 * @author Corey Collins
-	 *
+	 * @since January 31, 2020
+	 * @param {Object} element The element being opened.
 	 * @return {Array} List of siblings.
 	 */
-	const getSiblings = function( element ) {
+	const getSiblings = function ( element ) {
 		const siblings = [];
 		let sibling = element.parentNode.firstChild;
 

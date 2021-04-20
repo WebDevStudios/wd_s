@@ -1,32 +1,31 @@
 {
-  "name": "webdevstudios/wd_s",
-  "description": "A starter theme from WebDevStudios.",
-  "type": "wordpress-theme",
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "WebDevStudios",
-      "email": "contact@webdevstudios.com"
-    }
-  ],
-  "require": {
-    "composer/installers": "^1.5"
-  },
-  "scripts": {
-    "lint": "@composer run lint:php",
-    "lint:php": [ "@composer run lint:php-compat", "@composer run lint:phpcs" ],
-    "lint:php-compat": "@php ./vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.4 --ignore='.git*,vendor/*' --warning-severity=8 -d memory_limit=-1",
-    "lint:phpcs": "@php ./vendor/bin/phpcs -ns -d memory_limit=-1 --standard=./.phpcs.xml.dist --extensions=php --colors .",
-    "debug:phpcs": "which phpcs && phpcs -i",
-    "make-pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
-  },
-  "require-dev": {
-    "phpcompatibility/php-compatibility": "~9.3",
-    "webdevstudios/php-coding-standards": "~1.3.0"
-  },
-  "config": {
-    "platform": {
-      "php": "7.4"
-    }
-  }
+	"name": "webdevstudios/wd_s",
+	"description": "A starter theme from WebDevStudios.",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "WebDevStudios",
+			"email": "contact@webdevstudios.com"
+		}
+	],
+	"config": {
+		"platform": {
+			"php": "7.4"
+		}
+	},
+	"require": {
+		"composer/installers": "^1.10"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
+		"wp-cli/wp-cli-bundle": "*",
+		"wp-coding-standards/wpcs": "~2.3.0"
+	},
+	"scripts": {
+		"format": "./vendor/bin/phpcbf --standard=.phpcs.xml --report=summary,source",
+		"lint": "./vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source",
+		"pot": "./vendor/wp-cli/wp-cli/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
+	}
 }

@@ -1,14 +1,14 @@
 {
-  "scss.validate": false,
-  "editor.formatOnSave": true,
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // 🔥 WebDevStudios - Your Success Is Our Mission. 🌮
-  "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#3f4040",
-    "titleBar.inactiveForeground": "#3f4040CC",
-    "titleBar.activeBackground": "#F3713C",
-    "titleBar.inactiveBackground": "#F3713CCC"
-  }
+	"editor.formatOnSave": true,
+	"scss.validate": false,
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	// 🔥 WebDevStudios - Your Success Is Our Mission. 🌮
+	"workbench.colorCustomizations": {
+		"titleBar.activeForeground": "#3f4040",
+		"titleBar.inactiveForeground": "#3f4040CC",
+		"titleBar.activeBackground": "#F3713C",
+		"titleBar.inactiveBackground": "#F3713CCC"
+	}
 }

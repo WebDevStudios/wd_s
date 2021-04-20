@@ -13,12 +13,12 @@
 	<?php
 		// Button.
 		_s_display_scaffolding_section(
-			array(
+			[
 				'title'       => 'Button',
 				'description' => 'Display a button.',
 				'usage'       => '<button class="button" href="#">Click Me</button>',
 				'output'      => '<button class="button">Click Me</button>',
-			)
+			]
 		);
-	?>
+		?>
 </section>

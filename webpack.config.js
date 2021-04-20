@@ -1,24 +1,73 @@
+const path = require( 'path' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const CopyPlugin = require( 'copy-webpack-plugin' );
+const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
+const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
+const ESLintPlugin = require( 'eslint-webpack-plugin' );
+const StylelintPlugin = require( 'stylelint-webpack-plugin' );
+
 /**
- * wd_s Webpack config.
- *
- * This config includes the `@wordpress/scripts` defaults, along with
- * imagemin-webpack-plugin for optimizing images present in the theme.
+ * Webpack config (Development mode)
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-scripts/#provide-your-own-webpack-config
  */
-const path = require( 'path' );
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
-const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
-const { mode } = defaultConfig;
-
 module.exports = {
 	...defaultConfig,
+	module: {
+		rules: [
+			{
+				test: /\.(sa|sc|c)ss$/,
+				exclude: '/node_modules',
+				use: [
+					MiniCSSExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
+				test: /\.svg$/,
+				use: [ '@svgr/webpack', 'url-loader' ],
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'fonts/[name].[hash:8].[ext]',
+						},
+					},
+				],
+			},
+		],
+	},
 	plugins: [
 		...defaultConfig.plugins,
 
-		// Copy the all types of images present in `src/images` directory to build directory.
-		new CopyWebpackPlugin( {
+		/**
+		 * Copy source files/directories to a build directory.
+		 *
+		 * @see https://www.npmjs.com/package/copy-webpack-plugin
+		 */
+		new CopyPlugin( {
 			patterns: [
 				{
 					from: '**/*.{jpg,jpeg,png,gif,svg}',
@@ -33,11 +82,26 @@ module.exports = {
 			],
 		} ),
 
-		// This should run after CopyWebpackPlugin.
-		// This plugin optimizes the images copied in the previous step build directory.
+		/**
+		 * Generate an SVG sprite.
+		 *
+		 * @see https://github.com/cascornelissen/svg-spritemap-webpack-plugin
+		 */
+		new SVGSpritemapPlugin( 'src/images/icons/*.svg', {
+			output: {
+				filename: 'images/icons/sprite.svg',
+			},
+			sprite: {
+				prefix: false,
+			},
+		} ),
+
+		/**
+		 * Uses Imagemin to clean SVGs.
+		 *
+		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
+		 */
 		new ImageminPlugin( {
-			disable: 'production' !== mode,
-			test: /\.(jpe?g|png|gif|svg)$/i,
 			svgo: {
 				plugins: [
 					{ removeViewBox: false },
@@ -50,5 +114,26 @@ module.exports = {
 				],
 			},
 		} ),
+
+		/**
+		 * Clean build directory.
+		 *
+		 * @see https://www.npmjs.com/package/clean-webpack-plugin
+		 */
+		new CleanWebpackPlugin(),
+
+		/**
+		 * Report JS warnings and errors to the command line.
+		 *
+		 * @see https://www.npmjs.com/package/eslint-webpack-plugin
+		 */
+		new ESLintPlugin(),
+
+		/**
+		 * Report css warnings and errors to the command line.
+		 *
+		 * @see https://www.npmjs.com/package/stylelint-webpack-plugin
+		 */
+		new StylelintPlugin(),
 	],
 };

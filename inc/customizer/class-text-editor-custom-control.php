@@ -33,11 +33,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 			<div class="wds-customize-text-editor">
 				<?php
 				// Setttings for the editor.
-				$settings = array(
+				$settings = [
 					'textarea_name' => $this->id,
 					'textarea_rows' => 4,
 					'media_buttons' => true,
-				);
+				];
 
 				// Add the editor.
 				wp_editor( $this->value(), $this->id, $settings );
@@ -64,7 +64,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		 */
 		protected function enqueue_scripts() {
 			wp_enqueue_script( 'tiny_mce' );
-			wp_enqueue_script( 'wds-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'wds-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', [ 'jquery' ], '1.0.0', true );
 		}
 
 		/**

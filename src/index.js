@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint eslint-comments/disable-enable-pair: error */
+/* eslint-disable no-undef, no-unused-vars */
 
 import './scss/tailwind.scss';
 import './scss/index.scss';
@@ -16,3 +17,4 @@ import wdsOffCanvas from './components/off-canvas';
 import wdsSkipLinkFocusFix from './components/skip-link-focus-fix';
 import wdsTable from './components/table';
 import wdsVideo from './components/video';
+/* eslint-enable no-undef, no-unused-vars */

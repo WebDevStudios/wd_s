@@ -14,7 +14,7 @@
 	<?php
 	// Right-aligned Image.
 	_s_display_scaffolding_section(
-		array(
+		[
 			'title'       => 'Numeric Pagination',
 			'description' => 'Display numeric pagination.',
 			'usage'       => '_s_display_numeric_pagination()',
@@ -27,7 +27,7 @@
 					<a class="next page-numbers" href="#">&raquo;</a>
 				</nav>
 			',
-		)
+		]
 	);
 
 	?>

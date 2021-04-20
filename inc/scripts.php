@@ -31,10 +31,10 @@ function _s_scripts() {
 	 */
 	$suffix = ( true === $debug ) ? '' : '.min';
 
-	$asset_file = include( __DIR__ . '/../build/index.asset.php' );
+	$asset_file = include __DIR__ . '/../build/index.asset.php';
 
 	// Register styles & scripts.
-	wp_enqueue_style( 'wd_s', get_stylesheet_directory_uri() . '/build/index.css', array(), $asset_file['version'] );
+	wp_enqueue_style( 'wd_s', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
 	wp_enqueue_script( 'wds-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

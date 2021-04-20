@@ -20,9 +20,9 @@ function _s_categorized_blog() {
 	if ( false === $category_count ) {
 
 		$category_count_query = get_categories(
-			array(
+			[
 				'fields' => 'count',
-			)
+			]
 		);
 
 		$category_count = (int) $category_count_query[0];
@@ -85,10 +85,10 @@ function _s_copyright_year( $atts ) {
 
 	// Setup defaults.
 	$args = shortcode_atts(
-		array(
+		[
 			'starting_year' => '',
 			'separator'     => ' - ',
-		),
+		],
 		$atts
 	);
 

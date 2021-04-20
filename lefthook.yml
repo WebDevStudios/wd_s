@@ -1,17 +1,28 @@
 # https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
 
 pre-commit:
-  parallel: true
-  commands:
-    phpcs:
-      glob: "*.php"
-      run: composer run lint {staged_files}
-    eslint:
-      glob: "*.{js,jsx,ts,tsx,vue}"
-      run: npx eslint --fix {staged_files}
-    stylelint:
-      glob: "*.{css,scss}"
-      run: npx stylelint --fix {staged_files}
-    prettier:
-      glob: "*.{md,html,json,yml}"
-      run: npx prettier --write {staged_files}
+    commands:
+        formatphp:
+            glob: '*.php'
+            run: ./vendor/bin/phpcbf {staged_files} --standard=.phpcs.xml
+        lintphp:
+            glob: '*.php'
+            run: ./vendor/bin/phpcs {staged_files} --standard=.phpcs.xml
+        formatstyles:
+            glob: '*.{css,scss}'
+            run: npx prettier {staged_files} --write --config .prettierrc.js
+        lintstyles:
+            glob: '*.{css,scss}'
+            run: npx stylelint {staged_files} --fix --config .stylelintrc.json
+        formatjavascript:
+            glob: '*.{js,ts,tsx}'
+            run: npx prettier {staged_files} --write --config .prettierrc.js
+        lintjavascript:
+            glob: '*.{js,ts,tsx}'
+            run: npx eslint {staged_files} --fix --config .eslintrc.js
+        lintmarkdown:
+            glob: '*.{md}'
+            run: npx markdownlint-cli {staged_files} --fix --config .markdownlint.json
+        other:
+            glob: '*.{yml,json,html}'
+            run: npx prettier {staged_files} --write --config .prettierrc.js

@@ -1,6 +1,23 @@
-# wd_s
+# wd_s <!-- omit in toc -->
 
 [![buddy pipeline](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066/badge.svg?token=2471ae60766a1e9a657f772e493188dde748aa18c236d0b1c325e80be13a2ac6 "buddy pipeline")](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066)
+
+A starter theme from WebDevStudios. <https://wdunderscores.com>
+
+[![WebDevStudios. Your Success is Our Mission.](https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png)](https://webdevstudios.com/contact/)
+
+## Table of Contents <!-- omit in toc -->
+
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Quick Start](#quick-start)
+    - [Advanced](#advanced)
+- [Installation](#installation)
+    - [Development](#development)
+- [Contributing and Support](#contributing-and-support)
+
+## Introduction
 
 Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
 
@@ -14,13 +31,14 @@ Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Bloc
 
 Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also easy! Add the [WDS ACF Blocks](https://github.com/WebDevStudios/wds-acf-blocks) plugin for a whole set of blocks built with ACF including: Accordion, Carousel, Call To Action, Fifty/Fifty, Hero, Recent Posts, and Related Posts.
 
-<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. Your Success is Our Mission."></a>
-
 ## Getting Started
 
 ### Prerequisites
 
-Because I compile and bundle assets via npm scripts, basic knowledge of the command line and the following dependencies are required: [Node](https://nodejs.org) (14) and [Composer](https://getcomposer.org/).
+Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
+
+- [Node](https://nodejs.org) (v14+)
+- [Composer](https://getcomposer.org/)
 
 ### Quick Start
 
@@ -39,35 +57,41 @@ You'll need to change all instances of the names: `_s`.
 - Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
 - Search for: `_s_` and replace with: `project-name_` to capture all the function names
 - Search for: `Text Domain: _s` and replace with: `Text Domain: project-name` in style.css
-- Search for (and include the leading space): <code>&nbsp;\_s</code> and replace with: <code>&nbsp;Project Name</code> (with a space before it) to capture DocBlocks
+- Search for (and include the leading space): ` _s` and replace with: ` Project Name` (with a space before it) to capture DocBlocks
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 - Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 - Edit the theme information in the header of style.scss to meet your needs
 
 ## Installation
 
-1. From the command line, change directories to your new theme directory:
+From the command line, change directories to your new theme directory:
 
 ```bash
 cd /wp-content/themes/your-theme
 ```
 
-2. Install theme dependencies and trigger an initial build:
+Install theme dependencies and trigger an initial build.
+
+>Note: You will need to have both Composer and WP-CLI installed first.
 
 ```bash
-npm i
+npm i --legacy-peer-deps
 ```
 
-### NPM Scripts
+### Development
 
 From the command line, type any of the following to perform an action:
 
-`npm run build` - Compile and build all assets.
-
-`npm run start` - Automatically handle changes to CSS, JS, SVGs, and image sprites.
-
-`npm run start:sync` - Automatically handle changes to PHP, CSS, JS, SVGs, and image sprites – and see the changes refresh in your browser via Browsersync!
+Command | Action
+:- | :-
+`npm run watch` | Builds assets and starts Live Reload and Browsersync servers
+`npm run start` | Builds assets and starts Live Reload server
+`npm run build` | Builds production-ready assets for a deployment
+`npm run lint` | Check all CSS, JS, MD, and PHP files for errors
+`npm run format` | Fix all CSS, JS, and PHP formatting errors automatically
 
 ## Contributing and Support
 
-Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [guidelines](https://github.com/WebDevStudios/wd_s/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+Your contributions and [support tickets](https://github.com/WebDevStudios/wd_s/issues) are welcome. Please see our [contributing guidelines](https://github.com/WebDevStudios/wd_s/blob/main/CONTRIBUTING.md) before submitting a pull request.
+
+wd_s is free software, and is released under the terms of the GNU General Public License version 2 or any later version. See [LICENSE.md](https://github.com/WebDevStudios/wd_s/blob/main/LICENSE.md) for complete license.
