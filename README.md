@@ -72,7 +72,7 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have both Composer and WP-CLI installed first.
+>Note: You will need to have Composer installed first.
 
 ```bash
 npm i --legacy-peer-deps
