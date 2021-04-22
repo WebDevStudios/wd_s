@@ -1,0 +1,17 @@
+//----------------------------------------
+// Quote - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-quote {
+	@apply container my-32;
+
+	// TODO: Add toolbar and sidebar option support.
+
+	p {
+		@apply mb-16; // TODO: Add font styles.
+	}
+
+	cite {
+		@apply not-italic; // TODO: Add font styles.
+	}
+}

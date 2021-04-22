@@ -1,0 +1,41 @@
+//----------------------------------------
+// Heading - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-heading {
+	@apply container;
+
+	// TODO: Add toolbar option support.
+
+	// TODO: Add heading font styles.
+	// h1,
+	// h2,
+	// h3,
+	// h4,
+	// h5,
+	// h6 {}
+
+	h1 {
+		@apply mb-32;
+	}
+
+	h2 {
+		@apply mb-24;
+	}
+
+	h3 {
+		@apply mb-20;
+	}
+
+	h4 {
+		@apply mb-16;
+	}
+
+	h5 {
+		@apply mb-12;
+	}
+
+	h6 {
+		@apply mb-8;
+	}
+}

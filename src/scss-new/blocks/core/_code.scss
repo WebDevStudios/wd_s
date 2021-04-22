@@ -1,0 +1,13 @@
+//----------------------------------------
+// Code - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-code {
+	@apply container mb-16;
+
+	// TODO: Add support for typography sidebar options.
+
+	code {
+		@apply p-16; // TODO: Add font styles.
+	}
+}

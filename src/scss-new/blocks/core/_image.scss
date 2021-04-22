@@ -1,0 +1,12 @@
+//----------------------------------------
+// Image - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-image {
+	@apply container;
+
+	// TODO: Add toolbar and sidebar option support.
+
+	// TODO: Add figcaption font styles.
+	// figcaption {}
+}

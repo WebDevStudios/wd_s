@@ -1,0 +1,74 @@
+//----------------------------------------
+// Table - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-table {
+	@apply container mb-24;
+
+	// TODO: Add toolbar and sidebar option support.
+
+	table {
+		@apply p-0 border-0 border-collapse w-full;
+
+		border-spacing: 0;
+
+		@screen desktop {
+			@apply border border-solid; // TODO: Add border color.
+		}
+
+		thead {
+			@apply hidden;
+
+			@screen desktop {
+				@apply table-row-group;
+			}
+		}
+
+		th,
+		td {
+			@apply p-8 text-center;
+
+			@screen desktop {
+				@apply table-cell;
+			}
+		}
+
+		td {
+			@apply block text-center border border-solid; // TODO: Add border color.
+
+			@screen desktop {
+				@apply table-cell;
+			}
+
+			&:last-child {
+				@apply border-b border-tertiary-darkest border-solid;
+			}
+
+			&::before {
+				@apply block uppercase;
+
+				content: attr( data-label );
+
+				@screen desktop {
+					@apply hidden;
+				}
+			}
+		}
+
+		th {
+			@apply tracking-widest uppercase border border-solid; // TODO: Add border color.
+
+			@screen tablet-portrait {
+				@apply table-cell;
+			}
+		}
+
+		tr {
+			@apply block mb-16;
+
+			@screen desktop {
+				@apply table-row mb-0;
+			}
+		}
+	}
+}

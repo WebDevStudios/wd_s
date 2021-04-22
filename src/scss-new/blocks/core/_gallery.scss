@@ -1,0 +1,33 @@
+//----------------------------------------
+// Gallery - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-gallery {
+	@apply container mb-96;
+
+	// TODO: Add toolbar option support.
+
+	.blocks-gallery-item {
+		// TODO: Add caption font styles.
+		// .blocks-gallery-item__caption {}
+
+		img,
+		figcaption {
+			@apply rounded;
+		}
+	}
+
+	&.columns-1,
+	&.columns-2 {
+		.blocks-gallery-item {
+			// .blocks-gallery-item__caption {}
+		}
+	}
+
+	&.columns-5,
+	&.columns-6 {
+		.blocks-gallery-item {
+			// .blocks-gallery-item__caption {}
+		}
+	}
+}

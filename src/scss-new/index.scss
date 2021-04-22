@@ -1,0 +1,18 @@
+//----------------------------------------
+// Tailwind Includes
+//----------------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer base {
+// // Custom base styles if necessary.
+// // See https://tailwindcss.com/docs/adding-base-styles.
+// }
+
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'template-tags/index.scss';
+@import 'templates/index.scss';
+@import 'blocks/index.scss';
