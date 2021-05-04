@@ -50,9 +50,8 @@
 		"webpack-merge": "^5.7.3"
 	},
 	"scripts": {
-		"build": "cross-env NODE_ENV=production run-s build:*",
+		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
 		"build:pot": "composer run-script pot",
-		"build:scripts": "wp-scripts build --config webpack.prod.js",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
 		"dev": "npm run watch",
