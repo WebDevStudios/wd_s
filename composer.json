@@ -26,6 +26,6 @@
 	"scripts": {
 		"format": "./vendor/bin/phpcbf --standard=.phpcs.xml --report=summary,source",
 		"lint": "./vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source",
-		"pot": "./vendor/wp-cli/wp-cli/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
+		"pot": "./vendor/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }
