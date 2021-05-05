@@ -28,17 +28,7 @@ module.exports = merge( common, {
 				quality: 70,
 				progressive: true,
 			},
-			svgo: {
-				plugins: [
-					{ removeViewBox: false },
-					{ removeDimensions: true },
-					{
-						removeAttrs: {
-							attrs: '*:(stroke|fill):((?!^none$).)*',
-						},
-					},
-				],
-			},
+			svgo: null,
 		} ),
 	],
 	optimization: {
