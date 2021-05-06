@@ -40,7 +40,6 @@ module.exports = merge( common, {
 			 * @see https://www.npmjs.com/package/css-minimizer-webpack-plugin
 			 */
 			new CssMinimizerPlugin( {
-				sourceMap: false,
 				parallel: true,
 				minimizerOptions: {
 					preset: [
