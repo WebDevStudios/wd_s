@@ -105,16 +105,17 @@ function _s_display_svg( $args = [] ) {
 			'width'           => true,
 			'height'          => true,
 			'viewbox'         => true, // <= Must be lower case!
-			'fill'            => true,
+			'color'           => true,
+			'stroke-width'    => true,
 		),
-		'g'     => array( 'fill' => true ),
+		'g'     => array( 'color' => true ),
 		'title' => array(
 			'title' => true,
 			'id'    => true,
 		),
 		'path'  => array(
-			'd'    => true,
-			'fill' => true,
+			'd'     => true,
+			'color' => true,
 		),
 		'use'   => array(
 			'xlink:href' => true,
@@ -153,11 +154,10 @@ function _s_get_svg( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [
+		'color'        => '',
 		'icon'         => '',
 		'title'        => '',
 		'desc'         => '',
-		'fill'         => '',
-		'stroke'       => '',
 		'stroke-width' => '',
 		'height'       => '',
 		'width'        => '',
@@ -184,8 +184,7 @@ function _s_get_svg( $args = [] ) {
 	}
 
 	// Set SVG parameters.
-	$fill         = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
-	$stroke       = ( $args['stroke'] ) ? ' stroke="' . $args['stroke'] . '"' : '';
+	$color        = ( $args['color'] ) ? ' color="' . $args['color'] . '"' : '';
 	$stroke_width = ( $args['stroke-width'] ) ? ' stroke-width="' . $args['stroke-width'] . '"' : '';
 	$height       = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
 	$width        = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
@@ -198,8 +197,7 @@ function _s_get_svg( $args = [] ) {
 	<?php
 		echo _s_get_the_content( $height ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo _s_get_the_content( $width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-		echo _s_get_the_content( $fill ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-		echo _s_get_the_content( $stroke ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo _s_get_the_content( $color ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo _s_get_the_content( $stroke_width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
 		class="icon <?php echo esc_attr( $args['icon'] ); ?>"
