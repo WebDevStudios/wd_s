@@ -92,8 +92,10 @@ function _s_entry_footer() {
  * @author WDS
  */
 function _s_display_svg( $args = [] ) {
+
 	$kses_defaults = wp_kses_allowed_html( 'post' );
-	$svg_args      = array(
+
+	$svg_args = array(
 		'svg'   => array(
 			'class'           => true,
 			'aria-hidden'     => true,
@@ -118,7 +120,8 @@ function _s_display_svg( $args = [] ) {
 			'xlink:href' => true,
 		),
 	);
-	$allowed_tags  = array_merge(
+
+	$allowed_tags = array_merge(
 		$kses_defaults,
 		$svg_args
 	);
