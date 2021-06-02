@@ -21,7 +21,7 @@
 		"npm": ">=7"
 	},
 	"devDependencies": {
-		"@arkweid/lefthook": "^0.7.2",
+		"@arkweid/lefthook": "^0.7.6",
 		"@tailwindcss/postcss7-compat": "^2.1.4",
 		"@wordpress/prettier-config": "^1.0.3",
 		"@wordpress/scripts": "^14.1.1",
