@@ -92,7 +92,41 @@ function _s_entry_footer() {
  * @author WDS
  */
 function _s_display_svg( $args = [] ) {
-	echo _s_get_svg( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+	$kses_defaults = wp_kses_allowed_html( 'post' );
+	$svg_args      = array(
+		'svg'   => array(
+			'class'           => true,
+			'aria-hidden'     => true,
+			'aria-labelledby' => true,
+			'role'            => true,
+			'xmlns'           => true,
+			'width'           => true,
+			'height'          => true,
+			'viewbox'         => true, // <= Must be lower case!
+			'fill'            => true,
+		),
+		'g'     => array( 'fill' => true ),
+		'title' => array(
+			'title' => true,
+			'id'    => true,
+		),
+		'path'  => array(
+			'd'    => true,
+			'fill' => true,
+		),
+		'use'   => array(
+			'xlink:href' => true,
+		),
+	);
+	$allowed_tags  = array_merge(
+		$kses_defaults,
+		$svg_args
+	);
+
+	echo wp_kses(
+		_s_get_svg( $args ),
+		$allowed_tags
+	);
 }
 
 /**
