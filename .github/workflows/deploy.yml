@@ -60,3 +60,12 @@ jobs:
                   REMOTE_USER: ${{ secrets.REMOTE_USER }}
                   TARGET: '~/sites/wdunderscores/wp-content/themes/wdunderscores/inc/prototype'
                   EXCLUDE: 'node_modules/, vendor/'
+
+            - name: Slack Notification
+              uses: rtCamp/action-slack-notify@v2
+              env:
+                  SLACK_CHANNEL: wd_s-firehose
+                  SLACK_COLOR: ${{ job.status }}
+                  SLACK_ICON: https://github.com/webdevstudios.png?size=48
+                  SLACK_USERNAME: Github Actions
+                  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
