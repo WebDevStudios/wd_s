@@ -1,0 +1,59 @@
+name: Assertions
+
+on:
+    pull_request:
+        branches: [main, develop]
+
+    workflow_dispatch:
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x]
+                php-versions: ['7.4']
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                  token: ${{ github.token }}
+
+            - name: Setup PHP ${{ matrix.php-versions }}
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  tools: composer:v2, phpcs
+
+            - name: Setup Node ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Cache Node dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: ${{ runner.OS }}-node-
+
+            - name: Cache Composer dependencies
+              uses: actions/cache@v2
+              with:
+                  path: /tmp/composer-cache
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: ${{ runner.OS }}-composer-
+
+            - name: Install Theme dependencies
+              run: npm ci
+
+            - name: Sniff theme PHP
+              run: vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source
+
+            - name: Lint theme scripts
+              run: npx eslint '**/*.{js,ts,jsx,tsx}' --config=.eslintrc.js
+
+            - name: Lint theme styles
+              run: npx stylelint '**/*.{css,scss}"'--config=.stylelintrc.json
