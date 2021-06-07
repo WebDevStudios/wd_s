@@ -46,14 +46,20 @@ jobs:
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                   restore-keys: ${{ runner.OS }}-composer-
 
-            - name: Install Theme dependencies
+            - name: Install dependencies
               run: npm ci
 
-            - name: Sniff theme PHP
-              run: vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source
+            - name: Lint PHP
+              run: npm run lint:php
 
-            - name: Lint theme scripts
-              run: npx eslint '**/*.{js,ts,jsx,tsx}' --config=.eslintrc.js
+            - name: Lint scripts
+              run: npm run lint:js
 
-            - name: Lint theme styles
-              run: npx stylelint '**/*.{css,scss}"'--config=.stylelintrc.json
+            - name: Lint styles
+              run: npm run lint:css
+
+            - name: Lint markdown
+              run: npm run lint:md:docs
+
+            - name: Lint package.json
+              run: npm run lint:pkg-json
