@@ -1,4 +1,4 @@
-name: Deploy to Prod
+name: Deploy to wdunderscores.com
 
 on:
     push:
@@ -8,7 +8,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
 
         strategy:
@@ -50,7 +50,7 @@ jobs:
             - name: Install and build
               run: npm ci
 
-            - name: Rsync to prod
+            - name: Rsync to wdunderscores.com
               uses: easingthemes/ssh-deploy@v2
               env:
                   SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
@@ -69,4 +69,4 @@ jobs:
                   SLACK_ICON: https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_192.png
                   SLACK_USERNAME: Github
                   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-                  SLACK_FOOTER: ''
+                  SLACK_FOOTER: ${{ github.repository }}
