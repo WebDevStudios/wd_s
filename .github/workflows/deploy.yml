@@ -47,6 +47,9 @@ jobs:
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                   restore-keys: ${{ runner.OS }}-composer-
 
+            - name: Authorize Composer with WDS packagist server
+              run: echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
+
             - name: Install and build
               run: npm ci
 
