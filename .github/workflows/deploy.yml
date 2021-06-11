@@ -1,0 +1,75 @@
+name: Deploy to wdunderscores.com
+
+on:
+    push:
+        branches:
+            - main
+
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x]
+                php-versions: ['7.4']
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                  token: ${{ github.token }}
+
+            - name: Setup PHP ${{ matrix.php-versions }}
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  tools: composer:v2
+
+            - name: Setup Node ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Cache Node dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: ${{ runner.OS }}-node-
+
+            - name: Cache Composer dependencies
+              uses: actions/cache@v2
+              with:
+                  path: /tmp/composer-cache
+                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+                  restore-keys: ${{ runner.OS }}-composer-
+
+            - name: Authorize Composer with WDS packagist server
+              run: echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
+
+            - name: Install and build
+              run: npm ci
+
+            - name: Rsync to wdunderscores.com
+              uses: easingthemes/ssh-deploy@v2
+              env:
+                  SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+                  ARGS: '-v -a -z --delete'
+                  SOURCE: './'
+                  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+                  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+                  TARGET: ${{ secrets.REMOTE_PATH }}
+                  EXCLUDE: 'node_modules/, vendor/'
+
+            - name: Notify Slack
+              uses: rtCamp/action-slack-notify@v2
+              env:
+                  SLACK_CHANNEL: wd_s-firehose
+                  SLACK_COLOR: ${{ job.status }}
+                  SLACK_ICON: https://avatars.slack-edge.com/2020-11-25/1527503386626_319578f21381f9641cd8_192.png
+                  SLACK_USERNAME: Github
+                  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+                  SLACK_FOOTER: ${{ github.repository }}
