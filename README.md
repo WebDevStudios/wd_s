@@ -11,11 +11,11 @@ A starter theme from WebDevStudios. <https://wdunderscores.com>
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
-	- [Prerequisites](#prerequisites)
-	- [Quick Start](#quick-start)
-	- [Advanced](#advanced)
+    - [Prerequisites](#prerequisites)
+    - [Quick Start](#quick-start)
+    - [Advanced](#advanced)
 - [Installation](#installation)
-	- [Development](#development)
+    - [Development](#development)
 - [Contributing and Support](#contributing-and-support)
 
 ## Introduction
@@ -89,7 +89,7 @@ Command | Action
 `npm run start` | Builds assets and starts Live Reload server
 `npm run build` | Builds production-ready assets for a deployment
 `npm run lint` | Check all CSS, JS, MD, and PHP files for errors
-`npm run format` | Fix all CSS, JS, and PHP formatting errors automatically
+`npm run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
 
 ## Contributing and Support
 
