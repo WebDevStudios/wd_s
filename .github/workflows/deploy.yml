@@ -57,12 +57,12 @@ jobs:
               uses: easingthemes/ssh-deploy@v2
               env:
                   SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-                  ARGS: "-v -a -z --delete"
-                  SOURCE: "./"
+                  ARGS: '-v -a -z --delete'
+                  SOURCE: './'
                   REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
                   REMOTE_USER: ${{ secrets.REMOTE_USER }}
                   TARGET: ${{ secrets.REMOTE_PATH }}
-                  EXCLUDE: "node_modules/,vendor/"
+                  EXCLUDE: 'node_modules/,vendor/'
 
             - name: Notify Slack
               uses: rtCamp/action-slack-notify@v2
