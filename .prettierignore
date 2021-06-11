@@ -3,3 +3,5 @@ node_modules/
 vendor/
 style.css
 README.md
+assertions.yml
+deploy.yml
