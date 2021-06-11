@@ -1,6 +1,7 @@
 # wd_s <!-- omit in toc -->
 
-[![buddy pipeline](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066/badge.svg?token=2471ae60766a1e9a657f772e493188dde748aa18c236d0b1c325e80be13a2ac6 "buddy pipeline")](https://app.buddy.works/webdevstudios/wd-s/pipelines/pipeline/154066)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwebdevstudios%2Fwd_s%2Fbadge%3Fref%3Dmain&style=flat)](https://github.com/WebDevStudios/wd_s/actions)
+
 
 A starter theme from WebDevStudios. <https://wdunderscores.com>
 
@@ -10,11 +11,11 @@ A starter theme from WebDevStudios. <https://wdunderscores.com>
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Quick Start](#quick-start)
-    - [Advanced](#advanced)
+	- [Prerequisites](#prerequisites)
+	- [Quick Start](#quick-start)
+	- [Advanced](#advanced)
 - [Installation](#installation)
-    - [Development](#development)
+	- [Development](#development)
 - [Contributing and Support](#contributing-and-support)
 
 ## Introduction
