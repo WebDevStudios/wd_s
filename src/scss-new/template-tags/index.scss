@@ -4,4 +4,10 @@
 // Import partials for functions in template-tags.php.
 //----------------------------------------
 
-// @import 'function-name';
+@import 'forms';
+@import 'menus';
+@import 'mobile-menus';
+@import 'modals';
+@import 'off-canvas';
+@import 'svg-sprite-wrapper';
+@import 'tables';

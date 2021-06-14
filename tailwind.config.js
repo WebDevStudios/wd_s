@@ -78,13 +78,17 @@ module.exports = {
 			desktop: '1200px',
 			'desktop-large': '1600px',
 		},
-		container: {
+		container: ( theme ) => ( {
 			center: true,
 			screens: {
 				phone: '100%',
 				desktop: '1200px',
 			},
-		},
+			padding: {
+				DEFAULT: theme( 'spacing.16' ),
+				'desktop-large': '0',
+			},
+		} ),
 		extend: {
 			backgroundOpacity: {
 				10: '0.1',
