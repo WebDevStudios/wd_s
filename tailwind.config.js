@@ -132,6 +132,15 @@ module.exports = {
 						marginBottom: '0',
 					},
 				},
+				'.button': {
+					padding: config( 'theme.spacing.16' ),
+				},
+				'table,dl,ol,ul,address,pre,blockquote,iframe': {
+					marginBottom: config( 'theme.spacing.16' ),
+				},
+				'pre': {
+					overflow: 'auto',
+				},
 			} );
 		} ),
 		plugin( function ( { addComponents, config } ) {
