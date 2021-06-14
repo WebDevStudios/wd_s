@@ -4,4 +4,9 @@
  * JS for functions in template-tags.php.
  */
 
-// import './function-name';
+import './mobile-menu';
+import './modal';
+import './navigation-primary';
+import './off-canvas';
+import './table';
+import './video';
