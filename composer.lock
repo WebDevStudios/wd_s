@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "298fb7fb6c72fd2a651e6b9b763c8db6",
+    "content-hash": "bf32cbc65cf41465cbdec389415800f8",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.10.0",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d"
+                "reference": "ae03311f45dfe194412081526be2e003960df74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
-                "reference": "1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d",
+                "url": "https://api.github.com/repos/composer/installers/zipball/ae03311f45dfe194412081526be2e003960df74b",
+                "reference": "ae03311f45dfe194412081526be2e003960df74b",
                 "shasum": ""
             },
             "require": {
@@ -111,6 +111,7 @@
                 "majima",
                 "mako",
                 "mediawiki",
+                "miaoxing",
                 "modulework",
                 "modx",
                 "moodle",
@@ -128,6 +129,7 @@
                 "sydes",
                 "sylius",
                 "symfony",
+                "tastyigniter",
                 "typo3",
                 "wordpress",
                 "yawik",
@@ -136,7 +138,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.10.0"
+                "source": "https://github.com/composer/installers/tree/v1.11.0"
             },
             "funding": [
                 {
@@ -152,22 +154,22 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-14T11:07:16+00:00"
+            "time": "2021-04-28T06:42:17+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.9",
+            "version": "1.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5"
+                "reference": "9fdb22c2e97a614657716178093cd1da90a64aa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
-                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/9fdb22c2e97a614657716178093cd1da90a64aa8",
+                "reference": "9fdb22c2e97a614657716178093cd1da90a64aa8",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +216,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.2.9"
+                "source": "https://github.com/composer/ca-bundle/tree/1.2.10"
             },
             "funding": [
                 {
@@ -230,43 +232,42 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-12T12:10:35+00:00"
+            "time": "2021-06-07T13:58:28+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "1.10.21",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "04021432f4a9cbd9351dd166b8c193f42c36a39c"
+                "reference": "fc5c4573aafce3a018eb7f1f8f91cea423970f2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/04021432f4a9cbd9351dd166b8c193f42c36a39c",
-                "reference": "04021432f4a9cbd9351dd166b8c193f42c36a39c",
+                "url": "https://api.github.com/repos/composer/composer/zipball/fc5c4573aafce3a018eb7f1f8f91cea423970f2e",
+                "reference": "fc5c4573aafce3a018eb7f1f8f91cea423970f2e",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.0",
-                "composer/semver": "^1.0",
+                "composer/metadata-minifier": "^1.0",
+                "composer/semver": "^3.0",
                 "composer/spdx-licenses": "^1.2",
-                "composer/xdebug-handler": "^1.1",
+                "composer/xdebug-handler": "^2.0",
                 "justinrainbow/json-schema": "^5.2.10",
                 "php": "^5.3.2 || ^7.0 || ^8.0",
                 "psr/log": "^1.0",
+                "react/promise": "^1.2 || ^2.7",
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^5.0"
-            },
-            "conflict": {
-                "symfony/console": "2.8.38"
+                "symfony/console": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0",
+                "symfony/filesystem": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0",
+                "symfony/finder": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0",
+                "symfony/process": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0"
             },
             "require-dev": {
                 "phpspec/prophecy": "^1.10",
-                "symfony/phpunit-bridge": "^4.2"
+                "symfony/phpunit-bridge": "^4.2 || ^5.0 || ^6.0"
             },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
@@ -279,7 +280,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -295,12 +296,12 @@
                 {
                     "name": "Nils Adermann",
                     "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
+                    "homepage": "https://www.naderman.de"
                 },
                 {
                     "name": "Jordi Boggiano",
                     "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
+                    "homepage": "https://seld.be"
                 }
             ],
             "description": "Composer helps you declare, manage and install dependencies of PHP projects. It ensures you have the right stack everywhere.",
@@ -313,7 +314,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/1.10.21"
+                "source": "https://github.com/composer/composer/tree/2.1.3"
             },
             "funding": [
                 {
@@ -329,32 +330,102 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-01T07:16:35+00:00"
+            "time": "2021-06-09T14:31:20+00:00"
         },
         {
-            "name": "composer/semver",
-            "version": "1.7.2",
+            "name": "composer/metadata-minifier",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "647490bbcaf7fc4891c58f47b825eb99d19c377a"
+                "url": "https://github.com/composer/metadata-minifier.git",
+                "reference": "c549d23829536f0d0e984aaabbf02af91f443207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/647490bbcaf7fc4891c58f47b825eb99d19c377a",
-                "reference": "647490bbcaf7fc4891c58f47b825eb99d19c377a",
+                "url": "https://api.github.com/repos/composer/metadata-minifier/zipball/c549d23829536f0d0e984aaabbf02af91f443207",
+                "reference": "c549d23829536f0d0e984aaabbf02af91f443207",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.2 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5"
+                "composer/composer": "^2",
+                "phpstan/phpstan": "^0.12.55",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\MetadataMinifier\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Small utility library that handles metadata minification and expansion.",
+            "keywords": [
+                "composer",
+                "compression"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/metadata-minifier/issues",
+                "source": "https://github.com/composer/metadata-minifier/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-04-07T13:37:33+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "3.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.54",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
@@ -393,7 +464,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/1.7.2"
+                "source": "https://github.com/composer/semver/tree/3.2.5"
             },
             "funding": [
                 {
@@ -409,7 +480,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-03T15:47:16+00:00"
+            "time": "2021-05-24T12:41:47+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -492,16 +563,16 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.6",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "f27e06cd9675801df441b3656569b328e04aa37c"
+                "reference": "964adcdd3a28bf9ed5d9ac6450064e0d71ed7496"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/f27e06cd9675801df441b3656569b328e04aa37c",
-                "reference": "f27e06cd9675801df441b3656569b328e04aa37c",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/964adcdd3a28bf9ed5d9ac6450064e0d71ed7496",
+                "reference": "964adcdd3a28bf9ed5d9ac6450064e0d71ed7496",
                 "shasum": ""
             },
             "require": {
@@ -536,7 +607,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/xdebug-handler/issues",
-                "source": "https://github.com/composer/xdebug-handler/tree/1.4.6"
+                "source": "https://github.com/composer/xdebug-handler/tree/2.0.1"
             },
             "funding": [
                 {
@@ -552,55 +623,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-25T17:01:18+00:00"
-        },
-        {
-            "name": "cweagans/composer-patches",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cweagans/composer-patches.git",
-                "reference": "ae02121445ad75f4eaff800cc532b5e6233e2ddf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/ae02121445ad75f4eaff800cc532b5e6233e2ddf",
-                "reference": "ae02121445ad75f4eaff800cc532b5e6233e2ddf",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "composer/composer": "~1.0 || ~2.0",
-                "phpunit/phpunit": "~4.6"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "cweagans\\Composer\\Patches"
-            },
-            "autoload": {
-                "psr-4": {
-                    "cweagans\\Composer\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cameron Eagans",
-                    "email": "me@cweagans.net"
-                }
-            ],
-            "description": "Provides a way to patch Composer packages.",
-            "support": {
-                "issues": "https://github.com/cweagans/composer-patches/issues",
-                "source": "https://github.com/cweagans/composer-patches/tree/1.7.0"
-            },
-            "time": "2020-09-30T17:56:20+00:00"
+            "time": "2021-05-05T19:37:51+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -890,16 +913,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.12.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "833be7a294627a8c5b1c482cbf489f73bf9b8086"
+                "reference": "db38b1524f5bda921cbda2385e440c2bb71d18b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/833be7a294627a8c5b1c482cbf489f73bf9b8086",
-                "reference": "833be7a294627a8c5b1c482cbf489f73bf9b8086",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/db38b1524f5bda921cbda2385e440c2bb71d18b4",
+                "reference": "db38b1524f5bda921cbda2385e440c2bb71d18b4",
                 "shasum": ""
             },
             "require": {
@@ -911,7 +934,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12.0-dev"
+                    "dev-master": "1.13.0-dev"
                 }
             },
             "autoload": {
@@ -922,7 +945,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -933,9 +956,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.12.0"
+                "source": "https://github.com/mck89/peast/tree/v1.13.0"
             },
-            "time": "2021-01-08T15:16:19+00:00"
+            "time": "2021-05-22T16:06:09+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -1254,16 +1277,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1310,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -1298,29 +1321,86 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.3"
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
-            "time": "2020-03-23T09:12:05+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
-            "name": "rmccue/requests",
-            "version": "v1.7.0",
+            "name": "react/promise",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rmccue/Requests.git",
-                "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "f3cff96a19736714524ca0dd1d4130de73dbbbc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
-                "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f3cff96a19736714524ca0dd1d4130de73dbbbc4",
+                "reference": "f3cff96a19736714524ca0dd1d4130de73dbbbc4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0 || ^6.5 || ^5.7 || ^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "keywords": [
+                "promise",
+                "promises"
+            ],
+            "support": {
+                "issues": "https://github.com/reactphp/promise/issues",
+                "source": "https://github.com/reactphp/promise/tree/v2.8.0"
+            },
+            "time": "2020-05-12T15:16:56+00:00"
+        },
+        {
+            "name": "rmccue/requests",
+            "version": "v1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/Requests.git",
+                "reference": "82e6936366eac3af4d836c18b9d8c31028fe4cd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WordPress/Requests/zipball/82e6936366eac3af4d836c18b9d8c31028fe4cd5",
+                "reference": "82e6936366eac3af4d836c18b9d8c31028fe4cd5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "require-dev": {
-                "requests/test-server": "dev-master"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "php-parallel-lint/php-console-highlighter": "^0.5.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.5",
+                "requests/test-server": "dev-master",
+                "squizlabs/php_codesniffer": "^3.5",
+                "wp-coding-standards/wpcs": "^2.0"
             },
             "type": "library",
             "autoload": {
@@ -1339,7 +1419,7 @@
                 }
             ],
             "description": "A HTTP library written in PHP, for human beings.",
-            "homepage": "http://github.com/rmccue/Requests",
+            "homepage": "http://github.com/WordPress/Requests",
             "keywords": [
                 "curl",
                 "fsockopen",
@@ -1350,10 +1430,10 @@
                 "sockets"
             ],
             "support": {
-                "issues": "https://github.com/rmccue/Requests/issues",
-                "source": "https://github.com/rmccue/Requests/tree/master"
+                "issues": "https://github.com/WordPress/Requests/issues",
+                "source": "https://github.com/WordPress/Requests/tree/v1.8.1"
             },
-            "time": "2016-10-13T00:11:37+00:00"
+            "time": "2021-06-04T09:56:25+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -1524,20 +1604,21 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.6",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "35f039df40a3b335ebf310f244cb242b3a83ac8d"
+                "reference": "058553870f7809087fa80fa734704a21b9bcaeb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/35f039df40a3b335ebf310f244cb242b3a83ac8d",
-                "reference": "35f039df40a3b335ebf310f244cb242b3a83ac8d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/058553870f7809087fa80fa734704a21b9bcaeb2",
+                "reference": "058553870f7809087fa80fa734704a21b9bcaeb2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php73": "^1.8",
                 "symfony/polyfill-php80": "^1.15",
@@ -1601,7 +1682,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.6"
+                "source": "https://github.com/symfony/console/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -1617,20 +1698,87 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-28T09:42:18+00:00"
+            "time": "2021-05-26T17:43:10+00:00"
         },
         {
-            "name": "symfony/filesystem",
-            "version": "v5.2.6",
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/filesystem.git",
-                "reference": "8c86a82f51658188119e62cff0a050a12d09836f"
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/8c86a82f51658188119e62cff0a050a12d09836f",
-                "reference": "8c86a82f51658188119e62cff0a050a12d09836f",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5f38c8804a9e97d23e0c8d63341088cd8a22d627",
+                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.4-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-23T23:28:01+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "348116319d7fb7d1faa781d26a48922428013eb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/348116319d7fb7d1faa781d26a48922428013eb2",
+                "reference": "348116319d7fb7d1faa781d26a48922428013eb2",
                 "shasum": ""
             },
             "require": {
@@ -1663,7 +1811,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v5.2.6"
+                "source": "https://github.com/symfony/filesystem/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -1679,20 +1827,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-28T14:30:26+00:00"
+            "time": "2021-05-26T17:43:10+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v5.2.4",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "0d639a0943822626290d169965804f79400e6a04"
+                "reference": "0ae3f047bed4edff6fd35b26a9a6bfdc92c953c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/0d639a0943822626290d169965804f79400e6a04",
-                "reference": "0d639a0943822626290d169965804f79400e6a04",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/0ae3f047bed4edff6fd35b26a9a6bfdc92c953c6",
+                "reference": "0ae3f047bed4edff6fd35b26a9a6bfdc92c953c6",
                 "shasum": ""
             },
             "require": {
@@ -1724,7 +1872,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.2.4"
+                "source": "https://github.com/symfony/finder/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -1740,20 +1888,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-15T18:55:04+00:00"
+            "time": "2021-05-26T12:52:38+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
+                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
-                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
                 "shasum": ""
             },
             "require": {
@@ -1765,7 +1913,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1803,7 +1951,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -1819,20 +1967,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "5601e09b69f26c1828b13b6bb87cb07cddba3170"
+                "reference": "24b72c6baa32c746a4d0840147c9715e42bb68ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/5601e09b69f26c1828b13b6bb87cb07cddba3170",
-                "reference": "5601e09b69f26c1828b13b6bb87cb07cddba3170",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/24b72c6baa32c746a4d0840147c9715e42bb68ab",
+                "reference": "24b72c6baa32c746a4d0840147c9715e42bb68ab",
                 "shasum": ""
             },
             "require": {
@@ -1844,7 +1992,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1884,7 +2032,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -1900,20 +2048,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-22T09:19:47+00:00"
+            "time": "2021-05-27T09:17:38+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "43a0283138253ed1d48d352ab6d0bdb3f809f248"
+                "reference": "8590a5f561694770bdcd3f9b5c69dde6945028e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/43a0283138253ed1d48d352ab6d0bdb3f809f248",
-                "reference": "43a0283138253ed1d48d352ab6d0bdb3f809f248",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/8590a5f561694770bdcd3f9b5c69dde6945028e8",
+                "reference": "8590a5f561694770bdcd3f9b5c69dde6945028e8",
                 "shasum": ""
             },
             "require": {
@@ -1925,7 +2073,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1968,7 +2116,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -1984,20 +2132,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-22T09:19:47+00:00"
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
+                "reference": "2df51500adbaebdc4c38dea4c89a2e131c45c8a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/5232de97ee3b75b0360528dae24e73db49566ab1",
-                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2df51500adbaebdc4c38dea4c89a2e131c45c8a1",
+                "reference": "2df51500adbaebdc4c38dea4c89a2e131c45c8a1",
                 "shasum": ""
             },
             "require": {
@@ -2009,7 +2157,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -2048,7 +2196,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -2064,20 +2212,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-22T09:19:47+00:00"
+            "time": "2021-05-27T09:27:20+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2"
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/a678b42e92f86eca04b7fa4c0f6f19d097fb69e2",
-                "reference": "a678b42e92f86eca04b7fa4c0f6f19d097fb69e2",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
                 "shasum": ""
             },
             "require": {
@@ -2086,7 +2234,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -2127,7 +2275,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -2143,20 +2291,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91"
+                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dc3063ba22c2a1fd2f45ed856374d79114998f91",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/eca0bf41ed421bed1b57c4958bab16aa86b757d0",
+                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0",
                 "shasum": ""
             },
             "require": {
@@ -2165,7 +2313,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -2210,7 +2358,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -2226,20 +2374,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/process",
-            "version": "v5.2.4",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "313a38f09c77fbcdc1d223e57d368cea76a2fd2f"
+                "reference": "53e36cb1c160505cdaf1ef201501669c4c317191"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/313a38f09c77fbcdc1d223e57d368cea76a2fd2f",
-                "reference": "313a38f09c77fbcdc1d223e57d368cea76a2fd2f",
+                "url": "https://api.github.com/repos/symfony/process/zipball/53e36cb1c160505cdaf1ef201501669c4c317191",
+                "reference": "53e36cb1c160505cdaf1ef201501669c4c317191",
                 "shasum": ""
             },
             "require": {
@@ -2272,7 +2420,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.2.4"
+                "source": "https://github.com/symfony/process/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -2288,7 +2436,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T10:15:41+00:00"
+            "time": "2021-05-26T12:52:38+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -2371,16 +2519,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.2.6",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "ad0bd91bce2054103f5eaa18ebeba8d3bc2a0572"
+                "reference": "a9a0f8b6aafc5d2d1c116dcccd1573a95153515b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/ad0bd91bce2054103f5eaa18ebeba8d3bc2a0572",
-                "reference": "ad0bd91bce2054103f5eaa18ebeba8d3bc2a0572",
+                "url": "https://api.github.com/repos/symfony/string/zipball/a9a0f8b6aafc5d2d1c116dcccd1573a95153515b",
+                "reference": "a9a0f8b6aafc5d2d1c116dcccd1573a95153515b",
                 "shasum": ""
             },
             "require": {
@@ -2434,7 +2582,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v5.2.6"
+                "source": "https://github.com/symfony/string/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -2450,28 +2598,28 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-17T17:12:15+00:00"
+            "time": "2021-05-26T17:43:10+00:00"
         },
         {
             "name": "wp-cli/cache-command",
-            "version": "v2.0.5",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cache-command.git",
-                "reference": "c1a91b35f274e8aa5142eb4d82842421ed89049a"
+                "reference": "bf5d3d335de5f9d93180682f107c238a83c4b02c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/c1a91b35f274e8aa5142eb4d82842421ed89049a",
-                "reference": "c1a91b35f274e8aa5142eb4d82842421ed89049a",
+                "url": "https://api.github.com/repos/wp-cli/cache-command/zipball/bf5d3d335de5f9d93180682f107c238a83c4b02c",
+                "reference": "bf5d3d335de5f9d93180682f107c238a83c4b02c",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2521,30 +2669,30 @@
             "homepage": "https://github.com/wp-cli/cache-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cache-command/issues",
-                "source": "https://github.com/wp-cli/cache-command/tree/v2.0.5"
+                "source": "https://github.com/wp-cli/cache-command/tree/v2.0.7"
             },
-            "time": "2020-12-07T19:32:47+00:00"
+            "time": "2021-05-12T06:04:03+00:00"
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v2.0.5",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "a03cb058fcb295b8a1b060cc90618e777b86ad49"
+                "reference": "0f58af914a4af3018ce83449869300d65df9f613"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/a03cb058fcb295b8a1b060cc90618e777b86ad49",
-                "reference": "a03cb058fcb295b8a1b060cc90618e777b86ad49",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/0f58af914a4af3018ce83449869300d65df9f613",
+                "reference": "0f58af914a4af3018ce83449869300d65df9f613",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2580,31 +2728,31 @@
             "homepage": "https://github.com/wp-cli/checksum-command",
             "support": {
                 "issues": "https://github.com/wp-cli/checksum-command/issues",
-                "source": "https://github.com/wp-cli/checksum-command/tree/v2.0.5"
+                "source": "https://github.com/wp-cli/checksum-command/tree/v2.1.0"
             },
-            "time": "2020-12-07T22:47:40+00:00"
+            "time": "2021-05-12T06:06:01+00:00"
         },
         {
             "name": "wp-cli/config-command",
-            "version": "v2.0.7",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/config-command.git",
-                "reference": "6468e97ab2ace5b0a448d9e19091d42f6461b466"
+                "reference": "46b096eae2c116bed30c8d649f6e2a1d4db035c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/6468e97ab2ace5b0a448d9e19091d42f6461b466",
-                "reference": "6468e97ab2ace5b0a448d9e19091d42f6461b466",
+                "url": "https://api.github.com/repos/wp-cli/config-command/zipball/46b096eae2c116bed30c8d649f6e2a1d4db035c1",
+                "reference": "46b096eae2c116bed30c8d649f6e2a1d4db035c1",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2",
+                "wp-cli/wp-cli": "^2.5",
                 "wp-cli/wp-config-transformer": "^1.2.1"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2653,34 +2801,34 @@
             "homepage": "https://github.com/wp-cli/config-command",
             "support": {
                 "issues": "https://github.com/wp-cli/config-command/issues",
-                "source": "https://github.com/wp-cli/config-command/tree/v2.0.7"
+                "source": "https://github.com/wp-cli/config-command/tree/v2.1.0"
             },
-            "time": "2020-10-31T11:20:34+00:00"
+            "time": "2021-05-12T06:05:07+00:00"
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.0.12",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "a7001bd43b58fe67decd02c739615102cc0beb51"
+                "reference": "b7f44f03a3a3514798cda21b61a418f08aece324"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/a7001bd43b58fe67decd02c739615102cc0beb51",
-                "reference": "a7001bd43b58fe67decd02c739615102cc0beb51",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/b7f44f03a3a3514798cda21b61a418f08aece324",
+                "reference": "b7f44f03a3a3514798cda21b61a418f08aece324",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^1.4 || ^2 || ^3",
-                "wp-cli/wp-cli": "^2.4"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/checksum-command": "^1 || ^2",
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2724,30 +2872,30 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.0.12"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.0"
             },
-            "time": "2020-12-07T19:31:14+00:00"
+            "time": "2021-05-12T06:05:27+00:00"
         },
         {
             "name": "wp-cli/cron-command",
-            "version": "v2.0.6",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cron-command.git",
-                "reference": "668b8c7bc1c1a1930e8a956b1a8325d159cce78c"
+                "reference": "f0d493ff4d4f20ee6d6fd5495da1bc1760f9da15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/668b8c7bc1c1a1930e8a956b1a8325d159cce78c",
-                "reference": "668b8c7bc1c1a1930e8a956b1a8325d159cce78c",
+                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/f0d493ff4d4f20ee6d6fd5495da1bc1760f9da15",
+                "reference": "f0d493ff4d4f20ee6d6fd5495da1bc1760f9da15",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2791,30 +2939,30 @@
             "homepage": "https://github.com/wp-cli/cron-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cron-command/issues",
-                "source": "https://github.com/wp-cli/cron-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/cron-command/tree/v2.0.8"
             },
-            "time": "2020-12-07T19:30:59+00:00"
+            "time": "2021-05-12T06:06:58+00:00"
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v2.0.6",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "8e3cd46987241ed97ddb7f682b3505dff8d6dce4"
+                "reference": "269bf26a66915d6526b1015f7c759ffe04386bf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/8e3cd46987241ed97ddb7f682b3505dff8d6dce4",
-                "reference": "8e3cd46987241ed97ddb7f682b3505dff8d6dce4",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/269bf26a66915d6526b1015f7c759ffe04386bf7",
+                "reference": "269bf26a66915d6526b1015f7c759ffe04386bf7",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2865,30 +3013,30 @@
             "homepage": "https://github.com/wp-cli/db-command",
             "support": {
                 "issues": "https://github.com/wp-cli/db-command/issues",
-                "source": "https://github.com/wp-cli/db-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/db-command/tree/v2.0.13"
             },
-            "time": "2020-01-28T16:39:32+00:00"
+            "time": "2021-05-12T06:04:34+00:00"
         },
         {
             "name": "wp-cli/embed-command",
-            "version": "v2.0.7",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/embed-command.git",
-                "reference": "93d5582a9b03e950d3a2fe0869ae2c12d55a6242"
+                "reference": "ec74f3f34cb9c028fd39ebf8cca3a1504fd599ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/93d5582a9b03e950d3a2fe0869ae2c12d55a6242",
-                "reference": "93d5582a9b03e950d3a2fe0869ae2c12d55a6242",
+                "url": "https://api.github.com/repos/wp-cli/embed-command/zipball/ec74f3f34cb9c028fd39ebf8cca3a1504fd599ba",
+                "reference": "ec74f3f34cb9c028fd39ebf8cca3a1504fd599ba",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -2932,33 +3080,33 @@
             "homepage": "https://github.com/wp-cli/embed-command",
             "support": {
                 "issues": "https://github.com/wp-cli/embed-command/issues",
-                "source": "https://github.com/wp-cli/embed-command/tree/v2.0.7"
+                "source": "https://github.com/wp-cli/embed-command/tree/v2.0.9"
             },
-            "time": "2020-12-07T19:30:42+00:00"
+            "time": "2021-05-12T06:08:37+00:00"
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.0.7",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "0df89e4fba48177acf768bff9c00cda95a3fe5b9"
+                "reference": "9b3c030d5b056f3f7b8835e117139f92799340a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/0df89e4fba48177acf768bff9c00cda95a3fe5b9",
-                "reference": "0df89e4fba48177acf768bff9c00cda95a3fe5b9",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/9b3c030d5b056f3f7b8835e117139f92799340a9",
+                "reference": "9b3c030d5b056f3f7b8835e117139f92799340a9",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/cache-command": "^1 || ^2",
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
                 "wp-cli/media-command": "^1.1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3142,29 +3290,29 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/master"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.1.0"
             },
-            "time": "2019-11-12T11:32:14+00:00"
+            "time": "2021-05-11T15:55:07+00:00"
         },
         {
             "name": "wp-cli/eval-command",
-            "version": "v2.0.8",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/eval-command.git",
-                "reference": "8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce"
+                "reference": "dcda02194bd0ca773ce03dec6093ac0d271f8976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce",
-                "reference": "8a5e0340e82e1fb2b48a5dedd88cef1fb8b410ce",
+                "url": "https://api.github.com/repos/wp-cli/eval-command/zipball/dcda02194bd0ca773ce03dec6093ac0d271f8976",
+                "reference": "dcda02194bd0ca773ce03dec6093ac0d271f8976",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3200,34 +3348,34 @@
             "homepage": "https://github.com/wp-cli/eval-command",
             "support": {
                 "issues": "https://github.com/wp-cli/eval-command/issues",
-                "source": "https://github.com/wp-cli/eval-command/tree/v2.0.8"
+                "source": "https://github.com/wp-cli/eval-command/tree/v2.1.0"
             },
-            "time": "2020-12-07T19:30:26+00:00"
+            "time": "2021-05-11T08:39:18+00:00"
         },
         {
             "name": "wp-cli/export-command",
-            "version": "v2.0.6",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/export-command.git",
-                "reference": "df2e1ff4fb7e969c54c57febccdc9d2de1e5f499"
+                "reference": "e94f5f9e84768919aa6cd2193eb0c8b994e7f4c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/df2e1ff4fb7e969c54c57febccdc9d2de1e5f499",
-                "reference": "df2e1ff4fb7e969c54c57febccdc9d2de1e5f499",
+                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/e94f5f9e84768919aa6cd2193eb0c8b994e7f4c9",
+                "reference": "e94f5f9e84768919aa6cd2193eb0c8b994e7f4c9",
                 "shasum": ""
             },
             "require": {
                 "nb/oxymel": "~0.1.0",
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
                 "wp-cli/import-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3262,32 +3410,32 @@
             "homepage": "https://github.com/wp-cli/export-command",
             "support": {
                 "issues": "https://github.com/wp-cli/export-command/issues",
-                "source": "https://github.com/wp-cli/export-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/export-command/tree/v2.0.8"
             },
-            "time": "2021-01-14T12:16:33+00:00"
+            "time": "2021-05-12T06:03:45+00:00"
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.0.10",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "2bc83433707fa4d2127f2ff48357ccbbee39052f"
+                "reference": "7ad4f9c0c93a1ee737521f825f161d4b79a46945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/2bc83433707fa4d2127f2ff48357ccbbee39052f",
-                "reference": "2bc83433707fa4d2127f2ff48357ccbbee39052f",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/7ad4f9c0c93a1ee737521f825f161d4b79a46945",
+                "reference": "7ad4f9c0c93a1ee737521f825f161d4b79a46945",
                 "shasum": ""
             },
             "require": {
-                "composer/semver": "^1.4 || ^2.0",
-                "wp-cli/wp-cli": "^2"
+                "composer/semver": "^1.4 || ^2 || ^3",
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/scaffold-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1.6"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3358,32 +3506,32 @@
             "homepage": "https://github.com/wp-cli/extension-command",
             "support": {
                 "issues": "https://github.com/wp-cli/extension-command/issues",
-                "source": "https://github.com/wp-cli/extension-command/tree/master"
+                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.0"
             },
-            "time": "2020-07-05T08:07:53+00:00"
+            "time": "2021-05-12T06:06:34+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.2.6",
+            "version": "v2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "a66da3f09f6a728832381012848c3074bf1635c8"
+                "reference": "8bc234617edc533590ac0f41080164a8d85ec9ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/a66da3f09f6a728832381012848c3074bf1635c8",
-                "reference": "a66da3f09f6a728832381012848c3074bf1635c8",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/8bc234617edc533590ac0f41080164a8d85ec9ce",
+                "reference": "8bc234617edc533590ac0f41080164a8d85ec9ce",
                 "shasum": ""
             },
             "require": {
                 "gettext/gettext": "^4.8",
                 "mck89/peast": "^1.8",
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1.3"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3419,32 +3567,32 @@
             "homepage": "https://github.com/wp-cli/i18n-command",
             "support": {
                 "issues": "https://github.com/wp-cli/i18n-command/issues",
-                "source": "https://github.com/wp-cli/i18n-command/tree/v2.2.6"
+                "source": "https://github.com/wp-cli/i18n-command/tree/v2.2.8"
             },
-            "time": "2020-12-07T19:28:27+00:00"
+            "time": "2021-05-10T10:24:16+00:00"
         },
         {
             "name": "wp-cli/import-command",
-            "version": "v2.0.4",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/import-command.git",
-                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8"
+                "reference": "75e6d4273b4a9dbf510d69a44f9371eee0d01294"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/c7438c1eeda5669531c52fc9223fcea5bda39cc8",
-                "reference": "c7438c1eeda5669531c52fc9223fcea5bda39cc8",
+                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/75e6d4273b4a9dbf510d69a44f9371eee0d01294",
+                "reference": "75e6d4273b4a9dbf510d69a44f9371eee0d01294",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/export-command": "^1 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3479,32 +3627,32 @@
             "homepage": "https://github.com/wp-cli/import-command",
             "support": {
                 "issues": "https://github.com/wp-cli/import-command/issues",
-                "source": "https://github.com/wp-cli/import-command/tree/v2.0.4"
+                "source": "https://github.com/wp-cli/import-command/tree/v2.0.7"
             },
-            "time": "2020-12-07T19:28:45+00:00"
+            "time": "2021-05-12T16:54:12+00:00"
         },
         {
             "name": "wp-cli/language-command",
-            "version": "v2.0.8",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/language-command.git",
-                "reference": "c4f3cddd816e26df2b0e7e7753d786b54a2c95c8"
+                "reference": "4c02ef431e2825eac7b02e5cf4804c47167b6baf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/c4f3cddd816e26df2b0e7e7753d786b54a2c95c8",
-                "reference": "c4f3cddd816e26df2b0e7e7753d786b54a2c95c8",
+                "url": "https://api.github.com/repos/wp-cli/language-command/zipball/4c02ef431e2825eac7b02e5cf4804c47167b6baf",
+                "reference": "4c02ef431e2825eac7b02e5cf4804c47167b6baf",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3558,29 +3706,29 @@
             "homepage": "https://github.com/wp-cli/language-command",
             "support": {
                 "issues": "https://github.com/wp-cli/language-command/issues",
-                "source": "https://github.com/wp-cli/language-command/tree/v2.0.8"
+                "source": "https://github.com/wp-cli/language-command/tree/v2.0.10"
             },
-            "time": "2020-12-07T19:29:09+00:00"
+            "time": "2021-05-10T10:26:57+00:00"
         },
         {
             "name": "wp-cli/maintenance-mode-command",
-            "version": "v2.0.4",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/maintenance-mode-command.git",
-                "reference": "1f4f09ad15696f65e713c4c73008f6550318b3bd"
+                "reference": "26c1c0a79ed1194c863cb95fa364b4db7929d7cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/1f4f09ad15696f65e713c4c73008f6550318b3bd",
-                "reference": "1f4f09ad15696f65e713c4c73008f6550318b3bd",
+                "url": "https://api.github.com/repos/wp-cli/maintenance-mode-command/zipball/26c1c0a79ed1194c863cb95fa364b4db7929d7cc",
+                "reference": "26c1c0a79ed1194c863cb95fa364b4db7929d7cc",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3619,31 +3767,31 @@
             "homepage": "https://github.com/wp-cli/maintenance-mode-command",
             "support": {
                 "issues": "https://github.com/wp-cli/maintenance-mode-command/issues",
-                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.4"
+                "source": "https://github.com/wp-cli/maintenance-mode-command/tree/v2.0.6"
             },
-            "time": "2020-12-07T19:29:39+00:00"
+            "time": "2021-05-10T10:23:08+00:00"
         },
         {
             "name": "wp-cli/media-command",
-            "version": "v2.0.9",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/media-command.git",
-                "reference": "830e72a2cbd3eeec95a97df2c1c17d925d86790d"
+                "reference": "165a462e234e55db2174f9f0f6fab72040e9c510"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/830e72a2cbd3eeec95a97df2c1c17d925d86790d",
-                "reference": "830e72a2cbd3eeec95a97df2c1c17d925d86790d",
+                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/165a462e234e55db2174f9f0f6fab72040e9c510",
+                "reference": "165a462e234e55db2174f9f0f6fab72040e9c510",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^2.0",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3681,9 +3829,9 @@
             "homepage": "https://github.com/wp-cli/media-command",
             "support": {
                 "issues": "https://github.com/wp-cli/media-command/issues",
-                "source": "https://github.com/wp-cli/media-command/tree/master"
+                "source": "https://github.com/wp-cli/media-command/tree/v2.0.11"
             },
-            "time": "2020-06-11T00:17:12+00:00"
+            "time": "2021-05-12T06:08:20+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -3738,26 +3886,26 @@
         },
         {
             "name": "wp-cli/package-command",
-            "version": "v2.0.6",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/package-command.git",
-                "reference": "92a0d7f2f4b54ad2aeff2292baaa96ba8f93f37a"
+                "reference": "2e345df6c67d4f9b4bf42ce12a7fa07b2b44399d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/92a0d7f2f4b54ad2aeff2292baaa96ba8f93f37a",
-                "reference": "92a0d7f2f4b54ad2aeff2292baaa96ba8f93f37a",
+                "url": "https://api.github.com/repos/wp-cli/package-command/zipball/2e345df6c67d4f9b4bf42ce12a7fa07b2b44399d",
+                "reference": "2e345df6c67d4f9b4bf42ce12a7fa07b2b44399d",
                 "shasum": ""
             },
             "require": {
-                "composer/composer": ">=1.2.0 <1.7.0 || ^1.7.1",
+                "composer/composer": ">=1.2.0 <1.7.0 || ^1.7.1 || ^2.0.0",
                 "ext-json": "*",
-                "wp-cli/wp-cli": "^2.1"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/scaffold-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3797,9 +3945,9 @@
             "homepage": "https://github.com/wp-cli/package-command",
             "support": {
                 "issues": "https://github.com/wp-cli/package-command/issues",
-                "source": "https://github.com/wp-cli/package-command/tree/master"
+                "source": "https://github.com/wp-cli/package-command/tree/v2.1.1"
             },
-            "time": "2020-01-28T12:55:09+00:00"
+            "time": "2021-05-12T17:09:23+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -3857,24 +4005,24 @@
         },
         {
             "name": "wp-cli/rewrite-command",
-            "version": "v2.0.6",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/rewrite-command.git",
-                "reference": "6b2c7d186b375976869b8d74f1a3bac1f98aca57"
+                "reference": "468358e07943a7a8be70c95e20d45412d82899ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/6b2c7d186b375976869b8d74f1a3bac1f98aca57",
-                "reference": "6b2c7d186b375976869b8d74f1a3bac1f98aca57",
+                "url": "https://api.github.com/repos/wp-cli/rewrite-command/zipball/468358e07943a7a8be70c95e20d45412d82899ac",
+                "reference": "468358e07943a7a8be70c95e20d45412d82899ac",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3912,29 +4060,29 @@
             "homepage": "https://github.com/wp-cli/rewrite-command",
             "support": {
                 "issues": "https://github.com/wp-cli/rewrite-command/issues",
-                "source": "https://github.com/wp-cli/rewrite-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/rewrite-command/tree/v2.0.8"
             },
-            "time": "2020-12-07T19:27:22+00:00"
+            "time": "2021-05-10T10:16:23+00:00"
         },
         {
             "name": "wp-cli/role-command",
-            "version": "v2.0.5",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/role-command.git",
-                "reference": "50e563a81f7462c4c5374abf6a1c0e88dfb01c9c"
+                "reference": "7460566febe82b14c34b105c4c6326d3e23f9295"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/50e563a81f7462c4c5374abf6a1c0e88dfb01c9c",
-                "reference": "50e563a81f7462c4c5374abf6a1c0e88dfb01c9c",
+                "url": "https://api.github.com/repos/wp-cli/role-command/zipball/7460566febe82b14c34b105c4c6326d3e23f9295",
+                "reference": "7460566febe82b14c34b105c4c6326d3e23f9295",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -3978,31 +4126,30 @@
             "homepage": "https://github.com/wp-cli/role-command",
             "support": {
                 "issues": "https://github.com/wp-cli/role-command/issues",
-                "source": "https://github.com/wp-cli/role-command/tree/v2.0.5"
+                "source": "https://github.com/wp-cli/role-command/tree/v2.0.7"
             },
-            "time": "2020-12-07T19:27:04+00:00"
+            "time": "2021-05-10T10:22:04+00:00"
         },
         {
             "name": "wp-cli/scaffold-command",
-            "version": "v2.0.8",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/scaffold-command.git",
-                "reference": "4814acbdf3d7af499530cc1ae1e82f3ed9f12674"
+                "reference": "cde44524fd0499c0364a5ae3a6dc492796e80e0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/4814acbdf3d7af499530cc1ae1e82f3ed9f12674",
-                "reference": "4814acbdf3d7af499530cc1ae1e82f3ed9f12674",
+                "url": "https://api.github.com/repos/wp-cli/scaffold-command/zipball/cde44524fd0499c0364a5ae3a6dc492796e80e0a",
+                "reference": "cde44524fd0499c0364a5ae3a6dc492796e80e0a",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4 || ^7.0",
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4045,32 +4192,32 @@
             "homepage": "https://github.com/wp-cli/scaffold-command",
             "support": {
                 "issues": "https://github.com/wp-cli/scaffold-command/issues",
-                "source": "https://github.com/wp-cli/scaffold-command/tree/master"
+                "source": "https://github.com/wp-cli/scaffold-command/tree/v2.0.14"
             },
-            "time": "2019-11-25T13:26:31+00:00"
+            "time": "2021-05-10T10:21:19+00:00"
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.0.7",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "1104e4fb7dd83e85dedb8a98ed8f0ac30639694b"
+                "reference": "7d93abbdfd0c323902ac21fc34186041be743fd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/1104e4fb7dd83e85dedb8a98ed8f0ac30639694b",
-                "reference": "1104e4fb7dd83e85dedb8a98ed8f0ac30639694b",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/7d93abbdfd0c323902ac21fc34186041be743fd0",
+                "reference": "7d93abbdfd0c323902ac21fc34186041be743fd0",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.3 || ^2",
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4105,29 +4252,29 @@
             "homepage": "https://github.com/wp-cli/search-replace-command",
             "support": {
                 "issues": "https://github.com/wp-cli/search-replace-command/issues",
-                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.0.7"
+                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.0.12"
             },
-            "time": "2020-06-10T13:24:39+00:00"
+            "time": "2021-05-10T10:26:25+00:00"
         },
         {
             "name": "wp-cli/server-command",
-            "version": "v2.0.6",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/server-command.git",
-                "reference": "be65465bda181209c95011f15d4575809d039ea9"
+                "reference": "29976aef5c2bdf159b8700eab26bafc943f0be0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/be65465bda181209c95011f15d4575809d039ea9",
-                "reference": "be65465bda181209c95011f15d4575809d039ea9",
+                "url": "https://api.github.com/repos/wp-cli/server-command/zipball/29976aef5c2bdf159b8700eab26bafc943f0be0c",
+                "reference": "29976aef5c2bdf159b8700eab26bafc943f0be0c",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4162,29 +4309,29 @@
             "homepage": "https://github.com/wp-cli/server-command",
             "support": {
                 "issues": "https://github.com/wp-cli/server-command/issues",
-                "source": "https://github.com/wp-cli/server-command/tree/v2.0.6"
+                "source": "https://github.com/wp-cli/server-command/tree/v2.0.8"
             },
-            "time": "2020-12-07T19:26:47+00:00"
+            "time": "2021-05-10T10:26:08+00:00"
         },
         {
             "name": "wp-cli/shell-command",
-            "version": "v2.0.7",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/shell-command.git",
-                "reference": "76088e1ff69855d89454aed886d27c3f62b12c2c"
+                "reference": "f27b34a87b515da646d2e7018a8abc1254416fec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/76088e1ff69855d89454aed886d27c3f62b12c2c",
-                "reference": "76088e1ff69855d89454aed886d27c3f62b12c2c",
+                "url": "https://api.github.com/repos/wp-cli/shell-command/zipball/f27b34a87b515da646d2e7018a8abc1254416fec",
+                "reference": "f27b34a87b515da646d2e7018a8abc1254416fec",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4220,30 +4367,30 @@
             "homepage": "https://github.com/wp-cli/shell-command",
             "support": {
                 "issues": "https://github.com/wp-cli/shell-command/issues",
-                "source": "https://github.com/wp-cli/shell-command/tree/v2.0.7"
+                "source": "https://github.com/wp-cli/shell-command/tree/v2.0.9"
             },
-            "time": "2020-12-07T19:26:30+00:00"
+            "time": "2021-05-10T10:16:05+00:00"
         },
         {
             "name": "wp-cli/super-admin-command",
-            "version": "v2.0.5",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/super-admin-command.git",
-                "reference": "23b9a4e6f27d5effe5cfd67db2329e0d58dbb53f"
+                "reference": "ad4bd4e6b6a53afa4ba8664a6dd695be6feb692e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/super-admin-command/zipball/23b9a4e6f27d5effe5cfd67db2329e0d58dbb53f",
-                "reference": "23b9a4e6f27d5effe5cfd67db2329e0d58dbb53f",
+                "url": "https://api.github.com/repos/wp-cli/super-admin-command/zipball/ad4bd4e6b6a53afa4ba8664a6dd695be6feb692e",
+                "reference": "ad4bd4e6b6a53afa4ba8664a6dd695be6feb692e",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/entity-command": "^1.3 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4281,30 +4428,30 @@
             "homepage": "https://github.com/wp-cli/super-admin-command",
             "support": {
                 "issues": "https://github.com/wp-cli/super-admin-command/issues",
-                "source": "https://github.com/wp-cli/super-admin-command/tree/v2.0.5"
+                "source": "https://github.com/wp-cli/super-admin-command/tree/v2.0.7"
             },
-            "time": "2020-12-07T19:26:13+00:00"
+            "time": "2021-05-10T10:25:05+00:00"
         },
         {
             "name": "wp-cli/widget-command",
-            "version": "v2.1.2",
+            "version": "v2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/widget-command.git",
-                "reference": "0c73470adbc73b45f4d371e4869672eacca104b3"
+                "reference": "5c7b4e147b77e3d768a9a034693ebc7ba1980707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/0c73470adbc73b45f4d371e4869672eacca104b3",
-                "reference": "0c73470adbc73b45f4d371e4869672eacca104b3",
+                "url": "https://api.github.com/repos/wp-cli/widget-command/zipball/5c7b4e147b77e3d768a9a034693ebc7ba1980707",
+                "reference": "5c7b4e147b77e3d768a9a034693ebc7ba1980707",
                 "shasum": ""
             },
             "require": {
-                "wp-cli/wp-cli": "^2.4"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "wp-cli/extension-command": "^1.2 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.11"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -4348,29 +4495,29 @@
             "homepage": "https://github.com/wp-cli/widget-command",
             "support": {
                 "issues": "https://github.com/wp-cli/widget-command/issues",
-                "source": "https://github.com/wp-cli/widget-command/tree/v2.1.2"
+                "source": "https://github.com/wp-cli/widget-command/tree/v2.1.4"
             },
-            "time": "2020-12-07T19:25:02+00:00"
+            "time": "2021-05-12T06:27:40+00:00"
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v2.4.1",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "ceb18598e79befa9b2a37a51efbb34910628988b"
+                "reference": "0bcf0c54f4d35685211d435e25219cc7acbe6d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/ceb18598e79befa9b2a37a51efbb34910628988b",
-                "reference": "ceb18598e79befa9b2a37a51efbb34910628988b",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0bcf0c54f4d35685211d435e25219cc7acbe6d48",
+                "reference": "0bcf0c54f4d35685211d435e25219cc7acbe6d48",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "mustache/mustache": "~2.13",
-                "php": "^5.4 || ^7.0",
-                "rmccue/requests": "~1.6",
+                "php": "^5.6 || ^7.0 || ^8.0",
+                "rmccue/requests": "^1.8",
                 "symfony/finder": ">2.7",
                 "wp-cli/mustangostang-spyc": "^0.6.3",
                 "wp-cli/php-cli-tools": "~0.11.2"
@@ -4381,7 +4528,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.7"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -4394,13 +4541,17 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "WP_CLI": "php"
-                }
+                    "WP_CLI\\": "php/"
+                },
+                "classmap": [
+                    "php/class-wp-cli.php",
+                    "php/class-wp-cli-command.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4417,42 +4568,42 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2020-02-18T08:15:37+00:00"
+            "time": "2021-05-14T13:44:51+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli-bundle.git",
-                "reference": "713bc75b2f88550920dedc4f2ad3e1daf9f76326"
+                "reference": "e5bd3fbfd4f1da3b41444091906cbda0f898d852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli-bundle/zipball/713bc75b2f88550920dedc4f2ad3e1daf9f76326",
-                "reference": "713bc75b2f88550920dedc4f2ad3e1daf9f76326",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli-bundle/zipball/e5bd3fbfd4f1da3b41444091906cbda0f898d852",
+                "reference": "e5bd3fbfd4f1da3b41444091906cbda0f898d852",
                 "shasum": ""
             },
             "require": {
-                "cweagans/composer-patches": "^1.6",
-                "php": ">=5.4",
+                "composer/composer": ">=1.5.6 <1.7.0 || ^1.7.1 || ^2.0.0",
+                "php": ">=5.6",
                 "wp-cli/cache-command": "^2",
-                "wp-cli/checksum-command": "^2",
-                "wp-cli/config-command": "^2",
-                "wp-cli/core-command": "^2",
+                "wp-cli/checksum-command": "^2.1",
+                "wp-cli/config-command": "^2.1",
+                "wp-cli/core-command": "^2.1",
                 "wp-cli/cron-command": "^2",
                 "wp-cli/db-command": "^2",
                 "wp-cli/embed-command": "^2",
                 "wp-cli/entity-command": "^2",
                 "wp-cli/eval-command": "^2",
                 "wp-cli/export-command": "^2",
-                "wp-cli/extension-command": "^2",
+                "wp-cli/extension-command": "^2.1",
                 "wp-cli/i18n-command": "^2",
                 "wp-cli/import-command": "^2",
                 "wp-cli/language-command": "^2",
                 "wp-cli/maintenance-mode-command": "^2",
                 "wp-cli/media-command": "^2",
-                "wp-cli/package-command": "^2",
+                "wp-cli/package-command": "^2.1",
                 "wp-cli/rewrite-command": "^2",
                 "wp-cli/role-command": "^2",
                 "wp-cli/scaffold-command": "^2",
@@ -4461,11 +4612,11 @@
                 "wp-cli/shell-command": "^2",
                 "wp-cli/super-admin-command": "^2",
                 "wp-cli/widget-command": "^2",
-                "wp-cli/wp-cli": "^2.4"
+                "wp-cli/wp-cli": "^2.5"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-master",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^3.0.7"
             },
             "suggest": {
                 "psy/psysh": "Enhanced `wp shell` functionality"
@@ -4473,9 +4624,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                },
-                "enable-patching": true
+                    "dev-master": "2.5.x-dev"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4492,7 +4642,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli-bundle/issues",
                 "source": "https://github.com/wp-cli/wp-cli-bundle"
             },
-            "time": "2019-11-12T17:43:58+00:00"
+            "time": "2021-05-14T16:34:31+00:00"
         },
         {
             "name": "wp-cli/wp-config-transformer",
@@ -4601,5 +4751,5 @@
     "platform-overrides": {
         "php": "7.4"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

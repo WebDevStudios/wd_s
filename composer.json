@@ -15,17 +15,17 @@
 		}
 	},
 	"require": {
-		"composer/installers": "^1.10"
+		"composer/installers": "^1.11.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
-		"wp-cli/wp-cli-bundle": "*",
-		"wp-coding-standards/wpcs": "~2.3.0"
+		"wp-cli/wp-cli-bundle": "^2.5.0",
+		"wp-coding-standards/wpcs": "^2.3.0"
 	},
 	"scripts": {
 		"format": "./vendor/bin/phpcbf --standard=.phpcs.xml --report=summary,source",
 		"lint": "./vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source",
-		"pot": "./vendor/wp-cli/wp-cli/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build"
+		"pot": "./vendor/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }

@@ -3,8 +3,7 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
-const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
-const MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const ESLintPlugin = require( 'eslint-webpack-plugin' );
 const StylelintPlugin = require( 'stylelint-webpack-plugin' );
 
@@ -21,7 +20,7 @@ module.exports = {
 				test: /\.(sa|sc|c)ss$/,
 				exclude: '/node_modules',
 				use: [
-					MiniCSSExtractPlugin.loader,
+					MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
 						options: {
@@ -62,6 +61,8 @@ module.exports = {
 	plugins: [
 		...defaultConfig.plugins,
 
+		new MiniCssExtractPlugin(),
+
 		/**
 		 * Copy source files/directories to a build directory.
 		 *
@@ -93,25 +94,6 @@ module.exports = {
 			},
 			sprite: {
 				prefix: false,
-			},
-		} ),
-
-		/**
-		 * Uses Imagemin to clean SVGs.
-		 *
-		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
-		 */
-		new ImageminPlugin( {
-			svgo: {
-				plugins: [
-					{ removeViewBox: false },
-					{ removeDimensions: true },
-					{
-						removeAttrs: {
-							attrs: '*:(stroke|fill):((?!^none$).)*',
-						},
-					},
-				],
 			},
 		} ),
 
