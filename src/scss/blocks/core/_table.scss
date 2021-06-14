@@ -40,10 +40,6 @@
 				@apply table-cell;
 			}
 
-			&:last-child {
-				@apply border-b border-black border-solid;
-			}
-
 			&::before {
 				@apply block uppercase;
 

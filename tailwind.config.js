@@ -138,7 +138,7 @@ module.exports = {
 				'table,dl,ol,ul,address,pre,blockquote,iframe': {
 					marginBottom: config( 'theme.spacing.16' ),
 				},
-				'pre': {
+				pre: {
 					overflow: 'auto',
 				},
 			} );
