@@ -62,7 +62,7 @@ jobs:
               run: npm run lint:css
 
             - name: Lint markdown
-              run: npm run lint:md:docs
+              run: npm run lint:md
 
             - name: Lint package.json
               run: npm run lint:pkg-json
