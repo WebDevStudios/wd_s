@@ -2,7 +2,7 @@ const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
 	purge: {
-		content: [ './**/*.php', './src/js-new/**/*.js' ],
+		content: [ './**/*.php', './src/js/**/*.js' ],
 		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
