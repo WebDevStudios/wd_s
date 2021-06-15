@@ -306,7 +306,7 @@ function _s_display_social_network_links() {
 	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
 
 	?>
-	<ul class="social-icons flex">
+	<ul class="flex social-icons">
 		<?php
 		// Loop through our network array.
 		foreach ( $social_networks as $network ) :
