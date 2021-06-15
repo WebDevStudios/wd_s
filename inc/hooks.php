@@ -130,13 +130,7 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
  * @return string|bool Content string if content exists, else empty.
  */
 function _s_get_the_content( $content ) {
-
-	// Bail if no content exists.
-	if ( empty( $content ) ) {
-		return;
-	}
-	// Returns the content.
-	return $content;
+	return ! empty( $content ) ? $content : false;
 }
 
 add_filter( 'the_content', '_s_get_the_content', 20 );
