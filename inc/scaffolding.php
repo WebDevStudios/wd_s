@@ -10,8 +10,9 @@
 /**
  * Build a scaffolding section.
  *
+ * @author Greg Rickaby, Carrie Forde
+ *
  * @param array $args The scaffolding defaults.
- * @author Greg Rickaby Carrie Forde
  */
 function _s_display_scaffolding_section( $args = [] ) {
 	// Set defaults.
@@ -99,8 +100,9 @@ function _s_display_scaffolding_section( $args = [] ) {
 /**
  * Declare HTML tags allowed for scaffolding.
  *
- * @return array The allowed tags and attributes.
  * @author Carrie Forde
+ *
+ * @return array The allowed tags and attributes.
  */
 function _s_scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.
@@ -159,8 +161,9 @@ function _s_scaffolding_allowed_html() {
 /**
  * Build a global scaffolding element.
  *
- * @param array $args The array of colors or fonts.
  * @author Carrie Forde
+ *
+ * @param array $args The array of colors or fonts.
  */
 function _s_display_global_scaffolding_section( $args = [] ) {
 	// Set defaults.

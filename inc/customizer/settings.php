@@ -8,8 +8,9 @@
 /**
  * Register additional scripts.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
- * @author WDS
+ * @author WebDevStudios
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function _s_customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
@@ -58,8 +59,9 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
 /**
  * Register a social icons setting.
  *
- * @author WDS
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @author WebDevStudios
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function _s_customize_social_icons( $wp_customize ) {
 	// Create an array of our social links for ease of setup.
@@ -82,20 +84,22 @@ function _s_customize_social_icons( $wp_customize ) {
 		$wp_customize->add_control(
 			'_s_' . $network . '_link',
 			[
-				'label'   => /* translators: the social network name. */ sprintf( esc_html__( '%s URL', '_s' ), ucwords( $network ) ),
+				'label'   => /* translators: the social network name. */ sprintf( esc_attr__( '%s URL', '_s' ), ucwords( $network ) ),
 				'section' => '_s_social_links_section',
 				'type'    => 'text',
 			]
 		);
 	}
 }
+
 add_action( 'customize_register', '_s_customize_social_icons' );
 
 /**
  * Register copyright text setting.
  *
- * @author WDS
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @author WebDevStudios
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function _s_customize_copyright_text( $wp_customize ) {
 	// Register a setting.
