@@ -29,12 +29,12 @@ if ( post_password_required() ) {
 		?>
 		<h3 class="comments-title">
 			<?php
-			printf(
-				/* translators: the number of comments */
-				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', '_s' ) ),
-				number_format_i18n( get_comments_number() ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-				'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-			);
+				printf(
+					/* translators: the number of comments */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', '_s' ) ),
+					number_format_i18n( get_comments_number() ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+					'<span>' . wp_kses_post( get_the_title() ) . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+				);
 			?>
 		</h3>
 
