@@ -76,13 +76,8 @@ function _s_entry_footer() {
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-<<<<<<< HEAD
-			esc_attr__( 'Edit %s', '_s' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-=======
 			esc_html__( 'Edit %s', '_s' ),
 			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
->>>>>>> 97059e1bce16 (Add escaping to get_the_title)
 		),
 		'<span class="edit-link">',
 		'</span>'
