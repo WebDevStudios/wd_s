@@ -376,11 +376,8 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
 	}
 	?>
 
-	<nav class="pagination-container container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
-		<?php
-		 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-			echo paginate_links( $args );
-		?>
+	<nav class="container pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
+		<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
 	</nav>
 
 	<?php

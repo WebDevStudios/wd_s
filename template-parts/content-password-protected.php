@@ -16,10 +16,7 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php
-				 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo get_the_password_form();
-			?>
+			<?php echo get_the_password_form(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</div><!-- .entry-content -->
 
 	</article><!-- #post-## -->
