@@ -14,7 +14,6 @@ import wdsMobileMenu from './components/mobile-menu';
 import wdsModal from './components/modal';
 import wdsPrimaryNav from './components/navigation-primary';
 import wdsOffCanvas from './components/off-canvas';
-import wdsSkipLinkFocusFix from './components/skip-link-focus-fix';
 import wdsTable from './components/table';
 import wdsVideo from './components/video';
 /* eslint-enable no-undef, no-unused-vars */
