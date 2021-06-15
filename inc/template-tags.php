@@ -94,8 +94,8 @@ function _s_entry_footer() {
 function _s_display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
-	$svg_args = array(
-		'svg'   => array(
+	$svg_args = [
+		'svg'   => [
 			'class'           => true,
 			'aria-hidden'     => true,
 			'aria-labelledby' => true,
@@ -106,20 +106,20 @@ function _s_display_svg( $args = [] ) {
 			'viewbox'         => true, // <= Must be lower case!
 			'color'           => true,
 			'stroke-width'    => true,
-		),
-		'g'     => array( 'color' => true ),
-		'title' => array(
+		],
+		'g'     => [ 'color' => true ],
+		'title' => [
 			'title' => true,
 			'id'    => true,
-		),
-		'path'  => array(
+		],
+		'path'  => [
 			'd'     => true,
 			'color' => true,
-		),
-		'use'   => array(
+		],
+		'use'   => [
 			'xlink:href' => true,
-		),
-	);
+		],
+	];
 
 	$allowed_tags = array_merge(
 		$kses_defaults,
