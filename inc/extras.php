@@ -14,7 +14,6 @@
  * @return bool Whether the blog has more than one category.
  */
 function _s_categorized_blog() {
-
 	$category_count = get_transient( '_s_categories' );
 
 	if ( false === $category_count ) {
@@ -41,7 +40,6 @@ function _s_categorized_blog() {
  * @return int The attachment ID.
  */
 function _s_get_attachment_id_from_url( $attachment_url = '' ) {
-
 	global $wpdb;
 
 	$attachment_id = false;
@@ -82,7 +80,6 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  * @return string
  */
 function _s_copyright_year( $atts ) {
-
 	// Setup defaults.
 	$args = shortcode_atts(
 		[
@@ -101,4 +98,5 @@ function _s_copyright_year( $atts ) {
 
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
+
 add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );

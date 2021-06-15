@@ -41,4 +41,5 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', '_s_scripts' );

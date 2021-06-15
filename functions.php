@@ -136,6 +136,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		add_theme_support( 'responsive-embeds' );
 	}
 endif; // _s_setup.
+
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
@@ -149,6 +150,7 @@ add_action( 'after_setup_theme', '_s_setup' );
 function _s_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', '_s_content_width', 0 );
 
 /**
@@ -158,7 +160,6 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
  * @author WDS
  */
 function _s_widgets_init() {
-
 	// Define sidebars.
 	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
@@ -178,8 +179,8 @@ function _s_widgets_init() {
 			]
 		);
 	}
-
 }
+
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**

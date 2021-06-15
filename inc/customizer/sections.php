@@ -8,7 +8,7 @@
 /**
  * Register the section sections.
  *
- * @author WDS
+ * @author WebDevStudios
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_sections( $wp_customize ) {

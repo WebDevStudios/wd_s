@@ -14,7 +14,6 @@
  * @author Greg Rickaby Carrie Forde
  */
 function _s_display_scaffolding_section( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'title'       => '', // The scaffolding title.
@@ -104,7 +103,6 @@ function _s_display_scaffolding_section( $args = [] ) {
  * @author Carrie Forde
  */
 function _s_scaffolding_allowed_html() {
-
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	$allowed_tags = array_merge(
 		wp_kses_allowed_html( 'post' ),
@@ -165,7 +163,6 @@ function _s_scaffolding_allowed_html() {
  * @author Carrie Forde
  */
 function _s_display_global_scaffolding_section( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'global_type' => '', // Can be 'colors' or 'fonts'.
@@ -245,7 +242,6 @@ function _s_display_global_scaffolding_section( $args = [] ) {
  * @author Carrie Forde
  */
 function _s_hook_theme_scaffolding() {
-
 	$template_dir = 'template-parts/scaffolding/scaffolding';
 
 	get_template_part( $template_dir, 'globals' );
@@ -256,4 +252,5 @@ function _s_hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'forms' );
 	get_template_part( $template_dir, 'elements' );
 }
+
 add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );
