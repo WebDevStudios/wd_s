@@ -92,7 +92,6 @@ function _s_entry_footer() {
  * @author WDS
  */
 function _s_display_svg( $args = [] ) {
-
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
 	$svg_args = array(
@@ -141,7 +140,6 @@ function _s_display_svg( $args = [] ) {
  * @return string
  */
 function _s_get_svg( $args = [] ) {
-
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return esc_html__( 'Please define default parameters in the form of an array.', '_s' );
@@ -244,7 +242,6 @@ function _s_get_svg( $args = [] ) {
  * @return string
  */
 function _s_get_the_title( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'length' => 12,
@@ -362,7 +359,6 @@ function _s_display_social_network_links() {
  * @author Corey Collins
  */
 function _s_display_numeric_pagination( $args = [], $query = null ) {
-
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -406,7 +402,6 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
  * @author Corey Collins
  */
 function _s_display_mobile_menu() {
-
 	// Bail if no mobile or primary menus are set.
 	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
 		return '';

@@ -12,7 +12,6 @@
  * @author WDS
  */
 function _s_customize_additional_scripts( $wp_customize ) {
-
 	// Register a setting.
 	$wp_customize->add_setting(
 		'_s_header_scripts',
@@ -53,6 +52,7 @@ function _s_customize_additional_scripts( $wp_customize ) {
 		]
 	);
 }
+
 add_action( 'customize_register', '_s_customize_additional_scripts' );
 
 /**
@@ -62,9 +62,9 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_social_icons( $wp_customize ) {
-
 	// Create an array of our social links for ease of setup.
-	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
+	$social_networks = [
+		'facebook',
 
 	// Loop through our networks to setup our fields.
 	foreach ( $social_networks as $network ) {
@@ -98,7 +98,6 @@ add_action( 'customize_register', '_s_customize_social_icons' );
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function _s_customize_copyright_text( $wp_customize ) {
-
 	// Register a setting.
 	$wp_customize->add_setting(
 		'_s_copyright_text',
@@ -122,4 +121,5 @@ function _s_customize_copyright_text( $wp_customize ) {
 		)
 	);
 }
+
 add_action( 'customize_register', '_s_customize_copyright_text' );

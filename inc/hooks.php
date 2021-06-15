@@ -15,7 +15,6 @@
  * @return array
  */
 function _s_body_classes( $classes ) {
-
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;
 
@@ -70,6 +69,7 @@ function _s_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', '_s_body_classes' );
 
 /**
@@ -82,9 +82,11 @@ function _s_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return false;
 	}
+
 	// Like, beat it. Dig?
 	delete_transient( '_s_categories' );
 }
+
 add_action( 'delete_category', '_s_category_transient_flusher' );
 add_action( 'save_post', '_s_category_transient_flusher' );
 
@@ -97,6 +99,7 @@ add_action( 'save_post', '_s_category_transient_flusher' );
 function _s_content_more_link() {
 	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
 }
+
 add_filter( 'the_content_more_link', '_s_content_more_link' );
 
 /**
@@ -109,6 +112,7 @@ add_filter( 'the_content_more_link', '_s_content_more_link' );
 function _s_excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
 }
+
 add_filter( 'excerpt_more', '_s_excerpt_more' );
 
 /**
@@ -127,6 +131,7 @@ function _s_get_the_content( $content ) {
 	// Returns the content.
 	return $content;
 }
+
 add_filter( 'the_content', '_s_get_the_content', 20 );
 
 /**
@@ -139,8 +144,10 @@ add_filter( 'the_content', '_s_get_the_content', 20 );
 function _s_custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';
 	$mimes['svgz'] = 'image/svg+xml';
+
 	return $mimes;
 }
+
 add_filter( 'upload_mimes', '_s_custom_mime_types' );
 
 /**
@@ -149,7 +156,6 @@ add_filter( 'upload_mimes', '_s_custom_mime_types' );
  * @author WDS
  */
 function _s_include_svg_icons() {
-
 	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/build/images/icons/sprite.svg';
 
@@ -160,6 +166,7 @@ function _s_include_svg_icons() {
 		echo '</div>';
 	}
 }
+
 add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
 
 /**
@@ -169,7 +176,6 @@ add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
  * @return string
  */
 function _s_display_customizer_header_scripts() {
-
 	// Check for header scripts.
 	$scripts = get_theme_mod( '_s_header_scripts' );
 
@@ -182,6 +188,7 @@ function _s_display_customizer_header_scripts() {
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	echo _s_get_the_content( $scripts );
 }
+
 add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
 
 /**
@@ -191,7 +198,6 @@ add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
  * @return string
  */
 function _s_display_customizer_footer_scripts() {
-
 	// Check for footer scripts.
 	$scripts = get_theme_mod( '_s_footer_scripts' );
 
@@ -204,6 +210,7 @@ function _s_display_customizer_footer_scripts() {
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	echo _s_get_the_content( $scripts );
 }
+
 add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 
 /**
@@ -213,7 +220,6 @@ add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
  * @author Corey Collins
  */
 function _s_add_og_tags() {
-
 	// Bail if Yoast is installed, since it will handle things.
 	if ( class_exists( 'WPSEO_Options' ) ) {
 		return '';
@@ -344,6 +350,7 @@ function _s_add_og_tags() {
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
 	<?php
 }
+
 add_action( 'wp_head', '_s_add_og_tags' );
 
 /**
@@ -354,7 +361,6 @@ add_action( 'wp_head', '_s_add_og_tags' );
  * @author Corey Collins
  */
 function _s_remove_archive_title_prefix( $block_title ) {
-
 	// Get the single category title with no prefix.
 	$single_cat_title = single_term_title( '', false );
 
@@ -364,6 +370,7 @@ function _s_remove_archive_title_prefix( $block_title ) {
 
 	return $block_title;
 }
+
 add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
 
 /**
@@ -374,7 +381,6 @@ add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
  * @author Corey Collins
  */
 function _s_remove_empty_p_tags_from_content( $content ) {
-
 	// If we have blocks in place, don't add wpautop.
 	if ( has_blocks() ) {
 		return $content;
@@ -382,5 +388,6 @@ function _s_remove_empty_p_tags_from_content( $content ) {
 
 	return wpautop( $content );
 }
+
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', '_s_remove_empty_p_tags_from_content' );
