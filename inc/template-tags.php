@@ -303,7 +303,12 @@ function _s_display_copyright_text() {
 function _s_display_social_network_links() {
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
-	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
+	$social_networks = [
+		'facebook',
+		'instagram',
+		'linkedin',
+		'twitter',
+	];
 
 	?>
 	<ul class="flex social-icons">
