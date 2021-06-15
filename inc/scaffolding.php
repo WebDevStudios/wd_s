@@ -106,7 +106,7 @@ function _s_display_scaffolding_section( $args = [] ) {
  */
 function _s_scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.
-	$allowed_tags = array_merge(
+	return array_merge(
 		wp_kses_allowed_html( 'post' ),
 		[
 			'svg'    => [
@@ -155,7 +155,6 @@ function _s_scaffolding_allowed_html() {
 			],
 		]
 	);
-	return $allowed_tags;
 }
 
 /**
