@@ -371,7 +371,7 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
-	if ( is_null( paginate_links( $args ) ) ) {
+	if ( null === paginate_links( $args ) ) {
 		return;
 	}
 	?>
