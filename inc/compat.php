@@ -8,7 +8,7 @@
 /**
  * Back-fill wp_body_open for prior to 5.2 WP versions.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 if ( ! function_exists( 'wp_body_open' ) ) {
 

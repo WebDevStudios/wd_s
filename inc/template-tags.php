@@ -10,7 +10,7 @@
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -45,7 +45,7 @@ function _s_posted_on() {
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_entry_footer() {
 	// Hide category and tag text for pages.
@@ -87,9 +87,9 @@ function _s_entry_footer() {
 /**
  * Display SVG Markup.
  *
- * @param array $args The parameters needed to get the SVG.
+ * @author WebDevStudios
  *
- * @author WDS
+ * @param array $args The parameters needed to get the SVG.
  */
 function _s_display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
@@ -135,9 +135,11 @@ function _s_display_svg( $args = [] ) {
 /**
  * Return SVG markup.
  *
+ * @author WebDevStudios
+ *
  * @param array $args The parameters needed to display the SVG.
- * @author WDS
- * @return string
+ *
+ * @return string Error string or SVG markup.
  */
 function _s_get_svg( $args = [] ) {
 	// Make sure $args are an array.
@@ -236,10 +238,11 @@ function _s_get_svg( $args = [] ) {
 /**
  * Trim the title length.
  *
+ * @author WebDevStudios
+ *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
- * @return string
+ * @return string The title.
  */
 function _s_get_the_title( $args = [] ) {
 	// Set defaults.
@@ -258,10 +261,11 @@ function _s_get_the_title( $args = [] ) {
 /**
  * Limit the excerpt length.
  *
+ * @author WebDevStudios
+ *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
- * @return string
+ * @return string The excerpt.
  */
 function _s_get_the_excerpt( $args = [] ) {
 
@@ -282,11 +286,9 @@ function _s_get_the_excerpt( $args = [] ) {
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @author WDS
- * @return bool
+ * @author WebDevStudios
  */
 function _s_display_copyright_text() {
-
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
 
@@ -301,10 +303,9 @@ function _s_display_copyright_text() {
 /**
  * Display the social links saved in the customizer.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_display_social_network_links() {
-
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
 	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
@@ -351,12 +352,10 @@ function _s_display_social_network_links() {
 /**
  * Displays numeric pagination on archive pages.
  *
- * @param array  $args Array of params to customize output.
- * @param object $query The Query object; only passed if a custom WP_Query is used.
+ * @author WebDevStudios
  *
- * @author WDS
- * @return void.
- * @author Corey Collins
+ * @param array    $args  Array of params to customize output.
+ * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
 function _s_display_numeric_pagination( $args = [], $query = null ) {
 	if ( ! $query ) {
@@ -396,10 +395,9 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @return string An empty string if no menus are found at all.
+ * @author WebDevStudios
  *
- * @author WDS
- * @author Corey Collins
+ * @return string An empty string if no menus are found at all.
  */
 function _s_display_mobile_menu() {
 	// Bail if no mobile or primary menus are set.

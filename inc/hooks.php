@@ -10,9 +10,11 @@
 /**
  * Adds custom classes to the array of body classes.
  *
+ * @author WebDevStudios
+ *
  * @param array $classes Classes for the body element.
- * @author WDS
- * @return array
+ *
+ * @return array Body classes.
  */
 function _s_body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
@@ -37,7 +39,6 @@ function _s_body_classes( $classes ) {
 	if ( wp_is_mobile() ) {
 		$classes[] = 'mobile';
 	}
-	// @codingStandardsIgnoreEnd
 
 	// Give all pages a unique class.
 	if ( is_page() ) {
@@ -75,8 +76,9 @@ add_filter( 'body_class', '_s_body_classes' );
 /**
  * Flush out the transients used in _s_categorized_blog.
  *
- * @author WDS
- * @return string
+ * @author WebDevStudios
+ *
+ * @return bool Whether or not transients were deleted.
  */
 function _s_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -93,8 +95,9 @@ add_action( 'save_post', '_s_category_transient_flusher' );
 /**
  * Customize "Read More" string on <!-- more --> with the_content();
  *
- * @author WDS
- * @return string
+ * @author WebDevStudios
+ *
+ * @return string Read more link.
  */
 function _s_content_more_link() {
 	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
@@ -105,9 +108,11 @@ add_filter( 'the_content_more_link', '_s_content_more_link' );
 /**
  * Customize the [...] on the_excerpt();
  *
- * @author WDS
+ * @author WebDevStudios
+ *
  * @param string $more The current $more string.
- * @return string
+ *
+ * @return string Read more link.
  */
 function _s_excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
@@ -118,9 +123,11 @@ add_filter( 'excerpt_more', '_s_excerpt_more' );
 /**
  * Filters WYSIWYG content with the_content filter.
  *
+ * @author Jo Murgel
+ *
  * @param string $content content dump from WYSIWYG.
- * @return mixed $content.
- * @author jomurgel
+ *
+ * @return string|bool Content string if content exists, else empty.
  */
 function _s_get_the_content( $content ) {
 
@@ -137,9 +144,11 @@ add_filter( 'the_content', '_s_get_the_content', 20 );
 /**
  * Enable custom mime types.
  *
- * @author WDS
+ * @author WebDevStudios
+ *
  * @param array $mimes Current allowed mime types.
- * @return array
+ *
+ * @return array Mime types.
  */
 function _s_custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';
@@ -153,7 +162,7 @@ add_filter( 'upload_mimes', '_s_custom_mime_types' );
 /**
  * Add SVG definitions to footer.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_include_svg_icons() {
 	// Define SVG sprite file.
@@ -173,7 +182,8 @@ add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
  * Display the customizer header scripts.
  *
  * @author Greg Rickaby
- * @return string
+ *
+ * @return string Header scripts.
  */
 function _s_display_customizer_header_scripts() {
 	// Check for header scripts.
@@ -195,7 +205,8 @@ add_action( 'wp_head', '_s_display_customizer_header_scripts', 999 );
  * Display the customizer footer scripts.
  *
  * @author Greg Rickaby
- * @return string
+ *
+ * @return string Footer scripts.
  */
 function _s_display_customizer_footer_scripts() {
 	// Check for footer scripts.
@@ -216,8 +227,9 @@ add_action( 'wp_footer', '_s_display_customizer_footer_scripts', 999 );
 /**
  * Adds OG tags to the head for better social sharing.
  *
- * @return string Just an empty string if Yoast is found.
  * @author Corey Collins
+ *
+ * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */
 function _s_add_og_tags() {
 	// Bail if Yoast is installed, since it will handle things.
@@ -356,9 +368,11 @@ add_action( 'wp_head', '_s_add_og_tags' );
 /**
  * Removes or Adjusts the prefix on category archive page titles.
  *
- * @param string $block_title The default $block_title of the page.
- * @return string The updated $block_title.
  * @author Corey Collins
+ *
+ * @param string $block_title The default $block_title of the page.
+ *
+ * @return string The updated $block_title.
  */
 function _s_remove_archive_title_prefix( $block_title ) {
 	// Get the single category title with no prefix.
@@ -376,9 +390,11 @@ add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
  *
- * @param string $content The starting post content.
- * @return string The updated post content.
  * @author Corey Collins
+ *
+ * @param string $content The starting post content.
+ *
+ * @return string The updated post content.
  */
 function _s_remove_empty_p_tags_from_content( $content ) {
 	// If we have blocks in place, don't add wpautop.

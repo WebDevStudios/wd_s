@@ -10,7 +10,8 @@
 /**
  * Returns true if a blog has more than 1 category, else false.
  *
- * @author WDS
+ * @author WebDevStudios
+ *
  * @return bool Whether the blog has more than one category.
  */
 function _s_categorized_blog() {
@@ -35,9 +36,11 @@ function _s_categorized_blog() {
 /**
  * Get an attachment ID from it's URL.
  *
- * @author WDS
+ * @author WebDevStudios
+ *
  * @param string $attachment_url The URL of the attachment.
- * @return int The attachment ID.
+ *
+ * @return int    The attachment ID.
  */
 function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 	global $wpdb;
@@ -73,11 +76,12 @@ function _s_get_attachment_id_from_url( $attachment_url = '' ) {
  * Shortcode to display copyright year.
  *
  * @author Haris Zulfiqar
- * @param array $atts {.
- * @type string $starting_year Optional. Define starting year to show starting year and current year e.g. 2015 - 2018.
- * @type string $separator Optional. Separator between starting year and current year.
- * }
- * @return string
+ *
+ * @param array $atts Optional attributes.
+ *     $starting_year Optional. Define starting year to show starting year and current year e.g. 2015 - 2018.
+ *     $separator Optional. Separator between starting year and current year.
+ *
+ * @return string Copyright year text.
  */
 function _s_copyright_year( $atts ) {
 	// Setup defaults.

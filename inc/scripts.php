@@ -8,7 +8,7 @@
 /**
  * Enqueue scripts and styles.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_scripts() {
 	/**
