@@ -12,6 +12,7 @@
 get_header(); ?>
 
 	<div class="site-main container">
+		<main id="main" class="content-container">
 
 		<main id="main" class="content-container">
 
