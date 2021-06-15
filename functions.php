@@ -7,7 +7,7 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( '_s_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -135,7 +135,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		// Gutenberg responsive embed support.
 		add_theme_support( 'responsive-embeds' );
 	}
-endif; // _s_setup.
+}
 
 add_action( 'after_setup_theme', '_s_setup' );
 
