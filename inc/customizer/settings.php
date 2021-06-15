@@ -26,8 +26,8 @@ function _s_customize_additional_scripts( $wp_customize ) {
 	$wp_customize->add_control(
 		'_s_header_scripts',
 		[
-			'label'       => esc_html__( 'Header Scripts', '_s' ),
-			'description' => esc_html__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', '_s' ),
+			'label'       => esc_attr__( 'Header Scripts', '_s' ),
+			'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', '_s' ),
 			'section'     => '_s_additional_scripts_section',
 			'type'        => 'textarea',
 		]
@@ -46,8 +46,8 @@ function _s_customize_additional_scripts( $wp_customize ) {
 	$wp_customize->add_control(
 		'_s_footer_scripts',
 		[
-			'label'       => esc_html__( 'Footer Scripts', '_s' ),
-			'description' => esc_html__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', '_s' ),
+			'label'       => esc_attr__( 'Footer Scripts', '_s' ),
+			'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', '_s' ),
 			'section'     => '_s_additional_scripts_section',
 			'type'        => 'textarea',
 		]
@@ -117,8 +117,8 @@ function _s_customize_copyright_text( $wp_customize ) {
 			$wp_customize,
 			'_s_copyright_text',
 			[
-				'label'       => esc_html__( 'Copyright Text', '_s' ),
-				'description' => esc_html__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', '_s' ),
+				'label'       => esc_attr__( 'Copyright Text', '_s' ),
+				'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', '_s' ),
 				'section'     => '_s_footer_section',
 				'type'        => 'textarea',
 			]
