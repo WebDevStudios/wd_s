@@ -86,7 +86,7 @@ function _s_category_transient_flusher() {
 	}
 
 	// Like, beat it. Dig?
-	delete_transient( '_s_categories' );
+	return delete_transient( '_s_categories' );
 }
 
 add_action( 'delete_category', '_s_category_transient_flusher' );
