@@ -6,6 +6,7 @@
  *
  * @package _s
  */
+
 ?>
 
 	<article <?php post_class(); ?>>

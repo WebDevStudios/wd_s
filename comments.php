@@ -25,7 +25,8 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+	if ( have_comments() ) :
+		?>
 		<h3 class="comments-title">
 			<?php
 			printf(
@@ -38,7 +39,8 @@ if ( post_password_required() ) {
 		</h3>
 
 		<?php
-		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through?
+			?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 				<h3 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h3>
 				<div class="nav-links">
@@ -63,7 +65,8 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php
-		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through?
+			?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h2>
 				<div class="nav-links">
@@ -79,7 +82,8 @@ if ( post_password_required() ) {
 
 	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_s' ); ?></p>
 	<?php endif; ?>
 

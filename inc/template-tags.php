@@ -212,7 +212,8 @@ function _s_get_svg( $args = [] ) {
 
 		<?php
 		// Display description if available.
-		if ( $args['desc'] ) : ?>
+		if ( $args['desc'] ) :
+			?>
 			<desc id="<?php echo esc_attr( $desc_id ); ?>">
 				<?php echo esc_html( $args['desc'] ); ?>
 			</desc>
@@ -220,7 +221,8 @@ function _s_get_svg( $args = [] ) {
 
 		<?php
 		// Use absolute path in the Customizer so that icons show up in there.
-		if ( is_customize_preview() ) : ?>
+		if ( is_customize_preview() ) :
+			?>
 			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/build/images/icons/sprite.svg#' . esc_html( $args['icon'] ) ) ); ?>"></use>
 		<?php else : ?>
 			<use xlink:href="#<?php echo esc_html( $args['icon'] ); ?>"></use>
@@ -320,7 +322,8 @@ function _s_display_social_network_links() {
 			$network_url = get_theme_mod( '_s_' . $network . '_link' );
 
 			// Only display the list item if a URL is set.
-			if ( ! empty( $network_url ) ) : ?>
+			if ( ! empty( $network_url ) ) :
+				?>
 				<li class="social-icon <?php echo esc_attr( $network ); ?> mr-2">
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
