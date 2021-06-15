@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area container">
+<div id="comments" class="container comments-area">
 	<h2 class="screen-reader-text"><?php esc_html_e( 'Comment section', '_s' ); ?></h2>
 
 	<?php
