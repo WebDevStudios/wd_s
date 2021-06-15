@@ -24,8 +24,8 @@
 		"wp-coding-standards/wpcs": "^2.3.0"
 	},
 	"scripts": {
-		"format": "./vendor/bin/phpcbf --standard=.phpcs.xml --report=summary,source",
-		"lint": "./vendor/bin/phpcs --standard=.phpcs.xml --report=summary,source",
+		"format": "./vendor/bin/phpcbf --report=summary,source",
+		"lint": "./vendor/bin/phpcs --report=summary,source",
 		"pot": "./vendor/bin/wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }
