@@ -11,7 +11,7 @@
  * @author WebDevStudios
  */
 function _s_scripts() {
-	$asset_file_path = __DIR__ . '/../build/index.asset.php';
+	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
 		$asset_file = include $asset_file_path;
