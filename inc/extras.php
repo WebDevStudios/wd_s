@@ -18,14 +18,9 @@ function _s_categorized_blog() {
 	$category_count = get_transient( '_s_categories' );
 
 	if ( false === $category_count ) {
+		$category_count_query = get_categories( [ 'fields' => 'count' ] );
 
-		$category_count_query = get_categories(
-			[
-				'fields' => 'count',
-			]
-		);
-
-		$category_count = (int) $category_count_query[0];
+		$category_count = isset( $category_count_query[0] ) ? (int) $category_count_query[0] : 0;
 
 		set_transient( '_s_categories', $category_count );
 	}
