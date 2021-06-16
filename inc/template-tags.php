@@ -20,9 +20,9 @@ function _s_posted_on() {
 
 	$time_string = sprintf(
 		$time_string,
-		esc_attr( get_the_date( 'c' ) ),
+		esc_attr( get_the_date( DATE_W3C ) ),
 		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		esc_html( get_the_modified_date() )
 	);
 
