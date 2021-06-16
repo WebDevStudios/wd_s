@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<div id="main" class="site-main container">
+	<div class="site-main container">
 		<main id="main" class="content-container">
 
 			<?php
