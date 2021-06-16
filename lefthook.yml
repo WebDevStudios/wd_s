@@ -4,10 +4,10 @@ pre-commit:
     commands:
         formatphp:
             glob: '*.php'
-            run: ./vendor/bin/phpcbf {staged_files} --standard=.phpcs.xml
+            run: ./vendor/bin/phpcbf {staged_files}
         lintphp:
             glob: '*.php'
-            run: ./vendor/bin/phpcs {staged_files} --standard=.phpcs.xml
+            run: ./vendor/bin/phpcs {staged_files}
         formatstyles:
             glob: '*.{css,scss}'
             run: npx prettier {staged_files} --write --config .prettierrc.js
