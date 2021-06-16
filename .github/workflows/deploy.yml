@@ -33,6 +33,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Use NPM 7
+              run: npm i -g npm@latest
+
             - name: Cache Node dependencies
               uses: actions/cache@v2
               with:
@@ -62,7 +65,7 @@ jobs:
                   REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
                   REMOTE_USER: ${{ secrets.REMOTE_USER }}
                   TARGET: ${{ secrets.REMOTE_PATH }}
-                  EXCLUDE: 'node_modules/,vendor/'
+                  EXCLUDE: '.git/,node_modules/,vendor/'
 
             - name: Notify Slack
               uses: rtCamp/action-slack-notify@v2

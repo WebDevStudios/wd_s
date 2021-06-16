@@ -20,9 +20,9 @@ function _s_posted_on() {
 
 	$time_string = sprintf(
 		$time_string,
-		esc_attr( get_the_date( 'c' ) ),
+		esc_attr( get_the_date( DATE_W3C ) ),
 		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		esc_html( get_the_modified_date() )
 	);
 
@@ -76,8 +76,8 @@ function _s_entry_footer() {
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_attr__( 'Edit %s', '_s' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			esc_html__( 'Edit %s', '_s' ),
+			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
 		),
 		'<span class="edit-link">',
 		'</span>'
@@ -255,7 +255,7 @@ function _s_get_the_title( $args = [] ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Trim the title.
-	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
+	return wp_kses_post( wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] ) );
 }
 
 /**
@@ -432,4 +432,15 @@ function _s_display_mobile_menu() {
 		?>
 	</nav>
 	<?php
+}
+
+/**
+ * Display the comments if the count is more than 0.
+ *
+ * @author WebDevStudios
+ */
+function _s_display_comments() {
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 }

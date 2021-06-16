@@ -16,7 +16,29 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php echo get_the_password_form(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php
+			echo wp_kses(
+				get_the_password_form(),
+				[
+					'p'     => [],
+					'label' => [
+						'for' => [],
+					],
+					'form'  => [
+						'action' => [],
+						'class'  => [],
+						'method' => [],
+					],
+					'input' => [
+						'id'    => [],
+						'name'  => [],
+						'size'  => [],
+						'type'  => [],
+						'value' => [],
+					],
+				]
+			);
+			?>
 		</div><!-- .entry-content -->
 
 	</article><!-- #post-## -->
