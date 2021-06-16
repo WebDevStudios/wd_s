@@ -18,7 +18,7 @@ function _s_scripts() {
 	} else {
 		$asset_file = [
 			'version'      => '1.0.0',
-			'dependencies' => [],
+			'dependencies' => [ 'wp-polyfill' ],
 		];
 	}
 
