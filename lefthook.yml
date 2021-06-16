@@ -10,19 +10,19 @@ pre-commit:
             run: ./vendor/bin/phpcs {staged_files}
         formatstyles:
             glob: '*.{css,scss}'
-            run: npx prettier {staged_files} --write --config .prettierrc.js
+            run: npx prettier {staged_files} --write
         lintstyles:
             glob: '*.{css,scss}'
-            run: npx stylelint {staged_files} --fix --config .stylelintrc.json
+            run: npx stylelint {staged_files} --fix
         formatjavascript:
             glob: '*.{js,ts,tsx}'
-            run: npx prettier {staged_files} --write --config .prettierrc.js
+            run: npx prettier {staged_files} --write
         lintjavascript:
             glob: '*.{js,ts,tsx}'
-            run: npx eslint {staged_files} --fix --config .eslintrc.js
+            run: npx eslint {staged_files} --fix
         lintmarkdown:
             glob: '*.{md}'
-            run: npx markdownlint-cli {staged_files} --fix --config .markdownlint.json
+            run: npx markdownlint-cli {staged_files} --fix
         other:
             glob: '*.{yml,json,html}'
-            run: npx prettier {staged_files} --write --config .prettierrc.js
+            run: npx prettier {staged_files} --write
