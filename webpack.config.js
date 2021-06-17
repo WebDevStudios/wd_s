@@ -102,7 +102,9 @@ module.exports = {
 		 *
 		 * @see https://www.npmjs.com/package/clean-webpack-plugin
 		 */
-		new CleanWebpackPlugin(),
+		new CleanWebpackPlugin( {
+			cleanAfterEveryBuildPatterns: [ '!fonts/**', '!*.woff2' ],
+		} ),
 
 		/**
 		 * Report JS warnings and errors to the command line.
