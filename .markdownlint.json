@@ -1,3 +1,4 @@
 {
-	"extends": "node_modules/@wordpress/scripts/config/.markdownlint.json"
+	"extends": "node_modules/@wordpress/scripts/config/.markdownlint.json",
+	"MD007": { "indent": 1 }
 }
