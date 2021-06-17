@@ -7,7 +7,7 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( '_s_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @author WDS
+	 * @author WebDevStudios
 	 */
 	function _s_setup() {
 		/**
@@ -135,7 +135,8 @@ if ( ! function_exists( '_s_setup' ) ) :
 		// Gutenberg responsive embed support.
 		add_theme_support( 'responsive-embeds' );
 	}
-endif; // _s_setup.
+}
+
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
@@ -143,22 +144,24 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
+ * @author WebDevStudios
+ *
  * @global int $content_width
- * @author WDS
  */
 function _s_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', '_s_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- * @author WDS
+ *
+ * @author WebDevStudios
  */
 function _s_widgets_init() {
-
 	// Define sidebars.
 	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
@@ -178,8 +181,8 @@ function _s_widgets_init() {
 			]
 		);
 	}
-
 }
+
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**

@@ -9,16 +9,16 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main container">
+	<main id="main" class="container site-main">
 
 		<section class="error-404 not-found">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Sorry, this page doesn\'t exist.', '_s' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( "Sorry, this page doesn't exist.", '_s' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<div class="page-content">
 
-				<p><?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', '_s' ); ?></p>
+				<p><?php esc_html_e( "It seems we can't find what you're looking for. Perhaps searching can help.", '_s' ); ?></p>
 
 				<?php get_search_form(); ?>
 

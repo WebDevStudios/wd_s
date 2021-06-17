@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<div class="site-main container">
+	<div class="container site-main">
 		<main id="main" class="content-container">
 
 			<?php
@@ -29,4 +29,5 @@ get_header(); ?>
 
 		<?php get_sidebar(); ?>
 	</div>
+
 <?php get_footer(); ?>

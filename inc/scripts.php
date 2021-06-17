@@ -8,7 +8,7 @@
 /**
  * Enqueue scripts and styles.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
@@ -30,4 +30,5 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', '_s_scripts' );

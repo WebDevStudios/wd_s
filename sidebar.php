@@ -7,12 +7,10 @@
  * @package _s
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+if ( is_active_sidebar( 'sidebar-1' ) ) {
+	?>
+	<aside class="sidebar widget-area">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</aside><!-- .secondary -->
+	<?php
 }
-?>
-
-<aside class="sidebar widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- .secondary -->
-
