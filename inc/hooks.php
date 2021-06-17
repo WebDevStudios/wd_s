@@ -384,7 +384,7 @@ add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
  *
- * @author Corey Collins, Brad Parbs
+ * @author Corey Collins
  */
 function _s_disable_wpautop_for_gutenberg() {
 	// If we have blocks in place, don't add wpautop.

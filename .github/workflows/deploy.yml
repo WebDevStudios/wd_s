@@ -56,6 +56,12 @@ jobs:
             - name: Install and build
               run: npm ci
 
+            - name: Create downloadable zip
+              uses: vimtor/action-zip@v1
+              with:
+                  files: ./
+                  dest: wd_s.zip
+
             - name: Rsync to wdunderscores.com
               uses: easingthemes/ssh-deploy@v2
               env:
