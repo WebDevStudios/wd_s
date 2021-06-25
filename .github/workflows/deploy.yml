@@ -33,12 +33,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
-<<<<<<< HEAD
-=======
             - name: Use NPM 7
               run: npm i -g npm@latest
 
->>>>>>> main
             - name: Cache Node dependencies
               uses: actions/cache@v2
               with:
@@ -53,22 +50,15 @@ jobs:
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                   restore-keys: ${{ runner.OS }}-composer-
 
-<<<<<<< HEAD
-            - name: Authorize Composer with WDS packagist server
-=======
             - name: Authorize Composer with WDS packagist
->>>>>>> main
               run: echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
 
             - name: Install and build
               run: npm ci
 
-<<<<<<< HEAD
-=======
             - name: Create downloadable zip
               run: zip -r wd_s.zip * -x node_modules/\* -x vendor/\* -x .git/\*
 
->>>>>>> main
             - name: Rsync to wdunderscores.com
               uses: easingthemes/ssh-deploy@v2
               env:
@@ -78,11 +68,7 @@ jobs:
                   REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
                   REMOTE_USER: ${{ secrets.REMOTE_USER }}
                   TARGET: ${{ secrets.REMOTE_PATH }}
-<<<<<<< HEAD
-                  EXCLUDE: 'node_modules/,vendor/'
-=======
                   EXCLUDE: '.git/,node_modules/,vendor/'
->>>>>>> main
 
             - name: Notify Slack
               uses: rtCamp/action-slack-notify@v2
