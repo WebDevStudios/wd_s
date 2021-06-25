@@ -10,6 +10,7 @@
 ?>
 
 	<article <?php post_class( 'post-container' ); ?>>
+
 		<header class="entry-header">
 			<?php
 			if ( is_single() ) :
@@ -17,11 +18,12 @@
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
+
 			if ( 'post' === get_post_type() ) :
 				?>
-			<div class="entry-meta">
-				<?php _s_posted_on(); ?>
-			</div><!-- .entry-meta -->
+				<div class="entry-meta">
+					<?php _s_posted_on(); ?>
+				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
 
@@ -31,7 +33,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. */
-							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+							esc_html__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
 							[
 								'span' => [
 									'class' => [],
@@ -44,7 +46,7 @@
 
 				wp_link_pages(
 					[
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+						'before' => '<div class="page-links">' . esc_attr__( 'Pages:', '_s' ),
 						'after'  => '</div>',
 					]
 				);
@@ -54,4 +56,5 @@
 		<footer class="entry-footer">
 			<?php _s_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
+
 	</article><!-- #post-## -->

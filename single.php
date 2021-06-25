@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main container">
+	<main id="main" class="container site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -19,13 +19,11 @@ get_header(); ?>
 
 			the_post_navigation();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			_s_display_comments();
 
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
+
 <?php get_footer(); ?>

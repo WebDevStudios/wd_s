@@ -10,7 +10,7 @@
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -20,9 +20,9 @@ function _s_posted_on() {
 
 	$time_string = sprintf(
 		$time_string,
-		esc_attr( get_the_date( 'c' ) ),
+		esc_attr( get_the_date( DATE_W3C ) ),
 		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		esc_html( get_the_modified_date() )
 	);
 
@@ -45,31 +45,31 @@ function _s_posted_on() {
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+		$categories_list = get_the_category_list( esc_attr__( ', ', '_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
 
 			/* translators: the post category */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<span class="cat-links">' . esc_attr__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
+		$tags_list = get_the_tag_list( '', esc_attr__( ', ', '_s' ) );
 		if ( $tags_list ) {
 
 			/* translators: the post tags */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+			printf( '<span class="tags-links">' . esc_attr__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
+		comments_popup_link( esc_attr__( 'Leave a comment', '_s' ), esc_attr__( '1 Comment', '_s' ), esc_attr__( '% Comments', '_s' ) );
 		echo '</span>';
 	}
 
@@ -77,7 +77,7 @@ function _s_entry_footer() {
 		sprintf(
 			/* translators: %s: Name of current post */
 			esc_html__( 'Edit %s', '_s' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
 		),
 		'<span class="edit-link">',
 		'</span>'
@@ -87,16 +87,15 @@ function _s_entry_footer() {
 /**
  * Display SVG Markup.
  *
- * @param array $args The parameters needed to get the SVG.
+ * @author WebDevStudios
  *
- * @author WDS
+ * @param array $args The parameters needed to get the SVG.
  */
 function _s_display_svg( $args = [] ) {
-
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
-	$svg_args = array(
-		'svg'   => array(
+	$svg_args = [
+		'svg'   => [
 			'class'           => true,
 			'aria-hidden'     => true,
 			'aria-labelledby' => true,
@@ -107,20 +106,20 @@ function _s_display_svg( $args = [] ) {
 			'viewbox'         => true, // <= Must be lower case!
 			'color'           => true,
 			'stroke-width'    => true,
-		),
-		'g'     => array( 'color' => true ),
-		'title' => array(
+		],
+		'g'     => [ 'color' => true ],
+		'title' => [
 			'title' => true,
 			'id'    => true,
-		),
-		'path'  => array(
+		],
+		'path'  => [
 			'd'     => true,
 			'color' => true,
-		),
-		'use'   => array(
+		],
+		'use'   => [
 			'xlink:href' => true,
-		),
-	);
+		],
+	];
 
 	$allowed_tags = array_merge(
 		$kses_defaults,
@@ -136,20 +135,21 @@ function _s_display_svg( $args = [] ) {
 /**
  * Return SVG markup.
  *
+ * @author WebDevStudios
+ *
  * @param array $args The parameters needed to display the SVG.
- * @author WDS
- * @return string
+ *
+ * @return string Error string or SVG markup.
  */
 function _s_get_svg( $args = [] ) {
-
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', '_s' );
+		return esc_attr__( 'Please define default parameters in the form of an array.', '_s' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', '_s' );
+		return esc_attr__( 'Please define an SVG icon filename.', '_s' );
 	}
 
 	// Set defaults.
@@ -238,13 +238,13 @@ function _s_get_svg( $args = [] ) {
 /**
  * Trim the title length.
  *
+ * @author WebDevStudios
+ *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
- * @return string
+ * @return string The title.
  */
 function _s_get_the_title( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'length' => 12,
@@ -255,16 +255,17 @@ function _s_get_the_title( $args = [] ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Trim the title.
-	return wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] );
+	return wp_kses_post( wp_trim_words( get_the_title( get_the_ID() ), $args['length'], $args['more'] ) );
 }
 
 /**
  * Limit the excerpt length.
  *
+ * @author WebDevStudios
+ *
  * @param array $args Parameters include length and more.
  *
- * @author WDS
- * @return string
+ * @return string The excerpt.
  */
 function _s_get_the_excerpt( $args = [] ) {
 
@@ -285,35 +286,34 @@ function _s_get_the_excerpt( $args = [] ) {
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @author WDS
- * @return bool
+ * @author WebDevStudios
  */
 function _s_display_copyright_text() {
-
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
 
-	// Stop if there's nothing to display.
-	if ( ! $copyright_text ) {
-		return false;
+	if ( $copyright_text ) {
+		echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	}
-
-	echo _s_get_the_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 }
 
 /**
  * Display the social links saved in the customizer.
  *
- * @author WDS
+ * @author WebDevStudios
  */
 function _s_display_social_network_links() {
-
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
-	$social_networks = [ 'facebook', 'instagram', 'linkedin', 'twitter' ];
+	$social_networks = [
+		'facebook',
+		'instagram',
+		'linkedin',
+		'twitter',
+	];
 
 	?>
-	<ul class="social-icons flex">
+	<ul class="flex social-icons">
 		<?php
 		// Loop through our network array.
 		foreach ( $social_networks as $network ) :
@@ -337,8 +337,8 @@ function _s_display_social_network_links() {
 						?>
 						<span class="screen-reader-text">
 						<?php
-						 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-							echo /* translators: the social network name */ sprintf( esc_html__( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) );
+						/* translators: the social network name */
+						printf( esc_attr__( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 						?>
 						</span>
 					</a>
@@ -354,15 +354,12 @@ function _s_display_social_network_links() {
 /**
  * Displays numeric pagination on archive pages.
  *
- * @param array  $args Array of params to customize output.
- * @param object $query The Query object; only passed if a custom WP_Query is used.
+ * @author WebDevStudios
  *
- * @author WDS
- * @return void.
- * @author Corey Collins
+ * @param array    $args  Array of params to customize output.
+ * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
 function _s_display_numeric_pagination( $args = [], $query = null ) {
-
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -382,16 +379,13 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
-	if ( is_null( paginate_links( $args ) ) ) {
+	if ( null === paginate_links( $args ) ) {
 		return;
 	}
 	?>
 
-	<nav class="pagination-container container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
-		<?php
-		 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-			echo paginate_links( $args );
-		?>
+	<nav class="container pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
+		<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
 	</nav>
 
 	<?php
@@ -400,13 +394,11 @@ function _s_display_numeric_pagination( $args = [], $query = null ) {
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @return string An empty string if no menus are found at all.
+ * @author WebDevStudios
  *
- * @author WDS
- * @author Corey Collins
+ * @return string An empty string if no menus are found at all.
  */
 function _s_display_mobile_menu() {
-
 	// Bail if no mobile or primary menus are set.
 	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
 		return '';
@@ -440,4 +432,15 @@ function _s_display_mobile_menu() {
 		?>
 	</nav>
 	<?php
+}
+
+/**
+ * Display the comments if the count is more than 0.
+ *
+ * @author WebDevStudios
+ */
+function _s_display_comments() {
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 }

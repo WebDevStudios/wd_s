@@ -10,11 +10,11 @@
 /**
  * Build a scaffolding section.
  *
+ * @author Greg Rickaby, Carrie Forde
+ *
  * @param array $args The scaffolding defaults.
- * @author Greg Rickaby Carrie Forde
  */
 function _s_display_scaffolding_section( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'title'       => '', // The scaffolding title.
@@ -100,13 +100,13 @@ function _s_display_scaffolding_section( $args = [] ) {
 /**
  * Declare HTML tags allowed for scaffolding.
  *
- * @return array The allowed tags and attributes.
  * @author Carrie Forde
+ *
+ * @return array The allowed tags and attributes.
  */
 function _s_scaffolding_allowed_html() {
-
 	// Add additional HTML tags to the wp_kses() allowed html filter.
-	$allowed_tags = array_merge(
+	return array_merge(
 		wp_kses_allowed_html( 'post' ),
 		[
 			'svg'    => [
@@ -155,17 +155,16 @@ function _s_scaffolding_allowed_html() {
 			],
 		]
 	);
-	return $allowed_tags;
 }
 
 /**
  * Build a global scaffolding element.
  *
- * @param array $args The array of colors or fonts.
  * @author Carrie Forde
+ *
+ * @param array $args The array of colors or fonts.
  */
 function _s_display_global_scaffolding_section( $args = [] ) {
-
 	// Set defaults.
 	$defaults = [
 		'global_type' => '', // Can be 'colors' or 'fonts'.
@@ -190,7 +189,6 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 			<?php
 			// We'll alter the output slightly depending upon the global type.
 			switch ( $args['global_type'] ) :
-
 				case 'colors':
 					?>
 
@@ -211,6 +209,7 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 					<?php endforeach; ?>
 					</div>
+
 					<?php
 					break;
 				case 'fonts':
@@ -245,7 +244,6 @@ function _s_display_global_scaffolding_section( $args = [] ) {
  * @author Carrie Forde
  */
 function _s_hook_theme_scaffolding() {
-
 	$template_dir = 'template-parts/scaffolding/scaffolding';
 
 	get_template_part( $template_dir, 'globals' );
@@ -256,4 +254,5 @@ function _s_hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'forms' );
 	get_template_part( $template_dir, 'elements' );
 }
+
 add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );

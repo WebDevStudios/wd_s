@@ -2,7 +2,6 @@
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwebdevstudios%2Fwd_s%2Fbadge%3Fref%3Dmain&style=flat)](https://github.com/WebDevStudios/wd_s/actions)
 
-
 A starter theme from WebDevStudios. <https://wdunderscores.com>
 
 [![WebDevStudios. Your Success is Our Mission.](https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png)](https://webdevstudios.com/contact/)
@@ -11,11 +10,11 @@ A starter theme from WebDevStudios. <https://wdunderscores.com>
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Quick Start](#quick-start)
-    - [Advanced](#advanced)
-- [Installation](#installation)
-    - [Development](#development)
+	- [Prerequisites](#prerequisites)
+	- [Quick Start](#quick-start)
+	- [Advanced](#advanced)
+- [Setup](#setup)
+	- [Development](#development)
 - [Contributing and Support](#contributing-and-support)
 
 ## Introduction
@@ -39,17 +38,18 @@ Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also ea
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
 - [Node](https://nodejs.org) (v14+)
+- [NPM](https://npmjs.com) (v7+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
 
-If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+If you want to keep it simple, head over to [https://wdunderscores.com](https://wdunderscores.com) and generate your `wd_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme. Alternatively, you could download a pre-built [ZIP](http://wdunderscores.com/wp-content/themes/wdunderscores/inc/prototype/wd_s.zip)
 
 ### Advanced
 
 If you want to set me up manually:
 
-1. [Download](https://github.com/WebDevStudios/wd_s/archive/main.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s-main` to fit your needs.
+1. [Download](http://wdunderscores.com/wp-content/themes/wdunderscores/inc/prototype/wd_s.zip) and extract the zip into your `wp-content/themes` directory and rename `wd_s` to fit your needs.
 
 2. Find & Replace
 
@@ -63,7 +63,7 @@ You'll need to change all instances of the names: `_s`.
 - Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 - Edit the theme information in the header of style.scss to meet your needs
 
-## Installation
+## Setup
 
 From the command line, change directories to your new theme directory:
 
@@ -73,7 +73,7 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have Composer installed first.
+>Note: You will need to have Composer and NPM 7 installed first.
 
 ```bash
 npm i --legacy-peer-deps

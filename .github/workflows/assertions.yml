@@ -32,6 +32,12 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+<<<<<<< HEAD
+=======
+            - name: Use NPM 7
+              run: npm i -g npm@latest
+
+>>>>>>> main
             - name: Cache Node dependencies
               uses: actions/cache@v2
               with:
