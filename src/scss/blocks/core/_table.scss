@@ -3,68 +3,63 @@
 //----------------------------------------
 
 .wp-block-table {
-	@apply container mb-24;
+	@apply container mb-24 p-0 border-0 border-collapse w-full;
+
+	border-spacing: 0;
+
+	@screen desktop {
+		@apply border border-solid border-black;
+	}
 
 	// TODO: Add toolbar and sidebar option support.
-
-	table {
-		@apply p-0 border-0 border-collapse w-full;
-
-		border-spacing: 0;
+	thead {
+		@apply hidden;
 
 		@screen desktop {
-			@apply border border-solid; // TODO: Add border color.
+			@apply table-row-group;
+		}
+	}
+
+	th,
+	td {
+		@apply p-8 text-center;
+
+		@screen desktop {
+			@apply table-cell;
+		}
+	}
+
+	td {
+		@apply block text-center border border-solid border-black;
+
+		@screen desktop {
+			@apply table-cell;
 		}
 
-		thead {
-			@apply hidden;
+		&::before {
+			@apply block uppercase;
+
+			content: attr( data-label );
 
 			@screen desktop {
-				@apply table-row-group;
+				@apply hidden;
 			}
 		}
+	}
 
-		th,
-		td {
-			@apply p-8 text-center;
+	th {
+		@apply tracking-widest uppercase border border-solid border-black;
 
-			@screen desktop {
-				@apply table-cell;
-			}
+		@screen tablet-portrait {
+			@apply table-cell;
 		}
+	}
 
-		td {
-			@apply block text-center border border-solid; // TODO: Add border color.
+	tr {
+		@apply block mb-16;
 
-			@screen desktop {
-				@apply table-cell;
-			}
-
-			&::before {
-				@apply block uppercase;
-
-				content: attr( data-label );
-
-				@screen desktop {
-					@apply hidden;
-				}
-			}
-		}
-
-		th {
-			@apply tracking-widest uppercase border border-solid; // TODO: Add border color.
-
-			@screen tablet-portrait {
-				@apply table-cell;
-			}
-		}
-
-		tr {
-			@apply block mb-16;
-
-			@screen desktop {
-				@apply table-row mb-0;
-			}
+		@screen desktop {
+			@apply table-row mb-0;
 		}
 	}
 }
