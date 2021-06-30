@@ -24,7 +24,7 @@ add_filter( 'the_generator', '__return_false' );
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
 /**
- * Change default from "null" to "*".
+ * Change REST-API header from "null" to "*".
  *
  * @author WebDevStudios
  * @see https://w3c.github.io/webappsec-cors-for-developers/#avoid-returning-access-control-allow-origin-null
