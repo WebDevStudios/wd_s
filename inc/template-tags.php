@@ -313,7 +313,7 @@ function _s_display_social_network_links() {
 	];
 
 	?>
-	<ul class="flex social-icons">
+	<ul class="flex social-icons menu">
 		<?php
 		// Loop through our network array.
 		foreach ( $social_networks as $network ) :
