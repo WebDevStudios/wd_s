@@ -53,7 +53,9 @@ jobs:
               run: echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
 
             - name: Install dependencies
-              run: npm ci
+              run: |
+                  composer install --quiet
+                  npm ci --legacy-peer-deps --ignore-scripts --no-fund --no-audit --quiet
 
             - name: Lint PHP
               run: npm run lint:php
