@@ -3,15 +3,19 @@
 //----------------------------------------
 
 .wp-block-image {
-	@apply container;
+	@apply container relative;
 
-	// TODO: Add toolbar and sidebar option support.
+	&.alignfull,
+	.is-resized,
+	.aligncenter,
+	.alignleft,
+	.alignright {
+		@apply relative;
+	}
 
-	// TODO: Add figcaption font styles.
-	// figcaption {}
-}
-
-.wp-caption-text,
-.gallery-caption figcaption {
-	@apply text-sm;
+	&.alignfull {
+		figcaption {
+			width: calc( 100% - 2rem );
+		}
+	}
 }
