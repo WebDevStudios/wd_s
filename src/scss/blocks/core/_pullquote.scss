@@ -5,13 +5,11 @@
 .wp-block-pullquote {
 	@apply container my-32;
 
-	// TODO: Add toolbar and sidebar option support.
-
 	blockquote > p {
-		@apply mb-16; // TODO: Add font styles.
+		@apply mb-16;
 	}
 
 	blockquote > cite {
-		@apply not-italic; // TODO: Add font styles.
+		@apply not-italic;
 	}
 }
