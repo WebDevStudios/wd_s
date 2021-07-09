@@ -5,12 +5,7 @@
 .wp-block-gallery {
 	@apply container mb-80;
 
-	// TODO: Add toolbar option support.
-
 	.blocks-gallery-item {
-		// TODO: Add caption font styles.
-		// .blocks-gallery-item__caption {}
-
 		img,
 		figcaption {
 			@apply rounded;
