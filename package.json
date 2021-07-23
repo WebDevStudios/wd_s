@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.6",
 		"@tailwindcss/postcss7-compat": "^2.2.4",
-		"@wordpress/prettier-config": "^1.0.5",
+		"@wordpress/prettier-config": "^1.1.0",
 		"@wordpress/scripts": "^16.1.4",
 		"browser-sync": "^2.27.4",
 		"clean-webpack-plugin": "^3.0.0",
