@@ -1,0 +1,18 @@
+//----------------------------------------
+// Captions - Core Gutenberg Block
+// For Images, Galleries, Audio, and Video Embeds
+//----------------------------------------
+
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-image figcaption {
+	@apply absolute bottom-0 overflow-auto max-h-full text-white bg-gradient-to-t from-gray-600 pt-32 pb-12 py-12;
+}
+
+.wp-caption-text,
+.wp-block-table figcaption,
+.gallery-caption figcaption,
+.wp-block-image figcaption,
+.wp-block-embed figcaption,
+.wp-block-audio figcaption {
+	@apply m-0 text-center text-sm w-full;
+}

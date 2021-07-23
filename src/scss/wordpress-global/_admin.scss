@@ -1,6 +1,7 @@
 //--------------------------------------------------------------
-// Theme Template Parts
+// Admin Overrides & Styles
 //--------------------------------------------------------------
-.archive-description {
-	@apply mb-24;
+
+.block-editor-writing-flow {
+	@apply text-base leading-normal;
 }

@@ -2,7 +2,7 @@ const plugin = require( 'tailwindcss/plugin' );
 
 module.exports = {
 	purge: {
-		content: [ './**/*.php', './src/components/*.js' ],
+		content: [ './**/*.php', './src/js/**/*.js' ],
 		layers: [ 'utilities' ],
 		mode: 'layers',
 	},
@@ -78,13 +78,17 @@ module.exports = {
 			desktop: '1200px',
 			'desktop-large': '1600px',
 		},
-		container: {
+		container: ( theme ) => ( {
 			center: true,
 			screens: {
 				phone: '100%',
 				desktop: '1200px',
 			},
-		},
+			padding: {
+				DEFAULT: theme( 'spacing.16' ),
+				'desktop-large': '0',
+			},
+		} ),
 		extend: {
 			backgroundOpacity: {
 				10: '0.1',
@@ -127,6 +131,15 @@ module.exports = {
 					'&:last-child': {
 						marginBottom: '0',
 					},
+				},
+				'.button': {
+					padding: config( 'theme.spacing.16' ),
+				},
+				'table,dl,ol,ul,address,pre,blockquote,iframe': {
+					marginBottom: config( 'theme.spacing.16' ),
+				},
+				pre: {
+					overflow: 'auto',
 				},
 			} );
 		} ),

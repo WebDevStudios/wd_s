@@ -1,0 +1,49 @@
+//----------------------------------------
+// Block Name - Type Of Block
+//----------------------------------------
+
+// Wide width block with bottom margin on the outer most element.
+// ┌────────────────────────────────────┐
+// │page                                │
+// │     ┌────────────────────────┐     │
+// │     │                        │     │
+// │     │block                   │     │
+// │     ├────────────────────────┤     │
+// │     │margin                  │     │
+// │     └────────────────────────┘     │
+// │                                    │
+// └────────────────────────────────────┘
+.wd-example {
+	@apply container mb-48;
+
+	&-title {
+		@apply font-serif text-3xl;
+	}
+
+	&-body {
+		@apply text-base;
+	}
+}
+
+// Full width block with inner padding and no bottom margin.
+// ┌────────────────────────────────────┐
+// │page                                │
+// ├────────────────────────────────────┤
+// │block                               │
+// │                                    │
+// │                                    │
+// │                                    │
+// ├────────────────────────────────────┤
+// │                                    │
+// └────────────────────────────────────┘
+.wd-another-example {
+	@apply py-48;
+
+	&-title {
+		@apply font-serif text-3xl;
+	}
+
+	&-body {
+		@apply text-base;
+	}
+}
