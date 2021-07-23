@@ -79,7 +79,7 @@
 	 * @author Corey Collins
 	 * @since January 31, 2020
 	 * @see https://gomakethings.com/climbing-up-and-down-the-dom-tree-with-vanilla-javascript/#getting-all-matches-up-the-tree
-	 * @param {Object} elem The parent menu item.
+	 * @param {Object} elem     The parent menu item.
 	 * @param {string} selector The CSS class of the element.
 	 * @return {Array} Parents.
 	 */

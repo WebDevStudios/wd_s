@@ -64,7 +64,7 @@ function wdsMobileMenu() {
 	 *
 	 * @author Corey Collins
 	 * @since January 31, 2020
-	 * @param {Object} parent THe parent menu.
+	 * @param {Object} parent  The parent menu.
 	 * @param {Object} subMenu The submenu.
 	 */
 	function maybeOpenSubmenu( parent, subMenu ) {
@@ -88,7 +88,7 @@ function wdsMobileMenu() {
 	 *
 	 * @author Corey Collins
 	 * @since January 31, 2020
-	 * @param {Object} parent The parent item.
+	 * @param {Object} parent  The parent item.
 	 * @param {Object} subMenu The submenu.
 	 */
 	function closeSubmenu( parent, subMenu ) {
