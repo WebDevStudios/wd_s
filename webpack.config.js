@@ -17,8 +17,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpe?g|gif)$/,
-				include: /images/,
+				test: /\.(svg|webp|png|jpe?g|gif)$/,
+				include: '/images/[name].[ext]',
 				use: [
 					{
 						loader: 'file-loader',
