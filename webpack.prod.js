@@ -32,7 +32,6 @@ module.exports = merge( common, {
 		} ),
 	],
 	optimization: {
-		minimize: true,
 		minimizer: [
 			/**
 			 * Minify CSS.
@@ -40,8 +39,6 @@ module.exports = merge( common, {
 			 * @see https://www.npmjs.com/package/css-minimizer-webpack-plugin
 			 */
 			new CssMinimizerPlugin( {
-				sourceMap: false,
-				parallel: true,
 				minimizerOptions: {
 					preset: [
 						'default',
