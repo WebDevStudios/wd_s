@@ -45,7 +45,7 @@
 		"sass-loader": "^12.1.0",
 		"stylelint-config-prettier": "^8.0.2",
 		"stylelint-webpack-plugin": "^3.0.1",
-		"svg-spritemap-webpack-plugin": "^4.2.0",
+		"svg-spritemap-webpack-plugin": "git://github.com/cascornelissen/svg-spritemap-webpack-plugin.git#500280acbf4517319e57e951a44db524060dc105",
 		"tailwindcss": "^2.2.7",
 		"url-loader": "^4.1.1",
 		"webpack-merge": "^5.8.0"
