@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.6",
-		"@tailwindcss/postcss7-compat": "^2.2.8",
+		"@tailwindcss/postcss7-compat": "^2.2.10",
 		"@wordpress/prettier-config": "^1.1.0",
 		"@wordpress/scripts": "^17.1.0",
 		"browser-sync": "^2.27.5",
