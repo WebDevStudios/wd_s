@@ -43,18 +43,14 @@ module.exports = {
 			},
 			{
 				test: /\.svg$/,
-				use: [ '@svgr/webpack', 'url-loader' ],
+				type: 'asset/inline',
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'fonts/[name].[hash:8].[ext]',
-						},
-					},
-				],
+				type: 'asset',
+				generator: {
+					filename: 'fonts/[name].[hash:8].[ext]',
+				},
 			},
 		],
 	},
