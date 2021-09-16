@@ -17,6 +17,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.(webp|png|jpe?g|gif)$/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'images/[name][ext]',
+				},
+			},
+			{
 				test: /\.(sa|sc|c)ss$/,
 				exclude: '/node_modules',
 				use: [
