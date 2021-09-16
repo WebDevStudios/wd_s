@@ -34,40 +34,21 @@ module.exports = {
 				exclude: '/node_modules',
 				use: [
 					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
+					'css-loader',
+					'postcss-loader',
+					'sass-loader',
 				],
 			},
 			{
 				test: /\.svg$/,
-				use: [ '@svgr/webpack', 'url-loader' ],
+				type: 'asset/inline',
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'fonts/[name].[hash:8].[ext]',
-						},
-					},
-				],
+				type: 'asset',
+				generator: {
+					filename: 'fonts/[name].[hash:8].[ext]',
+				},
 			},
 		],
 	},
@@ -85,12 +66,12 @@ module.exports = {
 			patterns: [
 				{
 					from: '**/*.{jpg,jpeg,png,gif,svg}',
-					to: 'images/[path][name].[ext]',
+					to: 'images/[path][name][ext]',
 					context: path.resolve( process.cwd(), 'src/images' ),
 				},
 				{
 					from: '*.svg',
-					to: 'images/icons/[name].[ext]',
+					to: 'images/icons/[name][ext]',
 					context: path.resolve( process.cwd(), 'src/images/icons' ),
 				},
 			],
