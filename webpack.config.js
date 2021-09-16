@@ -20,8 +20,7 @@ module.exports = {
 				test: /\.(webp|png|jpe?g|gif)$/,
 				type: 'asset/resource',
 				generator: {
-					filename: '[name][ext]',
-					publicPath: 'images/',
+					filename: 'images/[name][ext]',
 				},
 			},
 			{
