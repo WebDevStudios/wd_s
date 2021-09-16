@@ -18,16 +18,11 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(webp|png|jpe?g|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'images/',
-							publicPath: 'images/',
-						},
-					},
-				],
+				type: 'asset/resource',
+				generator: {
+					filename: '[name][ext]',
+					publicPath: 'images/',
+				},
 			},
 			{
 				test: /\.(sa|sc|c)ss$/,
