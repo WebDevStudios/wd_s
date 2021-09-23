@@ -26,6 +26,8 @@ function _s_scripts() {
 	wp_enqueue_style( 'wd_s', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
 	wp_enqueue_script( 'wds-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
+	s_enqueue_template_part_styles();
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -69,3 +71,33 @@ function _s_preload_assets() {
 	<?php
 }
 add_action( 'wp_head', '_s_preload_assets', 1 );
+
+/**
+ * Return the current template path for enqueuing Template Module stylesheets.
+ *
+ * @author Corey Collins
+ */
+function _s_get_current_template_file_path() {
+	global $template;
+
+	return pathinfo( basename( $template ), PATHINFO_FILENAME );
+}
+
+/**
+ * Enqueues a specific stylesheet for our Template Module.
+ *
+ * @author Corey Collins
+ */
+function s_enqueue_template_part_styles() {
+	$asset_file_path  = dirname( __DIR__ ) . '/build/index.asset.php';
+	$current_template = _s_get_current_template_file_path();
+
+	// Set index for page.
+	$current_template = 'index' && ! is_front_page() && is_page() ? 'page' : $current_template;
+
+	if ( ! is_dir( get_stylesheet_directory() . '/template-parts/' . $current_template ) ) {
+		return;
+	}
+
+	wp_enqueue_style( $current_template, get_stylesheet_directory_uri() . '/build/template-parts/' . $current_template . '.css', [], $asset_file['version'] );
+}
