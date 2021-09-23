@@ -38,6 +38,7 @@
 		"mini-css-extract-plugin": "^2.2.2",
 		"npm-run-all": "^4.1.5",
 		"postcss": "^8.3.6",
+		"postcss-cli": "^8.3.1",
 		"postcss-loader": "^6.1.1",
 		"postcss-preset-env": "^6.7.0",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
@@ -49,7 +50,9 @@
 		"webpack-merge": "^5.8.0"
 	},
 	"scripts": {
-		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
+		"build": "run-s build:theme build:templates",
+		"build:theme": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
+		"build:templates": "postcss --use tailwindcss --use postcss-nested --use postcss-preset-env --use cssnano --no-map -d build/template-parts template-parts/*/*.css",
 		"build:pot": "composer run-script pot",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
@@ -67,8 +70,11 @@
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "composer install --quiet && npm run build",
-		"start": "cross-env NODE_ENV=development wp-scripts start",
-		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
-		"watch": "run-p start sync"
+		"start": "run-p start:theme start:templates",
+		"start:theme": "cross-env NODE_ENV=development wp-scripts start",
+		"start:templates": "npm run watch:templates",
+		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files 'build/*.*, **/*.html, **/*.php, template-parts/*/*.css, !node_modules/**/*.html'",
+		"watch": "run-p start sync watch:templates",
+		"watch:templates": "postcss -d build/template-parts -w template-parts/*/*.css"
 	}
 }
