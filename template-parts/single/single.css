@@ -1,0 +1,7 @@
+.single-post {
+	.entry-title {
+		@apply text-red-800;
+
+		font-weight: 800;
+	}
+}
