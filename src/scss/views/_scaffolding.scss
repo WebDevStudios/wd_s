@@ -68,7 +68,7 @@
 
 	// CSS Accordion.
 	&.tabs {
-		@apply block overflow-hidden w-full;
+		@apply block w-full;
 
 		.tab-toggle {
 			@apply opacity-0 absolute z-0;
