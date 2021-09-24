@@ -15,6 +15,7 @@
  * @param array $args The scaffolding defaults.
  */
 function _s_display_scaffolding_section( $args = [] ) {
+
 	// Set defaults.
 	$defaults = [
 		'title'       => '', // The scaffolding title.
@@ -82,7 +83,7 @@ function _s_display_scaffolding_section( $args = [] ) {
 
 			</div><!-- .scaffolding-document-usage -->
 		</div><!-- .scaffolding-document-content -->
-	</div>
+	</div><!-- .tab -->
 
 	<div class="scaffolding-document-live">
 
@@ -208,7 +209,7 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 						</div><!-- .swatch -->
 
 					<?php endforeach; ?>
-					</div>
+					</div><!-- .swatch-container -->
 
 					<?php
 					break;
@@ -227,14 +228,34 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 
 						<p><strong><?php echo esc_html( $font_var ); ?>:</strong> <span style="font-family: <?php echo esc_attr( $family ); ?>"><?php echo esc_html( $family ); ?></span></p>
 					<?php endforeach; ?>
-					</div>
+					</div><!-- .font-container -->
 					<?php
 					break;
 				default:
 					?>
 			<?php endswitch; ?>
-		</div>
-	</div>
+		</div><!-- .scaffolding-document-content -->
+	</div><!-- .scaffolding-document -->
+	<?php
+}
+
+/**
+ * Hook the theme's scaffolding template parts into the scaffolding template.
+ *
+ * @author Carrie Forde
+ */
+function _s_theme_scaffolding_nav() {
+	?>
+	<nav class="scaffolding-nav">
+		<span><?php echo esc_html__( 'Scroll to:', '_s' ); ?></span>
+		<a href="#globals" class="link"><?php echo esc_html__( 'Globals', '_s' ); ?></a>
+		<a href="#typography" class="link"><?php echo esc_html__( 'Typography', '_s' ); ?></a>
+		<a href="#media" class="link"><?php echo esc_html__( 'Media', '_s' ); ?></a>
+		<a href="#icons" class="link"><?php echo esc_html__( 'Icons', '_s' ); ?></a>
+		<a href="#buttons" class="link"><?php echo esc_html__( 'Buttons', '_s' ); ?></a>
+		<a href="#forms" class="link"><?php echo esc_html__( 'Forms', '_s' ); ?></a>
+		<a href="#elements" class="link"><?php echo esc_html__( 'Elements', '_s' ); ?></a>
+	</nav><!-- .scaffolding-nav -->
 	<?php
 }
 
@@ -245,6 +266,8 @@ function _s_display_global_scaffolding_section( $args = [] ) {
  */
 function _s_hook_theme_scaffolding() {
 	$template_dir = 'template-parts/scaffolding/scaffolding';
+
+	_s_theme_scaffolding_nav();
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );

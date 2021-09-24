@@ -3,6 +3,32 @@
 //--------------------------------------------------------------
 
 //-----------------------------------------
+// Scaffolding navigation
+//-----------------------------------------
+.scaffolding-nav {
+	@apply bg-gray-200 mb-16 p-16 sticky text-center top-0 w-full z-50;
+
+	@screen tablet-portrait {
+		.admin-bar & {
+			@apply top-32;
+		} // .admin-bar &
+	}
+
+	span {
+		@apply font-semibold;
+	} // span
+
+	.link {
+		@apply p-5 text-black no-underline transition-all;
+
+		&:hover,
+		&:focus {
+			@apply underline;
+		}
+	} // .link
+} // .scaffolding-nav
+
+//-----------------------------------------
 // Scaffolding defaults
 //-----------------------------------------
 .section-scaffolding {
@@ -26,7 +52,7 @@
 
 		// The title.
 		h3 {
-			@apply m-0 p-0;
+			@apply m-0 p-0 border-b border-black;
 		} // h3
 
 		// The text.

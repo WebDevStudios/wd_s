@@ -9,6 +9,10 @@
 	word-wrap: break-word;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 pre {
 	@apply overflow-auto;
 }
