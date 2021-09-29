@@ -1,0 +1,11 @@
+.wp-block-pullquote {
+	@apply container my-32;
+
+	blockquote > p {
+		@apply mb-16;
+	}
+
+	blockquote > cite {
+		@apply not-italic;
+	}
+}

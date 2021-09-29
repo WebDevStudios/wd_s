@@ -1,0 +1,6 @@
+@import './tailwind.css';
+@import './blocks/core/_index.css';
+@import './global/global.css';
+@import './template-tags/_index.css';
+@import './templates/_index.css';
+@import './wordpress-global/_index.css';

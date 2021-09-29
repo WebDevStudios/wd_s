@@ -1,0 +1,7 @@
+.wp-block-code {
+	@apply container mb-16;
+
+	code {
+		@apply p-16;
+	}
+}

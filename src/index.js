@@ -1,10 +1,6 @@
-/* eslint eslint-comments/disable-enable-pair: error */
-/* eslint-disable no-undef, no-unused-vars */
-
-// import './scss/tailwind.scss';
-// import './scss/index.scss';
-// import './js/index';
-
-import './scss/blocks/core/table.css';
-
-/* eslint-enable no-undef, no-unused-vars */
+import './js/index';
+import './css/blocks/core/_index.css';
+import './css/global/global.css';
+import './css/template-tags/_index.css';
+import './css/templates/_index.css';
+import './css/wordpress-global/_index.css';
