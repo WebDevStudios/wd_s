@@ -1,5 +1,6 @@
 const autoprefixer = require( 'autoprefixer' );
 const postCssPlugin = require( 'esbuild-postcss' );
+const postCssNested = require( 'postcss-nested' );
 
 const watch = process.argv.includes( '--watch' ) && {
 	onRebuild( error ) {
@@ -12,14 +13,22 @@ const watch = process.argv.includes( '--watch' ) && {
 
 require( 'esbuild' )
 	.build( {
-		entryPoints: [ 'src/index.js' ],
+		entryPoints: [ 'src/tailwind.js', 'src/index.js' ],
 		bundle: true,
 		outdir: 'build',
+		preserveSymlinks: true,
 		watch,
+		logLevel: 'info',
 		minify: true,
+		external: [ '*.svg', '*.png', '*.jpg', '*.jpeg', '*.gif' ],
+		publicPath: 'build/images',
 		plugins: [
 			postCssPlugin( {
-				plugins: [ autoprefixer, require( 'tailwindcss' ) ],
+				plugins: [
+					require( 'tailwindcss' ),
+					autoprefixer,
+					postCssNested,
+				],
 			} ),
 		],
 	} )
