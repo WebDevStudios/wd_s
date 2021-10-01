@@ -77,7 +77,7 @@
 .caret-down {
 	@apply block float-right h-full ml-8;
 
-	background: url( ../../images/icons/caret-down.svg ) 50% 50% no-repeat;
+	background: url( images/icons/caret-down.svg ) 50% 50% no-repeat;
 	background-size: 100%;
 	width: theme( 'spacing.8' );
 }

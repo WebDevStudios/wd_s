@@ -27,7 +27,7 @@
 	&-open {
 		@apply bottom-0 right-0 block h-24 p-0 absolute w-24;
 
-		background: url( ../../images/icons/hamburger.svg ) 50% 50% no-repeat
+		background: url( images/icons/hamburger.svg ) 50% 50% no-repeat
 			transparent;
 		background-size: 100%;
 		right: theme( 'spacing.12' );
@@ -50,7 +50,7 @@
 		}
 
 		&.is-visible {
-			background-image: url( ../../images/icons/close.svg );
+			background-image: url( images/icons/close.svg );
 		}
 	}
 
