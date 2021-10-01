@@ -44,7 +44,6 @@
 		"postcss-preset-env": "^6.7.0",
 		"postcss-strip-inline-comments": "^0.1.5",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1",
-		"sass-loader": "^12.1.0",
 		"stylelint-config-prettier": "^8.0.2",
 		"tailwindcss": "^2.2.15"
 	},
