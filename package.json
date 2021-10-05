@@ -78,6 +78,7 @@
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "composer install --quiet && npm run build",
+		"start": "run-p watch:*",
 		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p watch:* sync",
 		"watch:esbuild": "node esbuild.js --watch",
