@@ -84,6 +84,7 @@
 		"watch": "run-p watch:* sync",
 		"watch:esbuild": "node esbuild.js --watch",
 		"watch:tailwind": "npm run build:tailwind -- -w",
-		"watch:images": "chokidar 'src/images/**/*' -c 'run-s build:images build:svg build:sprite'"
+		"watch:svg": "chokidar 'src/images/icons/' -c 'run-s build:svg build:sprite'",
+		"watch:images": "chokidar 'src/images/' -c 'run-s build:images'"
 	}
 }
