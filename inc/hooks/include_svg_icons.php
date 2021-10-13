@@ -1,0 +1,21 @@
+<?php
+/**
+ * Add SVG definitions to footer.
+ *
+ * @author WebDevStudios
+ *
+ * @package _s
+ */
+function _s_include_svg_icons() {
+	// Define SVG sprite file.
+	$svg_icons = get_template_directory() . '/build/images/icons/sprite.svg';
+
+	// If it exists, include it.
+	if ( file_exists( $svg_icons ) ) {
+		echo '<div class="svg-sprite-wrapper">';
+		require_once $svg_icons;
+		echo '</div>';
+	}
+}
+
+add_action( 'wp_footer', '_s_include_svg_icons', 9999 );

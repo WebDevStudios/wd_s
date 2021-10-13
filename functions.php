@@ -14,17 +14,14 @@
  */
 function _s_get_theme_include_files() {
 	return [
-		'inc/setup.php', // Theme set up. Should be included first.
-		'inc/compat.php', // Backwards Compatibility.
 		'inc/customizer/customizer.php', // Customizer additions.
-		'inc/extras.php', // Custom functions that act independently of the theme templates.
-		'inc/hooks.php', // Load custom filters and hooks.
-		'inc/security.php', // WordPress hardening.
-		'inc/scaffolding.php', // Scaffolding.
-		'inc/scripts.php', // Load styles and scripts.
+		'inc/functions/', // Custom functions that act independently of the theme templates.
+		'inc/hooks/', // Load custom filters and hooks.
+		'inc/post-types/', // Load custom post types.
+		'inc/scaffolding/', // Scaffolding.
+		'inc/setup/', // Theme setup.
+		'inc/shortcodes/', // Load shortcodes.
 		'inc/template-tags/', // Custom template tags for this theme.
-		'inc/functions/', // Custom template tags for this theme.
-		'inc/post-types/', // Custom template tags for this theme.
 	];
 }
 
