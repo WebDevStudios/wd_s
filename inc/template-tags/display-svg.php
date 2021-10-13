@@ -5,6 +5,8 @@
  * @author WebDevStudios
  *
  * @param array $args The parameters needed to get the SVG.
+ *
+ * @package _s
  */
 function _s_display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );

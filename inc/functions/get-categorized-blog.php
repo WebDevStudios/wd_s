@@ -1,18 +1,12 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package _s
- */
-
-/**
  * Returns true if a blog has more than 1 category, else false.
  *
  * @author WebDevStudios
  *
  * @return bool Whether the blog has more than one category.
+ *
+ * @package _s
  */
 function _s_categorized_blog() {
 	$category_count = get_transient( '_s_categories' );

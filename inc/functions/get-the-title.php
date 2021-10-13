@@ -7,6 +7,8 @@
  * @param array $args Parameters include length and more.
  *
  * @return string The title.
+ *
+ * @package _s
  */
 function _s_get_the_title( $args = [] ) {
 	// Set defaults.

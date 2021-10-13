@@ -3,6 +3,8 @@
  * Retrieve the URL of the custom logo uploaded, if one exists.
  *
  * @author Corey Collins
+ *
+ * @package _s
  */
 function _s_get_custom_logo_url() {
 

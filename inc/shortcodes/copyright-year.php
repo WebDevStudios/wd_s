@@ -9,6 +9,8 @@
  *     $separator Optional. Separator between starting year and current year.
  *
  * @return string Copyright year text.
+ *
+ * @package _s
  */
 function _s_copyright_year( $atts ) {
 	// Setup defaults.

@@ -5,6 +5,8 @@
  * @author WebDevStudios
  *
  * @return string An empty string if no menus are found at all.
+ *
+ * @package _s
  */
 function _s_display_mobile_menu() {
 	// Bail if no mobile or primary menus are set.

@@ -7,6 +7,8 @@
  * @param string $attachment_url The URL of the attachment.
  *
  * @return int    The attachment ID.
+ *
+ * @package _s
  */
 function _s_get_attachment_id_from_url( $attachment_url = '' ) {
 	global $wpdb;

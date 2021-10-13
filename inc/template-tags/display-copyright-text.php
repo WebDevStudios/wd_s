@@ -3,6 +3,8 @@
  * Echo the copyright text saved in the Customizer.
  *
  * @author WebDevStudios
+ *
+ * @package _s
  */
 function _s_display_copyright_text() {
 	// Grab our customizer settings.
