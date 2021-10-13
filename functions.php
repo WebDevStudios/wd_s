@@ -22,10 +22,21 @@ function _s_get_theme_include_files() {
 		'inc/security.php', // WordPress hardening.
 		'inc/scaffolding.php', // Scaffolding.
 		'inc/scripts.php', // Load styles and scripts.
-		'inc/template-tags.php', // Custom template tags for this theme.
+		'inc/template-tags/', // Custom template tags for this theme.
+		'inc/functions/', // Custom template tags for this theme.
+		'inc/post-types/', // Custom template tags for this theme.
 	];
 }
 
 foreach ( _s_get_theme_include_files() as $include ) {
-	require trailingslashit( get_template_directory() ) . $include;
+	$include = trailingslashit( get_template_directory() ) . $include;
+
+	// Allows inclusion of individual files or all .php files in a directory.
+	if ( is_dir( $include ) ) {
+		foreach ( glob( $include . '*.php' ) as $file ) {
+			require $file;
+		}
+	} else {
+		require $include;
+	}
 }
