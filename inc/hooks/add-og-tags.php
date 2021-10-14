@@ -2,11 +2,15 @@
 /**
  * Adds OG tags to the head for better social sharing.
  *
+ * @package _s
+ */
+
+/**
+ * Adds OG tags to the head for better social sharing.
+ *
  * @author Corey Collins
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
- *
- * @package _s
  */
 function _s_add_og_tags() {
 	// Bail if Yoast is installed, since it will handle things.

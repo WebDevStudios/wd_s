@@ -2,11 +2,15 @@
 /**
  * Display the customizer header scripts.
  *
+ * @package _s
+ */
+
+/**
+ * Display the customizer header scripts.
+ *
  * @author Greg Rickaby
  *
  * @return string Header scripts.
- *
- * @package _s
  */
 function _s_display_customizer_header_scripts() {
 	// Check for header scripts.

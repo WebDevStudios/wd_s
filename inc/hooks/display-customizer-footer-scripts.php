@@ -2,11 +2,15 @@
 /**
  * Display the customizer footer scripts.
  *
+ * @package _s
+ */
+
+/**
+ * Display the customizer footer scripts.
+ *
  * @author Greg Rickaby
  *
  * @return string Footer scripts.
- *
- * @package _s
  */
 function _s_display_customizer_footer_scripts() {
 	// Check for footer scripts.

@@ -2,11 +2,15 @@
 /**
  * Build a global scaffolding element.
  *
+ * @package _s
+ */
+
+/**
+ * Build a global scaffolding element.
+ *
  * @author Carrie Forde
  *
  * @param array $args The array of colors or fonts.
- *
- * @package _s
  */
 function _s_display_global_scaffolding_section( $args = [] ) {
 	// Set defaults.

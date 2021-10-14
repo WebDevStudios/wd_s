@@ -2,11 +2,15 @@
 /**
  * Declare HTML tags allowed for scaffolding.
  *
+ * @package _s
+ */
+
+/**
+ * Declare HTML tags allowed for scaffolding.
+ *
  * @author Carrie Forde
  *
  * @return array The allowed tags and attributes.
- *
- * @package _s
  */
 function _s_scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.

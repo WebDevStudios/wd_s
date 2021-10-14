@@ -2,12 +2,16 @@
 /**
  * Displays numeric pagination on archive pages.
  *
+ * @package _s
+ */
+
+/**
+ * Displays numeric pagination on archive pages.
+ *
  * @author WebDevStudios
  *
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
- *
- * @package _s
  */
 function _s_display_numeric_pagination( $args = [], $query = null ) {
 	if ( ! $query ) {

@@ -2,11 +2,15 @@
 /**
  * Build a scaffolding section.
  *
+ * @package _s
+ */
+
+/**
+ * Build a scaffolding section.
+ *
  * @author Greg Rickaby, Carrie Forde
  *
  * @param array $args The scaffolding defaults.
- *
- * @package _s
  */
 function _s_display_scaffolding_section( $args = [] ) {
 	// Set defaults.

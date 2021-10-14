@@ -2,9 +2,13 @@
 /**
  * Enqueue scripts and styles.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Enqueue scripts and styles.
+ *
+ * @author WebDevStudios
  */
 function _s_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';

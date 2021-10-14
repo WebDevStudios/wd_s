@@ -2,9 +2,13 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Display the social links saved in the customizer.
+ *
+ * @author WebDevStudios
  */
 function _s_display_social_network_links() {
 	// Create an array of our social links for ease of setup.

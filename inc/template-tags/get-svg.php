@@ -2,13 +2,17 @@
 /**
  * Return SVG markup.
  *
+ * @package _s
+ */
+
+/**
+ * Return SVG markup.
+ *
  * @author WebDevStudios
  *
  * @param array $args The parameters needed to display the SVG.
  *
  * @return string Error string or SVG markup.
- *
- * @package _s
  */
 function _s_get_svg( $args = [] ) {
 	// Make sure $args are an array.

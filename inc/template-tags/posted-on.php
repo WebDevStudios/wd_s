@@ -1,10 +1,14 @@
 <?php
 /**
+ * Post date on template function.
+ *
+ * @package _s
+ */
+
+/**
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @author WebDevStudios
- *
- * @package _s
  */
 function _s_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';

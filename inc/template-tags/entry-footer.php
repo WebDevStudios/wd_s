@@ -2,9 +2,13 @@
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ *
+ * @author WebDevStudios
  */
 function _s_entry_footer() {
 	// Hide category and tag text for pages.

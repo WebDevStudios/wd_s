@@ -2,9 +2,13 @@
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Echo the copyright text saved in the Customizer.
+ *
+ * @author WebDevStudios
  */
 function _s_display_copyright_text() {
 	// Grab our customizer settings.

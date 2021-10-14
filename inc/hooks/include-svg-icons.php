@@ -2,9 +2,13 @@
 /**
  * Add SVG definitions to footer.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Add SVG definitions to footer.
+ *
+ * @author WebDevStudios
  */
 function _s_include_svg_icons() {
 	// Define SVG sprite file.

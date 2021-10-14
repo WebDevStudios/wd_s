@@ -2,9 +2,13 @@
 /**
  * Preload assets.
  *
- * @author Corey Collins
- *
  * @package _s
+ */
+
+/**
+ * Preload assets.
+ *
+ * @author Corey Collins
  */
 function _s_preload_assets() {
 	?>

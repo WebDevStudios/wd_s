@@ -2,9 +2,13 @@
 /**
  * Preload styles and scripts.
  *
- * @author WebDevStudios
- *
  * @package _s
+ */
+
+/**
+ * Preload styles and scripts.
+ *
+ * @author WebDevStudios
  */
 function _s_preload_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';

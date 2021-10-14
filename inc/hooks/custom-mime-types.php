@@ -2,13 +2,17 @@
 /**
  * Enable custom mime types.
  *
+ * @package _s
+ */
+
+/**
+ * Enable custom mime types.
+ *
  * @author WebDevStudios
  *
  * @param array $mimes Current allowed mime types.
  *
  * @return array Mime types.
- *
- * @package _s
  */
 function _s_custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';

@@ -2,9 +2,13 @@
 /**
  * Hook the theme's scaffolding template parts into the scaffolding template.
  *
- * @author Carrie Forde
- *
  * @package _s
+ */
+
+/**
+ * Hook the theme's scaffolding template parts into the scaffolding template.
+ *
+ * @author Carrie Forde
  */
 function _s_hook_theme_scaffolding() {
 	$template_dir = 'template-parts/scaffolding/scaffolding';

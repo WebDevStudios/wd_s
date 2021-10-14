@@ -2,11 +2,15 @@
 /**
  * Register widget area.
  *
+ * @package _s
+ */
+
+/**
+ * Register widget area.
+ *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  *
  * @author WebDevStudios
- *
- * @package _s
  */
 function _s_widgets_init() {
 

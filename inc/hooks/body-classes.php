@@ -2,13 +2,17 @@
 /**
  * Adds custom classes to the array of body classes.
  *
+ * @package _s
+ */
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
  * @author WebDevStudios
  *
  * @param array $classes Classes for the body element.
  *
  * @return array Body classes.
- *
- * @package _s
  */
 function _s_body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.

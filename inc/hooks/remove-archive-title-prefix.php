@@ -2,13 +2,17 @@
 /**
  * Removes or Adjusts the prefix on category archive page titles.
  *
+ * @package _s
+ */
+
+/**
+ * Removes or Adjusts the prefix on category archive page titles.
+ *
  * @author Corey Collins
  *
  * @param string $block_title The default $block_title of the page.
  *
  * @return string The updated $block_title.
- *
- * @package _s
  */
 function _s_remove_archive_title_prefix( $block_title ) {
 	// Get the single category title with no prefix.

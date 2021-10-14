@@ -2,13 +2,17 @@
 /**
  * Limit the excerpt length.
  *
+ * @package _s
+ */
+
+/**
+ * Limit the excerpt length.
+ *
  * @author WebDevStudios
  *
  * @param array $args Parameters include length and more.
  *
  * @return string The excerpt.
- *
- * @package _s
  */
 function _s_get_the_excerpt( $args = [] ) {
 
