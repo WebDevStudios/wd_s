@@ -12,6 +12,7 @@
 		@apply flex;
 
 		> li {
+
 			&:not( :last-child ) {
 				@apply mr-16;
 			}
@@ -30,8 +31,10 @@
 		}
 
 		.menu-item-has-children {
+
 			&:hover,
 			&.focus {
+
 				> .sub-menu {
 					left: 100%;
 				}
@@ -48,6 +51,7 @@
 
 	&:hover,
 	&.focus {
+
 		> .sub-menu {
 			@apply left-0;
 		}
@@ -58,7 +62,9 @@
 // Dropdown Styles
 //-----------------------------------------
 .dropdown {
+
 	ul {
+
 		li {
 			@apply w-full;
 		}
@@ -86,6 +92,7 @@
 // Footer
 //-----------------------------------------
 .footer-navigation {
+
 	.menu {
 		@apply block;
 
