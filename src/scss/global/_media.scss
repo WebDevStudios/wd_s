@@ -1,0 +1,28 @@
+.aspect-ratio {
+
+	// 16x9.
+	&-box {
+		@apply w-full h-0 overflow-hidden relative bg-gray-50;
+
+		padding-top: 56.25%;
+
+		.aspect-media {
+			@apply absolute top-0 left-0 w-full h-full object-cover;
+
+			&.contain {
+				@apply object-contain;
+			}
+
+		}
+	}
+
+	// 4x3.
+	&-75 {
+		padding-top: 75%;
+	}
+
+	// Square.
+	&-100 {
+		padding-top: 100%;
+	}
+}
