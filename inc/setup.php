@@ -182,3 +182,14 @@ function _s_widgets_init() {
 }
 
 add_action( 'widgets_init', '_s_widgets_init' );
+
+/**
+ * Disable default fullscreen editor functionality and hide the 'Welcome to the Block Editor' popup.
+ *
+ * @author WebDevStudios
+ */
+function _s_disable_editor_annoyances() {
+	$script = "window.onload = function() { wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ) && wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); wp.data.select( 'core/edit-post' ).isFeatureActive( 'welcomeGuide' ) && wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'welcomeGuide' ); }";
+	wp_add_inline_script( 'wp-blocks', $script );
+}
+add_action( 'enqueue_block_editor_assets', '_s_disable_editor_annoyances' );
