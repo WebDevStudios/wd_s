@@ -13,7 +13,7 @@
 
 namespace WD_S\Setup;
 
-use WD_S\Functions as Functions;
+use WD_S\Functions;
 
 function preload_assets() {
 	?>

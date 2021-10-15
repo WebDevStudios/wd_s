@@ -12,7 +12,10 @@
  *
  * @param array $args The array of colors or fonts.
  */
-function _s_display_global_scaffolding_section( $args = [] ) {
+
+namespace WD_S\Scaffolding;
+
+function display_global_scaffolding_section( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'global_type' => '', // Can be 'colors' or 'fonts'.

@@ -7,8 +7,8 @@
 
 namespace WD_S;
 
-use WD_S\Functions as Functions;
-use WD_S\Scaffolding as Scaffolding;
+use WD_S\Functions;
+use WD_S\Scaffolding;
 
 ?>
 

@@ -13,7 +13,7 @@
 
 namespace WD_S\TemplateTags;
 
-use WD_S\Functions as Functions;
+use WD_S\Functions;
 
 function display_entry_footer() {
 	// Hide category and tag text for pages.

@@ -16,7 +16,10 @@
  *
  * @return string Copyright year text.
  */
-function _s_copyright_year( $atts ) {
+
+namespace WD_S\Shortcodes;
+
+function copyright_year( $atts ) {
 	// Setup defaults.
 	$args = shortcode_atts(
 		[
@@ -36,4 +39,4 @@ function _s_copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 
-add_shortcode( '_s_copyright_year', '_s_copyright_year', 15 );
+add_shortcode( '_s_copyright_year', 'WD_S\Shortcodes\copyright_year', 15 );

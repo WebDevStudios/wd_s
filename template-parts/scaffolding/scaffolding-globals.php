@@ -5,6 +5,10 @@
  * @package _s
  */
 
+namespace WD_S;
+
+use WD_S\Scaffolding;
+
 ?>
 
 <section class="section-scaffolding">
@@ -13,7 +17,7 @@
 
 	<?php
 		// Theme colors.
-		_s_display_global_scaffolding_section(
+		Scaffolding\display_global_scaffolding_section(
 			[
 				'global_type' => 'colors',
 				'title'       => 'Colors',
@@ -28,7 +32,7 @@
 		);
 
 		// Theme fonts.
-		_s_display_global_scaffolding_section(
+		Scaffolding\display_global_scaffolding_section(
 			[
 				'global_type' => 'fonts',
 				'title'       => 'Fonts',

@@ -11,6 +11,8 @@
 
 namespace WD_S;
 
+use WD_S\TemplateTags;
+
 get_header(); ?>
 
 	<main id="main" class="container site-main">
@@ -19,7 +21,7 @@ get_header(); ?>
 		while ( have_posts() ) :
 			the_post();
 
-			echo do_shortcode( '_s_copyright_year' );
+
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
