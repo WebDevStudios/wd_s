@@ -12,7 +12,10 @@
  *
  * @author WebDevStudios
  */
-function _s_widgets_init() {
+
+namespace WD_S\Setup;
+
+function widgets_init() {
 
 	// Define sidebars.
 	$sidebars = [
@@ -36,4 +39,4 @@ function _s_widgets_init() {
 
 }
 
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'widgets_init', 'WD_S\Setup\widgets_init' );

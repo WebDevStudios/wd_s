@@ -9,6 +9,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 ?>
 
 	<footer class="site-footer">
@@ -29,13 +31,13 @@
 		</nav><!-- #site-navigation-->
 
 		<div class="container site-info">
-			<?php _s_display_copyright_text(); ?>
-			<?php _s_display_social_network_links(); ?>
+			<?php TemplateTags\display_copyright_text(); ?>
+			<?php TemplateTags\display_social_network_links(); ?>
 		</div><!-- .site-info -->
 
 	</footer><!-- .site-footer container-->
 
-	<?php _s_display_mobile_menu(); ?>
+	<?php TemplateTags\display_mobile_menu(); ?>
 	<?php wp_footer(); ?>
 
 </body>

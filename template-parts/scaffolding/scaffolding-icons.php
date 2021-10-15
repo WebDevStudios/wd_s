@@ -5,6 +5,11 @@
  * @package _s
  */
 
+namespace WD_S;
+
+use WD_S\Functions as Functions;
+use WD_S\Scaffolding as Scaffolding;
+
 ?>
 
 <section class="section-scaffolding">
@@ -13,11 +18,11 @@
 
 	<?php
 	// SVG Icon.
-	_s_display_scaffolding_section(
+	Scaffolding\display_scaffolding_section(
 		[
 			'title'       => 'SVG',
 			'description' => 'Display inline SVGs.',
-			'usage'       => '<?php _s_display_svg( array(
+			'usage'       => '<?php display_svg( array(
 				\'icon\'   => \'facebook-square\',
 				\'title\'  => \'Facebook Icon\',
 				\'desc\'   => \'Facebook social icon svg\',
@@ -36,7 +41,7 @@
 				'height' => '(optional) The height of the icon. Default: none',
 				'width'  => '(optional) The width of the icon. Default: none',
 			],
-			'output'      => _s_get_svg(
+			'output'      => Functions\return_svg(
 				[
 					'icon'   => 'facebook-square',
 					'title'  => 'Facebook Icon',

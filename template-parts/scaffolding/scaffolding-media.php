@@ -5,7 +5,10 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 global $wp_embed;
+
 ?>
 
 <section class="section-scaffolding">
@@ -14,7 +17,7 @@ global $wp_embed;
 
 	<?php
 	// Right-aligned Image.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Right-aligned Image',
 			'description' => 'Display a right-aligned image.',
@@ -30,7 +33,7 @@ global $wp_embed;
 	);
 
 	// Left-aligned Image.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Left-aligned Image',
 			'description' => 'Display a left-aligned image.',
@@ -46,7 +49,7 @@ global $wp_embed;
 	);
 
 	// Center-aligned Image.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Center-aligned Image',
 			'description' => 'Display a center-aligned image.',
@@ -62,7 +65,7 @@ global $wp_embed;
 	);
 
 	// Image with caption.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Image with Caption',
 			'description' => 'Display an image with a caption.',
@@ -78,7 +81,7 @@ global $wp_embed;
 	);
 
 	// Youtube embed.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Youtube Embed',
 			'description' => 'Display a youtube video.',
@@ -88,7 +91,7 @@ global $wp_embed;
 	);
 
 	// Youtube embed.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Vimeo Embed',
 			'description' => 'Display a vimeo video.',

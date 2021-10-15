@@ -12,7 +12,10 @@
  *
  * @return array The allowed tags and attributes.
  */
-function _s_scaffolding_allowed_html() {
+
+namespace WD_S\Scaffolding;
+
+function scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	return array_merge(
 		wp_kses_allowed_html( 'post' ),

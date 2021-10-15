@@ -10,7 +10,10 @@
  *
  * @author Corey Collins
  */
-function _s_get_custom_logo_url() {
+
+namespace WD_S\Functions;
+
+function return_custom_logo_url() {
 
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 

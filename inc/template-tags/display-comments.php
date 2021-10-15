@@ -10,7 +10,10 @@
  *
  * @author WebDevStudios
  */
-function _s_display_comments() {
+
+namespace WD_S\TemplateTags;
+
+function display_comments() {
 	if ( comments_open() || get_comments_number() ) {
 		comments_template();
 	}

@@ -12,7 +12,10 @@
  *
  * @return string An empty string if no menus are found at all.
  */
-function _s_display_mobile_menu() {
+
+namespace WD_S\TemplateTags;
+
+function display_mobile_menu() {
 	// Bail if no mobile or primary menus are set.
 	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
 		return '';

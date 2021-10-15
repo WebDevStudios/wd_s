@@ -14,7 +14,10 @@
  *
  * @return string The excerpt.
  */
-function _s_get_the_excerpt( $args = [] ) {
+
+namespace WD_S\Functions;
+
+function return_the_excerpt( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [

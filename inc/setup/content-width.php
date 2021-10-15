@@ -14,8 +14,11 @@
  *
  * @author WebDevStudios
  */
-function _s_content_width() {
+
+namespace WD_S\Setup;
+
+function content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
 
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+add_action( 'after_setup_theme', 'WD_S\Setup\content_width', 0 );

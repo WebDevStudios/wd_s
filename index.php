@@ -12,6 +12,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 get_header(); ?>
 
 	<main id="main" class="container site-main">
@@ -40,7 +42,7 @@ get_header(); ?>
 
 			endwhile;
 
-			_s_display_numeric_pagination();
+			TemplateTags\display_numeric_pagination();
 
 		else :
 			get_template_part( 'template-parts/content', 'none' );

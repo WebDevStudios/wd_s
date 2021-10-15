@@ -10,11 +10,16 @@
  *
  * @author Corey Collins
  */
-function _s_preload_assets() {
+
+namespace WD_S\Setup;
+
+use WD_S\Functions as Functions;
+
+function preload_assets() {
 	?>
-	<?php if ( _s_get_custom_logo_url() ) : ?>
-		<link rel="preload" href="<?php echo esc_url( _s_get_custom_logo_url() ); ?>" as="image">
+	<?php if ( Functions\return_custom_logo_url() ) : ?>
+		<link rel="preload" href="<?php echo esc_url( Functions\return_custom_logo_url() ); ?>" as="image">
 	<?php endif; ?>
 	<?php
 }
-add_action( 'wp_head', '_s_preload_assets', 1 );
+add_action( 'wp_head', 'WD_S\Setup\preload_assets', 1 );

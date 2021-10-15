@@ -14,7 +14,10 @@
  *
  * @return int    The attachment ID.
  */
-function _s_get_attachment_id_from_url( $attachment_url = '' ) {
+
+namespace WD_S\Functions;
+
+function return_attachment_id_from_url( $attachment_url = '' ) {
 	global $wpdb;
 
 	$attachment_id = false;

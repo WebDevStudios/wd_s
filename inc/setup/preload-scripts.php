@@ -10,7 +10,10 @@
  *
  * @author WebDevStudios
  */
-function _s_preload_scripts() {
+
+namespace WD_S\Setup;
+
+function preload_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
@@ -27,4 +30,4 @@ function _s_preload_scripts() {
 	<link rel="preload" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/build/index.js?ver=<?php echo esc_html( $asset_file['version'] ); ?>" as="script">
 	<?php
 }
-add_action( 'wp_head', '_s_preload_scripts', 1 );
+add_action( 'wp_head', 'WD_S\Setup\preload_scripts', 1 );

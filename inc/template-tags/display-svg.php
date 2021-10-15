@@ -12,7 +12,10 @@
  *
  * @param array $args The parameters needed to get the SVG.
  */
-function _s_display_svg( $args = [] ) {
+
+namespace WD_S\TemplateTags;
+
+function display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
 	$svg_args = [
@@ -48,7 +51,7 @@ function _s_display_svg( $args = [] ) {
 	);
 
 	echo wp_kses(
-		_s_get_svg( $args ),
+		get_svg( $args ),
 		$allowed_tags
 	);
 }

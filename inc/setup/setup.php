@@ -14,7 +14,10 @@
  *
  * @author WebDevStudios
  */
-function _s_setup() {
+
+namespace WD_S\Setup;
+
+function setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -133,4 +136,4 @@ function _s_setup() {
 	add_theme_support( 'responsive-embeds' );
 }
 
-add_action( 'after_setup_theme', '_s_setup' );
+add_action( 'after_setup_theme', 'WD_S\Setup\setup' );

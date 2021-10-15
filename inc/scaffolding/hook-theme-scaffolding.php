@@ -10,7 +10,10 @@
  *
  * @author Carrie Forde
  */
-function _s_hook_theme_scaffolding() {
+
+namespace WD_S\Scaffolding;
+
+function hook_theme_scaffolding() {
 	$template_dir = 'template-parts/scaffolding/scaffolding';
 
 	get_template_part( $template_dir, 'globals' );
@@ -22,4 +25,4 @@ function _s_hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'elements' );
 }
 
-add_action( '_s_scaffolding_content', '_s_hook_theme_scaffolding' );
+add_action( '_s_scaffolding_content', 'WD_S\Scaffolding\hook_theme_scaffolding' );

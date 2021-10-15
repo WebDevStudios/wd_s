@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 ?>
 
 <section class="section-scaffolding">
@@ -13,7 +15,7 @@
 
 	<?php
 	// Search form.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Search Form',
 			'description' => 'Display the search form.',
@@ -23,7 +25,7 @@
 	);
 
 	// Input.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Input',
 			'description' => 'Display a normal input.',
@@ -33,7 +35,7 @@
 	);
 
 	// Default Select.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Default Select',
 			'description' => 'Display default select.',
@@ -43,7 +45,7 @@
 	);
 
 	// Checkbox.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Checkboxes',
 			'description' => 'Display checkboxes.',
@@ -65,7 +67,7 @@
 	);
 
 	// Radio boxes.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Radio boxes.',
 			'description' => 'Display radio boxes.',
@@ -87,7 +89,7 @@
 	);
 
 	// Textarea.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Textarea',
 			'description' => 'Display a textarea.',

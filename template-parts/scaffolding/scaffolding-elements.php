@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 ?>
 
 <section class="section-scaffolding">
@@ -13,7 +15,7 @@
 
 	<?php
 	// Right-aligned Image.
-	_s_display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'Numeric Pagination',
 			'description' => 'Display numeric pagination.',

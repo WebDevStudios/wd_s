@@ -12,7 +12,10 @@
  *
  * @return bool Whether the blog has more than one category.
  */
-function _s_categorized_blog() {
+
+namespace WD_S\Functions;
+
+function return_categorized_blog() {
 	$category_count = get_transient( '_s_categories' );
 
 	if ( false === $category_count ) {

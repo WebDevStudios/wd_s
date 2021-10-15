@@ -13,7 +13,10 @@
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
-function _s_display_numeric_pagination( $args = [], $query = null ) {
+
+namespace WD_S\TemplateTags;
+
+function display_numeric_pagination( $args = [], $query = null ) {
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;

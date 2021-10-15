@@ -14,7 +14,10 @@
  *
  * @return string The title.
  */
-function _s_get_the_title( $args = [] ) {
+
+namespace WD_S\Functions;
+
+function return_the_title( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'length' => 12,

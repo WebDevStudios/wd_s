@@ -12,7 +12,10 @@
  *
  * @param array $args The scaffolding defaults.
  */
-function _s_display_scaffolding_section( $args = [] ) {
+
+namespace WD_S\Scaffolding;
+
+function display_scaffolding_section( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'title'       => '', // The scaffolding title.
@@ -27,7 +30,7 @@ function _s_display_scaffolding_section( $args = [] ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	// Grab our allowed tags.
-	$allowed_tags = _s_scaffolding_allowed_html();
+	$allowed_tags = scaffolding_allowed_html();
 
 	// Add a unique class to the wrapper.
 	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>

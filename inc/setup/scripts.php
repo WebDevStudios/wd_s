@@ -10,7 +10,10 @@
  *
  * @author WebDevStudios
  */
-function _s_scripts() {
+
+namespace WD_S\Setup;
+
+function scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
@@ -30,4 +33,4 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', 'WD_S\Setup\scripts' );
