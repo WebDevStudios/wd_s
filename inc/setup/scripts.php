@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
 /**
  * Enqueue scripts and styles.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Setup;
-
 function scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 

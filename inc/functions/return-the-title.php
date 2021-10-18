@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
 /**
  * Trim the title length.
  *
@@ -14,9 +16,6 @@
  *
  * @return string The title.
  */
-
-namespace WD_S\Functions;
-
 function return_the_title( $args = [] ) {
 	// Set defaults.
 	$defaults = [

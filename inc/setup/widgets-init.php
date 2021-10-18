@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
 /**
  * Register widget area.
  *
@@ -12,9 +14,6 @@
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Setup;
-
 function widgets_init() {
 
 	// Define sidebars.

@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Shortcodes;
+
 /**
  * Shortcode to display copyright year.
  *
@@ -16,9 +18,6 @@
  *
  * @return string Copyright year text.
  */
-
-namespace WD_S\Shortcodes;
-
 function copyright_year( $atts ) {
 	// Setup defaults.
 	$args = shortcode_atts(

@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Removes or Adjusts the prefix on category archive page titles.
  *
@@ -14,9 +16,6 @@
  *
  * @return string The updated $block_title.
  */
-
-namespace WD_S\Hooks;
-
 function remove_archive_title_prefix( $block_title ) {
 	// Get the single category title with no prefix.
 	$single_cat_title = single_term_title( '', false );

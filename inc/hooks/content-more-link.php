@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Customize "Read More" string on <!-- more --> with the_content();
  *
@@ -12,9 +14,6 @@
  *
  * @return string Read more link.
  */
-
-namespace WD_S\Hooks;
-
 function content_more_link() {
 	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
 }

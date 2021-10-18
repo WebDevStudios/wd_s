@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Customizer;
+
 /**
  * Add a custom panels to attach sections too.
  *
@@ -12,9 +14,6 @@
  *
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Class.
  */
-
-namespace WD_S\Customizer;
-
 function customize_panels( $wp_customize ) {
 	// Register a new panel.
 	$wp_customize->add_panel(

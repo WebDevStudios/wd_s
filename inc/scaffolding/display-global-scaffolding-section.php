@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 /**
  * Build a global scaffolding element.
  *
@@ -12,9 +14,6 @@
  *
  * @param array $args The array of colors or fonts.
  */
-
-namespace WD_S\Scaffolding;
-
 function display_global_scaffolding_section( $args = [] ) {
 	// Set defaults.
 	$defaults = [

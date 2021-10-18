@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Add SVG definitions to footer.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Hooks;
-
 function include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/build/images/icons/sprite.svg';

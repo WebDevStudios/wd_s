@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Customize the [...] on the_excerpt();
  *
@@ -14,9 +16,6 @@
  *
  * @return string Read more link.
  */
-
-namespace WD_S\Hooks;
-
 function excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
 }

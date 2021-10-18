@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 /**
  * Declare HTML tags allowed for scaffolding.
  *
@@ -12,9 +14,6 @@
  *
  * @return array The allowed tags and attributes.
  */
-
-namespace WD_S\Scaffolding;
-
 function scaffolding_allowed_html() {
 	// Add additional HTML tags to the wp_kses() allowed html filter.
 	return array_merge(

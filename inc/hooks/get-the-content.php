@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Filters WYSIWYG content with the_content filter.
  *
@@ -14,9 +16,6 @@
  *
  * @return string|bool Content string if content exists, else empty.
  */
-
-namespace WD_S\Hooks;
-
 function get_the_content( $content ) {
 	return ! empty( $content ) ? $content : false;
 }

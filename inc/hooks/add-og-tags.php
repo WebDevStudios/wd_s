@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Adds OG tags to the head for better social sharing.
  *
@@ -12,9 +14,6 @@
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */
-
-namespace WD_S\Hooks;
-
 function add_og_tags() {
 	// Bail if Yoast is installed, since it will handle things.
 	if ( class_exists( 'WPSEO_Options' ) ) {

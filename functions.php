@@ -7,14 +7,13 @@
  * @package _s
  */
 
+namespace WD_S;
+
 /**
  * Get all the include files for the theme.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S;
-
 function get_theme_include_files() {
 	return [
 		'inc/customizer/customizer.php', // Customizer additions.

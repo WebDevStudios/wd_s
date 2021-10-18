@@ -5,6 +5,10 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
+use WD_S\Hooks;
+
 /**
  * Return SVG markup.
  *
@@ -14,11 +18,6 @@
  *
  * @return string Error string or SVG markup.
  */
-
-namespace WD_S\Functions;
-
-use WD_S\Hooks;
-
 function return_svg( $args = [] ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {

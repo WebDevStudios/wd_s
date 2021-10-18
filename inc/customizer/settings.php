@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Customizer;
+
 /**
  * Register additional scripts.
  *
@@ -12,9 +14,6 @@
  *
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
-
-namespace WD_S\Customizer;
-
 function customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
 	$wp_customize->add_setting(

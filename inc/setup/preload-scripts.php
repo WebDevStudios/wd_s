@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
 /**
  * Preload styles and scripts.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Setup;
-
 function preload_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
 

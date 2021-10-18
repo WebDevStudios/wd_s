@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Scaffolding;
+
 /**
  * Hook the theme's scaffolding template parts into the scaffolding template.
  *
  * @author Carrie Forde
  */
-
-namespace WD_S\Scaffolding;
-
 function hook_theme_scaffolding() {
 	$template_dir = 'template-parts/scaffolding/scaffolding';
 

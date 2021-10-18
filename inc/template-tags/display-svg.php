@@ -5,6 +5,10 @@
  * @package _s
  */
 
+namespace WD_S\TemplateTags;
+
+use WD_S\Functions;
+
 /**
  * Display SVG Markup.
  *
@@ -12,11 +16,6 @@
  *
  * @param array $args The parameters needed to get the SVG.
  */
-
-namespace WD_S\TemplateTags;
-
-use WD_S\Functions;
-
 function display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 

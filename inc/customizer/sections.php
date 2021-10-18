@@ -5,15 +5,14 @@
  * @package _s
  */
 
+namespace WD_S\Customizer;
+
 /**
  * Register the section sections.
  *
  * @author WebDevStudios
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
-
-namespace WD_S\Customizer;
-
 function customize_sections( $wp_customize ) {
 
 	// Register additional scripts section.

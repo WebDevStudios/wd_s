@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
 /**
  * Returns true if a blog has more than 1 category, else false.
  *
@@ -12,9 +14,6 @@
  *
  * @return bool Whether the blog has more than one category.
  */
-
-namespace WD_S\Functions;
-
 function return_categorized_blog() {
 	$category_count = get_transient( '_s_categories' );
 

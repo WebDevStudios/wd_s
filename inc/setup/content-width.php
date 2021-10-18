@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -14,9 +16,6 @@
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Setup;
-
 function content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }

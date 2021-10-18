@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\TemplateTags;
+
 /**
  * Displays numeric pagination on archive pages.
  *
@@ -13,9 +15,6 @@
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
-
-namespace WD_S\TemplateTags;
-
 function display_numeric_pagination( $args = [], $query = null ) {
 	if ( ! $query ) {
 		global $wp_query;

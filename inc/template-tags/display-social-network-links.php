@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\TemplateTags;
+
 /**
  * Display the social links saved in the customizer.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\TemplateTags;
-
 function display_social_network_links() {
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.

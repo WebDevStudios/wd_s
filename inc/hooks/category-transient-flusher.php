@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Flush out the transients used in _s_categorized_blog.
  *
@@ -12,9 +14,6 @@
  *
  * @return bool Whether or not transients were deleted.
  */
-
-namespace WD_S\Hooks;
-
 function category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return false;

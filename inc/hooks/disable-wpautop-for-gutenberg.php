@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
  *
  * @author Corey Collins
  */
-
-namespace WD_S\Hooks;
-
 function disable_wpautop_for_gutenberg() {
 	// If we have blocks in place, don't add wpautop.
 	if ( has_filter( 'the_content', 'wpautop' ) && has_blocks() ) {

@@ -5,15 +5,14 @@
  * @package _s
  */
 
+namespace WD_S\Customizer;
+
 /**
  * Removes default customizer fields that we generally don't use.
  *
  * @param object $wp_customize The default Customizer settings.
  * @author Corey Collins
  */
-
-namespace WD_S\Customizer;
-
 function remove_default_customizer_sections( $wp_customize ) {
 
 	// Remove sections.

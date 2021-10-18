@@ -5,16 +5,15 @@
  * @package _s
  */
 
+namespace WD_S\TemplateTags;
+
+use WD_S\Functions;
+
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\TemplateTags;
-
-use WD_S\Functions;
-
 function display_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {

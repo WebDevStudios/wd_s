@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Display the customizer footer scripts.
  *
@@ -12,9 +14,6 @@
  *
  * @return string Footer scripts.
  */
-
-namespace WD_S\Hooks;
-
 function display_customizer_footer_scripts() {
 	// Check for footer scripts.
 	$scripts = get_theme_mod( '_s_footer_scripts' );

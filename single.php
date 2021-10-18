@@ -7,8 +7,6 @@
  * @package _s
  */
 
-// use WD_S\Functions;
-
 namespace WD_S;
 
 use WD_S\TemplateTags;

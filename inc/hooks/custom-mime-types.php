@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Enable custom mime types.
  *
@@ -14,9 +16,6 @@
  *
  * @return array Mime types.
  */
-
-namespace WD_S\Hooks;
-
 function custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';
 	$mimes['svgz'] = 'image/svg+xml';

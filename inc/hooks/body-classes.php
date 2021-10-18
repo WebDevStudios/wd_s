@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -14,9 +16,6 @@
  *
  * @return array Body classes.
  */
-
-namespace WD_S\Hooks;
-
 function body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;

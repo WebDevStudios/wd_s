@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
 /**
  * Limit the excerpt length.
  *
@@ -14,9 +16,6 @@
  *
  * @return string The excerpt.
  */
-
-namespace WD_S\Functions;
-
 function return_the_excerpt( $args = [] ) {
 
 	// Set defaults.

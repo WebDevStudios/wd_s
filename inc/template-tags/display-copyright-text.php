@@ -5,16 +5,15 @@
  * @package _s
  */
 
+namespace WD_S\TemplateTags;
+
+use WD_S\Hooks;
+
 /**
  * Echo the copyright text saved in the Customizer.
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\TemplateTags;
-
-use WD_S\Hooks;
-
 function display_copyright_text() {
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );

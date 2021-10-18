@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -14,9 +16,6 @@
  *
  * @author WebDevStudios
  */
-
-namespace WD_S\Setup;
-
 function setup() {
 	/**
 	 * Make theme available for translation.

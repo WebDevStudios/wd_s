@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
 /**
  * Get an attachment ID from it's URL.
  *
@@ -14,9 +16,6 @@
  *
  * @return int    The attachment ID.
  */
-
-namespace WD_S\Functions;
-
 function return_attachment_id_from_url( $attachment_url = '' ) {
 	global $wpdb;
 

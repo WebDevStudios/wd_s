@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WD_S\Hooks;
+
 /**
  * Display the customizer header scripts.
  *
@@ -12,9 +14,6 @@
  *
  * @return string Header scripts.
  */
-
-namespace WD_S\Hooks;
-
 function display_customizer_header_scripts() {
 	// Check for header scripts.
 	$scripts = get_theme_mod( '_s_header_scripts' );

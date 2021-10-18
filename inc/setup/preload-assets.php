@@ -5,16 +5,15 @@
  * @package _s
  */
 
+namespace WD_S\Setup;
+
+use WD_S\Functions;
+
 /**
  * Preload assets.
  *
  * @author Corey Collins
  */
-
-namespace WD_S\Setup;
-
-use WD_S\Functions;
-
 function preload_assets() {
 	?>
 	<?php if ( Functions\return_custom_logo_url() ) : ?>

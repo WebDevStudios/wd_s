@@ -5,14 +5,13 @@
  * @package _s
  */
 
+namespace WD_S\Functions;
+
 /**
  * Retrieve the URL of the custom logo uploaded, if one exists.
  *
  * @author Corey Collins
  */
-
-namespace WD_S\Functions;
-
 function return_custom_logo_url() {
 
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
