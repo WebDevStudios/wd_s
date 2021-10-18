@@ -15,6 +15,8 @@
 
 namespace WD_S\TemplateTags;
 
+use WD_S\Functions;
+
 function display_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
@@ -51,7 +53,7 @@ function display_svg( $args = [] ) {
 	);
 
 	echo wp_kses(
-		get_svg( $args ),
+		Functions\return_svg( $args ),
 		$allowed_tags
 	);
 }
