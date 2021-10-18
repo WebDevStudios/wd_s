@@ -22,7 +22,8 @@
 			if ( 'post' === get_post_type() ) :
 				?>
 				<div class="entry-meta">
-					<?php _s_posted_on(); ?>
+					<?php _s_posted_on(); ?><br/>
+					<?php _s_posted_on_alt(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
