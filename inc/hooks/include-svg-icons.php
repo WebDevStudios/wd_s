@@ -10,7 +10,10 @@
  *
  * @author WebDevStudios
  */
-function _s_include_svg_icons() {
+
+namespace WD_S\Hooks;
+
+function include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_template_directory() . '/build/images/icons/sprite.svg';
 
@@ -22,4 +25,4 @@ function _s_include_svg_icons() {
 	}
 }
 
-add_action( 'wp_footer', '_s_include_svg_icons', 9999 );
+add_action( 'wp_footer', 'WD_S\Hooks\include_svg_icons', 9999 );

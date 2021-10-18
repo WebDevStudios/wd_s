@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 get_header(); ?>
 
 	<main id="main" class="container site-main">

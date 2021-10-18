@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 ?>
 
 	<section class="no-results not-found">

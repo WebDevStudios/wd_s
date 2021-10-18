@@ -12,7 +12,10 @@
  *
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
-function _s_customize_additional_scripts( $wp_customize ) {
+
+namespace WD_S\Customizer;
+
+function customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
 	$wp_customize->add_setting(
 		'_s_header_scripts',
@@ -54,7 +57,7 @@ function _s_customize_additional_scripts( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', '_s_customize_additional_scripts' );
+add_action( 'customize_register', 'WD_S\Customizer\customize_additional_scripts' );
 
 /**
  * Register a social icons setting.
@@ -63,7 +66,7 @@ add_action( 'customize_register', '_s_customize_additional_scripts' );
  *
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
-function _s_customize_social_icons( $wp_customize ) {
+function customize_social_icons( $wp_customize ) {
 	// Create an array of our social links for ease of setup.
 	$social_networks = [
 		'facebook',
@@ -96,7 +99,7 @@ function _s_customize_social_icons( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', '_s_customize_social_icons' );
+add_action( 'customize_register', 'WD_S\Customizer\customize_social_icons' );
 
 /**
  * Register copyright text setting.
@@ -105,7 +108,7 @@ add_action( 'customize_register', '_s_customize_social_icons' );
  *
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
-function _s_customize_copyright_text( $wp_customize ) {
+function customize_copyright_text( $wp_customize ) {
 	// Register a setting.
 	$wp_customize->add_setting(
 		'_s_copyright_text',
@@ -130,4 +133,4 @@ function _s_customize_copyright_text( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', '_s_customize_copyright_text' );
+add_action( 'customize_register', 'WD_S\Customizer\customize_copyright_text' );

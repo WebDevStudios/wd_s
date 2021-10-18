@@ -15,6 +15,9 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
+
+namespace WD_S;
+
 if ( post_password_required() ) {
 	return;
 }

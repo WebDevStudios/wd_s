@@ -7,6 +7,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

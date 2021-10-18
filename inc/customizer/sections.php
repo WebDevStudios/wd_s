@@ -11,7 +11,10 @@
  * @author WebDevStudios
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
-function _s_customize_sections( $wp_customize ) {
+
+namespace WD_S\Customizer;
+
+function customize_sections( $wp_customize ) {
 
 	// Register additional scripts section.
 	$wp_customize->add_section(
@@ -54,4 +57,4 @@ function _s_customize_sections( $wp_customize ) {
 		]
 	);
 }
-add_action( 'customize_register', '_s_customize_sections' );
+add_action( 'customize_register', 'WD_S\Customizer\customize_sections' );

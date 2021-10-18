@@ -12,7 +12,10 @@
  *
  * @author WebDevStudios
  */
-function _s_get_theme_include_files() {
+
+namespace WD_S;
+
+function get_theme_include_files() {
 	return [
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/functions/', // Custom functions that act independently of the theme templates.
@@ -25,7 +28,7 @@ function _s_get_theme_include_files() {
 	];
 }
 
-foreach ( _s_get_theme_include_files() as $include ) {
+foreach ( get_theme_include_files() as $include ) {
 	$include = trailingslashit( get_template_directory() ) . $include;
 
 	// Allows inclusion of individual files or all .php files in a directory.

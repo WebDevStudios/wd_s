@@ -14,7 +14,10 @@
  *
  * @return string The updated $block_title.
  */
-function _s_remove_archive_title_prefix( $block_title ) {
+
+namespace WD_S\Hooks;
+
+function remove_archive_title_prefix( $block_title ) {
 	// Get the single category title with no prefix.
 	$single_cat_title = single_term_title( '', false );
 
@@ -25,4 +28,4 @@ function _s_remove_archive_title_prefix( $block_title ) {
 	return $block_title;
 }
 
-add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
+add_filter( 'get_the_archive_title', 'WD_S\Hooks\remove_archive_title_prefix' );

@@ -14,7 +14,10 @@
  *
  * @return array Body classes.
  */
-function _s_body_classes( $classes ) {
+
+namespace WD_S\Hooks;
+
+function body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;
 
@@ -69,4 +72,4 @@ function _s_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', '_s_body_classes' );
+add_filter( 'body_class', 'WD_S\Hooks\body_classes' );

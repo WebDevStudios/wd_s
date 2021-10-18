@@ -9,6 +9,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

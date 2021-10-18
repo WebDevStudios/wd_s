@@ -14,8 +14,11 @@
  *
  * @return string Read more link.
  */
-function _s_excerpt_more( $more ) {
+
+namespace WD_S\Hooks;
+
+function excerpt_more( $more ) {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', '_s' ) );
 }
 
-add_filter( 'excerpt_more', '_s_excerpt_more' );
+add_filter( 'excerpt_more', 'WD_S\Hooks\excerpt_more' );

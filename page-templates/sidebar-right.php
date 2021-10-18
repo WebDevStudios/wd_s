@@ -9,6 +9,8 @@
  * @package _s
  */
 
+namespace WD_S;
+
 get_header(); ?>
 
 	<div class="container site-main">
@@ -20,7 +22,7 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				_s_display_comments();
+				TemplateTags\display_comments();
 
 			endwhile; // End of the loop.
 			?>

@@ -14,8 +14,11 @@
  *
  * @return string|bool Content string if content exists, else empty.
  */
-function _s_get_the_content( $content ) {
+
+namespace WD_S\Hooks;
+
+function get_the_content( $content ) {
 	return ! empty( $content ) ? $content : false;
 }
 
-add_filter( 'the_content', '_s_get_the_content', 20 );
+add_filter( 'the_content', 'WD_S\Hooks\get_the_content', 20 );

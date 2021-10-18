@@ -12,7 +12,10 @@
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */
-function _s_add_og_tags() {
+
+namespace WD_S\Hooks;
+
+function add_og_tags() {
 	// Bail if Yoast is installed, since it will handle things.
 	if ( class_exists( 'WPSEO_Options' ) ) {
 		return '';
@@ -144,4 +147,4 @@ function _s_add_og_tags() {
 	<?php
 }
 
-add_action( 'wp_head', '_s_add_og_tags' );
+add_action( 'wp_head', 'WD_S\Hooks\add_og_tags' );

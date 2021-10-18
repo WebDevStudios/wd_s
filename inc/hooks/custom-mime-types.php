@@ -14,11 +14,14 @@
  *
  * @return array Mime types.
  */
-function _s_custom_mime_types( $mimes ) {
+
+namespace WD_S\Hooks;
+
+function custom_mime_types( $mimes ) {
 	$mimes['svg']  = 'image/svg+xml';
 	$mimes['svgz'] = 'image/svg+xml';
 
 	return $mimes;
 }
 
-add_filter( 'upload_mimes', '_s_custom_mime_types' );
+add_filter( 'upload_mimes', 'WD_S\Hooks\custom_mime_types' );
