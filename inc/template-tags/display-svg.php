@@ -7,7 +7,7 @@
 
 namespace WD_S\TemplateTags;
 
-use WD_S\Functions;
+use function WD_S\Functions\return_svg;
 
 /**
  * Display SVG Markup.
@@ -52,7 +52,7 @@ function display_svg( $args = [] ) {
 	);
 
 	echo wp_kses(
-		Functions\return_svg( $args ),
+		return_svg( $args ),
 		$allowed_tags
 	);
 }

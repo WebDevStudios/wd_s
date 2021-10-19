@@ -7,9 +7,7 @@
  * @package _s
  */
 
-namespace WD_S;
-
-use WD_S\TemplateTags;
+use function WD_S\TemplateTags\display_comments;
 
 get_header(); ?>
 
@@ -19,13 +17,11 @@ get_header(); ?>
 		while ( have_posts() ) :
 			the_post();
 
-
-
 			get_template_part( 'template-parts/content', get_post_format() );
 
 			the_post_navigation();
 
-			TemplateTags\display_comments();
+			display_comments();
 
 		endwhile; // End of the loop.
 		?>

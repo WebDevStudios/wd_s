@@ -7,8 +7,6 @@
  * @package _s
  */
 
-namespace WD_S;
-
 if ( is_active_sidebar( 'sidebar-1' ) ) {
 	?>
 	<aside class="sidebar widget-area">

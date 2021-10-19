@@ -16,8 +16,6 @@
  * return early without loading the comments.
  */
 
-namespace WD_S;
-
 if ( post_password_required() ) {
 	return;
 }

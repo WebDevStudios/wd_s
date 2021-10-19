@@ -7,7 +7,7 @@
  * @package _s
  */
 
-namespace WD_S;
+use function WD_S\TemplateTags\display_numeric_pagination;
 
 get_header(); ?>
 
@@ -36,7 +36,7 @@ get_header(); ?>
 
 			endwhile;
 
-			TemplateTags\display_numeric_pagination();
+			display_numeric_pagination();
 
 		else :
 			get_template_part( 'template-parts/content', 'none' );

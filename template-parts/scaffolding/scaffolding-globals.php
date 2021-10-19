@@ -7,7 +7,7 @@
 
 namespace WD_S;
 
-use WD_S\Scaffolding;
+use function WD_S\Scaffolding\display_global_scaffolding_section;
 
 ?>
 
@@ -32,7 +32,7 @@ use WD_S\Scaffolding;
 		);
 
 		// Theme fonts.
-		Scaffolding\display_global_scaffolding_section(
+		display_global_scaffolding_section(
 			[
 				'global_type' => 'fonts',
 				'title'       => 'Fonts',

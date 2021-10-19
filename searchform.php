@@ -5,8 +5,6 @@
  * @package _s
  */
 
-namespace WD_S;
-
 // Make sure our search forms have unique IDs in the event more than 1 is on a page.
 $random_identifier = wp_rand();
 ?>

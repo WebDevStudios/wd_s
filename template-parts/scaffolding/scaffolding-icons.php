@@ -7,8 +7,8 @@
 
 namespace WD_S;
 
-use WD_S\Functions;
-use WD_S\Scaffolding;
+use function WD_S\Scaffolding\display_scaffolding_section;
+use function WD_S\Functions\return_svg;
 
 ?>
 
@@ -18,7 +18,7 @@ use WD_S\Scaffolding;
 
 	<?php
 	// SVG Icon.
-	Scaffolding\display_scaffolding_section(
+	display_scaffolding_section(
 		[
 			'title'       => 'SVG',
 			'description' => 'Display inline SVGs.',
@@ -41,7 +41,7 @@ use WD_S\Scaffolding;
 				'height' => '(optional) The height of the icon. Default: none',
 				'width'  => '(optional) The width of the icon. Default: none',
 			],
-			'output'      => Functions\return_svg(
+			'output'      => return_svg(
 				[
 					'icon'   => 'facebook-square',
 					'title'  => 'Facebook Icon',

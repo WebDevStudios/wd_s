@@ -7,7 +7,7 @@
 
 namespace WD_S\Setup;
 
-use WD_S\Functions;
+use function WD_S\Functions\return_custom_logo_url;
 
 /**
  * Preload assets.
@@ -16,7 +16,7 @@ use WD_S\Functions;
  */
 function preload_assets() {
 	?>
-	<?php if ( Functions\return_custom_logo_url() ) : ?>
+	<?php if ( return_custom_logo_url() ) : ?>
 		<link rel="preload" href="<?php echo esc_url( Functions\return_custom_logo_url() ); ?>" as="image">
 	<?php endif; ?>
 	<?php

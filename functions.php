@@ -7,27 +7,23 @@
  * @package _s
  */
 
-namespace WD_S;
-
 /**
  * Get all the include files for the theme.
  *
  * @author WebDevStudios
  */
-function get_theme_include_files() {
-	return [
-		'inc/customizer/customizer.php', // Customizer additions.
-		'inc/functions/', // Custom functions that act independently of the theme templates.
-		'inc/hooks/', // Load custom filters and hooks.
-		'inc/post-types/', // Load custom post types.
-		'inc/scaffolding/', // Scaffolding.
-		'inc/setup/', // Theme setup.
-		'inc/shortcodes/', // Load shortcodes.
-		'inc/template-tags/', // Custom template tags for this theme.
-	];
-}
+$files = [
+	'inc/customizer/customizer.php', // Customizer additions.
+	'inc/functions/', // Custom functions that act independently of the theme templates.
+	'inc/hooks/', // Load custom filters and hooks.
+	'inc/post-types/', // Load custom post types.
+	'inc/scaffolding/', // Scaffolding.
+	'inc/setup/', // Theme setup.
+	'inc/shortcodes/', // Load shortcodes.
+	'inc/template-tags/', // Custom template tags for this theme.
+];
 
-foreach ( get_theme_include_files() as $include ) {
+foreach ( $files as $include ) {
 	$include = trailingslashit( get_template_directory() ) . $include;
 
 	// Allows inclusion of individual files or all .php files in a directory.
