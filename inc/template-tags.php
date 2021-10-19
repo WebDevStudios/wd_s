@@ -8,9 +8,11 @@
  */
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with date information for the current post.
  *
  * @author WebDevStudios
+ *
+ * @param array $args Configuration args.
  */
 function _s_post_date( $args = [] ) {
 
@@ -34,9 +36,11 @@ function _s_post_date( $args = [] ) {
 
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with author information for the current post.
  *
  * @author WebDevStudios
+ *
+ * @param array $args Configuration args.
  */
 function _s_post_author( $args = [] ) {
 
