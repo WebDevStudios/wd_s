@@ -9,7 +9,7 @@
  * @package _s
  */
 
-namespace WD_S;
+use function WD_S\TemplateTags\display_comments;
 
 get_header(); ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				TemplateTags\display_comments();
+				display_comments();
 
 			endwhile; // End of the loop.
 			?>
