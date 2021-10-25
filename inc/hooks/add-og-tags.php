@@ -146,4 +146,4 @@ function add_og_tags() {
 	<?php
 }
 
-add_action( 'wp_head', 'WD_S\Hooks\add_og_tags' );
+add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );

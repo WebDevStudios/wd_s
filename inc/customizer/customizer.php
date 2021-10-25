@@ -21,7 +21,7 @@ function remove_default_customizer_sections( $wp_customize ) {
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'colors' );
 }
-add_action( 'customize_register', 'WD_S\Customizer\remove_default_customizer_sections', 15 );
+add_action( 'customize_register', __NAMESPACE__ . '\remove_default_customizer_sections', 15 );
 
 /**
  * Include other customizer files.
@@ -34,7 +34,7 @@ function include_custom_controls() {
 	require get_template_directory() . '/inc/customizer/settings.php';
 	require get_template_directory() . '/inc/customizer/class-text-editor-custom-control.php';
 }
-add_action( 'customize_register', 'WD_S\Customizer\include_custom_controls', -999 );
+add_action( 'customize_register', __NAMESPACE__ . '\include_custom_controls', -999 );
 
 /**
  * Enqueue customizer related scripts.
@@ -44,7 +44,7 @@ add_action( 'customize_register', 'WD_S\Customizer\include_custom_controls', -99
 function customize_scripts() {
 	wp_enqueue_script( '_s-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', [ 'jquery', 'customize-preview' ], '1.0.0', true );
 }
-add_action( 'customize_preview_init', 'WD_S\Customizer\customize_scripts' );
+add_action( 'customize_preview_init', __NAMESPACE__ . '\customize_scripts' );
 
 /**
  * Add support for the fancy new edit icons.
@@ -69,7 +69,7 @@ function selective_refresh_support( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( $setting, $args );
 	}
 }
-add_action( 'customize_register', 'WD_S\Customizer\selective_refresh_support' );
+add_action( 'customize_register', __NAMESPACE__ . '\selective_refresh_support' );
 
 /**
  * Add live preview support via postMessage.
@@ -107,4 +107,4 @@ function live_preview_support( $wp_customize ) {
 		$setting->transport = 'postMessage';
 	}
 }
-add_action( 'customize_register', 'WD_S\Customizer\live_preview_support', 999 );
+add_action( 'customize_register', __NAMESPACE__ . '\live_preview_support', 999 );

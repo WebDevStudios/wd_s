@@ -24,4 +24,4 @@ function include_svg_icons() {
 	}
 }
 
-add_action( 'wp_footer', 'WD_S\Hooks\include_svg_icons', 9999 );
+add_action( 'wp_footer', __NAMESPACE__ . '\include_svg_icons', 9999 );

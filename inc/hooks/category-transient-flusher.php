@@ -23,5 +23,5 @@ function category_transient_flusher() {
 	return delete_transient( '_s_categories' );
 }
 
-add_action( 'delete_category', 'WD_S\Hooks\category_transient_flusher' );
-add_action( 'save_post', 'WD_S\Hooks\category_transient_flusher' );
+add_action( 'delete_category', __NAMESPACE__ . '\category_transient_flusher' );
+add_action( 'save_post', __NAMESPACE__ . '\category_transient_flusher' );

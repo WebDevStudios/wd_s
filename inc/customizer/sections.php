@@ -56,4 +56,4 @@ function customize_sections( $wp_customize ) {
 		]
 	);
 }
-add_action( 'customize_register', 'WD_S\Customizer\customize_sections' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_sections' );

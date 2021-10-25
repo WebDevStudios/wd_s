@@ -24,4 +24,4 @@ function hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'elements' );
 }
 
-add_action( '_s_scaffolding_content', 'WD_S\Scaffolding\hook_theme_scaffolding' );
+add_action( '_s_scaffolding_content', __NAMESPACE__ . '\hook_theme_scaffolding' );

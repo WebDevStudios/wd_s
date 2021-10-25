@@ -28,4 +28,4 @@ function customize_panels( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', 'WD_S\Customizer\customize_panels' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_panels' );

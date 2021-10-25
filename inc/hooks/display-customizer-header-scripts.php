@@ -28,4 +28,4 @@ function display_customizer_header_scripts() {
 	echo get_the_content( $scripts );
 }
 
-add_action( 'wp_head', 'WD_S\Hooks\display_customizer_header_scripts', 999 );
+add_action( 'wp_head', __NAMESPACE__ . '\display_customizer_header_scripts', 999 );

@@ -28,4 +28,4 @@ function display_customizer_footer_scripts() {
 	echo get_the_content( $scripts );
 }
 
-add_action( 'wp_footer', 'WD_S\Hooks\display_customizer_footer_scripts', 999 );
+add_action( 'wp_footer', __NAMESPACE__ . '\display_customizer_footer_scripts', 999 );

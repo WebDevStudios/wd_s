@@ -56,7 +56,7 @@ function customize_additional_scripts( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', 'WD_S\Customizer\customize_additional_scripts' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_additional_scripts' );
 
 /**
  * Register a social icons setting.
@@ -98,7 +98,7 @@ function customize_social_icons( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', 'WD_S\Customizer\customize_social_icons' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_social_icons' );
 
 /**
  * Register copyright text setting.
@@ -132,4 +132,4 @@ function customize_copyright_text( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', 'WD_S\Customizer\customize_copyright_text' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_copyright_text' );

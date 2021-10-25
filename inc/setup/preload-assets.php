@@ -21,4 +21,4 @@ function preload_assets() {
 	<?php endif; ?>
 	<?php
 }
-add_action( 'wp_head', 'WD_S\Setup\preload_assets', 1 );
+add_action( 'wp_head', __NAMESPACE__ . '\preload_assets', 1 );

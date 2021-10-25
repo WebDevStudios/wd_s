@@ -34,4 +34,4 @@ add_filter( 'xmlrpc_enabled', '__return_false' );
 function cors_control() {
 	header( 'Access-Control-Allow-Origin: *' );
 }
-add_action( 'rest_api_init', 'WD_S\Functions\cors_control' );
+add_action( 'rest_api_init', __NAMESPACE__ . '\cors_control' );

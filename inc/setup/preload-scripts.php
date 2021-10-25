@@ -29,4 +29,4 @@ function preload_scripts() {
 	<link rel="preload" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/build/index.js?ver=<?php echo esc_html( $asset_file['version'] ); ?>" as="script">
 	<?php
 }
-add_action( 'wp_head', 'WD_S\Setup\preload_scripts', 1 );
+add_action( 'wp_head', __NAMESPACE__ . '\preload_scripts', 1 );
