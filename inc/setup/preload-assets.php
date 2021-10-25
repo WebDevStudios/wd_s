@@ -17,7 +17,7 @@ use function WD_S\Functions\return_custom_logo_url;
 function preload_assets() {
 	?>
 	<?php if ( return_custom_logo_url() ) : ?>
-		<link rel="preload" href="<?php echo esc_url( Functions\return_custom_logo_url() ); ?>" as="image">
+		<link rel="preload" href="<?php echo esc_url( return_custom_logo_url() ); ?>" as="image">
 	<?php endif; ?>
 	<?php
 }
