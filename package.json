@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
 		"@wordpress/prettier-config": "^1.1.0",
-		"@wordpress/scripts": "^18.1.0",
+		"@wordpress/scripts": "^19.0.0",
 		"autoprefixer": "^10.3.7",
 		"browser-sync": "^2.27.5",
 		"clean-webpack-plugin": "^4.0.0",
