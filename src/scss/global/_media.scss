@@ -1,28 +1,35 @@
-.aspect-ratio {
+.media-cover {
+	// This is a regular image with the class applied to the <img> element.
+	&:not( .wp-block-image ) {
+		@apply h-full object-cover;
+	}
 
-	// 16x9.
-	&-box {
-		@apply w-full h-0 overflow-hidden relative bg-gray-50;
-
-		padding-top: 56.25%;
-
-		.aspect-media {
-			@apply absolute top-0 left-0 w-full h-full object-cover;
-
-			&.contain {
-				@apply object-contain;
-			}
-
+	// This is a Gutenberg image block, so the class is applied to a <figure> wrapper element.
+	&.wp-block-image {
+		img {
+			@apply h-full object-cover;
 		}
 	}
+}
 
-	// 4x3.
-	&-75 {
-		padding-top: 75%;
+.aspectratio {
+	&-1-1 {
+		@apply media-cover;
+		aspect-ratio: 1 / 1;
 	}
 
-	// Square.
-	&-100 {
-		padding-top: 100%;
+	&-3-4 {
+		@apply media-cover;
+		aspect-ratio: 3 / 4;
+	}
+
+	&-4-3 {
+		@apply media-cover;
+		aspect-ratio: 4 / 3;
+	}
+
+	&-16-9 {
+		@apply media-cover;
+		aspect-ratio: 16 / 9;
 	}
 }
