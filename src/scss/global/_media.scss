@@ -6,6 +6,7 @@
 
 	// This is a Gutenberg image block, so the class is applied to a <figure> wrapper element.
 	&.wp-block-image {
+		
 		img {
 			@apply h-full object-cover;
 		}
@@ -13,6 +14,7 @@
 }
 
 .aspectratio {
+
 	&-1-1 {
 		@apply media-cover;
 		aspect-ratio: 1 / 1;
