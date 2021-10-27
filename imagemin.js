@@ -5,7 +5,7 @@ const imageminGifsicle = require( 'imagemin-gifsicle' );
 const imageminWebp = require( 'imagemin-webp' );
 
 ( async () => {
-	await imagemin( [ 'src/images/**/*.{jpg,jpeg,png,svg,gif,webp}' ], {
+	await imagemin( [ 'build/images/**/*.{jpg,jpeg,png,svg,gif,webp}' ], {
 		destination: 'build/images',
 		preserveDirectories: true,
 		plugins: [
