@@ -1,13 +1,6 @@
 const postCssPlugin = require( 'esbuild-postcss' );
 
-const watch = process.argv.includes( '--watch' ) && {
-	onRebuild( error ) {
-		/* eslint-disable no-console */
-		if ( error ) console.error( '[watch] build failed', error );
-		else console.log( '[watch] build finished' );
-		/* eslint-enable no-console */
-	},
-};
+const watch = process.argv.includes( '--watch' );
 
 require( 'esbuild' )
 	.build( {
