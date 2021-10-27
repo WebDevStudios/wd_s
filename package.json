@@ -23,8 +23,8 @@
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.6",
-		"@wordpress/prettier-config": "^1.1.0",
-		"@wordpress/scripts": "^18.0.1",
+		"@wordpress/prettier-config": "^1.1.1",
+		"@wordpress/scripts": "^19.0.0",
 		"autoprefixer": "^10.3.4",
 		"browser-sync": "^2.27.5",
 		"chokidar-cli": "^3.0.0",
