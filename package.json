@@ -87,6 +87,6 @@
 		"watch:tailwind": "npm run build:tailwind -- -w",
 		"watch:svg": "chokidar 'src/images/icons/' -c 'run-s build:svg build:sprite'",
 		"watch:images": "syncdir src/images build/images -c -do -w --quiet",
-		"watch:imagemin": "chokidar 'src/images/**/*' -c 'npm run build:images'"
+		"watch:imagemin": "chokidar 'src/images/**/*' -c 'npm run build:images --watch'"
 	}
 }
