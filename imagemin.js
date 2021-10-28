@@ -5,13 +5,10 @@ const imageminGifsicle = require( 'imagemin-gifsicle' );
 const imageminWebp = require( 'imagemin-webp' );
 
 const watch = process.argv.includes( '--watch' ),
-	directory =
-		true === watch
-			? 'build/images/**/*.{jpg,jpeg,png,svg,gif,webp}'
-			: 'src/images/**/*.{jpg,jpeg,png,svg,gif,webp}';
+	directory = true === watch ? 'build/images/' : 'src/images/';
 
 ( async () => {
-	await imagemin( [ directory ], {
+	await imagemin( [ directory + '**/*.{jpg,jpeg,png,svg,gif,webp}' ], {
 		destination: 'build/images',
 		preserveDirectories: true,
 		plugins: [
