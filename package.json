@@ -59,7 +59,7 @@
 	"scripts": {
 		"build": "npm run clean && run-s build:*",
 		"build:esbuild": "node esbuild.js",
-		"build:tailwind": "NODE_ENV=production postcss src/css/tailwind.css -o build/tailwind.css",
+		"build:tailwind": "postcss src/css/tailwind.css -o build/tailwind.css",
 		"build:images": "node imagemin.js",
 		"build:svg": "svgo -f src/images/icons -o build/images/icons",
 		"build:sprite": "svgstore src/images/icons/*.svg -o build/images/icons/sprite.svg --inline",
