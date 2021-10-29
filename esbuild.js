@@ -14,5 +14,6 @@ require( 'esbuild' )
 		external: [ '*.svg', '*.png', '*.jpg', '*.jpeg', '*.gif' ],
 		publicPath: 'build/images',
 		plugins: [ postCssPlugin() ],
+		sourcemap: 'inline',
 	} )
 	.catch( () => process.exit( 1 ) );
