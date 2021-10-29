@@ -38,6 +38,7 @@
 }
 
 .comment-list {
+
 	.children {
 		@apply ml-16;
 	}
@@ -48,6 +49,7 @@
 }
 
 .comment-reply-title {
+
 	a {
 		@apply block text-sm;
 	}
