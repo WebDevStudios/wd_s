@@ -6,7 +6,9 @@
 //----------------------------------------
 // Theme Styles.
 //----------------------------------------
+@import 'blocks/index.scss';
+@import 'blocks/core/index.scss';
+@import 'global/index.scss';
 @import 'template-tags/index.scss';
 @import 'templates/index.scss';
-@import 'blocks/index.scss';
 @import 'wordpress-global/index.scss';
