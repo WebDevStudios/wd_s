@@ -68,6 +68,11 @@ module.exports = {
 					to: 'images/icons/[name][ext]',
 					context: path.resolve( process.cwd(), 'src/images/icons' ),
 				},
+				{
+					from: '**/*.{woff,woff2,eot,ttf,otf}',
+					to: 'fonts/[path][name][ext]',
+					context: path.resolve( process.cwd(), 'src/fonts' ),
+				},
 			],
 		} ),
 
