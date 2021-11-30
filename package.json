@@ -58,7 +58,7 @@
 	"scripts": {
 		"build": "npm run clean && run-s build:*",
 		"build:esbuild": "node esbuild.js",
-		"build:fonts": "syncdir src/fonts build/fonts -c -do --quiet",
+		"build:fonts": "[ -d src/fonts ] && syncdir src/fonts build/fonts -c -do --quiet || echo 'src/fonts does not exist.'",
 		"build:tailwind": "postcss src/css/tailwind.css -o build/tailwind.css",
 		"build:images": "node imagemin.js",
 		"build:svg": "svgo -f src/images/icons -o build/images/icons",
