@@ -1,0 +1,49 @@
+//--------------------------------------------------------------
+// Modals! Everybody's Favorite.
+//--------------------------------------------------------------
+.modal {
+	@apply inset-0 hidden fixed overflow-hidden;
+
+	z-index: 1050;
+
+	&.modal-open {
+		@apply block overflow-x-hidden overflow-y-auto;
+	}
+
+	.modal-dialog {
+		@apply absolute w-auto;
+
+		left: 50%;
+		top: 50%;
+		transform: translate( -50%, -50% );
+	}
+
+	.modal-content {
+		@apply bg-clip-padding bg-white outline-none p-24 relative;
+
+		.modal-header {
+			@apply text-center;
+		}
+
+		.modal-body {
+			@apply relative;
+		}
+
+		.modal-footer {
+			@apply relative;
+		}
+	}
+
+	.fluid-embed {
+
+		embed,
+		object,
+		iframe {
+			@apply border-none;
+		}
+	}
+}
+
+.close {
+	@apply bg-black text-white cursor-pointer block mt-8 outline-none p-8;
+}

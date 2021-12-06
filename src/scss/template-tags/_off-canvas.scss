@@ -1,0 +1,75 @@
+//--------------------------------------------------------------
+// Off-Canvas Elements and Overlays
+//--------------------------------------------------------------
+.off-canvas {
+
+	&-container {
+		@apply bg-white inset-y-0 h-full fixed;
+
+		overflow-y: auto;
+		right: -100%;
+		transition: right 0.6s ease-in-out;
+		width: 75%;
+		z-index: 9998;
+
+		@screen tablet-portrait {
+			width: 35vw;
+		}
+
+		&.is-visible {
+			@apply right-0;
+		}
+
+		.admin-bar & {
+			@apply pt-64;
+		}
+	}
+
+	&-open {
+		@apply bottom-0 right-0 block h-24 p-0 absolute w-24;
+
+		background: url( ../images/icons/hamburger.svg ) 50% 50% no-repeat
+			transparent;
+		background-size: 100%;
+		right: theme( 'spacing.12' );
+		top: theme( 'spacing.12' );
+		z-index: 9999;
+
+		@screen tablet-landscape {
+			display: none;
+		}
+
+		.admin-bar & {
+			@apply absolute;
+
+			top: theme( 'spacing.48' );
+		}
+
+		&:focus,
+		&:hover {
+			outline: 2px solid theme( 'colors.black' );
+		}
+
+		&.is-visible {
+			background-image: url( ../images/icons/close.svg );
+		}
+	}
+
+	&-screen {
+		@apply bg-black bg-opacity-25 inset-0 fixed invisible;
+
+		z-index: 9996;
+
+		&.is-visible {
+			@apply visible;
+		}
+	}
+
+	&-content {
+		@apply hidden mt-20 p-16;
+
+		.is-visible & {
+			@apply block;
+		}
+	}
+}

@@ -54,7 +54,9 @@ jobs:
               run: echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
 
             - name: Install and build
-              run: npm ci
+              run: |
+                  composer install --quiet
+                  npm ci --legacy-peer-deps --ignore-scripts --no-fund --no-audit --quiet
 
             - name: Create downloadable zip
               run: zip -r wd_s.zip * -x node_modules/\* -x vendor/\* -x .git/\*

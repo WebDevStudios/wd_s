@@ -1,6 +1,12 @@
-//-----------------------------------------
-// Theme Files
-//-----------------------------------------
-@import 'base/index.scss';
-@import 'modules/index.scss';
-@import 'views/index.scss';
+// @layer base {
+// // Custom base styles if necessary.
+// // See https://tailwindcss.com/docs/adding-base-styles.
+// }
+
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'template-tags/index.scss';
+@import 'templates/index.scss';
+@import 'blocks/index.scss';
+@import 'wordpress-global/index.scss';
