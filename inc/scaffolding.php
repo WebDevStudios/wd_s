@@ -240,9 +240,9 @@ function _s_display_global_scaffolding_section( $args = [] ) {
 }
 
 /**
- * Hook the theme's scaffolding template parts into the scaffolding template.
+ * Add a scaffolding nav for easier access.
  *
- * @author Carrie Forde
+ * @author JC Palmes
  */
 function _s_theme_scaffolding_nav() {
 	?>
