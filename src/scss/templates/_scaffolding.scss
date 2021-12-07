@@ -6,7 +6,7 @@
 // Scaffolding navigation
 //-----------------------------------------
 .scaffolding-nav {
-	@apply bg-gray-200 mb-16 p-16 sticky text-center top-0 w-full z-50;
+	@apply bg-black bg-opacity-10 mb-16 p-16 sticky text-center top-0 w-full z-50;
 
 	@screen tablet-portrait {
 
