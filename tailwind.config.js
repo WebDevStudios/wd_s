@@ -1,5 +1,5 @@
 const plugin = require( 'tailwindcss/plugin' );
-const glob = require("glob")
+const glob = require( 'glob' );
 
 // Get arrays of all of the files.
 const topLevelPhpFiles = glob.sync( './*.php' ),
