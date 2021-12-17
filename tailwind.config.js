@@ -1,11 +1,16 @@
 const plugin = require( 'tailwindcss/plugin' );
+const glob = require("glob")
+
+// Get arrays of all of the files.
+const topLevelPhpFiles = glob.sync( './*.php' ),
+	directoryFiles = [
+		'./inc/*.php',
+		'./template-parts/*.php',
+		'./src/js/**/*.js',
+	];
 
 module.exports = {
-	purge: {
-		content: [ './**/*.php', './src/js/**/*.js' ],
-		layers: [ 'utilities' ],
-		mode: 'layers',
-	},
+	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: {
 		fontSize: {
 			'root-em': '16px',
