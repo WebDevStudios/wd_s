@@ -8,38 +8,57 @@
  */
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with date information for the current post.
  *
  * @author WebDevStudios
+ *
+ * @param array $args Configuration args.
  */
-function _s_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+function _s_post_date( $args = [] ) {
 
-	$time_string = sprintf(
-		$time_string,
-		esc_attr( get_the_date( DATE_W3C ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( DATE_W3C ) ),
-		esc_html( get_the_modified_date() )
-	);
+	// Set defaults.
+	$defaults = [
+		'date_text'   => esc_html__( 'Posted on', '_s' ),
+		'date_format' => get_option( 'date_format' ),
+	];
 
-	$posted_on = sprintf(
-		/* translators: the date the post was published */
-		esc_html_x( 'Posted on %s', 'post date', '_s' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+	?>
+	<span class="posted-on">
+		<?php echo esc_html( $args['date_text'] . ' ' ); ?>
+		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><time class="entry-date published" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( $args['date_format'] ) ); ?></time></a>
+	</span>
+	<?php
+}
 
-	$byline = sprintf(
-		/* translators: the post author */
-		esc_html_x( 'by %s', 'post author', '_s' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
 
-	 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+/**
+ * Prints HTML with author information for the current post.
+ *
+ * @author WebDevStudios
+ *
+ * @param array $args Configuration args.
+ */
+function _s_post_author( $args = [] ) {
+
+	// Set defaults.
+	$defaults = [
+		'author_text' => esc_html__( 'by', '_s' ),
+	];
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	?>
+	<span class="post-author">
+		<?php echo esc_html( $args['author_text'] . ' ' ); ?>
+		<span class="author vcard">
+			<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a>
+		</span>
+	</span>
+
+	<?php
 }
 
 /**
