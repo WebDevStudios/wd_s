@@ -24,8 +24,6 @@ function _s_post_date( $args = [] ) {
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
-
-	ob_start();
 	?>
 	<span class="posted-on">
 		<?php echo esc_html( $args['date_text'] . ' ' ); ?>
