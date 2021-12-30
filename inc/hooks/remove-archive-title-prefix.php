@@ -27,4 +27,4 @@ function remove_archive_title_prefix( $block_title ) {
 	return $block_title;
 }
 
-add_filter( 'get_the_archive_title', 'WD_S\Hooks\remove_archive_title_prefix' );
+add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );

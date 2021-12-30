@@ -38,4 +38,4 @@ function copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 
-add_shortcode( '_s_copyright_year', 'WD_S\Shortcodes\copyright_year', 15 );
+add_shortcode( '_s_copyright_year', __NAMESPACE__ . '\copyright_year', 15 );

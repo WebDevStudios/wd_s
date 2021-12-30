@@ -18,4 +18,4 @@ function content_more_link() {
 	return ' <a class="more-link" href="' . get_permalink() . '">' . esc_html__( 'Read More', '_s' ) . '...</a>';
 }
 
-add_filter( 'the_content_more_link', 'WD_S\Hooks\content_more_link' );
+add_filter( 'the_content_more_link', __NAMESPACE__ . '\content_more_link' );

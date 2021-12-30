@@ -19,4 +19,4 @@ function disable_wpautop_for_gutenberg() {
 	}
 }
 
-add_filter( 'init', 'WD_S\Hooks\disable_wpautop_for_gutenberg', 9 );
+add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );

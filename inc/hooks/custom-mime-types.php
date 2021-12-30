@@ -23,4 +23,4 @@ function custom_mime_types( $mimes ) {
 	return $mimes;
 }
 
-add_filter( 'upload_mimes', 'WD_S\Hooks\custom_mime_types' );
+add_filter( 'upload_mimes', __NAMESPACE__ . '\custom_mime_types' );

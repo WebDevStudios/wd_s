@@ -71,4 +71,4 @@ function body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'WD_S\Hooks\body_classes' );
+add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );

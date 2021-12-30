@@ -20,4 +20,4 @@ function get_the_content( $content ) {
 	return ! empty( $content ) ? $content : false;
 }
 
-add_filter( 'the_content', 'WD_S\Hooks\get_the_content', 20 );
+add_filter( 'the_content', __NAMESPACE__ . '\get_the_content', 20 );
