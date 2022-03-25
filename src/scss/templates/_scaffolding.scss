@@ -101,11 +101,11 @@
 		.tab-toggle {
 			@apply opacity-0 absolute z-0;
 
-			// :checked
-			&:checked {
+			&:checked,
+			&:focus {
 
 				+ .tab-label {
-					@apply bg-blend-darken bg-gray-800;
+					@apply bg-wds-orange;
 
 					&::after {
 						@apply rotate-90 transform bg-none;
