@@ -47,6 +47,10 @@
 .scaffolding-document {
 	@apply mb-16;
 
+	&-live {
+		@apply my-16;
+	} // scaffolding-document-live
+
 	// The section <header>
 	&-header {
 		@apply border-b border-black mb-24 pb-24;
@@ -67,7 +71,7 @@
 		// Reset.
 		h4,
 		p {
-			@apply my-24 mx-0 text-black;
+			@apply mt-0 mb-24 mx-0 text-black;
 		} // h4, p
 
 		// The <pre> container.
@@ -105,7 +109,7 @@
 			&:focus {
 
 				+ .tab-label {
-					@apply bg-wds-orange;
+					@apply bg-blend-darken bg-wds-orange;
 
 					&::after {
 						@apply rotate-90 transform bg-none;
@@ -121,14 +125,14 @@
 		} // .tab-toggle
 
 		.tab {
-			@apply text-white overflow-hidden w-full;
+			@apply text-white overflow-hidden w-full bg-gray-100;
 
 			&-label {
-				@apply bg-gray-800 text-white cursor-pointer flex justify-between p-16;
+				@apply bg-gray-800 text-white cursor-pointer flex justify-between p-16 mb-0;
 
 				/* Icon */
 				&:hover {
-					@apply bg-blend-darken bg-gray-800;
+					@apply bg-gray-800;
 				} // &:hover
 
 				&::before {
