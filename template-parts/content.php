@@ -22,7 +22,8 @@
 			if ( 'post' === get_post_type() ) :
 				?>
 				<div class="entry-meta">
-					<?php _s_posted_on(); ?>
+					<?php _s_post_date(); ?>
+					<?php _s_post_author(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
