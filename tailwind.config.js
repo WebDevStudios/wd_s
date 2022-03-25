@@ -93,6 +93,11 @@ module.exports = {
 			backgroundOpacity: {
 				10: '0.1',
 			},
+			colors: {
+				wds: {
+					orange: '#f3713c',
+				},
+			},
 		},
 	},
 	variants: {},
