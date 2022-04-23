@@ -27,7 +27,7 @@ I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/im
 
 Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watch your project update in real-time while you work.
 
-Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Blocks](https://github.com/WebDevStudios/wds-blocks) plugin for a quick starter including our Accordion and Carousel bloocks.
+Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Blocks](https://github.com/WebDevStudios/wds-blocks) plugin for a quick starter including our Accordion and Carousel blocks.
 
 Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also easy! Add the [WDS ACF Blocks](https://github.com/WebDevStudios/wds-acf-blocks) plugin for a whole set of blocks built with ACF including: Accordion, Carousel, Call To Action, Fifty/Fifty, Hero, Recent Posts, and Related Posts.
 
