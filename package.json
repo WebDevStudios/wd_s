@@ -47,7 +47,7 @@
 		"stylelint-config-prettier": "^9.0.3",
 		"stylelint-webpack-plugin": "^3.0.1",
 		"svg-spritemap-webpack-plugin": "git://github.com/cascornelissen/svg-spritemap-webpack-plugin.git#500280acbf4517319e57e951a44db524060dc105",
-		"tailwindcss": "^3.0.6",
+		"tailwindcss": "^3.0.24",
 		"webpack-merge": "^5.8.0"
 	},
 	"scripts": {
