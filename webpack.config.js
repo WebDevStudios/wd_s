@@ -14,6 +14,10 @@ const StylelintPlugin = require( 'stylelint-webpack-plugin' );
  */
 module.exports = {
 	...defaultConfig,
+	entry: {
+		index: './src/index.js',
+		critical: './src/critical.js',
+	},
 	module: {
 		rules: [
 			{

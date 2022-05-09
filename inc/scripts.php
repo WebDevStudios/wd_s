@@ -33,6 +33,20 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Inline Critical CSS.
+ *
+ * @author Corey Collins
+ */
+function _s_critical_css() {
+	?>
+	<style>
+		<?php include get_stylesheet_directory() . '/build/critical.css'; ?>
+	</style>
+	<?php
+}
+add_action( 'wp_head', '_s_critical_css', 1 );
+
+/**
  * Preload styles and scripts.
  *
  * @author WebDevStudios
