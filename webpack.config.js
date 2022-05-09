@@ -39,9 +39,9 @@ module.exports = {
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				type: 'asset',
+				type: 'asset/resource',
 				generator: {
-					filename: 'fonts/[name].[hash:8].[ext]',
+					filename: 'fonts/[name][ext]',
 				},
 			},
 		],
@@ -62,11 +62,19 @@ module.exports = {
 					from: '**/*.{jpg,jpeg,png,gif,svg}',
 					to: 'images/[path][name][ext]',
 					context: path.resolve( process.cwd(), 'src/images' ),
+					noErrorOnMissing: true,
 				},
 				{
 					from: '*.svg',
 					to: 'images/icons/[name][ext]',
 					context: path.resolve( process.cwd(), 'src/images/icons' ),
+					noErrorOnMissing: true,
+				},
+				{
+					from: '**/*.{woff,woff2,eot,ttf,otf}',
+					to: 'fonts/[path][name][ext]',
+					context: path.resolve( process.cwd(), 'src/fonts' ),
+					noErrorOnMissing: true,
 				},
 			],
 		} ),
