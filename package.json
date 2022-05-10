@@ -71,7 +71,7 @@
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "composer install --quiet && npm run build",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
-		"sync": "browser-sync start --https --proxy 'https://wp-pre-fse.test/' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
+		"sync": "browser-sync start --https --proxy 'https://wdunderscores.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	}
 }
