@@ -1,4 +1,6 @@
 {
+	"phpsab.executablePathCS": "./vendor/bin/phpcs",
+	"phpsab.executablePathCBF": "./vendor/bin/phpcbf",
 	"editor.formatOnSave": true,
 	"scss.validate": false,
 	"[javascriptreact]": {
