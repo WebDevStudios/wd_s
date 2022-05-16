@@ -13,7 +13,7 @@
 
 		> li {
 
-			&:not( :last-child ) {
+			&:not(:last-child) {
 				@apply mr-16;
 			}
 		}
@@ -23,7 +23,7 @@
 		@apply bg-white py-8 absolute shadow-md;
 
 		left: -999em;
-		top: theme( 'spacing.24' );
+		top: theme("spacing.24");
 		z-index: 99999;
 
 		li {
@@ -72,7 +72,7 @@
 		a {
 			@apply block w-full;
 
-			min-width: theme( 'width.192' );
+			min-width: theme("width.192");
 		}
 	}
 }
@@ -83,9 +83,9 @@
 .caret-down {
 	@apply block float-right h-full ml-8;
 
-	background: url( ../images/icons/caret-down.svg ) 50% 50% no-repeat;
+	background: url(../images/icons/caret-down.svg) 50% 50% no-repeat;
 	background-size: 100%;
-	width: theme( 'spacing.8' );
+	width: theme("spacing.8");
 }
 
 //-----------------------------------------

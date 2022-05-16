@@ -38,7 +38,7 @@
 		&::before {
 			@apply block uppercase;
 
-			content: attr( data-label );
+			content: attr(data-label);
 
 			@screen desktop {
 				@apply hidden;
