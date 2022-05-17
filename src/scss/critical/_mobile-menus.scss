@@ -2,7 +2,6 @@
 // Mobile Menus
 //--------------------------------------------------------------
 .mobile-menu {
-
 	li {
 		@apply mb-8;
 	}
@@ -16,7 +15,6 @@
 	}
 
 	.menu-item-has-children {
-
 		&.is-visible {
 			max-height: 8000px;
 
@@ -26,9 +24,7 @@
 		}
 
 		.menu-item-has-children {
-
 			&:last-of-type {
-
 				.menu-item-has-children.is-visible {
 					@apply mb-0;
 				}
@@ -39,7 +35,6 @@
 			}
 
 			&.is-visible {
-
 				&:last-of-type {
 					@apply mb-0;
 				}
@@ -50,13 +45,11 @@
 			}
 
 			.menu-item-has-children {
-
 				.parent-indicator {
 					@apply rotate-0;
 				}
 
 				&.is-visible {
-
 					.parent-indicator {
 						@apply rotate-180;
 					}

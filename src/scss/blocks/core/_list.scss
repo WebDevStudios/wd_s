@@ -3,7 +3,6 @@
 //----------------------------------------
 
 ul {
-
 	&:not(.menu, .sub-menu) {
 		@apply mb-16 list-disc list-inside;
 	}

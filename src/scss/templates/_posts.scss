@@ -19,14 +19,12 @@
 }
 
 .post-container {
-
 	&:not(:last-child) {
 		@apply mb-16;
 	}
 }
 
 .post-navigation {
-
 	.nav-links {
 		@apply flex flex-col text-center;
 
@@ -47,7 +45,6 @@
 }
 
 .updated {
-
 	&:not(.published) {
 		@apply hidden;
 	}
