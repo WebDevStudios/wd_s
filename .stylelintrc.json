@@ -23,6 +23,7 @@
 					"screen"
 				]
 			}
-		]
+		],
+		"string-quotes": "single"
 	}
 }
