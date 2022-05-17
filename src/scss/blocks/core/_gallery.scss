@@ -6,7 +6,6 @@
 	@apply container mb-80;
 
 	.blocks-gallery-item {
-
 		img,
 		figcaption {
 			@apply rounded;
@@ -15,7 +14,6 @@
 
 	&.columns-1,
 	&.columns-2 {
-
 		.blocks-gallery-item {
 			// .blocks-gallery-item__caption {}
 		}
@@ -23,7 +21,6 @@
 
 	&.columns-5,
 	&.columns-6 {
-
 		.blocks-gallery-item {
 			// .blocks-gallery-item__caption {}
 		}
