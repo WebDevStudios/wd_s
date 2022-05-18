@@ -29,7 +29,7 @@
 		"autoprefixer": "^10.4.7",
 		"browser-sync": "^2.27.9",
 		"clean-webpack-plugin": "^4.0.0",
-		"copy-webpack-plugin": "^10.2.4",
+		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
 		"css-loader": "^6.7.1",
 		"css-minimizer-webpack-plugin": "^3.4.1",
