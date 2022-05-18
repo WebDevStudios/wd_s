@@ -105,22 +105,27 @@
 		.tab-toggle {
 			@apply opacity-0 absolute z-0;
 
-			&:checked,
 			&:focus {
 
 				+ .tab-label {
 					@apply bg-blend-darken bg-wds-orange;
-
-					&::after {
-						@apply rotate-90 transform bg-none;
-					} // &::after
 				} // + .tab-label
+			} // &:focus
+
+			&:checked {
 
 				~ .tab-content {
 					@apply p-16;
 
 					max-height: 9999px;
 				} // ~ .tab-content
+
+				+ .tab-label {
+
+					&::after {
+						@apply rotate-90 transform bg-none;
+					} // &::after
+				} // + .tab-label
 			} // &:checked
 		} // .tab-toggle
 
