@@ -2,7 +2,7 @@
 // Forms
 //--------------------------------------------------------------
 textarea,
-input:not( .button ) {
+input:not(.button) {
 	@apply bg-black bg-opacity-10 p-8;
 }
 

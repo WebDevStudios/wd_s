@@ -1,11 +1,16 @@
 const plugin = require( 'tailwindcss/plugin' );
+const glob = require( 'glob' );
+
+// Get arrays of all of the files.
+const topLevelPhpFiles = glob.sync( './*.php' ),
+	directoryFiles = [
+		'./inc/*.php',
+		'./template-parts/*.php',
+		'./src/js/**/*.js',
+	];
 
 module.exports = {
-	purge: {
-		content: [ './**/*.php', './src/js/**/*.js' ],
-		layers: [ 'utilities' ],
-		mode: 'layers',
-	},
+	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: {
 		fontSize: {
 			'root-em': '16px',
@@ -56,12 +61,9 @@ module.exports = {
 			sm: '0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.05)',
 			default:
 				'0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06)',
-			md:
-				'0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06)',
-			lg:
-				'0 0.625rem 0.9375 -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05)',
-			xl:
-				'0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.1), 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.04)',
+			md: '0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06)',
+			lg: '0 0.625rem 0.9375 -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05)',
+			xl: '0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.1), 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.04)',
 			'2xl': '0 1.5625rem 3.125rem -10.125rem rgba(0, 0, 0, 0.25)',
 			'3xl': '0 2.1875rem 3.75rem -0.9375rem rgba(0, 0, 0, 0.3)',
 			inner: 'inset 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.06)',
