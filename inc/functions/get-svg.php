@@ -7,7 +7,7 @@
 
 namespace WebDevStudios\wd_s\Functions;
 
-use function WD_S\Hooks\get_the_content;
+use function WebDevStudios\wd_s\Hooks\get_the_content;
 
 /**
  * Return SVG markup.
@@ -70,14 +70,14 @@ function get_svg( $args = [] ) {
 	ob_start();
 	?>
 
-<svg 
+<svg
 	<?php
 		echo get_the_content( $height ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $color ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $stroke_width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
-		class="icon <?php echo esc_attr( $args['icon'] ); ?>" 
+		class="icon <?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
 		echo get_the_content( $aria_hidden ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $aria_labelledby ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
