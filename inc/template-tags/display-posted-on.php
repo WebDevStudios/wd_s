@@ -5,7 +5,7 @@
  * @package wd_s
  */
 
-namespace WD_S\TemplateTags;
+namespace WebDevStudios\wd_s\TemplateTags;
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.

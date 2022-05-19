@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Functions;
+namespace WebDevStudios\wd_s\Functions;
 
 /**
  * Retrieve the URL of the custom logo uploaded, if one exists.

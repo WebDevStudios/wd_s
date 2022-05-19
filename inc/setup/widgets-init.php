@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Setup;
+namespace WebDevStudios\wd_s\Setup;
 
 /**
  * Register widget area.

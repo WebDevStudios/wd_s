@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S;
+namespace WebDevStudios\wd_s;
 
 use function WD_S\Scaffolding\display_scaffolding_section;
 use function WD_S\Functions\return_svg;

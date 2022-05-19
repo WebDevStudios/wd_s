@@ -11,7 +11,7 @@
  * @author WebDevStudios
  */
 
-namespace WD_S\Functions;
+namespace WebDevStudios\wd_s\Functions;
 
 if ( ! function_exists( 'wp_body_open' ) ) {
 

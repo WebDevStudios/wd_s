@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\TemplateTags;
+namespace WebDevStudios\wd_s\TemplateTags;
 
 /**
  * Display the comments if the count is more than 0.

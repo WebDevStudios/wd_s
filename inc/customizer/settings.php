@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Customizer;
+namespace WebDevStudios\wd_s\Customizer;
 
 /**
  * Register additional scripts.

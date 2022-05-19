@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Setup;
+namespace WebDevStudios\wd_s\Setup;
 
 use function WD_S\Functions\return_custom_logo_url;
 

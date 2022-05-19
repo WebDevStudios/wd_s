@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\TemplateTags;
+namespace WebDevStudios\wd_s\TemplateTags;
 
 /**
  * Displays numeric pagination on archive pages.

@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Functions;
+namespace WebDevStudios\wd_s\Functions;
 
 /**
  * Limit the excerpt length.

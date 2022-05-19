@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Customizer;
+namespace WebDevStudios\wd_s\Customizer;
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return;
@@ -30,12 +30,12 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	 */
 	public function render_content() {
 		?>
-		<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-		</label>
-		<div class="wds-customize-text-editor">
-			<?php
+<label>
+	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+	<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+</label>
+<div class="wds-customize-text-editor">
+		<?php
 			// Setttings for the editor.
 			$settings = [
 				'textarea_name' => $this->id,
@@ -54,7 +54,7 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 				self::$did_scripts = true;
 			}
 			?>
-		</div>
+</div>
 		<?php
 	}
 

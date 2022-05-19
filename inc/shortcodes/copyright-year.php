@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Shortcodes;
+namespace WebDevStudios\wd_s\Shortcodes;
 
 /**
  * Shortcode to display copyright year.

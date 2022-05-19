@@ -7,7 +7,7 @@
  * @package _s
  */
 
-namespace WD_S;
+namespace WebDevStudios\wd_s;
 
 ?>
 

@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Functions;
+namespace WebDevStudios\wd_s\Functions;
 
 /**
  * Returns true if a blog has more than 1 category, else false.

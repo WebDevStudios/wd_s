@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Hooks;
+namespace WebDevStudios\wd_s\Hooks;
 
 /**
  * Customize "Read More" string on <!-- more --> with the_content();

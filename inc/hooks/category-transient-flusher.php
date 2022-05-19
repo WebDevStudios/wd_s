@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Hooks;
+namespace WebDevStudios\wd_s\Hooks;
 
 /**
  * Flush out the transients used in _s_categorized_blog.

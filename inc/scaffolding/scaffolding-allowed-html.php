@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Scaffolding;
+namespace WebDevStudios\wd_s\Scaffolding;
 
 /**
  * Declare HTML tags allowed for scaffolding.

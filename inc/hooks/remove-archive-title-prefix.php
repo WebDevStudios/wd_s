@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WD_S\Hooks;
+namespace WebDevStudios\wd_s\Hooks;
 
 /**
  * Removes or Adjusts the prefix on category archive page titles.

@@ -7,7 +7,7 @@
  * @package _s
  */
 
-namespace WD_S\Functions;
+namespace WebDevStudios\wd_s\Functions;
 
 /**
  * Remove generator meta tags.
