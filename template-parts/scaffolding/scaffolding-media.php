@@ -10,9 +10,27 @@ global $wp_embed;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading"><?php esc_html_e( 'Media', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'media', '_s' ); ?>"><?php esc_html_e( 'Media', '_s' ); ?></h2>
 
 	<?php
+	// Full-aligned cover hero.
+	_s_display_scaffolding_section(
+		[
+			'title'       => 'Full-aligned Image Cover',
+			'description' => 'Display a full aligned image using Cover Block.',
+			'usage'       => '
+				<div class="wp-block-cover alignfull"><img loading="lazy" class="wp-block-cover__image-background" alt="" src="https://via.placeholder.com/1920x1080/000000/" data-object-fit="cover"><div class="wp-block-cover__inner-container">
+				<p class="has-text-align-center has-large-font-size">Cover Block</p>
+				</div></div>
+			',
+			'output'      => '
+				<div class="wp-block-cover alignfull"><img loading="lazy" class="wp-block-cover__image-background" alt="" src="https://via.placeholder.com/1920x1080/000000/" data-object-fit="cover"><div class="wp-block-cover__inner-container">
+				<p class="has-text-align-center has-large-font-size">Cover Block</p>
+				</div></div>
+			',
+		]
+	);
+
 	// Right-aligned Image.
 	_s_display_scaffolding_section(
 		[
