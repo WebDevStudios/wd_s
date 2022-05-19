@@ -1,0 +1,202 @@
+//--------------------------------------------------------------
+// Scaffolding Library
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Scaffolding navigation
+//-----------------------------------------
+.scaffolding-nav {
+	@apply bg-gray-800 text-white mb-16 p-16 sticky text-center top-0 w-full z-50;
+
+	@screen tablet-portrait {
+		.admin-bar & {
+			@apply top-32;
+		} // .admin-bar &
+	}
+
+	span {
+		@apply font-semibold;
+	} // span
+
+	.link {
+		@apply p-5 text-white no-underline transition-all;
+
+		&:hover,
+		&:focus {
+			@apply underline;
+		}
+	} // .link
+} // .scaffolding-nav
+
+//-----------------------------------------
+// Scaffolding defaults
+//-----------------------------------------
+.section-scaffolding {
+	@apply py-10 px-20;
+
+	@screen desktop {
+		@apply px-0;
+	}
+
+	.scaffolding-heading {
+		@apply uppercase;
+	} // .scaffolding-heading
+} // .section-scaffolding
+
+.scaffolding-document {
+	@apply mb-16;
+
+	&-live {
+		@apply my-16;
+	} // scaffolding-document-live
+
+	// The section <header>
+	&-header {
+		@apply border-b border-black mb-24 pb-24;
+
+		// The title.
+		h3 {
+			@apply m-0 p-0 border-b border-black;
+		} // h3
+
+		// The text.
+		p {
+			@apply italic mt-12;
+		} // p
+	} // .scaffolding-section-header
+
+	// The section content <div>
+	&-content {
+		// Reset.
+		h4,
+		p {
+			@apply mt-0 mb-24 mx-0 text-black;
+		} // h4, p
+
+		// The <pre> container.
+		pre {
+			@apply mt-0 mx-0 mb-24 p-24 bg-gray-200 text-black whitespace-pre-wrap;
+		} // pre
+
+		// The <code> container.
+		code {
+			@apply p-6 bg-gray-200 whitespace-pre-wrap;
+		} // code
+	} // &-content
+
+	// Always display the global scaffolding.
+	&.scaffolding-colors,
+	&.scaffolding-fonts {
+		.scaffolding-document-header {
+			@apply border-none;
+		} // .scaffolding-document-header
+
+		.scaffolding-document-content {
+			@apply block;
+		} // .scaffolding-document-content
+	} // &.scaffolding-colors, &.scaffolding-fonts
+
+	// CSS Accordion.
+	&.tabs {
+		@apply block w-full;
+
+		.tab-toggle {
+			@apply opacity-0 absolute z-0;
+
+			&:focus {
+				+ .tab-label {
+					@apply bg-blend-darken bg-wds-orange;
+				} // + .tab-label
+			} // &:focus
+
+			&:checked {
+				~ .tab-content {
+					@apply p-16;
+
+					max-height: 9999px;
+				} // ~ .tab-content
+
+				+ .tab-label {
+					&::after {
+						@apply rotate-90 transform bg-none;
+					} // &::after
+				} // + .tab-label
+			} // &:checked
+		} // .tab-toggle
+
+		.tab {
+			@apply text-white overflow-hidden w-full bg-gray-100;
+
+			&-label {
+				@apply bg-gray-800 text-white cursor-pointer flex justify-between p-16 mb-0;
+
+				/* Icon */
+				&:hover {
+					@apply bg-gray-800;
+				} // &:hover
+
+				&::before {
+					@apply hidden;
+				}
+
+				&::after {
+					@apply h-16 text-center transition-all right-20 w-16 text-white bg-none;
+
+					content: '\276F';
+					left: unset;
+					top: unset;
+				} // &::after
+			} // &-label
+
+			&-content {
+				@apply max-h-0 py-0 px-16 transition-all;
+			} // &-content
+		} // .tab
+	} // &.tabs
+
+	.cta {
+		@apply my-10;
+	} // .cta
+
+	.icons-container {
+		.quarter {
+			@apply items-center flex flex-col h-80 justify-end text-center;
+
+			svg {
+				@apply mb-10;
+			} // svg
+		} // .quarter
+	} // .icons-container
+} // .scaffolding-document
+
+//-----------------------------------------
+// Color swatch defaults
+//-----------------------------------------
+.swatch-container {
+	@apply relative block;
+
+	@screen tablet-portrait {
+		@apply grid grid-cols-12 gap-24;
+	}
+
+	// Each swatch.
+	.swatch {
+		@apply border border-black h-192 mb-24 mr-20 overflow-hidden text-center w-full relative;
+
+		@screen tablet-portrait {
+			@apply col-span-3;
+		}
+
+		// The swatch <header>
+		header {
+			@apply text-center shadow-md items-center text-white flex flex-col justify-center;
+
+			height: calc( 100% - 40px );
+		} // header
+
+		// The swatch <footer>
+		footer {
+			@apply p-10 absolute bg-white bottom-0 border-t border-black w-full;
+		} // footer
+	} // .swatch
+} // .swatch-container

@@ -16,3 +16,11 @@
 .alignnone {
 	@apply mb-16;
 }
+
+.alignfull {
+	@apply left-1/2 relative;
+	margin-left: -50vw;
+
+	// Total width less vertical scroll bar.
+	width: calc( 100vw - 8.1px );
+}

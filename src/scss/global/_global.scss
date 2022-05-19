@@ -9,16 +9,17 @@
 	word-wrap: break-word;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+pre {
+	@apply overflow-auto;
+}
+
 //-----------------------------------------
 // Admin Overrides
 //-----------------------------------------
 .block-editor-writing-flow {
 	@apply text-base leading-normal;
-}
-
-//-----------------------------------------
-// Theme Elements
-//-----------------------------------------
-.site-main {
-	@apply my-48;
 }

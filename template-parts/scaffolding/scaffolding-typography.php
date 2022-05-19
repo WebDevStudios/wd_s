@@ -11,7 +11,8 @@ namespace WebDevStudios\wd_s\Scaffolding;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading"><?php esc_html_e( 'Typography', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'typography', '_s' ); ?>">
+		<?php esc_html_e( 'Typography', '_s' ); ?></h2>
 
 	<?php
 	// H1.
@@ -120,22 +121,6 @@ namespace WebDevStudios\wd_s\Scaffolding;
 							<td>Division 5</td>
 							<td>Division 6</td>
 						</tr>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
 					</tbody>
 				</table>
 			',
@@ -152,14 +137,6 @@ namespace WebDevStudios\wd_s\Scaffolding;
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
 						<tr>
 							<td>Division 1</td>
 							<td>Division 2</td>
