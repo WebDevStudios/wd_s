@@ -30,7 +30,7 @@ function customize_sections( $wp_customize ) {
 		'_s_social_links_section',
 		[
 			'title'       => esc_html__( 'Social Media', '_s' ),
-			'description' => esc_html__( 'Links here power the display_social_network_links() template tag.', '_s' ),
+			'description' => esc_html__( 'Links here power the print_social_network_links() template tag.', '_s' ),
 			'priority'    => 90,
 			'panel'       => 'site-options',
 		]

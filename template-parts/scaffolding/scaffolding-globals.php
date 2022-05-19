@@ -7,7 +7,7 @@
 
 namespace WebDevStudios\wd_s;
 
-use function WD_S\Scaffolding\display_global_scaffolding_section;
+use function WebDevStudios\wd_s\Scaffolding\print_global_scaffolding_section;
 
 ?>
 
@@ -17,7 +17,7 @@ use function WD_S\Scaffolding\display_global_scaffolding_section;
 
 	<?php
 		// Theme colors.
-		Scaffolding\display_global_scaffolding_section(
+		Scaffolding\print_global_scaffolding_section(
 			[
 				'global_type' => 'colors',
 				'title'       => 'Colors',
@@ -32,7 +32,7 @@ use function WD_S\Scaffolding\display_global_scaffolding_section;
 		);
 
 		// Theme fonts.
-		display_global_scaffolding_section(
+		print_global_scaffolding_section(
 			[
 				'global_type' => 'fonts',
 				'title'       => 'Fonts',

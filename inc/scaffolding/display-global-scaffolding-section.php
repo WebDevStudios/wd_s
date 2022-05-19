@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
  *
  * @param array $args The array of colors or fonts.
  */
-function display_global_scaffolding_section( $args = [] ) {
+function print_global_scaffolding_section( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'global_type' => '', // Can be 'colors' or 'fonts'.

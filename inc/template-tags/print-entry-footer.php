@@ -7,19 +7,19 @@
 
 namespace WebDevStudios\wd_s\TemplateTags;
 
-use function WD_S\Functions\return_categorized_blog;
+use function WebDevStudios\wd_s\Functions\get_categorized_blog;
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
  * @author WebDevStudios
  */
-function display_entry_footer() {
+function print_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_attr__( ', ', '_s' ) );
-		if ( $categories_list && return_categorized_blog() ) {
+		if ( $categories_list && get_categorized_blog() ) {
 
 			/* translators: the post category */
 			printf( '<span class="cat-links">' . esc_attr__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.

@@ -7,7 +7,7 @@
  * @package _s
  */
 
-use function WD_S\TemplateTags\display_comments;
+use function WebDevStudios\wd_s\TemplateTags\print_comments;
 
 get_header(); ?>
 
@@ -21,7 +21,7 @@ get_header(); ?>
 
 			the_post_navigation();
 
-			display_comments();
+			print_comments();
 
 		endwhile; // End of the loop.
 		?>

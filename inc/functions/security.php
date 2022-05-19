@@ -15,7 +15,7 @@ namespace WebDevStudios\wd_s\Functions;
  * @author WebDevStudios
  * @see https://developer.wordpress.org/reference/functions/the_generator/
  */
-add_filter( 'the_generator', '__return_false' );
+add_filter( 'the_generator', '__get_false' );
 
 /**
  * Disable XML RPC.
@@ -23,7 +23,7 @@ add_filter( 'the_generator', '__return_false' );
  * @author WebDevStudios
  * @see https://developer.wordpress.org/reference/hooks/xmlrpc_enabled/
  */
-add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter( 'xmlrpc_enabled', '__get_false' );
 
 /**
  * Change REST-API header from "null" to "*".

@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
  *
  * @param array $args The scaffolding defaults.
  */
-function display_scaffolding_section( $args = [] ) {
+function print_scaffolding_section( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'title'       => '', // The scaffolding title.

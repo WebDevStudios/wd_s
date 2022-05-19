@@ -9,9 +9,9 @@
  * @package _s
  */
 
-use function WD_S\TemplateTags\display_copyright_text;
-use function WD_S\TemplateTags\display_social_network_links;
-use function WD_S\TemplateTags\display_mobile_menu;
+use function WebDevStudios\wd_s\TemplateTags\print_copyright_text;
+use function WebDevStudios\wd_s\TemplateTags\print_social_network_links;
+use function WebDevStudios\wd_s\TemplateTags\print_mobile_menu;
 
 ?>
 
@@ -33,13 +33,13 @@ use function WD_S\TemplateTags\display_mobile_menu;
 		</nav><!-- #site-navigation-->
 
 		<div class="container site-info">
-			<?php display_copyright_text(); ?>
-			<?php display_social_network_links(); ?>
+			<?php print_copyright_text(); ?>
+			<?php print_social_network_links(); ?>
 		</div><!-- .site-info -->
 
 	</footer><!-- .site-footer container-->
 
-	<?php display_mobile_menu(); ?>
+	<?php print_mobile_menu(); ?>
 	<?php wp_footer(); ?>
 
 </body>

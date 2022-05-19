@@ -18,7 +18,7 @@ use function WD_S\Hooks\get_the_content;
  *
  * @return string Error string or SVG markup.
  */
-function return_svg( $args = [] ) {
+function get_svg( $args = [] ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return esc_attr__( 'Please define default parameters in the form of an array.', '_s' );
@@ -70,19 +70,19 @@ function return_svg( $args = [] ) {
 	ob_start();
 	?>
 
-<svg
+<svg 
 	<?php
 		echo get_the_content( $height ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $color ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $stroke_width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
-	 class="icon <?php echo esc_attr( $args['icon'] ); ?>"
+		class="icon <?php echo esc_attr( $args['icon'] ); ?>" 
 	<?php
 		echo get_the_content( $aria_hidden ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $aria_labelledby ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
-	 role="img">
+		role="img">
 	<title id="<?php echo esc_attr( $block_title_id ); ?>">
 		<?php echo esc_html( $block_title ); ?>
 	</title>

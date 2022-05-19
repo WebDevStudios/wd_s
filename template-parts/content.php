@@ -24,7 +24,7 @@ namespace WebDevStudios\wd_s;
 			if ( 'post' === get_post_type() ) :
 				?>
 				<div class="entry-meta">
-					<?php TemplateTags\display_posted_on(); ?>
+					<?php TemplateTags\print_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
@@ -56,7 +56,7 @@ namespace WebDevStudios\wd_s;
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php TemplateTags\display_entry_footer(); ?>
+			<?php TemplateTags\print_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 
 	</article><!-- #post-## -->

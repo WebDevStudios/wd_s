@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Hooks;
  *
  * @return string Footer scripts.
  */
-function display_customizer_footer_scripts() {
+function print_customizer_footer_scripts() {
 	// Check for footer scripts.
 	$scripts = get_theme_mod( '_s_footer_scripts' );
 
@@ -28,4 +28,4 @@ function display_customizer_footer_scripts() {
 	echo get_the_content( $scripts );
 }
 
-add_action( 'wp_footer', __NAMESPACE__ . '\display_customizer_footer_scripts', 999 );
+add_action( 'wp_footer', __NAMESPACE__ . '\print_customizer_footer_scripts', 999 );

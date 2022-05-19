@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	<h2 class="scaffolding-heading"><?php esc_html_e( 'Buttons', '_s' ); ?></h2>
 	<?php
 		// Button.
-		display_scaffolding_section(
+		print_scaffolding_section(
 			[
 				'title'       => 'Button',
 				'description' => 'Display a button.',

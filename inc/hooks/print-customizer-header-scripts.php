@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Hooks;
  *
  * @return string Header scripts.
  */
-function display_customizer_header_scripts() {
+function print_customizer_header_scripts() {
 	// Check for header scripts.
 	$scripts = get_theme_mod( '_s_header_scripts' );
 
@@ -28,4 +28,4 @@ function display_customizer_header_scripts() {
 	echo get_the_content( $scripts );
 }
 
-add_action( 'wp_head', __NAMESPACE__ . '\display_customizer_header_scripts', 999 );
+add_action( 'wp_head', __NAMESPACE__ . '\print_customizer_header_scripts', 999 );

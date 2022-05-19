@@ -9,7 +9,7 @@
  * @package _s
  */
 
-use function WD_S\TemplateTags\display_comments;
+use function WebDevStudios\wd_s\TemplateTags\print_comments;
 
 get_header(); ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				display_comments();
+				print_comments();
 
 			endwhile; // End of the loop.
 			?>

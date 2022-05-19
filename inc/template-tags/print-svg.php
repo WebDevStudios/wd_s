@@ -7,7 +7,7 @@
 
 namespace WebDevStudios\wd_s\TemplateTags;
 
-use function WD_S\Functions\return_svg;
+use function WebDevStudios\wd_s\Functions\get_svg;
 
 /**
  * Display SVG Markup.
@@ -16,7 +16,7 @@ use function WD_S\Functions\return_svg;
  *
  * @param array $args The parameters needed to get the SVG.
  */
-function display_svg( $args = [] ) {
+function print_svg( $args = [] ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
 	$svg_args = [
@@ -52,7 +52,7 @@ function display_svg( $args = [] ) {
 	);
 
 	echo wp_kses(
-		return_svg( $args ),
+		get_svg( $args ),
 		$allowed_tags
 	);
 }

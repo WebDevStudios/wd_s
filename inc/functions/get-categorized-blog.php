@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\Functions;
  *
  * @return bool Whether the blog has more than one category.
  */
-function return_categorized_blog() {
+function get_categorized_blog() {
 	$category_count = get_transient( '_s_categories' );
 
 	if ( false === $category_count ) {

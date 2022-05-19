@@ -12,7 +12,7 @@ namespace WebDevStudios\wd_s\TemplateTags;
  *
  * @author WebDevStudios
  */
-function display_social_network_links() {
+function print_social_network_links() {
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
 	$social_networks = [
@@ -37,7 +37,7 @@ function display_social_network_links() {
 				<li class="social-icon <?php echo esc_attr( $network ); ?> mr-2">
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
-						display_svg(
+						print_svg(
 							[
 								'icon'   => $network . '-square',
 								'width'  => '24',

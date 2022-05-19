@@ -14,7 +14,7 @@ namespace WebDevStudios\wd_s\TemplateTags;
  *
  * @return string An empty string if no menus are found at all.
  */
-function display_mobile_menu() {
+function print_mobile_menu() {
 	// Bail if no mobile or primary menus are set.
 	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
 		return '';

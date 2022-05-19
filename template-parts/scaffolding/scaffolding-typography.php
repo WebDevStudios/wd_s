@@ -15,7 +15,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 
 	<?php
 	// H1.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H1',
 			'description' => 'Display an H1',
@@ -25,7 +25,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// H2.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H2',
 			'description' => 'Display an H2',
@@ -35,7 +35,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// H3.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H3',
 			'description' => 'Display an H3',
@@ -45,7 +45,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// H4.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H4',
 			'description' => 'Display an H4',
@@ -55,7 +55,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// H5.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H5',
 			'description' => 'Display an H5',
@@ -65,7 +65,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// H6.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H6',
 			'description' => 'Display an H6',
@@ -75,7 +75,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Body.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Paragraph',
 			'description' => 'Display a paragraph',
@@ -85,7 +85,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Link.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Link',
 			'description' => 'Displays a link.',
@@ -95,7 +95,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// HTML table.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Table',
 			'description' => 'Display a table',
@@ -184,7 +184,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 
 
 	// Ordered List.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Ordered List',
 			'description' => 'Display an ordered list.',
@@ -228,7 +228,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Unordered List.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Unordered List',
 			'description' => 'Display an unordered list.',
@@ -272,7 +272,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Blockquote.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Blockquote',
 			'description' => 'Display a blockquote.',
@@ -282,7 +282,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Code tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Code Tag',
 			'description' => 'Display a code tag.',
@@ -292,7 +292,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Em tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Emphasize Tag',
 			'description' => 'Display an <em> tag.',
@@ -302,7 +302,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Strong tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Strong Tag',
 			'description' => 'Display bold text.',
@@ -312,7 +312,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Abbreviation Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Abbreviation Tag',
 			'description' => 'Display an abbreviation.',
@@ -322,7 +322,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Cite Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Cite Tag',
 			'description' => 'Display a citation.',
@@ -332,7 +332,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Strikeout Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Strikeout Text',
 			'description' => 'Display strikeout text.',
@@ -342,7 +342,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Delete Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Delete Text',
 			'description' => 'Display the edited content of a text string.',
@@ -352,7 +352,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Preformatted Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Preformatted tag.',
 			'description' => 'This tag styles large blocks of code.',
@@ -376,7 +376,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Keyboard Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Keyboard Tag',
 			'description' => 'To display a key.',
@@ -386,7 +386,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Subscript Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Subscript Tag',
 			'description' => 'To display a subscript.',
@@ -396,7 +396,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Superscript Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Superscript Tag',
 			'description' => 'To display a superscript.',
@@ -406,7 +406,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Variable Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Variable Tag',
 			'description' => 'The HTML Variable element (<var>) represents the name of a variable in a mathematical expression or a programming context.',
@@ -416,7 +416,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Address Tag.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Address Tag',
 			'description' => 'To display an address.',
@@ -438,7 +438,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Definition lists.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Definition Lists',
 			'description' => 'To display defintion lists.',

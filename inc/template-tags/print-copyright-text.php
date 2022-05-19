@@ -7,14 +7,14 @@
 
 namespace WebDevStudios\wd_s\TemplateTags;
 
-use function WD_S\Hooks\get_the_content;
+use function WebDevStudios\wd_s\Hooks\get_the_content;
 
 /**
  * Echo the copyright text saved in the Customizer.
  *
  * @author WebDevStudios
  */
-function display_copyright_text() {
+function print_copyright_text() {
 	// Grab our customizer settings.
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
 

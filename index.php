@@ -12,7 +12,7 @@
  * @package _s
  */
 
-use function WD_S\TemplateTags\display_numeric_pagination;
+use function WebDevStudios\wd_s\TemplateTags\print_numeric_pagination;
 
 get_header(); ?>
 
@@ -42,7 +42,7 @@ get_header(); ?>
 
 			endwhile;
 
-			display_numeric_pagination();
+			print_numeric_pagination();
 
 		else :
 			get_template_part( 'template-parts/content', 'none' );

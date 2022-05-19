@@ -15,11 +15,11 @@ namespace WebDevStudios\wd_s\Scaffolding;
 
 	<?php
 	// Right-aligned Image.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Numeric Pagination',
 			'description' => 'Display numeric pagination.',
-			'usage'       => '_s_display_numeric_pagination()',
+			'usage'       => '_s_print_numeric_pagination()',
 			'output'      => '
 				<nav class="pagination-container">
 					<a class="prev page-numbers" href="#>&laquo;</a>

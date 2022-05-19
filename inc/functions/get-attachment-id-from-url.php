@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s\Functions;
  *
  * @return int    The attachment ID.
  */
-function return_attachment_id_from_url( $attachment_url = '' ) {
+function get_attachment_id_from_url( $attachment_url = '' ) {
 	global $wpdb;
 
 	$attachment_id = false;

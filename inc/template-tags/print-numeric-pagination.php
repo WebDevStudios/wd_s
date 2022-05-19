@@ -15,7 +15,7 @@ namespace WebDevStudios\wd_s\TemplateTags;
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
-function display_numeric_pagination( $args = [], $query = null ) {
+function print_numeric_pagination( $args = [], $query = null ) {
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;

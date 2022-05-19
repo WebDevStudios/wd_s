@@ -15,7 +15,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 
 	<?php
 	// Search form.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Search Form',
 			'description' => 'Display the search form.',
@@ -25,7 +25,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Input.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Input',
 			'description' => 'Display a normal input.',
@@ -35,7 +35,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Default Select.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Default Select',
 			'description' => 'Display default select.',
@@ -45,7 +45,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Checkbox.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Checkboxes',
 			'description' => 'Display checkboxes.',
@@ -67,7 +67,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Radio boxes.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Radio boxes.',
 			'description' => 'Display radio boxes.',
@@ -89,7 +89,7 @@ namespace WebDevStudios\wd_s\Scaffolding;
 	);
 
 	// Textarea.
-	display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Textarea',
 			'description' => 'Display a textarea.',

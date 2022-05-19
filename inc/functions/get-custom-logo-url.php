@@ -12,7 +12,7 @@ namespace WebDevStudios\wd_s\Functions;
  *
  * @author Corey Collins
  */
-function return_custom_logo_url() {
+function get_custom_logo_url() {
 
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 
