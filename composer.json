@@ -12,10 +12,14 @@
 	"config": {
 		"platform": {
 			"php": "7.4"
+		},
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
 	"require": {
-		"composer/installers": "^1.11.0"
+		"composer/installers": "^2.0.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
