@@ -7,6 +7,8 @@
 
 namespace WebDevStudios\wd_s;
 
+use function WebDevStudios\wd_s\print_scaffolding_section;
+
 global $wp_embed;
 
 ?>
@@ -17,7 +19,7 @@ global $wp_embed;
 
 	<?php
 	// Full-aligned cover hero.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Full-aligned Image Cover',
 			'description' => 'Display a full aligned image using Cover Block.',

@@ -70,7 +70,7 @@ function get_svg( $args = [] ) {
 	ob_start();
 	?>
 
-<svg
+	<svg
 	<?php
 		echo get_the_content( $height ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		echo get_the_content( $width ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
@@ -83,31 +83,29 @@ function get_svg( $args = [] ) {
 		echo get_the_content( $aria_labelledby ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	?>
 		role="img">
-	<title id="<?php echo esc_attr( $block_title_id ); ?>">
-		<?php echo esc_html( $block_title ); ?>
-	</title>
+		<title id="<?php echo esc_attr( $block_title_id ); ?>">
+			<?php echo esc_html( $block_title ); ?>
+		</title>
 
-	<?php
+		<?php
 		// Display description if available.
-	if ( $args['desc'] ) :
-		?>
-	<desc id="<?php echo esc_attr( $desc_id ); ?>">
-		<?php echo esc_html( $args['desc'] ); ?>
-	</desc>
-	<?php endif; ?>
+		if ( $args['desc'] ) :
+			?>
+			<desc id="<?php echo esc_attr( $desc_id ); ?>">
+				<?php echo esc_html( $args['desc'] ); ?>
+			</desc>
+		<?php endif; ?>
 
-	<?php
+		<?php
 		// Use absolute path in the Customizer so that icons show up in there.
-	if ( is_customize_preview() ) :
-		?>
-	<use
-		xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/build/images/icons/sprite.svg#' . esc_html( $args['icon'] ) ) ); ?>">
-	</use>
-	<?php else : ?>
-	<use xlink:href="#<?php echo esc_html( $args['icon'] ); ?>"></use>
-	<?php endif; ?>
+		if ( is_customize_preview() ) :
+			?>
+			<use xlink:href="<?php echo esc_url( get_parent_theme_file_uri( '/build/images/icons/sprite.svg#' . esc_html( $args['icon'] ) ) ); ?>"></use>
+		<?php else : ?>
+			<use xlink:href="#<?php echo esc_html( $args['icon'] ); ?>"></use>
+		<?php endif; ?>
 
-</svg>
+	</svg>
 
 	<?php
 	// Get the buffer and return.

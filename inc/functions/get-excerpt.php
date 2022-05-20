@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  *
  * @return string The excerpt.
  */
-function get_the_excerpt( $args = [] ) {
+function get_excerpt( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [

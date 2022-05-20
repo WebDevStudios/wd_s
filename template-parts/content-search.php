@@ -9,8 +9,8 @@
 
 namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\posted_on;
-use function WebDevStudios\wd_s\entry_footer;
+use function WebDevStudios\wd_s\print_posted_on;
+use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
 
@@ -21,7 +21,7 @@ use function WebDevStudios\wd_s\entry_footer;
 
 			<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php posted_on(); ?>
+				<?php print_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
@@ -31,7 +31,7 @@ use function WebDevStudios\wd_s\entry_footer;
 		</div><!-- .entry-summary -->
 
 		<footer class="entry-footer">
-			<?php entry_footer(); ?>
+			<?php print_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 
 	</article><!-- #post-## -->

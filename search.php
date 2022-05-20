@@ -7,6 +7,8 @@
  * @package _s
  */
 
+use function WebDevStudios\wd_s\print_numeric_pagination;
+
 get_header(); ?>
 
 	<main id="main" class="container site-main">
@@ -22,7 +24,7 @@ get_header(); ?>
 
 			endwhile;
 
-			_s_display_numeric_pagination();
+			print_numeric_pagination();
 
 		else :
 			get_template_part( 'template-parts/content', 'none' );
