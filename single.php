@@ -7,7 +7,7 @@
  * @package _s
  */
 
-use function WebDevStudios\wd_s\TemplateTags\print_comments;
+use function WebDevStudios\wd_s\print_comments;
 
 get_header(); ?>
 

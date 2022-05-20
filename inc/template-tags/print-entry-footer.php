@@ -5,9 +5,9 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\TemplateTags;
+namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\Functions\get_categorized_blog;
+use function WebDevStudios\wd_s\get_categorized_blog;
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.

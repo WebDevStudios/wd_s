@@ -7,8 +7,8 @@
 
 namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\Scaffolding\print_scaffolding_section;
-use function WebDevStudios\wd_s\Functions\get_svg;
+use function WebDevStudios\wd_s\print_scaffolding_section;
+use function WebDevStudios\wd_s\get_svg;
 
 ?>
 

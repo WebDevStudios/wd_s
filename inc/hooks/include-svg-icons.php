@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Hooks;
+namespace WebDevStudios\wd_s;
 
 /**
  * Add SVG definitions to footer.

@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Hooks;
+namespace WebDevStudios\wd_s;
 
 /**
  * Enable custom mime types.

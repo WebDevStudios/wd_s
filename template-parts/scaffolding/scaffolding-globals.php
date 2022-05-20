@@ -7,7 +7,7 @@
 
 namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\Scaffolding\print_global_scaffolding_section;
+use function WebDevStudios\wd_s\print_global_scaffolding_section;
 
 ?>
 

@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Customizer;
+namespace WebDevStudios\wd_s;
 
 /**
  * Removes default customizer fields that we generally don't use.

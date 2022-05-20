@@ -5,9 +5,9 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Setup;
+namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\Functions\get_custom_logo_url;
+use function WebDevStudios\wd_s\get_custom_logo_url;
 
 /**
  * Preload assets.

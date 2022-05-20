@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Setup;
+namespace WebDevStudios\wd_s;
 
 /**
  * Preload styles and scripts.

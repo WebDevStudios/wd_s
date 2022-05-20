@@ -7,7 +7,7 @@
  * @package _s
  */
 
-use function WebDevStudios\wd_s\TemplateTags\print_numeric_pagination;
+use function WebDevStudios\wd_s\print_numeric_pagination;
 
 get_header(); ?>
 

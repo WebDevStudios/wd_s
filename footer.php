@@ -9,9 +9,9 @@
  * @package _s
  */
 
-use function WebDevStudios\wd_s\TemplateTags\print_copyright_text;
-use function WebDevStudios\wd_s\TemplateTags\print_social_network_links;
-use function WebDevStudios\wd_s\TemplateTags\print_mobile_menu;
+use function WebDevStudios\wd_s\print_copyright_text;
+use function WebDevStudios\wd_s\print_social_network_links;
+use function WebDevStudios\wd_s\print_mobile_menu;
 
 ?>
 

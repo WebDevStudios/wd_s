@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Setup;
+namespace WebDevStudios\wd_s;
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

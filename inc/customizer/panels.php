@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Customizer;
+namespace WebDevStudios\wd_s;
 
 /**
  * Add a custom panels to attach sections too.

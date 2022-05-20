@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Hooks;
+namespace WebDevStudios\wd_s;
 
 /**
  * Adds custom classes to the array of body classes.

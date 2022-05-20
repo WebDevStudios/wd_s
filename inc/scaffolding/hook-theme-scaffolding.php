@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Scaffolding;
+namespace WebDevStudios\wd_s;
 
 /**
  * Hook the theme's scaffolding template parts into the scaffolding template.

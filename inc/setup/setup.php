@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Setup;
+namespace WebDevStudios\wd_s;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

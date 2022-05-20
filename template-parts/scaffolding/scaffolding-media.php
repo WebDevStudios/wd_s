@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Scaffolding;
+namespace WebDevStudios\wd_s;
 
 global $wp_embed;
 

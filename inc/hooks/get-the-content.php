@@ -5,7 +5,7 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\Hooks;
+namespace WebDevStudios\wd_s;
 
 /**
  * Filters WYSIWYG content with the_content filter.

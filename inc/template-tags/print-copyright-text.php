@@ -5,9 +5,9 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s\TemplateTags;
+namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\Hooks\get_the_content;
+use function WebDevStudios\wd_s\get_the_content;
 
 /**
  * Echo the copyright text saved in the Customizer.
