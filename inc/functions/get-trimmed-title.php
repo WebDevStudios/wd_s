@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  *
  * @return string The title.
  */
-function get_title( $args = [] ) {
+function get_trimmed_title( $args = [] ) {
 	// Set defaults.
 	$defaults = [
 		'length' => 12,
