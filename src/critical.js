@@ -1,1 +1,1 @@
-import './css/critical/_index.css';
+import './css/critical/index.css';
