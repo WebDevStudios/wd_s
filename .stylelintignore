@@ -1,5 +1,3 @@
-build
-node_modules
-vendor
-*.min.js
-!/.*.js
+build/
+vendor/
+!.*.js
