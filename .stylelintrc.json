@@ -9,6 +9,7 @@
 		"declaration-no-important": true,
 		"function-parentheses-space-inside": null,
 		"no-descending-specificity": null,
+		"rule-empty-line-before": null,
 		"selector-pseudo-class-parentheses-space-inside": null,
 		"scss/at-rule-no-unknown": [
 			true,
@@ -22,6 +23,7 @@
 					"screen"
 				]
 			}
-		]
+		],
+		"string-quotes": "single"
 	}
 }
