@@ -77,7 +77,7 @@ function _s_entry_footer() {
 		sprintf(
 			/* translators: %s: Name of current post */
 			esc_html__( 'Edit %s', '_s' ),
-			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
+			wp_kses_post( the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
 		),
 		'<span class="edit-link">',
 		'</span>'
