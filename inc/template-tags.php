@@ -50,7 +50,7 @@ function _s_posted_on() {
 function _s_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
+		// Adds a comma between list items.
 		$categories_list = get_the_category_list( esc_attr__( ', ', '_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
 
@@ -58,7 +58,7 @@ function _s_entry_footer() {
 			printf( '<span class="cat-links">' . esc_attr__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 		}
 
-		/* translators: used between list items, there is a space after the comma */
+		// Adds a comma between list items.
 		$tags_list = get_the_tag_list( '', esc_attr__( ', ', '_s' ) );
 		if ( $tags_list ) {
 
