@@ -1,0 +1,9 @@
+/*
+ * Critical CSS
+ *
+ * Import partials for critical CSS.
+ */
+
+@import './header.css';
+@import './menus.css';
+@import './mobile-menus.css';
