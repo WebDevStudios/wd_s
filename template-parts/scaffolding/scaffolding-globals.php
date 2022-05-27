@@ -5,8 +5,6 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s;
-
 use function WebDevStudios\wd_s\print_global_scaffolding_section;
 
 ?>
@@ -17,7 +15,7 @@ use function WebDevStudios\wd_s\print_global_scaffolding_section;
 
 	<?php
 		// Theme colors.
-		Scaffolding\print_global_scaffolding_section(
+		print_global_scaffolding_section(
 			[
 				'global_type' => 'colors',
 				'title'       => 'Colors',

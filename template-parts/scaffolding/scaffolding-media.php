@@ -5,8 +5,6 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s;
-
 use function WebDevStudios\wd_s\print_scaffolding_section;
 
 global $wp_embed;
