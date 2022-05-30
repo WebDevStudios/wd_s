@@ -16,8 +16,8 @@ namespace WebDevStudios\wd_s;
  *
  * @return string|bool Content string if content exists, else empty.
  */
-function get_the_content( $content ) {
+function get_post_content( $content ) {
 	return ! empty( $content ) ? $content : false;
 }
 
-add_filter( 'the_content', __NAMESPACE__ . '\get_the_content', 20 );
+add_filter( 'the_content', __NAMESPACE__ . '\get_post_content', 20 );

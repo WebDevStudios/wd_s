@@ -5,7 +5,7 @@
  * @package _s
  */
 
-use function WebDevStudios\wd_s\get_the_content;
+use function WebDevStudios\wd_s\get_post_content;
 
 /**
  * Echo the copyright text saved in the Customizer.
@@ -17,6 +17,6 @@ function print_copyright_text() {
 	$copyright_text = get_theme_mod( '_s_copyright_text' );
 
 	if ( $copyright_text ) {
-		echo get_the_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+		echo get_post_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 	}
 }
