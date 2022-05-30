@@ -5,6 +5,8 @@
  * @package _s
  */
 
+namespace WebDevStudios\wd_s;
+
 use function WebDevStudios\wd_s\get_categorized_blog;
 
 /**
