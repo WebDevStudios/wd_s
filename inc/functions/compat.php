@@ -5,18 +5,14 @@
  * @package _s
  */
 
-/**
- * Back-fill wp_body_open for prior to 5.2 WP versions.
- *
- * @author WebDevStudios
- */
-
-namespace WebDevStudios\wd_s;
-
 if ( ! function_exists( 'wp_body_open' ) ) {
 
 	/**
 	 * Fire the wp_body_open action.
+	 *
+	 * Back-fill wp_body_open for prior to 5.2 WP versions.
+	 *
+	 * @author WebDevStudios
 	 */
 	function wp_body_open() {
 
