@@ -7,8 +7,6 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s;
-
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

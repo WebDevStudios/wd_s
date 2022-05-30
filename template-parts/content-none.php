@@ -7,8 +7,6 @@
  * @package _s
  */
 
-namespace WebDevStudios\wd_s;
-
 ?>
 
 	<section class="no-results not-found">
