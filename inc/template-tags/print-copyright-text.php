@@ -7,8 +7,6 @@
 
 namespace WebDevStudios\wd_s;
 
-use function WebDevStudios\wd_s\get_post_content;
-
 /**
  * Echo the copyright text saved in the Customizer.
  *
