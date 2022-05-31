@@ -5,6 +5,7 @@
  * @package _s
  */
 
+use function WebDevStudios\wd_s\get_svg;
 use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
