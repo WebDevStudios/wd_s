@@ -5,7 +5,7 @@
  * @package _s
  */
 
-use function WebDevStudios\wd_s\get_post_content;
+namespace WebDevStudios\wd_s;
 
 /**
  * Return SVG markup.
