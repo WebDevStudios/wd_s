@@ -2,7 +2,7 @@
 /**
  * Customizer panels.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -22,8 +22,8 @@ function customize_panels( $wp_customize ) {
 			'priority'       => 10,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
-			'title'          => esc_html__( 'Site Options', '_s' ),
-			'description'    => esc_html__( 'Other theme options.', '_s' ),
+			'title'          => esc_html__( 'Site Options', 'wd_s' ),
+			'description'    => esc_html__( 'Other theme options.', 'wd_s' ),
 		]
 	);
 }

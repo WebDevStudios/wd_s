@@ -28,13 +28,13 @@ function print_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: the date the post was published */
-		esc_html_x( 'Posted on %s', 'post date', '_s' ),
+		esc_html_x( 'Posted on %s', 'post date', 'wd_s' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
 		/* translators: the post author */
-		esc_html_x( 'by %s', 'post author', '_s' ),
+		esc_html_x( 'by %s', 'post author', 'wd_s' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

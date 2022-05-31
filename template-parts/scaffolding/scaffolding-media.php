@@ -2,7 +2,7 @@
 /**
  * The template used for displaying media in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_scaffolding_section;
@@ -13,7 +13,7 @@ global $wp_embed;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'media', '_s' ); ?>"><?php esc_html_e( 'Media', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'media', 'wd_s' ); ?>"><?php esc_html_e( 'Media', 'wd_s' ); ?></h2>
 
 	<?php
 	// Full-aligned cover hero.

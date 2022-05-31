@@ -2,7 +2,7 @@
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -17,7 +17,7 @@ namespace WebDevStudios\wd_s;
  * @author WebDevStudios
  */
 function content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( '_wd_s_content_width', 640 );
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );

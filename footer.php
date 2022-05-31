@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_copyright_text;
@@ -17,7 +17,7 @@ use function WebDevStudios\wd_s\print_mobile_menu;
 
 	<footer class="site-footer">
 
-		<nav id="site-footer-navigation" class="footer-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Footer Navigation', '_s' ); ?>">
+		<nav id="site-footer-navigation" class="footer-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Footer Navigation', 'wd_s' ); ?>">
 			<?php
 			wp_nav_menu(
 				[

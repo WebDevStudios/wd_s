@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -20,7 +20,7 @@ function print_post_author( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [
-		'author_text' => esc_html__( 'by', '_s' ),
+		'author_text' => esc_html__( 'by', 'wd_s' ),
 	];
 
 	// Parse args.

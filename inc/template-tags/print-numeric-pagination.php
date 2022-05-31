@@ -2,7 +2,7 @@
 /**
  * Displays numeric pagination on archive pages.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -40,7 +40,7 @@ function print_numeric_pagination( $args = [], $query = null ) {
 	}
 	?>
 
-	<nav class="container pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', '_s' ); ?>">
+	<nav class="container pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'wd_s' ); ?>">
 		<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
 	</nav>
 

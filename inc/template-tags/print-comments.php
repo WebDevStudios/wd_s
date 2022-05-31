@@ -2,7 +2,7 @@
 /**
  * Display the comments if the count is more than 0.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;

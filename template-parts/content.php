@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_posted_on;
@@ -32,28 +32,38 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. */
-					esc_html__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+				the_content(
+					sprintf(
+						wp_kses(
+							/* translators: %s: Name of current post. */
+							esc_html__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'wd_s' ),
+							[
+								'span' => [
+									'class' => [],
+								],
+							]
+						),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					)
+				);
+
+				wp_link_pages(
 					[
-						'span' => [
-							'class' => [],
-						],
+						'before' => '<div class="page-links">' . esc_attr__( 'Pages:', 'wd_s' ),
+						'after'  => '</div>',
 					]
 				),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			)
-		);
+				)
+				);
 
-		wp_link_pages(
-			[
-				'before' => '<div class="page-links">' . esc_attr__( 'Pages:', '_s' ),
-				'after'  => '</div>',
-			]
-		);
-		?>
+				wp_link_pages(
+					[
+						'before' => '<div class="page-links">' . esc_attr__( 'Pages:', '_s' ),
+						'after'  => '</div>',
+					]
+				);
+				?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

@@ -2,7 +2,7 @@
 /**
  * The template used for displaying colors & fonts in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_global_scaffolding_section;
@@ -11,7 +11,7 @@ use function WebDevStudios\wd_s\print_global_scaffolding_section;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'globals', '_s' ); ?>"><?php esc_html_e( 'Globals', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'globals', 'wd_s' ); ?>"><?php esc_html_e( 'Globals', 'wd_s' ); ?></h2>
 
 	<?php
 		// Theme colors.

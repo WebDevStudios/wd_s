@@ -2,7 +2,7 @@
 /**
  * Backwards compatibility fills for older WP versions.
  *
- * @package _s
+ * @package wd_s
  */
 
 if ( ! function_exists( 'wp_body_open' ) ) {

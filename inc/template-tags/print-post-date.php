@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -20,7 +20,7 @@ function print_post_date( $args = [] ) {
 
 	// Set defaults.
 	$defaults = [
-		'date_text'   => esc_html__( 'Posted on', '_s' ),
+		'date_text'   => esc_html__( 'Posted on', 'wd_s' ),
 		'date_format' => get_option( 'date_format' ),
 	];
 

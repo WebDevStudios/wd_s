@@ -2,7 +2,7 @@
 /**
  * Register widget area.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -18,7 +18,7 @@ function widgets_init() {
 
 	// Define sidebars.
 	$sidebars = [
-		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
+		'sidebar-1' => esc_html__( 'Sidebar 1', 'wd_s' ),
 	];
 
 	// Loop through each sidebar and register.
@@ -27,7 +27,7 @@ function widgets_init() {
 			[
 				'name'          => $sidebar_name,
 				'id'            => $sidebar_id,
-				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
+				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', 'wd_s' ), $sidebar_name ),
 				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h2 class="widget-title">',

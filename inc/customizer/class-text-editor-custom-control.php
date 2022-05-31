@@ -2,7 +2,7 @@
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;

@@ -6,7 +6,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_comments;

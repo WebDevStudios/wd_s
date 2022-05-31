@@ -2,7 +2,7 @@
 /**
  * The template used for displaying icons in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\get_svg;
@@ -12,7 +12,7 @@ use function WebDevStudios\wd_s\print_scaffolding_section;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'icons', '_s' ); ?>"><?php esc_html_e( 'Icons', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'icons', 'wd_s' ); ?>"><?php esc_html_e( 'Icons', 'wd_s' ); ?></h2>
 
 	<?php
 	// SVG Icon.

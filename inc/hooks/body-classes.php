@@ -2,7 +2,7 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;

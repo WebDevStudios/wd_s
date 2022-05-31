@@ -2,7 +2,7 @@
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -29,7 +29,7 @@ function print_mobile_menu() {
 	}
 	?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', '_s' ); ?>" aria-hidden="true" tabindex="-1">
+	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', 'wd_s' ); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		// Mobile menu args.
 		$mobile_args = [

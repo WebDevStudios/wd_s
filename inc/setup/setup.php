@@ -2,7 +2,7 @@
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -25,7 +25,7 @@ function setup() {
 	 * You will also need to update the Gulpfile with the new text domain
 	 * and matching destination POT file.
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/build/languages' );
+	load_theme_textdomain( 'wd_s', get_template_directory() . '/build/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,9 +49,9 @@ function setup() {
 	// Register navigation menus.
 	register_nav_menus(
 		[
-			'primary' => esc_html__( 'Primary Menu', '_s' ),
-			'footer'  => esc_html__( 'Footer Menu', '_s' ),
-			'mobile'  => esc_html__( 'Mobile Menu', '_s' ),
+			'primary' => esc_html__( 'Primary Menu', 'wd_s' ),
+			'footer'  => esc_html__( 'Footer Menu', 'wd_s' ),
+			'mobile'  => esc_html__( 'Mobile Menu', 'wd_s' ),
 		]
 	);
 
@@ -74,7 +74,7 @@ function setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'_s_custom_background_args',
+			'_wd_s_custom_background_args',
 			[
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -105,22 +105,22 @@ function setup() {
 		'editor-font-sizes',
 		[
 			[
-				'name' => __( 'Small', '_s' ),
+				'name' => __( 'Small', 'wd_s' ),
 				'size' => 12,
 				'slug' => 'small',
 			],
 			[
-				'name' => __( 'Normal', '_s' ),
+				'name' => __( 'Normal', 'wd_s' ),
 				'size' => 16,
 				'slug' => 'normal',
 			],
 			[
-				'name' => __( 'Large', '_s' ),
+				'name' => __( 'Large', 'wd_s' ),
 				'size' => 36,
 				'slug' => 'large',
 			],
 			[
-				'name' => __( 'Huge', '_s' ),
+				'name' => __( 'Huge', 'wd_s' ),
 				'size' => 50,
 				'slug' => 'huge',
 			],

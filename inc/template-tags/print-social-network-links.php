@@ -2,7 +2,7 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @package _s
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
@@ -29,7 +29,7 @@ function print_social_network_links() {
 		foreach ( $social_networks as $network ) :
 
 			// Look for the social network's URL.
-			$network_url = get_theme_mod( '_s_' . $network . '_link' );
+			$network_url = get_theme_mod( '_wd_s_' . $network . '_link' );
 
 			// Only display the list item if a URL is set.
 			if ( ! empty( $network_url ) ) :
@@ -48,7 +48,7 @@ function print_social_network_links() {
 						<span class="screen-reader-text">
 						<?php
 						/* translators: the social network name */
-						printf( esc_attr__( 'Link to %s', '_s' ), ucwords( esc_html( $network ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+						printf( esc_attr__( 'Link to %s', 'wd_s' ), ucwords( esc_html( $network ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 						?>
 						</span>
 					</a>

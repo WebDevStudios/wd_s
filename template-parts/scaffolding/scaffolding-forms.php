@@ -2,7 +2,7 @@
 /**
  * The template used for displaying forms in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
 
 use function WebDevStudios\wd_s\print_scaffolding_section;
@@ -11,7 +11,7 @@ use function WebDevStudios\wd_s\print_scaffolding_section;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'forms', '_s' ); ?>"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'forms', 'wd_s' ); ?>"><?php esc_html_e( 'Forms', 'wd_s' ); ?></h2>
 
 	<?php
 	// Search form.
