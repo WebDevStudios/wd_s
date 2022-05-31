@@ -13,7 +13,7 @@ global $wp_embed;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'media', '_s' ); ?>"><?php esc_html_e( 'Media', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'media', '_s' ); ?>"><?php esc_html_e( 'Media', '_s' ); ?></h2>
 
 	<?php
 	// Full-aligned cover hero.

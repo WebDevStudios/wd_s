@@ -11,7 +11,7 @@ use function WebDevStudios\wd_s\print_scaffolding_section;
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'forms', '_s' ); ?>"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_attr_e( 'forms', '_s' ); ?>"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
 
 	<?php
 	// Search form.
