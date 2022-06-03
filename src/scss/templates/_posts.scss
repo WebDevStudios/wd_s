@@ -19,7 +19,7 @@
 }
 
 .post-container {
-	&:not(:last-child) {
+	&:not( :last-child ) {
 		@apply mb-16;
 	}
 }
@@ -45,7 +45,7 @@
 }
 
 .updated {
-	&:not(.published) {
+	&:not( .published ) {
 		@apply hidden;
 	}
 }
