@@ -22,9 +22,9 @@
 		"npm": ">=7"
 	},
 	"config": {
-		"local": "https://wdunderscores.test/",
-		"staging": "https://wdunderscores.test/",
-		"prod": "https://wdunderscores.test/"
+		"local": "https://wdunderscores.test",
+		"staging": "https://wdunderscores.test",
+		"prod": "https://wdunderscores.test"
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
