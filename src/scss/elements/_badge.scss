@@ -1,0 +1,27 @@
+//----------------------------------------
+// Element - Badge Styles.
+//----------------------------------------
+
+.abs-element-badge {
+	@apply inline-flex items-center rounded-md bg-secondary-200 px-12 py-6 text-white no-underline transition-all text-body-size12-normal;
+
+	&.icon {
+		&-after {
+			.icon {
+				@apply ml-12 transition-all;
+			}
+		}
+
+		&-before {
+			@apply flex-row-reverse;
+
+			.icon {
+				@apply mr-12 transition-all;
+			}
+		}
+	}
+
+	&:hover {
+		@apply bg-secondary-400;
+	}
+}

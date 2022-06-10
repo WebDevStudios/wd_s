@@ -1,0 +1,27 @@
+//----------------------------------------
+// Module - Accordion Styles.
+//----------------------------------------
+
+.abs-module-accordion {
+	.accordion-item {
+		@apply mb-8 rounded-md border border-tertiary-300;
+	}
+
+	.accordion-title {
+		@apply mb-0 flex w-full justify-between rounded-none;
+
+		&:hover {
+			@apply bg-tertiary-200;
+		}
+
+		&[aria-expanded='true'] {
+			.icon {
+				@apply rotate-180 transform transition-all;
+			}
+		}
+	}
+
+	.accordion-content {
+		@apply px-24 py-12;
+	}
+}

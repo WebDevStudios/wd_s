@@ -1,0 +1,9 @@
+//----------------------------------------
+// Element - Heading Styles.
+//----------------------------------------
+
+.abs-element-heading {
+	&.block-heading {
+		@apply text-center;
+	}
+}

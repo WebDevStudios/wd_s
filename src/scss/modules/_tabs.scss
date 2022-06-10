@@ -1,0 +1,23 @@
+//----------------------------------------
+// Module - Tabs Styles.
+//----------------------------------------
+
+.abs-module-tabs {
+	nav {
+		@apply -mb-1 flex tablet:pl-16;
+
+		.tab-title {
+			@apply flex justify-center ml-4 mb-0 h-48 rounded-b-none border border-tertiary-200 tablet:w-112;
+
+			&.active {
+				@apply bg-white font-bold;
+
+				border-bottom: none;
+			}
+		}
+	}
+
+	.tabs-content {
+		@apply rounded-md border border-tertiary-200 bg-white p-24;
+	}
+}

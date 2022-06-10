@@ -1,0 +1,29 @@
+//----------------------------------------
+// Element - Button Styles.
+//----------------------------------------
+
+:where( .site-wrapper, .acf-block-preview ) button,
+.btn,
+.abs-element-button {
+	@apply inline-flex items-center rounded-md bg-tertiary-100 px-16 py-8 no-underline transition-all;
+
+	&.icon {
+		&-after {
+			.icon {
+				@apply ml-12 transition-all;
+			}
+		}
+
+		&-before {
+			@apply flex-row-reverse;
+
+			.icon {
+				@apply mr-12 transition-all;
+			}
+		}
+	}
+
+	&:hover {
+		@apply bg-tertiary-200;
+	}
+}

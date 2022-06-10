@@ -1,0 +1,9 @@
+//----------------------------------------
+// Element - Content Styles.
+//----------------------------------------
+
+.abs-element-content {
+	&.block-content {
+		@apply text-center;
+	}
+}

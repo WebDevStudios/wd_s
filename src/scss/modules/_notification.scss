@@ -1,0 +1,38 @@
+//----------------------------------------
+// Module - Notification Styles.
+//----------------------------------------
+
+.abs-module-notification {
+	@apply relative flex w-full justify-between rounded-lg p-8;
+
+	&.is-sticky {
+		@apply fixed left-32 z-50;
+		width: calc( 100% - 64px );
+	}
+
+	&.position {
+		&-top {
+			@apply top-32;
+		}
+
+		&-bottom {
+			@apply bottom-32;
+		}
+	}
+
+	.abs-element-heading {
+		@apply m-0;
+	}
+
+	.abs-element-button {
+		@apply bg-transparent p-4 text-tertiary-400 text-body-size10-normal;
+
+		.icon {
+			@apply m-0;
+		}
+	}
+
+	.abs-element-icon {
+		@apply p-8;
+	}
+}

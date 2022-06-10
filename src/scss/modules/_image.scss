@@ -1,0 +1,15 @@
+//----------------------------------------
+// Module - Image Styles.
+//----------------------------------------
+
+.abs-module-image {
+	@apply inline-block p-12;
+
+	&.has-caption {
+		@apply border border-tertiary-200 bg-tertiary-200;
+	}
+
+	figcaption {
+		@apply inline-block italic opacity-50 text-body-size12-normal;
+	}
+}

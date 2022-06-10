@@ -1,0 +1,11 @@
+//----------------------------------------
+// Block - 3 Card Styles.
+//----------------------------------------
+
+.abs-block-cards {
+	@apply my-48;
+
+	.card-wrap {
+		@apply grid grid-flow-col gap-24;
+	}
+}
