@@ -21,11 +21,6 @@
 		"node": ">=14",
 		"npm": ">=7"
 	},
-	"config": {
-		"local": "https://wdunderscores.test",
-		"staging": "https://wdunderscores.test",
-		"prod": "https://wdunderscores.test"
-	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
 		"@wordpress/eslint-plugin": "12.4.0",
@@ -45,6 +40,7 @@
 		"mini-css-extract-plugin": "^2.6.0",
 		"npm-run-all": "^4.1.5",
 		"pa11y-ci": "^3.0.1",
+		"pa11y-ci-reporter-html": "^4.0.0",
 		"postcss": "^8.4.14",
 		"postcss-loader": "^7.0.0",
 		"postcss-preset-env": "^7.7.1",
@@ -58,9 +54,7 @@
 		"webpack-merge": "^5.8.0"
 	},
 	"scripts": {
-		"a11y:local": "pa11y-ci --sitemap $npm_package_config_local/sitemap.xml",
-		"a11y:prod": "pa11y-ci --sitemap $npm_package_config_prod/sitemap.xml",
-		"a11y:staging": "pa11y-ci --sitemap $npm_package_config_staging/sitemap.xml",
+		"accessibility": "pa11y-ci --reporter=pa11y-ci-reporter-html --sitemap $npm_config_url/sitemap.xml",
 		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
 		"build:pot": "composer run-script pot",
 		"check-engines": "wp-scripts check-engines",
@@ -80,7 +74,7 @@
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "composer install --quiet && npm run build",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
-		"sync": "browser-sync start --https --proxy $npm_package_config_local --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
+		"sync": "browser-sync start --https --proxy https://wdunderscores.test --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	}
 }
