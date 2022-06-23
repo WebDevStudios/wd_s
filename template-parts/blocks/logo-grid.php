@@ -8,14 +8,14 @@
  */
 
 use function WebDevStudios\wd_s\print_module;
-use function WebDevStudios\wd_s\return_acf_fields;
+use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $abs_defaults = [
 	'class' => [ 'abs-block', 'abs-block-logo-grid' ],
 ];
 
-$abs_logo_grid = return_acf_fields( [ 'logos' ], $block['id'] );
+$abs_logo_grid = get_acf_fields( [ 'logos' ], $block['id'] );
 
 // Set up element attributes.
 $abs_atts = get_formatted_atts( [ 'class' ], $abs_defaults );

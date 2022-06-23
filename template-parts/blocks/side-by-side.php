@@ -8,14 +8,14 @@
  */
 
 use function WebDevStudios\wd_s\print_module;
-use function WebDevStudios\wd_s\return_acf_fields;
+use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $abs_defaults = [
 	'class' => [ 'abs-block', 'abs-block-side-by-side' ],
 ];
 
-$abs_side_by_side = return_acf_fields( [ 'column_order', 'image', 'card' ], $block['id'] );
+$abs_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block['id'] );
 
 $abs_defaults['class'][] = $abs_side_by_side['column_order'];
 

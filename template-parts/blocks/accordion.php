@@ -9,7 +9,7 @@
 
 use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\print_module;
-use function WebDevStudios\wd_s\return_acf_fields;
+use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $abs_defaults = [
@@ -19,7 +19,7 @@ $abs_defaults = [
 // Set up element attributes.
 $abs_atts = get_formatted_atts( [ 'class' ], $abs_defaults );
 
-$abs_accordion = return_acf_fields( [ 'block_heading', 'block_content', 'accordion_items' ], $block['id'] );
+$abs_accordion = get_acf_fields( [ 'block_heading', 'block_content', 'accordion_items' ], $block['id'] );
 ?>
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>

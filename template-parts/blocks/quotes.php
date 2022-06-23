@@ -10,7 +10,7 @@
 use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_formatted_atts;
-use function WebDevStudios\wd_s\return_acf_fields;
+use function WebDevStudios\wd_s\get_acf_fields;
 
 $abs_defaults = [
 	'class' => [ 'abs-block', 'abs-block-quotes' ],
@@ -19,7 +19,7 @@ $abs_defaults = [
 // Set up element attributes.
 $abs_atts = get_formatted_atts( [ 'class' ], $abs_defaults );
 
-$abs_quotes = return_acf_fields( [ 'quotes' ], $block['id'] );
+$abs_quotes = get_acf_fields( [ 'quotes' ], $block['id'] );
 
 ?>
 
