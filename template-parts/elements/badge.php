@@ -6,12 +6,12 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#atoms
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
-use function abs\template_tags\display_svg;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
+use function WebDevStudios\wd_s\print_svg;
 
 $abs_defaults = [
 	'class'         => [ 'abs-element', 'abs-element-badge' ],
@@ -24,7 +24,7 @@ $abs_defaults = [
 	'icon_position' => 'after', // before, after.
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Make sure element should render.
 if ( $abs_args['text'] ) :
@@ -35,14 +35,14 @@ if ( $abs_args['text'] ) :
 	endif;
 
 	// Set up element attributes.
-	$abs_atts = return_formatted_atts( [ 'id', 'href', 'target', 'class', 'type' ], $abs_args );
+	$abs_atts = get_formatted_atts( [ 'id', 'href', 'target', 'class', 'type' ], $abs_args );
 
 	?>
 	<<?php echo $abs_args['href'] ? 'a' : 'span'; ?> <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php echo esc_html( $abs_args['text'] ); ?>
 		<?php
 		if ( ! empty( $abs_args['icon'] ) ) :
-			display_svg( $abs_args['icon'] );
+			print_svg( $abs_args['icon'] );
 		endif;
 		?>
 	</<?php echo $abs_args['href'] ? 'a' : 'span'; ?>>

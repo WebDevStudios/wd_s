@@ -2,10 +2,10 @@
 /**
  * Render an element.
  *
- * @package ABS
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Render an element.

@@ -3,7 +3,7 @@
 //----------------------------------------
 
 .abs-element-badge {
-	@apply inline-flex items-center rounded-md bg-secondary-200 px-12 py-6 text-white no-underline transition-all text-body-size12-normal;
+	@apply inline-flex items-center rounded-md px-12 py-6 text-white no-underline transition-all;
 
 	&.icon {
 		&-after {
@@ -22,6 +22,6 @@
 	}
 
 	&:hover {
-		@apply bg-secondary-400;
+		// @apply bg-secondary-400;
 	}
 }

@@ -6,7 +6,7 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#atoms
  *
- * @package ABS
+ * @package wd_s
  */
 
 /**
@@ -27,11 +27,11 @@
  * ],
  */
 
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
-use function abs\template_tags\display_post_author;
-use function abs\template_tags\display_post_date;
-use function abs\template_tags\display_post_taxonomies;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
+use function WebDevStudios\wd_s\print_post_author;
+use function WebDevStudios\wd_s\print_post_date;
+use function WebDevStudios\wd_s\print_post_taxonomies;
 
 $abs_defaults = [
 	'class'            => [ 'abs-module', 'abs-module-meta', 'entry-meta' ],
@@ -43,25 +43,25 @@ $abs_defaults = [
 	'taxonomy_args'    => [],
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Set up the meta class.
-$abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 ?>
 
 <div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Display the meta.
 	if ( ! empty( $abs_args['display_date'] ) ) :
-		display_post_date( $abs_args['date_args'] );
+		print_post_date( $abs_args['date_args'] );
 	endif;
 
 	if ( ! empty( $abs_args['display_author'] ) ) :
-		display_post_author( $abs_args['author_args'] );
+		print_post_author( $abs_args['author_args'] );
 	endif;
 
 	if ( ! empty( $abs_args['display_taxonomy'] ) ) :
-		display_post_taxonomies( $abs_args['taxonomy_args'] );
+		print_post_taxonomies( $abs_args['taxonomy_args'] );
 	endif;
 	?>
 </div>

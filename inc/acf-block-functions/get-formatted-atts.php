@@ -2,10 +2,10 @@
 /**
  * Returns a string of formatted elemene attributes.
  *
- * @package ABS
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Returns a string of formatted element attributes.

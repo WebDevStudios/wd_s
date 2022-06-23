@@ -2,10 +2,10 @@
 /**
  * Returns an array of ACF fields.
  *
- * @package Troy Bank
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Returns an array of ACF fields.

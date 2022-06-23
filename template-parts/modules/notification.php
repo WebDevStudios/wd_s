@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ABS
+ * @package wd_s
  */
 
 /**
@@ -13,9 +13,9 @@
  * Icon is not necessary if 'dismissible' is true as Close icon will be rendered automatically.
  */
 
-use function abs\functions\render_element;
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\print_element;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class'       => [ 'abs-module', 'abs-module-notification' ],
@@ -28,7 +28,7 @@ $abs_defaults = [
 	],
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Add default classes.
 $abs_args['class'][] = $abs_args['type']['sticky'] ? 'is-sticky' : '';
@@ -49,7 +49,7 @@ $abs_args['alpine']['x-data'] = $abs_args['dismissible'] ? '{ open: true }' : ''
 
 
 // Set up element attributes.
-$abs_atts = return_formatted_atts( [ 'class', 'role', 'aria', 'id', 'alpine' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'class', 'role', 'aria', 'id', 'alpine' ], $abs_args );
 
 // Make sure the notification title has an id for accessibility.
 if ( empty( $abs_args['text_args']['id'] ) ) :
@@ -60,12 +60,12 @@ endif;
 <aside <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	if ( $abs_args['text_args'] ) :
-		render_element( 'heading', $abs_args['text_args'] );
+		print_element( 'heading', $abs_args['text_args'] );
 	endif;
 	if ( $abs_args['dismissible'] || $abs_args['icon'] ) :
 		if ( $abs_args['dismissible'] ) :
 			// This is dismissible, so let's render a close button.
-			render_element(
+			print_element(
 				'button',
 				[
 					'icon'   => [
@@ -84,7 +84,7 @@ endif;
 				]
 			);
 		else :
-			render_element(
+			print_element(
 				'icon',
 				[
 					'svg_args' => $abs_args['icon'],

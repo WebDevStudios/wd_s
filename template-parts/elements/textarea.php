@@ -6,11 +6,11 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#atoms
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class'       => [ 'abs-element', 'abs-element-textarea' ],
@@ -22,7 +22,7 @@ $abs_defaults = [
 	'readonly'    => false,
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Add ID for <label> tags.
 if ( $abs_args['name'] ) :
@@ -30,7 +30,7 @@ if ( $abs_args['name'] ) :
 endif;
 
 // Set up element attributes.
-$abs_atts = return_formatted_atts( [ 'id', 'name', 'placeholder', 'class', 'type', 'disabled', 'required', 'readonly' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'id', 'name', 'placeholder', 'class', 'type', 'disabled', 'required', 'readonly' ], $abs_args );
 
 ?>
 <textarea <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $abs_args['value'] ); ?></textarea>

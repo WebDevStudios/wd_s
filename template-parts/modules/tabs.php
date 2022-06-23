@@ -4,28 +4,28 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\render_element;
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\print_element;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class' => [ 'abs-module', 'abs-module-tabs' ],
 	'items' => [],
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Set up element attributes.
-$abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 ?>
 <div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'tab-0' }">
 	<nav role="tablist">
 		<?php foreach ( $abs_args['items'] as $abs_key => $abs_item ) : ?>
 			<?php
-			render_element(
+			print_element(
 				'button',
 				[
 					'class'  => [ 'tab-title' ],

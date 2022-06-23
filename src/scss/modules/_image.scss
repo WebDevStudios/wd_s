@@ -6,10 +6,10 @@
 	@apply inline-block p-12;
 
 	&.has-caption {
-		@apply border border-tertiary-200 bg-tertiary-200;
+		@apply bg-black bg-opacity-10;
 	}
 
 	figcaption {
-		@apply inline-block italic opacity-50 text-body-size12-normal;
+		@apply inline-block italic opacity-50;
 	}
 }

@@ -2,10 +2,10 @@
 /**
  * Validates args passed to an element/module/block.
  *
- * @package ABS
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Validates args passed to an element/module/block.

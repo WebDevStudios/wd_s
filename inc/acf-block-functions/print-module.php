@@ -2,10 +2,10 @@
 /**
  * Render a module.
  *
- * @package ABS
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Render a module.
@@ -15,6 +15,6 @@ namespace abs\functions;
  * @param string $module_name The name of the module.
  * @param array  $args Args for the module.
  */
-function get_module( $module_name = '', $args ) {
+function print_module( $module_name = '', $args ) {
 	get_template_part( 'template-parts/modules/' . $module_name, '', $args );
 }

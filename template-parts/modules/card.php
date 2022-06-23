@@ -6,13 +6,13 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#molecules
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\render_element;
-use function abs\functions\render_module;
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\print_element;
+use function WebDevStudios\wd_s\print_module;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class'         => [ 'abs-module', 'abs-module-card' ],
@@ -26,17 +26,17 @@ $abs_defaults = [
 	'meta'          => false,
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Set up element attributes.
-$abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 
 ?>
 <div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Image.
 	if ( $abs_args['attachment_id'] || $abs_args['src'] ) :
-		render_element(
+		print_element(
 			'image',
 			[
 				'attachment_id' => $abs_args['attachment_id'],
@@ -48,7 +48,7 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 
 	// Eyebrow.
 	if ( $abs_args['eyebrow'] ) :
-		render_element(
+		print_element(
 			'eyebrow',
 			[
 				'text' => $abs_args['eyebrow'],
@@ -58,7 +58,7 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 
 	// Heading.
 	if ( $abs_args['heading'] ) :
-		render_element(
+		print_element(
 			'heading',
 			[
 				'text'  => $abs_args['heading'],
@@ -69,12 +69,12 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 
 	// Meta - can be passed as an empty array.
 	if ( is_array( $abs_args['meta'] ) ) :
-		render_module( 'meta', $abs_args['meta'] );
+		print_module( 'meta', $abs_args['meta'] );
 	endif;
 
 	// Content.
 	if ( $abs_args['content'] ) :
-		render_element(
+		print_element(
 			'content',
 			[
 				'content' => $abs_args['content'],
@@ -84,7 +84,7 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 
 	// Button.
 	if ( $abs_args['button'] ) :
-		render_element( 'button', $abs_args['button'] );
+		print_element( 'button', $abs_args['button'] );
 	endif;
 	?>
 </div>

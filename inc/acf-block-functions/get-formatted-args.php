@@ -2,10 +2,10 @@
 /**
  * Merges the element defaults with the passed args.
  *
- * @package ABS
+ * @package wd_s
  */
 
-namespace abs\functions;
+namespace WebDevStudios\wd_s;
 
 /**
  * Merges the element defaults with the passed args.

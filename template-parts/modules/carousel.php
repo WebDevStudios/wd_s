@@ -6,13 +6,13 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#molecules
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\render_module;
-use function abs\functions\render_element;
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\print_module;
+use function WebDevStudios\wd_s\print_element;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class'       => [ 'abs-module', 'abs-module-carousel' ],
@@ -20,12 +20,12 @@ $abs_defaults = [
 	'show_arrows' => true,
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 if ( count( $abs_args['heros'] ) ) :
 
 	// Set up element attributes.
-	$abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
+	$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 
 	wp_enqueue_script( 'abs-smoothscroll', 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js', [ 'abs-alpine' ], '1.0', true );
 
@@ -67,7 +67,7 @@ if ( count( $abs_args['heros'] ) ) :
 		>
 			<?php
 			if ( $abs_args['show_arrows'] ) :
-				render_element(
+				print_element(
 					'button',
 					[
 						'class'  => [ 'carousel-button' ],
@@ -97,7 +97,7 @@ if ( count( $abs_args['heros'] ) ) :
 				<?php foreach ( $args['heros'] as $abs_hero ) : ?>
 					<li class="snap-start" role="option">
 						<?php
-						render_module(
+						print_module(
 							'hero',
 							$abs_hero
 						);
@@ -108,7 +108,7 @@ if ( count( $abs_args['heros'] ) ) :
 			</ul>
 			<?php
 			if ( $abs_args['show_arrows'] ) :
-				render_element(
+				print_element(
 					'button',
 					[
 						'class'  => [ 'carousel-button', 'carousel-button-next' ],

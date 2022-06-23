@@ -6,11 +6,11 @@
  *
  * @link https://atomicdesign.bradfrost.com/chapter-2/#atoms
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\return_formatted_atts;
-use function abs\functions\return_formatted_args;
+use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_formatted_args;
 
 $abs_defaults = [
 	'class' => [ 'abs-element', 'abs-element-button' ],
@@ -18,13 +18,13 @@ $abs_defaults = [
 	'for'   => false,
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Make sure element should render.
 if ( $abs_args['text'] ) :
 
 	// Set up element attributes.
-	$abs_atts = return_formatted_atts( [ 'for', 'class' ], $abs_args );
+	$abs_atts = get_formatted_atts( [ 'for', 'class' ], $abs_args );
 
 	?>
 	<label <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $abs_args['text'] ); ?></label>

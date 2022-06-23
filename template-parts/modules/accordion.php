@@ -4,22 +4,22 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ABS
+ * @package wd_s
  */
 
-use function abs\functions\render_element;
-use function abs\functions\return_formatted_args;
-use function abs\functions\return_formatted_atts;
+use function WebDevStudios\wd_s\print_element;
+use function WebDevStudios\wd_s\get_formatted_args;
+use function WebDevStudios\wd_s\get_formatted_atts;
 
 $abs_defaults = [
 	'class' => [ 'abs-module', 'abs-module-accordion' ],
 	'items' => [],
 ];
 
-$abs_args = return_formatted_args( $args, $abs_defaults );
+$abs_args = get_formatted_args( $args, $abs_defaults );
 
 // Set up element attributes.
-$abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
+$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 ?>
 
 <div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> x-data="{ active: 0 }">
@@ -37,7 +37,7 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 			class="accordion-item"
 		>
 			<?php
-			render_element(
+			print_element(
 				'button',
 				[
 					'class'  => [ 'accordion-title' ],
@@ -68,7 +68,7 @@ $abs_atts = return_formatted_atts( [ 'class' ], $abs_args );
 				aria-labelledby="accordion-item-<?php echo esc_attr( $abs_key ); ?>"
 			>
 			<?php
-			render_element(
+			print_element(
 				'content',
 				[
 					'class'   => [ 'accordion-content' ],
