@@ -1,10 +1,15 @@
 const postCssPlugin = require( 'esbuild-postcss' );
+const { globPlugin } = require( 'esbuild-plugin-glob' );
 
 const watch = process.argv.includes( '--watch' );
 
 require( 'esbuild' )
 	.build( {
-		entryPoints: [ 'src/index.js', 'src/critical.js' ],
+		entryPoints: [
+			'src/index.js',
+			'src/critical.js',
+			'./src/blocks/**/*/index.js',
+		],
 		bundle: true,
 		outdir: 'build',
 		preserveSymlinks: true,
@@ -21,7 +26,7 @@ require( 'esbuild' )
 			'*.woff2',
 		],
 		publicPath: 'build/images',
-		plugins: [ postCssPlugin() ],
+		plugins: [ postCssPlugin(), globPlugin() ],
 		sourcemap: 'inline',
 	} )
 	.catch( () => process.exit( 1 ) );
