@@ -34,12 +34,14 @@ module.exports = {
 					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
+					'svg-transform-loader/encode-query',
 					'sass-loader',
 				],
 			},
 			{
 				test: /\.svg$/,
 				type: 'asset/inline',
+				use: 'svg-transform-loader',
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
