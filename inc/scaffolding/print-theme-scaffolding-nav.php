@@ -12,7 +12,7 @@ namespace WebDevStudios\wd_s;
  *
  * @author JC Palmes
  */
-function theme_scaffolding_nav() {
+function print_theme_scaffolding_nav() {
 	?>
 	<nav class="scaffolding-nav">
 		<span><?php echo esc_html__( 'Scroll to:', 'wd_s' ); ?></span>
