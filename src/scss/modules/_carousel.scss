@@ -1,0 +1,41 @@
+//----------------------------------------
+// Module - Carousel Styles.
+//----------------------------------------
+
+.abs-module-carousel {
+	@apply relative;
+
+	.carousel-button {
+		@apply absolute top-0 bottom-0 z-10 px-0;
+
+		background-color: transparent;
+
+		&-next {
+			@apply right-0;
+		}
+
+		.icon {
+			@apply m-0;
+		}
+	}
+
+	ul {
+		@apply flex w-full overflow-x-scroll;
+
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			@apply hidden;
+		}
+
+		li {
+			@apply flex w-full flex-col items-center justify-center p-2;
+
+			flex-shrink: 0;
+
+			.container {
+				@apply px-0;
+			}
+		}
+	}
+}

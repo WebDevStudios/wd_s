@@ -1,6 +1,7 @@
 //----------------------------------------
-// Global site styles
+// Element - Eyebrow Styles.
 //----------------------------------------
 
-@import 'global';
-@import 'documentation';
+.abs-element-eyebrow {
+	@apply italic opacity-50;
+}

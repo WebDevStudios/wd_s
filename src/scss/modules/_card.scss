@@ -1,6 +1,7 @@
 //----------------------------------------
-// Global site styles
+// Card Styles.
 //----------------------------------------
 
-@import 'global';
-@import 'documentation';
+.abs-module-card {
+	@apply rounded-sm p-16;
+}

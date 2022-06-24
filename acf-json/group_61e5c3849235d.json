@@ -1,0 +1,196 @@
+{
+	"key": "group_61e5c3849235d",
+	"title": "Block: Cards - Manual",
+	"fields": [
+		{
+			"key": "field_620d6eacfde1d",
+			"label": "",
+			"name": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Manual Cards Block</h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_61e5ce51dfedb",
+			"label": "Block Heading",
+			"name": "block_heading",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_61e5ce68dfedc",
+			"label": "Block Content",
+			"name": "block_content",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br"
+		},
+		{
+			"key": "field_61e5c3b3fdf10",
+			"label": "Card",
+			"name": "card",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 3,
+			"layout": "row",
+			"button_label": "Add Card",
+			"sub_fields": [
+				{
+					"key": "field_61e5c3eafdf12",
+					"label": "Image",
+					"name": "image",
+					"type": "clone",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"clone": [ "group_61e58e490f037" ],
+					"display": "seamless",
+					"layout": "block",
+					"prefix_label": 0,
+					"prefix_name": 0
+				},
+				{
+					"key": "field_61e5c38cfdf0f",
+					"label": "Eyebrow",
+					"name": "eyebrow",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_61e5c3cefdf11",
+					"label": "Heading",
+					"name": "heading",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_61e5c40efdf13",
+					"label": "Content",
+					"name": "content",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"maxlength": "",
+					"rows": "",
+					"new_lines": "br"
+				},
+				{
+					"key": "field_61e5c423fdf14",
+					"label": "Button",
+					"name": "button",
+					"type": "clone",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"clone": [ "group_59416d894b7c7" ],
+					"display": "seamless",
+					"layout": "block",
+					"prefix_label": 0,
+					"prefix_name": 0
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/cards-manual"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1645048902
+}

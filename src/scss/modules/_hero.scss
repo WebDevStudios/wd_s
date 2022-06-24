@@ -1,0 +1,27 @@
+//----------------------------------------
+// Module - Hero Styles.
+//----------------------------------------
+
+.abs-module-hero {
+	@apply relative;
+
+	.background {
+		@apply absolute h-full w-full;
+
+		img {
+			@apply h-full w-full object-cover;
+		}
+	}
+
+	.overlay {
+		@apply absolute h-full w-full bg-black bg-opacity-10 opacity-50;
+	}
+
+	.container {
+		@apply grid grid-cols-12 gap-32;
+
+		.hero-content {
+			@apply relative col-span-4 col-start-2 my-24 bg-white bg-opacity-70 p-24;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+//----------------------------------------
+// Block - Side by Side.
+//----------------------------------------
+
+.abs-block-side-by-side {
+	@apply flex w-full gap-64;
+
+	&.card-first {
+		@apply flex-row-reverse;
+	}
+
+	.abs-module-figure {
+		@apply w-1/2;
+	}
+
+	.abs-module-card {
+		@apply w-1/2 p-0 shadow-none;
+	}
+}

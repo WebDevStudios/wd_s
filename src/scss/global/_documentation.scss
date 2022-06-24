@@ -1,0 +1,35 @@
+.page-template-blocks,
+.page-template-modules,
+.page-template-elements {
+	.element-documentation {
+		@apply py-48;
+
+		.documentation-section {
+			&-inner {
+				@apply relative mb-32;
+
+				&:last-child {
+					@apply mb-0;
+				}
+
+				.sub-heading {
+					@apply mb-8 border-b-2 pb-8 font-bold;
+				}
+			}
+		}
+
+		code {
+			@apply block p-12 bg-black bg-opacity-10;
+		}
+	}
+
+	fieldset {
+		@apply mb-32 rounded-md border p-24;
+
+		border-color: #dadada;
+
+		legend {
+			@apply px-16 font-bold text-3xl;
+		}
+	}
+}

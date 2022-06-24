@@ -1,0 +1,156 @@
+{
+	"key": "group_5cc9ad45ed8c9",
+	"title": "Block: Accordion",
+	"fields": [
+		{
+			"key": "field_5d6949aea1e5d",
+			"label": "",
+			"name": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Accordion Block</h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_61e5913ea6b9c",
+			"label": "Block Heading",
+			"name": "block_heading",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_61e59164a6b9d",
+			"label": "Block Content",
+			"name": "block_content",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5cc9ad46008cd",
+			"label": "Accordion Items",
+			"name": "accordion_items",
+			"type": "group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"sub_fields": [
+				{
+					"key": "field_61e5c029c2786",
+					"label": "Accordion Items",
+					"name": "items",
+					"type": "repeater",
+					"instructions": "Add accordion items to your block. Each accordion requires Title and Text.",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"collapsed": "",
+					"min": 0,
+					"max": 0,
+					"layout": "row",
+					"button_label": "Add Accordion Item",
+					"sub_fields": [
+						{
+							"key": "field_5cc9ad460902d",
+							"label": "Accordion Title",
+							"name": "text",
+							"type": "text",
+							"instructions": "Set the title of the individual accordion. Clicking/Tapping on this will expand and collapse the accordion.",
+							"required": 1,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						},
+						{
+							"key": "field_61f4274477bcc",
+							"label": "Accordion",
+							"name": "content",
+							"type": "textarea",
+							"instructions": "",
+							"required": 1,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"maxlength": "",
+							"rows": "",
+							"new_lines": "br"
+						}
+					]
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/accordion"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1649258227
+}

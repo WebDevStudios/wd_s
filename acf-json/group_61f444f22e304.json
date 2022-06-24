@@ -1,0 +1,101 @@
+{
+	"key": "group_61f444f22e304",
+	"title": "Block: Quotes",
+	"fields": [
+		{
+			"key": "field_620d6f3f5c0f9",
+			"label": "",
+			"name": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Quotes Block</h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_61f444f57bb06",
+			"label": "Quotes",
+			"name": "quotes",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "row",
+			"button_label": "Add Quote",
+			"sub_fields": [
+				{
+					"key": "field_61f444fd7bb07",
+					"label": "Quote",
+					"name": "quote",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"maxlength": "",
+					"rows": "",
+					"new_lines": ""
+				},
+				{
+					"key": "field_61f4450d7bb08",
+					"label": "Attribute",
+					"name": "cite",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/quotes"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1645047627
+}

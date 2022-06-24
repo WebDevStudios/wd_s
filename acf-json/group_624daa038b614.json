@@ -1,0 +1,156 @@
+{
+	"key": "group_624daa038b614",
+	"title": "Block: Tabs",
+	"fields": [
+		{
+			"key": "field_624daa038de5a",
+			"label": "",
+			"name": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Tabs Block</h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_624daa038de5f",
+			"label": "Block Heading",
+			"name": "block_heading",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_624daa038de63",
+			"label": "Block Content",
+			"name": "block_content",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br"
+		},
+		{
+			"key": "field_624daa038de67",
+			"label": "Tab Items",
+			"name": "tab_items",
+			"type": "group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"sub_fields": [
+				{
+					"key": "field_624daa039299c",
+					"label": "Items",
+					"name": "items",
+					"type": "repeater",
+					"instructions": "Add tab items to your block. Each tab requires a Title and Content.",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"collapsed": "",
+					"min": 0,
+					"max": 0,
+					"layout": "row",
+					"button_label": "Add a Tab",
+					"sub_fields": [
+						{
+							"key": "field_624daa0393c37",
+							"label": "Tab Title",
+							"name": "text",
+							"type": "text",
+							"instructions": "Set the title of the individual tab. Clicking/Tapping on this will display the content of this tab.",
+							"required": 1,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						},
+						{
+							"key": "field_624daa0393c3c",
+							"label": "Tab Content",
+							"name": "content",
+							"type": "textarea",
+							"instructions": "",
+							"required": 1,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"maxlength": "",
+							"rows": "",
+							"new_lines": "br"
+						}
+					]
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/tabs"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1649258201
+}

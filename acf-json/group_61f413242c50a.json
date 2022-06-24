@@ -1,0 +1,82 @@
+{
+	"key": "group_61f413242c50a",
+	"title": "Block: Logo Grid",
+	"fields": [
+		{
+			"key": "field_620d6f1e17597",
+			"label": "",
+			"name": "",
+			"type": "message",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "<h2>Logo Grid Block</h2>",
+			"new_lines": "wpautop",
+			"esc_html": 0
+		},
+		{
+			"key": "field_61f41366c3f99",
+			"label": "Logos",
+			"name": "logos",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_61f41519c3f9a",
+					"label": "Logo",
+					"name": "image",
+					"type": "clone",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"clone": [ "group_61e58e490f037" ],
+					"display": "seamless",
+					"layout": "block",
+					"prefix_label": 0,
+					"prefix_name": 0
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/logo-grid"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1645047608
+}
