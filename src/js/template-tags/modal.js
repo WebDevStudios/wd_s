@@ -49,9 +49,8 @@ function wdsModals() {
 		const thisTarget = event.target,
 			thisModalTarget = thisTarget.getAttribute( 'data-target' ),
 			thisModal = document.querySelector( thisModalTarget ),
-			focusableChildren = thisModal.querySelectorAll(
-				'a, input, button'
-			);
+			focusableChildren =
+				thisModal.querySelectorAll( 'a, input, button' );
 
 		pageBody.classList.add( 'modal-open' );
 		thisModal.classList.add( 'modal-open' );
@@ -99,9 +98,8 @@ function wdsModals() {
 			return;
 		}
 
-		const currentlyOpenModal = document.querySelector(
-				'.modal.modal-open'
-			),
+		const currentlyOpenModal =
+				document.querySelector( '.modal.modal-open' ),
 			modalIframe = currentlyOpenModal.querySelector( 'iframe' );
 
 		if ( 27 === event.keyCode ) {
