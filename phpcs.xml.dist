@@ -49,7 +49,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="WebDevStudios\wd_s" />
+			<property name="prefixes" type="array" value="WebDevStudios\wd_s,wd_s" />
 		</properties>
 	</rule>
 
