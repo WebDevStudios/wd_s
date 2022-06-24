@@ -74,7 +74,7 @@ function setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'_wd_s_custom_background_args',
+			'wd_s_custom_background_args',
 			[
 				'default-color' => 'ffffff',
 				'default-image' => '',

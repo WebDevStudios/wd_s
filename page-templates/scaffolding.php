@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<main id="main" class="container site-main relative">
 
-		<?php do_action( '_wd_s_scaffolding_content' ); ?>
+		<?php do_action( 'wd_s_scaffolding_content' ); ?>
 
 	</main><!-- #main -->
 

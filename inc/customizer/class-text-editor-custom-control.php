@@ -74,6 +74,6 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	 * @author WebDevStudios
 	 */
 	protected function add_footer_scripts() {
-		do_action( 'admin_print_footer_scripts' );
+		do_action( 'wd_s_admin_print_footer_scripts' );
 	}
 }

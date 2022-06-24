@@ -26,7 +26,7 @@
 
 <body <?php body_class( 'site-wrapper' ); ?>>
 
-	<?php wp_body_open(); ?>
+	<?php wd_s_wp_body_open(); ?>
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wd_s' ); ?></a>
 
@@ -46,10 +46,10 @@
 
 				<?php
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) :
+				$wd_s_description = get_bloginfo( 'description', 'display' );
+				if ( $wd_s_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo esc_html( $description ); ?></p>
+					<p class="site-description"><?php echo esc_html( $wd_s_description ); ?></p>
 				<?php endif; ?>
 
 			</div><!-- .site-branding -->
