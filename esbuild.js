@@ -4,12 +4,11 @@ const glob = require( 'glob' );
 const watch = process.argv.includes( '--watch' );
 
 const blockDirs = glob.sync( './src/blocks/**/*/index.js' ),
-	blockDirsArray = Object.values( blockDirs ),
 	directoryFiles = [ './src/index.js', './src/critical.js' ];
 
 require( 'esbuild' )
 	.build( {
-		entryPoints: blockDirsArray.concat( directoryFiles ),
+		entryPoints: blockDirs.concat( directoryFiles ),
 		bundle: true,
 		outdir: 'build',
 		preserveSymlinks: true,
