@@ -2,8 +2,10 @@
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
- * @package _s
+ * @package wd_s
  */
+
+namespace WebDevStudios\wd_s;
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return;
@@ -12,7 +14,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 /**
  * Class to create a custom text editor control
  */
-final class Text_Editor_Custom_Control extends WP_Customize_Control {
+final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 
 	/**
 	 * Keep track of if scripts were added.

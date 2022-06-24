@@ -2,18 +2,21 @@
 /**
  * The template used for displaying typography in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'typography', '_s' ); ?>"><?php esc_html_e( 'Typography', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'typography', 'wd_s' ); ?>">
+		<?php esc_html_e( 'Typography', 'wd_s' ); ?></h2>
 
 	<?php
 	// H1.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H1',
 			'description' => 'Display an H1',
@@ -23,7 +26,7 @@
 	);
 
 	// H2.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H2',
 			'description' => 'Display an H2',
@@ -33,7 +36,7 @@
 	);
 
 	// H3.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H3',
 			'description' => 'Display an H3',
@@ -43,7 +46,7 @@
 	);
 
 	// H4.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H4',
 			'description' => 'Display an H4',
@@ -53,7 +56,7 @@
 	);
 
 	// H5.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H5',
 			'description' => 'Display an H5',
@@ -63,7 +66,7 @@
 	);
 
 	// H6.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H6',
 			'description' => 'Display an H6',
@@ -73,7 +76,7 @@
 	);
 
 	// Body.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Paragraph',
 			'description' => 'Display a paragraph',
@@ -83,7 +86,7 @@
 	);
 
 	// Link.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Link',
 			'description' => 'Displays a link.',
@@ -93,7 +96,7 @@
 	);
 
 	// HTML table.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Table',
 			'description' => 'Display a table',
@@ -158,7 +161,7 @@
 
 
 	// Ordered List.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Ordered List',
 			'description' => 'Display an ordered list.',
@@ -202,7 +205,7 @@
 	);
 
 	// Unordered List.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Unordered List',
 			'description' => 'Display an unordered list.',
@@ -246,7 +249,7 @@
 	);
 
 	// Blockquote.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Blockquote',
 			'description' => 'Display a blockquote.',
@@ -255,8 +258,18 @@
 		]
 	);
 
+	// Code tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Code Tag',
+			'description' => 'Display a code tag.',
+			'usage'       => '<code>word-wrap: break-word;</code>',
+			'output'      => '<p>You will learn later on in these tests that <code>word-wrap: break-word;</code> will be your best friend.</p>',
+		]
+	);
+
 	// Em tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Emphasize Tag',
 			'description' => 'Display an <em> tag.',
@@ -266,7 +279,7 @@
 	);
 
 	// Strong tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Strong Tag',
 			'description' => 'Display bold text.',
@@ -275,8 +288,134 @@
 		]
 	);
 
+	// Abbreviation Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Abbreviation Tag',
+			'description' => 'Display an abbreviation.',
+			'usage'       => '<abbr title="Seriously">srsly</abbr>',
+			'output'      => '<p>The abbreviation <abbr title="Seriously">srsly</abbr> stands for "seriously".</p>',
+		]
+	);
+
+	// Cite Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Cite Tag',
+			'description' => 'Display a citation.',
+			'usage'       => '<cite>Automattic</cite>',
+			'output'      => '<p>"Code is poetry." &mdash;<cite>Automattic</cite></p>',
+		]
+	);
+
+	// Strikeout Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Strikeout Text',
+			'description' => 'Display strikeout text.',
+			'usage'       => '<s>strikeout text</s>',
+			'output'      => '<p>This tag will let you <s>strikeout text</s>.</p>',
+		]
+	);
+
+	// Delete Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Delete Text',
+			'description' => 'Display the edited content of a text string.',
+			'usage'       => '<del>_s</del>',
+			'output'      => '<p>We use <del>_s</del> wd_s to build themes.</p>',
+		]
+	);
+
+	// Preformatted Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Preformatted tag.',
+			'description' => 'This tag styles large blocks of code.',
+			'usage'       => '
+				<pre>.post-title {
+					margin: 0 0 5px;
+					font-weight: bold;
+					font-size: 38px;
+					line-height: 1.2;
+				}</pre>
+			',
+			'output'      => '
+				<pre>.post-title {
+					margin: 0 0 5px;
+					font-weight: bold;
+					font-size: 38px;
+					line-height: 1.2;
+				}</pre>
+			',
+		]
+	);
+
+	// Keyboard Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Keyboard Tag',
+			'description' => 'To display a key.',
+			'usage'       => '<kbd>Shift/kbd>',
+			'output'      => '<p>To paste copied text content stripped of formatting, use <kbd>&#8984;</kbd>+<kbd>Opt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.</p>',
+		]
+	);
+
+	// Subscript Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Subscript Tag',
+			'description' => 'To display a subscript.',
+			'usage'       => '<sub>2</sub>',
+			'output'      => '<p>Getting our science styling on with H<sub>2</sub>O, which should push the "2" down.</p>',
+		]
+	);
+
+	// Superscript Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Superscript Tag',
+			'description' => 'To display a superscript.',
+			'usage'       => '<sup>2</sup>',
+			'output'      => '<p>Still sticking with science and Albert Einstein\'s&nbsp;E = MC<sup>2</sup>, which should lift the "2" up.</p>',
+		]
+	);
+
+	// Variable Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Variable Tag',
+			'description' => 'The HTML Variable element (<var>) represents the name of a variable in a mathematical expression or a programming context.',
+			'usage'       => '<var>x</var>',
+			'output'      => '<p>A simple equation: <var>x</var> = <var>y</var> + 2 </p>',
+		]
+	);
+
+	// Address Tag.
+	print_scaffolding_section(
+		[
+			'title'       => 'Address Tag',
+			'description' => 'To display an address.',
+			'usage'       => '
+				<address>
+					1 Infinite Loop<br>
+					Cupertino, CA 95014<br>
+					United States
+				</address>
+			',
+			'output'      => '
+				<address>
+					1 Infinite Loop<br>
+					Cupertino, CA 95014<br>
+					United States
+				</address>
+			',
+		]
+	);
+
 	// Definition lists.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Definition Lists',
 			'description' => 'To display defintion lists.',

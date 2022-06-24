@@ -2,17 +2,19 @@
 /**
  * The template used for displaying Buttons in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'buttons', '_s' ); ?>"><?php esc_html_e( 'Buttons', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'buttons', 'wd_s' ); ?>"><?php esc_html_e( 'Buttons', 'wd_s' ); ?></h2>
 	<?php
 		// Button.
-		_s_display_scaffolding_section(
+		print_scaffolding_section(
 			[
 				'title'       => 'Button',
 				'description' => 'Display a button.',
