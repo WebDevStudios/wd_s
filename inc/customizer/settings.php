@@ -17,7 +17,7 @@ namespace WebDevStudios\wd_s;
 function customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
 	$wp_customize->add_setting(
-		'_wd_s_header_scripts',
+		'wd_s_header_scripts',
 		[
 			'default'           => '',
 			'sanitize_callback' => 'force_balance_tags',
@@ -26,18 +26,18 @@ function customize_additional_scripts( $wp_customize ) {
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		'_wd_s_header_scripts',
+		'wd_s_header_scripts',
 		[
 			'label'       => esc_attr__( 'Header Scripts', 'wd_s' ),
 			'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', 'wd_s' ),
-			'section'     => '_wd_s_additional_scripts_section',
+			'section'     => 'wd_s_additional_scripts_section',
 			'type'        => 'textarea',
 		]
 	);
 
 	// Register a setting.
 	$wp_customize->add_setting(
-		'_wd_s_footer_scripts',
+		'wd_s_footer_scripts',
 		[
 			'default'           => '',
 			'sanitize_callback' => 'force_balance_tags',
@@ -46,11 +46,11 @@ function customize_additional_scripts( $wp_customize ) {
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		'_wd_s_footer_scripts',
+		'wd_s_footer_scripts',
 		[
 			'label'       => esc_attr__( 'Footer Scripts', 'wd_s' ),
 			'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', 'wd_s' ),
-			'section'     => '_wd_s_additional_scripts_section',
+			'section'     => 'wd_s_additional_scripts_section',
 			'type'        => 'textarea',
 		]
 	);
@@ -79,7 +79,7 @@ function customize_social_icons( $wp_customize ) {
 
 		// Register a setting.
 		$wp_customize->add_setting(
-			'_wd_s_' . $network . '_link',
+			'wd_s_' . $network . '_link',
 			[
 				'default'           => '',
 				'sanitize_callback' => 'esc_url',
@@ -88,10 +88,10 @@ function customize_social_icons( $wp_customize ) {
 
 		// Create the setting field.
 		$wp_customize->add_control(
-			'_wd_s_' . $network . '_link',
+			'wd_s_' . $network . '_link',
 			[
 				'label'   => /* translators: the social network name. */ sprintf( esc_attr__( '%s URL', 'wd_s' ), ucwords( $network ) ),
-				'section' => '_wd_s_social_links_section',
+				'section' => 'wd_s_social_links_section',
 				'type'    => 'text',
 			]
 		);
@@ -110,7 +110,7 @@ add_action( 'customize_register', __NAMESPACE__ . '\customize_social_icons' );
 function customize_copyright_text( $wp_customize ) {
 	// Register a setting.
 	$wp_customize->add_setting(
-		'_wd_s_copyright_text',
+		'wd_s_copyright_text',
 		[
 			'default'           => '',
 			'sanitize_callback' => 'wp_kses_post',
@@ -121,11 +121,11 @@ function customize_copyright_text( $wp_customize ) {
 	$wp_customize->add_control(
 		new Text_Editor_Custom_Control(
 			$wp_customize,
-			'_wd_s_copyright_text',
+			'wd_s_copyright_text',
 			[
 				'label'       => esc_attr__( 'Copyright Text', 'wd_s' ),
 				'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'wd_s' ),
-				'section'     => '_wd_s_footer_section',
+				'section'     => 'wd_s_footer_section',
 				'type'        => 'textarea',
 			]
 		)

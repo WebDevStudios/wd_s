@@ -15,14 +15,14 @@ namespace WebDevStudios\wd_s;
  * @return bool Whether the blog has more than one category.
  */
 function get_categorized_blog() {
-	$category_count = get_transient( '_wd_s_categories' );
+	$category_count = get_transient( 'wd_s_categories' );
 
 	if ( false === $category_count ) {
 		$category_count_query = get_categories( [ 'fields' => 'count' ] );
 
 		$category_count = isset( $category_count_query[0] ) ? (int) $category_count_query[0] : 0;
 
-		set_transient( '_wd_s_categories', $category_count );
+		set_transient( 'wd_s_categories', $category_count );
 	}
 
 	return $category_count > 1;

@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  */
 function print_customizer_header_scripts() {
 	// Check for header scripts.
-	$scripts = get_theme_mod( '_wd_s_header_scripts' );
+	$scripts = get_theme_mod( 'wd_s_header_scripts' );
 
 	// None? Bail...
 	if ( ! $scripts ) {

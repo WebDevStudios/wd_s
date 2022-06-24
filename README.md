@@ -57,7 +57,7 @@ You'll need to change all instances of the names: `_s`.
 
 - Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
 - Search for: `"_s"` and replace with: `"project-name"` (inside double quotations) to capture the text domain
-- Search for: `_wd_s_` and replace with: `project-name_` to capture all the function names
+- Search for: `wd_s_` and replace with: `project-name_` to capture all the function names
 - Search for: `Text Domain: wd_s` and replace with: `Text Domain: project-name` in style.css
 - Search for (and include the leading space): ` _s` and replace with: ` Project Name` (with a space before it) to capture DocBlocks
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles

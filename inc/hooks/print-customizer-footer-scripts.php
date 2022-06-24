@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  */
 function print_customizer_footer_scripts() {
 	// Check for footer scripts.
-	$scripts = get_theme_mod( '_wd_s_footer_scripts' );
+	$scripts = get_theme_mod( 'wd_s_footer_scripts' );
 
 	// None? Bail...
 	if ( ! $scripts ) {

@@ -58,9 +58,9 @@ function selective_refresh_support( $wp_customize ) {
 
 	// The <div> classname to append edit icon too.
 	$settings = [
-		'blogname'             => '.site-title a',
-		'blogdescription'      => '.site-description',
-		'_wd_s_copyright_text' => '.site-info',
+		'blogname'            => '.site-title a',
+		'blogdescription'     => '.site-description',
+		'wd_s_copyright_text' => '.site-info',
 	];
 
 	// Loop through, and add selector partials.
@@ -89,7 +89,7 @@ function live_preview_support( $wp_customize ) {
 		'blogdescription',
 		'header_textcolor',
 		'background_image',
-		'_wd_s_copyright_text',
+		'wd_s_copyright_text',
 	];
 
 	// Loop through and add the live preview to each setting.

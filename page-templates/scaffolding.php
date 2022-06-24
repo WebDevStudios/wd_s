@@ -2,7 +2,7 @@
 /**
  * Template Name: Scaffolding
  *
- * Template Post Type: page, scaffolding, _wd_s_scaffolding
+ * Template Post Type: page, scaffolding, wd_s_scaffolding
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
