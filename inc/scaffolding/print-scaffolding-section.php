@@ -34,17 +34,16 @@ function print_scaffolding_section( $args = [] ) {
 	// Add a unique class to the wrapper.
 	$class = 'scaffolding-' . str_replace( ' ', '-', strtolower( $args['title'] ) ); ?>
 
-	<div class="scaffolding-document accordion <?php echo esc_attr( $class ); ?>">
+	<div class="scaffolding-document tabs <?php echo esc_attr( $class ); ?>">
 
-		<div class="accordion-item">
+		<div class="tab">
 			<?php if ( $args['title'] ) : ?>
-			<header class="scaffolding-document-header display-flex flex-start space-between accordion-item-header">
-				<h3 class="scaffolding-document-title accordion-item-title"><?php echo esc_html( $args['title'] ); ?></h3>
-				<button type="button" class="scaffolding-button"><?php esc_html_e( 'Details', 'wd_s' ); ?></button>
-			</header><!-- .scaffolding-document-header -->
+				<input type="checkbox" class="tab-toggle" id="<?php echo esc_attr( 'tab-' . $args['title'] ); ?>">
+				<label class="scaffolding-document-title tab-label" for="<?php echo esc_attr( 'tab-' . $args['title'] ); ?>"><?php echo esc_html( $args['title'] ); ?></label>
 			<?php endif; ?>
 
-			<div class="scaffolding-document-content accordion-item-content">
+
+			<div class="scaffolding-document-content tab-content">
 
 				<div class="scaffolding-document-details">
 
@@ -83,13 +82,13 @@ function print_scaffolding_section( $args = [] ) {
 
 				</div><!-- .scaffolding-document-usage -->
 			</div><!-- .scaffolding-document-content -->
-		</div>
+		</div><!-- .tab -->
 
 		<div class="scaffolding-document-live">
 
-		<?php if ( $args['output'] ) : ?>
-			<?php echo do_shortcode( wp_kses( $args['output'], $allowed_tags ) ); ?>
-		<?php endif; ?>
+			<?php if ( $args['output'] ) : ?>
+				<?php echo do_shortcode( wp_kses( $args['output'], $allowed_tags ) ); ?>
+			<?php endif; ?>
 
 		</div><!-- .scaffolding-document-live -->
 	</div><!-- .scaffolding-document -->
