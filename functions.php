@@ -13,7 +13,6 @@
  * @author WebDevStudios
  */
 $files = [
-	'inc/acf-block-functions/', // Customizer additions.
 	'inc/customizer/customizer.php', // Customizer additions.
 	'inc/functions/', // Custom functions that act independently of the theme templates.
 	'inc/hooks/', // Load custom filters and hooks.
