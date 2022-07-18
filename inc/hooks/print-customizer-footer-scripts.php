@@ -25,7 +25,7 @@ function print_customizer_footer_scripts() {
 
 	// Otherwise, echo the scripts!
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-	echo get_the_content( $scripts );
+	echo get_post_content( $scripts );
 }
 
 add_action( 'wp_footer', __NAMESPACE__ . '\print_customizer_footer_scripts', 999 );
