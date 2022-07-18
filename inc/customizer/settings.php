@@ -119,16 +119,13 @@ function customize_copyright_text( $wp_customize ) {
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		new Text_Editor_Custom_Control(
-			$wp_customize,
-			'wd_s_copyright_text',
-			[
-				'label'       => esc_attr__( 'Copyright Text', 'wd_s' ),
-				'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'wd_s' ),
-				'section'     => 'wd_s_footer_section',
-				'type'        => 'textarea',
-			]
-		)
+		'wd_s_copyright_text',
+		[
+			'label'       => esc_attr__( 'Copyright Text', 'wd_s' ),
+			'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'wd_s' ),
+			'section'     => 'wd_s_footer_section',
+			'type'        => 'textarea',
+		]
 	);
 }
 
