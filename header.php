@@ -26,7 +26,7 @@
 
 <body <?php body_class( 'site-wrapper' ); ?>>
 
-	<?php wd_s_wp_body_open(); ?>
+	<?php wp_body_open(); ?>
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wd_s' ); ?></a>
 
