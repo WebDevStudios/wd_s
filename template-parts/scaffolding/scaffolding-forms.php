@@ -2,18 +2,20 @@
 /**
  * The template used for displaying forms in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'forms', '_s' ); ?>"><?php esc_html_e( 'Forms', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'forms', 'wd_s' ); ?>"><?php esc_html_e( 'Forms', 'wd_s' ); ?></h2>
 
 	<?php
 	// Search form.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Search Form',
 			'description' => 'Display the search form.',
@@ -23,7 +25,7 @@
 	);
 
 	// Input.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Input',
 			'description' => 'Display a normal input.',
@@ -33,7 +35,7 @@
 	);
 
 	// Default Select.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Default Select',
 			'description' => 'Display default select.',
@@ -43,7 +45,7 @@
 	);
 
 	// Checkbox.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Checkboxes',
 			'description' => 'Display checkboxes.',
@@ -65,7 +67,7 @@
 	);
 
 	// Radio boxes.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Radio boxes.',
 			'description' => 'Display radio boxes.',
@@ -87,7 +89,7 @@
 	);
 
 	// Textarea.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Textarea',
 			'description' => 'Display a textarea.',

@@ -1,9 +1,11 @@
 <?php
 /**
- * Theme setup.
+ * Sets up theme defaults and registers support for various WordPress features.
  *
- * @package _s
+ * @package wd_s
  */
+
+namespace WebDevStudios\wd_s;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -14,16 +16,15 @@
  *
  * @author WebDevStudios
  */
-function _s_setup() {
+function setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files.
-	 * You will also need to update the Gulpfile with the new text domain
-	 * and matching destination POT file.
+	 * If you're building a theme based on wd_s, refer to the
+	 * README.md file in this theme to find and replace all
+	 * references of wd_s
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/build/languages' );
+	load_theme_textdomain( 'wd_s', get_template_directory() . '/build/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,9 +48,9 @@ function _s_setup() {
 	// Register navigation menus.
 	register_nav_menus(
 		[
-			'primary' => esc_html__( 'Primary Menu', '_s' ),
-			'footer'  => esc_html__( 'Footer Menu', '_s' ),
-			'mobile'  => esc_html__( 'Mobile Menu', '_s' ),
+			'primary' => esc_html__( 'Primary Menu', 'wd_s' ),
+			'footer'  => esc_html__( 'Footer Menu', 'wd_s' ),
+			'mobile'  => esc_html__( 'Mobile Menu', 'wd_s' ),
 		]
 	);
 
@@ -72,7 +73,7 @@ function _s_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'_s_custom_background_args',
+			'wd_s_custom_background_args',
 			[
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -103,22 +104,22 @@ function _s_setup() {
 		'editor-font-sizes',
 		[
 			[
-				'name' => __( 'Small', '_s' ),
+				'name' => __( 'Small', 'wd_s' ),
 				'size' => 12,
 				'slug' => 'small',
 			],
 			[
-				'name' => __( 'Normal', '_s' ),
+				'name' => __( 'Normal', 'wd_s' ),
 				'size' => 16,
 				'slug' => 'normal',
 			],
 			[
-				'name' => __( 'Large', '_s' ),
+				'name' => __( 'Large', 'wd_s' ),
 				'size' => 36,
 				'slug' => 'large',
 			],
 			[
-				'name' => __( 'Huge', '_s' ),
+				'name' => __( 'Huge', 'wd_s' ),
 				'size' => 50,
 				'slug' => 'huge',
 			],
@@ -133,52 +134,4 @@ function _s_setup() {
 	add_theme_support( 'responsive-embeds' );
 }
 
-add_action( 'after_setup_theme', '_s_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- *
- * @author WebDevStudios
- */
-function _s_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
-}
-
-add_action( 'after_setup_theme', '_s_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- *
- * @author WebDevStudios
- */
-function _s_widgets_init() {
-
-	// Define sidebars.
-	$sidebars = [
-		'sidebar-1' => esc_html__( 'Sidebar 1', '_s' ),
-	];
-
-	// Loop through each sidebar and register.
-	foreach ( $sidebars as $sidebar_id => $sidebar_name ) {
-		register_sidebar(
-			[
-				'name'          => $sidebar_name,
-				'id'            => $sidebar_id,
-				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
-				'before_widget' => '<aside class="widget %2$s">',
-				'after_widget'  => '</aside>',
-				'before_title'  => '<h2 class="widget-title">',
-				'after_title'   => '</h2>',
-			]
-		);
-	}
-
-}
-
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );

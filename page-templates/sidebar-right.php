@@ -6,8 +6,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_comments;
 
 get_header(); ?>
 
@@ -20,7 +22,7 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				_s_display_comments();
+				print_comments();
 
 			endwhile; // End of the loop.
 			?>
