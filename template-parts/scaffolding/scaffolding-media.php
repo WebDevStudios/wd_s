@@ -2,19 +2,22 @@
 /**
  * The template used for displaying media in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
 
+use function WebDevStudios\wd_s\print_scaffolding_section;
+
 global $wp_embed;
+
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'media', '_s' ); ?>"><?php esc_html_e( 'Media', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'media', 'wd_s' ); ?>"><?php esc_html_e( 'Media', 'wd_s' ); ?></h2>
 
 	<?php
 	// Full-aligned cover hero.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Full-aligned Image Cover',
 			'description' => 'Display a full aligned image using Cover Block.',
@@ -32,7 +35,7 @@ global $wp_embed;
 	);
 
 	// Right-aligned Image.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Right-aligned Image',
 			'description' => 'Display a right-aligned image.',
@@ -48,7 +51,7 @@ global $wp_embed;
 	);
 
 	// Left-aligned Image.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Left-aligned Image',
 			'description' => 'Display a left-aligned image.',
@@ -64,7 +67,7 @@ global $wp_embed;
 	);
 
 	// Center-aligned Image.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Center-aligned Image',
 			'description' => 'Display a center-aligned image.',
@@ -80,7 +83,7 @@ global $wp_embed;
 	);
 
 	// Image with caption.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Image with Caption',
 			'description' => 'Display an image with a caption.',
@@ -96,7 +99,7 @@ global $wp_embed;
 	);
 
 	// Youtube embed.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Youtube Embed',
 			'description' => 'Display a youtube video.',
@@ -106,7 +109,7 @@ global $wp_embed;
 	);
 
 	// Youtube embed.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Vimeo Embed',
 			'description' => 'Display a vimeo video.',

@@ -2,22 +2,24 @@
 /**
  * The template used for displaying generic elements in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'elements', '_s' ); ?>"><?php esc_html_e( 'Generic Elements', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'elements', 'wd_s' ); ?>"><?php esc_html_e( 'Generic Elements', 'wd_s' ); ?></h2>
 
 	<?php
 	// Right-aligned Image.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Numeric Pagination',
 			'description' => 'Display numeric pagination.',
-			'usage'       => '_s_display_numeric_pagination()',
+			'usage'       => 'wd_s_print_numeric_pagination()',
 			'output'      => '
 				<nav class="pagination-container">
 					<a class="prev page-numbers" href="#>&laquo;</a>
