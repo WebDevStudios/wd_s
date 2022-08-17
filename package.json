@@ -44,7 +44,7 @@
 		"postcss": "^8.4.14",
 		"postcss-loader": "^7.0.1",
 		"postcss-move-props-to-bg-image-query": "^4.0.0",
-		"postcss-preset-env": "^7.7.2",
+		"postcss-preset-env": "^7.8.0",
 		"prettier": "npm:wp-prettier@^2.6.2",
 		"sass-loader": "^13.0.2",
 		"stylelint-config-prettier": "^9.0.3",
