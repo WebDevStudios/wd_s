@@ -31,6 +31,6 @@
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
 		"lint": "phpcs --report=summary,source",
-		"pot": "wp i18n make-pot . build/languages/_s.pot --exclude=node_modules,vendor,build --allow-root"
+		"pot": "wp i18n make-pot . build/languages/wd_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }

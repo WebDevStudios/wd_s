@@ -7,7 +7,8 @@
  * @package wd_s
  */
 
-use function WebDevStudios\wd_s\print_posted_on;
+use function WebDevStudios\wd_s\print_post_date;
+use function WebDevStudios\wd_s\print_post_author;
 use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
@@ -19,7 +20,8 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php print_posted_on(); ?>
+				<?php print_post_date(); ?>
+				<?php print_post_author(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->

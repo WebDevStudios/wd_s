@@ -8,7 +8,7 @@
 namespace WebDevStudios\wd_s;
 
 /**
- * Shortcode to display copyright year.
+ * Create a Shortcode to display the copyright year.
  *
  * @author Haris Zulfiqar
  *
@@ -18,7 +18,7 @@ namespace WebDevStudios\wd_s;
  *
  * @return string Copyright year text.
  */
-function copyright_year( $atts ) {
+function create_shortcode_copyright_year( $atts ) {
 	// Setup defaults.
 	$args = shortcode_atts(
 		[
@@ -38,4 +38,4 @@ function copyright_year( $atts ) {
 	return esc_html( $args['starting_year'] . $args['separator'] . $current_year );
 }
 
-add_shortcode( '_wd_s_copyright_year', __NAMESPACE__ . '\copyright_year', 15 );
+add_shortcode( 'wds_copyright_year', __NAMESPACE__ . '\create_shortcode_copyright_year', 15 );

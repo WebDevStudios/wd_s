@@ -17,7 +17,7 @@ namespace WebDevStudios\wd_s;
  * @author WebDevStudios
  */
 function content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_wd_s_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'wd_s_content_width', 640 );
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );

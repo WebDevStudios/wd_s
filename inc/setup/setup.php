@@ -20,10 +20,9 @@ function setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files.
-	 * You will also need to update the Gulpfile with the new text domain
-	 * and matching destination POT file.
+	 * If you're building a theme based on wd_s, refer to the
+	 * README.md file in this theme to find and replace all
+	 * references of wd_s
 	 */
 	load_theme_textdomain( 'wd_s', get_template_directory() . '/build/languages' );
 
@@ -74,7 +73,7 @@ function setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'_wd_s_custom_background_args',
+			'wd_s_custom_background_args',
 			[
 				'default-color' => 'ffffff',
 				'default-image' => '',

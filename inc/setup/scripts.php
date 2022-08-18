@@ -25,9 +25,9 @@ function scripts() {
 	}
 
 	// Register styles & scripts.
-	wp_enqueue_style( 'wd_s', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
-	wp_enqueue_script( 'wds-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 	wp_enqueue_script( 'abs-alpine', 'https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js', $asset_file['dependencies'], $asset_file['version'], true );
+	wp_enqueue_style( 'wd_s-styles', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
+	wp_enqueue_script( 'wd_s-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

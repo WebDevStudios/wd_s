@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  */
 function print_customizer_header_scripts() {
 	// Check for header scripts.
-	$scripts = get_theme_mod( '_wd_s_header_scripts' );
+	$scripts = get_theme_mod( 'wd_s_header_scripts' );
 
 	// None? Bail...
 	if ( ! $scripts ) {
@@ -25,7 +25,7 @@ function print_customizer_header_scripts() {
 
 	// Otherwise, echo the scripts!
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
-	echo get_the_content( $scripts );
+	echo get_post_content( $scripts );
 }
 
 add_action( 'wp_head', __NAMESPACE__ . '\print_customizer_header_scripts', 999 );

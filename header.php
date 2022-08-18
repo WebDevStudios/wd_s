@@ -46,10 +46,10 @@
 
 				<?php
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) :
+				$wd_s_description = get_bloginfo( 'description', 'display' );
+				if ( $wd_s_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo esc_html( $description ); ?></p>
+					<p class="site-description"><?php echo esc_html( $wd_s_description ); ?></p>
 				<?php endif; ?>
 
 			</div><!-- .site-branding -->

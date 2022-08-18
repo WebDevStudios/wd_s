@@ -15,7 +15,7 @@ namespace WebDevStudios\wd_s;
 function hook_theme_scaffolding() {
 	$template_dir = 'template-parts/scaffolding/scaffolding';
 
-	theme_scaffolding_nav();
+	print_theme_scaffolding_nav();
 
 	get_template_part( $template_dir, 'globals' );
 	get_template_part( $template_dir, 'typography' );
@@ -26,4 +26,4 @@ function hook_theme_scaffolding() {
 	get_template_part( $template_dir, 'elements' );
 }
 
-add_action( '_wd_s_scaffolding_content', __NAMESPACE__ . '\hook_theme_scaffolding' );
+add_action( 'wd_s_scaffolding_content', __NAMESPACE__ . '\hook_theme_scaffolding' );

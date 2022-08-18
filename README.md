@@ -53,15 +53,20 @@ If you want to set me up manually:
 
 2. Find & Replace
 
-You'll need to change all instances of the names: `_s`.
+You'll need to change all instances of the name: `wd_s`.
 
-- Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
-- Search for: `"_s"` and replace with: `"project-name"` (inside double quotations) to capture the text domain
-- Search for: `_wd_s_` and replace with: `project-name_` to capture all the function names
-- Search for: `Text Domain: wd_s` and replace with: `Text Domain: project-name` in style.css
-- Search for (and include the leading space): ` _s` and replace with: ` Project Name` (with a space before it) to capture DocBlocks
-- Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
-- Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
+- Search for: `@package wd_s` and replace with: `@package project_name` to capture the package name
+- Update `"WebDevStudios\wd_s,wd_s"` to: `"CompanyName\project_name,project_name"` (with double quotes) in phpcs.xml.dist
+- Search for: `WebDevStudios\wd_s` and replace with: `CompanyName\project_name` to capture the namespaces
+- Update `"webdevstudios/wd_s"` to `"companyname/project_name"` (with double quotes) in composer.json
+- Search for: `, 'wd_s'` and replace with: `, 'project_name'` (inside backticks) to capture the text domain
+- Update `Text Domain: wd_s` to: `Text Domain: project_name` in style.css
+- Update `"wd_s"` to: `"project_name"` (with double quotes) in phpcs.xml.dist and package.json
+- Update `'wd_s'` to: `'project_name'` (with single quotes) in inc/setup/setup.php
+- Search for: `wd_s_` and replace with: `project_name_` to capture all the function names
+- Search for: `'wd_s-` and replace with: `'project_name-` to capture prefixed handles
+- Search for `wd_s.pot` and replace with: `project_name.pot` to capture translation files
+- Search for `wdunderscores.test` and replace with: `project_name.test` to match your local development URL
 - Edit the theme information in the header of style.scss to meet your needs
 
 ## Setup

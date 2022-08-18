@@ -17,7 +17,7 @@ function customize_sections( $wp_customize ) {
 
 	// Register additional scripts section.
 	$wp_customize->add_section(
-		'_wd_s_additional_scripts_section',
+		'wd_s_additional_scripts_section',
 		[
 			'title'    => esc_html__( 'Additional Scripts', 'wd_s' ),
 			'priority' => 10,
@@ -27,7 +27,7 @@ function customize_sections( $wp_customize ) {
 
 	// Register a social links section.
 	$wp_customize->add_section(
-		'_wd_s_social_links_section',
+		'wd_s_social_links_section',
 		[
 			'title'       => esc_html__( 'Social Media', 'wd_s' ),
 			'description' => esc_html__( 'Links here power the print_social_network_links() template tag.', 'wd_s' ),
@@ -38,7 +38,7 @@ function customize_sections( $wp_customize ) {
 
 	// Register a header section.
 	$wp_customize->add_section(
-		'_wd_s_header_section',
+		'wd_s_header_section',
 		[
 			'title'    => esc_html__( 'Header Customizations', 'wd_s' ),
 			'priority' => 90,
@@ -48,7 +48,7 @@ function customize_sections( $wp_customize ) {
 
 	// Register a footer section.
 	$wp_customize->add_section(
-		'_wd_s_footer_section',
+		'wd_s_footer_section',
 		[
 			'title'    => esc_html__( 'Footer Customizations', 'wd_s' ),
 			'priority' => 90,

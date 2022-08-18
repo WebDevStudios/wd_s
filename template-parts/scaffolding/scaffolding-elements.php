@@ -19,7 +19,7 @@ use function WebDevStudios\wd_s\print_scaffolding_section;
 		[
 			'title'       => 'Numeric Pagination',
 			'description' => 'Display numeric pagination.',
-			'usage'       => '_wd_s_print_numeric_pagination()',
+			'usage'       => 'wd_s_print_numeric_pagination()',
 			'output'      => '
 				<nav class="pagination-container">
 					<a class="prev page-numbers" href="#>&laquo;</a>

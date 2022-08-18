@@ -6,7 +6,7 @@
  */
 
 // Make sure our search forms have unique IDs in the event more than 1 is on a page.
-$random_identifier = wp_rand();
+$wd_s_random_identifier = wp_rand();
 ?>
 
 <form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

@@ -65,7 +65,7 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	 */
 	protected function enqueue_scripts() {
 		wp_enqueue_script( 'tiny_mce' );
-		wp_enqueue_script( 'wds-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', [ 'jquery' ], '1.0.0', true );
+		wp_enqueue_script( 'wd_s-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', [ 'jquery' ], '1.0.0', true );
 	}
 
 	/**
@@ -74,6 +74,6 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	 * @author WebDevStudios
 	 */
 	protected function add_footer_scripts() {
-		do_action( 'admin_print_footer_scripts' );
+		do_action( 'wd_s_admin_print_footer_scripts' );
 	}
 }
