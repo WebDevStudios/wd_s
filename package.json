@@ -37,7 +37,7 @@
 		"esbuild-postcss": "^0.0.4",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"glob": "^7.2.3",
-		"imagemin": "github:imagemin/imagemin#bfd7c547045f68ed92243c6a772f6265a08a687f",
+		"imagemin": "*",
 		"imagemin-gifsicle": "^7.0.0",
 		"imagemin-jpegtran": "^7.0.0",
 		"imagemin-pngquant": "^9.0.2",
