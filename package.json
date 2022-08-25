@@ -25,7 +25,7 @@
 		"@arkweid/lefthook": "^0.7.7",
 		"@wordpress/eslint-plugin": "12.8.0",
 		"@wordpress/prettier-config": "^1.4.0",
-		"@wordpress/scripts": "^23.3.0",
+		"@wordpress/scripts": "^24.0.0",
 		"autoprefixer": "^10.4.8",
 		"browser-sync": "^2.27.10",
 		"clean-webpack-plugin": "^4.0.0",
