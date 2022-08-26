@@ -1,100 +1,100 @@
 {
-    "key": "group_61e58e490f037",
-    "title": "Field: Image (to clone)",
-    "fields": [
-        {
-            "key": "field_61e58f84bc7bc",
-            "label": "Media Library or URL?",
-            "name": "media_library_or_url",
-            "type": "true_false",
-            "instructions": "Pick the image from the Media Library, or enter an image URL?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "Library",
-            "ui_off_text": "URL"
-        },
-        {
-            "key": "field_61e58e5dbc7b9",
-            "label": "Media Library Image",
-            "name": "attachment_id",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_61e58f84bc7bc",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_61e58e79bc7ba",
-            "label": "Image URL",
-            "name": "src",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_61e58f84bc7bc",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": false,
-    "description": "",
-    "show_in_rest": 0,
-    "modified": 1642452926
+	"key": "group_61e58e490f037",
+	"title": "Field: Image (to clone)",
+	"fields": [
+		{
+			"key": "field_61e58f84bc7bc",
+			"label": "Media Library or URL?",
+			"name": "media_library_or_url",
+			"type": "true_false",
+			"instructions": "Pick the image from the Media Library, or enter an image URL?",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 1,
+			"ui": 1,
+			"ui_on_text": "Library",
+			"ui_off_text": "URL"
+		},
+		{
+			"key": "field_61e58e5dbc7b9",
+			"label": "Media Library Image",
+			"name": "attachment_id",
+			"type": "image",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_61e58f84bc7bc",
+						"operator": "==",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "id",
+			"preview_size": "medium",
+			"library": "all",
+			"min_width": "",
+			"min_height": "",
+			"min_size": "",
+			"max_width": "",
+			"max_height": "",
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_61e58e79bc7ba",
+			"label": "Image URL",
+			"name": "src",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_61e58f84bc7bc",
+						"operator": "!=",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "post"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": false,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1642452926
 }
