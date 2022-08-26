@@ -7,10 +7,10 @@
 
 acf_register_block_type(
 	[
-		'name'            => 'cards-manual',
-		'title'           => __( 'Cards - Manual', 'wd_s' ),
-		'description'     => __( 'A block used to show 3 Cards with manually inserted content.', 'wd_s' ),
-		'render_template' => get_template_directory() . '/template-parts/blocks/cards-manual.php',
+		'name'            => 'cards-repeater',
+		'title'           => __( 'Cards - Repeater', 'wd_s' ),
+		'description'     => __( 'A block used to show Cards with a repeater used to insert content.', 'wd_s' ),
+		'render_template' => get_template_directory() . '/template-parts/blocks/cards-repeater.php',
 		'category'        => 'wd_s',
 		'icon'            => 'images-alt',
 		'keywords'        => [ 'cards', 'block' ],
