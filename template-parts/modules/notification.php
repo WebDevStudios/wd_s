@@ -18,7 +18,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
 $wd_s_defaults = [
-	'class'       => [ 'abs-module', 'abs-module-notification' ],
+	'class'       => [ 'wds-module', 'wds-module-notification' ],
 	'text_args'   => [],
 	'icon'        => [],
 	'dismissible' => false,

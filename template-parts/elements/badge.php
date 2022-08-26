@@ -14,7 +14,7 @@ use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\print_svg;
 
 $wd_s_defaults = [
-	'class'         => [ 'abs-element', 'abs-element-badge' ],
+	'class'         => [ 'wds-element', 'wds-element-badge' ],
 	'id'            => '',
 	'text'          => false,
 	'href'          => false,

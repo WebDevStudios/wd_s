@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
 $wd_s_defaults = [
-	'class'         => [ 'abs-module', 'abs-module-card' ],
+	'class'         => [ 'wds-module', 'wds-module-card' ],
 	'eyebrow'       => false,
 	'heading'       => false,
 	'content'       => false,

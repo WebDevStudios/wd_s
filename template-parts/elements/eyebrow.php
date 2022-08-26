@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
 $wd_s_defaults = [
-	'class' => [ 'abs-element', 'abs-element-eyebrow' ],
+	'class' => [ 'wds-element', 'wds-element-eyebrow' ],
 	'text'  => false,
 ];
 

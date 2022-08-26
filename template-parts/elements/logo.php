@@ -14,7 +14,7 @@ use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\get_attachment_id_from_url;
 
 $wd_s_defaults = [
-	'class'     => [ 'abs-element', 'abs-element-logo' ],
+	'class'     => [ 'wds-element', 'wds-element-logo' ],
 	'logo_name' => '',
 	'loading'   => 'eager',
 	'alt'       => get_bloginfo( 'name' ) . ' logo',

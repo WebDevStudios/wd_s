@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
 $wd_s_defaults = [
-	'class'       => [ 'abs-module', 'abs-module-carousel' ],
+	'class'       => [ 'wds-module', 'wds-module-carousel' ],
 	'heros'       => [],
 	'show_arrows' => true,
 ];
@@ -27,7 +27,7 @@ if ( count( $wd_s_args['heros'] ) ) :
 	// Set up element attributes.
 	$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
-	wp_enqueue_script( 'abs-smoothscroll', 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js', [ 'abs-alpine' ], '1.0', true );
+	wp_enqueue_script( 'wds-smoothscroll', 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js', [ 'wds-alpine' ], '1.0', true );
 
 	?>
 	<div

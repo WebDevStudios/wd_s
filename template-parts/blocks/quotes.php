@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_acf_fields;
 
 $wd_s_defaults = [
-	'class' => [ 'abs-block', 'abs-block-quotes' ],
+	'class' => [ 'wds-block', 'wds-block-quotes' ],
 ];
 
 // Set up element attributes.

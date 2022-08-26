@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
 $wd_s_defaults = [
-	'class'         => [ 'abs-module', 'abs-module-hero' ],
+	'class'         => [ 'wds-module', 'wds-module-hero' ],
 	'attachment_id' => false,
 	'overlay'       => false,
 	'eyebrow'       => false,

@@ -12,7 +12,7 @@ use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
-	'class' => [ 'abs-module', 'abs-module-accordion' ],
+	'class' => [ 'wds-module', 'wds-module-accordion' ],
 	'items' => [],
 ];
 

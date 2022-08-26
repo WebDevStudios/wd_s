@@ -34,7 +34,7 @@ use function WebDevStudios\wd_s\print_post_date;
 use function WebDevStudios\wd_s\print_post_taxonomies;
 
 $wd_s_defaults = [
-	'class'            => [ 'abs-module', 'abs-module-meta', 'entry-meta' ],
+	'class'            => [ 'wds-module', 'wds-module-meta', 'entry-meta' ],
 	'display_date'     => true,
 	'display_author'   => true,
 	'display_taxonomy' => false,
