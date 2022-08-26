@@ -1,21 +1,22 @@
 {
-	"name": "accordion",
+	"name": "acf/accordion",
 	"title": "Accordion",
 	"description": "A block used to show an Accordion.",
 	"style": "file:./accordion.css",
-	"category": "wd_s",
+	"category": "theme",
 	"icon": "table-row-before",
 	"apiVersion": 2,
 	"keywords": [ "accordion", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "accordion.php",
+		"postTypes": [ "post", "page" ]
+	},
 	"supports": {
 		"align": false,
 		"jsx": true,
 		"anchor": false,
 		"customClassName": false
-	},
-	"acf": {
-		"mode": "preview",
-		"renderTemplate": "accordion.php"
 	},
 	"example": {
 		"attributes": {
