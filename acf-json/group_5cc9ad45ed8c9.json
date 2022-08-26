@@ -70,7 +70,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "table",
             "sub_fields": [
                 {
                     "key": "field_61e5c029c2786",
@@ -93,7 +93,7 @@
                     "sub_fields": [
                         {
                             "key": "field_5cc9ad460902d",
-                            "label": "Accordion Title",
+                            "label": "Accordion Item Title",
                             "name": "text",
                             "type": "text",
                             "instructions": "Set the title of the individual accordion. Clicking\/Tapping on this will expand and collapse the accordion.",
@@ -105,15 +105,15 @@
                                 "id": ""
                             },
                             "default_value": "",
+                            "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": "",
                             "parent_repeater": "field_61e5c029c2786"
                         },
                         {
                             "key": "field_61f4274477bcc",
-                            "label": "Accordion",
+                            "label": "Accordion Item Content",
                             "name": "content",
                             "type": "textarea",
                             "instructions": "",
@@ -125,9 +125,9 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
                             "maxlength": "",
                             "rows": "",
+                            "placeholder": "",
                             "new_lines": "br",
                             "parent_repeater": "field_61e5c029c2786"
                         }
@@ -154,5 +154,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661536579
+    "modified": 1661542235
 }
