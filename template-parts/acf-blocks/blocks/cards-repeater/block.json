@@ -15,7 +15,8 @@
 	"supports": {
 		"align": false,
 		"anchor": false,
-		"customClassName": false
+		"customClassName": false,
+		"jsx": true
 	},
 	"example": {
 		"attributes": {
