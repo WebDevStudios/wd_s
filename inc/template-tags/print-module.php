@@ -16,5 +16,5 @@ namespace WebDevStudios\wd_s;
  * @param array  $args Args for the module.
  */
 function print_module( $module_name = '', $args ) {
-	get_template_part( 'template-parts/modules/' . $module_name, '', $args );
+	get_template_part( 'template-parts/acf-blocks/modules/' . $module_name, '', $args );
 }
