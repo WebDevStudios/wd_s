@@ -22,6 +22,7 @@ $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
 
 $wd_s_accordion = get_acf_fields( [ 'block_heading', 'block_content', 'accordion_items' ], $block['id'] );
 ?>
+
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
 		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/build/images/block-previews/accordion-preview.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Accordion Block', 'wd_s' ); ?>">
@@ -29,7 +30,7 @@ $wd_s_accordion = get_acf_fields( [ 'block_heading', 'block_content', 'accordion
 <?php elseif ( $wd_s_accordion['accordion_items']['items'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
-		// echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
+		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
 
 		if ( $wd_s_accordion['block_heading'] ) :
 			print_element(
