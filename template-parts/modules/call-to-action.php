@@ -13,41 +13,41 @@ use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'        => [ 'abs-module', 'abs-module-cta' ],
 	'eyebrow'      => false,
 	'heading_args' => false,
 	'button'       => false,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up element attributes.
-$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 ?>
-<div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Eyebrow.
-	if ( $abs_args['eyebrow'] ) :
+	if ( $wd_s_args['eyebrow'] ) :
 		print_element(
 			'eyebrow',
 			[
-				'text' => $abs_args['eyebrow'],
+				'text' => $wd_s_args['eyebrow'],
 			]
 		);
 	endif;
 
 	// Heading.
-	if ( $abs_args['heading_args'] ) :
-		print_element( 'heading', $abs_args['heading_args'] );
+	if ( $wd_s_args['heading_args'] ) :
+		print_element( 'heading', $wd_s_args['heading_args'] );
 	endif;
 
 	// Button.
-	if ( $abs_args['button'] ) :
+	if ( $wd_s_args['button'] ) :
 		print_element(
 			'button',
-			$abs_args['button']
+			$wd_s_args['button']
 		);
 	endif;
 	?>

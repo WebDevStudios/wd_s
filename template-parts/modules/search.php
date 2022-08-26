@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'       => [ 'abs-module', 'abs-module-search' ],
 	'action'      => home_url( '/' ),
 	'method'      => 'get',
@@ -21,13 +21,13 @@ $abs_defaults = [
 	'button_text' => false,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up element attributes.
-$abs_atts = get_formatted_atts( [ 'class', 'method', 'action' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class', 'method', 'action' ], $wd_s_args );
 
 ?>
-<form <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<form <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Input.
 	print_element(

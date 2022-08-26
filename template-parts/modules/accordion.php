@@ -11,22 +11,22 @@ use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class' => [ 'abs-module', 'abs-module-accordion' ],
 	'items' => [],
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up element attributes.
-$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 ?>
 
-<div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> x-data="{ active: 0 }">
-	<?php foreach ( $abs_args['items'] as $abs_key => $abs_item ) : ?>
+<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> x-data="{ active: 0 }">
+	<?php foreach ( $wd_s_args['items'] as $wd_s_key => $wd_s_item ) : ?>
 		<div
 			x-data="{
-				id: <?php echo esc_attr( $abs_key ); ?>,
+				id: <?php echo esc_attr( $wd_s_key ); ?>,
 				get expanded() {
 					return this.active === this.id
 				},
@@ -41,10 +41,10 @@ $abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 				'button',
 				[
 					'class'  => [ 'accordion-title' ],
-					'id'     => 'accordion-item-' . $abs_key,
-					'title'  => $abs_item['text'],
+					'id'     => 'accordion-item-' . $wd_s_key,
+					'title'  => $wd_s_item['text'],
 					'aria'   => [
-						'controls' => 'accordion-content-' . $abs_key,
+						'controls' => 'accordion-content-' . $wd_s_key,
 					],
 					'alpine' => [
 						'x-on:click'     => 'expanded = !expanded',
@@ -61,18 +61,18 @@ $abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
 			?>
 
 			<div
-				id="accordion-content-<?php echo esc_attr( $abs_key ); ?>"
+				id="accordion-content-<?php echo esc_attr( $wd_s_key ); ?>"
 				x-show="expanded"
 				x-collapse
 				role="region"
-				aria-labelledby="accordion-item-<?php echo esc_attr( $abs_key ); ?>"
+				aria-labelledby="accordion-item-<?php echo esc_attr( $wd_s_key ); ?>"
 			>
 			<?php
 			print_element(
 				'content',
 				[
 					'class'   => [ 'accordion-content' ],
-					'content' => $abs_item['content'],
+					'content' => $wd_s_item['content'],
 				]
 			);
 			?>

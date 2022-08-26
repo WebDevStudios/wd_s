@@ -12,23 +12,23 @@
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class' => [ 'abs-element', 'abs-element-blockquote' ],
 	'id'    => '',
 	'cite'  => false,
 	'quote' => false,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Make sure element should render.
-if ( $abs_args['quote'] ) :
+if ( $wd_s_args['quote'] ) :
 
 	// Set up element attributes.
-	$abs_atts = get_formatted_atts( [ 'class', 'id' ], $abs_args );
+	$wd_s_atts = get_formatted_atts( [ 'class', 'id' ], $wd_s_args );
 	?>
 	<blockquote>
-		<p><?php echo esc_html( $abs_args['quote'] ); ?></p>
-		<cite><?php echo esc_html( $abs_args['cite'] ); ?></cite>
+		<p><?php echo esc_html( $wd_s_args['quote'] ); ?></p>
+		<cite><?php echo esc_html( $wd_s_args['cite'] ); ?></cite>
 	</blockquote>
 <?php endif; ?>

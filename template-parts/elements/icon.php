@@ -25,15 +25,15 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\print_svg;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'    => [ 'abs-element', 'abs-element-icon' ],
 	'svg_args' => [],
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up element attributes.
-$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 ?>
-<span <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php print_svg( $abs_args['svg_args'] ); ?></span>
+<span <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php print_svg( $wd_s_args['svg_args'] ); ?></span>

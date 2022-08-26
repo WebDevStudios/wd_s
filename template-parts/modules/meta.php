@@ -33,7 +33,7 @@ use function WebDevStudios\wd_s\print_post_author;
 use function WebDevStudios\wd_s\print_post_date;
 use function WebDevStudios\wd_s\print_post_taxonomies;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'            => [ 'abs-module', 'abs-module-meta', 'entry-meta' ],
 	'display_date'     => true,
 	'display_author'   => true,
@@ -43,25 +43,25 @@ $abs_defaults = [
 	'taxonomy_args'    => [],
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up the meta class.
-$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 ?>
 
-<div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Display the meta.
-	if ( ! empty( $abs_args['display_date'] ) ) :
-		print_post_date( $abs_args['date_args'] );
+	if ( ! empty( $wd_s_args['display_date'] ) ) :
+		print_post_date( $wd_s_args['date_args'] );
 	endif;
 
-	if ( ! empty( $abs_args['display_author'] ) ) :
-		print_post_author( $abs_args['author_args'] );
+	if ( ! empty( $wd_s_args['display_author'] ) ) :
+		print_post_author( $wd_s_args['author_args'] );
 	endif;
 
-	if ( ! empty( $abs_args['display_taxonomy'] ) ) :
-		print_post_taxonomies( $abs_args['taxonomy_args'] );
+	if ( ! empty( $wd_s_args['display_taxonomy'] ) ) :
+		print_post_taxonomies( $wd_s_args['taxonomy_args'] );
 	endif;
 	?>
 </div>

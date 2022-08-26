@@ -14,7 +14,7 @@ use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'         => [ 'abs-module', 'abs-module-card' ],
 	'eyebrow'       => false,
 	'heading'       => false,
@@ -26,65 +26,65 @@ $abs_defaults = [
 	'meta'          => false,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Set up element attributes.
-$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 ?>
-<div <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php
 	// Image.
-	if ( $abs_args['attachment_id'] || $abs_args['src'] ) :
+	if ( $wd_s_args['attachment_id'] || $wd_s_args['src'] ) :
 		print_element(
 			'image',
 			[
-				'attachment_id' => $abs_args['attachment_id'],
-				'src'           => $abs_args['src'],
+				'attachment_id' => $wd_s_args['attachment_id'],
+				'src'           => $wd_s_args['src'],
 				'class'         => 'aspectratio-3-2',
 			]
 		);
 	endif;
 
 	// Eyebrow.
-	if ( $abs_args['eyebrow'] ) :
+	if ( $wd_s_args['eyebrow'] ) :
 		print_element(
 			'eyebrow',
 			[
-				'text' => $abs_args['eyebrow'],
+				'text' => $wd_s_args['eyebrow'],
 			]
 		);
 	endif;
 
 	// Heading.
-	if ( $abs_args['heading'] ) :
+	if ( $wd_s_args['heading'] ) :
 		print_element(
 			'heading',
 			[
-				'text'  => $abs_args['heading'],
+				'text'  => $wd_s_args['heading'],
 				'level' => 2,
 			]
 		);
 	endif;
 
 	// Meta - can be passed as an empty array.
-	if ( is_array( $abs_args['meta'] ) ) :
-		print_module( 'meta', $abs_args['meta'] );
+	if ( is_array( $wd_s_args['meta'] ) ) :
+		print_module( 'meta', $wd_s_args['meta'] );
 	endif;
 
 	// Content.
-	if ( $abs_args['content'] ) :
+	if ( $wd_s_args['content'] ) :
 		print_element(
 			'content',
 			[
-				'content' => $abs_args['content'],
+				'content' => $wd_s_args['content'],
 			]
 		);
 	endif;
 
 	// Button.
-	if ( $abs_args['button'] ) :
-		print_element( 'button', $abs_args['button'] );
+	if ( $wd_s_args['button'] ) :
+		print_element( 'button', $wd_s_args['button'] );
 	endif;
 	?>
 </div>

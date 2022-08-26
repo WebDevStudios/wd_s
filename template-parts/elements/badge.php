@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 use function WebDevStudios\wd_s\print_svg;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'         => [ 'abs-element', 'abs-element-badge' ],
 	'id'            => '',
 	'text'          => false,
@@ -24,27 +24,27 @@ $abs_defaults = [
 	'icon_position' => 'after', // before, after.
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Make sure element should render.
-if ( $abs_args['text'] ) :
+if ( $wd_s_args['text'] ) :
 
-	if ( ! empty( $abs_args['icon'] ) ) :
-		$abs_args['class'][] = 'icon';
-		$abs_args['class'][] = 'icon-' . $abs_args['icon_position'];
+	if ( ! empty( $wd_s_args['icon'] ) ) :
+		$wd_s_args['class'][] = 'icon';
+		$wd_s_args['class'][] = 'icon-' . $wd_s_args['icon_position'];
 	endif;
 
 	// Set up element attributes.
-	$abs_atts = get_formatted_atts( [ 'id', 'href', 'target', 'class', 'type' ], $abs_args );
+	$wd_s_atts = get_formatted_atts( [ 'id', 'href', 'target', 'class', 'type' ], $wd_s_args );
 
 	?>
-	<<?php echo $abs_args['href'] ? 'a' : 'span'; ?> <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-		<?php echo esc_html( $abs_args['text'] ); ?>
+	<<?php echo $wd_s_args['href'] ? 'a' : 'span'; ?> <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		<?php echo esc_html( $wd_s_args['text'] ); ?>
 		<?php
-		if ( ! empty( $abs_args['icon'] ) ) :
-			print_svg( $abs_args['icon'] );
+		if ( ! empty( $wd_s_args['icon'] ) ) :
+			print_svg( $wd_s_args['icon'] );
 		endif;
 		?>
-	</<?php echo $abs_args['href'] ? 'a' : 'span'; ?>>
+	</<?php echo $wd_s_args['href'] ? 'a' : 'span'; ?>>
 
 <?php endif; ?>

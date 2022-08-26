@@ -12,20 +12,20 @@
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class' => [ 'abs-element', 'abs-element-button' ],
 	'text'  => false,
 	'for'   => false,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
 // Make sure element should render.
-if ( $abs_args['text'] ) :
+if ( $wd_s_args['text'] ) :
 
 	// Set up element attributes.
-	$abs_atts = get_formatted_atts( [ 'for', 'class' ], $abs_args );
+	$wd_s_atts = get_formatted_atts( [ 'for', 'class' ], $wd_s_args );
 
 	?>
-	<label <?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $abs_args['text'] ); ?></label>
+	<label <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $wd_s_args['text'] ); ?></label>
 <?php endif; ?>

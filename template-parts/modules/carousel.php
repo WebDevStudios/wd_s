@@ -14,24 +14,24 @@ use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_formatted_args;
 
-$abs_defaults = [
+$wd_s_defaults = [
 	'class'       => [ 'abs-module', 'abs-module-carousel' ],
 	'heros'       => [],
 	'show_arrows' => true,
 ];
 
-$abs_args = get_formatted_args( $args, $abs_defaults );
+$wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 
-if ( count( $abs_args['heros'] ) ) :
+if ( count( $wd_s_args['heros'] ) ) :
 
 	// Set up element attributes.
-	$abs_atts = get_formatted_atts( [ 'class' ], $abs_args );
+	$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 	wp_enqueue_script( 'abs-smoothscroll', 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js', [ 'abs-alpine' ], '1.0', true );
 
 	?>
 	<div
-		<?php echo $abs_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		x-data="{
 			skip: 1,
 			currentIndex: 0,
@@ -66,7 +66,7 @@ if ( count( $abs_args['heros'] ) ) :
 
 		>
 			<?php
-			if ( $abs_args['show_arrows'] ) :
+			if ( $wd_s_args['show_arrows'] ) :
 				print_element(
 					'button',
 					[
@@ -94,12 +94,12 @@ if ( count( $abs_args['heros'] ) ) :
 				class="snap-x snap-mandatory"
 			>
 
-				<?php foreach ( $args['heros'] as $abs_hero ) : ?>
+				<?php foreach ( $args['heros'] as $wd_s_hero ) : ?>
 					<li class="snap-start" role="option">
 						<?php
 						print_module(
 							'hero',
-							$abs_hero
+							$wd_s_hero
 						);
 						?>
 					</li>
@@ -107,7 +107,7 @@ if ( count( $abs_args['heros'] ) ) :
 
 			</ul>
 			<?php
-			if ( $abs_args['show_arrows'] ) :
+			if ( $wd_s_args['show_arrows'] ) :
 				print_element(
 					'button',
 					[

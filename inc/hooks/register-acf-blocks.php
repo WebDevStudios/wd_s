@@ -23,12 +23,12 @@ if ( function_exists( 'acf_register_block_type' ) ) :
 	 */
 	function register_acf_gutenberg_blocks() {
 
-		$abs_blocks_folder = trailingslashit( get_template_directory() ) . 'inc/blocks/';
+		$wd_s_blocks_folder = trailingslashit( get_template_directory() ) . 'inc/blocks/';
 
 		// Include all of the blocks in the directory.
-		if ( is_dir( $abs_blocks_folder ) ) :
-			foreach ( glob( $abs_blocks_folder . '*.php' ) as $abs_block ) :
-				require $abs_block;
+		if ( is_dir( $wd_s_blocks_folder ) ) :
+			foreach ( glob( $wd_s_blocks_folder . '*.php' ) as $wd_s_block ) :
+				require $wd_s_block;
 			endforeach;
 		endif;
 

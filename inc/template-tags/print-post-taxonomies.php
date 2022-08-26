@@ -33,31 +33,31 @@ function print_post_taxonomies( $args = [] ) {
 	endif;
 
 	// Get the terms.
-	$abs_terms = get_the_terms( $args['post_id'], $args['tax_name'] );
+	$wd_s_terms = get_the_terms( $args['post_id'], $args['tax_name'] );
 
 	// Set up the display.
-	$abs_tagname = $args['in_list'] ? 'ul' : 'span';
+	$wd_s_tagname = $args['in_list'] ? 'ul' : 'span';
 	?>
 
-	<<?php echo $abs_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="post-taxonomies">
+	<<?php echo $wd_s_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="post-taxonomies">
 		<?php
-		foreach ( $abs_terms as $abs_term ) :
+		foreach ( $wd_s_terms as $wd_s_term ) :
 			echo wp_kses_post( $args['in_list'] ? '<li class="taxonomy-item">' : '<span class="taxonomy-item">' );
 			if ( $args['linked'] ) :
 				print_element(
 					'anchor',
 					[
-						'text' => $abs_term->name,
-						'href' => get_term_link( $abs_term->term_id, $args['tax_name'] ),
+						'text' => $wd_s_term->name,
+						'href' => get_term_link( $wd_s_term->term_id, $args['tax_name'] ),
 					]
 				);
 			else :
-				echo esc_html( $abs_term->name );
+				echo esc_html( $wd_s_term->name );
 			endif;
 			echo $args['in_list'] ? '</li>' : '</span>';
 		endforeach;
 		?>
-	</<?php echo $abs_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+	</<?php echo $wd_s_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 	<?php
 }

@@ -18,7 +18,7 @@ get_header(); ?>
 			<h1>Elements Documentation</h1>
 			<?php
 			// Anchor.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'anchor',
 				'args' => [
 					'class'  => [ 'anchor-1' ],
@@ -29,7 +29,7 @@ get_header(); ?>
 			];
 
 			// Badge.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'badge',
 				'args' => [
 					'class'         => [ 'button-1' ],
@@ -42,7 +42,7 @@ get_header(); ?>
 			];
 
 			// Button.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'button',
 				'args' => [
 					'class'         => [ 'button-1' ],
@@ -63,7 +63,7 @@ get_header(); ?>
 			];
 
 			// Content.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'content',
 				'args' => [
 					'class'   => [ 'content-1' ],
@@ -72,7 +72,7 @@ get_header(); ?>
 			];
 
 			// Eyebrow.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'eyebrow',
 				'args' => [
 					'class' => [ 'eyebrow-1' ],
@@ -81,7 +81,7 @@ get_header(); ?>
 			];
 
 			// Heading.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'heading',
 				'args' => [
 					'class' => [ 'heading-1' ],
@@ -91,7 +91,7 @@ get_header(); ?>
 			];
 
 			// Icon.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'icon',
 				'args' => [
 					'class'    => [],
@@ -108,7 +108,7 @@ get_header(); ?>
 			];
 
 			// Image by ID.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'image',
 				'args' => [
 					'class'         => [ 'aspectratio-4-3' ],
@@ -120,7 +120,7 @@ get_header(); ?>
 			];
 
 			// Image by URL.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'image',
 				'args' => [
 					'class'   => [ 'aspectratio-2-1' ],
@@ -131,7 +131,7 @@ get_header(); ?>
 			];
 
 			// Input.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'input',
 				'args' => [
 					'class'       => [ 'input-1' ],
@@ -145,7 +145,7 @@ get_header(); ?>
 			];
 
 			// Label.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'label',
 				'args' => [
 					'class' => [ 'label-1', 'label-2' ],
@@ -155,7 +155,7 @@ get_header(); ?>
 			];
 
 			// Logo.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'logo',
 				'args' => [
 					'logo_name' => 'alt_logo',
@@ -166,7 +166,7 @@ get_header(); ?>
 			];
 
 			// Select.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'select',
 				'args' => [
 					'class'    => [ 'select-1' ],
@@ -192,7 +192,7 @@ get_header(); ?>
 			];
 
 			// Input.
-			$abs_elements[] = [
+			$wd_s_elements[] = [
 				'type' => 'textarea',
 				'args' => [
 					'class'       => [ 'textarea-1' ],
@@ -208,11 +208,11 @@ get_header(); ?>
 			?>
 			<section class='element-documentation'>
 				<?php
-				foreach ( $abs_elements as $abs_element ) :
+				foreach ( $wd_s_elements as $wd_s_element ) :
 					?>
 
 					<fieldset class='documentation-section'>
-						<legend><?php echo esc_html( ucwords( str_replace( '_', ' ', $abs_element['type'] ) ) ); ?></legend>
+						<legend><?php echo esc_html( ucwords( str_replace( '_', ' ', $wd_s_element['type'] ) ) ); ?></legend>
 
 						<section class='documentation-section-inner'>
 							<?php
@@ -225,7 +225,7 @@ get_header(); ?>
 								]
 							);
 
-							print_element( $abs_element['type'], $abs_element['args'] );
+							print_element( $wd_s_element['type'], $wd_s_element['args'] );
 							?>
 						</section>
 
@@ -243,18 +243,18 @@ get_header(); ?>
 
 							<code>
 								print_element(<br/>
-								&nbsp;&nbsp; '<?php echo esc_html( $abs_element['type'] ); ?>',<br/>
+								&nbsp;&nbsp; '<?php echo esc_html( $wd_s_element['type'] ); ?>',<br/>
 								&nbsp;&nbsp; [<br/>
 								<?php
-								foreach ( $abs_element['args'] as $abs_key => $abs_value ) :
+								foreach ( $wd_s_element['args'] as $wd_s_key => $wd_s_value ) :
 									// Allow for multidimensional array.
-									if ( is_array( $abs_value ) ) :
-										@$abs_value = "[ '" . implode( "', '", $abs_value ) . "' ]"; //phpcs:ignore
-									elseif ( is_string( $abs_value ) ) :
-										$abs_value = "'$abs_value'";
+									if ( is_array( $wd_s_value ) ) :
+										@$wd_s_value = "[ '" . implode( "', '", $wd_s_value ) . "' ]"; //phpcs:ignore
+									elseif ( is_string( $wd_s_value ) ) :
+										$wd_s_value = "'$wd_s_value'";
 									endif;
 									// phpcs:ignore
-									echo "&nbsp;&nbsp;&nbsp;&nbsp;'$abs_key' => $abs_value,<br/>";
+									echo "&nbsp;&nbsp;&nbsp;&nbsp;'$wd_s_key' => $wd_s_value,<br/>";
 								endforeach;
 								?>
 
@@ -278,7 +278,7 @@ get_header(); ?>
 							<code>
 								<?php
 								ob_start();
-								print_element( $abs_element['type'], $abs_element['args'] );
+								print_element( $wd_s_element['type'], $wd_s_element['args'] );
 								// phpcs:ignore
 								echo htmlentities( ob_get_clean() );
 								?>
