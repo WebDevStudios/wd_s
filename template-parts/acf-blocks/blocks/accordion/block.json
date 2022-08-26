@@ -9,12 +9,13 @@
 	"keywords": [ "accordion", "block" ],
 	"supports": {
 		"align": false,
-		"jsx": true
+		"jsx": true,
+		"anchor": false,
+		"customClassName": false
 	},
 	"acf": {
 		"mode": "preview",
-		"renderTemplate": "accordion.php",
-		"postTypes": [ "post" ]
+		"renderTemplate": "accordion.php"
 	},
 	"example": {
 		"attributes": {
