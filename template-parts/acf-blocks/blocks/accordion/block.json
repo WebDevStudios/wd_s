@@ -1,0 +1,27 @@
+{
+	"name": "accordion",
+	"title": "Accordion",
+	"description": "A block used to show an Accordion.",
+	"style": "file:./accordion.css",
+	"category": "wd_s",
+	"icon": "table-row-before",
+	"apiVersion": 2,
+	"keywords": [ "accordion", "block" ],
+	"supports": {
+		"align": false,
+		"jsx": true
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "accordion.php",
+		"postTypes": [ "post" ]
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}
