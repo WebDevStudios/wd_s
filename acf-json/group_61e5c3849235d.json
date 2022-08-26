@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<h2>Repeater Cards Block<\/h2>",
+            "message": "<h2>Cards (Repeater) Block<\/h2>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -201,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661536506
+    "modified": 1661540916
 }
