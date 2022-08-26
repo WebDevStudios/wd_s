@@ -8,12 +8,11 @@
  */
 
 use function WebDevStudios\wd_s\print_element;
-use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_acf_fields;
 
 $wd_s_defaults = [
-	'class' => [ 'wds-block', 'wds-block-quotes' ],
+	'class' => [ 'wds-block', 'quotes' ],
 ];
 
 // Set up element attributes.

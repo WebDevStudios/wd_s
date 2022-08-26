@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
-	'class' => [ 'wds-block', 'wds-block-accordion' ],
+	'class' => [ 'wds-block', 'accordion' ],
 ];
 
 // Set up element attributes.

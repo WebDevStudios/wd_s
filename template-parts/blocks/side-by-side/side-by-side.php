@@ -12,7 +12,7 @@ use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
-	'class' => [ 'wds-block', 'wds-block-side-by-side' ],
+	'class' => [ 'wds-block', 'side-by-side' ],
 ];
 
 $wd_s_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block['id'] );
