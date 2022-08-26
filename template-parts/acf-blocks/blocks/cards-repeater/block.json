@@ -1,0 +1,28 @@
+{
+	"name": "acf/cards-repeater",
+	"title": "Cards - Repeater",
+	"description": "A block used to display a group of Cards.",
+	"style": "file:./cards-repeater.css",
+	"category": "theme",
+	"icon": "images-alt",
+	"apiVersion": 2,
+	"keywords": [ "cards", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "cards-repeater.php",
+		"postTypes": [ "post", "page" ]
+	},
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"customClassName": false
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}
