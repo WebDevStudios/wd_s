@@ -1,6 +1,6 @@
 <?php
 /**
- * Register the 3 Cards block.
+ * Register a repeating Cards block.
  *
  * @package wd_s
  */
