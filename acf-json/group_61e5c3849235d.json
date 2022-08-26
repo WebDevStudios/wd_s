@@ -188,7 +188,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cards-manual"
+                "value": "acf\/cards-repeater"
             }
         ]
     ],
@@ -201,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661522707
+    "modified": 1661536506
 }
