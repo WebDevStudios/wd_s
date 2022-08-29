@@ -1,0 +1,21 @@
+//--------------------------------------------------------------
+// Editor styles.
+//--------------------------------------------------------------
+
+.acf-block-preview {
+	.acf-innerblocks-container {
+		@apply py-16 px-8 border-2 rounded-md border-gray-300 border-dashed relative;
+
+		[data-rich-text-placeholder] {
+			@apply text-gray-300;
+		}
+
+		&:empty {
+			&::before {
+				content: 'Insert InnerBlocks here';
+
+				@apply absolute top-8 left-8 block w-full text-gray-300;
+			}
+		}
+	}
+}
