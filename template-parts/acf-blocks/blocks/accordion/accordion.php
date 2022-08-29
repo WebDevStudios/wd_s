@@ -32,26 +32,6 @@ $wd_s_accordion = get_acf_fields( [ 'accordion_items' ], $block['id'] );
 		<?php
 		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
 
-		if ( $wd_s_accordion['block_heading'] ) :
-			print_element(
-				'heading',
-				[
-					'text'  => $wd_s_accordion['block_heading'],
-					'class' => [ 'block-heading' ],
-				]
-			);
-		endif;
-
-		if ( $wd_s_accordion['block_content'] ) :
-			print_element(
-				'content',
-				[
-					'content' => $wd_s_accordion['block_content'],
-					'class'   => [ 'block-content' ],
-				]
-			);
-		endif;
-
 		print_module( 'accordion', $wd_s_accordion['accordion_items'] );
 		?>
 	</section>
