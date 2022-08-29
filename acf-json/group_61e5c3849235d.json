@@ -15,47 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<h2>Cards (Repeater) Block<\/h2>",
+            "message": "<h2>Cards (Repeater) Block<\/h2>\r\n<p>Allowed InnerBlocks are Heading, Paragraph.<\/p>",
             "new_lines": "wpautop",
             "esc_html": 0
-        },
-        {
-            "key": "field_61e5ce51dfedb",
-            "label": "Block Heading",
-            "name": "block_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61e5ce68dfedc",
-            "label": "Block Content",
-            "name": "block_content",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br"
         },
         {
             "key": "field_61e5c3b3fdf10",
@@ -201,5 +163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661540916
+    "modified": 1661797501
 }

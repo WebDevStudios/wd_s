@@ -20,44 +20,6 @@
             "esc_html": 0
         },
         {
-            "key": "field_61e5913ea6b9c",
-            "label": "Block Heading",
-            "name": "block_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61e59164a6b9d",
-            "label": "Block Content",
-            "name": "block_content",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br"
-        },
-        {
             "key": "field_5cc9ad46008cd",
             "label": "Accordion Items",
             "name": "accordion_items",
@@ -154,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661542235
+    "modified": 1661800350
 }

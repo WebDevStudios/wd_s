@@ -20,7 +20,7 @@ $wd_s_defaults = [
 // Set up element attributes.
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
 
-$wd_s_accordion = get_acf_fields( [ 'block_heading', 'block_content', 'accordion_items' ], $block['id'] );
+$wd_s_accordion = get_acf_fields( [ 'accordion_items' ], $block['id'] );
 ?>
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
