@@ -11,10 +11,12 @@
 		}
 
 		&:empty {
+			@apply mb-16;
+
 			&::before {
 				content: 'Insert InnerBlocks here';
 
-				@apply absolute top-8 left-8 block w-full text-gray-300;
+				@apply absolute top-8 left-8 block w-full text-gray-300 text-center;
 			}
 		}
 	}
