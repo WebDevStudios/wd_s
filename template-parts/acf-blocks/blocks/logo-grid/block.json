@@ -1,0 +1,28 @@
+{
+	"name": "logo-grid",
+	"title": "Logo Grid",
+	"description": "A block used to show a logo grid.",
+	"style": "file:./logo-grid.css",
+	"category": "theme",
+	"icon": "grid-view",
+	"apiVersion": 2,
+	"keywords": [ "logo grid", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "logo-grid.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"customClassName": false,
+		"jsx": true
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}
