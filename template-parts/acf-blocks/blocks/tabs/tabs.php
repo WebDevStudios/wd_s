@@ -7,7 +7,6 @@
  * @package wd_s
  */
 
-use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
@@ -21,7 +20,7 @@ $wd_s_defaults = [
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
 
 // Pull in the fields from ACF.
-$wd_s_tabs = get_acf_fields( [ 'block_heading', 'block_content', 'tab_items' ], $block['id'] );
+$wd_s_tabs = get_acf_fields( [ 'tab_items' ], $block['id'] );
 ?>
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
@@ -32,26 +31,6 @@ $wd_s_tabs = get_acf_fields( [ 'block_heading', 'block_content', 'tab_items' ], 
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
 		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
-
-		if ( $wd_s_tabs['block_heading'] ) :
-			print_element(
-				'heading',
-				[
-					'text'  => $wd_s_tabs['block_heading'],
-					'class' => [ 'block-heading' ],
-				]
-			);
-		endif;
-
-		if ( $wd_s_tabs['block_content'] ) :
-			print_element(
-				'content',
-				[
-					'content' => $wd_s_tabs['block_content'],
-					'class'   => [ 'block-content' ],
-				]
-			);
-		endif;
 
 		print_module( 'tabs', $wd_s_tabs['tab_items'] );
 		?>
