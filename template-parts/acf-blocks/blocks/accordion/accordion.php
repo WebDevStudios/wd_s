@@ -7,7 +7,6 @@
  * @package wd_s
  */
 
-use function WebDevStudios\wd_s\print_element;
 use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
