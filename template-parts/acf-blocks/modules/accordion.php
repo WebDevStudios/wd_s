@@ -22,35 +22,20 @@ $wd_s_args = get_formatted_args( $args, $wd_s_defaults );
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 ?>
 
-<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> x-data="{ active: 0 }">
+<div <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php foreach ( $wd_s_args['items'] as $wd_s_key => $wd_s_item ) : ?>
-		<div
-			x-data="{
-				id: <?php echo esc_attr( $wd_s_key ); ?>,
-				get expanded() {
-					return this.active === this.id
-				},
-				set expanded(value) {
-					this.active = value ? this.id : null
-				},
-			}"
-			class="accordion-item"
-		>
+		<div class="accordion-item">
 			<?php
 			print_element(
 				'button',
 				[
-					'class'  => [ 'accordion-title' ],
-					'id'     => 'accordion-item-' . $wd_s_key,
-					'title'  => $wd_s_item['text'],
-					'aria'   => [
+					'class' => [ 'accordion-title' ],
+					'id'    => 'accordion-item-' . $wd_s_key,
+					'title' => $wd_s_item['text'],
+					'aria'  => [
 						'controls' => 'accordion-content-' . $wd_s_key,
 					],
-					'alpine' => [
-						'x-on:click'     => 'expanded = !expanded',
-						':aria-expanded' => 'expanded',
-					],
-					'icon'   => [
+					'icon'  => [
 						'color'  => '#000',
 						'icon'   => 'caret-down',
 						'height' => '24',
@@ -62,8 +47,6 @@ $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 			<div
 				id="accordion-content-<?php echo esc_attr( $wd_s_key ); ?>"
-				x-show="expanded"
-				x-collapse
 				role="region"
 				aria-labelledby="accordion-item-<?php echo esc_attr( $wd_s_key ); ?>"
 			>
