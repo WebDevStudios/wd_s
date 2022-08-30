@@ -1,5 +1,5 @@
 {
-	"name": "acf/accordion",
+	"name": "accordion",
 	"title": "Accordion",
 	"description": "A block used to show an Accordion.",
 	"style": "file:./accordion.css",
@@ -9,8 +9,7 @@
 	"keywords": [ "accordion", "block" ],
 	"acf": {
 		"mode": "auto",
-		"renderTemplate": "accordion.php",
-		"postTypes": [ "post", "page" ]
+		"renderTemplate": "accordion.php"
 	},
 	"supports": {
 		"align": false,

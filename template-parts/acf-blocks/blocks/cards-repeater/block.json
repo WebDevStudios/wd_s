@@ -1,5 +1,5 @@
 {
-	"name": "acf/cards-repeater",
+	"name": "cards-repeater",
 	"title": "Cards - Repeater",
 	"description": "A block used to display a group of Cards.",
 	"style": "file:./cards-repeater.css",
@@ -9,8 +9,7 @@
 	"keywords": [ "cards", "block" ],
 	"acf": {
 		"mode": "auto",
-		"renderTemplate": "cards-repeater.php",
-		"postTypes": [ "post", "page" ]
+		"renderTemplate": "cards-repeater.php"
 	},
 	"supports": {
 		"align": false,
