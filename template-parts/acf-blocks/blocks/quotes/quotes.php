@@ -12,7 +12,8 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_acf_fields;
 
 $wd_s_defaults = [
-	'class' => [ 'wds-block', 'quotes' ],
+	'class'          => [ 'wds-block', 'quotes' ],
+	'allowed_blocks' => [ 'core/heading', 'core/paragraph' ],
 ];
 
 // Set up element attributes.
@@ -28,6 +29,7 @@ $wd_s_quotes = get_acf_fields( [ 'quotes' ], $block['id'] );
 	</figure>
 <?php elseif ( $wd_s_quotes['quotes'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		<?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />'; ?>
 		<?php foreach ( $wd_s_quotes['quotes'] as $wd_s_quote ) : ?>
 			<div class="quote">
 				<?php

@@ -1,0 +1,28 @@
+{
+	"name": "quotes",
+	"title": "Quotes",
+	"description": "A block used to show quotes.",
+	"style": "file:./quotes.css",
+	"category": "wd_s",
+	"icon": "format-quote",
+	"apiVersion": 2,
+	"keywords": [ "quotes", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "quotes.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"customClassName": false,
+		"jsx": true
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}
