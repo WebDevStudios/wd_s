@@ -1,0 +1,28 @@
+{
+	"name": "tabs",
+	"title": "Tabs",
+	"description": "A block used to show Tabs and Content.",
+	"style": "file:./tabs.css",
+	"category": "theme",
+	"icon": "open-folder",
+	"apiVersion": 2,
+	"keywords": [ "tabs", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "cards-repeater.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": false,
+		"customClassName": false,
+		"jsx": true
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}

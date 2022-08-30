@@ -13,7 +13,8 @@ use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
-	'class' => [ 'wds-block', 'tabs' ],
+	'class'          => [ 'wds-block', 'tabs' ],
+	'allowed_blocks' => [ 'core/heading', 'core/paragraph' ],
 ];
 
 // Set up element attributes.
@@ -30,6 +31,8 @@ $wd_s_tabs = get_acf_fields( [ 'block_heading', 'block_content', 'tab_items' ], 
 <?php elseif ( $wd_s_tabs['tab_items']['items'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
+		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
+
 		if ( $wd_s_tabs['block_heading'] ) :
 			print_element(
 				'heading',
