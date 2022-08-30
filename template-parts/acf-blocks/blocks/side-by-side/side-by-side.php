@@ -15,12 +15,13 @@ $wd_s_defaults = [
 	'class' => [ 'wds-block', 'side-by-side' ],
 ];
 
-$wd_s_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block['id'] );
-
 $wd_s_defaults['class'][] = $wd_s_side_by_side['column_order'];
 
 // Set up element attributes.
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
+
+// Pull in the fields from ACF.
+$wd_s_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block['id'] );
 ?>
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>

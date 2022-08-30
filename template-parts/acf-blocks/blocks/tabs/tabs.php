@@ -19,9 +19,10 @@ $wd_s_defaults = [
 // Set up element attributes.
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
 
+// Pull in the fields from ACF.
 $wd_s_tabs = get_acf_fields( [ 'block_heading', 'block_content', 'tab_items' ], $block['id'] );
-
 ?>
+
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
 		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/build/images/block-previews/tabs-preview.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Tabs Block', 'wd_s' ); ?>">

@@ -15,10 +15,11 @@ $wd_s_defaults = [
 	'class' => [ 'wds-block', 'logo-grid' ],
 ];
 
-$wd_s_logo_grid = get_acf_fields( [ 'logos' ], $block['id'] );
-
 // Set up element attributes.
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
+
+// Pull in the fields from ACF.
+$wd_s_logo_grid = get_acf_fields( [ 'logos' ], $block['id'] );
 ?>
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>

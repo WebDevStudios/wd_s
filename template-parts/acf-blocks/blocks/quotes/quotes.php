@@ -18,8 +18,8 @@ $wd_s_defaults = [
 // Set up element attributes.
 $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
 
+// Pull in the fields from ACF.
 $wd_s_quotes = get_acf_fields( [ 'quotes' ], $block['id'] );
-
 ?>
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
