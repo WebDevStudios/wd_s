@@ -9,7 +9,7 @@
 	"keywords": [ "tabs", "block" ],
 	"acf": {
 		"mode": "auto",
-		"renderTemplate": "cards-repeater.php"
+		"renderTemplate": "tabs.php"
 	},
 	"supports": {
 		"align": false,
