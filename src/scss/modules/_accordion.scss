@@ -14,9 +14,17 @@
 			@apply bg-black bg-opacity-10;
 		}
 
+		&[aria-expanded='false'] {
+			~ div {
+				@apply hidden;
+			}
+		}
 		&[aria-expanded='true'] {
 			.icon {
 				@apply rotate-180 transform transition-all;
+			}
+			~ div {
+				@apply block;
 			}
 		}
 	}

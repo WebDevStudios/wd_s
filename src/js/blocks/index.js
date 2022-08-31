@@ -5,5 +5,4 @@
  */
 
 // Custom Gutenberg Blocks.
-// import './wd';
-// import './acf';
+import './accordion';
