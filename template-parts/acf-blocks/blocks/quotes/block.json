@@ -13,8 +13,8 @@
 	},
 	"supports": {
 		"align": false,
-		"anchor": false,
-		"customClassName": false,
+		"anchor": true,
+		"customClassName": true,
 		"jsx": true
 	},
 	"example": {

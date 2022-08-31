@@ -1,7 +1,7 @@
 {
 	"name": "side-by-side",
 	"title": "Side by Side",
-	"description":"A block used to show side by side content.",
+	"description": "A block used to show side by side content.",
 	"style": "file:./side-by-side.scss",
 	"category": "theme",
 	"icon": "columns",
@@ -13,8 +13,8 @@
 	},
 	"supports": {
 		"align": false,
-		"anchor": false,
-		"customClassName": false,
+		"anchor": true,
+		"customClassName": true,
 		"jsx": true
 	},
 	"example": {
