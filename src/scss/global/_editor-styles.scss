@@ -4,15 +4,13 @@
 
 .acf-block-preview {
 	.acf-innerblocks-container {
-		@apply py-16 px-8 border-2 rounded-md border-gray-300 border-dashed relative;
+		@apply py-16 px-8 mb-16 border-2 border-gray-300 border-dashed rounded-md relative;
 
 		[data-rich-text-placeholder] {
 			@apply text-gray-300;
 		}
 
 		&:empty {
-			@apply mb-16;
-
 			&::before {
 				content: 'Insert InnerBlocks here';
 
