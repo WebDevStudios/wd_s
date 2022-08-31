@@ -22,7 +22,6 @@ $wd_s_defaults = [
 	'type'          => false,
 	'icon'          => [],
 	'icon_position' => 'after', // before, after.
-	'alpine'        => [],
 	'role'          => '',
 	'aria'          => [
 		'controls' => '',
@@ -42,7 +41,7 @@ if ( $wd_s_args['title'] || $wd_s_args['icon'] ) :
 	endif;
 
 	// Set up element attributes.
-	$wd_s_atts = get_formatted_atts( [ 'id', 'href', 'target', 'class', 'type', 'aria', 'alpine', 'role' ], $wd_s_args );
+	$wd_s_atts = get_formatted_atts( [ 'id', 'href', 'target', 'class', 'type', 'aria', 'role' ], $wd_s_args );
 
 	?>
 	<<?php echo $wd_s_args['href'] ? 'a' : 'button'; ?> <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>

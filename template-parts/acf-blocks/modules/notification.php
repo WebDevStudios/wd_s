@@ -43,13 +43,8 @@ $wd_s_args['role'] = $wd_s_args['dismissible'] ? 'alertdialog' : 'alert';
 // Set up ARIA attributes.
 $wd_s_args['aria']['labelledby'] = 'notification-title';
 
-// Set up Alpine attributes.
-$wd_s_args['alpine']['x-show'] = $wd_s_args['dismissible'] ? 'open' : '';
-$wd_s_args['alpine']['x-data'] = $wd_s_args['dismissible'] ? '{ open: true }' : '';
-
-
 // Set up element attributes.
-$wd_s_atts = get_formatted_atts( [ 'class', 'role', 'aria', 'id', 'alpine' ], $wd_s_args );
+$wd_s_atts = get_formatted_atts( [ 'class', 'role', 'aria', 'id' ], $wd_s_args );
 
 // Make sure the notification title has an id for accessibility.
 if ( empty( $wd_s_args['text_args']['id'] ) ) :
@@ -68,18 +63,15 @@ endif;
 			print_element(
 				'button',
 				[
-					'icon'   => [
+					'icon' => [
 						'color'        => '#c00',
 						'icon'         => 'circle-x',
 						'stroke-width' => '2px',
 						'height'       => '32px',
 						'width'        => '32px',
 					],
-					'aria'   => [
+					'aria' => [
 						'controls' => $wd_s_args['id'],
-					],
-					'alpine' => [
-						'x-on:click' => 'open = ! open',
 					],
 				]
 			);
