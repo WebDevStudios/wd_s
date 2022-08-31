@@ -27,7 +27,10 @@ $wd_s_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/template-parts/blocks/previews/side-by-side-preview.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Side by Side Block', 'wd_s' ); ?>">
+		<img
+			src="<?php echo esc_url( get_theme_file_uri( 'build/images/block-previews/side-by-side-preview.jpg' ) ); ?>"
+			alt="<?php esc_html_e( 'Preview of the Side by Side Block', 'wd_s' ); ?>"
+		>
 	</figure>
 <?php else : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>

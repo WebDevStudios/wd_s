@@ -25,7 +25,10 @@ $wd_s_quotes = get_acf_fields( [ 'quotes' ], $block['id'] );
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/build/images/block-previews/quotes.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Quotes Block', 'wd_s' ); ?>">
+		<img
+			src="<?php echo esc_url( get_theme_file_uri( 'build/images/block-previews/quotes-preview.jpg' ) ); ?>"
+			alt="<?php esc_html_e( 'Preview of the Quotes Block', 'wd_s' ); ?>"
+		>
 	</figure>
 <?php elseif ( $wd_s_quotes['quotes'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>

@@ -25,7 +25,10 @@ $wd_s_logo_grid = get_acf_fields( [ 'logos' ], $block['id'] );
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/build/images/block-previews/logo-grid.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Logo Grid Block', 'wd_s' ); ?>">
+		<img
+			src="<?php echo esc_url( get_theme_file_uri( 'build/images/block-previews/logo-grid-preview.jpg' ) ); ?>"
+			alt="<?php esc_html_e( 'Preview of the Logo Grid Block', 'wd_s' ); ?>"
+		>
 	</figure>
 <?php elseif ( $wd_s_logo_grid['logos'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>

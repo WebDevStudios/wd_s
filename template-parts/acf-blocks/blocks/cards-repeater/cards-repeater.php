@@ -24,7 +24,10 @@ $wd_s_cards = get_acf_fields( [ 'card' ], $block['id'] );
 
 <?php if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
 	<figure>
-		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/build/images/block-previews/cards-repeater-preview.jpg' ); ?>" alt="<?php esc_html_e( 'Preview of the Manual Cards Block', 'wd_s' ); ?>">
+		<img
+			src="<?php echo esc_url( get_theme_file_uri( 'build/images/block-previews/cards-repeater-preview.jpg' ) ); ?>"
+			alt="<?php esc_html_e( 'Preview of the Manual Cards Block', 'wd_s' ); ?>"
+		>
 	</figure>
 <?php elseif ( $wd_s_cards['card'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
