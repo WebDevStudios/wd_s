@@ -12,12 +12,17 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_acf_fields;
 
 $wd_s_defaults = [
-	'class'          => [ 'wds-block', 'quotes' ],
+	'class'               => [ 'wds-block', 'cards-repeater' ],
 	'allowed_innerblocks' => [ 'core/heading', 'core/paragraph' ],
+	'id'                  => ! empty( $block['anchor'] ) ? $block['anchor'] : '',
 ];
 
+if ( ! empty( $block['className'] ) ) :
+	$wd_s_defaults['class'] = array_merge( $wd_s_defaults['class'], explode( ' ', $block['className'] ) );
+endif;
+
 // Set up element attributes.
-$wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_defaults );
+$wd_s_atts = get_formatted_atts( [ 'class', 'id' ], $wd_s_defaults );
 
 // Pull in the fields from ACF.
 $wd_s_quotes = get_acf_fields( [ 'quotes' ], $block['id'] );
