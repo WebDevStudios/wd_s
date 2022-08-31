@@ -2,13 +2,16 @@
 	"name": "accordion",
 	"title": "Accordion",
 	"description": "A block used to show an Accordion.",
-	"style": "file:./accordion.css",
+	"style": "file:accordion.css",
+	"script": "file:accordion.js",
+	"editorScript": "file:accordion.js",
+	"editorStyle": "file:accordion.css",
 	"category": "theme",
 	"icon": "table-row-before",
 	"apiVersion": 2,
 	"keywords": [ "accordion", "block" ],
 	"acf": {
-		"mode": "auto",
+		"mode": "edit",
 		"renderTemplate": "accordion.php"
 	},
 	"supports": {

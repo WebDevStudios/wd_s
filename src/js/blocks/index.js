@@ -5,4 +5,5 @@
  */
 
 // Custom Gutenberg Blocks.
-import './accordion';
+// import './accordion';
+// import './tabs';
