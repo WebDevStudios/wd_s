@@ -12,8 +12,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 use function WebDevStudios\wd_s\get_acf_fields;
 
 $wd_s_defaults = [
-	'class'          => [ 'wds-block', 'cards-repeater' ],
-	'allowed_blocks' => [ 'core/heading', 'core/paragraph' ],
+	'allowed_innerblocks' => [ 'core/heading', 'core/paragraph' ],
 ];
 
 // Set up element attributes.
@@ -29,7 +28,7 @@ $wd_s_cards = get_acf_fields( [ 'card' ], $block['id'] );
 	</figure>
 <?php elseif ( $wd_s_cards['card'] ) : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-		<?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />'; ?>
+		<?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_innerblocks'] ) ) . '" />'; ?>
 		<section class='card-wrap'>
 			<?php
 			foreach ( $wd_s_cards['card'] as $wd_s_card ) :

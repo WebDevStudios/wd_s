@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
 	'class'          => [ 'wds-block', 'side-by-side' ],
-	'allowed_blocks' => [ 'core/heading', 'core/paragraph' ],
+	'allowed_innerblocks' => [ 'core/heading', 'core/paragraph' ],
 ];
 
 $wd_s_defaults['class'][] = $wd_s_side_by_side['column_order'];
@@ -32,7 +32,7 @@ $wd_s_side_by_side = get_acf_fields( [ 'column_order', 'image', 'card' ], $block
 <?php else : ?>
 	<section <?php echo $wd_s_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
-		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_blocks'] ) ) . '" />';
+		echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $wd_s_defaults['allowed_innerblocks'] ) ) . '" />';
 
 		print_module(
 			'figure',
