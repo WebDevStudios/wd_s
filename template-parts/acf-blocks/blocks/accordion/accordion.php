@@ -12,7 +12,7 @@ use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
 
 $wd_s_defaults = [
-	'class'               => [ 'wds-block', 'cards-repeater' ],
+	'class'               => [ 'wds-block', 'accordion' ],
 	'allowed_innerblocks' => [ 'core/heading', 'core/paragraph' ],
 	'id'                  => ! empty( $block['anchor'] ) ? $block['anchor'] : '',
 ];
