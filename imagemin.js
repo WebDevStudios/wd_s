@@ -1,4 +1,4 @@
-const imagemin = import( 'imagemin' );
+const imagemin = require( 'imagemin' );
 const imageminJpegtran = require( 'imagemin-jpegtran' );
 const imageminPngquant = require( 'imagemin-pngquant' );
 const imageminGifsicle = require( 'imagemin-gifsicle' );
@@ -23,7 +23,7 @@ const watch = process.argv.includes( '--watch' ),
  * Output directory
  * Where all the compressed images will go
  */
-const OUTPUT_DIR = 'build/images';
+const OUTPUT_DIR = 'build/images/';
 
 /**
  * List of input directories
@@ -65,20 +65,18 @@ try {
 		 */
 		for ( const i in imageDirs ) {
 			const dir = imageDirs[ i ];
-			await imagemin(
-				[ `${ dir }/*.{jpg,png,svg,gif}` ],
-				join( OUTPUT_DIR, dir ),
-				{
-					plugins: [
-						imageminJpegtran(),
-						imageminPngquant( {
-							quality: [ 0.6, 0.8 ],
-						} ),
-						imageminGifsicle(),
-						imageminWebp(),
-					],
-				}
-			);
+
+			await imagemin( [ `${ dir }/*.{jpg,png,svg,gif,jpeg}` ], {
+				destination: dir.replace( directory, OUTPUT_DIR ),
+				plugins: [
+					imageminJpegtran(),
+					imageminPngquant( {
+						quality: [ 0.6, 0.8 ],
+					} ),
+					imageminGifsicle(),
+					imageminWebp(),
+				],
+			} );
 		}
 	} )();
 } catch ( e ) {}
