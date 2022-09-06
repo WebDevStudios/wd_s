@@ -4,8 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_comments;
 
 get_header(); ?>
 
@@ -19,7 +21,7 @@ get_header(); ?>
 
 			the_post_navigation();
 
-			_s_display_comments();
+			print_comments();
 
 		endwhile; // End of the loop.
 		?>

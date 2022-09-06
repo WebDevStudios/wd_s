@@ -2,18 +2,21 @@
 /**
  * The template used for displaying typography in the scaffolding library.
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_scaffolding_section;
 
 ?>
 
 <section class="section-scaffolding">
 
-	<h2 class="scaffolding-heading"><?php esc_html_e( 'Typography', '_s' ); ?></h2>
+	<h2 class="scaffolding-heading" id="<?php esc_html_e( 'typography', 'wd_s' ); ?>">
+		<?php esc_html_e( 'Typography', 'wd_s' ); ?></h2>
 
 	<?php
 	// H1.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H1',
 			'description' => 'Display an H1',
@@ -23,7 +26,7 @@
 	);
 
 	// H2.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H2',
 			'description' => 'Display an H2',
@@ -33,7 +36,7 @@
 	);
 
 	// H3.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H3',
 			'description' => 'Display an H3',
@@ -43,7 +46,7 @@
 	);
 
 	// H4.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H4',
 			'description' => 'Display an H4',
@@ -53,7 +56,7 @@
 	);
 
 	// H5.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H5',
 			'description' => 'Display an H5',
@@ -63,7 +66,7 @@
 	);
 
 	// H6.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'H6',
 			'description' => 'Display an H6',
@@ -73,7 +76,7 @@
 	);
 
 	// Body.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Paragraph',
 			'description' => 'Display a paragraph',
@@ -83,7 +86,7 @@
 	);
 
 	// Link.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Link',
 			'description' => 'Displays a link.',
@@ -93,7 +96,7 @@
 	);
 
 	// HTML table.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Table',
 			'description' => 'Display a table',
@@ -110,22 +113,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
 						<tr>
 							<td>Division 1</td>
 							<td>Division 2</td>
@@ -166,14 +153,6 @@
 							<td>Division 5</td>
 							<td>Division 6</td>
 						</tr>
-						<tr>
-							<td>Division 1</td>
-							<td>Division 2</td>
-							<td>Division 3</td>
-							<td>Division 4</td>
-							<td>Division 5</td>
-							<td>Division 6</td>
-						</tr>
 					</tbody>
 				</table>
 			',
@@ -182,7 +161,7 @@
 
 
 	// Ordered List.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Ordered List',
 			'description' => 'Display an ordered list.',
@@ -226,7 +205,7 @@
 	);
 
 	// Unordered List.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Unordered List',
 			'description' => 'Display an unordered list.',
@@ -270,7 +249,7 @@
 	);
 
 	// Blockquote.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Blockquote',
 			'description' => 'Display a blockquote.',
@@ -280,7 +259,7 @@
 	);
 
 	// Code tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Code Tag',
 			'description' => 'Display a code tag.',
@@ -290,7 +269,7 @@
 	);
 
 	// Em tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Emphasize Tag',
 			'description' => 'Display an <em> tag.',
@@ -300,7 +279,7 @@
 	);
 
 	// Strong tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Strong Tag',
 			'description' => 'Display bold text.',
@@ -310,7 +289,7 @@
 	);
 
 	// Abbreviation Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Abbreviation Tag',
 			'description' => 'Display an abbreviation.',
@@ -320,7 +299,7 @@
 	);
 
 	// Cite Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Cite Tag',
 			'description' => 'Display a citation.',
@@ -330,7 +309,7 @@
 	);
 
 	// Strikeout Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Strikeout Text',
 			'description' => 'Display strikeout text.',
@@ -340,7 +319,7 @@
 	);
 
 	// Delete Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Delete Text',
 			'description' => 'Display the edited content of a text string.',
@@ -350,7 +329,7 @@
 	);
 
 	// Preformatted Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Preformatted tag.',
 			'description' => 'This tag styles large blocks of code.',
@@ -374,7 +353,7 @@
 	);
 
 	// Keyboard Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Keyboard Tag',
 			'description' => 'To display a key.',
@@ -384,7 +363,7 @@
 	);
 
 	// Subscript Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Subscript Tag',
 			'description' => 'To display a subscript.',
@@ -394,7 +373,7 @@
 	);
 
 	// Superscript Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Superscript Tag',
 			'description' => 'To display a superscript.',
@@ -404,7 +383,7 @@
 	);
 
 	// Variable Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Variable Tag',
 			'description' => 'The HTML Variable element (<var>) represents the name of a variable in a mathematical expression or a programming context.',
@@ -414,7 +393,7 @@
 	);
 
 	// Address Tag.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Address Tag',
 			'description' => 'To display an address.',
@@ -436,7 +415,7 @@
 	);
 
 	// Definition lists.
-	_s_display_scaffolding_section(
+	print_scaffolding_section(
 		[
 			'title'       => 'Definition Lists',
 			'description' => 'To display defintion lists.',

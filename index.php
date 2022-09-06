@@ -9,8 +9,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_numeric_pagination;
 
 get_header(); ?>
 
@@ -40,7 +42,7 @@ get_header(); ?>
 
 			endwhile;
 
-			_s_display_numeric_pagination();
+			print_numeric_pagination();
 
 		else :
 			get_template_part( 'template-parts/content', 'none' );
