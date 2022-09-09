@@ -5,4 +5,4 @@
  * @package wd_s
  */
 
-register_block_type( get_template_directory() . '/template-parts/acf-blocks/blocks/side-by-side/block.json' );
+register_block_type( get_template_directory() . '/build/side-by-side/' );
