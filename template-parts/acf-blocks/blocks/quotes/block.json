@@ -17,6 +17,7 @@
 	"supports": {
 		"align": false,
 		"anchor": true,
+		"color": true,
 		"customClassName": true,
 		"jsx": true
 	},

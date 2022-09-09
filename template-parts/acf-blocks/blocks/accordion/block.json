@@ -11,13 +11,13 @@
 	"apiVersion": 2,
 	"keywords": [ "accordion", "block" ],
 	"acf": {
-		"mode": "edit",
-		"renderTemplate": "accordion.php",
-		"blockVersion": 2
+		"mode": "auto",
+		"renderTemplate": "accordion.php"
 	},
 	"supports": {
 		"align": false,
 		"anchor": true,
+		"color": true,
 		"customClassName": true,
 		"jsx": true
 	},
