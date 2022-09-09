@@ -57,7 +57,7 @@
 	},
 	"scripts": {
 		"accessibility": "pa11y-ci --reporter=pa11y-ci-reporter-html --sitemap $npm_config_url/sitemap.xml",
-		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
+		"build": "cross-env NODE_ENV=production wp-scripts build  --webpack-src-dir=template-parts/acf-blocks/blocks --webpack-copy-php --config webpack.prod.js",
 		"build:pot": "composer run-script pot",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
@@ -75,7 +75,7 @@
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "composer install --quiet && npm run build",
-		"start": "cross-env NODE_ENV=development wp-scripts start",
+		"start": "cross-env NODE_ENV=development wp-scripts start --webpack-src-dir=template-parts/acf-blocks/blocks --webpack-copy-php",
 		"sync": "browser-sync start --https --proxy https://wdunderscores.test --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	}
