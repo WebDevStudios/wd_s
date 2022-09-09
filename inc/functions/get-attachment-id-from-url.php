@@ -1,6 +1,6 @@
 <?php
 /**
- * Get an attachment ID from it's URL.
+ * Get an attachment ID from its URL.
  *
  * @package wd_s
  */
@@ -8,7 +8,7 @@
 namespace WebDevStudios\wd_s;
 
 /**
- * Get an attachment ID from it's URL.
+ * Get an attachment ID from its URL.
  *
  * @author WebDevStudios
  *

@@ -1,0 +1,11 @@
+//----------------------------------------
+// Block - Logo Grid.
+//----------------------------------------
+
+.wds-block.logo-grid {
+	@apply grid grid-cols-3 gap-24;
+
+	.wds-module-figure {
+		@apply col-span-1;
+	}
+}

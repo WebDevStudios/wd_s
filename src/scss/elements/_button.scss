@@ -4,7 +4,7 @@
 
 :where( .site-wrapper, .acf-block-preview ) button,
 .btn,
-.abs-element-button {
+.wds-element-button {
 	@apply inline-flex items-center rounded-md px-16 py-8 no-underline transition-all;
 
 	&.icon {

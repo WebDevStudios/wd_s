@@ -30,14 +30,6 @@ function get_formatted_atts( $atts, $args ) {
 					endif;
 				endforeach;
 
-			elseif ( 'alpine' === $att && is_array( $args['alpine'] ) ) :
-
-				foreach ( $args['alpine'] as $key => $val ) :
-					if ( $val ) :
-						$atts_formatted[] = $key . '="' . esc_attr( $val ) . '"';
-					endif;
-				endforeach;
-
 			else :
 
 				// Handle multiple classes.

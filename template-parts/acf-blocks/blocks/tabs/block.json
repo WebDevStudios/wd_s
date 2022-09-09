@@ -1,0 +1,32 @@
+{
+	"name": "tabs",
+	"title": "Tabs",
+	"description": "A block used to show Tabs and Content.",
+	"style": [ "file:./style.css", "wd_s_block-tabs-style" ],
+	"script": "wd_s_block-tabs-script",
+	"editorScript": "file:./script.js",
+	"viewScript": "file:./script.js",
+	"category": "theme",
+	"icon": "open-folder",
+	"apiVersion": 2,
+	"keywords": [ "tabs", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "tabs.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"color": true,
+		"customClassName": true,
+		"jsx": true
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}

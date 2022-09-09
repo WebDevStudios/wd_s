@@ -1,0 +1,19 @@
+//----------------------------------------
+// Block - Side by Side.
+//----------------------------------------
+
+.wds-block.side-by-side {
+	@apply flex w-full gap-64;
+
+	&.card-first {
+		@apply flex-row-reverse;
+	}
+
+	.wds-module-figure {
+		@apply w-1/2;
+	}
+
+	.wds-module-card {
+		@apply w-1/2 p-0 shadow-none;
+	}
+}
