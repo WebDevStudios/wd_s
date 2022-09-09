@@ -43,7 +43,7 @@ $wd_s_atts = get_formatted_atts( [ 'class' ], $wd_s_args );
 
 	<div class="tabs-content">
 		<?php foreach ( $wd_s_args['items'] as $wd_s_key => $wd_s_item ) : ?>
-			<div id="tab-content-<?php echo esc_attr( $wd_s_key ); ?> role="tabpanel" aria-labelledby="tab-item-<?php echo esc_attr( $wd_s_key ); ?>"><?php echo esc_html( $wd_s_item['content'] ); ?></div>
+			<div id="tab-content-<?php echo esc_attr( $wd_s_key ); ?>" role="tabpanel" aria-labelledby="tab-item-<?php echo esc_attr( $wd_s_key ); ?>"><?php echo esc_html( $wd_s_item['content'] ); ?></div>
 		<?php endforeach; ?>
 	</div>
 </div>
