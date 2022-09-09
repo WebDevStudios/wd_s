@@ -10,6 +10,7 @@
 use function WebDevStudios\wd_s\print_module;
 use function WebDevStudios\wd_s\get_acf_fields;
 use function WebDevStudios\wd_s\get_formatted_atts;
+use function WebDevStudios\wd_s\get_block_classes;
 
 $wd_s_defaults = [
 	'class'               => [ 'wds-block', 'accordion' ],
@@ -17,8 +18,12 @@ $wd_s_defaults = [
 	'id'                  => ! empty( $block['anchor'] ) ? $block['anchor'] : '',
 ];
 
-if ( ! empty( $block['className'] ) ) :
-	$wd_s_defaults['class'] = array_merge( $wd_s_defaults['class'], explode( ' ', $block['className'] ) );
+// Get custom classes for the block and/or for block colors.
+$wd_s_block_classes = [];
+$wd_s_block_classes = get_block_classes( $block );
+
+if ( ! empty( $wd_s_block_classes ) ) :
+	$wd_s_defaults['class'] = array_merge( $wd_s_defaults['class'], $wd_s_block_classes );
 endif;
 
 // Set up element attributes.
