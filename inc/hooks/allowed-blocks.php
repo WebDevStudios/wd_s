@@ -2,7 +2,7 @@
 /**
  * Specify which blocks are allowed.
  *
- * @package ABS
+ * @package wd_s
  */
 
 namespace WebDevStudios\wd_s;
