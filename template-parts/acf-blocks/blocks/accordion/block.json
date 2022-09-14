@@ -1,5 +1,5 @@
 {
-	"name": "accordion",
+	"name": "wds/accordion",
 	"title": "Accordion",
 	"description": "A block used to show an Accordion.",
 	"style": [ "file:./style.css", "wd_s_block-accordion-style" ],

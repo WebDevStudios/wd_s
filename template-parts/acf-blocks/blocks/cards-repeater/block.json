@@ -1,5 +1,5 @@
 {
-	"name": "cards-repeater",
+	"name": "wds/cards-repeater",
 	"title": "Cards - Repeater",
 	"description": "A block used to display a group of Cards.",
 	"style": [ "file:./style.css", "wd_s_block-cards-repeater-style" ],

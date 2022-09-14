@@ -1,5 +1,5 @@
 {
-	"name": "quotes",
+	"name": "wds/quotes",
 	"title": "Quotes",
 	"description": "A block used to show quotes.",
 	"style": [ "file:./style.css", "wd_s_block-quotes-style" ],

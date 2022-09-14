@@ -1,5 +1,5 @@
 {
-	"name": "tabs",
+	"name": "wds/tabs",
 	"title": "Tabs",
 	"description": "A block used to show Tabs and Content.",
 	"style": [ "file:./style.css", "wd_s_block-tabs-style" ],

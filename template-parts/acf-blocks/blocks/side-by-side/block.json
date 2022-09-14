@@ -1,10 +1,10 @@
 {
-	"name": "side-by-side",
+	"name": "wds/side-by-side",
 	"title": "Side by Side",
 	"description": "A block used to show side by side content.",
 	"editorStyle": "file:./side-by-side-editor.css",
 	"style": "file:./style-side-by-side.css",
-	"editorScript": "file:./side-by-side-editor.js",
+	"editorScript": "file:./script.js",
 	"script": "file:./script.js",
 	"category": "theme",
 	"icon": "columns",

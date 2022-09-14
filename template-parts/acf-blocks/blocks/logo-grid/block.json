@@ -1,5 +1,5 @@
 {
-	"name": "logo-grid",
+	"name": "wds/logo-grid",
 	"title": "Logo Grid",
 	"description": "A block used to show a logo grid.",
 	"style": [ "file:./style.css", "wd_s_block-logo-grid-style" ],
