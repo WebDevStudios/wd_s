@@ -10,10 +10,11 @@
  */
 
 use function WebDevStudios\wd_s\print_comments;
+use function WebDevStudios\wd_s\main_classes;
 
 get_header(); ?>
 
-	<div class="container site-main">
+	<div class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 		<main id="main" class="content-container">
 
 			<?php
