@@ -7,9 +7,11 @@
  * @package wd_s
  */
 
+use function WebDevStudios\wd_s\main_classes;
+
 get_header(); ?>
 
-	<main id="main" class="container site-main">
+	<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 
 		<section class="error-404 not-found">
 			<header class="page-header">
