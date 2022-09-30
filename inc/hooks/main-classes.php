@@ -12,20 +12,23 @@ namespace WebDevStudios\wd_s;
  *
  * @author WebDevStudios
  *
- * @param array $classes Classes for the <main> element.
+ * @param array $new_classes Classes for the <main> element.
  *
  * @return array main classes.
  */
-function main_classes( $classes ) {
-	$classes[] = 'site-main';
+function main_classes( $new_classes ) {
 
-	if ( ! is_plugin_active( 'wds-acf-blocks/wds-acf-blocks.php' ) ) {
+	$classes = [ 'site-main' ];
+
+	if ( ! is_plugin_active( 'wds-acf-blocks/wds-acf-blocks.php' ) || is_single() || is_page_template( 'page-templates/scaffolding.php' ) || is_page_template( 'page-templates/sidebar-right.php' ) ) {
 		$classes[] = 'container';
 	}
 
-	if ( is_single() || is_page_template( 'page-templates/scaffolding.php' ) || is_page_template( 'page-templates/sidebar-right.php' ) ) {
-		$classes[] = 'container';
+	if ( ! empty( $new_classes ) ) {
+		$classes = array_merge( $classes, $new_classes );
 	}
+
+	$classes = apply_filters( 'wd_s_main_classes', $classes );
 
 	return implode( ' ', $classes );
 }
