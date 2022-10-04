@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 <article <?php post_class( 'post-container' ); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header wds-center-column">
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -58,7 +58,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer wds-center-column">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
