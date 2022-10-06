@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 <article <?php post_class(); ?>>
 
-	<header class="entry-header container">
+	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -30,7 +30,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer container">
+	<footer class="entry-footer">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
