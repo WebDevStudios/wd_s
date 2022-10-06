@@ -34,7 +34,7 @@
 	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
-			<property name="minimum_supported_version" value="5.6"/>
+			<property name="minimum_supported_version" value="5.8"/>
 		</properties>
 	</rule>
 
