@@ -1,0 +1,9 @@
+//----------------------------------------
+// Paragraph - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-paragraph {
+	.entry-content > & {
+		@apply block container;
+	}
+}
