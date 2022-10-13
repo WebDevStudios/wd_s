@@ -25,7 +25,8 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
 		"wp-cli/wp-cli-bundle": "^2.5.0",
-		"wp-coding-standards/wpcs": "^2.3.0"
+		"wp-coding-standards/wpcs": "^2.3.0",
+		"paulthewalton/acf-pro-stubs": "5.8.9.1"
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
