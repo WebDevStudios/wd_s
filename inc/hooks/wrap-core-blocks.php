@@ -26,7 +26,6 @@ function wrap_core_blocks( $block_content, $block ) {
 		[ 'core/paragraph', 'paragraph' ],
 		[ 'core/html', 'html' ],
 		[ 'core/list', 'list' ],
-		[ 'core/table', 'table' ],
 	];
 
 	foreach ( $blocks_to_wrap as $block_to_wrap ) {
