@@ -21,16 +21,15 @@ namespace WebDevStudios\wd_s;
 function wrap_core_blocks( $block_content, $block ) {
 
 	$blocks_to_wrap = [
-		// Use associative array.
-		[ 'core/heading', 'heading' ],
-		[ 'core/paragraph', 'paragraph' ],
-		[ 'core/html', 'html' ],
-		[ 'core/list', 'list' ],
+		'heading'   => 'core/heading',
+		'paragraph' => 'core/paragraph',
+		'html'      => 'core/html',
+		'list'      => 'core/list',
 	];
 
-	foreach ( $blocks_to_wrap as $block_to_wrap ) {
-		if ( $block_to_wrap[0] === $block['blockName'] ) {
-			$block_content = '<span class="wp-block-' . $block_to_wrap[1] . '">' . $block_content . '</span>';
+	foreach ( $blocks_to_wrap as $block_class => $block_name ) {
+		if ( $block_name === $block['blockName'] ) {
+			$block_content = '<span class="wp-block-' . $block_class . '">' . $block_content . '</span>';
 		}
 	}
 
