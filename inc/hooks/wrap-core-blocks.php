@@ -19,10 +19,11 @@ namespace WebDevStudios\wd_s;
  * @param string $block         The block's name.
  */
 function wrap_core_blocks( $block_content, $block ) {
+
 	$blocks_to_wrap = [
+		// Use associative array.
 		[ 'core/heading', 'heading' ],
 		[ 'core/paragraph', 'paragraph' ],
-		[ 'core/freeform', 'freeform' ],
 		[ 'core/html', 'html' ],
 		[ 'core/list', 'list' ],
 		[ 'core/table', 'table' ],
@@ -33,6 +34,11 @@ function wrap_core_blocks( $block_content, $block ) {
 			$block_content = '<span class="wp-block-' . $block_to_wrap[1] . '">' . $block_content . '</span>';
 		}
 	}
+
+	if ( null === $block['blockName'] ) {
+		$block_content = '<span class="wp-block-freeform">' . $block_content . '</span>';
+	}
+
 	return $block_content;
 }
 
