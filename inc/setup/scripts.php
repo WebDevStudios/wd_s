@@ -45,6 +45,7 @@ function deregister_core_block_styles() {
 		'heading',
 		'paragraph',
 		'table',
+		'list',
 	];
 
 	foreach ( $block_styles_to_remove as $block_style ) {
