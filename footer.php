@@ -24,7 +24,7 @@ use function WebDevStudios\wd_s\print_mobile_menu;
 					'fallback_cb'    => false,
 					'theme_location' => 'footer',
 					'menu_id'        => 'footer-menu',
-					'menu_class'     => 'menu container',
+					'menu_class'     => 'menu',
 					'container'      => false,
 					'depth'          => 1,
 				]
@@ -32,12 +32,12 @@ use function WebDevStudios\wd_s\print_mobile_menu;
 			?>
 		</nav><!-- #site-navigation-->
 
-		<div class="container site-info">
+		<div class="site-info">
 			<?php print_copyright_text(); ?>
 			<?php print_social_network_links(); ?>
 		</div><!-- .site-info -->
 
-	</footer><!-- .site-footer container-->
+	</footer><!-- .site-footer-->
 
 	<?php print_mobile_menu(); ?>
 	<?php wp_footer(); ?>

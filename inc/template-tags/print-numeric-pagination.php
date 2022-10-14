@@ -40,7 +40,7 @@ function print_numeric_pagination( $args = [], $query = null ) {
 	}
 	?>
 
-	<nav class="container pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'wd_s' ); ?>">
+	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', 'wd_s' ); ?>">
 		<?php echo paginate_links( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. ?>
 	</nav>
 
