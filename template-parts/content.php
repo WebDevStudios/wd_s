@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 <article <?php post_class( 'post-container' ); ?>>
 
-	<header class="entry-header container">
+	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
