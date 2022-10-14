@@ -3,13 +3,13 @@
 //----------------------------------------
 
 .wp-block-table {
-	@apply container mb-24 p-0 border-0 border-collapse w-full;
+	@apply block container mb-24 border-0 border-collapse;
+
+	table {
+		@apply w-full;
+	}
 
 	border-spacing: 0;
-
-	@screen desktop {
-		@apply border border-solid border-black;
-	}
 
 	thead {
 		@apply hidden;
