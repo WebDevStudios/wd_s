@@ -58,7 +58,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer container">
+	<footer class="entry-footer">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
