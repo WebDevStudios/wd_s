@@ -18,11 +18,7 @@ namespace WebDevStudios\wd_s;
  */
 function main_classes( $new_classes ) {
 
-	$classes = [ 'site-main' ];
-
-	if ( ! is_plugin_active( 'wds-acf-blocks/wds-acf-blocks.php' ) || is_single() || is_page_template( 'page-templates/scaffolding.php' ) || is_page_template( 'page-templates/sidebar-right.php' ) ) {
-		$classes[] = 'container';
-	}
+	$classes = [ 'site-main', 'wds-fullwidth-grid' ];
 
 	if ( ! empty( $new_classes ) ) {
 		$classes = array_merge( $classes, $new_classes );

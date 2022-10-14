@@ -32,7 +32,7 @@
 
 	<header class="site-header">
 
-		<div class="container">
+		<div class="site-header-content">
 
 			<div class="site-branding">
 
@@ -58,7 +58,7 @@
 				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'wd_s' ); ?>"></button>
 			<?php endif; ?>
 
-		</div><!-- .container -->
+		</div><!-- .site-header-content -->
 
 		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Main Navigation', 'wd_s' ); ?>">
 			<?php

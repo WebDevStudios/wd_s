@@ -23,3 +23,13 @@ pre {
 .block-editor-writing-flow {
 	@apply text-base leading-normal;
 }
+
+//-----------------------------------------
+// Page Template Containers
+//-----------------------------------------
+.site-main {
+	.entry-header,
+	.entry-footer {
+		@apply container;
+	}
+}
