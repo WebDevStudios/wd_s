@@ -5,9 +5,9 @@
 .wp-block-table {
 	@apply block container mb-24 border-0 border-collapse;
 
-	// table {
-	// 	@apply w-full;
-	// }
+	table {
+		@apply w-full;
+	}
 
 	border-spacing: 0;
 
