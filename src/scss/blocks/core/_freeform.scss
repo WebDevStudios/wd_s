@@ -1,11 +1,7 @@
 //----------------------------------------
-// Paragraph - Core Gutenberg Block
+// Freeform - Core Gutenberg Block
 //----------------------------------------
 
-.wp-block-paragraph {
+.wp-block-freeform {
 	@apply block container;
-
-	.entry-content > & {
-		@apply block container;
-	}
 }

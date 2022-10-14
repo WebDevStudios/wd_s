@@ -2,20 +2,24 @@
 // List - Core Gutenberg Block
 //----------------------------------------
 
-ul {
-	&:not( .menu, .sub-menu ) {
-		@apply mb-16 list-disc list-inside;
+.wp-block-list {
+	@apply block container;
+
+	ul {
+		&:not( .menu, .sub-menu ) {
+			@apply mb-16 list-disc list-inside;
+		}
 	}
-}
 
-ol {
-	@apply mb-16 list-decimal list-inside;
-}
+	ol {
+		@apply mb-16 list-decimal list-inside;
+	}
 
-li li,
-li li li,
-li li li li,
-li li li li li,
-li li li li li li {
-	@apply ml-16;
+	li li,
+	li li li,
+	li li li li,
+	li li li li li,
+	li li li li li li {
+		@apply ml-16;
+	}
 }
