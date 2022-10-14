@@ -2,6 +2,7 @@ const plugin = require( 'tailwindcss/plugin' );
 
 // Get arrays of all of the files.
 module.exports = {
+	safelist: [ 'wds-fullwidth-grid', 'wds-block-grid' ],
 	theme: {
 		fontSize: {
 			'root-em': '16px',
