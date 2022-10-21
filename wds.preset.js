@@ -2,7 +2,7 @@ const plugin = require( 'tailwindcss/plugin' );
 
 // Get arrays of all of the files.
 module.exports = {
-	safelist: [ 'wds-fullwidth-grid', 'wds-block-grid' ],
+	safelist: [ 'wds-grid' ],
 	theme: {
 		fontSize: {
 			'root-em': '16px',
@@ -65,6 +65,7 @@ module.exports = {
 		},
 		screens: {
 			phone: '300px',
+			'max-tablet-portrait': { max: '600px' },
 			'tablet-portrait': '600px',
 			'wp-admin-bar': '783px',
 			'tablet-landscape': '900px',
@@ -172,6 +173,15 @@ module.exports = {
 
 			addComponents( screenReaderText, {
 				variants: [ 'hover', 'active', 'focus' ],
+			} );
+		} ),
+		plugin( function ( { addUtilities } ) {
+			addUtilities( {
+				'.wds-grid': {
+					display: 'grid',
+					gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+					columnGap: '1rem',
+				},
 			} );
 		} ),
 	],

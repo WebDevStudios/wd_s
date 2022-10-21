@@ -4,13 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-	.wds-fullwidth-grid {
-		@apply grid;
-
-		.wds-block-grid {
-			@apply container grid grid-cols-12 gap-x-16;
-		}
-	}
-}
