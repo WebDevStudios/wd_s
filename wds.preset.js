@@ -122,6 +122,8 @@ module.exports = {
 				},
 				'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6': {
 					marginBottom: config( 'theme.spacing.16' ),
+					fontWeight: 600,
+					lineHeight: '1.25',
 				},
 				a: {
 					textDecoration: 'underline',
@@ -131,6 +133,7 @@ module.exports = {
 					'&:last-child': {
 						marginBottom: '0',
 					},
+					lineHeight: '1.5',
 				},
 				'.button': {
 					padding: config( 'theme.spacing.16' ),
