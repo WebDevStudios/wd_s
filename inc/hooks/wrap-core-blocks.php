@@ -34,7 +34,7 @@ function wrap_core_blocks( $block_content, $block ) {
 	}
 
 	// The core/freeform block doesn't have a block name. So we need to check for null to wrap it...
-	if ( null === $block['blockName'] ) {
+	if ( null === $block['blockName'] && ! empty( $block_content ) && ! ctype_space( $block_content ) ) {
 		$block_content = '<span class="wp-block-freeform">' . $block_content . '</span>';
 	}
 
