@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@wordpress/eslint-plugin": "12.8.0",
-		"@wordpress/scripts": "^23.3.0",
+		"@wordpress/scripts": "^25.0.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
