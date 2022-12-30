@@ -20,27 +20,21 @@ const themeColors = theme.settings.color.palette.reduce( ( acc, item ) => {
 	return acc;
 }, {} );
 
+const themeFontSizes = theme.settings.typography.fontSizes.reduce(
+	( acc, item ) => {
+		acc[ item.slug ] = item.size;
+		return acc;
+	},
+	{}
+);
+
 // Get arrays of all of the files.
 module.exports = {
 	safelist: [ 'wds-grid' ],
 	theme: {
 		fontSize: {
 			'root-em': '16px',
-			xs: '0.75rem',
-			sm: '0.875rem',
-			base: '1rem',
-			lg: '1.125rem',
-			xl: '1.25rem',
-			'2xl': '1.375rem',
-			'3xl': '1.5rem',
-			'4xl': '1.625rem',
-			'5xl': '1.75rem',
-			'6xl': '1.875rem',
-			'heading-xs': '2rem',
-			'heading-sm': '2.125rem',
-			'heading-md': '2.375rem',
-			'heading-lg': '2.625rem',
-			'heading-xl': '2.875rem',
+			...themeFontSizes,
 		},
 		spacing: {
 			px: '1px',

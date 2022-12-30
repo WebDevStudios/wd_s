@@ -224,6 +224,81 @@
 			],
 			"fontSizes": [
 				{
+					"fluid": false,
+					"size": "0.75rem",
+					"slug": "xs"
+				},
+				{
+					"fluid": false,
+					"size": "0.875rem",
+					"slug": "sm"
+				},
+				{
+					"fluid": false,
+					"size": "1rem",
+					"slug": "base"
+				},
+				{
+					"fluid": false,
+					"size": "1.125rem",
+					"slug": "lg"
+				},
+				{
+					"fluid": false,
+					"size": "1.25rem",
+					"slug": "xl"
+				},
+				{
+					"fluid": false,
+					"size": "1.375rem",
+					"slug": "2xl"
+				},
+				{
+					"fluid": false,
+					"size": "1.5rem",
+					"slug": "3xl"
+				},
+				{
+					"fluid": false,
+					"size": "1.625rem",
+					"slug": "4xl"
+				},
+				{
+					"fluid": false,
+					"size": "1.75rem",
+					"slug": "5xl"
+				},
+				{
+					"fluid": false,
+					"size": "1.875rem",
+					"slug": "6xl"
+				},
+				{
+					"fluid": false,
+					"size": "2rem",
+					"slug": "heading-xs"
+				},
+				{
+					"fluid": false,
+					"size": "2.125rem",
+					"slug": "heading-sm"
+				},
+				{
+					"fluid": false,
+					"size": "2.375rem",
+					"slug": "heading-md"
+				},
+				{
+					"fluid": false,
+					"size": "2.625rem",
+					"slug": "heading-lg"
+				},
+				{
+					"fluid": false,
+					"size": "2.875rem",
+					"slug": "heading-xl"
+				},
+				{
 					"fluid": {
 						"min": "0.875rem",
 						"max": "1rem"
@@ -371,7 +446,7 @@
 					}
 				}
 			},
-			"core/comments-title":{
+			"core/comments-title": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--large)"
 				},
