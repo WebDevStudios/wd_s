@@ -28,6 +28,14 @@ const themeFontSizes = theme.settings.typography.fontSizes.reduce(
 	{}
 );
 
+const themeSpacingSizes = theme.settings.spacing.spacingSizes.reduce(
+	( acc, item ) => {
+		acc[ item.slug ] = item.size;
+		return acc;
+	},
+	{}
+);
+
 // Get arrays of all of the files.
 module.exports = {
 	safelist: [ 'wds-grid' ],
@@ -52,15 +60,14 @@ module.exports = {
 			20: '1.25rem',
 			24: '1.5rem',
 			32: '2rem',
-			40: '2.5rem',
 			48: '3rem',
 			56: '3.5rem',
 			64: '4rem',
 			68: '4.25rem',
 			72: '4.5rem',
 			76: '4.75rem',
-			80: '5rem',
 			192: '12rem',
+			...themeSpacingSizes,
 		},
 		boxShadow: {
 			xs: '0 0 0 0.0625rem rgba(0, 0, 0, 0.05)',
