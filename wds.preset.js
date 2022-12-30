@@ -1,5 +1,25 @@
 const plugin = require( 'tailwindcss/plugin' );
 
+const fs = require( 'fs' );
+
+const themeJson = fs.readFileSync( './theme.json' );
+const theme = JSON.parse( themeJson );
+const themeColors = theme.settings.color.palette.reduce( ( acc, item ) => {
+	const [ color, number ] = item.slug.split( '-' );
+
+	// If there is a number identifier, make this an object
+	if ( undefined !== number ) {
+		if ( ! acc[ color ] ) {
+			acc[ color ] = {};
+		}
+		acc[ color ][ number ] = item.color;
+	} else {
+		acc[ color ] = item.color;
+	}
+
+	return acc;
+}, {} );
+
 // Get arrays of all of the files.
 module.exports = {
 	safelist: [ 'wds-grid' ],
@@ -92,6 +112,7 @@ module.exports = {
 				wds: {
 					orange: '#f3713c',
 				},
+				...themeColors,
 			},
 		},
 	},
