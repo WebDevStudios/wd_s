@@ -17,10 +17,18 @@
 				@apply mr-16;
 			}
 		}
+
+		a {
+			@apply no-underline;
+
+			&:hover {
+				@apply underline underline-offset-4 decoration-dotted;
+			}
+		}
 	}
 
 	.sub-menu {
-		@apply bg-white py-8 absolute shadow-md;
+		@apply bg-black py-8 absolute shadow-md;
 
 		left: -999em;
 		top: theme( 'spacing.24' );
