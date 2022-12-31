@@ -15,7 +15,7 @@
 
 	&.alignfull {
 		figcaption {
-			width: calc( 100% - 2rem );
+			max-width: 100vw;
 		}
 	}
 }
