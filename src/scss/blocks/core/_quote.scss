@@ -3,10 +3,10 @@
 //----------------------------------------
 
 .wp-block-quote {
-	@apply container my-32 mx-16;
+	@apply container my-32;
 	max-width: calc( 100% - 2rem );
 
-	@screen tablet-landscape {
+	@screen desktop-min {
 		@apply mx-auto;
 		max-width: calc( theme( 'screens.desktop' ) - 2rem );
 	}

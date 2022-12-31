@@ -3,11 +3,11 @@
 //----------------------------------------
 
 .wp-block-separator {
-	@apply container my-32 mx-16 block clear-both;
+	@apply container my-32 px-16 block clear-both;
 
 	max-width: calc( 100% - 2rem );
 
-	@screen tablet-landscape {
+	@screen desktop-min {
 		@apply mx-auto;
 
 		max-width: calc( theme( 'screens.desktop' ) - 2rem );
