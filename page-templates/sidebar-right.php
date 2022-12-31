@@ -14,7 +14,7 @@ use function WebDevStudios\wd_s\main_classes;
 
 get_header(); ?>
 
-	<div class="<?php echo esc_attr( main_classes( [] ) ); ?>">
+	<div class="<?php echo esc_attr( main_classes( [ 'right-sidebar' ] ) ); ?>">
 		<main id="main" class="content-container">
 
 			<?php
