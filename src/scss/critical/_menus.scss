@@ -6,11 +6,11 @@
 	@apply hidden;
 
 	@screen tablet-landscape {
-		@apply block;
+		@apply flex ml-auto;
 	}
 
 	.menu {
-		@apply flex;
+		@apply flex mb-0 items-center pr-0 text-white;
 
 		> li {
 			&:not( :last-child ) {

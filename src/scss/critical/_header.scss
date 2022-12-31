@@ -2,11 +2,10 @@
 // Global Site Header
 //--------------------------------------------------------------
 .site-header {
-	@apply bg-black bg-opacity-10 py-12;
+	@apply bg-black py-12 flex;
 
-	> .site-header-content {
-		@apply container;
-	}
+	padding-left: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 + 16px );
+	padding-right: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 + 16px );
 
 	.site-description {
 		@apply no-underline;
@@ -15,6 +14,10 @@
 	.site-branding {
 		a {
 			@apply no-underline;
+
+			.custom-logo {
+				@apply max-h-50 w-auto;
+			}
 		}
 	}
 }
