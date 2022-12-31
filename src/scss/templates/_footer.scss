@@ -9,6 +9,10 @@
 		padding-right: calc( ( 100% - theme( 'screens.desktop' ) ) / 2 );
 	}
 
+	.footer-navigation .menu {
+		@apply mb-24;
+	}
+
 	.site-info {
 		@apply mx-auto my-0 flex justify-between px-16 text-white;
 	}
