@@ -3,7 +3,17 @@
 //----------------------------------------
 
 .wp-block-quote {
-	@apply container my-32;
+	@apply container my-32 mx-16;
+	max-width: calc( 100% - 2rem );
+
+	@screen tablet-landscape {
+		@apply mx-auto;
+		max-width: calc( theme( 'screens.desktop' ) - 2rem );
+	}
+
+	.wp-block-paragraph {
+		@apply px-0;
+	}
 
 	p {
 		@apply mb-16;
