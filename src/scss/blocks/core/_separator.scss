@@ -1,0 +1,19 @@
+//----------------------------------------
+// Quote - Core Separator Block
+//----------------------------------------
+
+.wp-block-separator {
+	@apply container my-32 mx-16 block clear-both;
+
+	max-width: calc( 100% - 2rem );
+
+	@screen tablet-landscape {
+		@apply mx-auto;
+
+		max-width: calc( theme( 'screens.desktop' ) - 2rem );
+	}
+
+	.alignfull & {
+		@apply max-w-full;
+	}
+}
