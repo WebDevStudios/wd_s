@@ -2,19 +2,33 @@
 // Global Site Header
 //--------------------------------------------------------------
 .site-header {
-	@apply bg-black bg-opacity-10 py-12;
+	@apply bg-black px-16 py-12 flex relative;
 
-	> .site-header-content {
-		@apply container;
+	@screen tablet-landscape {
+		padding-left: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 );
+		padding-right: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 );
 	}
-
 	.site-description {
 		@apply no-underline;
 	}
 
 	.site-branding {
+		@screen tablet-landscape {
+			@apply pl-16;
+		}
+
 		a {
 			@apply no-underline;
+
+			.custom-logo {
+				@apply max-h-50 w-auto;
+			}
+		}
+	}
+
+	.main-navigation {
+		@screen tablet-landscape {
+			@apply pr-16;
 		}
 	}
 }

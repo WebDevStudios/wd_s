@@ -8,6 +8,36 @@
 namespace WebDevStudios\wd_s;
 
 /**
+ * Register Header setting.
+ *
+ * @author Thong Dang
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+ */
+function customize_header( $wp_customize ) {
+	// Register a setting.
+	$wp_customize->add_setting(
+		'wd_s_convert_last_menu_item_to_button',
+		[
+			'default'           => '',
+			'sanitize_callback' => 'wp_kses_post',
+		]
+	);
+
+	// Create the setting field.
+	$wp_customize->add_control(
+		'wd_s_convert_last_menu_item_to_button',
+		[
+			'label'   => esc_attr__( 'Convert last menu item into a button', 'wd_s' ),
+			'section' => 'wd_s_header_section',
+			'type'    => 'checkbox',
+		]
+	);
+}
+
+add_action( 'customize_register', __NAMESPACE__ . '\customize_header' );
+
+/**
  * Register additional scripts.
  *
  * @author WebDevStudios

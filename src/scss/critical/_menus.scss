@@ -6,21 +6,29 @@
 	@apply hidden;
 
 	@screen tablet-landscape {
-		@apply block;
+		@apply flex ml-auto;
 	}
 
 	.menu {
-		@apply flex;
+		@apply flex mb-0 items-center pr-0 text-white;
 
 		> li {
 			&:not( :last-child ) {
 				@apply mr-16;
 			}
 		}
+
+		a {
+			@apply no-underline;
+
+			&:hover {
+				@apply underline underline-offset-4 decoration-dotted;
+			}
+		}
 	}
 
 	.sub-menu {
-		@apply bg-white py-8 absolute shadow-md;
+		@apply bg-black py-8 absolute shadow-md;
 
 		left: -999em;
 		top: theme( 'spacing.24' );
@@ -39,6 +47,13 @@
 			}
 		}
 	}
+}
+
+//-----------------------------------------
+// Button menu
+//-----------------------------------------
+.menu-button {
+	@apply bg-white px-12 py-6 text-black;
 }
 
 //-----------------------------------------

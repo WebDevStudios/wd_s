@@ -31,17 +31,11 @@
 			transparent;
 		background-size: 100%;
 		right: theme( 'spacing.12' );
-		top: theme( 'spacing.12' );
+		top: calc( 50% - 12px );
 		z-index: 9999;
 
 		@screen tablet-landscape {
 			display: none;
-		}
-
-		.admin-bar & {
-			@apply absolute;
-
-			top: theme( 'spacing.48' );
 		}
 
 		&:focus,
