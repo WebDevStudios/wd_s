@@ -21,7 +21,12 @@
 	@apply left-1/2 relative px-0;
 	margin-left: -50vw;
 
-	// Total width less vertical scroll bar.
-	width: calc( 100vw - 8.1px );
-	max-width: calc( 100vw - 8.1px );
+	width: 100vw;
+	max-width: 100vw;
+
+	@screen tablet-landscape {
+		// Total width less vertical scroll bar.
+		width: calc( 100vw - 8.1px );
+		max-width: calc( 100vw - 8.1px );
+	}
 }
