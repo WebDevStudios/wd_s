@@ -5,8 +5,8 @@
 	@apply bg-black px-16 py-12 flex relative;
 
 	@screen tablet-landscape {
-		padding-left: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 );
-		padding-right: calc( ( 100vw - theme( 'screens.desktop' ) ) / 2 );
+		padding-left: calc( ( 100% - theme( 'screens.desktop' ) ) / 2 );
+		padding-right: calc( ( 100% - theme( 'screens.desktop' ) ) / 2 );
 	}
 	.site-description {
 		@apply no-underline;
