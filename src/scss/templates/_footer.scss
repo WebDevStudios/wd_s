@@ -16,4 +16,16 @@
 	.site-info {
 		@apply mx-auto my-0 flex justify-between px-16 text-white;
 	}
+
+	.social-icons {
+		@apply flex mb-0;
+
+		.social-icon {
+			@apply mr-6;
+
+			&:last-child {
+				@apply mr-0;
+			}
+		}
+	}
 }
