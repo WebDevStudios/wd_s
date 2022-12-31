@@ -1,26 +1,48 @@
 const plugin = require( 'tailwindcss/plugin' );
 
+const fs = require( 'fs' );
+
+const themeJson = fs.readFileSync( './theme.json' );
+const theme = JSON.parse( themeJson );
+const themeColors = theme.settings.color.palette.reduce( ( acc, item ) => {
+	const [ color, number ] = item.slug.split( '-' );
+
+	// If there is a number identifier, make this an object
+	if ( undefined !== number ) {
+		if ( ! acc[ color ] ) {
+			acc[ color ] = {};
+		}
+		acc[ color ][ number ] = item.color;
+	} else {
+		acc[ color ] = item.color;
+	}
+
+	return acc;
+}, {} );
+
+const themeFontSizes = theme.settings.typography.fontSizes.reduce(
+	( acc, item ) => {
+		acc[ item.slug ] = item.size;
+		return acc;
+	},
+	{}
+);
+
+const themeSpacingSizes = theme.settings.spacing.spacingSizes.reduce(
+	( acc, item ) => {
+		acc[ item.slug ] = item.size;
+		return acc;
+	},
+	{}
+);
+
 // Get arrays of all of the files.
 module.exports = {
 	safelist: [ 'wds-grid' ],
 	theme: {
 		fontSize: {
 			'root-em': '16px',
-			xs: '0.75rem',
-			sm: '0.875rem',
-			base: '1rem',
-			lg: '1.125rem',
-			xl: '1.25rem',
-			'2xl': '1.375rem',
-			'3xl': '1.5rem',
-			'4xl': '1.625rem',
-			'5xl': '1.75rem',
-			'6xl': '1.875rem',
-			'heading-xs': '2rem',
-			'heading-sm': '2.125rem',
-			'heading-md': '2.375rem',
-			'heading-lg': '2.625rem',
-			'heading-xl': '2.875rem',
+			...themeFontSizes,
 		},
 		spacing: {
 			px: '1px',
@@ -38,15 +60,14 @@ module.exports = {
 			20: '1.25rem',
 			24: '1.5rem',
 			32: '2rem',
-			40: '2.5rem',
 			48: '3rem',
 			56: '3.5rem',
 			64: '4rem',
 			68: '4.25rem',
 			72: '4.5rem',
 			76: '4.75rem',
-			80: '5rem',
 			192: '12rem',
+			...themeSpacingSizes,
 		},
 		boxShadow: {
 			xs: '0 0 0 0.0625rem rgba(0, 0, 0, 0.05)',
@@ -92,6 +113,7 @@ module.exports = {
 				wds: {
 					orange: '#f3713c',
 				},
+				...themeColors,
 			},
 		},
 	},
