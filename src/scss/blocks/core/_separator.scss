@@ -1,0 +1,19 @@
+//----------------------------------------
+// Core Separator Block
+//----------------------------------------
+
+.wp-block-separator {
+	@apply container my-32 px-16 block clear-both;
+
+	max-width: calc( 100% - 2rem );
+
+	@screen desktop-min {
+		@apply mx-auto;
+
+		max-width: calc( theme( 'screens.desktop' ) - 2rem );
+	}
+
+	.alignfull & {
+		@apply max-w-full;
+	}
+}

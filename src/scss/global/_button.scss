@@ -1,0 +1,20 @@
+//----------------------------------------
+// Button style
+//----------------------------------------
+
+.button {
+	@apply bg-primary text-contrast cursor-pointer no-underline;
+
+	&:hover,
+	&:focus {
+		@apply bg-contrast text-base;
+	}
+
+	&:active {
+		@apply bg-secondary text-base;
+	}
+
+	&:visited {
+		@apply text-contrast;
+	}
+}

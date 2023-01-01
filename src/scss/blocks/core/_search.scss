@@ -1,6 +1,7 @@
 //----------------------------------------
-// Global site styles
+// Core Search Block
 //----------------------------------------
 
-@import 'global';
-@import 'button';
+.wp-block-search {
+	@apply container;
+}

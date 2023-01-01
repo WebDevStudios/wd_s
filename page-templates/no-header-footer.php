@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Sidebar Right
+ * Template Name: No Header, No Footer
  *
- * This template displays a page with a sidebar on the right side of the screen.
+ * This template displays a page without header and footer.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,10 +11,16 @@
 
 use function WebDevStudios\wd_s\print_comments;
 use function WebDevStudios\wd_s\main_classes;
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<?php wp_head(); ?>
+	</head>
 
-get_header(); ?>
-
-	<div class="<?php echo esc_attr( main_classes( [ 'right-sidebar' ] ) ); ?>">
+	<div class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 		<main id="main" class="content-container">
 
 			<?php
@@ -30,7 +36,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php get_sidebar(); ?>
 	</div>
+	<?php wp_footer(); ?>
 
-<?php get_footer(); ?>
+</body>
+</html>

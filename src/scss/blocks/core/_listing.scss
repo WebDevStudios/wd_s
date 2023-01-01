@@ -1,0 +1,33 @@
+//----------------------------------------
+// Core Categories/Archive/Posts Block
+//----------------------------------------
+
+.wp-block-categories,
+.wp-block-archives,
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+	@apply container;
+
+	@screen desktop-min {
+		@apply mx-auto;
+		max-width: calc( theme( 'screens.desktop' ) - 2rem );
+	}
+}
+
+/* stylelint-disable */
+.wp-block-latest-posts.wp-block-latest-posts__list {
+	@apply px-16;
+
+	@screen desktop-min {
+		@apply px-0;
+	}
+}
+/* stylelint-enable */
+
+ol.wp-block-latest-comments {
+	@apply ml-auto;
+
+	@screen desktop-min {
+		@apply px-0;
+	}
+}

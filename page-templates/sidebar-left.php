@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Sidebar Right
+ * Template Name: Sidebar Left
  *
- * This template displays a page with a sidebar on the right side of the screen.
+ * This template displays a page with a sidebar on the left side of the screen.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -14,7 +14,7 @@ use function WebDevStudios\wd_s\main_classes;
 
 get_header(); ?>
 
-	<div class="<?php echo esc_attr( main_classes( [ 'right-sidebar' ] ) ); ?>">
+	<div class="<?php echo esc_attr( main_classes( [ 'left-sidebar' ] ) ); ?>">
 		<main id="main" class="content-container">
 
 			<?php

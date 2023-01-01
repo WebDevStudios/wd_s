@@ -5,6 +5,10 @@
 .wp-block-gallery {
 	@apply block container mb-80;
 
+	.wp-block-image {
+		@apply px-0;
+	}
+
 	.blocks-gallery-item {
 		img,
 		figcaption {
