@@ -1,0 +1,55 @@
+//--------------------------------------------------------------
+// Footer flexible widget areas
+//--------------------------------------------------------------
+
+.footer-widgets {
+	@apply bg-black text-white float-left w-full;
+
+	&-wrap {
+		@apply container clear-both mx-auto;
+
+		.widget {
+			@apply float-left px-20 py-32;
+		}
+
+		&.widget-halves .widget:nth-child( odd ),
+		&.widget-thirds .widget:nth-child( 3n + 1 ),
+		&.widget-fourths .widget:nth-child( 4n + 1 ) {
+			@apply clear-left;
+		}
+
+		@screen max-tablet-portrait {
+			&.widget-fourths .widget,
+			&.widget-halves .widget,
+			&.widget-thirds .widget {
+				@apply float-none w-full;
+			}
+		}
+
+		@screen tablet-portrait {
+			&.widget-fourths .widget,
+			&.widget-halves .widget,
+			&.widget-thirds .widget {
+				@apply float-left w-1/2;
+			}
+		}
+
+		@screen tablet-landscape {
+			&.widget-full .widget,
+			&.widget-halves.uneven .widget:last-of-type {
+				@apply float-none w-full;
+			}
+			&.widget-fourths .widget {
+				@apply w-1/4;
+			}
+
+			&.widget-thirds .widget {
+				@apply w-1/3;
+			}
+
+			&.widget-halves .widget {
+				@apply w-1/2;
+			}
+		}
+	}
+}
