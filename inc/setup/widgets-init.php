@@ -18,7 +18,8 @@ function widgets_init() {
 
 	// Define sidebars.
 	$sidebars = [
-		'sidebar-1' => esc_html__( 'Sidebar 1', 'wd_s' ),
+		'sidebar-1' => esc_html__( 'Sidebar Page', 'wd_s' ),
+		'sidebar-2' => esc_html__( 'Sidebar Blog', 'wd_s' ),
 	];
 
 	// Loop through each sidebar and register.
