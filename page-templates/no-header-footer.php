@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: No Header, No Footer
+ * Template Post Type: post, page
  *
  * This template displays a page without header and footer.
  *
