@@ -9,7 +9,7 @@
 		@apply container clear-both mx-auto;
 
 		.widget {
-			@apply float-left px-20 py-32;
+			@apply float-left px-0 py-32;
 		}
 
 		&.widget-halves .widget:nth-child( odd ),
@@ -35,6 +35,10 @@
 		}
 
 		@screen tablet-landscape {
+			.widget {
+				@apply px-16;
+			}
+
 			&.widget-full .widget,
 			&.widget-halves.uneven .widget:last-of-type {
 				@apply float-none w-full;
@@ -50,6 +54,16 @@
 			&.widget-halves .widget {
 				@apply w-1/2;
 			}
+		}
+	}
+}
+
+.widget ol {
+	@apply px-16;
+
+	&.wp-block-latest-posts {
+		li {
+			@apply px-16;
 		}
 	}
 }
