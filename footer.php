@@ -12,7 +12,17 @@
 use function WebDevStudios\wd_s\print_copyright_text;
 use function WebDevStudios\wd_s\print_social_network_links;
 use function WebDevStudios\wd_s\print_mobile_menu;
+use function WebDevStudios\wd_s\custom_widget_area_class;
 
+if ( is_active_sidebar( 'sidebar-3' ) ) {
+	?>
+	<aside class="footer-widgets widget-area">
+			<div class="footer-widgets-wrap<?php echo esc_html( custom_widget_area_class( 'sidebar-3' ) ); ?>">
+			<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		</div>
+	</aside>
+	<?php
+}
 ?>
 
 	<footer class="site-footer">

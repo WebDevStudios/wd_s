@@ -17,10 +17,6 @@
 /* stylelint-disable */
 .wp-block-latest-posts.wp-block-latest-posts__list {
 	@apply px-16;
-
-	@screen desktop-min {
-		@apply px-0;
-	}
 }
 /* stylelint-enable */
 

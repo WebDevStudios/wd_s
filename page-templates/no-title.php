@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: No Title
+ * Template Post Type: post, page
  *
  * This template displays a page without page title.
  *

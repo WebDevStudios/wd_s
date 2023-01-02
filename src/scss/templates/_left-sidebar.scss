@@ -4,14 +4,14 @@
 
 .left-sidebar {
 	@screen tablet-landscape {
-		@apply container flex-row-reverse flex;
+		@apply container flex-row-reverse flex px-0;
 
 		.content-container {
 			@apply w-2/3;
 		}
 
 		.sidebar {
-			@apply w-1/3 pr-32;
+			@apply w-1/3 pr-32 pl-16;
 		}
 	}
 }

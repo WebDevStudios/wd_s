@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Sidebar Left
+ * Template Post Type: post, page
  *
  * This template displays a page with a sidebar on the left side of the screen.
  *

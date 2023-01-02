@@ -25,6 +25,8 @@
 }
 
 .post-navigation {
+	@apply container;
+
 	.nav-links {
 		@apply flex flex-col text-center;
 
@@ -47,5 +49,15 @@
 .updated {
 	&:not( .published ) {
 		@apply hidden;
+	}
+}
+
+//--------------------------------------------------------------
+// Post Archives
+//--------------------------------------------------------------
+.archive,
+.blog {
+	.post-container {
+		@apply container px-0;
 	}
 }
