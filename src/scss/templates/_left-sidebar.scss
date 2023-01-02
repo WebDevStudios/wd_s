@@ -4,7 +4,7 @@
 
 .left-sidebar {
 	@screen tablet-landscape {
-		@apply container flex-row-reverse flex;
+		@apply container flex-row-reverse flex px-0;
 
 		.content-container {
 			@apply w-2/3;
