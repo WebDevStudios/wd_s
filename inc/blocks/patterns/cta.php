@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/cta-colored-background',
+	'wd_s/cta-colored-background',
 	array(
 		'title'      => __( 'CTA: Colored Background', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-colored-background-with-text',
+	'wd_s/cta-colored-background-with-text',
 	array(
 		'title'      => __( 'CTA: Colored Background with Text', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-wide-cover',
+	'wd_s/cta-wide-cover',
 	array(
 		'title'      => __( 'CTA: Wide Cover', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -38,7 +38,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-cover-with-buttons',
+	'wd_s/cta-cover-with-buttons',
 	array(
 		'title'      => __( 'CTA: Cover with Buttons', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -47,7 +47,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-heading-on-left',
+	'wd_s/cta-heading-on-left',
 	array(
 		'title'      => __( 'CTA: Heading on Left', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -56,7 +56,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-image-on-right',
+	'wd_s/cta-image-on-right',
 	array(
 		'title'      => __( 'CTA: Image on Right', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -65,7 +65,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-horizontal-card',
+	'wd_s/cta-horizontal-card',
 	array(
 		'title'      => __( 'CTA: Horizontal Card', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -75,7 +75,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-2-columns',
+	'wd_s/cta-2-columns',
 	array(
 		'title'      => __( 'CTA: 2 Columns', 'wd_s' ),
 		'categories' => array( 'cta' ),
@@ -84,7 +84,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cta-2-columns-with-cover',
+	'wd_s/cta-2-columns-with-cover',
 	array(
 		'title'      => __( 'CTA: 2 Columns with Cover', 'wd_s' ),
 		'categories' => array( 'cta' ),

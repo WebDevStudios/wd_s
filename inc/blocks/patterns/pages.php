@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/page-home-1',
+	'wd_s/page-home-1',
 	array(
 		'title'      => _x( 'Page - Home', 'Block pattern category', 'wd_s' ) . ' 1',
 		'categories' => array( 'pages' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-home-2',
+	'wd_s/page-home-2',
 	array(
 		'title'      => _x( 'Page - Home', 'Block pattern category', 'wd_s' ) . ' 2',
 		'categories' => array( 'pages' ),
@@ -28,7 +28,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-home-3',
+	'wd_s/page-home-3',
 	array(
 		'title'      => _x( 'Page - Home', 'Block pattern category', 'wd_s' ) . ' 3',
 		'categories' => array( 'pages' ),
@@ -37,7 +37,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-about-1',
+	'wd_s/page-about-1',
 	array(
 		'title'      => _x( 'Page - About', 'Block pattern category', 'wd_s' ) . ' 1',
 		'categories' => array( 'pages' ),
@@ -46,7 +46,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-about-2',
+	'wd_s/page-about-2',
 	array(
 		'title'      => _x( 'Page - About', 'Block pattern category', 'wd_s' ) . ' 2',
 		'categories' => array( 'pages' ),
@@ -55,7 +55,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-about-3',
+	'wd_s/page-about-3',
 	array(
 		'title'      => _x( 'Page - About', 'Block pattern category', 'wd_s' ) . ' 3',
 		'categories' => array( 'pages' ),
@@ -64,7 +64,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-services-1',
+	'wd_s/page-services-1',
 	array(
 		'title'      => _x( 'Page - Services', 'Block pattern category', 'wd_s' ) . ' 1',
 		'categories' => array( 'pages' ),
@@ -73,7 +73,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-services-2',
+	'wd_s/page-services-2',
 	array(
 		'title'      => _x( 'Page - Services', 'Block pattern category', 'wd_s' ) . ' 2',
 		'categories' => array( 'pages' ),
@@ -82,7 +82,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-services-3',
+	'wd_s/page-services-3',
 	array(
 		'title'      => _x( 'Page - Services', 'Block pattern category', 'wd_s' ) . ' 3',
 		'categories' => array( 'pages' ),
@@ -91,7 +91,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-contact-1',
+	'wd_s/page-contact-1',
 	array(
 		'title'      => _x( 'Page - Contact', 'Block pattern category', 'wd_s' ) . ' 1',
 		'categories' => array( 'pages' ),
@@ -100,7 +100,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-contact-2',
+	'wd_s/page-contact-2',
 	array(
 		'title'      => _x( 'Page - Contact', 'Block pattern category', 'wd_s' ) . ' 2',
 		'categories' => array( 'pages' ),
@@ -109,7 +109,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/page-contact-3',
+	'wd_s/page-contact-3',
 	array(
 		'title'      => _x( 'Page - Contact', 'Block pattern category', 'wd_s' ) . ' 3',
 		'categories' => array( 'pages' ),

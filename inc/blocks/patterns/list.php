@@ -8,7 +8,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/list-and-text-aligned',
+	'wd_s/list-and-text-aligned',
 	array(
 		'title'      => __( 'List and Text Aligned', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -17,7 +17,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/list-and-heading-on-left',
+	'wd_s/list-and-heading-on-left',
 	array(
 		'title'      => __( 'List and Heading on Left', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/emphasized-list-and-heading-on-left',
+	'wd_s/emphasized-list-and-heading-on-left',
 	array(
 		'title'      => __( 'Emphasized List and Heading on Left', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -35,7 +35,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/list-and-image-on-left',
+	'wd_s/list-and-image-on-left',
 	array(
 		'title'      => __( 'List and Image on Left', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -44,7 +44,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/bold-list-and-image-on-left',
+	'wd_s/bold-list-and-image-on-left',
 	array(
 		'title'      => __( 'Bold List and Image on Left', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -53,7 +53,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/alternating-list-and-image',
+	'wd_s/alternating-list-and-image',
 	array(
 		'title'      => __( 'Alternating List and Image', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -62,7 +62,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/lists-2-columns',
+	'wd_s/lists-2-columns',
 	array(
 		'title'      => __( 'Lists: 2 Columns', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -71,7 +71,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/lists-3-columns',
+	'wd_s/lists-3-columns',
 	array(
 		'title'      => __( 'Lists: 3 Columns', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -80,7 +80,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/lists-3-columns-with-border',
+	'wd_s/lists-3-columns-with-border',
 	array(
 		'title'      => __( 'Lists: 3 Columns with Border', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -89,7 +89,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/lists-4-columns-with-image',
+	'wd_s/lists-4-columns-with-image',
 	array(
 		'title'      => __( 'Lists: 4 Columns with Image', 'wd_s' ),
 		'categories' => array( 'list' ),
@@ -98,7 +98,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/inline-list',
+	'wd_s/inline-list',
 	array(
 		'title'      => __( 'Inline List', 'wd_s' ),
 		'categories' => array( 'list', 'logos' ),

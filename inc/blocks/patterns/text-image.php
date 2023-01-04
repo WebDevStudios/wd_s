@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/text-and-image-on-left',
+	'wd_s/text-and-image-on-left',
 	array(
 		'title'      => __( 'Text and Image on Left', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-image-on-right',
+	'wd_s/text-and-image-on-right',
 	array(
 		'title'      => __( 'Text and Image on Right', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/alternating-text-and-image',
+	'wd_s/alternating-text-and-image',
 	array(
 		'title'      => __( 'Alternating Text and Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-image-alternating-colored-backgrounds',
+	'wd_s/text-and-image-alternating-colored-backgrounds',
 	array(
 		'title'      => __( 'Text and Image: Alternating Colored Backgrounds', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-overlap-image',
+	'wd_s/text-and-overlap-image',
 	array(
 		'title'      => __( 'Text and Overlap Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-wide-image',
+	'wd_s/text-and-wide-image',
 	array(
 		'title'      => __( 'Text and Wide Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-circle-image',
+	'wd_s/text-and-circle-image',
 	array(
 		'title'      => __( 'Text and Circle Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/heading-cover-and-text',
+	'wd_s/heading-cover-and-text',
 	array(
 		'title'      => __( 'Heading Cover and Text', 'wd_s' ),
 		'categories' => array( 'text-image', 'cover' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-columns-and-image-at-the-bottom',
+	'wd_s/text-columns-and-image-at-the-bottom',
 	array(
 		'title'      => __( 'Text Columns and Image at the Bottom', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -90,7 +90,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-columns-and-image-at-the-top',
+	'wd_s/text-columns-and-image-at-the-top',
 	array(
 		'title'      => __( 'Text Columns and Image at the Top', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -99,7 +99,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-image-full-width',
+	'wd_s/text-and-image-full-width',
 	array(
 		'title'      => __( 'Text and Image: Full Width', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -108,7 +108,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/alternating-text-and-image-full-width',
+	'wd_s/alternating-text-and-image-full-width',
 	array(
 		'title'      => __( 'Alternating Text and Image: Full Width', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -117,7 +117,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/text-and-image-fullscreen',
+	'wd_s/text-and-image-fullscreen',
 	array(
 		'title'      => __( 'Text and Image: Fullscreen', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -126,7 +126,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/heading-with-alternating-text-and-image',
+	'wd_s/heading-with-alternating-text-and-image',
 	array(
 		'title'      => __( 'Heading with Alternating Text and Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -135,7 +135,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/horizontal-cards',
+	'wd_s/horizontal-cards',
 	array(
 		'title'      => __( 'Horizontal Cards', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -144,7 +144,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/list-with-text-and-image-on-right',
+	'wd_s/list-with-text-and-image-on-right',
 	array(
 		'title'      => __( 'List with Text and Image on Right', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -153,7 +153,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/list-with-text-and-image-on-left',
+	'wd_s/list-with-text-and-image-on-left',
 	array(
 		'title'      => __( 'List with Text and Image on Left', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -162,7 +162,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/small-headings-and-image-on-left',
+	'wd_s/small-headings-and-image-on-left',
 	array(
 		'title'      => __( 'Small headings and Image on Left', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -171,7 +171,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-text-columns-and-image',
+	'wd_s/2-text-columns-and-image',
 	array(
 		'title'      => __( '2 Text Columns and Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -180,7 +180,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-text-columns-and-image/',
+	'wd_s/3-text-columns-and-image/',
 	array(
 		'title'      => __( '3 Text Columns and Image', 'wd_s' ),
 		'categories' => array( 'text-image' ),
@@ -189,7 +189,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-captioned-images',
+	'wd_s/2-captioned-images',
 	array(
 		'title'      => __( '2 Captioned Images', 'wd_s' ),
 		'categories' => array( 'text-image' ),

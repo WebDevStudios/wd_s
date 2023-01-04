@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/logo-2-columns-card-with-link',
+	'wd_s/logo-2-columns-card-with-link',
 	array(
 		'title'      => __( 'Logo 2 Columns: Card with Link', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-3-columns',
+	'wd_s/logos-3-columns',
 	array(
 		'title'      => __( 'Logos 3 Columns', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-3-columns-no-gutter',
+	'wd_s/logos-3-columns-no-gutter',
 	array(
 		'title'      => __( 'Logos 3 Columns: No Gutter', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-heading-on-left',
+	'wd_s/logos-heading-on-left',
 	array(
 		'title'      => __( 'Logos: Heading on Left', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-4-columns',
+	'wd_s/logos-4-columns',
 	array(
 		'title'      => __( 'Logos 4 Columns', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-4-columns-inner-border',
+	'wd_s/logos-4-columns-inner-border',
 	array(
 		'title'      => __( 'Logos 4 Columns: Inner Border', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-4-columns-border',
+	'wd_s/logos-4-columns-border',
 	array(
 		'title'      => __( 'Logos 4 Columns: Border', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-4-columns-card',
+	'wd_s/logos-4-columns-card',
 	array(
 		'title'      => __( 'Logos 4 Columns: Card', 'wd_s' ),
 		'categories' => array( 'logos' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/logos-5-columns',
+	'wd_s/logos-5-columns',
 	array(
 		'title'      => __( 'Logos in Row', 'wd_s' ),
 		'categories' => array( 'logos' ),

@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/contact-call-to-action',
+	'wd_s/contact-call-to-action',
 	array(
 		'title'      => __( 'Contact: Call To Action', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-simple',
+	'wd_s/contact-simple',
 	array(
 		'title'      => __( 'Contact: Simple', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-large-text',
+	'wd_s/contact-large-text',
 	array(
 		'title'      => __( 'Contact: Large Text', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-info-with-small-headings',
+	'wd_s/contact-info-with-small-headings',
 	array(
 		'title'      => __( 'Contact: Info with Small Headings', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-2-columns',
+	'wd_s/contact-2-columns',
 	array(
 		'title'      => __( 'Contact: 2 Columns', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-emphasized-info',
+	'wd_s/contact-emphasized-info',
 	array(
 		'title'      => __( 'Contact: Emphasized Info', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-heading-on-left',
+	'wd_s/contact-heading-on-left',
 	array(
 		'title'      => __( 'Contact: Heading on Left', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-image-on-right',
+	'wd_s/contact-image-on-right',
 	array(
 		'title'      => __( 'Contact: Image on Right', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-3-columns',
+	'wd_s/contact-3-columns',
 	array(
 		'title'      => __( 'Contact: 3 Columns', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -90,7 +90,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-4-columns',
+	'wd_s/contact-4-columns',
 	array(
 		'title'      => __( 'Contact: 4 Columns', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -99,7 +99,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-cover-with-inline-links',
+	'wd_s/contact-cover-with-inline-links',
 	array(
 		'title'      => __( 'Contact: Cover with Inline Links', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -108,7 +108,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-cover',
+	'wd_s/contact-cover',
 	array(
 		'title'      => __( 'Contact: Cover', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -118,7 +118,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-cover-with-3-columns',
+	'wd_s/contact-cover-with-3-columns',
 	array(
 		'title'      => __( 'Contact: Cover with 3 Columns', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -127,7 +127,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-opening-hours',
+	'wd_s/contact-opening-hours',
 	array(
 		'title'      => __( 'Contact: Opening Hours', 'wd_s' ),
 		'categories' => array( 'contact' ),
@@ -136,7 +136,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/contact-map',
+	'wd_s/contact-map',
 	array(
 		'title'      => __( 'Contact: Map', 'wd_s' ),
 		'categories' => array( 'contact' ),

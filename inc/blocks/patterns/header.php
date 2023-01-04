@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/full-width-header-with-border',
+	'wd_s/full-width-header-with-border',
 	array(
 		'title'      => __( 'Full Width Header with Border', 'wd_s' ),
 		'categories' => array( 'header' ),
@@ -16,7 +16,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/wide-width-header-with-shadow',
+	'wd_s/wide-width-header-with-shadow',
 	array(
 		'title'      => __( 'Wide Width Header with Shadow', 'wd_s' ),
 		'categories' => array( 'header' ),

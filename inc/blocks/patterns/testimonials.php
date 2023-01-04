@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/testimonials-list-with-separator',
+	'wd_s/testimonials-list-with-separator',
 	array(
 		'title'      => __( 'Testimonials: List with Separator', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-list-with-large-quote',
+	'wd_s/testimonials-list-with-large-quote',
 	array(
 		'title'      => __( 'Testimonials: List with Large Quote', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonial-colored-background',
+	'wd_s/testimonial-colored-background',
 	array(
 		'title'      => __( 'Testimonial: Colored Background', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonial-cover',
+	'wd_s/testimonial-cover',
 	array(
 		'title'      => __( 'Testimonial: Cover', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonial-image-on-left',
+	'wd_s/testimonial-image-on-left',
 	array(
 		'title'      => __( 'Testimonial: Image on Left', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonial-image-on-right',
+	'wd_s/testimonial-image-on-right',
 	array(
 		'title'      => __( 'Testimonial: Image on Right', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-overlap-image',
+	'wd_s/testimonials-overlap-image',
 	array(
 		'title'      => __( 'Testimonials: Overlap Image', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-2-columns-x-2',
+	'wd_s/testimonials-2-columns-x-2',
 	array(
 		'title'      => __( 'Testimonials 2 Columns x 2', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-2-columns',
+	'wd_s/testimonials-2-columns',
 	array(
 		'title'      => __( 'Testimonials 2 Columns: Masonry', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -91,7 +91,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-2-columns-image',
+	'wd_s/testimonials-2-columns-image',
 	array(
 		'title'      => __( 'Testimonials 2 Columns: Image', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -100,7 +100,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-2-columns-cover',
+	'wd_s/testimonials-2-columns-cover',
 	array(
 		'title'      => __( 'Testimonials 2 Columns: Cover', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -109,7 +109,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-3-columns-x-2',
+	'wd_s/testimonials-3-columns-x-2',
 	array(
 		'title'      => __( 'Testimonials 3 Columns x 2', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -118,7 +118,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-3-columns-card-with-icon',
+	'wd_s/testimonials-3-columns-card-with-icon',
 	array(
 		'title'      => __( 'Testimonials 3 Columns: Card with Icon', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -127,7 +127,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-3-columns-card-with-thumbnail',
+	'wd_s/testimonials-3-columns-card-with-thumbnail',
 	array(
 		'title'      => __( 'Testimonials 3 Columns: Card with Thumbnail', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -136,7 +136,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-3-columns-card-with-image',
+	'wd_s/testimonials-3-columns-card-with-image',
 	array(
 		'title'      => __( 'Testimonials 3 Columns: Card with Image', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -145,7 +145,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-4-columns-thumbnail',
+	'wd_s/testimonials-4-columns-thumbnail',
 	array(
 		'title'      => __( 'Testimonials 4 Columns: Thumbnail', 'wd_s' ),
 		'categories' => array( 'testimonials' ),
@@ -154,7 +154,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/testimonials-card-side-image',
+	'wd_s/testimonials-card-side-image',
 	array(
 		'title'      => __( 'Testimonials: Horizontal Cards', 'wd_s' ),
 		'categories' => array( 'testimonials' ),

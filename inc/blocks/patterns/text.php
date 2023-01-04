@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/heading-and-text',
+	'wd_s/heading-and-text',
 	array(
 		'title'      => __( 'Heading and Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -15,7 +15,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/heading-and-large-text',
+	'wd_s/heading-and-large-text',
 	array(
 		'title'      => __( 'Heading and Large Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -24,7 +24,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/heading-and-lead-paragraph',
+	'wd_s/heading-and-lead-paragraph',
 	array(
 		'title'      => __( 'Heading and Lead Paragraph', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -33,7 +33,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/eyebrow-heading',
+	'wd_s/eyebrow-heading',
 	array(
 		'title'      => __( 'Eyebrow Heading', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -42,7 +42,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/heading-on-left-and-text',
+	'wd_s/heading-on-left-and-text',
 	array(
 		'title'      => __( 'Heading on Left and Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -51,7 +51,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/small-heading-and-wide-text',
+	'wd_s/small-heading-and-wide-text',
 	array(
 		'title'      => __( 'Small Heading and Wide Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -61,7 +61,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/bordered-heading-and-small-headings',
+	'wd_s/bordered-heading-and-small-headings',
 	array(
 		'title'      => __( 'Bordered Heading and Small Headings', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -70,7 +70,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-text-columns-centered-text',
+	'wd_s/2-text-columns-centered-text',
 	array(
 		'title'      => __( '2 Text Columns: Centered Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -79,7 +79,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-text-columns',
+	'wd_s/2-text-columns',
 	array(
 		'title'      => __( '2 Text Columns', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -88,7 +88,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-text-columns-x-2',
+	'wd_s/2-text-columns-x-2',
 	array(
 		'title'      => __( '2 Text Columns x 2', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -97,7 +97,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-text-columns-index',
+	'wd_s/2-text-columns-index',
 	array(
 		'title'      => __( '2 Text Columns: Index', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -106,7 +106,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-text-columns',
+	'wd_s/3-text-columns',
 	array(
 		'title'      => __( '3 Text Columns', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -115,7 +115,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-text-columns-centered-text',
+	'wd_s/3-text-columns-centered-text',
 	array(
 		'title'      => __( '3 Text Columns: Centered Text', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -124,7 +124,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-text-columns-x-2',
+	'wd_s/3-text-columns-x-2',
 	array(
 		'title'      => __( '3 Text Columns x 2', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -133,7 +133,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-text-columns-x-2-top-border',
+	'wd_s/3-text-columns-x-2-top-border',
 	array(
 		'title'      => __( '3 Text Columns x 2: Top Border', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -142,7 +142,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-text-columns',
+	'wd_s/4-text-columns',
 	array(
 		'title'      => __( '4 Text Columns', 'wd_s' ),
 		'categories' => array( 'text' ),
@@ -151,7 +151,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-text-columns-centered-text',
+	'wd_s/4-text-columns-centered-text',
 	array(
 		'title'      => __( '4 Text Columns: Centered Text', 'wd_s' ),
 		'categories' => array( 'text' ),

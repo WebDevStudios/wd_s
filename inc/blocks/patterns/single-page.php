@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/single-page-1',
+	'wd_s/single-page-1',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 1',
 		'categories' => array( 'page-single' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-2',
+	'wd_s/single-page-2',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 2',
 		'categories' => array( 'page-single' ),
@@ -28,7 +28,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-3',
+	'wd_s/single-page-3',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 3',
 		'categories' => array( 'page-single' ),
@@ -37,7 +37,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-4',
+	'wd_s/single-page-4',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 4',
 		'categories' => array( 'page-single' ),
@@ -46,7 +46,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-5',
+	'wd_s/single-page-5',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 5',
 		'categories' => array( 'page-single' ),
@@ -55,7 +55,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-6',
+	'wd_s/single-page-6',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 6',
 		'categories' => array( 'page-single' ),
@@ -64,7 +64,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-page-7',
+	'wd_s/single-page-7',
 	array(
 		'title'      => _x( 'Single Page', 'Block pattern category', 'wd_s' ) . ' 7',
 		'categories' => array( 'page-single' ),

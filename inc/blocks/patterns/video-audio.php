@@ -8,7 +8,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/hero-with-video',
+	'wd_s/hero-with-video',
 	array(
 		'title'      => __( 'Hero with Video', 'wd_s' ),
 		'categories' => array( 'video-audio', 'hero' ),
@@ -17,7 +17,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/Text and Video',
+	'wd_s/Text and Video',
 	array(
 		'title'      => __( 'Text and Video', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/video-with-text-on-left',
+	'wd_s/video-with-text-on-left',
 	array(
 		'title'      => __( 'Video with Text on Left', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -35,7 +35,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/video-with-frame-and-text-on-right',
+	'wd_s/video-with-frame-and-text-on-right',
 	array(
 		'title'      => __( 'Video with Frame and Text on Right', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -44,7 +44,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/Text Columns and Video',
+	'wd_s/Text Columns and Video',
 	array(
 		'title'      => __( 'Text Columns and Video', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -53,7 +53,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/column-cards-with-video',
+	'wd_s/column-cards-with-video',
 	array(
 		'title'      => __( 'Column Cards with Video', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -62,7 +62,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/audio-list',
+	'wd_s/audio-list',
 	array(
 		'title'      => __( 'Audio List', 'wd_s' ),
 		'categories' => array( 'video-audio' ),
@@ -71,7 +71,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/media-list-with-image-and-button',
+	'wd_s/media-list-with-image-and-button',
 	array(
 		'title'      => __( 'Media List with Image and Button', 'wd_s' ),
 		'categories' => array( 'video-audio' ),

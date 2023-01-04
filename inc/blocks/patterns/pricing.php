@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/single-pricing',
+	'wd_s/single-pricing',
 	array(
 		'title'      => __( 'Single Pricing', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/single-pricing-card',
+	'wd_s/single-pricing-card',
 	array(
 		'title'      => __( 'Single Pricing: Card', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-2-columns',
+	'wd_s/pricing-2-columns',
 	array(
 		'title'      => __( 'Pricing 2 Columns', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-2-column-cards',
+	'wd_s/pricing-2-column-cards',
 	array(
 		'title'      => __( 'Pricing 2 Column Cards', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-2-column-cards-full-width-button',
+	'wd_s/pricing-2-column-cards-full-width-button',
 	array(
 		'title'      => __( 'Pricing 2 Column Cards: Full Width Button', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-2-column-cards-middle-alignment',
+	'wd_s/pricing-2-column-cards-middle-alignment',
 	array(
 		'title'      => __( 'Pricing 2 Column Cards: Middle Alignment', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-2-column-cards-image',
+	'wd_s/pricing-2-column-cards-image',
 	array(
 		'title'      => __( 'Pricing 2 Column Cards: Image', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-column-cards',
+	'wd_s/pricing-3-column-cards',
 	array(
 		'title'      => __( 'Pricing 3 Column Cards', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-column-cards-centered-text',
+	'wd_s/pricing-3-column-cards-centered-text',
 	array(
 		'title'      => __( 'Pricing 3 Column Cards: Centered Text', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -90,7 +90,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-column-cards-checkmarked-list',
+	'wd_s/pricing-3-column-cards-checkmarked-list',
 	array(
 		'title'      => __( 'Pricing 3 Column Cards: Checkmarked List', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -99,7 +99,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-column-cards-small-image',
+	'wd_s/pricing-3-column-cards-small-image',
 	array(
 		'title'      => __( 'Pricing 3 Column Cards: Small Image', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -108,7 +108,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-column-cards-image',
+	'wd_s/pricing-3-column-cards-image',
 	array(
 		'title'      => __( 'Pricing 3 Column Cards: Image', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -117,7 +117,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-3-columns-image',
+	'wd_s/pricing-3-columns-image',
 	array(
 		'title'      => __( 'Pricing 3 Columns: Image', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -126,7 +126,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/pricing-4-column-cards',
+	'wd_s/pricing-4-column-cards',
 	array(
 		'title'      => __( 'Pricing 4 Column Cards', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -135,7 +135,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-table',
+	'wd_s/price-list-table',
 	array(
 		'title'      => __( 'Price List: Table', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -144,7 +144,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-table-with-description',
+	'wd_s/price-list-table-with-description',
 	array(
 		'title'      => __( 'Price List: Table with Description', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -153,7 +153,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-stack',
+	'wd_s/price-list-stack',
 	array(
 		'title'      => __( 'Price List: Stack', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -162,7 +162,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-stack-with-separator',
+	'wd_s/price-list-stack-with-separator',
 	array(
 		'title'      => __( 'Price List: Stack with Separator', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -171,7 +171,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-2-column-cards',
+	'wd_s/price-list-2-column-cards',
 	array(
 		'title'      => __( 'Price List: 2 Column Cards', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -180,7 +180,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-2-columns-with-top-border',
+	'wd_s/price-list-2-columns-with-top-border',
 	array(
 		'title'      => __( 'Price List: 2 Columns with Top Border', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -189,7 +189,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-3-columns',
+	'wd_s/price-list-3-columns',
 	array(
 		'title'      => __( 'Price List: 3 Columns', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -198,7 +198,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-3-columns-with-centered-text',
+	'wd_s/price-list-3-columns-with-centered-text',
 	array(
 		'title'      => __( 'Price List: 3 Columns with Centered Text', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -207,7 +207,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-3-column-gallery',
+	'wd_s/price-list-3-column-gallery',
 	array(
 		'title'      => __( 'Price List: 3 Column Gallery', 'wd_s' ),
 		'categories' => array( 'pricing' ),
@@ -216,7 +216,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/price-list-4-columns-with-image',
+	'wd_s/price-list-4-columns-with-image',
 	array(
 		'title'      => __( 'Price List: 4 Columns with Image', 'wd_s' ),
 		'categories' => array( 'pricing' ),

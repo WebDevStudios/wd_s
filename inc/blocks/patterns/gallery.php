@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/gallery-stack',
+	'wd_s/gallery-stack',
 	array(
 		'title'      => __( 'Gallery: Stack', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-2-columns',
+	'wd_s/gallery-2-columns',
 	array(
 		'title'      => __( 'Gallery 2 Columns', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-alternating-widths',
+	'wd_s/gallery-alternating-widths',
 	array(
 		'title'      => __( 'Gallery: Alternating Widths', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-stretched-images',
+	'wd_s/gallery-stretched-images',
 	array(
 		'title'      => __( 'Gallery: Stretched Images', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-center-alignment',
+	'wd_s/gallery-center-alignment',
 	array(
 		'title'      => __( 'Gallery: Center Alignment', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-3-columns',
+	'wd_s/gallery-3-columns',
 	array(
 		'title'      => __( 'Gallery 3 Columns', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-3-columns-large-caption',
+	'wd_s/gallery-3-columns-large-caption',
 	array(
 		'title'      => __( 'Gallery 3 Columns: Large Caption', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-3-columns-full-width-no-gutter',
+	'wd_s/gallery-3-columns-full-width-no-gutter',
 	array(
 		'title'      => __( 'Gallery 3 Columns: Full Width No Gutter', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -82,7 +82,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-4-columns',
+	'wd_s/gallery-4-columns',
 	array(
 		'title'      => __( 'Gallery 4 Columns', 'wd_s' ),
 		'categories' => array( 'gallery' ),
@@ -91,7 +91,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/gallery-4-columns-image-with-frame',
+	'wd_s/gallery-4-columns-image-with-frame',
 	array(
 		'title'      => __( 'Gallery 4 Columns: Image with Frame', 'wd_s' ),
 		'categories' => array( 'gallery' ),

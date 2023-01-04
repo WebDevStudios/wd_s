@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/team-2-columns',
+	'wd_s/team-2-columns',
 	array(
 		'title'      => __( 'Team 2 Columns', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-2-columns-centered-content',
+	'wd_s/team-2-columns-centered-content',
 	array(
 		'title'      => __( 'Team 2 Columns: Centered Content', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-2-columns-image-with-frame',
+	'wd_s/team-2-columns-image-with-frame',
 	array(
 		'title'      => __( 'Team 2 Columns: Image with Frame', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-3-columns',
+	'wd_s/team-3-columns',
 	array(
 		'title'      => __( 'Team 3 Columns', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-3-columns-circle-image',
+	'wd_s/team-3-columns-circle-image',
 	array(
 		'title'      => __( 'Team 3 Columns: Circle Image', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-3-columns-x-2',
+	'wd_s/team-3-columns-x-2',
 	array(
 		'title'      => __( 'Team 3 Columns x 2', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-3-columns-gallery',
+	'wd_s/team-3-columns-gallery',
 	array(
 		'title'      => __( 'Team 3 Columns: Gallery', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-3-columns-top-border',
+	'wd_s/team-3-columns-top-border',
 	array(
 		'title'      => __( 'Team 3 Columns: Top Border', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-4-columns',
+	'wd_s/team-4-columns',
 	array(
 		'title'      => __( 'Team 4 Columns', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -90,7 +90,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-4-columns-x-2',
+	'wd_s/team-4-columns-x-2',
 	array(
 		'title'      => __( 'Team 4 Columns x 2', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -99,7 +99,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-4-columns-gallery',
+	'wd_s/team-4-columns-gallery',
 	array(
 		'title'      => __( 'Team 4 Columns: Gallery', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -109,7 +109,7 @@ register_block_pattern(
 
 
 register_block_pattern(
-	'wds/team-4-columns-top-border',
+	'wd_s/team-4-columns-top-border',
 	array(
 		'title'      => __( 'Team 4 Columns: Top Border', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -118,7 +118,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-list',
+	'wd_s/team-list',
 	array(
 		'title'      => __( 'Team: List', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -127,7 +127,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-image-on-left',
+	'wd_s/team-image-on-left',
 	array(
 		'title'      => __( 'Team: Image on left', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -136,7 +136,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-image-on-left-and-image-on-right',
+	'wd_s/team-image-on-left-and-image-on-right',
 	array(
 		'title'      => __( 'Team: Alternating Text and Image', 'wd_s' ),
 		'categories' => array( 'team' ),
@@ -145,7 +145,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/team-overlap-image',
+	'wd_s/team-overlap-image',
 	array(
 		'title'      => __( 'Team: Overlap Image', 'wd_s' ),
 		'categories' => array( 'team' ),

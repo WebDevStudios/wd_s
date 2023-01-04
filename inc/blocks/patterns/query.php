@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/query-posts-3-columns',
+	'wd_s/query-posts-3-columns',
 	array(
 		'title'      => __( 'Posts 3 Columns', 'wd_s' ),
 		'blockTypes' => array( 'core/query' ),
@@ -16,7 +16,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/query-posts-small-image-on-left',
+	'wd_s/query-posts-small-image-on-left',
 	array(
 		'title'      => __( 'Posts: Small Image on Left', 'wd_s' ),
 		'blockTypes' => array( 'core/query' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/query-posts-stack-right-sidebar',
+	'wd_s/query-posts-stack-right-sidebar',
 	array(
 		'title'      => __( 'Posts Stack: Right Sidebar', 'wd_s' ),
 		'blockTypes' => array( 'core/query' ),

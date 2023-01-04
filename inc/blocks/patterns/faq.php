@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/faq-list',
+	'wd_s/faq-list',
 	array(
 		'title'      => __( 'FAQ: List', 'wd_s' ),
 		'categories' => array( 'faq' ),
@@ -15,7 +15,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/faq-list-with-bordered-heading',
+	'wd_s/faq-list-with-bordered-heading',
 	array(
 		'title'      => __( 'FAQ: List with Bordered Heading', 'wd_s' ),
 		'categories' => array( 'faq' ),
@@ -24,7 +24,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/faq-list-with-separator',
+	'wd_s/faq-list-with-separator',
 	array(
 		'title'      => __( 'FAQ: List with Separator', 'wd_s' ),
 		'categories' => array( 'faq' ),
@@ -33,7 +33,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/faq-2-columns',
+	'wd_s/faq-2-columns',
 	array(
 		'title'      => __( 'FAQ 2 Columns', 'wd_s' ),
 		'categories' => array( 'faq' ),
@@ -42,7 +42,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/faq-2-columns-top-border',
+	'wd_s/faq-2-columns-top-border',
 	array(
 		'title'      => __( 'FAQ 2 Columns: Top Border', 'wd_s' ),
 		'categories' => array( 'faq' ),
@@ -51,7 +51,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/faq-alternating-colored-backgrounds',
+	'wd_s/faq-alternating-colored-backgrounds',
 	array(
 		'title'      => __( 'FAQ: Alternating Colored Backgrounds', 'wd_s' ),
 		'categories' => array( 'faq' ),

@@ -8,7 +8,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/events-list',
+	'wd_s/events-list',
 	array(
 		'title'      => __( 'Events: List', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -17,7 +17,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/events-list-with-image-on-left',
+	'wd_s/events-list-with-image-on-left',
 	array(
 		'title'      => __( 'Events: List with Image on Left', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/events-column-cards',
+	'wd_s/events-column-cards',
 	array(
 		'title'      => __( 'Events: Column Cards', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -35,7 +35,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/schedule-table',
+	'wd_s/schedule-table',
 	array(
 		'title'      => __( 'Schedule: Table', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -44,7 +44,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/schedule-list',
+	'wd_s/schedule-list',
 	array(
 		'title'      => __( 'Schedule: List', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -53,7 +53,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/schedule-list-with-description',
+	'wd_s/schedule-list-with-description',
 	array(
 		'title'      => __( 'Schedule: List with Description', 'wd_s' ),
 		'categories' => array( 'events' ),
@@ -62,7 +62,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/schedule-weekly',
+	'wd_s/schedule-weekly',
 	array(
 		'title'      => __( 'Schedule: Weekly', 'wd_s' ),
 		'categories' => array( 'events' ),

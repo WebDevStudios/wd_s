@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/hero-with-colored-background',
+	'wd_s/hero-with-colored-background',
 	array(
 		'title'      => __( 'Hero with Colored Background', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -18,7 +18,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-button',
+	'wd_s/hero-with-button',
 	array(
 		'title'      => __( 'Hero with Button', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -27,7 +27,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-eyebrow-title',
+	'wd_s/hero-with-eyebrow-title',
 	array(
 		'title'      => __( 'Hero with Eyebrow Title', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-button-and-image-on-right',
+	'wd_s/hero-with-button-and-image-on-right',
 	array(
 		'title'      => __( 'Hero with Button and Image on Right', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -45,7 +45,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-eyebrow-title-and-image-on-right',
+	'wd_s/hero-with-eyebrow-title-and-image-on-right',
 	array(
 		'title'      => __( 'Hero with Eyebrow Title and Image on Right', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -54,7 +54,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/full-width-hero-with-image-on-right',
+	'wd_s/full-width-hero-with-image-on-right',
 	array(
 		'title'      => __( 'Full Width Hero with Image on Right', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -63,7 +63,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-buttons-and-image',
+	'wd_s/hero-with-buttons-and-image',
 	array(
 		'title'      => __( 'Hero with Buttons and Image', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -72,7 +72,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-eyebrow-title-and-image',
+	'wd_s/hero-with-eyebrow-title-and-image',
 	array(
 		'title'      => __( 'Hero with Eyebrow Title and Image', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -81,7 +81,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-overlap-image',
+	'wd_s/hero-with-overlap-image',
 	array(
 		'title'      => __( 'Hero with Overlap Image', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -90,7 +90,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-title-on-left-and-image-at-the-bottom',
+	'wd_s/hero-with-title-on-left-and-image-at-the-bottom',
 	array(
 		'title'      => __( 'Hero with Title on Left and Image at the Bottom', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -101,7 +101,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-with-cut-off-image',
+	'wd_s/hero-with-cut-off-image',
 	array(
 		'title'      => __( 'Hero with Cut Off Image', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -110,7 +110,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-cover',
+	'wd_s/hero-cover',
 	array(
 		'title'      => __( 'Hero Cover', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -119,7 +119,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/hero-cover-with-button',
+	'wd_s/hero-cover-with-button',
 	array(
 		'title'      => __( 'Fullscreen Hero Cover', 'wd_s' ),
 		'categories' => array( 'hero' ),
@@ -131,7 +131,7 @@ register_block_pattern(
 
 
 register_block_pattern(
-	'wds/hero-cover-with-card',
+	'wd_s/hero-cover-with-card',
 	array(
 		'title'      => __( 'Hero Cover with Card', 'wd_s' ),
 		'categories' => array( 'hero' ),

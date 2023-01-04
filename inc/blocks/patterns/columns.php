@@ -8,7 +8,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/2-columns',
+	'wd_s/2-columns',
 	array(
 		'title'      => __( '2 Columns', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -17,7 +17,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-column-cards',
+	'wd_s/2-column-cards',
 	array(
 		'title'      => __( '2 Column Cards', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-column-cards-unstretched-image',
+	'wd_s/2-column-cards-unstretched-image',
 	array(
 		'title'      => __( '2 Column Cards: Unstretched Image', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -35,7 +35,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-centered-content',
+	'wd_s/2-columns-centered-content',
 	array(
 		'title'      => __( '2 Columns: Centered Content', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -44,7 +44,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-x-2-image-on-left',
+	'wd_s/2-columns-x-2-image-on-left',
 	array(
 		'title'      => __( '2 Columns x 2: Image on Left', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -53,7 +53,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-middle-alignment',
+	'wd_s/2-columns-middle-alignment',
 	array(
 		'title'      => __( '2 Columns: Middle Alignment', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -62,7 +62,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-column-cards-top-alignment',
+	'wd_s/2-column-cards-top-alignment',
 	array(
 		'title'      => __( '2 Column Cards: Top Alignment', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -71,7 +71,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-cover',
+	'wd_s/2-columns-cover',
 	array(
 		'title'      => __( '2 Columns: Cover', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -80,7 +80,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-column-cards-cover',
+	'wd_s/2-column-cards-cover',
 	array(
 		'title'      => __( '2 Column Cards: Cover', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -89,7 +89,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-x-2',
+	'wd_s/2-columns-x-2',
 	array(
 		'title'      => __( '2 Columns x 2', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -98,7 +98,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-columns',
+	'wd_s/3-columns',
 	array(
 		'title'      => __( '3 Columns', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -107,7 +107,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-column-cards',
+	'wd_s/3-column-cards',
 	array(
 		'title'      => __( '3 Column Cards', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -116,7 +116,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-column-cards-unstretched-image',
+	'wd_s/3-column-cards-unstretched-image',
 	array(
 		'title'      => __( '3 Column Cards: Unstretched Image', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -125,7 +125,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-columns-centered-content',
+	'wd_s/3-columns-centered-content',
 	array(
 		'title'      => __( '3 Columns: Centered Content', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -134,7 +134,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-columns-circle-image',
+	'wd_s/3-columns-circle-image',
 	array(
 		'title'      => __( '3 Columns: Circle Image', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -143,7 +143,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-column-cards-image-on-left',
+	'wd_s/3-column-cards-image-on-left',
 	array(
 		'title'      => __( '3 Column Cards: Image on Left', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -152,7 +152,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/3-column-cards-cover',
+	'wd_s/3-column-cards-cover',
 	array(
 		'title'      => __( '3 Column Cards: Cover', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -161,7 +161,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-columns',
+	'wd_s/4-columns',
 	array(
 		'title'      => __( '4 Columns', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -170,7 +170,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-columns-centered-content',
+	'wd_s/4-columns-centered-content',
 	array(
 		'title'      => __( '4 Columns: Centered Content', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -179,7 +179,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-columns-circle-image',
+	'wd_s/4-columns-circle-image',
 	array(
 		'title'      => __( '4 Columns: Circle Image', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -188,7 +188,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/4-columns-x-2',
+	'wd_s/4-columns-x-2',
 	array(
 		'title'      => __( '4 Columns x 2', 'wd_s' ),
 		'categories' => array( 'columns' ),
@@ -197,7 +197,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-3-columns',
+	'wd_s/2-columns-3-columns',
 	array(
 		'title'      => __( '2 Columns + 3 Columns', 'wd_s' ),
 		'categories' => array( 'columns' ),

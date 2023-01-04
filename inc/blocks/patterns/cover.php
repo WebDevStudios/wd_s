@@ -9,7 +9,7 @@
 use function WebDevStudios\wd_s\get_pattern_asset;
 
 register_block_pattern(
-	'wds/wide-cover',
+	'wd_s/wide-cover',
 	array(
 		'title'      => __( 'Wide Cover', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -19,7 +19,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/full-width-cover',
+	'wd_s/full-width-cover',
 	array(
 		'title'      => __( 'Full Width Cover', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -29,7 +29,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/fullscreen-cover',
+	'wd_s/fullscreen-cover',
 	array(
 		'title'      => __( 'Fullscreen Cover', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -39,7 +39,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/fullscreen-cover-with-card',
+	'wd_s/fullscreen-cover-with-card',
 	array(
 		'title'      => __( 'Fullscreen Cover with Card', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -48,7 +48,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/fullscreen-cover-with-heading-above-card',
+	'wd_s/fullscreen-cover-with-heading-above-card',
 	array(
 		'title'      => __( 'Fullscreen Cover with Heading Above Card', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -58,7 +58,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/cover-with-2-text-columns',
+	'wd_s/cover-with-2-text-columns',
 	array(
 		'title'      => __( 'Cover with 2 Text Columns', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -67,7 +67,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-with-cover',
+	'wd_s/2-columns-with-cover',
 	array(
 		'title'      => __( '2 Columns with Cover', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -76,7 +76,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-with-cover-bottom-aligned-text',
+	'wd_s/2-columns-with-cover-bottom-aligned-text',
 	array(
 		'title'      => __( '2 Columns with Cover: Bottom Aligned Text', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -85,7 +85,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-with-cover-x-2-top-aligned-text',
+	'wd_s/2-columns-with-cover-x-2-top-aligned-text',
 	array(
 		'title'      => __( '2 Columns with Cover x 2: Top Aligned Text', 'wd_s' ),
 		'categories' => array( 'cover' ),
@@ -94,7 +94,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/2-columns-with-cover-x-2-full-width',
+	'wd_s/2-columns-with-cover-x-2-full-width',
 	array(
 		'title'      => __( '2 Columns with Cover x 2: Full Width', 'wd_s' ),
 		'categories' => array( 'cover' ),

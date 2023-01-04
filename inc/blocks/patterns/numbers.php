@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/stats-3-columns',
+	'wd_s/stats-3-columns',
 	array(
 		'title'      => __( 'Stats: 3 Columns', 'wd_s' ),
 		'categories' => array( 'numbers' ),
@@ -15,7 +15,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/stats-4-columns',
+	'wd_s/stats-4-columns',
 	array(
 		'title'      => __( 'Stats: 4 Columns', 'wd_s' ),
 		'categories' => array( 'numbers' ),
@@ -24,7 +24,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/numbers-list-with-headings',
+	'wd_s/numbers-list-with-headings',
 	array(
 		'title'      => __( 'Numbers: List with Headings', 'wd_s' ),
 		'categories' => array( 'numbers', 'list' ),
@@ -33,7 +33,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/numbers-3-columns',
+	'wd_s/numbers-3-columns',
 	array(
 		'title'      => __( 'Numbers: 3 Columns', 'wd_s' ),
 		'categories' => array( 'numbers' ),
@@ -42,7 +42,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/numbers-3-columns-with-top-border',
+	'wd_s/numbers-3-columns-with-top-border',
 	array(
 		'title'      => __( 'Numbers: 3 Columns with Top Border', 'wd_s' ),
 		'categories' => array( 'numbers' ),
@@ -51,7 +51,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/numbers-4-columns',
+	'wd_s/numbers-4-columns',
 	array(
 		'title'      => __( 'Numbers: 4 Columns', 'wd_s' ),
 		'categories' => array( 'numbers' ),

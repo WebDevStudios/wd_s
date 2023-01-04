@@ -6,7 +6,7 @@
  */
 
 register_block_pattern(
-	'wds/footer-inline-copyright-and-social-links',
+	'wd_s/footer-inline-copyright-and-social-links',
 	array(
 		'title'      => __( 'Footer Inline: Copyright and Social Links', 'wd_s' ),
 		'categories' => array( 'footer' ),
@@ -16,7 +16,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/footer-inline-2-rows',
+	'wd_s/footer-inline-2-rows',
 	array(
 		'title'      => __( 'Footer Inline: 2 Rows', 'wd_s' ),
 		'categories' => array( 'footer' ),
@@ -26,7 +26,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/footer-stack-navigation',
+	'wd_s/footer-stack-navigation',
 	array(
 		'title'      => __( 'Footer Stack: Navigation', 'wd_s' ),
 		'categories' => array( 'footer' ),
@@ -36,7 +36,7 @@ register_block_pattern(
 );
 
 register_block_pattern(
-	'wds/footer-2-columns-text-and-navigation',
+	'wd_s/footer-2-columns-text-and-navigation',
 	array(
 		'title'      => __( 'Footer 2 Columns: Text and Navigation', 'wd_s' ),
 		'categories' => array( 'footer' ),
