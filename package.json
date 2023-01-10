@@ -42,7 +42,7 @@
 		"tailwindcss": "^3.2.1"
 	},
 	"devDependencies": {
-		"@arkweid/lefthook": "^0.7.7",
+		"@evilmartians/lefthook": "^1.2.7",
 		"@wordpress/prettier-config": "^1.4.0",
 		"autoprefixer": "^10.4.8",
 		"browser-sync": "^2.27.10",
