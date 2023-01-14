@@ -16,17 +16,18 @@
 		"allow-plugins": {
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
+		},
+		"sort-packages": true
 	},
 	"require": {
-		"composer/installers": "^2.0.0"
+		"composer/installers": "^1.5 || ^2.0.0"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"paulthewalton/acf-pro-stubs": "5.8.9.1",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
 		"wp-cli/wp-cli-bundle": "^2.5.0",
-		"wp-coding-standards/wpcs": "^2.3.0",
-		"paulthewalton/acf-pro-stubs": "5.8.9.1"
+		"wp-coding-standards/wpcs": "^2.3.0"
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
