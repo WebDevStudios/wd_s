@@ -45,7 +45,7 @@
 		"@evilmartians/lefthook": "^1.2.7",
 		"@wordpress/prettier-config": "^1.4.0",
 		"autoprefixer": "^10.4.8",
-		"browser-sync": "^2.27.10",
+		"browser-sync": "^2.27.11",
 		"css-loader": "^6.7.1",
 		"glob": "^8.0.3",
 		"mini-css-extract-plugin": "^2.6.1",
