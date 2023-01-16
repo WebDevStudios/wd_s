@@ -42,7 +42,7 @@
 		"tailwindcss": "^3.2.1"
 	},
 	"devDependencies": {
-		"@arkweid/lefthook": "^0.7.7",
+		"@evilmartians/lefthook": "^1.2.7",
 		"@wordpress/prettier-config": "^1.4.0",
 		"autoprefixer": "^10.4.8",
 		"browser-sync": "^2.27.10",
@@ -77,6 +77,7 @@
 		"lint:php": "composer run-script lint",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
+		"postinstall": "npx lefthook install",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
 		"sync": "browser-sync start --https --proxy https://wdunderscores.test --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
