@@ -8,4 +8,12 @@
 	},
 	"intelephense.format.enable": false,
 	"intelephense.stubs": [ "acf", "wordpress" ]
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3F4040",
+    "activityBarBadge.background": "#f3713c",
+    "activityBarBadge.foreground": "#fff",
+    "statusBar.background": "#f3713c",
+    "statusBar.foreground": "#fff",
+  }
 }
