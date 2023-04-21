@@ -31,8 +31,8 @@
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
-		"lint": "phpcs --report=full,source",
-		"info": "phpcs --report=info",
+		"lint": "phpcs --report=code",
+		"report": "phpcs --report=info",
 		"pot": "wp i18n make-pot . build/languages/wd_s.pot --exclude=node_modules,vendor,build --allow-root"
 	}
 }
