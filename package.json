@@ -75,6 +75,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:md": "wp-scripts lint-md-docs",
 		"lint:php": "composer run-script lint",
+		"lint:info": "composer run-script info",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"postinstall": "npx lefthook install",
