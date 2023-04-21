@@ -11,7 +11,7 @@
 	],
 	"config": {
 		"platform": {
-			"php": "7.4"
+			"php": "8.0"
 		},
 		"allow-plugins": {
 			"composer/installers": true,
@@ -23,10 +23,10 @@
 		"composer/installers": "^1.5 || ^2.0.0"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-		"paulthewalton/acf-pro-stubs": "5.8.9.1",
-		"phpcompatibility/phpcompatibility-wp": "^2.1.1",
-		"wp-cli/wp-cli-bundle": "^2.5.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+		"php-stubs/acf-pro-stubs": "6.0.6",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.4",
+		"wp-cli/wp-cli-bundle": "^2.7.1",
 		"wp-coding-standards/wpcs": "^2.3.0"
 	},
 	"scripts": {
