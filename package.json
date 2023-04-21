@@ -1,6 +1,6 @@
 {
 	"name": "wd_s",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"private": true,
 	"description": "A starter theme from WebDevStudios.",
 	"author": "WebDevStudios <contact@webdevstudios.com>",
@@ -18,8 +18,8 @@
 		"url": "https://github.com/WebDevStudios/wd_s/issues"
 	},
 	"engines": {
-		"node": ">=14",
-		"npm": ">=7"
+		"node": ">=16",
+		"npm": ">=8"
 	},
 	"dependencies": {
 		"@wordpress/eslint-plugin": "12.8.0",
