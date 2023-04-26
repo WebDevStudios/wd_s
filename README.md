@@ -27,18 +27,14 @@ I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/im
 
 Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watch your project update in real-time while you work.
 
-Looking to use some of our custom Gutenberg blocks? It's easy! Add the [WDS Blocks](https://github.com/WebDevStudios/wds-blocks) plugin for a quick starter including our Accordion and Carousel blocks.
-
-Looking to use some of our Advanced Custom Fields Gutenberg Blocks? It's also easy! Add the [WDS ACF Blocks](https://github.com/WebDevStudios/wds-acf-blocks) plugin for a whole set of blocks built with ACF including: Accordion, Carousel, Call To Action, Fifty/Fifty, Hero, Recent Posts, and Related Posts.
-
 ## Getting Started
 
 ### Prerequisites
 
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
-- [Node](https://nodejs.org) (v14+)
-- [NPM](https://npmjs.com) (v7+)
+- [Node](https://nodejs.org) (v16+)
+- [NPM](https://npmjs.com) (v8+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
@@ -79,7 +75,7 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have Composer and NPM 7 installed first.
+>Note: You will need to have Composer and NPM 8 installed first.
 
 ```bash
 npm i --legacy-peer-deps
@@ -96,6 +92,7 @@ Command | Action
 `npm run build` | Builds production-ready assets for a deployment
 `npm run lint` | Check all CSS, JS, MD, and PHP files for errors
 `npm run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
+`npm run report` | Gives detailed information on coding standards violations in PHP code
 
 ## Contributing and Support
 
