@@ -54,7 +54,7 @@ https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-git
 ## Added to documentation?
 
 - [ ] 📜 README.md
-- [ ] 📓 <https://webdevstudios.atlassian.net/wiki/spaces/PROJECT-NAME>
+- [ ] 📓 [Confluence](https://webdevstudios.atlassian.net/wiki/spaces/wds1/pages/2988474566/Feature+Documentation)
 - [ ] 🙅 no documentation needed
 
 ## Others
