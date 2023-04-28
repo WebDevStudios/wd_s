@@ -1,6 +1,6 @@
 <?php
 /**
- * _s functions and definitions.
+ * WDS wd_s functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
