@@ -81,6 +81,8 @@
 		"postinstall": "npx lefthook install",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
 		"sync": "browser-sync start --https --proxy https://wdunderscores.test --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
-		"watch": "run-p start sync"
+		"watch": "run-p start sync blocks:watch",
+		"blocks:build": "cross-env NODE_ENV=production wp-scripts build --webpack-src-dir=src/blocks --webpack-copy-php --output-path=build/blocks --config webpack.prod.js",
+		"blocks:watch": "cross-env NODE_ENV=production wp-scripts start --webpack-src-dir=src/blocks --webpack-copy-php --output-path=build/blocks"
 	}
 }
