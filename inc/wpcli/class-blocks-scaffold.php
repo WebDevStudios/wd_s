@@ -194,7 +194,7 @@ class Blocks_Scaffold {
 					'{{title}}',
 					'{{description}}',
 					'{{icon}}',
-					'wd_s',
+					'wd_s/',
 					'{{keyword}}',
 				],
 				[
