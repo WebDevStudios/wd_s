@@ -14,13 +14,17 @@ label {
 // Search Form
 //-----------------------------------------
 .search-form {
-	@apply mt-6;
+	@apply m-6 flex;
+
+	label {
+		@apply mb-0;
+	}
 
 	.search-field {
-		@apply bg-black bg-opacity-10 text-black p-16 rounded-lg;
+		@apply bg-black bg-opacity-10 text-black p-10;
 	}
 
 	.button {
-		@apply bg-black bg-opacity-25 text-black p-16 rounded-lg text-center no-underline;
+		@apply bg-black bg-opacity-25 text-black p-10 text-center no-underline w-auto cursor-pointer hover:bg-opacity-100 hover:text-white;
 	}
 }
