@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "custom": true,
+            "customDuotone": true,
+            "customGradient": true,
+            "duotone": [],
+            "gradients": [],
+            "link": false,
+            "palette": [
+				{
+					"name": "Base",
+					"slug": "base",
+					"color": "#fff"
+				},
+				{
+					"name": "Contrast",
+					"slug": "contrast",
+					"color": "#2c2e31"
+				},
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"color": "#f3713c"
+				}
+			],
+            "text": true,
+            "background": true,
+            "defaultGradients": false,
+            "defaultPalette": false
+        }
+    }
+}
