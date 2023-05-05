@@ -1,8 +1,13 @@
 module.exports = {
-	...require( '@wordpress/prettier-config' ),
 	overrides: [
 		{
-			files: '*.scss',
+			files: '*.css',
+			options: {
+				singleQuote: true,
+			},
+		},
+		{
+			files: '*.js',
 			options: {
 				singleQuote: true,
 			},

@@ -1,0 +1,54 @@
+@import './custom/file-header.css';
+
+/**
+ * The line above injects the WordPress file header. It needs to be first,
+ * before this comment.
+ */
+
+/**
+ * This injects custom `@font-face` rules.
+ */
+@import './custom/fonts.css';
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins, then adds custom base styles.
+ */
+@import 'tailwindcss/base';
+@import './custom/base.css';
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins, then adds custom component classes.
+ *
+ * The `@import-glob` line imports all CSS files from the `components`
+ * directory (except for `components.css`, which is imported on the following
+ * line). This is meant to simplify the process of integrating styles from
+ * JavaScript components or WordPress plugins.
+ */
+@import 'tailwindcss/components';
+@import-glob './custom/components/**/!(components).css';
+@import './custom/components/components.css';
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins, then adds custom utility classes.
+ */
+@import 'tailwindcss/utilities';
+@import './custom/utilities.css';
+
+/*
+ * Inject WordPress template CSS files.
+ *
+ * The `@import-glob` line imports all CSS files from the `template-parts`
+ * directory. Just add template css files.
+ */
+@import-glob './template-parts/**/!(template-parts).css';
+
+/*
+ * Inject block style CSS files.
+ *
+ * The `@import-glob` line imports all CSS files from the `blocks`
+ * directory. Just add block style css files.
+ */
+@import-glob './blocks/**/!(blocks).css';
