@@ -1,5 +1,4 @@
 const glob = require( 'glob' );
-const path = require( 'path' );
 
 // Get arrays of all of the files.
 const topLevelPhpFiles = glob.sync( './*.php' ),
@@ -11,5 +10,4 @@ const topLevelPhpFiles = glob.sync( './*.php' ),
 
 module.exports = {
 	content: topLevelPhpFiles.concat( directoryFiles ),
-	presets: [ require( path.join( __dirname, './wds.preset.js' ) ) ],
 };
