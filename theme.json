@@ -1,6 +1,10 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"typography": {
+			"fluid": true
+		},
 		"color": {
 			"custom": true,
 			"customDuotone": true,
@@ -60,25 +64,24 @@
 			"defaultGradients": false,
 			"defaultPalette": false
 		},
-        "spacing": {
-            "blockGap": true
-        },
-        "custom": {
-            "line-height": {
-                "body": 1.7,
-                "heading": 1.3
-            }
-        }
+		"spacing": {
+			"blockGap": true
+		}
 	},
 	"styles": {
 		"color": {
 			"background": "var(--wp--preset--color--secondary-100)",
 			"text": "var(--wp--preset--color--primary-300)"
 		},
-        "spacing": {
-            "blockGap": "1.5rem"
-        },
+		"spacing": {
+			"blockGap": "1.5rem"
+		},
 		"elements": {
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--huge)"
+                }
+            },
 			"button": {
 				":hover": {
 					"color": {
@@ -117,39 +120,50 @@
 		"blocks": {
 			"core/heading": {
 				"typography": {
-					"fontWeight": "bold",
-					"lineHeight": "1.3"
+					"fontWeight": "bold"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0.5em",
+						"bottom": "0.5em"
+					}
 				},
 				"elements": {
 					"h1": {
 						"typography": {
-							"fontSize": "2em"
+							"fontSize": "var(--wp--preset--font-size--huge)"
 						}
 					},
 					"h2": {
 						"typography": {
-							"fontSize": "1.5em"
+							"fontSize": "var(--wp--preset--font-size--x-large)"
 						}
 					},
 					"h3": {
 						"typography": {
-							"fontSize": "1.3em"
+							"fontSize": "var(--wp--preset--font-size--large)"
 						}
 					},
 					"h4": {
 						"typography": {
-							"fontSize": "1em"
+							"fontSize": "var(--wp--preset--font-size--medium)"
 						}
 					},
 					"h5": {
 						"typography": {
-							"fontSize": "0.8em"
+							"fontSize": "var(--wp--preset--font-size--normal)"
 						}
-					},
-					"h6": {
-						"typography": {
-							"fontSize": "0.7em"
-						}
+					}
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"lineHeight": "1.5",
+					"fontSize": "var(--wp--preset--font-size--normal)"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "1em"
 					}
 				}
 			}
