@@ -1563,23 +1563,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910"
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/234f8fd1023c9158e2314fa9d7d0e6a83db42910",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -1623,19 +1623,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/promise/issues",
-                "source": "https://github.com/reactphp/promise/tree/v2.9.0"
+                "source": "https://github.com/reactphp/promise/tree/v2.10.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-02-11T10:27:51+00:00"
+            "time": "2023-05-02T15:15:43+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -1699,16 +1695,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "4211420d25eba80712bff236a98960ef68b866b7"
+                "reference": "594fd6462aad8ecee0b45ca5045acea4776667f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/4211420d25eba80712bff236a98960ef68b866b7",
-                "reference": "4211420d25eba80712bff236a98960ef68b866b7",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/594fd6462aad8ecee0b45ca5045acea4776667f1",
+                "reference": "594fd6462aad8ecee0b45ca5045acea4776667f1",
                 "shasum": ""
             },
             "require": {
@@ -1747,7 +1743,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/jsonlint/issues",
-                "source": "https://github.com/Seldaek/jsonlint/tree/1.9.0"
+                "source": "https://github.com/Seldaek/jsonlint/tree/1.10.0"
             },
             "funding": [
                 {
@@ -1759,7 +1755,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-01T13:37:23+00:00"
+            "time": "2023-05-11T13:16:46+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -3372,16 +3368,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "694a4a556d2c16860b738787b4c0294a89c4a760"
+                "reference": "931bf8f28cc804fcebbcd484375e27116658de79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/694a4a556d2c16860b738787b4c0294a89c4a760",
-                "reference": "694a4a556d2c16860b738787b4c0294a89c4a760",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/931bf8f28cc804fcebbcd484375e27116658de79",
+                "reference": "931bf8f28cc804fcebbcd484375e27116658de79",
                 "shasum": ""
             },
             "require": {
@@ -3577,9 +3573,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.4.2"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.4.3"
             },
-            "time": "2023-03-15T17:10:20+00:00"
+            "time": "2023-05-08T19:35:25+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -3802,16 +3798,16 @@
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "43d5cf8968dbddf90907083ad048f12be5ca3d43"
+                "reference": "203b020318fe2596a218bf52db25adc6b187f42d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/43d5cf8968dbddf90907083ad048f12be5ca3d43",
-                "reference": "43d5cf8968dbddf90907083ad048f12be5ca3d43",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/203b020318fe2596a218bf52db25adc6b187f42d",
+                "reference": "203b020318fe2596a218bf52db25adc6b187f42d",
                 "shasum": ""
             },
             "require": {
@@ -3864,22 +3860,22 @@
             "homepage": "https://github.com/wp-cli/i18n-command",
             "support": {
                 "issues": "https://github.com/wp-cli/i18n-command/issues",
-                "source": "https://github.com/wp-cli/i18n-command/tree/v2.4.2"
+                "source": "https://github.com/wp-cli/i18n-command/tree/v2.4.3"
             },
-            "time": "2023-02-17T18:14:41+00:00"
+            "time": "2023-03-24T18:15:59+00:00"
         },
         {
             "name": "wp-cli/import-command",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/import-command.git",
-                "reference": "e40f43252a3fc298c762b62ef338bf2bdfde8b19"
+                "reference": "2019a69abbe7d278dfcae927cfa6aa46cd5f0460"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/e40f43252a3fc298c762b62ef338bf2bdfde8b19",
-                "reference": "e40f43252a3fc298c762b62ef338bf2bdfde8b19",
+                "url": "https://api.github.com/repos/wp-cli/import-command/zipball/2019a69abbe7d278dfcae927cfa6aa46cd5f0460",
+                "reference": "2019a69abbe7d278dfcae927cfa6aa46cd5f0460",
                 "shasum": ""
             },
             "require": {
@@ -3924,9 +3920,9 @@
             "homepage": "https://github.com/wp-cli/import-command",
             "support": {
                 "issues": "https://github.com/wp-cli/import-command/issues",
-                "source": "https://github.com/wp-cli/import-command/tree/v2.0.10"
+                "source": "https://github.com/wp-cli/import-command/tree/v2.0.11"
             },
-            "time": "2023-02-17T17:52:09+00:00"
+            "time": "2023-03-15T15:15:38+00:00"
         },
         {
             "name": "wp-cli/language-command",
@@ -4504,16 +4500,16 @@
         },
         {
             "name": "wp-cli/search-replace-command",
-            "version": "v2.0.20",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/search-replace-command.git",
-                "reference": "6b195e3f39dd18270710b28343a8038f5927dd2c"
+                "reference": "c23820436dcac45662e7a6833bbdfa542b0f21a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/6b195e3f39dd18270710b28343a8038f5927dd2c",
-                "reference": "6b195e3f39dd18270710b28343a8038f5927dd2c",
+                "url": "https://api.github.com/repos/wp-cli/search-replace-command/zipball/c23820436dcac45662e7a6833bbdfa542b0f21a0",
+                "reference": "c23820436dcac45662e7a6833bbdfa542b0f21a0",
                 "shasum": ""
             },
             "require": {
@@ -4558,9 +4554,9 @@
             "homepage": "https://github.com/wp-cli/search-replace-command",
             "support": {
                 "issues": "https://github.com/wp-cli/search-replace-command/issues",
-                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.0.20"
+                "source": "https://github.com/wp-cli/search-replace-command/tree/v2.1.0"
             },
-            "time": "2023-02-17T16:23:58+00:00"
+            "time": "2023-05-11T08:09:28+00:00"
         },
         {
             "name": "wp-cli/server-command",
