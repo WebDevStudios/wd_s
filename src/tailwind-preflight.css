@@ -55,7 +55,7 @@ hr {
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
-abbr:where([title]) {
+abbr:where( [title] ) {
 	text-decoration: underline dotted;
 }
 
@@ -86,7 +86,17 @@ code,
 kbd,
 samp,
 pre {
-	font-family: theme('fontFamily.mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace); /* 1 */
+	font-family: theme(
+		'fontFamily.mono',
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Monaco,
+		Consolas,
+		'Liberation Mono',
+		'Courier New',
+		monospace
+	); /* 1 */
 	font-size: 1em; /* 2 */
 }
 

@@ -32,6 +32,9 @@ const colors = palette.reduce( ( acc, item ) => {
 }, {} );
 
 module.exports = {
+	corePlugins: {
+		preflight: false,
+	},
 	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: { colors },
 };
