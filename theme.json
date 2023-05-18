@@ -2,16 +2,37 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true
+		},
 		"typography": {
-			"fluid": true
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+					"slug": "system-fonts",
+					"name": "System fonts"
+				},
+				{
+					"fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+					"slug": "helvetica-arial",
+					"name": "Helvetica or Arial"
+				}
+			]
 		},
 		"color": {
+			"background": true,
 			"custom": true,
 			"customDuotone": true,
 			"customGradient": true,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"link": true,
+			"text": true,
 			"duotone": [],
 			"gradients": [],
-			"link": false,
 			"palette": [
 				{
 					"color": "#425a5e",
@@ -58,25 +79,47 @@
 					"slug": "tertiary-300",
 					"name": "Tertiary 300"
 				}
-			],
-			"text": true,
-			"background": true,
-			"defaultGradients": false,
-			"defaultPalette": false
-		},
-		"spacing": {
-			"blockGap": true
+			]
 		}
 	},
 	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-fonts)",
+			"fontSize": "var(--wp--preset--font-size--medium)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--preset--spacing--50)"
+		},
 		"color": {
 			"background": "var(--wp--preset--color--secondary-100)",
 			"text": "var(--wp--preset--color--primary-300)"
 		},
-		"spacing": {
-			"blockGap": "1.5rem"
-		},
 		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--huge)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)"
+				}
+			},
 			"button": {
 				":hover": {
 					"color": {
@@ -116,6 +159,18 @@
 			}
 		},
 		"blocks": {
+			"core/post-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--huge)",
+					"fontWeight": "bold"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--preset--spacing--30)",
+						"bottom": "var(--wp--preset--spacing--50)"
+					}
+				}
+			},
 			"core/heading": {
 				"typography": {
 					"fontWeight": "bold"
@@ -151,13 +206,18 @@
 						"typography": {
 							"fontSize": "var(--wp--preset--font-size--normal)"
 						}
+					},
+					"h6": {
+						"typography": {
+							"fontSize": "var(--wp--preset--font-size--small)"
+						}
 					}
 				}
 			},
 			"core/paragraph": {
 				"typography": {
-					"lineHeight": "1.5",
-					"fontSize": "var(--wp--preset--font-size--normal)"
+					"fontSize": "var(--wp--preset--font-size--normal)",
+					"lineHeight": "1.5"
 				},
 				"spacing": {
 					"padding": {
@@ -182,11 +242,6 @@
 							}
 						}
 					}
-				}
-			},
-			"core/buttons": {
-				"spacing": {
-					"blockGap": "10px"
 				}
 			},
 			"core/code": {
@@ -244,10 +299,10 @@
 			"core/image": {
 				"spacing": {
 					"margin": {
-						"bottom": "30px",
-						"left": "0",
+						"top": "30px",
 						"right": "0",
-						"top": "30px"
+						"bottom": "30px",
+						"left": "0"
 					}
 				}
 			},
@@ -280,10 +335,10 @@
 				"css": "{overflow-wrap: normal; overflow-x: scroll; tab-size: 4; white-space: pre !important;}",
 				"spacing": {
 					"padding": {
-						"bottom": "25px",
-						"left": "30px",
+						"top": "25px",
 						"right": "30px",
-						"top": "25px"
+						"bottom": "25px",
+						"left": "30px"
 					}
 				},
 				"typography": {
@@ -331,10 +386,7 @@
 				}
 			},
 			"core/social-links": {
-				"css": ".is-style-outline .wp-block-social-link {background-color: transparent;border: 1px solid currentColor;}",
-				"spacing": {
-					"blockGap": "10px"
-				}
+				"css": ".is-style-outline .wp-block-social-link {background-color: transparent;border: 1px solid currentColor;}"
 			},
 			"core/spacer": {
 				"spacing": {
