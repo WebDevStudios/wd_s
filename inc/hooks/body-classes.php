@@ -58,11 +58,6 @@ function body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
-	// Add a cleaner class for the scaffolding page template.
-	if ( is_page_template( 'templates/scaffolding.php' ) ) {
-		$classes[] = 'template-scaffolding';
-	}
-
 	// Add a `has-sidebar` class if we're using the sidebar template.
 	if ( is_page_template( 'templates/sidebar-right.php' ) ) {
 		$classes[] = 'has-sidebar';

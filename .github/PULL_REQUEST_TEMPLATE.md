@@ -1,23 +1,65 @@
-Closes #\_\_
+# Closes
 
-### DESCRIPTION
+<!--
+Please do not leave this blank, use this format to link issue numbers:
+[#WDS-123](https://webdevstudios.atlassian.net/browse/TICKET-NUMBER)
+-->
 
-- What did you do? Give us some context...
+## What type of PR is this? (put an x to all applicable)
 
-### SCREENSHOTS
+- [ ] 🍕 Feature
+- [ ] 🐛 Bug Fix
+- [ ] 📝 Documentation Update
+- [ ] 🎨 Style
+- [ ] 🧑‍💻 Code Refactor
+- [ ] 🔥 Performance Improvements
+- [ ] ✅ Test
+- [ ] 🤖 Build
+- [ ] 🔁 CI
+- [ ] 📦 Chore (Release)
+- [ ] ⏩ Revert
 
-![screenshot](https://dl.dropbox.com/s/8k8xh3tuj3g5340/wd_s-pr-template.jpg?dl=0)
+## Link to test
 
-### OTHER
+<!--
+Please do not leave this blank, use this format to link to testing environment:
+[Develop](https://wds.wdslab.com/)
+-->
 
-- [ ] Is this issue accessible? (Section 508/WCAG 2.0AA)
-- [ ] Does this issue pass all the linting? (PHPCS, ESLint, SassLint)
-- [ ] Does this pass CBT?
+## Description
 
-### STEPS TO VERIFY
+<!--
+Please do not leave this blank
+This PR [adds/removes/fixes/replaces] the [feature/bug/etc].
+-->
 
-How do we test this?
+## Related Tickets & Documents
 
-### DOCUMENTATION
+<!--
+Please use this format link issue numbers: Fixes #WDS-123
+https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword
+-->
 
-Will this pull request require updating the wd_s [wiki](https://github.com/WebDevStudios/wd_s/wiki)?
+## Mobile & Desktop Screenshots/Recordings
+
+<!-- Visual changes require screenshots -->
+
+
+## Added tests?
+
+- [ ] 👍 yes
+- [ ] 🙅 no, because they aren't needed
+- [ ] 🙋 no, because I need help
+
+## Added to documentation?
+
+- [ ] 📜 README.md
+- [ ] 📓 [Confluence](https://webdevstudios.atlassian.net/wiki/spaces/wds1/pages/2988474566/Feature+Documentation)
+- [ ] 🙅 no documentation needed
+
+## Others
+
+- [ ] 🦮 Is this issue accessible? (Section 508/WCAG 2.0AA)
+- [ ] 🙌 Does this issue pass all the linting? (PHPCS, ESLint, SassLint)
+
+## [optional] Are there any post-deployment tasks we need to perform?

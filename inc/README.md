@@ -1,6 +1,6 @@
 # Included `PHP` Files
 
-Use the `/inc` directory to declare any theme functionality. All files in this directory are imported inside of `functions.php`. 
+Use the `/inc` directory to declare any theme functionality. All files in this directory are imported inside of `functions.php`.
 
 ## Directories
 
@@ -12,7 +12,6 @@ inc/
 └─── functions/     (general functions that don't fit into any other directory)
 └─── hooks/         (theme hooks)
 └─── post-types/    (theme post type registrations & functions)
-└─── scaffolding/   (theme scaffolding functions)
 └─── setup/         (functions relating to the theme setup)
 └─── shortcodes/    (shortcode registrations)
 └─── template-tags/ (functions that render markup for use in theme templates)
