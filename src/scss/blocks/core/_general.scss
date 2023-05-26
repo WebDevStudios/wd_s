@@ -1,0 +1,21 @@
+//----------------------------------------
+// General Spacing
+//----------------------------------------
+
+.site-wrapper {
+	.wp-block-group {
+		> * {
+			@apply px-0;
+		}
+
+		> .wp-block-paragraph:last-child p {
+			@apply mb-0
+		}
+
+	}
+	.wp-block-cover {
+		> div[class*='inner-container'] {
+			@apply p-0;
+		}
+	}
+}
