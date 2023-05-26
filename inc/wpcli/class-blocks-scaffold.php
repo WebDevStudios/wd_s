@@ -80,7 +80,7 @@ class Blocks_Scaffold {
 				'desc'      => '',
 				'keywords'  => strtolower( $this->name ),
 				'icon'      => 'table-row-before',
-				'namespace' => 'wd_s',
+				'namespace' => 'wds',
 			]
 		);
 
@@ -148,7 +148,7 @@ class Blocks_Scaffold {
 
 		if ( $this->init_filesystem()->exists( $local_file ) ) {
 			$content = $this->init_filesystem()->get_contents( $local_file );
-			$content = str_replace( 'wd_s', $args['namespace'], $content );
+			$content = str_replace( 'wds', $args['namespace'], $content );
 			if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'src/blocks/' . $this->name . '/block.php', $content ) ) {
 				WP_CLI::error( 'ERROR :: Could not create a render file.', true );
 			}
@@ -199,7 +199,7 @@ class Blocks_Scaffold {
 					'{{title}}',
 					'{{description}}',
 					'{{icon}}',
-					'wd_s/',
+					'wds/',
 					'{{keyword}}',
 				],
 				[
