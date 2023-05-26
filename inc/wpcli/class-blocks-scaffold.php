@@ -7,6 +7,11 @@
 
 namespace WebDevStudios\wd_s;
 
+// Exit if class already exists (for example when the plugin `WDS ACF Blocks` is active).
+if ( class_exists( 'Blocks_Scaffold' ) ) {
+	return;
+}
+
 // Define a global path and url.
 define( 'WebDevStudios\wd_s\ROOT_PATH', trailingslashit( get_template_directory() ) );
 define( 'WebDevStudios\wd_s\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
