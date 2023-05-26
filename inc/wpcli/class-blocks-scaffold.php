@@ -99,9 +99,6 @@ class Blocks_Scaffold {
 		// create FE assets.
 		$this->create_block_assets();
 
-		// create block php.
-		$this->create_block_tailwind_config();
-
 		WP_CLI::success( $this->name . ' block created.' );
 	}
 
@@ -157,28 +154,6 @@ class Blocks_Scaffold {
 		}
 
 	}
-
-	/**
-	 * Create the block tailwind config file.
-	 *
-	 * @since 2.0.0
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
-	 */
-	private function create_block_tailwind_config() {
-		$dir     = ROOT_PATH . 'inc/wpcli/block-starter/tailwind.config.js';
-		$content = '';
-
-		if ( $this->init_filesystem()->exists( $dir ) ) {
-			$content = $this->init_filesystem()->get_contents( $dir );
-			$content = str_replace( '{{blockName}}', $this->name, $content );
-		}
-
-		if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'src/blocks/' . $this->name . '/tailwind.config.js', $content ) ) {
-			WP_CLI::error( 'ERROR :: Could not create a block json file.', true );
-		}
-
-	}
-
 
 	/**
 	 * Create the block json.
