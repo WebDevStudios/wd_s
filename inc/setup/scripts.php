@@ -13,7 +13,7 @@ namespace WebDevStudios\wd_s;
  * @author WebDevStudios
  */
 function scripts() {
-	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
+	$asset_file_path = get_template_directory() . '/build/index.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
 		$asset_file = include $asset_file_path;
