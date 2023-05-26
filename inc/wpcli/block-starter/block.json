@@ -1,19 +1,16 @@
 {
-	"name": "wd_s/{{name}}",
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wds/{{name}}",
 	"title": "{{title}}",
 	"description": "{{description}}",
 	"editorStyle": "file:./editor.css",
-	"editorScript": "file:./editor.js",
-	"style": "file:./style-script.css",
-	"script": "file:./script.js",
+	"editorScript": "./editor.js",
+	"style": "file:./style.css",
+	"script": "./script.js",
 	"category": "WDS",
 	"icon": "{{icon}}",
-	"apiVersion": 2,
-	"keywords": [
-		"{{name}}",
-		"{{keyword}}",
-		"block"
-	],
+	"keywords": [ "{{name}}", "{{keyword}}", "block" ],
 	"acf": {
 		"mode": "auto",
 		"renderTemplate": "{{name}}.php"
@@ -21,7 +18,7 @@
 	"supports": {
 		"align": false,
 		"anchor": true,
-		"color": true,
+		"color": {},
 		"customClassName": true,
 		"jsx": true
 	},
