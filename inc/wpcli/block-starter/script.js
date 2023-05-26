@@ -4,6 +4,6 @@
  * @package
  * @since 2.0.0
  */
-import './style.scss';
+import './style.css';
 
 // add JS here.

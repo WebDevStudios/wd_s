@@ -1,3 +1,3 @@
-import './editor.scss';
+import './editor.css';
 
 // Editor JS here.

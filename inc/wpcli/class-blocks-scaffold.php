@@ -123,7 +123,7 @@ class Blocks_Scaffold {
 	 * @since 2.0.0
 	 */
 	private function create_block_dir() {
-		$dir = ROOT_PATH . 'src/blocks/' . $this->name;
+		$dir = ROOT_PATH . 'blocks/' . $this->name;
 
 		if ( ! $this->init_filesystem()->exists( $dir ) ) {
 			$this->init_filesystem()->mkdir( $dir, 0755 );
@@ -146,7 +146,7 @@ class Blocks_Scaffold {
 		if ( $this->init_filesystem()->exists( $local_file ) ) {
 			$content = $this->init_filesystem()->get_contents( $local_file );
 			$content = str_replace( 'wds', $args['namespace'], $content );
-			if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'src/blocks/' . $this->name . '/block.php', $content ) ) {
+			if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'blocks/' . $this->name . '/' . $this->name . '.php', $content ) ) {
 				WP_CLI::error( 'ERROR :: Could not create a render file.', true );
 			}
 		} else {
@@ -189,7 +189,7 @@ class Blocks_Scaffold {
 			);
 		}
 
-		if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'src/blocks/' . $this->name . '/block.json', $content ) ) {
+		if ( ! $this->init_filesystem()->put_contents( ROOT_PATH . 'blocks/' . $this->name . '/block.json', $content ) ) {
 			WP_CLI::error( 'ERROR :: Could not create a block json file.', true );
 		}
 	}
@@ -202,19 +202,19 @@ class Blocks_Scaffold {
 	 */
 	private function create_block_editor_assets() {
 		$assets_js  = ROOT_PATH . 'inc/wpcli/block-starter/editor.js';
-		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/editor.scss';
+		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/editor.css';
 
 		if ( ! $this->init_filesystem()->exists( $assets_js ) || ! $this->init_filesystem()->exists( $assets_css ) ) {
 			WP_CLI::error( 'ERROR :: Could not find editor assets.', true );
 		}
 
 		// copy editor js.
-		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'src/blocks/' . $this->name . '/editor.js' ) ) {
+		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'blocks/' . $this->name . '/editor.js' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
 		}
 
 		// copy editor css.
-		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'src/blocks/' . $this->name . '/editor.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'blocks/' . $this->name . '/editor.css' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
 		}
 
@@ -228,22 +228,24 @@ class Blocks_Scaffold {
 	 */
 	private function create_block_assets() {
 		$assets_js  = ROOT_PATH . 'inc/wpcli/block-starter/script.js';
-		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/style.scss';
+		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/style.css';
 
-		if ( ! $this->init_filesystem()->exists( $assets_js ) || ! $this->init_filesystem()->exists( $assets_css ) ) {
+		if (
+			! $this->init_filesystem()->exists( $assets_js )
+			|| ! $this->init_filesystem()->exists( $assets_css )
+			) {
 			WP_CLI::error( 'ERROR :: Could not find block assets.', true );
 		}
 
 		// copy editor js.
-		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'src/blocks/' . $this->name . '/script.js' ) ) {
+		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'blocks/' . $this->name . '/script.js' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
 		}
 
 		// copy editor css.
-		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'src/blocks/' . $this->name . '/style.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'blocks/' . $this->name . '/style.css' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
 		}
-
 	}
 
 }
@@ -268,10 +270,10 @@ add_action( 'cli_init', __NAMESPACE__ . '\cli_register_commands' );
  * @since  2.0.0
  */
 function wds_acf_register_blocks() {
-	$wds_acf_blocks = glob( ROOT_PATH . 'build/blocks/*' );
+	$wds_acf_blocks = glob( ROOT_PATH . 'blocks/*/block.json' );
 
 	foreach ( $wds_acf_blocks as $block ) {
 		register_block_type( $block );
 	}
 }
-add_action( 'acf/init', __NAMESPACE__ . '\wds_acf_register_blocks' );
+add_action( 'init', __NAMESPACE__ . '\wds_acf_register_blocks' );
