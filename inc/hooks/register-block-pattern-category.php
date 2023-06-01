@@ -18,5 +18,8 @@ function wd_s_register_block_pattern_category() {
 			'label' => __( 'WDS Patterns', 'wd_s' ),
 		]
 	);
+
+	// Remove default patterns.
+	remove_theme_support( 'core-block-patterns' );
 }
 add_action( 'init', __NAMESPACE__ . '\wd_s_register_block_pattern_category', 9 );
