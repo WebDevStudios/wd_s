@@ -33,8 +33,8 @@ Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watc
 
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
-- [Node](https://nodejs.org) (v16+)
-- [NPM](https://npmjs.com) (v8+)
+- [Node](https://nodejs.org) (v18+)
+- [NPM](https://npmjs.com) (v9+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start

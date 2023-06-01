@@ -18,8 +18,8 @@
 		"url": "https://github.com/WebDevStudios/wd_s/issues"
 	},
 	"engines": {
-		"node": ">=16",
-		"npm": ">=8"
+		"node": ">=18",
+		"npm": ">=9"
 	},
 	"dependencies": {
 		"@wordpress/eslint-plugin": "14.7.0",
