@@ -25,5 +25,6 @@ pre-commit:
             run: npx markdownlint-cli {staged_files} --fix
         other:
             glob: '*.{yml,json,html}'
-            exclude: 'acf-json/*.json'
+            exclude: 'group_*.json'
             run: npx prettier {staged_files} --write
+            stage_fixed: true
