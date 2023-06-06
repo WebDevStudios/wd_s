@@ -8,7 +8,7 @@
 	"editorScript": "./editor.js",
 	"style": "file:./style.css",
 	"script": "./script.js",
-	"category": "WDS",
+	"category": "wds-blocks-category",
 	"icon": "megaphone",
 	"keywords": [ "call-to-action", "call-to-action", "block" ],
 	"acf": {
