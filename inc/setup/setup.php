@@ -29,6 +29,12 @@ function setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// Add support for block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Enqueue editor styles.
+	add_editor_style( 'editor-style.css' );
+
 	/**
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -61,6 +67,8 @@ function setup() {
 	add_theme_support(
 		'html5',
 		[
+			'style',
+			'script',
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -98,33 +106,6 @@ function setup() {
 
 	// Gutenberg support for full-width/wide alignment of supported blocks.
 	add_theme_support( 'align-wide' );
-
-	// Gutenberg defaults for font sizes.
-	add_theme_support(
-		'editor-font-sizes',
-		[
-			[
-				'name' => __( 'Small', 'wd_s' ),
-				'size' => 12,
-				'slug' => 'small',
-			],
-			[
-				'name' => __( 'Normal', 'wd_s' ),
-				'size' => 16,
-				'slug' => 'normal',
-			],
-			[
-				'name' => __( 'Large', 'wd_s' ),
-				'size' => 36,
-				'slug' => 'large',
-			],
-			[
-				'name' => __( 'Huge', 'wd_s' ),
-				'size' => 50,
-				'slug' => 'huge',
-			],
-		]
-	);
 
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
