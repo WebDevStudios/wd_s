@@ -201,23 +201,21 @@ class Blocks_Scaffold {
 	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
 	 */
 	private function create_block_editor_assets() {
-		$assets_js  = ROOT_PATH . 'inc/wpcli/block-starter/editor.js';
-		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/editor.css';
+		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/editor.js';
+		$asset_php = ROOT_PATH . 'inc/wpcli/block-starter/editor.asset.php';
 
-		if ( ! $this->init_filesystem()->exists( $assets_js ) || ! $this->init_filesystem()->exists( $assets_css ) ) {
+		if ( ! $this->init_filesystem()->exists( $asset_js ) ) {
 			WP_CLI::error( 'ERROR :: Could not find editor assets.', true );
 		}
 
 		// copy editor js.
-		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'blocks/' . $this->name . '/editor.js' ) ) {
+		if ( ! $this->init_filesystem()->copy( $asset_js, ROOT_PATH . 'blocks/' . $this->name . '/editor.js' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
 		}
-
-		// copy editor css.
-		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'blocks/' . $this->name . '/editor.css' ) ) {
-			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
+		// copy editor.asset.php.
+		if ( ! $this->init_filesystem()->copy( $asset_php, ROOT_PATH . 'blocks/' . $this->name . '/editor.asset.php' ) ) {
+			WP_CLI::error( 'ERROR :: Could not create editor asset php file.', true );
 		}
-
 	}
 
 	/**
@@ -227,24 +225,21 @@ class Blocks_Scaffold {
 	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
 	 */
 	private function create_block_assets() {
-		$assets_js  = ROOT_PATH . 'inc/wpcli/block-starter/script.js';
-		$assets_css = ROOT_PATH . 'inc/wpcli/block-starter/style.css';
+		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/script.js';
+		$asset_php = ROOT_PATH . 'inc/wpcli/block-starter/script.asset.php';
 
-		if (
-			! $this->init_filesystem()->exists( $assets_js )
-			|| ! $this->init_filesystem()->exists( $assets_css )
-			) {
+		if ( ! $this->init_filesystem()->exists( $asset_js ) ) {
 			WP_CLI::error( 'ERROR :: Could not find block assets.', true );
 		}
 
 		// copy editor js.
-		if ( ! $this->init_filesystem()->copy( $assets_js, ROOT_PATH . 'blocks/' . $this->name . '/script.js' ) ) {
-			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
+		if ( ! $this->init_filesystem()->copy( $asset_js, ROOT_PATH . 'blocks/' . $this->name . '/script.js' ) ) {
+			WP_CLI::error( 'ERROR :: Could not create script js file.', true );
 		}
 
-		// copy editor css.
-		if ( ! $this->init_filesystem()->copy( $assets_css, ROOT_PATH . 'blocks/' . $this->name . '/style.css' ) ) {
-			WP_CLI::error( 'ERROR :: Could not create editor js file.', true );
+		// copy script.asset.php.
+		if ( ! $this->init_filesystem()->copy( $asset_php, ROOT_PATH . 'blocks/' . $this->name . '/script.asset.php' ) ) {
+			WP_CLI::error( 'ERROR :: Could not create script asset php file.', true );
 		}
 	}
 
