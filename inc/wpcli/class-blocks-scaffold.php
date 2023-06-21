@@ -80,7 +80,7 @@ class Blocks_Scaffold {
 				'desc'      => '',
 				'keywords'  => strtolower( $this->name ),
 				'icon'      => 'table-row-before',
-				'namespace' => 'wds',
+				'namespace' => 'wds/',
 			]
 		);
 

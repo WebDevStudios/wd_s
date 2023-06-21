@@ -10,11 +10,11 @@
  */
 
 $wds_defaults = [
-	'class'       => [ 'wds-module', 'wds-module-call-to-action' ],
-	'eyebrow'     => false,
-	'heading'     => false,
-	'content'     => false,
-	'button_args' => false,
+	'class'   => [ 'wds-module', 'wds-module-call-to-action' ],
+	'eyebrow' => false,
+	'heading' => false,
+	'content' => false,
+	'button'  => false,
 ];
 
 $wds_args = wp_parse_args( $args, $wds_defaults );
@@ -48,9 +48,11 @@ $wds_atts = $wds_args['class'];
 		endif;
 
 		// Button.
-		if ( ! empty( $wds_args['button_args']['button'] ) ) :
+		if ( ! empty( $wds_args['button'] ) ) :
 			?>
-			<button class="wds-element wds-element-button"><?php echo wp_kses_post( $wds_args['button_args']['title'] ); ?></button>
+			<a href="<?php echo esc_url( $wds_args['button']['url'] ); ?>">
+				<button class="wds-element wds-element-button"><?php echo wp_kses_post( $wds_args['button']['title'] ); ?></button>
+			</a>
 		<?php endif; ?>
 	</div>
 </div>
