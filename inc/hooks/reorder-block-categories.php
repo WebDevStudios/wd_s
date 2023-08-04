@@ -10,24 +10,25 @@ namespace WebDevStudios\wd_s;
 /**
  * Reorders the block categories and adds a custom block category for 'page' post type.
  *
- * @param {array}  $categories - The existing array of block categories.
- * @param {object} $post - The post object being edited.
+ * @param {array} $categories - The existing array of block categories.
  * @returns {array} - The modified array of block categories.
  *
  * @author JC Palmes <jc@webdevstudios.com>
  * @since  2023-06-02
  */
-function reorder_block_categories( $categories, $post ) {
-	if ( 'page' !== $post->post_type ) {
-		return $categories;
-	}
-
-	$wds_block_category = [
-		'slug'  => 'wds-blocks-category',
+function reorder_block_categories( $categories ) {
+	$custom_block_category = [
+		'slug'  => __( 'wds-blocks-category', 'wd_s' ),
 		'title' => __( 'WDS Blocks', 'wd_s' ),
 	];
 
-	array_unshift( $categories, $wds_block_category );
-	return $categories;
+	$categories_sorted    = [];
+	$categories_sorted[0] = $custom_block_category;
+
+	foreach ( $categories as $category ) {
+		$categories_sorted[] = $category;
+	}
+
+	return $categories_sorted;
 }
-add_filter( 'block_categories', __NAMESPACE__ . '\reorder_block_categories', 10, 2 );
+add_filter( 'block_categories_all', __NAMESPACE__ . '\reorder_block_categories', 10, 2 );
