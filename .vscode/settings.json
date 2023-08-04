@@ -7,7 +7,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"intelephense.format.enable": false,
-	"intelephense.stubs": [ "acf", "wordpress" ],
+	"intelephense.stubs": [ "acf", "wordpress", "standard", "Core", "pcre" ],
 
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#3F4040",
