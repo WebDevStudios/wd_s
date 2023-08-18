@@ -22,7 +22,7 @@
 		"npm": ">=8"
 	},
 	"dependencies": {
-		"@wordpress/eslint-plugin": "14.4.0",
+		"@wordpress/eslint-plugin": "15.0.0",
 		"@wordpress/scripts": "^26.2.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
