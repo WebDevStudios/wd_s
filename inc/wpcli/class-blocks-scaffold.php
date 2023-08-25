@@ -253,7 +253,7 @@ class Blocks_Scaffold {
  * @return void
  */
 function cli_register_commands() {
-	WP_CLI::add_command( 'abs', __NAMESPACE__ . '\Blocks_Scaffold' );
+	WP_CLI::add_command( 'wds', __NAMESPACE__ . '\Blocks_Scaffold' );
 }
 add_action( 'cli_init', __NAMESPACE__ . '\cli_register_commands' );
 

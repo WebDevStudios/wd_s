@@ -16,13 +16,19 @@ namespace WebDevStudios\wd_s;
  * @since  2023-05-30
  */
 function register_wds_category( $categories ) {
+	$custom_block_category = [
+		'slug'  => __( 'wds-blocks-category', 'wd_s' ),
+		'title' => __( 'WDS Blocks', 'wd_s' ),
+	];
 
-	$categories[] = array(
-		'slug'  => 'wds-blocks-category',
-		'title' => 'WDS Blocks',
-	);
+	$categories_sorted    = [];
+	$categories_sorted[0] = $custom_block_category;
 
-	return $categories;
+	foreach ( $categories as $category ) {
+		$categories_sorted[] = $category;
+	}
+
+	return $categories_sorted;
 }
 
 add_filter( 'block_categories_all', __NAMESPACE__ . '\register_wds_category', 10, 1 );

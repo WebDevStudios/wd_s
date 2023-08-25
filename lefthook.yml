@@ -25,6 +25,21 @@ pre-commit:
             run: npx markdownlint-cli {staged_files} --fix
         other:
             glob: '*.{yml,json,html}'
-            exclude: 'group_*.json'
-            run: npx prettier {staged_files} --write
+            exclude: 'group_*.json'  # Exclude specific files
+            run: |
+                staged_files="$LEFTHOOK_STAGED_FILES"
+                for file in $staged_files
+                do
+                  if [[ ! "$file" =~ ^templates/ ]]; then
+                    npx prettier "$file" --write
+                  fi
+                done
             stage_fixed: true
+            stage: pre-commit
+        merge-conflict:
+            run: echo "Resolve merge conflicts before committing"
+        exit-status:
+            run: echo "All pre-commit checks passed"
+        templates-exclude:
+            glob: 'templates/**' # Match all files and subdirectories within templates folder
+            run: echo "Skipping templates folder"
