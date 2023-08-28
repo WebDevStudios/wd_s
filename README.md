@@ -33,8 +33,8 @@ Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watc
 
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
-- [Node](https://nodejs.org) (v16+)
-- [NPM](https://npmjs.com) (v8+)
+- [Node](https://nodejs.org) (v18+)
+- [NPM](https://npmjs.com) (v9+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
@@ -75,10 +75,10 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have Composer and NPM 8 installed first.
+>Note: You will need to have Composer 2 and NPM 9 installed first.
 
 ```bash
-npm i --legacy-peer-deps
+npm i
 ```
 
 ### Development
@@ -93,6 +93,20 @@ Command | Action
 `npm run lint` | Check all CSS, JS, MD, and PHP files for errors
 `npm run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
 `npm run report` | Gives detailed information on coding standards violations in PHP code
+
+### Building a block with wpcli
+
+In order to build a block, run the following wpcli script.
+
+Note: If you're using Local, you can open the shell from within Local to do this. `Sitename -> Open site shell`.
+
+```bash
+wp wds create_portable_block myblock --title="This is myblock" --desc="This block is used for wds." --keyword="myblock" --icon="table-row-before" --namespace="wds"
+```
+
+This will scaffold out a block inside of the `blocks` folder in the theme. Replace `myblock` with the name of your block and update the other items `title`, `desc`, `keyword`, `icon`, `namespace` with the appropriate information.
+
+Note: If you don't see your new block available under the block listing in the editor after following the above steps, try changing the namespacing in your block's `block.json` to the following format `your-namespace/blockname` and check again.
 
 ## Contributing and Support
 
