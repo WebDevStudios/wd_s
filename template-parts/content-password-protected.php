@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'is-layout-constrained' ); ?>>
 
 	<header class="entry-header is-layout-constrained">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

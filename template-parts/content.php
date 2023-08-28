@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
 
-<article <?php post_class( 'post-container' ); ?>>
+<article <?php post_class( 'post-container is-layout-constrained' ); ?>>
 
 	<header class="entry-header is-layout-constrained">
 		<?php
