@@ -18,11 +18,11 @@
 		"url": "https://github.com/WebDevStudios/wd_s/issues"
 	},
 	"engines": {
-		"node": ">=16",
-		"npm": ">=8"
+		"node": ">=18",
+		"npm": ">=9"
 	},
 	"dependencies": {
-		"@wordpress/eslint-plugin": "14.7.0",
+		"@wordpress/eslint-plugin": "15.0.0",
 		"@wordpress/scripts": "^26.2.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
