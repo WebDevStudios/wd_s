@@ -34,24 +34,3 @@ function scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
-
-/**
- * Dequeue WordPress core Block Library styles.
- *
- * @author WebDevStudios
- */
-function deregister_core_block_styles() {
-	// This will remove the inline styles for the following core blocks.
-	$block_styles_to_remove = [
-		'heading',
-		'paragraph',
-		'table',
-		'list',
-	];
-
-	foreach ( $block_styles_to_remove as $block_style ) {
-		wp_deregister_style( 'wp-block-' . $block_style );
-	}
-}
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_core_block_styles' );
-
