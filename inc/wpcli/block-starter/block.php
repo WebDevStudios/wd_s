@@ -2,5 +2,5 @@
 /**
  * Your block render code goes here.
  *
- * @package wds
+ * @package wd_s
  */

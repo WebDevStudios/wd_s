@@ -59,7 +59,7 @@ class Blocks_Scaffold {
 	 *
 	 * ## EXAMPLES
 	 *
-	 * wp abs create_portable_block myblock --title="This is myblock" --desc="This block is used for wds." --keywords="myblock" --icon="table-row-before" --namespace="WebDevStudios\wd_s"
+	 * wp wds create_portable_block myblock --title="This is myblock" --desc="This block is used for wds." --keyword="myblock" --icon="table-row-before" --namespace="wds"
 	 * @since  2.0.0
 	 * @param string $name The block name.
 	 * @param array  $assoc_args The block args.
@@ -70,6 +70,10 @@ class Blocks_Scaffold {
 		// validate name.
 		if ( ! preg_match( '/^[a-zA-Z0-9\-]+$/', $this->name ) ) {
 			WP_CLI::error( 'Invalid name, Block name must only contain upper and lowercase letters.', true );
+		}
+
+		if ( ! isset( $args['namespace'] ) && preg_match( '/[\/\\\\]/', $assoc_args['namespace'] ) ) {
+			WP_CLI::error( 'Invalid namespace, Block namespace must not contain slashes.', true );
 		}
 
 		// Merge with default args.
@@ -195,7 +199,7 @@ class Blocks_Scaffold {
 	}
 
 	/**
-	 * Create the block editor styles.
+	 * Create the block editor assets.
 	 *
 	 * @since 2.0.0
 	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
@@ -204,7 +208,13 @@ class Blocks_Scaffold {
 		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/editor.js';
 		$asset_php = ROOT_PATH . 'inc/wpcli/block-starter/editor.asset.php';
 
-		if ( ! $this->init_filesystem()->exists( $asset_js ) ) {
+		$asset_scss = ROOT_PATH . 'inc/wpcli/block-starter/editor.scss';
+
+		if (
+			! $this->init_filesystem()->exists( $asset_js )
+			|| ! $this->init_filesystem()->exists( $asset_php )
+			|| ! $this->init_filesystem()->exists( $asset_scss )
+		) {
 			WP_CLI::error( 'ERROR :: Could not find editor assets.', true );
 		}
 
@@ -215,6 +225,21 @@ class Blocks_Scaffold {
 		// copy editor.asset.php.
 		if ( ! $this->init_filesystem()->copy( $asset_php, ROOT_PATH . 'blocks/' . $this->name . '/editor.asset.php' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create editor asset php file.', true );
+		}
+
+		// copy styles.
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.editor.scss' ) ) {
+			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
+		}
+
+		// add js file for build process.
+		if (
+			! $this->init_filesystem()->put_contents(
+				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.editor.js',
+				"import '../../../scss/blocks/custom/" . $this->name . ".editor.scss';\n"
+			)
+		) {
+			WP_CLI::error( 'ERROR :: Could not create a block js style file.', true );
 		}
 	}
 
@@ -228,7 +253,13 @@ class Blocks_Scaffold {
 		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/script.js';
 		$asset_php = ROOT_PATH . 'inc/wpcli/block-starter/script.asset.php';
 
-		if ( ! $this->init_filesystem()->exists( $asset_js ) ) {
+		$asset_scss = ROOT_PATH . 'inc/wpcli/block-starter/style.scss';
+
+		if (
+			! $this->init_filesystem()->exists( $asset_js )
+			|| ! $this->init_filesystem()->exists( $asset_php )
+			|| ! $this->init_filesystem()->exists( $asset_scss )
+		) {
 			WP_CLI::error( 'ERROR :: Could not find block assets.', true );
 		}
 
@@ -240,6 +271,21 @@ class Blocks_Scaffold {
 		// copy script.asset.php.
 		if ( ! $this->init_filesystem()->copy( $asset_php, ROOT_PATH . 'blocks/' . $this->name . '/script.asset.php' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create script asset php file.', true );
+		}
+
+		// copy styles.
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.scss' ) ) {
+			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
+		}
+
+		// add js file for build process.
+		if (
+			! $this->init_filesystem()->put_contents(
+				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.js',
+				"import '../../../scss/blocks/custom/" . $this->name . ".scss';\n"
+			)
+		) {
+			WP_CLI::error( 'ERROR :: Could not create a block js style file.', true );
 		}
 	}
 
