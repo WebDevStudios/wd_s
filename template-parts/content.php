@@ -15,7 +15,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 <article <?php post_class( 'post-container' ); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header is-layout-constrained">
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -32,7 +32,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content is-layout-constrained">
 		<?php
 		the_content(
 			sprintf(
