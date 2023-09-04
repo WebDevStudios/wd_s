@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found is-layout-constrained">
 
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wd_s' ); ?></h1>
