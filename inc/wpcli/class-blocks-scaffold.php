@@ -228,14 +228,14 @@ class Blocks_Scaffold {
 		}
 
 		// copy styles.
-		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.editor.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'assets/scss/blocks/custom/' . $this->name . '.editor.scss' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
 		}
 
 		// add js file for build process.
 		if (
 			! $this->init_filesystem()->put_contents(
-				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.editor.js',
+				ROOT_PATH . 'assets/js/blocks/custom/' . $this->name . '.editor.js',
 				"import '../../../scss/blocks/custom/" . $this->name . ".editor.scss';\n"
 			)
 		) {
@@ -274,14 +274,14 @@ class Blocks_Scaffold {
 		}
 
 		// copy styles.
-		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'src/scss/blocks/custom/' . $this->name . '.scss' ) ) {
+		if ( ! $this->init_filesystem()->copy( $asset_scss, ROOT_PATH . 'assets/scss/blocks/custom/' . $this->name . '.scss' ) ) {
 			WP_CLI::error( 'ERROR :: Could not create styles file.', true );
 		}
 
 		// add js file for build process.
 		if (
 			! $this->init_filesystem()->put_contents(
-				ROOT_PATH . 'src/js/blocks/custom/' . $this->name . '.js',
+				ROOT_PATH . 'assets/js/blocks/custom/' . $this->name . '.js',
 				"import '../../../scss/blocks/custom/" . $this->name . ".scss';\n"
 			)
 		) {

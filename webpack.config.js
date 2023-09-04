@@ -15,8 +15,8 @@ const StylelintPlugin = require( 'stylelint-webpack-plugin' );
 module.exports = {
 	...defaultConfig,
 	entry: {
-		index: './src/index.js',
-		critical: './src/critical.js',
+		index: './assets/index.js',
+		critical: './assets/critical.js',
 	},
 	module: {
 		rules: [
@@ -67,19 +67,22 @@ module.exports = {
 				{
 					from: '**/*.{jpg,jpeg,png,gif,svg}',
 					to: 'images/[path][name][ext]',
-					context: path.resolve( process.cwd(), 'src/images' ),
+					context: path.resolve( process.cwd(), 'assets/images' ),
 					noErrorOnMissing: true,
 				},
 				{
 					from: '*.svg',
 					to: 'images/icons/[name][ext]',
-					context: path.resolve( process.cwd(), 'src/images/icons' ),
+					context: path.resolve(
+						process.cwd(),
+						'assets/images/icons'
+					),
 					noErrorOnMissing: true,
 				},
 				{
 					from: '**/*.{woff,woff2,eot,ttf,otf}',
 					to: 'fonts/[path][name][ext]',
-					context: path.resolve( process.cwd(), 'src/fonts' ),
+					context: path.resolve( process.cwd(), 'assets/fonts' ),
 					noErrorOnMissing: true,
 				},
 			],
@@ -90,7 +93,7 @@ module.exports = {
 		 *
 		 * @see https://github.com/cascornelissen/svg-spritemap-webpack-plugin
 		 */
-		new SVGSpritemapPlugin( 'src/images/icons/*.svg', {
+		new SVGSpritemapPlugin( 'assets/images/icons/*.svg', {
 			output: {
 				filename: 'images/icons/sprite.svg',
 			},

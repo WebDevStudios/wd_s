@@ -7,7 +7,7 @@ const topLevelPhpFiles = glob.sync( './*.php' ),
 	directoryFiles = [
 		'./inc/*.php',
 		'./template-parts/*.php',
-		'./src/js/**/*.js',
+		'./assets/js/**/*.js',
 	];
 
 const themeJsonPath = path.join( __dirname, 'theme.json' );
