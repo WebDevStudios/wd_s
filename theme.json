@@ -45,24 +45,47 @@
 			"fontFamilies": [
 				{
 					"fontFamily": "Inter, sans-serif",
-					"name": "Body",
-					"slug": "body",
+					"name": "Headline",
+					"slug": "headline",
 					"fontFace": [
 						{
 							"fontFamily": "Inter",
-							"fontStretch": "normal",
 							"fontStyle": "normal",
-							"fontWeight": "300 400 700 900",
+							"fontWeight": "300",
 							"src": [
-								"file:./src/fonts/inter/Inter.var.woff2"
+								"file:./src/fonts/inter/Inter-Light.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./src/fonts/inter/Inter-Regular.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./src/fonts/inter/Inter-Bold.woff2"
+							]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": [
+								"file:./src/fonts/inter/Inter-Black.woff2"
 							]
 						}
 					]
 				},
 				{
 					"fontFamily": "Oxygen, sans-serif",
-					"name": "Headline",
-					"slug": "headline",
+					"name": "Body",
+					"slug": "body",
 					"fontFace": [
 						{
 							"fontFamily": "Oxygen",
@@ -136,10 +159,10 @@
 				},
 				{
 					"fluid": {
-						"min": "4rem",
-						"max": "7rem"
+						"min": "2.25rem",
+						"max": "4rem"
 					},
-					"size": "7rem",
+					"size": "4rem",
 					"slug": "xx-large",
 					"name": "XX Large"
 				}
