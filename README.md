@@ -78,7 +78,7 @@ Install theme dependencies and trigger an initial build.
 >Note: You will need to have Composer 2 and NPM 9 installed first.
 
 ```bash
-npm i
+npm i && composer i
 ```
 
 ### Development
