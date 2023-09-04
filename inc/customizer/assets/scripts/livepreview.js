@@ -42,13 +42,6 @@
 		} );
 	} );
 
-	// Background image.
-	api( 'background_image', function ( value ) {
-		value.bind( function ( to ) {
-			$( 'body' ).toggleClass( 'custom-background-image', '' !== to );
-		} );
-	} );
-
 	// Copyright text.
 	api( 'wd_s_copyright_text', function ( value ) {
 		value.bind( function ( to ) {
