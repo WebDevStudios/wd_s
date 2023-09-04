@@ -44,7 +44,7 @@ function print_entry_footer() {
 			esc_html__( 'Edit %s', 'wd_s' ),
 			wp_kses_post( get_the_title( '<span class="screen-reader-text">"', '"</span>', false ) )
 		),
-		'<span class="edit-link">',
-		'</span>'
+		'<div class="edit-link">',
+		'</div>'
 	);
 }

@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
 
-<article <?php post_class( 'post-container is-layout-constrained' ); ?>>
+<article <?php post_class( 'post-container' ); ?>>
 
 	<header class="entry-header is-layout-constrained">
 		<?php
@@ -58,7 +58,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer is-layout-constrained">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 

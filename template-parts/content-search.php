@@ -13,7 +13,7 @@ use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
 
-<article <?php post_class( 'is-layout-constrained' ); ?>>
+<article <?php post_class(); ?>>
 
 	<header class="entry-header is-layout-constrained">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -26,11 +26,11 @@ use function WebDevStudios\wd_s\print_entry_footer;
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="entry-summary is-layout-constrained">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer is-layout-constrained">
 		<?php print_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 

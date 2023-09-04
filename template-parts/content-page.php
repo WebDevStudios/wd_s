@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'is-layout-constrained' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header is-layout-constrained">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -29,7 +29,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		<footer class="entry-footer is-layout-constrained">
 			<?php
 				edit_post_link(
 					sprintf(
@@ -37,8 +37,8 @@
 						esc_html__( 'Edit %s', 'wd_s' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
-					'<span class="edit-link">',
-					'</span>'
+					'<div class="edit-link">',
+					'</div>'
 				);
 			?>
 		</footer><!-- .entry-footer -->
