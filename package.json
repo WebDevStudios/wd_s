@@ -56,7 +56,7 @@
 		"pa11y-ci-reporter-html": "^5.1.1",
 		"postcss": "^8.4.23",
 		"prettier": "npm:wp-prettier@^2.8.5",
-		"webpack-cli": "^5.0.2",
+		"webpack-cli": "^5.1.4",
 		"webpack-merge": "^5.8.0"
 	},
 	"scripts": {
