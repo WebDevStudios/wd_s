@@ -88,7 +88,6 @@ function live_preview_support( $wp_customize ) {
 		'blogname',
 		'blogdescription',
 		'header_textcolor',
-		'background_image',
 		'wd_s_copyright_text',
 	];
 

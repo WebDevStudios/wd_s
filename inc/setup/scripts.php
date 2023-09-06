@@ -26,7 +26,7 @@ function scripts() {
 
 	// Register styles & scripts.
 	wp_enqueue_style( 'wd_s-styles', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
-	wp_enqueue_style( 'custom-preflight', get_stylesheet_directory_uri() . '/src/tailwind-preflight.css', [], $asset_file['version'] );
+	wp_enqueue_style( 'custom-preflight', get_stylesheet_directory_uri() . '/assets/tailwind-preflight.css', [], $asset_file['version'] );
 	wp_enqueue_script( 'wd_s-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

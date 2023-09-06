@@ -53,7 +53,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "300",
 							"src": [
-								"file:./src/fonts/inter/Inter-Light.woff2"
+								"file:./build/fonts/inter/Inter-Light.woff2"
 							]
 						},
 						{
@@ -61,7 +61,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./src/fonts/inter/Inter-Regular.woff2"
+								"file:./build/fonts/inter/Inter-Regular.woff2"
 							]
 						},
 						{
@@ -69,7 +69,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
-								"file:./src/fonts/inter/Inter-Bold.woff2"
+								"file:./build/fonts/inter/Inter-Bold.woff2"
 							]
 						},
 						{
@@ -77,7 +77,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "900",
 							"src": [
-								"file:./src/fonts/inter/Inter-Black.woff2"
+								"file:./build/fonts/inter/Inter-Black.woff2"
 							]
 						}
 					]
@@ -92,7 +92,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "300",
 							"src": [
-								"file:./src/fonts/oxygen/oxygen-v15-latin-300.woff2"
+								"file:./build/fonts/oxygen/oxygen-v15-latin-300.woff2"
 							]
 						},
 						{
@@ -100,7 +100,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"src": [
-								"file:./src/fonts/oxygen/oxygen-v15-latin-regular.woff2"
+								"file:./build/fonts/oxygen/oxygen-v15-latin-regular.woff2"
 							]
 						},
 						{
@@ -108,7 +108,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "900",
 							"src": [
-								"file:./src/fonts/oxygen/oxygen-v15-latin-700.woff2"
+								"file:./build/fonts/oxygen/oxygen-v15-latin-700.woff2"
 							]
 						}
 					]
