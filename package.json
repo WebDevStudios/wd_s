@@ -34,7 +34,7 @@
 		"offline-github-changelog": "^3.0.1",
 		"postcss-loader": "^7.2.4",
 		"postcss-move-props-to-bg-image-query": "^4.0.0",
-		"postcss-preset-env": "^8.3.2",
+		"postcss-preset-env": "^9.1.4",
 		"sass-loader": "^13.2.2",
 		"stylelint-config-prettier": "^9.0.5",
 		"stylelint-webpack-plugin": "^4.1.1",
