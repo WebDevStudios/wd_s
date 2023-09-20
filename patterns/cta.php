@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered Call To Action
- * Slug: wd_s/cta;
+ * Slug: wd_s/cta
  * Categories: wds-patterns
  *
  * @package wd_s
