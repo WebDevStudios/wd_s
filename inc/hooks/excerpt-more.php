@@ -12,11 +12,9 @@ namespace WebDevStudios\wd_s;
  *
  * @author WebDevStudios
  *
- * @param string $more The current $more string.
- *
  * @return string Read more link.
  */
-function excerpt_more( $more ) {
+function excerpt_more() {
 	return sprintf( ' <a class="more-link" href="%1$s">%2$s</a>', get_permalink( get_the_ID() ), esc_html__( 'Read more...', 'wd_s' ) );
 }
 
