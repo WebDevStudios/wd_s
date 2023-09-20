@@ -12,14 +12,6 @@ if ( class_exists( 'Blocks_Scaffold' ) ) {
 	return;
 }
 
-// Define a global path and url.
-define( 'WebDevStudios\wd_s\ROOT_PATH', trailingslashit( get_template_directory() ) );
-define( 'WebDevStudios\wd_s\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
-
-// Import wpcli.
-
-use \WP_CLI as WP_CLI;
-
 /**
  * Class Blocks_Scaffold
  *

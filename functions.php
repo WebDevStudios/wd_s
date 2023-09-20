@@ -9,6 +9,10 @@
 
 namespace WebDevStudios\wd_s;
 
+// Define a global path and url.
+define( 'WebDevStudios\wd_s\ROOT_PATH', trailingslashit( get_template_directory() ) );
+define( 'WebDevStudios\wd_s\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
+
 /**
  * Get all the include files for the theme.
  *
