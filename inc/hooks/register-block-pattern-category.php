@@ -10,7 +10,7 @@ namespace WebDevStudios\wd_s;
 /**
  * Registers custom block pattern categories for the WD_S theme.
  */
-function wd_s_register_block_pattern_category() {
+function register_block_pattern_categories() {
 
 	register_block_pattern_category(
 		'wds-patterns',
@@ -22,4 +22,4 @@ function wd_s_register_block_pattern_category() {
 	// Remove default patterns.
 	remove_theme_support( 'core-block-patterns' );
 }
-add_action( 'init', __NAMESPACE__ . '\wd_s_register_block_pattern_category', 9 );
+add_action( 'init', __NAMESPACE__ . '\register_block_pattern_categories', 9 );
