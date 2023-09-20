@@ -24,10 +24,10 @@
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-		"php-stubs/acf-pro-stubs": "6.0.6",
+		"php-stubs/acf-pro-stubs": "^6.0",
 		"phpcompatibility/phpcompatibility-wp": "^2.1.4",
 		"wp-cli/wp-cli-bundle": "^2.7",
-		"wp-coding-standards/wpcs": "^2.3.0"
+		"wp-coding-standards/wpcs": "^3.0"
 	},
 	"scripts": {
 		"format": "phpcbf --report=summary,source",
