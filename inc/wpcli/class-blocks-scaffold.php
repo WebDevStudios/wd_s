@@ -7,6 +7,9 @@
 
 namespace WebDevStudios\wd_s;
 
+use WP_CLI;
+use const WebDevStudios\wd_s\ROOT_PATH;
+
 // Exit if class already exists (for example when the plugin `WDS ACF Blocks` is active).
 if ( class_exists( 'Blocks_Scaffold' ) ) {
 	return;
@@ -148,7 +151,6 @@ class Blocks_Scaffold {
 		} else {
 			WP_CLI::error( 'ERROR :: Could not create a render file.', true );
 		}
-
 	}
 
 	/**
@@ -280,33 +282,4 @@ class Blocks_Scaffold {
 			WP_CLI::error( 'ERROR :: Could not create a block js style file.', true );
 		}
 	}
-
 }
-
-/**
- * Registers our command when cli get's initialized.
- *
- * @since  4.0.0
- * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
- * @return void
- */
-function cli_register_commands() {
-	WP_CLI::add_command( 'wds', __NAMESPACE__ . '\Blocks_Scaffold' );
-}
-add_action( 'cli_init', __NAMESPACE__ . '\cli_register_commands' );
-
-/**
- * Register Blocks
- *
- * @return void
- * @author Jenna Hines
- * @since  2.0.0
- */
-function wds_acf_register_blocks() {
-	$wds_acf_blocks = glob( ROOT_PATH . 'blocks/*/block.json' );
-
-	foreach ( $wds_acf_blocks as $block ) {
-		register_block_type( $block );
-	}
-}
-add_action( 'init', __NAMESPACE__ . '\wds_acf_register_blocks' );
