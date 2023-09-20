@@ -20,7 +20,10 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php wp_head(); ?>
+	<?php
+	wp_head();
+	use function WebDevStudios\wd_s\print_header_block;
+	?>
 
 </head>
 
@@ -28,46 +31,12 @@
 
 	<?php wp_body_open(); ?>
 
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wd_s' ); ?></a>
+	<div class="wp-site-blocks">
 
-	<header class="site-header">
-
-		<div class="site-header-content">
-
-			<div class="site-branding">
-
-				<?php the_custom_logo(); ?>
-
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif; ?>
-
+			<header class="site-header wp-block-template-part">
 				<?php
+				echo print_header_block(); // phpcs:ignore WordPress.Security.EscapeOutput
+				?>
+			</header>
 
-				$wd_s_description = get_bloginfo( 'description', 'display' );
-				if ( $wd_s_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo esc_html( $wd_s_description ); ?></p>
-				<?php endif; ?>
-
-			</div><!-- .site-branding -->
-
-		</div><!-- .site-header-content -->
-
-		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Main Navigation', 'wd_s' ); ?>">
-			<?php
-			wp_nav_menu(
-				[
-					'fallback_cb'    => false,
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown container',
-					'container'      => false,
-				]
-			);
-			?>
-		</nav><!-- #site-navigation-->
-
-	</header><!-- .site-header-->
+	</div><!-- .wp-site-blocks -->
