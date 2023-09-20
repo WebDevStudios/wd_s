@@ -88,7 +88,6 @@ function setup() {
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'build/index.css' );
-
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
