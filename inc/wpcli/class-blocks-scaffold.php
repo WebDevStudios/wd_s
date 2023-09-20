@@ -310,11 +310,11 @@ add_action( 'cli_init', __NAMESPACE__ . '\cli_register_commands' );
  * @author Jenna Hines
  * @since  2.0.0
  */
-function wds_acf_register_blocks() {
+function acf_register_blocks() {
 	$wds_acf_blocks = glob( ROOT_PATH . 'blocks/*/block.json' );
 
 	foreach ( $wds_acf_blocks as $block ) {
 		register_block_type( $block );
 	}
 }
-add_action( 'init', __NAMESPACE__ . '\wds_acf_register_blocks' );
+add_action( 'init', __NAMESPACE__ . '\acf_register_blocks' );
