@@ -11,11 +11,11 @@
 
 <section class="no-results not-found is-layout-constrained">
 
-	<header class="page-header">
+	<header class="page-header has-global-padding">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wd_s' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content has-global-padding">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 			<p>
 			<?php
