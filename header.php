@@ -33,10 +33,8 @@
 
 	<div class="wp-site-blocks">
 
-			<header class="site-header wp-block-template-part">
-				<?php
-				echo print_header_block(); // phpcs:ignore WordPress.Security.EscapeOutput
-				?>
+			<header class="wp-block-template-part site-header">
+				<?php block_header_area(); ?>
 			</header>
 
 	</div><!-- .wp-site-blocks -->
