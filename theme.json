@@ -243,8 +243,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "840px",
-			"wideSize": "1100px"
+			"contentSize": "1024px",
+			"wideSize": "1280px"
 		}
 	},
 
@@ -254,7 +254,13 @@
 			"fontSize": "var(--wp--preset--font-size--normal)"
 		},
 		"spacing": {
-			"blockGap": "var(--wp--preset--spacing--50)"
+			"blockGap": "var(--wp--preset--spacing--50)",
+			"padding": {
+				"top": "0",
+				"right": "var(--wp--preset--spacing--50)",
+				"bottom": "0",
+				"left": "var(--wp--preset--spacing--50)"
+			}
 		},
 		"color": {
 			"background": "var(--wp--preset--color--white)",
@@ -525,20 +531,57 @@
 			},
 			"core/pullquote": {
 				"border": {
-					"color": "var(--wp--preset--color--contrast)",
-					"style": "solid",
-					"width": "1px"
+					"bottom": {
+						"style": "none",
+						"width": "0px"
+					},
+					"left": {
+						"style": "none",
+						"width": "0px"
+					},
+					"radius": "16px",
+					"right": {
+						"style": "none",
+						"width": "0px"
+					},
+					"top": {
+						"style": "none",
+						"width": "0px"
+					}
+				},
+				"color": {
+					"background": "var(--wp--preset--color--tertiary)"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "var(--wp--preset--spacing--50)",
+						"left": "var(--wp--preset--spacing--50)",
+						"right": "var(--wp--preset--spacing--50)",
+						"top": "var(--wp--preset--spacing--50)"
+					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"lineHeight": "var(--wp--custom--line-height--medium)"
+					"fontFamily": "var(--wp--preset--font-family--cardo)",
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontStyle": "italic",
+					"fontWeight": "400",
+					"letterSpacing": "0em",
+					"lineHeight": "1.5"
 				}
 			},
 			"core/quote": {
 				"border": {
-					"color": "var(--wp--preset--color--contrast)",
+					"color": "var(--wp--preset--color--primary)",
 					"style": "solid",
-					"width": "1px"
+					"width": "0 0 0 1px"
+				},
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--preset--spacing--50)"
+					}
+				},
+				"typography": {
+					"fontStyle": "normal"
 				}
 			},
 			"core/separator": {

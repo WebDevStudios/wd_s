@@ -30,7 +30,7 @@ pre-commit:
                 staged_files="$LEFTHOOK_STAGED_FILES"
                 for file in $staged_files
                 do
-                  if [[ ! "$file" =~ ^templates/ ]]; then
+                  if [[ ! "$file" =~ ^templates/ && "$file" != "package-lock.json" && "$file" != "composer.lock" ]]; then
                     npx prettier "$file" --write
                   fi
                 done
