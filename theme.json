@@ -548,8 +548,8 @@
 					}
 				},
 				"color": {
-					"background": "var(--wp--preset--color--secondary-200)",
-					"text": "var(--wp--preset--color--base)"
+					"background": "var(--wp--preset--color--secondary-100)",
+					"text": "var(--wp--preset--color--black)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--mono)",
