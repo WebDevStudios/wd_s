@@ -21,7 +21,7 @@
 
 		wp_link_pages(
 			[
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wd_s' ),
+				'before' => '<div class="page-links is-layout-constrained has-global-padding">' . esc_html__( 'Pages:', 'wd_s' ),
 				'after'  => '</div>',
 			]
 		);

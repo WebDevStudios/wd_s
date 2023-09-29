@@ -1,0 +1,29 @@
+/* Comments
+--------------------------------------------- */
+
+.comments-area {
+	.comment-list {
+		@apply list-none mb-0 p-0;
+
+		.comment {
+			@apply clear-both;
+		}
+
+		.children {
+			@apply list-none my-4;
+		}
+	}
+
+	.comment-respond {
+		.comment-form {
+			.comment-form-comment {
+				@apply flex flex-col;
+
+				textarea {
+					@apply rounded-md;
+					border: 1px var( --wp--preset--color--primary-300 ) solid;
+				}
+			}
+		}
+	}
+}
