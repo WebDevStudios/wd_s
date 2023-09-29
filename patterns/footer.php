@@ -9,7 +9,7 @@
  */
 
 // Determine whether to display site logo or site title.
-$wds_site_info = has_custom_logo() ? '<!-- wp:site-logo {"align":"center"} /-->' : '<!-- wp:site-title {"textAlign":"center"} /-->';
+$wds_site_info = has_custom_logo() ? '<!-- wp:site-logo {"align":"center"} /-->' : '<!-- wp:site-title {"level":2,"textAlign":"center"} /-->';
 
 // Generate the copyright information.
 $wds_copyright_info = esc_html__( ' Copyright &copy; ', 'wd_s' ) . esc_attr( gmdate( 'Y' ) ) . esc_html__( '. All Rights Reserved.', 'wd_s' );
