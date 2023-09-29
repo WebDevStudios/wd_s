@@ -23,7 +23,7 @@ $wds_site_logo = has_custom_logo() ? '<!-- wp:site-logo /-->' : '<!-- wp:site-ti
 
 		<!-- wp:column {"verticalAlignment":"center","width":"100%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:100%">
-			<!-- wp:navigation {"ref":540,"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} /-->
+			<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>

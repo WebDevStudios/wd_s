@@ -62,7 +62,7 @@ use function WebDevStudios\wd_s\print_post_taxonomies;
 
 		wp_link_pages(
 			[
-				'before' => '<div class="page-links">' . esc_attr__( 'Pages:', 'wd_s' ),
+				'before' => '<div class="page-links is-layout-constrained has-global-padding">' . esc_attr__( 'Pages:', 'wd_s' ),
 				'after'  => '</div>',
 			]
 		);

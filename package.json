@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@wordpress/eslint-plugin": "15.0.0",
-		"@wordpress/scripts": "^26.2.0",
+		"@wordpress/scripts": "^26.13.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
@@ -32,7 +32,7 @@
 		"eslint-webpack-plugin": "^4.0.1",
 		"imagemin-webpack-plugin": "^2.4.2",
 		"offline-github-changelog": "^3.0.1",
-		"postcss-loader": "^7.2.4",
+		"postcss-loader": "^7.3.3",
 		"postcss-move-props-to-bg-image-query": "^4.0.0",
 		"postcss-preset-env": "^9.1.1",
 		"sass-loader": "^13.2.2",
@@ -40,13 +40,13 @@
 		"stylelint-webpack-plugin": "^4.1.1",
 		"svg-spritemap-webpack-plugin": "^4.5.0",
 		"svg-transform-loader": "^2.0.13",
-		"tailwindcss": "^3.3.1"
+		"tailwindcss": "^3.3.3"
 	},
 	"devDependencies": {
 		"@evilmartians/lefthook": "^1.4.9",
 		"@wordpress/prettier-config": "^2.14.0",
 		"auto-changelog": "^2.4.0",
-		"autoprefixer": "^10.4.14",
+		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"css-loader": "^6.7.3",
 		"glob": "^10.3.3",
