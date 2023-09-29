@@ -445,10 +445,10 @@
 						},
 						"spacing": {
 							"padding": {
-								"top": "14px",
-								"right": "29px",
-								"bottom": "14px",
-								"left": "29px"
+								"top": "7px",
+								"right": "15px",
+								"bottom": "7px",
+								"left": "15px"
 							}
 						}
 					}
