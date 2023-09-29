@@ -1,4 +1,5 @@
 {
+	"phpsab.standard": "WordPress",
 	"phpsab.executablePathCS": "./vendor/bin/phpcs",
 	"phpsab.executablePathCBF": "./vendor/bin/phpcbf",
 	"editor.formatOnSave": true,
