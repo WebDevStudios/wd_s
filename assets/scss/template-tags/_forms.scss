@@ -1,0 +1,31 @@
+/* Comments
+--------------------------------------------- */
+button,
+input,
+optgroup,
+select,
+textarea {
+	@apply rounded-md;
+	border: 1px var( --wp--preset--color--primary-300 ) solid;
+	padding-top: 6px;
+	padding-right: 16px;
+	padding-bottom: 6px;
+	padding-left: 16px;
+}
+
+[type='reset'],
+[type='submit'] {
+	background-color: var( --wp--preset--color--tertiary-300 );
+	border-radius: 10px;
+	border-width: 0;
+	border-style: solid;
+	color: var( --wp--preset--color--white );
+	font-family: inherit;
+	font-size: var( --wp--preset--font-size--normal );
+	line-height: 1.435;
+	padding-top: 8px;
+	padding-right: 16px;
+	padding-bottom: 8px;
+	padding-left: 16px;
+	text-decoration: none;
+}
