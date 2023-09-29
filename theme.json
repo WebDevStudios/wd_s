@@ -298,6 +298,11 @@
 				"slow": "all 0.5s ease-in-out",
 				"normal": "all 0.3s ease-in-out",
 				"fast": "all 0.2s ease-in-out"
+			},
+			"line-height": {
+				"small": "1.2",
+				"medium": "1.5",
+				"large": "1.8"
 			}
 		},
 		"layout": {
@@ -542,8 +547,8 @@
 			"core/comments-title": {
 				"spacing": {
 					"margin": {
-						"top": "var(--wp--custom--spacing--gap)",
-						"bottom": "var(--wp--custom--spacing--gap)"
+						"top": "var(--wp--preset--spacing--50)",
+						"bottom": "var(--wp--preset--spacing--50)"
 					}
 				}
 			},
