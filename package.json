@@ -32,7 +32,7 @@
 		"eslint-webpack-plugin": "^4.0.1",
 		"imagemin-webpack-plugin": "^2.4.2",
 		"offline-github-changelog": "^3.0.1",
-		"postcss-loader": "^7.2.4",
+		"postcss-loader": "^7.3.3",
 		"postcss-move-props-to-bg-image-query": "^4.0.0",
 		"postcss-preset-env": "^9.1.1",
 		"sass-loader": "^13.2.2",
