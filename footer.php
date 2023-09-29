@@ -9,23 +9,14 @@
  * @package wd_s
  */
 
-use function WebDevStudios\wd_s\print_copyright_text;
+use function WebDevStudios\wd_s\print_footer_block;
+
 ?>
-
-	<footer class="site-footer">
-
-		<div class="site-info">
-			<?php
-			if ( get_theme_mod( 'wd_s_copyright_text' ) ) :
-				print_copyright_text();
-			else :
-				the_custom_logo();
-				echo '<p>' . esc_html__( ' Copyright &copy; ', 'wd_s' ) . esc_attr( gmdate( 'Y' ) ) . '</p>';
-			endif;
-			?>
-		</div><!-- .site-info -->
-
-	</footer><!-- .site-footer-->
+	<div class="wp-site-blocks">
+		<footer class="wp-block-template-part site-footer">
+			<?php block_footer_area(); ?>
+		</footer>
+	</div><!-- .wp-site-blocks -->
 
 	<?php wp_footer(); ?>
 
