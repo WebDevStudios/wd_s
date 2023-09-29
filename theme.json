@@ -269,7 +269,7 @@
 			"fontSize": "var(--wp--preset--font-size--normal)"
 		},
 		"spacing": {
-			"blockGap": "var(--wp--preset--spacing--50)",
+			"blockGap": "var(--wp--preset--spacing--30)",
 			"padding": {
 				"top": "0",
 				"right": "var(--wp--preset--spacing--50)",
@@ -431,7 +431,7 @@
 				},
 				"spacing": {
 					"padding": {
-						"bottom": "1em"
+						"bottom": "var(--wp--preset--spacing--10)"
 					}
 				}
 			},
