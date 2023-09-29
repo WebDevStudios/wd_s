@@ -17,6 +17,6 @@ if ( ! empty( $block['align'] ) ) {
 // Add anchor to the block.
 $wds_anchor = ( ! empty( $block['anchor'] ) ) ? 'id="' . esc_attr( $block['anchor'] ) . '" ' : '';
 ?>
-<section <?php echo esc_attr( $wds_anchor ); ?>class="<?php echo esc_attr( implode( ' ', $wds_classes ) ); ?>">
+<section <?php echo $wds_anchor; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS ?>class="<?php echo esc_attr( implode( ' ', $wds_classes ) ); ?>">
 	<!-- Your block render code goes here. -->
 </section>
