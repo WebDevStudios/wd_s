@@ -1,0 +1,21 @@
+//--------------------------------------------------------------
+// Global Site Header
+//--------------------------------------------------------------
+.site-header {
+	.site-header-content {
+		@apply m-0;
+
+		.wp-block-site-logo {
+			.site-branding {
+				@apply flex-auto;
+				a {
+					@apply no-underline;
+
+					.custom-logo {
+						@apply w-auto max-h-14;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+// Edges of blocks weren't obvious. Adds subtle outline.
+.wp-block-post-content {
+	.wp-block {
+		&.is-selected {
+			@apply p-4 outline outline-1;
+		}
+	}
+}

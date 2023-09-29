@@ -8,56 +8,29 @@
 namespace WebDevStudios\wd_s;
 
 /**
- * Prints HTML with taxonomies for the current post.
+ * Print the taxonomies associated with a post.
  *
+ * @param int $post_id The ID of the post.
  * @author WebDevStudios
- *
- * @param array $args Configuration args.
  */
-function print_post_taxonomies( $args = [] ) {
+function print_post_taxonomies( $post_id ) {
+	$post_taxonomies = get_post_taxonomies( $post_id );
 
-	// Set defaults.
-	$defaults = [
-		'tax_name' => '',
-		'post_id'  => get_the_ID(),
-		'linked'   => true,
-		'in_list'  => true,
-	];
-
-	// Parse args.
-	$args = wp_parse_args( $args, $defaults );
-
-	// Bail early if we have no post id or taxonomy name.
-	if ( empty( $args['post_id'] ) || empty( $args['tax_name'] ) ) :
-		return;
-	endif;
-
-	// Get the terms.
-	$wd_s_terms = get_the_terms( $args['post_id'], $args['tax_name'] );
-
-	// Set up the display.
-	$wd_s_tagname = $args['in_list'] ? 'ul' : 'span';
-	?>
-
-	<<?php echo $wd_s_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="post-taxonomies">
-		<?php
-		foreach ( $wd_s_terms as $wd_s_term ) :
-			echo wp_kses_post( $args['in_list'] ? '<li class="taxonomy-item">' : '<span class="taxonomy-item">' );
-			if ( $args['linked'] ) :
-				print_element(
-					'anchor',
-					[
-						'text' => $wd_s_term->name,
-						'href' => get_term_link( $wd_s_term->term_id, $args['tax_name'] ),
-					]
-				);
-			else :
-				echo esc_html( $wd_s_term->name );
-			endif;
-			echo $args['in_list'] ? '</li>' : '</span>';
-		endforeach;
-		?>
-	</<?php echo $wd_s_tagname; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-
-	<?php
+	if ( $post_taxonomies ) {
+		echo '<div class="post-taxonomies-list">';
+		foreach ( $post_taxonomies as $taxonomy ) {
+			$terms = get_the_terms( $post_id, $taxonomy );
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				echo '<p>' . esc_html( ucfirst( $taxonomy ) ) . ': ';
+				$term_links = array();
+				foreach ( $terms as $term ) {
+					$term_links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a>';
+				}
+				$imploded_terms = implode( ', ', $term_links );
+				echo wp_kses_post( $imploded_terms );
+				echo '</p>';
+			}
+		}
+		echo '</div>';
+	}
 }

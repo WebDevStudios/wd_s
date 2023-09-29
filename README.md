@@ -4,7 +4,7 @@
 
 A starter theme from WebDevStudios. <https://wdunderscores.com>
 
-[![WebDevStudios. Your Success is Our Mission.](https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png)](https://webdevstudios.com/contact/)
+[![WebDevStudios. Your Success is Our Mission.](https://camo.githubusercontent.com/42f2d2ee1fd163a35dfde75884c89f308d0ae014e313bd3050caa1b98bfde9c6/68747470733a2f2f77656264657673747564696f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f30342f7764732d6769746875622d62616e6e65722e706e67)](https://webdevstudios.com/contact/)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -19,13 +19,11 @@ A starter theme from WebDevStudios. <https://wdunderscores.com>
 
 ## Introduction
 
-Hi. I'm a starter theme called `wd_s`, or `wdunderscores`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead, try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for!
+Hello there! I am a versatile starter theme known as `wd_s`, or `wdunderscores`. My foundation is built primarily on PHP templates, but I offer the flexibility to incorporate custom templates through the Site Editor. It's worth noting that I'm designed for customization, so it's best not to use me as a Parent Theme. Instead, harness my potential to transform me into the most amazing WordPress theme you can envision – that's what I'm here for!
 
-I feature some of the web's most proven technologies like: [Tailwind](https://www.tailwindcss.com), [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [Sass](http://sass-lang.com/), and [PostCSS](https://github.com/postcss/postcss). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), we tap into [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for linting CSS and JavaScript. Did I mention that I'm also accessible? Yup. I pass both WCAG 2.1AA and Section 508 standards out of the box.
+I come equipped with a host of robust web technologies, including [Tailwind](https://www.tailwindcss.com), [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [Sass](http://sass-lang.com/), and [PostCSS](https://github.com/postcss/postcss). To ensure your code aligns with [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/) and stays clean, I leverage [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for CSS and JavaScript linting. What's more, I take accessibility seriously and proudly comply with both WCAG 2.1AA and Section 508 standards right from the start.
 
-I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
-
-Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watch your project update in real-time while you work.
+I also come with the Site Editor activated, providing you with even more versatility and ease in crafting your WordPress theme. Whether you're customizing templates or utilizing the Site Editor, I'm here to support your creative journey. And remember, I do require at least PHP 8.0 to be activated to unlock my full potential.
 
 ## Getting Started
 
@@ -33,8 +31,8 @@ Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watc
 
 Because I compile and bundle assets via NPM scripts, basic knowledge of the command line and the following dependencies are required:
 
-- [Node](https://nodejs.org) (v16+)
-- [NPM](https://npmjs.com) (v8+)
+- [Node](https://nodejs.org) (v18+)
+- [NPM](https://npmjs.com) (v9+)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
@@ -75,10 +73,10 @@ cd /wp-content/themes/your-theme
 
 Install theme dependencies and trigger an initial build.
 
->Note: You will need to have Composer and NPM 8 installed first.
+>Note: You will need to have Composer 2 and NPM 9 installed first.
 
 ```bash
-npm i --legacy-peer-deps
+npm i && composer i
 ```
 
 ### Development
@@ -93,6 +91,20 @@ Command | Action
 `npm run lint` | Check all CSS, JS, MD, and PHP files for errors
 `npm run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
 `npm run report` | Gives detailed information on coding standards violations in PHP code
+
+### Building a block with wpcli
+
+In order to build a block, run the following wpcli script.
+
+Note: If you're using Local, you can open the shell from within Local to do this. `Sitename -> Open site shell`.
+
+```bash
+wp wds create_portable_block myblock --title="This is myblock" --desc="This block is used for wds." --keyword="myblock" --icon="table-row-before" --namespace="wds"
+```
+
+This will scaffold out a block inside of the `blocks` folder in the theme. Replace `myblock` with the name of your block and update the other items `title`, `desc`, `keyword`, `icon`, `namespace` with the appropriate information.
+
+Note: If you don't see your new block available under the block listing in the editor after following the above steps, try changing the namespacing in your block's `block.json` to the following format `your-namespace/blockname` and check again.
 
 ## Contributing and Support
 

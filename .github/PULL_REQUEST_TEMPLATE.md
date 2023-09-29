@@ -1,7 +1,7 @@
 # Closes
 
 <!--
-Please do not leave this blank, use this format to link issue numbers:
+REQUIRED. Please do not leave this blank, use this format to link issue numbers:
 [#WDS-123](https://webdevstudios.atlassian.net/browse/TICKET-NUMBER)
 -->
 
@@ -22,14 +22,14 @@ Please do not leave this blank, use this format to link issue numbers:
 ## Link to test
 
 <!--
-Please do not leave this blank, use this format to link to testing environment:
+REQUIRED. Please do not leave this blank, use this format to link to testing environment:
 [Develop](https://wds.wdslab.com/)
 -->
 
 ## Description
 
 <!--
-Please do not leave this blank
+REQUIRED. Please do not leave this blank
 This PR [adds/removes/fixes/replaces] the [feature/bug/etc].
 -->
 
@@ -42,7 +42,10 @@ https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-git
 
 ## Mobile & Desktop Screenshots/Recordings
 
-<!-- Visual changes require screenshots -->
+<!--
+REQUIRED. Please do not leave this blank
+For visual alterations, provide screenshots or recordings For both desktop and mobile. You can utilize Loom for this purpose: https://www.loom.com/screen-recorder
+-->
 
 
 ## Added tests?

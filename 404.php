@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 
-		<section class="error-404 not-found">
+		<section class="error-404 not-found is-layout-constrained">
 			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( "Sorry, this page doesn't exist.", 'wd_s' ); ?></h1>
 			</header><!-- .page-header -->

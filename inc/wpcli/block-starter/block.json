@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wds/{{name}}",
+	"title": "{{title}}",
+	"description": "{{description}}",
+	"editorScript": "file:./editor.js",
+	"editorStyle": "file:../../build/{{name}}.editor.css",
+	"script": "file:./script.js",
+	"style": "file:../../build/{{name}}.css",
+	"category": "wds-blocks-category",
+	"icon": "{{icon}}",
+	"keywords": [ "{{name}}", "{{keyword}}", "block" ],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "{{name}}.php"
+	},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"color": {},
+		"customClassName": true,
+		"jsx": true
+	},
+	"example": {
+		"attributes": {
+			"mode": "preview",
+			"data": {
+				"_is_preview": "true"
+			}
+		}
+	}
+}

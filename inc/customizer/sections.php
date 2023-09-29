@@ -25,27 +25,6 @@ function customize_sections( $wp_customize ) {
 		]
 	);
 
-	// Register a social links section.
-	$wp_customize->add_section(
-		'wd_s_social_links_section',
-		[
-			'title'       => esc_html__( 'Social Media', 'wd_s' ),
-			'description' => esc_html__( 'Links here power the print_social_network_links() template tag.', 'wd_s' ),
-			'priority'    => 90,
-			'panel'       => 'site-options',
-		]
-	);
-
-	// Register a header section.
-	$wp_customize->add_section(
-		'wd_s_header_section',
-		[
-			'title'    => esc_html__( 'Header Customizations', 'wd_s' ),
-			'priority' => 90,
-			'panel'    => 'site-options',
-		]
-	);
-
 	// Register a footer section.
 	$wp_customize->add_section(
 		'wd_s_footer_section',

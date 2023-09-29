@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// Global Site Footer
+//--------------------------------------------------------------
+.site-footer {
+	@apply flex p-10 flex-nowrap justify-center items-center bottom-0;
+
+	.site-info {
+		@apply text-center;
+
+		.custom-logo {
+			@apply max-h-12 w-auto;
+		}
+
+		p {
+			@apply text-xs;
+		}
+	}
+}
