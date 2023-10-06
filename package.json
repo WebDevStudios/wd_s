@@ -22,7 +22,7 @@
 		"npm": ">=9"
 	},
 	"dependencies": {
-		"@wordpress/eslint-plugin": "^16.0.0",
+		"@wordpress/eslint-plugin": "^17.0.0",
 		"@wordpress/scripts": "^26.13.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
@@ -49,13 +49,14 @@
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
 		"css-loader": "^6.7.3",
+		"eslint-plugin-prettier": "^5.0.0",
 		"glob": "^10.3.3",
 		"mini-css-extract-plugin": "^2.7.5",
 		"npm-run-all": "^4.1.5",
 		"pa11y-ci": "^3.0.1",
 		"pa11y-ci-reporter-html": "^6.0.2",
 		"postcss": "^8.4.31",
-		"prettier": "npm:wp-prettier@^2.8.5",
+		"prettier": "npm:wp-prettier@^3.0.3",
 		"webpack-cli": "^5.0.2",
 		"webpack-merge": "^5.8.0"
 	},
