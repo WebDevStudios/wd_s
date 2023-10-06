@@ -23,7 +23,7 @@
 	<!-- Use WordPress "Extra" Coding Standards. -->
 	<rule ref="WordPress-Extra">
 		<!-- Allow array short syntax. -->
-		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 		<!-- Allow short prefixes. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
@@ -34,7 +34,7 @@
 	<!-- The minimum supported WordPress version. This should match what's listed in style.css. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
-			<property name="minimum_supported_version" value="5.8"/>
+			<property name="minimum_wp_version" value="5.8"/>
 		</properties>
 	</rule>
 
