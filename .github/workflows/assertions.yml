@@ -2,7 +2,7 @@ name: Assertions
 
 on:
     pull_request:
-        branches: main
+        branches: [main]
 
     workflow_dispatch:
 
@@ -17,7 +17,7 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
               with:
                   token: ${{ github.token }}
 
@@ -28,7 +28,7 @@ jobs:
                   tools: composer:v2, phpcs
 
             - name: Setup Node ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
 
@@ -36,14 +36,14 @@ jobs:
               run: npm i -g npm@9
 
             - name: Cache Node dependencies
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: ~/.npm
                   key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
                   restore-keys: ${{ runner.OS }}-node-
 
             - name: Cache Composer dependencies
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: /tmp/composer-cache
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
