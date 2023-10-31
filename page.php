@@ -12,8 +12,12 @@
  * @package wd_s
  */
 
-use function WebDevStudios\wd_s\print_numeric_pagination;
 use function WebDevStudios\wd_s\main_classes;
+use function WebDevStudios\wd_s\print_numeric_pagination;
+
+// Get and parse the content.
+$wds_content = get_the_content();
+$wds_content = do_blocks( $wds_content );
 
 get_header(); ?>
 	<div class="wp-site-blocks">
@@ -25,15 +29,23 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) :
 					the_post();
+					?>
 
-					get_template_part( 'template-parts/content', get_post_type() );
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+						<header class="page-header is-layout-constrained has-global-padding">
+							<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+						</header><!-- .page-header -->
+
+						<div class="entry-content is-layout-constrained has-global-padding">
+							<?php echo wp_kses_post( $wds_content ); ?>
+						</div><!-- .entry-content -->
+
+					</article><!-- #post-## -->
+
+					<?php
 				endwhile;
 
-				print_numeric_pagination();
-
-			else :
-				get_template_part( 'template-parts/content', 'none' );
 			endif;
 			?>
 
