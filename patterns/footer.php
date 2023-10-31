@@ -18,7 +18,7 @@ $wds_copyright_info = esc_html__( ' Copyright &copy; ', 'wd_s' ) . esc_attr( gmd
 $wds_theme_info = esc_html__( ' Proudly powered by WordPress. ', 'wd_s' ) . '<a href="' . esc_url( 'https://webdevstudios.com/' ) . '">' . esc_html__( 'WebDevStudios', 'wd_s' ) . '</a>' . esc_html__( ' is a WD3 Party.', 'wd_s' );
 ?>
 
-<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide">
 	<?php echo wp_kses_post( $wds_site_info ); ?>
 
