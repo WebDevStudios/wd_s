@@ -60,9 +60,31 @@ For visual alterations, provide screenshots or recordings For both desktop and m
 - [ ] 📓 [Confluence](https://webdevstudios.atlassian.net/wiki/spaces/wds1/pages/2988474566/Feature+Documentation)
 - [ ] 🙅 no documentation needed
 
-## Others
+-----
 
-- [ ] 🦮 Is this issue accessible? (Section 508/WCAG 2.0AA)
-- [ ] 🙌 Does this issue pass all the linting? (PHPCS, ESLint, SassLint)
+## Reviewer's Testing Checklist
 
-## [optional] Are there any post-deployment tasks we need to perform?
+<!--
+REQUIRED For reviewers to fill in.
+-->
+
+As a reviewer, please ensure the following testing criteria are met and validated before approving this Pull Request.
+
+- [ ] **Visual Regression Testing:** Ensure that existing functionality is not negatively impacted by the changes.
+- [ ] **Cross-Browser Compatibility:** Test on major browsers (Chrome, Firefox, Safari) to ensure compatibility.
+- [ ] **Mobile Responsiveness:** Confirm that the changes are responsive and functional on various mobile devices.
+- [ ] **Accessibility Testing:** Validate that the changes comply with accessibility standards.
+- [ ] **Linting:** Check that the code passes all linting checks (PHPCS, ESLint, SassLint).
+- [ ] **Theme Compatibility:** Ensure that the changes do not adversely affect the site's theme and styling.
+- [ ] **Plugin Compatibility:** Check if the changes are compatible with existing plugins and do not cause conflicts.
+- [ ] **Core Functionality:** Verify that the WordPress core functionalities are not disrupted.
+- [ ] **Custom Post Types and Taxonomies:** Confirm that any custom post types or taxonomies function as intended.
+- [ ] **Security Best Practices:** Ensure that the code follows WordPress security best practices.
+- [ ] **Performance:** Check for any performance issues, especially with database queries and page load times.
+- [ ] **SEO Considerations:** Where applicable, confirm that the changes do not negatively impact SEO elements.
+- [ ] **WordPress Coding Standards:** Ensure that the code adheres to WordPress coding standards.
+- [ ] **Documentation:** Ensure that any new features or changes are appropriately documented in the README.md or Confluence.
+- [ ] **User Acceptance Testing (UAT):** If applicable, confirm that stakeholders have reviewed and accepted the changes.
+- [ ] **Post-Deployment Tasks:** Check if there are any tasks that need to be performed after deployment.
+
+## [optional] Additional Reviewer Notes or Considerations?
