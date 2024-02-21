@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@wordpress/eslint-plugin": "^17.0.0",
-		"@wordpress/scripts": "^26.13.0",
+		"@wordpress/scripts": "^26.19.0",
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
@@ -47,7 +47,7 @@
 		"@wordpress/prettier-config": "^2.14.0",
 		"auto-changelog": "^2.4.0",
 		"autoprefixer": "^10.4.16",
-		"browser-sync": "^2.29.3",
+		"browser-sync": "^3.0.2",
 		"css-loader": "^6.7.3",
 		"eslint-plugin-prettier": "^5.0.0",
 		"glob": "^10.3.3",
