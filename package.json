@@ -58,7 +58,7 @@
 		"postcss": "^8.4.31",
 		"prettier": "npm:wp-prettier@^3.0.3",
 		"webpack-cli": "^5.0.2",
-		"webpack-merge": "^5.8.0"
+		"webpack-merge": "^5.10.0"
 	},
 	"scripts": {
 		"accessibility": "pa11y-ci --reporter=pa11y-ci-reporter-html --sitemap $npm_config_url/sitemap.xml",
